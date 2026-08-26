@@ -1,0 +1,450 @@
+/* Project Detail Page Styles - Full Responsive */
+.detail-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: #18181d;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Background Image Layer & Glow */
+.detail-bg-image {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.detail-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+/* Top Header Bar */
+.detail-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(24, 24, 29, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.detail-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #23232b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #CCCCCC;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detail-btn-back:hover {
+  background: #2e2e38;
+  color: #FFFFFF;
+  border-color: #6366f1;
+  transform: translateX(-2px);
+}
+
+.detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #888;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+}
+
+.detail-breadcrumb span.active-crumb {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.detail-top-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #584CFF;
+  border: none;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detail-action-btn:hover {
+  background: #4639e6;
+  transform: translateY(-1px);
+}
+
+/* Main Content Area */
+.detail-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* Hero Section */
+.detail-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.detail-category-tag {
+  background: rgba(175, 174, 240, 0.12);
+  border: 1px solid rgba(175, 174, 240, 0.3);
+  color: #AFAEF0;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.detail-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: Inter, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.detail-subtitle {
+  font-size: 15px;
+  color: #CCCCCC;
+  max-width: 650px;
+  line-height: 1.5;
+  font-family: Inter, sans-serif;
+}
+
+/* Project Meta Bar */
+.detail-meta-bar {
+  width: 100%;
+  background: #1c1c23;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.45), 0px 1px 2px rgba(255, 255, 255, 0.08) inset;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.detail-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: center;
+}
+
+.detail-meta-label {
+  font-size: 11px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.detail-meta-val {
+  font-size: 13px;
+  color: #F2F2F2;
+  font-weight: 500;
+}
+
+/* Hero Showcase Image/Card */
+.detail-hero-showcase {
+  width: 100%;
+  height: 380px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #18181f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-hero-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-showcase-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1c1c24 0%, #15151b 100%);
+}
+
+.detail-showcase-fallback h3 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.detail-showcase-fallback p {
+  color: #888;
+  font-size: 13px;
+}
+
+/* 2 Columns: Problem & Solution Cards */
+.detail-split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.detail-info-card {
+  background: #1c1c23;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.detail-info-card p {
+  font-size: 13px;
+  color: #CCCCCC;
+  line-height: 1.6;
+}
+
+/* Key Features Grid */
+.detail-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.detail-feature-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.detail-feature-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.detail-feature-icon {
+  width: 32px;
+  height: 32px;
+  background: #252530;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AFAEF0;
+  font-size: 14px;
+}
+
+.detail-feature-card h4 {
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.detail-feature-card p {
+  font-size: 12px;
+  color: #AAAAAA;
+  line-height: 1.5;
+}
+
+/* Color Palette & Specs */
+.detail-palette-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-color-swatch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1c1c23;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.swatch-box {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.swatch-code {
+  font-size: 12px;
+  color: #CCCCCC;
+  font-family: monospace;
+}
+
+/* Bottom Pagination & Footer Navigation */
+.detail-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 12px;
+}
+
+.detail-nav-project-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #23232b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #CCCCCC;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.detail-nav-project-btn:hover {
+  background: #2e2e38;
+  color: #FFFFFF;
+  border-color: #6366f1;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Detail Page)
+   ========================================================================== */
+
+/* Tablets (max-width: 820px) */
+@media (max-width: 820px) {
+  .detail-split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-hero-showcase {
+    height: 260px;
+  }
+}
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+  .detail-content {
+    padding: 20px 16px 40px 16px;
+    gap: 22px;
+  }
+
+  .detail-title {
+    font-size: 24px;
+  }
+
+  .detail-subtitle {
+    font-size: 13.5px;
+  }
+
+  .detail-meta-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .detail-hero-showcase {
+    height: 200px;
+  }
+
+  .detail-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-breadcrumb {
+    display: none;
+  }
+}

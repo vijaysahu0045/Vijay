@@ -1,0 +1,313 @@
+/* Projects Screen - Full Viewport & Fully Responsive */
+.projects-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #18181d;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Image Layer & Glow */
+.projects-bg-image {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+/* Top Header Bar */
+.projects-topbar {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(24, 24, 29, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.projects-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projects-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #23232b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #CCCCCC;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.projects-home-btn:hover {
+  background: #2e2e38;
+  color: #FFFFFF;
+  border-color: #6366f1;
+  transform: translateX(-2px);
+}
+
+.projects-header-title {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+/* Main Body: Sidebar + Content */
+.projects-body {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.projects-sidebar {
+  width: 215px;
+  min-width: 215px;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1c1c23;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  animation: slideInLeft 0.5s ease-out both;
+}
+
+/* Sidebar Nav Item Button */
+.sidebar-item {
+  width: 100%;
+  min-height: 40px;
+  padding: 6px 10px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active Category Pill */
+.sidebar-item.active {
+  background: #282833;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.40), 0px 1px 2px rgba(255, 255, 255, 0.08) inset;
+  border: 1px solid #6366f1;
+}
+
+.sidebar-item-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #a78bfa;
+}
+
+.sidebar-item-label {
+  color: #CCCCCC;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.sidebar-item.active .sidebar-item-label {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+/* Main Projects Grid Area */
+.projects-content-area {
+  flex: 1;
+  height: 100%;
+  padding: 24px 32px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-category-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projects-count-badge {
+  font-size: 12px;
+  color: #AFAEF0;
+  background: rgba(175, 174, 240, 0.12);
+  padding: 3px 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(175, 174, 240, 0.3);
+}
+
+/* 6 Cards Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.project-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.project-grid-card {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #1f1f27;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-grid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.25);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.project-grid-card.with-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-grid-card.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-placeholder-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.project-grid-card:hover .card-placeholder-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.project-card-title {
+  color: #F2F2F2;
+  font-size: 13px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  padding-left: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Projects Page)
+   ========================================================================== */
+
+/* Tablets / Medium Screens (max-width: 900px) */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices (max-width: 680px) */
+@media (max-width: 680px) {
+  .projects-body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .projects-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-direction: row;
+    padding: 10px 14px;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-shrink: 0;
+  }
+
+  .projects-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-item {
+    width: auto;
+    flex-shrink: 0;
+    padding: 6px 12px;
+    min-height: 34px;
+  }
+
+  .sidebar-item-label {
+    font-size: 12px;
+  }
+
+  .projects-content-area {
+    padding: 18px 16px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-grid-card {
+    height: 160px;
+  }
+}
