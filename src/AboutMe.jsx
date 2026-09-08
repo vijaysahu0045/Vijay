@@ -1,10 +1,16 @@
 import React from 'react'
 import './AboutMe.css'
 import profileImg from './assets/about-profile.jpg'
+import bgImage from './assets/projects-bg.png'
 
 export default function AboutMe({ onBack }) {
   return (
     <div className="about-page-container">
+      {/* Background Image Layer */}
+      <div className="about-bg-image">
+        <img src={bgImage} alt="" />
+      </div>
+
       {/* Smooth Moving Purple Ball Layer */}
       <div className="page-ambient-glow-layer">
         <div className="page-moving-purple-orb" />
@@ -39,63 +45,53 @@ export default function AboutMe({ onBack }) {
 
             {/* Headline */}
             <h1 className="about-headline">
-              I design digital experiences that are{' '}
+              Product Designer crafting{' '}
               <span className="highlight-purple">
-                simple, thoughtful &amp; impactful.
+                thoughtful AI &amp; UX experiences.
               </span>
             </h1>
 
             {/* Body Description */}
             <p className="about-body-text">
-              I'm a UI/UX Designer who enjoys turning complex ideas into clean, intuitive, and visually engaging experiences. I care about the details—from how something looks to how it feels to use.
+              I'm <strong>Vijay Sahu</strong>, a Product Designer with 2 years of experience in end-to-end UX/UI and AI UX across B2B and B2C web and mobile platforms. Sole designer at <strong>Fymble</strong>, owning the full product lifecycle from UX strategy to 250+ production screens supporting 20K+ users and 600+ partners.
             </p>
+
+            {/* Metrics Highlight Strip */}
+            <div className="about-stats-strip">
+              <div className="astat-item">
+                <strong>250+</strong>
+                <span>Screens Shipped</span>
+              </div>
+              <div className="astat-item">
+                <strong>20K+</strong>
+                <span>Active Users</span>
+              </div>
+              <div className="astat-item">
+                <strong>600+</strong>
+                <span>Gym Partners</span>
+              </div>
+            </div>
 
             {/* Pill Tags Row */}
             <div className="about-pills-row">
-              {/* Pill 1: UI/UX Design */}
               <div className="about-pill-item">
-                <span className="about-pill-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 20h9"/>
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                  </svg>
-                </span>
-                <span>UI/UX Design</span>
+                <span className="about-pill-icon">✨</span>
+                <span>UI/UX &amp; AI UX</span>
               </div>
 
-              {/* Pill 2: Product Design */}
               <div className="about-pill-item">
-                <span className="about-pill-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                    <line x1="12" y1="22.08" x2="12" y2="12"/>
-                  </svg>
-                </span>
-                <span>Product Design</span>
+                <span className="about-pill-icon">📦</span>
+                <span>B2B / B2C Products</span>
               </div>
 
-              {/* Pill 3: Visual Design */}
               <div className="about-pill-item">
-                <span className="about-pill-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                    <path d="M2 2l7.586 7.586"/>
-                    <circle cx="11" cy="11" r="2"/>
-                  </svg>
-                </span>
-                <span>Visual Design</span>
+                <span className="about-pill-icon">📐</span>
+                <span>Design Systems</span>
               </div>
 
-              {/* Pill 4: Motion Design */}
               <div className="about-pill-item">
-                <span className="about-pill-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
-                  </svg>
-                </span>
-                <span>Motion Design</span>
+                <span className="about-pill-icon">⚡</span>
+                <span>UI Motion Design</span>
               </div>
             </div>
 
@@ -109,7 +105,7 @@ export default function AboutMe({ onBack }) {
               <span>
                 Currently exploring →{' '}
                 <span className="about-exploring-highlight">
-                  AI × Design × Motion
+                  AI Agents × Design Systems × Micro-Motion
                 </span>
               </span>
             </div>
@@ -118,7 +114,7 @@ export default function AboutMe({ onBack }) {
           {/* Right Column: Portrait Card */}
           <div className="about-right-col">
             <div className="about-portrait-card">
-              <img src={profileImg} alt="Vijay - UI/UX Designer" />
+              <img src={profileImg} alt="Vijay Sahu - Product Designer" />
             </div>
           </div>
         </div>

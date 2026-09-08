@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Contact.css'
+import bgImage from './assets/projects-bg.png'
 
 const CONTACT_ITEMS = [
   {
@@ -87,6 +88,11 @@ export default function Contact({ onBack }) {
 
   return (
     <div className="contact-page-container">
+      {/* Background Image Layer */}
+      <div className="contact-bg-image">
+        <img src={bgImage} alt="" />
+      </div>
+
       {/* Smooth Moving Purple Ball Layer */}
       <div className="page-ambient-glow-layer">
         <div className="page-moving-purple-orb" />
