@@ -161,221 +161,34 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       </header>
 
       {/* =====================================================================
-          RENDER BRANCH 1: FULL IMAGE ARTWORK / GRAPHIC SHOWCASE
+          RENDER BRANCH 1: PURE FULL-SCREEN IMAGE VIEW ONLY (NO TEXT/CONTENT)
           ===================================================================== */}
       {isImageArtworkProject ? (
-        <main className="detail-content graphic-showcase-main">
-          {/* SECTION 1: GRAPHIC HERO SHOWCASE */}
-          <section className="graphic-hero-layout">
-            {/* Left: Project Information & Design Context */}
-            <div className="graphic-info-col">
-              <div className="case-category-label">
-                <span>{project.title}</span>
-                <span className="dot-sep">•</span>
-                <span>{categoryLabel || project.category || 'Graphic Design'}</span>
-              </div>
+        <main className="detail-content pure-image-viewport">
+          <div className="pure-image-stage">
+            <div className="pure-image-glow" />
 
-              <h1 className="graphic-hero-title">
-                {project.title}
-              </h1>
+            <div className="pure-image-container">
+              <img
+                src={project.image}
+                alt={project.title || 'Artwork'}
+                className="pure-main-img"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+              />
 
-              <p className="case-hero-subtitle">
-                {project.description || 'High-converting promotional marketing poster designed for high-impact social campaigns.'}
-              </p>
-
-              {/* Metadata Pills */}
-              <div className="case-meta-row graphic-meta-grid">
-                <div className="case-meta-pill">
-                  <span className="meta-icon">🎨</span>
-                  <div className="meta-text">
-                    <span className="meta-lbl">Discipline</span>
-                    <span className="meta-val">Visual &amp; Graphic Design</span>
-                  </div>
-                </div>
-
-                <div className="case-meta-pill">
-                  <span className="meta-icon">🏢</span>
-                  <div className="meta-text">
-                    <span className="meta-lbl">Brand / Client</span>
-                    <span className="meta-val">Fymble Technologies</span>
-                  </div>
-                </div>
-
-                <div className="case-meta-pill">
-                  <span className="meta-icon">📐</span>
-                  <div className="meta-text">
-                    <span className="meta-lbl">Format</span>
-                    <span className="meta-val">1080×1350px &amp; 4K Display</span>
-                  </div>
-                </div>
-
-                <div className="case-meta-pill">
-                  <span className="meta-icon">⚡</span>
-                  <div className="meta-text">
-                    <span className="meta-lbl">Tools</span>
-                    <span className="meta-val">Figma, Photoshop, Blender 3D</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Strategy Highlight Badges */}
-              <div className="graphic-strategy-row">
-                <div className="strat-badge">
-                  <span className="strat-dot" />
-                  <span>High-Conversion Visual Hook</span>
-                </div>
-                <div className="strat-badge">
-                  <span className="strat-dot" />
-                  <span>₹99 Price Anchoring</span>
-                </div>
-                <div className="strat-badge">
-                  <span className="strat-dot" />
-                  <span>3D Realistic Asset</span>
+              {/* Invisible Anti-Drag & Anti-Download Protection Shield */}
+              <div
+                className="pure-protection-shield"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              >
+                <div className="pure-shield-watermark">
+                  <span>🔒 Designed by Vijay Sahu • Protected Work</span>
                 </div>
               </div>
             </div>
-
-            {/* Right: Full High-Res Artwork Showcase Frame */}
-            <div className="graphic-artwork-col">
-              <div className="artwork-glass-frame">
-                <div className="artwork-ambient-glow" />
-
-                {/* The Full Image with Guard Protection Layer */}
-                <div className="artwork-media-wrap">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="artwork-full-img"
-                    draggable="false"
-                    onContextMenu={(e) => e.preventDefault()}
-                  />
-
-                  {/* Invisible Anti-Drag & Anti-Download Protection Shield */}
-                  <div
-                    className="artwork-protection-shield"
-                    onContextMenu={(e) => e.preventDefault()}
-                    onDragStart={(e) => e.preventDefault()}
-                  >
-                    <div className="shield-watermark-tag">
-                      <span>🔒 Designed by Vijay Sahu • Protected Asset</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Frame Footer Controls */}
-                <div className="artwork-frame-bar">
-                  <span className="artwork-frame-title">{project.title}</span>
-                  <button
-                    className="artwork-expand-btn"
-                    onClick={() => setIsLightboxOpen(true)}
-                    title="Fullscreen Inspect"
-                  >
-                    <span>Full View</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* SECTION 2: VISUAL STRATEGY & BREAKDOWN */}
-          <section className="case-section-container">
-            <div className="case-section-head">
-              <span className="section-eyebrow eyebrow-purple">CREATIVE STRATEGY</span>
-              <h2 className="case-section-h2">Visual hierarchy engineered for instant conversion.</h2>
-            </div>
-
-            <div className="problem-cards-grid">
-              <div className="problem-card">
-                <div className="card-top-icon">🏷️</div>
-                <h3>1. High-Contrast Price Anchoring</h3>
-                <p>
-                  Placing the prominent <strong>₹99</strong> badge at optical center breaks price resistance and instantly communicates ultra-low barrier to entry for users.
-                </p>
-              </div>
-
-              <div className="problem-card">
-                <div className="card-top-icon">📱</div>
-                <h3>2. Realistic 3D Phone Hardware</h3>
-                <p>
-                  Dual angled titanium mockups with warm rim reflections establish luxury prestige and showcase the sleek app interface in a tangible device form.
-                </p>
-              </div>
-
-              <div className="problem-card">
-                <div className="card-top-icon">🎁</div>
-                <h3>3. Viral Gamification Hook</h3>
-                <p>
-                  The starburst <strong>WIN iPhone 17 Pro Max</strong> bottom banner adds irresistible reward gamification, transforming passive viewers into daily active pass buyers.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* SECTION 3: COLOR PALETTE & ASSET SPECIFICATIONS */}
-          <section className="case-section-container">
-            <div className="case-section-head">
-              <span className="section-eyebrow eyebrow-coral">COLOR SYSTEM &amp; TYPOGRAPHY</span>
-              <h2 className="case-section-h2">Warm sunset energy paired with obsidian dark luxury.</h2>
-            </div>
-
-            <div className="graphic-palette-grid">
-              <div className="palette-card">
-                <div className="swatch-block" style={{ background: '#FF6B00' }} />
-                <div className="swatch-meta">
-                  <span className="swatch-name">Sunset Tangerine</span>
-                  <span className="swatch-hex">#FF6B00</span>
-                  <span className="swatch-use">Primary Callout &amp; Price Tag</span>
-                </div>
-              </div>
-
-              <div className="palette-card">
-                <div className="swatch-block" style={{ background: '#B84E18' }} />
-                <div className="swatch-meta">
-                  <span className="swatch-name">Titanium Copper</span>
-                  <span className="swatch-hex">#B84E18</span>
-                  <span className="swatch-use">Hardware Chasis &amp; Gradient</span>
-                </div>
-              </div>
-
-              <div className="palette-card">
-                <div className="swatch-block" style={{ background: '#121216', border: '1px solid rgba(255,255,255,0.1)' }} />
-                <div className="swatch-meta">
-                  <span className="swatch-name">Obsidian Deep</span>
-                  <span className="swatch-hex">#121216</span>
-                  <span className="swatch-use">Backdrop Shadow &amp; Framing</span>
-                </div>
-              </div>
-
-              <div className="palette-card">
-                <div className="swatch-block" style={{ background: '#FFFFFF' }} />
-                <div className="swatch-meta">
-                  <span className="swatch-name">Pure Ivory</span>
-                  <span className="swatch-hex">#FFFFFF</span>
-                  <span className="swatch-use">High-Legibility Headlines</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Footer Navigation */}
-          <footer className="case-footer-nav">
-            <button className="case-nav-btn" onClick={onBack}>
-              <span>← Back to All Projects</span>
-            </button>
-
-            <button
-              className="case-nav-btn primary"
-              onClick={() => {
-                if (onNavigateProject) onNavigateProject()
-                else onBack()
-              }}
-            >
-              <span>Next Project →</span>
-            </button>
-          </footer>
+          </div>
         </main>
       ) : isFymbleFlagshipCaseStudy ? (
         /* =====================================================================

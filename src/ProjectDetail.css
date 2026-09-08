@@ -1369,138 +1369,65 @@
 }
 
 /* =========================================================================
-   GRAPHIC DESIGN / ARTWORK SHOWCASE LAYOUT
+   PURE FULL-IMAGE VIEWPORT (NO TEXT / FULL SCREEN ARTWORK)
    ========================================================================= */
-.graphic-showcase-main {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.graphic-hero-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 48px;
-  align-items: center;
+.pure-image-viewport {
   width: 100%;
-}
-
-.graphic-info-col {
+  min-height: calc(100vh - 60px);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.graphic-hero-title {
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: #FFFFFF;
-  margin: 0;
-}
-
-.graphic-meta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.graphic-strategy-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 6px;
-}
-
-.strat-badge {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  background: rgba(255, 107, 0, 0.08);
-  border: 1px solid rgba(255, 107, 0, 0.25);
-  color: #FF8F3D;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.strat-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #FF6B00;
-  box-shadow: 0 0 8px #FF6B00;
-}
-
-/* Right: Full Artwork Glass Frame */
-.graphic-artwork-col {
-  display: flex;
   justify-content: center;
-  width: 100%;
-}
-
-.artwork-glass-frame {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  background: #181820;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
+  padding: 20px 24px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 107, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.artwork-glass-frame:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 107, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
+.pure-image-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: calc(100vh - 90px);
 }
 
-.artwork-ambient-glow {
+.pure-image-glow {
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 107, 0, 0.35) 0%, rgba(255, 107, 0, 0) 70%);
+  inset: -30px;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.28) 0%, rgba(167, 139, 250, 0.15) 50%, transparent 75%);
+  filter: blur(40px);
   pointer-events: none;
   z-index: 1;
 }
 
-.artwork-media-wrap {
+.pure-image-container {
   position: relative;
-  width: 100%;
-  max-height: 580px;
+  z-index: 2;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 107, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #111116;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f0f13;
+  max-height: calc(100vh - 100px);
   user-select: none;
   -webkit-user-select: none;
 }
 
-.artwork-full-img {
-  width: 100%;
-  height: auto;
-  max-height: 580px;
+.pure-main-img {
+  max-height: calc(100vh - 100px);
+  width: auto;
+  max-width: min(90vw, 680px);
   object-fit: contain;
   display: block;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
   pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* Invisible Anti-Drag / Anti-Download Shield */
-.artwork-protection-shield {
+.pure-protection-shield {
   position: absolute;
   inset: 0;
   z-index: 10;
@@ -1509,110 +1436,28 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 14px;
+  padding: 16px;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.shield-watermark-tag {
+.pure-shield-watermark {
   opacity: 0;
   transition: opacity 0.25s ease;
-  padding: 5px 12px;
-  border-radius: 14px;
-  background: rgba(18, 18, 22, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(14, 14, 18, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 11px;
   font-weight: 500;
+  letter-spacing: 0.02em;
   pointer-events: none;
 }
 
-.artwork-glass-frame:hover .shield-watermark-tag {
+.pure-image-container:hover .pure-shield-watermark {
   opacity: 1;
-}
-
-.artwork-frame-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  background: rgba(20, 20, 26, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.artwork-frame-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-.artwork-expand-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.artwork-expand-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
-}
-
-/* Palette Grid */
-.graphic-palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  width: 100%;
-}
-
-.palette-card {
-  background: #181820;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.swatch-block {
-  width: 100%;
-  height: 70px;
-}
-
-.swatch-meta {
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.swatch-name {
-  font-size: 12px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-
-.swatch-hex {
-  font-size: 11px;
-  font-family: monospace;
-  color: #a78bfa;
-}
-
-.swatch-use {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
-  margin-top: 2px;
 }
 
 /* Lightbox Modal */
