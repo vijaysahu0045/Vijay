@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProjectDetail.css'
 import bgImage from './assets/projects-bg.png'
 
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
+
+  const [activeStep, setActiveStep] = useState(0)
 
   return (
     <div className="detail-container">
@@ -12,255 +14,571 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         <img src={bgImage} alt="" />
       </div>
 
-      {/* Smooth Moving Purple Ball Layer */}
+      {/* Smooth Moving Purple Ambient Orb */}
       <div className="page-ambient-glow-layer">
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Top Sticky Header Bar */}
+      {/* Top Header Navigation */}
       <header className="detail-topbar">
-        <div className="detail-nav-actions">
-          <button className="detail-btn-back" onClick={onBack} title="Back to Projects">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6"/>
-            </svg>
-          </button>
-        </div>
+        <button className="detail-btn-back" onClick={onBack} title="Back to work">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          <span>Back to work</span>
+        </button>
 
-        <div className="detail-top-links">
-          <button
-            className="detail-action-btn"
-            onClick={() => alert(`Launching live interactive prototype for ${project.title}...`)}
-          >
-            <span>Live Prototype</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-        </div>
+        <button
+          className="detail-action-btn"
+          onClick={() => alert(`Launching live interactive prototype for ${project.title}...`)}
+        >
+          <span>View Prototype</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </header>
 
-      {/* Main Content Body */}
+      {/* Main Case Study Body */}
       <main className="detail-content">
-        {/* Hero Header Area */}
-        <section className="detail-hero">
-          <span className="detail-category-tag">{categoryLabel || 'UI / UX Design Case Study'}</span>
-          <h1 className="detail-title">{project.title}</h1>
-          <p className="detail-subtitle">
-            {project.description || 'An end-to-end digital product design case study focusing on user research, intuitive user flows, custom design systems, and frontend implementation.'}
-          </p>
+        {/* =========================================================================
+            SECTION 1: HERO & 3D PHONE MOCKUPS
+            ========================================================================= */}
+        <section className="case-hero-section">
+          <div className="case-hero-left">
+            <div className="case-category-label">
+              <span>{project.title || 'Fymble'}</span>
+              <span className="dot-sep">•</span>
+              <span>{categoryLabel || 'Product Design'}</span>
+            </div>
+
+            <h1 className="case-hero-title">
+              Making fitness easier to start — <br className="hide-mobile" />
+              and easier to stick with.
+            </h1>
+
+            <p className="case-hero-subtitle">
+              {project.description || 'A flexible fitness marketplace with an AI health coach that keeps you consistent.'}
+            </p>
+
+            <div className="case-meta-row">
+              <div className="case-meta-pill">
+                <span className="meta-icon">👤</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Role</span>
+                  <span className="meta-val">UI/UX Designer</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">📅</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Timeline</span>
+                  <span className="meta-val">May – Jul 2024</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">📱</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Platform</span>
+                  <span className="meta-val">iOS &amp; Android</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: 3D Multi-Device Showcase */}
+          <div className="case-hero-right">
+            <div className="phones-hero-showcase">
+              {/* Left Phone (Passes) */}
+              <div className="mock-phone phone-left">
+                <div className="phone-screen">
+                  <div className="phone-notch" />
+                  <div className="phone-inner-content">
+                    <div className="mock-header">
+                      <span className="mini-title">Choose your pass</span>
+                      <span className="mini-sub">Pick what works for you</span>
+                    </div>
+
+                    <div className="mini-pass-card">
+                      <div className="pass-top">
+                        <span className="pass-name">Daily Pass</span>
+                        <span className="pass-price">₹99 <small>/day</small></span>
+                      </div>
+                      <span className="pass-note">Valid for 24 hours</span>
+                    </div>
+
+                    <div className="mini-pass-card featured">
+                      <span className="mini-badge-hot">Most Popular</span>
+                      <div className="pass-top">
+                        <span className="pass-name">Weekly Pass</span>
+                        <span className="pass-price">₹499 <small>/week</small></span>
+                      </div>
+                      <span className="pass-note">7 days access</span>
+                    </div>
+
+                    <div className="mini-pass-card">
+                      <div className="pass-top">
+                        <span className="pass-name">14 Day Pass</span>
+                        <span className="pass-price">₹899 <small>/14 days</small></span>
+                      </div>
+                      <span className="pass-note">Double validity</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center Phone (Featured Home / Gym Discovery) */}
+              <div className="mock-phone phone-center">
+                <div className="phone-screen">
+                  <div className="phone-notch">
+                    <div className="dynamic-island" />
+                  </div>
+                  <div className="phone-inner-content">
+                    <div className="phone-top-bar">
+                      <span className="location-pin">📍 Mumbai, India ▾</span>
+                      <span className="bell-icon">🔔</span>
+                    </div>
+
+                    <div className="phone-search-input">
+                      <span>🔍 Search gyms, studios, classes...</span>
+                    </div>
+
+                    <div className="phone-category-pills">
+                      <span className="cat-pill active">🏋️ Gym</span>
+                      <span className="cat-pill">🥊 Studio</span>
+                      <span className="cat-pill">🔥 CrossFit</span>
+                      <span className="cat-pill">🧘 Yoga</span>
+                    </div>
+
+                    <div className="phone-featured-gym">
+                      <div className="gym-img-mock">
+                        <span className="gym-badge">Open Now</span>
+                        <span className="gym-heart">❤️</span>
+                      </div>
+                      <div className="gym-info">
+                        <h4>The Strength Co.</h4>
+                        <div className="gym-sub">
+                          <span className="rating">⭐ 4.8</span>
+                          <span>• 1.2 km • Andheri West</span>
+                        </div>
+                        <span className="gym-price">₹99 / day onwards</span>
+                      </div>
+                    </div>
+
+                    <div className="phone-bottom-nav">
+                      <span className="nav-item active">🏠 Home</span>
+                      <span className="nav-item">🔍 Explore</span>
+                      <span className="nav-item">🎫 Passes</span>
+                      <span className="nav-item">👤 Profile</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Phone (Kyra AI Coach) */}
+              <div className="mock-phone phone-right">
+                <div className="phone-screen">
+                  <div className="phone-notch" />
+                  <div className="phone-inner-content">
+                    <div className="ai-chat-header">
+                      <div className="ai-avatar">🤖</div>
+                      <div>
+                        <h4>Kyra AI</h4>
+                        <span className="status-online">● Online Health Coach</span>
+                      </div>
+                    </div>
+
+                    <div className="ai-chat-bubble bot">
+                      <p>Hey Vijay! 👋 How are you feeling today?</p>
+                      <span className="time">Just now</span>
+                    </div>
+
+                    <div className="ai-chat-bubble user">
+                      <p>A bit tired, didn't sleep well.</p>
+                      <span className="time">1m ago</span>
+                    </div>
+
+                    <div className="ai-chat-bubble bot">
+                      <p>Okay, let's adapt your plan. How about a light upper body workout today?</p>
+                    </div>
+
+                    <div className="ai-activity-card">
+                      <div className="act-icon">💪</div>
+                      <div>
+                        <h5>Upper Body Activation</h5>
+                        <span>25 mins • Very low fatigue</span>
+                      </div>
+                    </div>
+
+                    <div className="ai-chat-input-bar">
+                      <span>Ask anything...</span>
+                      <span className="mic-btn">🎙️</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* Project Meta Metrics Bar */}
-        <div className="detail-meta-bar">
-          <div className="detail-meta-item">
-            <span className="detail-meta-label">Role</span>
-            <span className="detail-meta-val">Lead UI/UX &amp; Product Designer</span>
-          </div>
-          <div className="detail-meta-item">
-            <span className="detail-meta-label">Timeline</span>
-            <span className="detail-meta-val">6 Weeks (Design to Handoff)</span>
-          </div>
-          <div className="detail-meta-item">
-            <span className="detail-meta-label">Tools</span>
-            <span className="detail-meta-val">Figma, React, Framer, Tokens</span>
-          </div>
-          <div className="detail-meta-item">
-            <span className="detail-meta-label">Platform</span>
-            <span className="detail-meta-val">iOS, Android, Web App</span>
-          </div>
-        </div>
-
-        {/* Hero Showcase Preview Image */}
-        <div className="detail-hero-showcase">
-          {project.image ? (
-            <img src={project.image} alt={project.title} />
-          ) : (
-            <div className="detail-showcase-fallback">
-              <div className="mock-badge">High Fidelity Preview</div>
-              <h3>{project.title} UI Experience</h3>
-              <p>Clean modern interface with fluid micro-interactions and dark mode support</p>
-            </div>
-          )}
-        </div>
-
-        {/* Project Overview & Goals */}
-        <div className="detail-section-block">
-          <h3 className="detail-section-title">
-            <span>📌</span>
-            <span>Project Overview</span>
-          </h3>
-          <p className="detail-paragraph">
-            The objective of <strong>{project.title}</strong> was to eliminate friction in modern digital workflows by crafting an intuitive, visually striking interface that delivers measurable real-world impact. We worked iteratively through user interviews, wireframing, high-fidelity prototypes, and component design tokens.
-          </p>
-        </div>
-
-        {/* Problem & Solution Cards (2 Columns) */}
-        <div className="detail-split-section">
-          <div className="detail-info-card">
-            <div className="detail-card-header">
-              <span>🎯</span>
-              <span>The Problem &amp; Friction</span>
-            </div>
-            <p>
-              Users frequently encounter cluttered dashboards, confusing navigation architecture, and rigid lock-in subscription models that result in steep drop-off rates and user fatigue.
-            </p>
+        {/* =========================================================================
+            SECTION 2: THE PROBLEM
+            ========================================================================= */}
+        <section className="case-section-container">
+          <div className="case-section-head">
+            <span className="section-eyebrow eyebrow-coral">THE PROBLEM</span>
+            <h2 className="case-section-h2">Fitness shouldn't feel like a commitment.</h2>
           </div>
 
-          <div className="detail-info-card">
-            <div className="detail-card-header">
-              <span>💡</span>
-              <span>The Strategy &amp; Solution</span>
-            </div>
-            <p>
-              Engineered a streamlined, component-driven UI with single-tap actions, transparent daily pass bookings, and AI-accelerated recommendations that adapt in real time to user habits.
-            </p>
-          </div>
-        </div>
-
-        {/* User Research & Key Insights */}
-        <div className="detail-section-block">
-          <h3 className="detail-section-title">
-            <span>🔍</span>
-            <span>User Research &amp; Insights</span>
-          </h3>
-
-          <div className="detail-insights-grid">
-            <div className="detail-insight-card">
-              <span className="insight-num">01</span>
-              <h4>Speed &amp; Accessibility</h4>
-              <p>78% of tested users wanted to complete key actions in under 3 clicks without mandatory account setup upfront.</p>
+          <div className="problem-cards-grid">
+            <div className="problem-card">
+              <div className="problem-icon-wrap">
+                <span className="p-icon">📄</span>
+                <span className="badge-lock">🔒</span>
+              </div>
+              <h3>Rigid memberships</h3>
+              <p>Expensive plans with long-term lock-ins discourage users from trying new fitness routines.</p>
             </div>
 
-            <div className="detail-insight-card">
-              <span className="insight-num">02</span>
-              <h4>Visual Clarity &amp; Hierarchy</h4>
-              <p>Reduced cognitive overload by implementing clean cards, subtle elevation shadows, and high contrast typography.</p>
+            <div className="problem-card">
+              <div className="problem-icon-wrap">
+                <span className="p-icon">🔍</span>
+              </div>
+              <h3>Hard to compare gyms</h3>
+              <p>Scattered information, hidden pricing and unverified photos make discovery confusing.</p>
             </div>
 
-            <div className="detail-insight-card">
-              <span className="insight-num">03</span>
-              <h4>Real-time Feedback</h4>
-              <p>Micro-interactions and toast notifications increased user confidence and task completion rates by 42%.</p>
+            <div className="problem-card">
+              <div className="problem-icon-wrap">
+                <span className="p-icon">📉</span>
+              </div>
+              <h3>Low consistency</h3>
+              <p>Lack of personalized guidance, accountability and workout adaptivity leads to steep drop-offs.</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Key Features & Experience */}
-        <div className="detail-section-block">
-          <h3 className="detail-section-title">
-            <span>✨</span>
-            <span>Key Features &amp; User Flow</span>
-          </h3>
-
-          <div className="detail-features-grid">
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">📍</div>
-              <h4>Smart Discovery &amp; Filters</h4>
-              <p>Interactive location search with instant filters for amenities, verified ratings, and pricing.</p>
+        {/* =========================================================================
+            SECTION 3: THE EXPERIENCE (USER JOURNEY & 4 SCREENS)
+            ========================================================================= */}
+        <section className="case-section-container">
+          <div className="experience-head-row">
+            <div>
+              <span className="section-eyebrow eyebrow-coral">THE EXPERIENCE</span>
+              <h2 className="case-section-h2">A seamless journey from discovery to consistency.</h2>
             </div>
 
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">⚡</div>
-              <h4>1-Tap Instant Booking</h4>
-              <p>Frictionless digital check-in with dynamic QR passes and zero hidden platform fees.</p>
-            </div>
-
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">🥗</div>
-              <h4>AI-Powered Analytics</h4>
-              <p>Personalized insights and daily tailored recommendations that adjust as user activity evolves.</p>
-            </div>
-
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">🌗</div>
-              <h4>Adaptive Dark Theme</h4>
-              <p>Precision-crafted dark mode with accessible contrast ratios and eye-friendly color tokens.</p>
-            </div>
-
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">📱</div>
-              <h4>Responsive Micro-interactions</h4>
-              <p>Smooth spring physics animations for button clicks, card expansions, and screen transitions.</p>
-            </div>
-
-            <div className="detail-feature-card">
-              <div className="detail-feature-icon">🔒</div>
-              <h4>Secure Authentication</h4>
-              <p>Passwordless biometric sign-in and encrypted payment integrations for frictionless checkout.</p>
+            {/* Interactive Flow Breadcrumb */}
+            <div className="journey-flow-pills">
+              <span className="flow-step">🔍 Discover</span>
+              <span className="flow-arrow">→</span>
+              <span className="flow-step">📄 Choose Pass</span>
+              <span className="flow-arrow">→</span>
+              <span className="flow-step">📅 Book</span>
+              <span className="flow-arrow">→</span>
+              <span className="flow-step">🏋️ Workout</span>
+              <span className="flow-arrow">→</span>
+              <span className="flow-step">📈 Track</span>
+              <span className="flow-arrow">→</span>
+              <span className="flow-step">🤖 Kyra</span>
             </div>
           </div>
-        </div>
 
-        {/* Design System & Color Tokens */}
-        <div className="detail-section-block">
-          <h3 className="detail-section-title">
-            <span>🎨</span>
-            <span>Design Tokens &amp; Palette</span>
-          </h3>
+          {/* 4 Screens Grid */}
+          <div className="screens-journey-grid">
+            {/* Screen 1: Discover */}
+            <div className="screen-column-card">
+              <div className="standalone-mock-phone">
+                <div className="phone-screen">
+                  <div className="phone-notch"><div className="dynamic-island" /></div>
+                  <div className="phone-inner-content">
+                    <div className="screen-header-mini">
+                      <h4>Explore Gyms</h4>
+                    </div>
+                    <div className="mini-search-box">🔍 Search location or gym...</div>
+                    <div className="mini-filters-row">
+                      <span className="m-chip">⚙️ Filters</span>
+                      <span className="m-chip">Distance ▾</span>
+                      <span className="m-chip">Price ▾</span>
+                    </div>
+                    <div className="mini-map-view">
+                      <div className="map-pin pin-1">📍</div>
+                      <div className="map-pin pin-2">📍</div>
+                      <div className="map-pin pin-3">📍</div>
+                      <div className="map-bottom-card">
+                        <div className="mbc-info">
+                          <h5>The Strength Co.</h5>
+                          <span>⭐ 4.8 (1.2 km)</span>
+                        </div>
+                        <span className="mbc-btn">View Details</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="screen-caption">
+                <h4>Discover</h4>
+                <p>Find gyms near you with details that matter.</p>
+              </div>
+            </div>
 
-          <div className="detail-palette-row">
-            <div className="detail-color-swatch">
-              <div className="swatch-box" style={{ background: '#18181D' }} />
-              <span className="swatch-code">#18181D Background</span>
+            {/* Screen 2: Choose Pass */}
+            <div className="screen-column-card">
+              <div className="standalone-mock-phone">
+                <div className="phone-screen">
+                  <div className="phone-notch"><div className="dynamic-island" /></div>
+                  <div className="phone-inner-content">
+                    <div className="screen-header-mini">
+                      <h4>Choose your pass</h4>
+                      <span>Pick what works for you</span>
+                    </div>
+
+                    <div className="screen-pass-list">
+                      <div className="sp-card">
+                        <div>
+                          <h6>Daily Pass</h6>
+                          <span>₹99 / day</span>
+                        </div>
+                        <span className="arrow-sm">›</span>
+                      </div>
+
+                      <div className="sp-card featured-glow">
+                        <span className="hot-tag">Most Popular</span>
+                        <div>
+                          <h6>Weekly Pass</h6>
+                          <span className="sp-price">₹499 / week</span>
+                          <small>7 days access</small>
+                        </div>
+                        <span className="arrow-sm">›</span>
+                      </div>
+
+                      <div className="sp-card">
+                        <div>
+                          <h6>10 Day Pass</h6>
+                          <span>₹899 / 14 days</span>
+                        </div>
+                        <span className="arrow-sm">›</span>
+                      </div>
+
+                      <div className="sp-card">
+                        <div>
+                          <h6>Monthly Pass</h6>
+                          <span>₹1,499 / month</span>
+                        </div>
+                        <span className="arrow-sm">›</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="screen-caption">
+                <h4>Choose Pass</h4>
+                <p>Flexible passes that fit your schedule, not the other way around.</p>
+              </div>
             </div>
-            <div className="detail-color-swatch">
-              <div className="swatch-box" style={{ background: '#6366F1' }} />
-              <span className="swatch-code">#6366F1 Brand Purple</span>
+
+            {/* Screen 3: Book */}
+            <div className="screen-column-card">
+              <div className="standalone-mock-phone">
+                <div className="phone-screen">
+                  <div className="phone-notch"><div className="dynamic-island" /></div>
+                  <div className="phone-inner-content">
+                    <div className="screen-gym-banner">
+                      <span>The Strength Co.</span>
+                    </div>
+
+                    <div className="screen-gym-rating-row">
+                      <span>⭐ 4.8 (230 reviews)</span>
+                      <small>Andheri West, Mumbai • 1.2 km</small>
+                    </div>
+
+                    <div className="screen-times-box">
+                      <span className="box-title">Available Today</span>
+                      <div className="time-chips">
+                        <span>6 AM</span>
+                        <span>7 AM</span>
+                        <span className="active-time">8 AM</span>
+                        <span>9 AM</span>
+                        <span>10 AM</span>
+                      </div>
+                    </div>
+
+                    <div className="screen-checkout-card">
+                      <div className="chk-row">
+                        <span>Weekly Pass (7 days)</span>
+                        <span>₹499</span>
+                      </div>
+                      <div className="chk-row total">
+                        <span>Total</span>
+                        <span>₹499</span>
+                      </div>
+                      <button className="confirm-btn">Confirm Booking</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="screen-caption">
+                <h4>Book</h4>
+                <p>Quick booking with real-time availability.</p>
+              </div>
             </div>
-            <div className="detail-color-swatch">
-              <div className="swatch-box" style={{ background: '#A78BFA' }} />
-              <span className="swatch-code">#A78BFA Lavender Glow</span>
-            </div>
-            <div className="detail-color-swatch">
-              <div className="swatch-box" style={{ background: '#25252E' }} />
-              <span className="swatch-code">#25252E Card Surface</span>
-            </div>
-            <div className="detail-color-swatch">
-              <div className="swatch-box" style={{ background: '#10B981' }} />
-              <span className="swatch-code">#10B981 Success Teal</span>
+
+            {/* Screen 4: Track & Improve */}
+            <div className="screen-column-card">
+              <div className="standalone-mock-phone">
+                <div className="phone-screen">
+                  <div className="phone-notch"><div className="dynamic-island" /></div>
+                  <div className="phone-inner-content">
+                    <div className="screen-header-mini">
+                      <h4>Progress</h4>
+                      <span>This Week ▾</span>
+                    </div>
+
+                    <div className="progress-bar-stat">
+                      <div className="p-header">
+                        <span>Workouts</span>
+                        <strong>4</strong>
+                      </div>
+                      <div className="mini-chart-bars">
+                        <div className="bar filled" style={{ height: '60%' }} />
+                        <div className="bar filled" style={{ height: '85%' }} />
+                        <div className="bar filled" style={{ height: '40%' }} />
+                        <div className="bar filled" style={{ height: '90%' }} />
+                        <div className="bar" style={{ height: '20%' }} />
+                        <div className="bar" style={{ height: '10%' }} />
+                        <div className="bar" style={{ height: '10%' }} />
+                      </div>
+                    </div>
+
+                    <div className="progress-dual-metrics">
+                      <div className="metric-box">
+                        <small>Calories</small>
+                        <strong>1,850</strong>
+                        <span>kcal</span>
+                      </div>
+                      <div className="metric-box">
+                        <small>Active Time</small>
+                        <strong>320</strong>
+                        <span>mins</span>
+                      </div>
+                    </div>
+
+                    <div className="health-score-box">
+                      <div>
+                        <small>Health Score</small>
+                        <strong>82 <small>/100</small></strong>
+                        <span className="good-tag">Good going!</span>
+                      </div>
+                      <div className="spark-line">📈</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="screen-caption">
+                <h4>Track &amp; Improve</h4>
+                <p>Track workouts, health score and stay on top of your goals.</p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Results & Key Impact */}
-        <div className="detail-section-block">
-          <h3 className="detail-section-title">
-            <span>🚀</span>
-            <span>Results &amp; Impact</span>
-          </h3>
+        {/* =========================================================================
+            SECTION 4: KEY DESIGN DECISIONS
+            ========================================================================= */}
+        <section className="case-section-container">
+          <div className="case-section-head">
+            <span className="section-eyebrow eyebrow-coral">KEY DESIGN DECISIONS</span>
+            <h2 className="case-section-h2">Thoughtful features engineered for high retention.</h2>
+          </div>
 
-          <div className="detail-stats-row">
-            <div className="stat-box">
-              <span className="stat-val">+45%</span>
-              <span className="stat-lbl">Conversion Rate</span>
+          <div className="decisions-cards-grid">
+            {/* Decision 1 */}
+            <div className="decision-card">
+              <div className="decision-top">
+                <div className="decision-icon">🎫</div>
+                <div>
+                  <h3>Flexible access</h3>
+                  <p>Short-duration passes remove the pressure of long-term commitments and make fitness accessible.</p>
+                </div>
+              </div>
+
+              <div className="decision-preview-box">
+                <div className="preview-pass-pill">
+                  <span>Daily</span>
+                  <strong>₹99</strong>
+                </div>
+                <div className="preview-pass-pill active">
+                  <span>Weekly</span>
+                  <strong>₹499</strong>
+                </div>
+                <div className="preview-pass-pill">
+                  <span>14 Day</span>
+                  <strong>₹899</strong>
+                </div>
+                <div className="preview-pass-pill">
+                  <span>Monthly</span>
+                  <strong>₹1,499</strong>
+                </div>
+              </div>
             </div>
-            <div className="stat-box">
-              <span className="stat-val">4.9★</span>
-              <span className="stat-lbl">User Satisfaction</span>
+
+            {/* Decision 2 */}
+            <div className="decision-card">
+              <div className="decision-top">
+                <div className="decision-icon">🔍</div>
+                <div>
+                  <h3>Simple discovery</h3>
+                  <p>Clear filters, map view and key information help users compare and choose the right gym quickly.</p>
+                </div>
+              </div>
+
+              <div className="decision-preview-box">
+                <div className="preview-chips-row">
+                  <span className="p-chip">⚙️ Filters</span>
+                  <span className="p-chip">Distance ▾</span>
+                  <span className="p-chip">Price ▾</span>
+                  <span className="p-chip">Rating ▾</span>
+                </div>
+                <div className="mini-map-strip">
+                  <span>📍 Andheri West, Mumbai</span>
+                </div>
+              </div>
             </div>
-            <div className="stat-box">
-              <span className="stat-val">&lt; 1.2s</span>
-              <span className="stat-lbl">Avg. Interaction Speed</span>
-            </div>
-            <div className="stat-box">
-              <span className="stat-val">25k+</span>
-              <span className="stat-lbl">Active Users Reached</span>
+
+            {/* Decision 3 */}
+            <div className="decision-card">
+              <div className="decision-top">
+                <div className="decision-icon">💬</div>
+                <div>
+                  <h3>Personalized coaching</h3>
+                  <p>Kyra AI connects workouts, nutrition, sleep and recovery into one continuous conversation.</p>
+                </div>
+              </div>
+
+              <div className="decision-preview-box chat-preview">
+                <div className="bubble-bot">
+                  <span>🤖 Have you had enough water today?</span>
+                </div>
+                <div className="bubble-user-action">
+                  <span>Not really, I'll drink more.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Bottom Pagination & Footer Navigation */}
-        <footer className="detail-footer-nav">
-          <button className="detail-nav-project-btn" onClick={onBack}>
+        {/* Footer Navigation */}
+        <footer className="case-footer-nav">
+          <button className="case-nav-btn" onClick={onBack}>
             <span>← Back to All Projects</span>
           </button>
 
           <button
-            className="detail-nav-project-btn"
-            style={{ background: '#6366F1', borderColor: '#6366F1', color: '#fff' }}
+            className="case-nav-btn primary"
             onClick={() => {
-              if (onNavigateProject) onNavigateProject('next')
+              if (onNavigateProject) onNavigateProject()
               else onBack()
             }}
           >
