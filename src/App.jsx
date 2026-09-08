@@ -76,7 +76,7 @@ function App() {
       <ProjectDetail
         project={selectedProject}
         categoryLabel={selectedProject.category || 'UX / UI Design'}
-        onBack={() => setCurrentPage('home')}
+        onBack={() => setCurrentPage('projects')}
         onNavigateProject={handleNextProject}
       />
     )
