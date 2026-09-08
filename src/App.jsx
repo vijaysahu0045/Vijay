@@ -10,8 +10,8 @@ import Contact from './Contact'
 import { getShuffledProjects } from './projectsData'
 
 const HERO_ROTATING_PHRASES = [
-  "Hi, I’m Vijay.",
-  "Product & AI UI/UX Designer",
+  "Hi, I’m Vijay",
+  "Product & AI UX Designer",
   "2 Years of Experience",
   "UI Motion & Graphics Designer"
 ]
