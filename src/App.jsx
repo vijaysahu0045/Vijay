@@ -8,6 +8,7 @@ import Skills from './Skills'
 import Resume from './Resume'
 import Contact from './Contact'
 import { getShuffledProjects } from './projectsData'
+import KineticGrid from './KineticGrid'
 
 const HERO_ROTATING_PHRASES = [
   "Hi, I’m Vijay",
@@ -155,11 +156,13 @@ function App() {
         <img src={bgImage} alt="" />
       </div>
 
-      {/* Dynamic Smooth Floating Purple Ball & Synchronized Grid Spotlight */}
+      {/* Dynamic Smooth Floating Purple Ball */}
       <div className="home-glow-layer">
         <div className="home-moving-purple-orb" />
-        <div className="home-moving-grid-spotlight" />
       </div>
+
+      {/* Kinetic Interactive Magnetic 3D Grid Wave */}
+      <KineticGrid />
 
       {/* Main Content Area */}
       <div className="home-content">
