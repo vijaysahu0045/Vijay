@@ -29,27 +29,47 @@
   opacity: 0.55;
 }
 
-/* Smooth Moving Purple Ball (Glow Orb) */
+/* Smooth Moving Purple Ball (Organic Unpredictable Random Trajectory) */
 @keyframes smoothFloatOrb {
   0% {
-    transform: translate(-100px, -60px) scale(1);
-    opacity: 0.5;
+    transform: translate(-26vw, -28vh) scale(0.95);
+    opacity: 0.6;
   }
-  25% {
-    transform: translate(240px, 80px) scale(1.2);
-    opacity: 0.75;
+  11% {
+    transform: translate(34vw, 16vh) scale(1.15);
+    opacity: 0.85;
   }
-  50% {
-    transform: translate(420px, -40px) scale(0.95);
-    opacity: 0.55;
+  23% {
+    transform: translate(-12vw, 35vh) scale(0.9);
+    opacity: 0.65;
   }
-  75% {
-    transform: translate(100px, 140px) scale(1.25);
+  36% {
+    transform: translate(37vw, -26vh) scale(1.2);
+    opacity: 0.9;
+  }
+  48% {
+    transform: translate(-35vw, 8vh) scale(1.02);
+    opacity: 0.7;
+  }
+  59% {
+    transform: translate(16vw, -33vh) scale(0.92);
+    opacity: 0.8;
+  }
+  71% {
+    transform: translate(-29vw, 30vh) scale(1.18);
+    opacity: 0.85;
+  }
+  82% {
+    transform: translate(29vw, 26vh) scale(1.0);
+    opacity: 0.7;
+  }
+  91% {
+    transform: translate(-16vw, -10vh) scale(1.1);
     opacity: 0.8;
   }
   100% {
-    transform: translate(-100px, -60px) scale(1);
-    opacity: 0.5;
+    transform: translate(-26vw, -28vh) scale(0.95);
+    opacity: 0.6;
   }
 }
 
@@ -63,28 +83,38 @@
 
 .home-moving-purple-orb {
   position: absolute;
-  width: 520px;
-  height: 460px;
-  left: 25%;
-  top: 25%;
-  background: radial-gradient(circle, rgba(129, 100, 255, 0.7) 0%, rgba(98, 76, 255, 0.35) 45%, rgba(88, 76, 255, 0.1) 70%, transparent 85%);
+  width: 430px;
+  height: 380px;
+  left: 50%;
+  top: 50%;
+  margin-left: -215px;
+  margin-top: -190px;
+  background: radial-gradient(circle, rgba(129, 100, 255, 0.8) 0%, rgba(98, 76, 255, 0.45) 45%, rgba(88, 76, 255, 0.12) 70%, transparent 85%);
   border-radius: 9999px;
-  filter: blur(85px);
-  animation: smoothFloatOrb 16s ease-in-out infinite alternate;
+  filter: blur(70px);
+  animation: smoothFloatOrb 110s ease-in-out infinite;
 }
 
-/* Dark #1a1a1a Grid Box Pattern */
-.home-grid-pattern-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
+/* Dynamic Grid Box Spotlight - 89% Reduced, Ultra-Subtle Minimalist Texture */
+.home-moving-grid-spotlight {
+  position: absolute;
+  width: 430px;
+  height: 380px;
+  left: 50%;
+  top: 50%;
+  margin-left: -215px;
+  margin-top: -190px;
   background-image: 
-    linear-gradient(to right, #1a1a1a 1px, transparent 1px),
-    linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
-  background-size: 22px 22px;
-  mix-blend-mode: color-dodge;
-  opacity: 0.95;
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 15px 15px;
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 65%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 65%);
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  animation: smoothFloatOrb 110s ease-in-out infinite;
 }
 
 /* Home Main Content Box */

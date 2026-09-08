@@ -50,24 +50,20 @@
 .projects-home-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #23232b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  background: transparent;
+  border: none;
   color: #CCCCCC;
-  font-size: 13px;
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  padding: 5px 12px;
+  padding: 4px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .projects-home-btn:hover {
-  background: #2e2e38;
   color: #FFFFFF;
-  border-color: #6366f1;
-  transform: translateX(-2px);
+  transform: translateX(-3px);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .projects-header-title {
@@ -120,15 +116,16 @@
 }
 
 .sidebar-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
 }
 
-/* Active Category Pill */
+/* Active Category Pill - Clean subtle border without purple stroke */
 .sidebar-item.active {
   background: #282833;
   box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.40), 0px 1px 2px rgba(255, 255, 255, 0.08) inset;
-  border: 1px solid #6366f1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-item-icon {
@@ -139,6 +136,10 @@
   justify-content: center;
   flex-shrink: 0;
   color: #a78bfa;
+}
+
+.sidebar-item.active .sidebar-item-icon {
+  color: #FFFFFF;
 }
 
 .sidebar-item-label {
@@ -214,8 +215,8 @@
 
 .project-grid-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.25);
-  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: #383844;
 }
 
 .project-grid-card.with-image img {

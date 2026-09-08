@@ -2,6 +2,7 @@
 .skills-page-container {
   position: relative;
   width: 100vw;
+  height: 100vh;
   min-height: 100vh;
   background: #18181d;
   overflow-y: auto;
@@ -10,44 +11,57 @@
   flex-direction: column;
   color: #FFFFFF;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
-/* Top Header Bar */
-.skills-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+/* Background Image Layer */
+.skills-bg-image {
+  position: fixed;
+  inset: 0;
   width: 100%;
-  height: 52px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  background: rgba(24, 24, 29, 0.88);
-  backdrop-filter: blur(12px);
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.skills-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+/* Pure Floating Back Button (Zero Topbar Strip / No Background Bar) */
+.skills-topbar {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  z-index: 100;
+  background: transparent;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
 }
 
 .skills-home-btn {
   display: flex;
   align-items: center;
-  gap: 7px;
-  background: #23232b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  background: transparent;
+  border: none;
   color: #CCCCCC;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 6px 14px;
+  padding: 6px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .skills-home-btn:hover {
-  background: #2e2e38;
   color: #FFFFFF;
-  border-color: #6366f1;
-  transform: translateX(-2px);
+  transform: translateX(-3px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .skills-topbar-title {
@@ -68,15 +82,19 @@
   padding: 24px 20px;
 }
 
-/* Master Skills Card */
+/* Master Skills Card - Premium Frosted Glassmorphism */
 .skills-master-card {
   position: relative;
   width: 100%;
   max-width: 1020px;
-  background: #1c1c23;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 28, 35, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 1px 1px rgba(255, 255, 255, 0.15) inset;
   padding: 44px 40px;
   display: flex;
   align-items: flex-start;
@@ -166,8 +184,10 @@
 }
 
 .skills-learning-card {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
   padding: 14px 16px;
   display: flex;
@@ -177,8 +197,8 @@
 }
 
 .skills-learning-card:hover {
-  background: rgba(129, 140, 248, 0.08);
-  border-color: rgba(129, 140, 248, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
   transform: translateY(-2px);
 }
 
@@ -226,8 +246,10 @@
 }
 
 .skill-card-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: 22px 16px;
   display: flex;
@@ -240,10 +262,10 @@
 }
 
 .skill-card-item:hover {
-  background: rgba(129, 140, 248, 0.08);
-  border-color: rgba(129, 140, 248, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 .skill-card-icon-wrap {

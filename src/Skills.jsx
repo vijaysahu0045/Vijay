@@ -1,5 +1,6 @@
 import React from 'react'
 import './Skills.css'
+import bgImage from './assets/projects-bg.png'
 
 const SKILLS_DATA = [
   {
@@ -77,6 +78,11 @@ const SKILLS_DATA = [
 export default function Skills({ onBack }) {
   return (
     <div className="skills-page-container">
+      {/* Background Image Layer */}
+      <div className="skills-bg-image">
+        <img src={bgImage} alt="" />
+      </div>
+
       {/* Smooth Moving Purple Ball Layer */}
       <div className="page-ambient-glow-layer">
         <div className="page-moving-purple-orb" />
@@ -84,13 +90,11 @@ export default function Skills({ onBack }) {
 
       {/* Top Header Bar */}
       <header className="skills-topbar">
-        <button className="skills-home-btn" onClick={onBack}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        <button className="skills-home-btn" onClick={onBack} title="Back">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
           </svg>
-          <span>Home</span>
         </button>
-        <span className="skills-topbar-title">PORTFOLIO / SKILLS</span>
       </header>
 
       {/* Main Content Area */}

@@ -162,15 +162,13 @@ export default function Projects({ onBack, onOpenProject }) {
       <header className="projects-topbar">
         <div className="projects-topbar-left">
           {onBack && (
-            <button className="projects-home-btn" onClick={onBack}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            <button className="projects-home-btn" onClick={onBack} title="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
               </svg>
-              <span>Home</span>
             </button>
           )}
         </div>
-        <div className="projects-header-title">Portfolio Projects</div>
       </header>
 
       {/* Main Body: Sidebar + Grid */}

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import bgImage from './assets/bg-image.png'
-import cardImg1 from './assets/project-card-1.png'
 import Projects from './Projects'
 import ProjectDetail from './ProjectDetail'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Resume from './Resume'
 import Contact from './Contact'
+import { getShuffledProjects } from './projectsData'
 
 const HERO_ROTATING_PHRASES = [
   "Hi, I’m Vijay.",
@@ -16,66 +16,13 @@ const HERO_ROTATING_PHRASES = [
   "UI Motion & Graphics Designer"
 ]
 
-const HOME_PROJECTS = [
-  {
-    id: 1,
-    title: 'Minimalist sidebar component',
-    author: 'by Joshua Guo',
-    theme: 'theme-dark',
-    icon: '⚡',
-    tag: 'UI Component System',
-    description: 'Clean collapsible navigation sidebar with fluid hover animations and dark mode tokens.'
-  },
-  {
-    id: 2,
-    title: 'Canvas Gallery',
-    author: 'by Brand Studio',
-    theme: 'theme-purple',
-    icon: '🎨',
-    tag: 'Visual Art Exhibition',
-    description: 'Interactive WebGL-inspired digital gallery canvas with smooth drag and zoom exploration.'
-  },
-  {
-    id: 3,
-    title: 'Plan That Trip.',
-    author: 'by Johannes',
-    theme: 'theme-light',
-    icon: '✈️',
-    tag: 'Travel Planner App',
-    description: 'Minimalist itinerary creator, interactive maps, and budget estimation for group travel.'
-  },
-  {
-    id: 4,
-    title: 'Fymble App',
-    author: 'by Vijay',
-    image: cardImg1,
-    tag: 'Fitness & Gym Passes',
-    description: 'Find gyms near you, book daily passes & get expert diet plans all in one app.'
-  },
-  {
-    id: 5,
-    title: 'Fitness App Design',
-    author: 'by Vijay',
-    theme: 'theme-blue',
-    icon: '🏃',
-    tag: 'Mobile Health UI',
-    description: 'Modern fitness tracking, streak counter, and workout companion UI with interactive graphs.'
-  },
-  {
-    id: 6,
-    title: 'AI Dashboard UI',
-    author: 'by Vijay',
-    theme: 'theme-sunset',
-    icon: '🧠',
-    tag: 'AI Analytics Platform',
-    description: 'Intelligent analytics workspace with real-time generative insights and predictive models.'
-  }
-]
-
 function App() {
   const [currentPage, setCurrentPage] = useState('home') // 'home' | 'projects' | 'detail' | 'about' | 'skills' | 'resume' | 'contact'
   const [selectedProject, setSelectedProject] = useState(null)
   const [carouselIndex, setCarouselIndex] = useState(0)
+
+  // Randomized pool of all 36 projects across all 6 categories
+  const [projectsList] = useState(() => getShuffledProjects())
 
   // Animated Rotating Typewriter Heading
   const [phraseIndex, setPhraseIndex] = useState(0)
@@ -90,7 +37,6 @@ function App() {
       if (!isDeleting) {
         setDisplayedPhrase(currentFullPhrase.substring(0, displayedPhrase.length + 1))
         if (displayedPhrase.length + 1 === currentFullPhrase.length) {
-          // Pause when word is completely typed
           setTimeout(() => setIsDeleting(true), 1800)
         }
       } else {
@@ -105,8 +51,8 @@ function App() {
     return () => clearTimeout(timeout)
   }, [displayedPhrase, isDeleting, phraseIndex])
 
-  // Max slide index (display 3 cards at a time out of 6)
-  const maxSlideIndex = HOME_PROJECTS.length - 3
+  // Max slide index (show 3 cards per frame)
+  const maxSlideIndex = Math.max(0, projectsList.length - 3)
 
   const handlePrevSlide = (e) => {
     e.stopPropagation()
@@ -120,12 +66,18 @@ function App() {
 
   // Route 1: Project Detail page
   if (currentPage === 'detail' && selectedProject) {
+    const handleNextProject = () => {
+      const idx = projectsList.findIndex(p => p.id === selectedProject.id)
+      const nextIdx = (idx + 1) % projectsList.length
+      setSelectedProject(projectsList[nextIdx])
+    }
+
     return (
       <ProjectDetail
         project={selectedProject}
         categoryLabel={selectedProject.category || 'UX / UI Design'}
-        onBack={() => setCurrentPage('projects')}
-        onNavigateProject={() => setCurrentPage('projects')}
+        onBack={() => setCurrentPage('home')}
+        onNavigateProject={handleNextProject}
       />
     )
   }
@@ -191,7 +143,7 @@ function App() {
       title: proj.title,
       image: proj.image || null,
       description: proj.description,
-      category: 'UI / UX Design'
+      category: proj.category || 'UX / UI Design'
     })
     setCurrentPage('detail')
   }
@@ -203,13 +155,11 @@ function App() {
         <img src={bgImage} alt="" />
       </div>
 
-      {/* Dynamic Smooth Floating Purple Ball / Glow Orb */}
+      {/* Dynamic Smooth Floating Purple Ball & Synchronized Grid Spotlight */}
       <div className="home-glow-layer">
         <div className="home-moving-purple-orb" />
+        <div className="home-moving-grid-spotlight" />
       </div>
-
-      {/* Grid Box Pattern Overlay - Illuminated dynamically where the purple glow moves */}
-      <div className="home-grid-pattern-overlay" />
 
       {/* Main Content Area */}
       <div className="home-content">
@@ -221,7 +171,7 @@ function App() {
           </h1>
         </div>
 
-        {/* AI Input / Navigation Bar */}
+        {/* AI Navigation Bar */}
         <div className="ai-nav-bar">
           {['Projects', 'About Me', 'Skills', 'Resume', 'Contact'].map((item) => (
             <div
@@ -254,7 +204,6 @@ function App() {
 
             {/* Left & Right Arrow Buttons for Carousel Slider */}
             <div className="arrow-buttons-group">
-              {/* Left Arrow Button */}
               <button
                 className="nav-arrow-btn"
                 onClick={handlePrevSlide}
@@ -265,7 +214,6 @@ function App() {
                 </svg>
               </button>
 
-              {/* Right Arrow Button */}
               <button
                 className="nav-arrow-btn"
                 onClick={handleNextSlide}
@@ -279,7 +227,7 @@ function App() {
           </div>
         </div>
 
-        {/* Interactive Carousel Cards Slider */}
+        {/* Interactive Carousel Cards Slider with all 36 randomized projects */}
         <div className="home-carousel-viewport">
           <div
             className="home-carousel-track"
@@ -287,9 +235,9 @@ function App() {
               transform: `translateX(calc(-${carouselIndex} * ((100% - 36px) / 3 + 18px)))`
             }}
           >
-            {HOME_PROJECTS.map((proj) => (
+            {projectsList.map((proj) => (
               <div
-                key={proj.id}
+                key={`${proj.category}-${proj.id}`}
                 className="home-carousel-card-item"
                 onClick={() => openHomeProject(proj)}
               >
@@ -298,15 +246,15 @@ function App() {
                     <img src={proj.image} alt={proj.title} />
                   ) : (
                     <div className={`home-card-gradient-mock ${proj.theme || 'theme-dark'}`}>
-                      <span className="mock-mini-icon">{proj.icon}</span>
-                      <span className="mock-mini-tag">{proj.tag}</span>
+                      <span className="mock-mini-icon">{proj.icon || '✨'}</span>
+                      <span className="mock-mini-tag">{proj.tag || proj.category}</span>
                     </div>
                   )}
                 </div>
 
                 <div className="home-card-meta">
                   <span className="home-card-title">{proj.title}</span>
-                  <span className="home-card-author">{proj.author}</span>
+                  <span className="home-card-author">{proj.author || 'by Vijay'}</span>
                 </div>
               </div>
             ))}
