@@ -19,6 +19,8 @@ const HERO_ROTATING_PHRASES = [
 function App() {
   const [currentPage, setCurrentPage] = useState('home') // 'home' | 'projects' | 'detail' | 'about' | 'skills' | 'resume' | 'contact'
   const [selectedProject, setSelectedProject] = useState(null)
+  const [activeCategory, setActiveCategory] = useState('ux-ui')
+  const [detailSource, setDetailSource] = useState('projects') // 'projects' | 'home'
   const [carouselIndex, setCarouselIndex] = useState(0)
 
   // Randomized pool of all 36 projects across all 6 categories
@@ -69,14 +71,15 @@ function App() {
     const handleNextProject = () => {
       const idx = projectsList.findIndex(p => p.id === selectedProject.id)
       const nextIdx = (idx + 1) % projectsList.length
-      setSelectedProject(projectsList[nextIdx])
+      const nextProj = projectsList[nextIdx]
+      setSelectedProject(nextProj)
     }
 
     return (
       <ProjectDetail
         project={selectedProject}
         categoryLabel={selectedProject.category || 'UX / UI Design'}
-        onBack={() => setCurrentPage('projects')}
+        onBack={() => setCurrentPage(detailSource || 'projects')}
         onNavigateProject={handleNextProject}
       />
     )
@@ -86,9 +89,13 @@ function App() {
   if (currentPage === 'projects') {
     return (
       <Projects
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
         onBack={() => setCurrentPage('home')}
-        onOpenProject={(proj, catLabel) => {
-          setSelectedProject({ ...proj, category: catLabel })
+        onOpenProject={(proj, catLabel, catId) => {
+          if (catId) setActiveCategory(catId)
+          setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
+          setDetailSource('projects')
           setCurrentPage('detail')
         }}
       />
@@ -145,6 +152,7 @@ function App() {
       description: proj.description,
       category: proj.category || 'UX / UI Design'
     })
+    setDetailSource('home')
     setCurrentPage('detail')
   }
 

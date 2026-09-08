@@ -1,4 +1,5 @@
 import cardImg1 from './assets/project-card-1.png'
+import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 
 export const CATEGORIES = [
   {
@@ -33,7 +34,7 @@ export const CATEGORIES = [
     iconName: 'graphic',
     projects: [
       { id: 13, title: 'Brand Identity & Guidelines', image: null, tag: 'BRAND IDENTITY', theme: 'theme-purple', icon: '🎨', description: 'Complete visual identity system, logos, typography rules, and color palettes.' },
-      { id: 14, title: 'Marketing Social Banners', image: null, tag: 'SOCIAL CAMPAIGN', theme: 'theme-sunset', icon: '📢', description: 'Engaging high-converting social media creatives and marketing asset pack.' },
+      { id: 14, title: 'Fymble — Daily Gym Pass Banner', image: fymbleGymPassBanner, tag: 'CAMPAIGN BANNER', theme: 'theme-sunset', icon: '📢', description: 'High-converting promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.' },
       { id: 15, title: 'Vector Illustration Pack', image: null, tag: 'ILLUSTRATIONS', theme: 'theme-blue', icon: '🖌️', description: 'Custom illustrated character sets, micro-icons, and storytelling graphics.' },
       { id: 16, title: 'Product Packaging Design', image: null, tag: 'PACKAGING', theme: 'theme-dark', icon: '📦', description: 'Modern eco-friendly retail package designs with 3D print mockups.' },
       { id: 17, title: 'Typography Posters', image: null, tag: 'TYPOGRAPHY', theme: 'theme-light', icon: '🔤', description: 'Experimental editorial typography art and Swiss-style poster compositions.' },
