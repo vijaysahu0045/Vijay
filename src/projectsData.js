@@ -87,6 +87,7 @@ export const ALL_FLATTENED_PROJECTS = CATEGORIES.flatMap((cat) =>
   cat.projects.map((proj) => ({
     ...proj,
     category: cat.label,
+    categoryId: cat.id,
     author: 'by Vijay'
   }))
 )

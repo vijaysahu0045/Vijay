@@ -1742,3 +1742,70 @@
   }
 }
 
+/* General Project Mockup Preview */
+.general-mock-frame {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.general-banner-mock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 24px;
+  text-align: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.general-banner-mock.theme-purple {
+  background: radial-gradient(circle at top right, rgba(167, 139, 250, 0.25), transparent 70%), #171720;
+}
+
+.general-banner-mock.theme-sunset {
+  background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.25), transparent 70%), #171720;
+}
+
+.general-banner-mock.theme-blue {
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.25), transparent 70%), #171720;
+}
+
+.general-banner-mock.theme-dark {
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 70%), #14141a;
+}
+
+.general-banner-mock.theme-light {
+  background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.2), transparent 70%), #171720;
+}
+
+.general-mock-icon {
+  font-size: 48px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+.general-mock-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #a78bfa;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.general-mock-title {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 320px;
+}
+
+

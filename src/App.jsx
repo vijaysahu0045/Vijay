@@ -145,12 +145,13 @@ function App() {
   }
 
   const openHomeProject = (proj) => {
+    if (proj.categoryId) {
+      setActiveCategory(proj.categoryId)
+    }
     setSelectedProject({
-      id: proj.id,
-      title: proj.title,
-      image: proj.image || null,
-      description: proj.description,
-      category: proj.category || 'UX / UI Design'
+      ...proj,
+      category: proj.category || 'UX / UI Design',
+      categoryId: proj.categoryId || activeCategory
     })
     setDetailSource('home')
     setCurrentPage('detail')

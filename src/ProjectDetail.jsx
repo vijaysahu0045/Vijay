@@ -10,19 +10,11 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const [blackoutMsg, setBlackoutMsg] = useState('')
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
-  // Determine if this is a Graphic Design / Artwork / Poster Project
-  const isGraphicProject = Boolean(
-    project.image && (
-      project.categoryId === 'graphic' ||
-      categoryLabel?.toLowerCase().includes('graphic') ||
-      project.tag?.includes('BANNER') ||
-      project.tag?.includes('POSTER') ||
-      project.tag?.includes('BRAND') ||
-      project.tag?.includes('PACKAGING') ||
-      project.title?.toLowerCase().includes('banner') ||
-      project.title?.toLowerCase().includes('poster')
-    )
-  )
+  // 1. Full Image Artwork Project (renders exact high-res image showcase)
+  const isImageArtworkProject = Boolean(project.image && project.id !== 1)
+
+  // 2. Fymble Multi-Platform Flagship UX/UI Case Study (renders interactive 3D phone ecosystem)
+  const isFymbleFlagshipCaseStudy = project.id === 1
 
   // =========================================================================
   // ANTI-DOWNLOAD, ANTI-RIGHT-CLICK & ANTI-SCREENSHOT BLACKOUT PROTECTION
@@ -154,14 +146,14 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         <button
           className="detail-action-btn"
           onClick={() => {
-            if (isGraphicProject) {
+            if (isImageArtworkProject) {
               setIsLightboxOpen(true)
             } else {
               alert(`Launching live interactive prototype for ${project.title}...`)
             }
           }}
         >
-          <span>{isGraphicProject ? 'Inspect Artwork' : 'View Prototype'}</span>
+          <span>{isImageArtworkProject ? 'Inspect Artwork' : 'View Prototype'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -169,9 +161,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       </header>
 
       {/* =====================================================================
-          RENDER BRANCH 1: GRAPHIC DESIGN / FULL ARTWORK SHOWCASE
+          RENDER BRANCH 1: FULL IMAGE ARTWORK / GRAPHIC SHOWCASE
           ===================================================================== */}
-      {isGraphicProject ? (
+      {isImageArtworkProject ? (
         <main className="detail-content graphic-showcase-main">
           {/* SECTION 1: GRAPHIC HERO SHOWCASE */}
           <section className="graphic-hero-layout">
@@ -180,15 +172,15 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               <div className="case-category-label">
                 <span>{project.title}</span>
                 <span className="dot-sep">•</span>
-                <span>{categoryLabel || 'Graphic Design'}</span>
+                <span>{categoryLabel || project.category || 'Graphic Design'}</span>
               </div>
 
               <h1 className="graphic-hero-title">
-                High-Conversion Campaign Design for Fymble.
+                {project.title}
               </h1>
 
               <p className="case-hero-subtitle">
-                {project.description || 'Promotional marketing asset engineered to drive daily gym pass bookings at ₹99 with irresistible iPhone 17 Pro Max lucky draw hook.'}
+                {project.description || 'High-converting promotional marketing poster designed for high-impact social campaigns.'}
               </p>
 
               {/* Metadata Pills */}
@@ -204,7 +196,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <div className="case-meta-pill">
                   <span className="meta-icon">🏢</span>
                   <div className="meta-text">
-                    <span className="meta-lbl">Brand</span>
+                    <span className="meta-lbl">Brand / Client</span>
                     <span className="meta-val">Fymble Technologies</span>
                   </div>
                 </div>
@@ -213,7 +205,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                   <span className="meta-icon">📐</span>
                   <div className="meta-text">
                     <span className="meta-lbl">Format</span>
-                    <span className="meta-val">1080×1350px &amp; 4K Billboard</span>
+                    <span className="meta-val">1080×1350px &amp; 4K Display</span>
                   </div>
                 </div>
 
@@ -221,7 +213,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                   <span className="meta-icon">⚡</span>
                   <div className="meta-text">
                     <span className="meta-lbl">Tools</span>
-                    <span className="meta-val">Figma, Photoshop, 3D Render</span>
+                    <span className="meta-val">Figma, Photoshop, Blender 3D</span>
                   </div>
                 </div>
               </div>
@@ -230,7 +222,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               <div className="graphic-strategy-row">
                 <div className="strat-badge">
                   <span className="strat-dot" />
-                  <span>+42% CTR Uplift</span>
+                  <span>High-Conversion Visual Hook</span>
                 </div>
                 <div className="strat-badge">
                   <span className="strat-dot" />
@@ -238,7 +230,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 </div>
                 <div className="strat-badge">
                   <span className="strat-dot" />
-                  <span>Photorealistic 3D Renders</span>
+                  <span>3D Realistic Asset</span>
                 </div>
               </div>
             </div>
@@ -300,7 +292,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <div className="card-top-icon">🏷️</div>
                 <h3>1. High-Contrast Price Anchoring</h3>
                 <p>
-                  Placing the prominent <strong>₹99</strong> orange badge at optical center breaks price resistance and instantly communicates ultra-low barrier to entry for users.
+                  Placing the prominent <strong>₹99</strong> badge at optical center breaks price resistance and instantly communicates ultra-low barrier to entry for users.
                 </p>
               </div>
 
@@ -385,9 +377,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </button>
           </footer>
         </main>
-      ) : (
+      ) : isFymbleFlagshipCaseStudy ? (
         /* =====================================================================
-            RENDER BRANCH 2: UX / UI PRODUCT CASE STUDY (3D Phone Ecosystem)
+            RENDER BRANCH 2: FYMBLE FLAGSHIP 3D PHONE ECOSYSTEM CASE STUDY
             ===================================================================== */
         <main className="detail-content">
         {/* =========================================================================
@@ -935,12 +927,128 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </button>
           </footer>
         </main>
+      ) : (
+        /* =====================================================================
+            RENDER BRANCH 3: GENERAL PROJECT OVERVIEW & ARCHITECTURE SPECS
+            ===================================================================== */
+        <main className="detail-content graphic-showcase-main">
+          <section className="graphic-hero-layout">
+            <div className="graphic-info-col">
+              <div className="case-category-label">
+                <span>{project.title}</span>
+                <span className="dot-sep">•</span>
+                <span>{categoryLabel || project.category || 'Product Design'}</span>
+              </div>
+
+              <h1 className="graphic-hero-title">
+                {project.title}
+              </h1>
+
+              <p className="case-hero-subtitle">
+                {project.description || 'Comprehensive design system, responsive UI architecture, and high-fidelity prototypes.'}
+              </p>
+
+              <div className="case-meta-row graphic-meta-grid">
+                <div className="case-meta-pill">
+                  <span className="meta-icon">👤</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Role</span>
+                    <span className="meta-val">Lead Product Designer</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">🏷️</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Tag</span>
+                    <span className="meta-val">{project.tag || project.category}</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">🚀</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Status</span>
+                    <span className="meta-val">Designed &amp; Prototyped</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">⚡</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Tools</span>
+                    <span className="meta-val">Figma, Next.js, React</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="graphic-artwork-col">
+              <div className="artwork-glass-frame general-mock-frame">
+                <div className={`general-banner-mock ${project.theme || 'theme-purple'}`}>
+                  <span className="general-mock-icon">{project.icon || '✨'}</span>
+                  <span className="general-mock-tag">{project.tag || project.category}</span>
+                  <h3 className="general-mock-title">{project.title}</h3>
+                </div>
+                <div className="artwork-frame-bar">
+                  <span className="artwork-frame-title">{project.title}</span>
+                  <span className="lb-shield-tag">Case Study In Production</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Core Highlights */}
+          <section className="case-section-container">
+            <div className="case-section-head">
+              <span className="section-eyebrow eyebrow-purple">KEY ARCHITECTURE</span>
+              <h2 className="case-section-h2">Design precision engineered for performance.</h2>
+            </div>
+
+            <div className="problem-cards-grid">
+              <div className="problem-card">
+                <div className="card-top-icon">📐</div>
+                <h3>1. Cohesive Design System</h3>
+                <p>Built with accessible color contrast tokens, fluid typography scaling, and standard 8pt spatial grid.</p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">⚡</div>
+                <h3>2. Seamless User Flows</h3>
+                <p>Minimal click paths with predictive micro-interactions and instant feedback states.</p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">📱</div>
+                <h3>3. Multi-Device Adaptability</h3>
+                <p>Optimized layouts crafted for flawless responsive rendering across mobile, tablet, and desktop viewports.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer Navigation */}
+          <footer className="case-footer-nav">
+            <button className="case-nav-btn" onClick={onBack}>
+              <span>← Back to All Projects</span>
+            </button>
+
+            <button
+              className="case-nav-btn primary"
+              onClick={() => {
+                if (onNavigateProject) onNavigateProject()
+                else onBack()
+              }}
+            >
+              <span>Next Project →</span>
+            </button>
+          </footer>
+        </main>
       )}
 
       {/* =====================================================================
           LIGHTBOX MODAL FOR FULLSCREEN ARTWORK INSPECT
           ===================================================================== */}
-      {isLightboxOpen && isGraphicProject && (
+      {isLightboxOpen && isImageArtworkProject && (
         <div className="artwork-lightbox-modal" onClick={() => setIsLightboxOpen(false)}>
           <div className="lightbox-content-box" onClick={(e) => e.stopPropagation()}>
             <button
