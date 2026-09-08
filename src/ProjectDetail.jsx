@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
 import bgImage from './assets/projects-bg.png'
 
@@ -6,12 +6,131 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   if (!project) return null
 
   const [activeStep, setActiveStep] = useState(0)
+  const [isBlackout, setIsBlackout] = useState(false)
+  const [blackoutMsg, setBlackoutMsg] = useState('')
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+
+  // Determine if this is a Graphic Design / Artwork / Poster Project
+  const isGraphicProject = Boolean(
+    project.image && (
+      project.categoryId === 'graphic' ||
+      categoryLabel?.toLowerCase().includes('graphic') ||
+      project.tag?.includes('BANNER') ||
+      project.tag?.includes('POSTER') ||
+      project.tag?.includes('BRAND') ||
+      project.tag?.includes('PACKAGING') ||
+      project.title?.toLowerCase().includes('banner') ||
+      project.title?.toLowerCase().includes('poster')
+    )
+  )
+
+  // =========================================================================
+  // ANTI-DOWNLOAD, ANTI-RIGHT-CLICK & ANTI-SCREENSHOT BLACKOUT PROTECTION
+  // =========================================================================
+  useEffect(() => {
+    let blackoutTimer = null
+
+    const triggerBlackout = (reason) => {
+      setIsBlackout(true)
+      setBlackoutMsg(reason)
+      if (blackoutTimer) clearTimeout(blackoutTimer)
+      blackoutTimer = setTimeout(() => {
+        setIsBlackout(false)
+      }, 2200)
+    }
+
+    // 1. Block right click / context menu
+    const handleContextMenu = (e) => {
+      e.preventDefault()
+      return false
+    }
+
+    // 2. Keyboard shortcut prevention (PrintScreen, Snipping tool, DevTools, Save, Print)
+    const handleKeyDown = (e) => {
+      // PrintScreen key pressed
+      if (e.key === 'PrintScreen' || e.code === 'PrintScreen') {
+        e.preventDefault()
+        triggerBlackout('Screenshot Key Intercepted')
+        try {
+          navigator.clipboard?.writeText('🔒 Protected Design Asset — © Vijay Sahu')
+        } catch (_) {}
+      }
+
+      // Block Ctrl+S (Save), Ctrl+P (Print), Ctrl+U (Source)
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'S', 'P', 'U'].includes(e.key)) {
+        e.preventDefault()
+        triggerBlackout('Page Save / Print Restricted')
+      }
+
+      // Block Ctrl+Shift+I / Ctrl+Shift+C / Ctrl+Shift+J (DevTools) / Win+Shift+S (Snipping)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I', 'i', 'C', 'c', 'J', 'j', 'S', 's'].includes(e.key)) {
+        e.preventDefault()
+        triggerBlackout('Developer Tools / Screen Snip Restricted')
+      }
+
+      // Block F12
+      if (e.key === 'F12') {
+        e.preventDefault()
+        triggerBlackout('Developer Inspection Restricted')
+      }
+    }
+
+    const handleKeyUp = (e) => {
+      if (e.key === 'PrintScreen' || e.code === 'PrintScreen') {
+        triggerBlackout('Screenshot Attempt Blocked')
+      }
+    }
+
+    // 3. Window Blur Detection (Triggers when Windows Snipping Tool Win+Shift+S or screen recorder pops up)
+    const handleWindowBlur = () => {
+      setIsBlackout(true)
+      setBlackoutMsg('Screen Capture Protection Active')
+    }
+
+    const handleWindowFocus = () => {
+      setIsBlackout(false)
+    }
+
+    window.addEventListener('contextmenu', handleContextMenu)
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+    window.addEventListener('blur', handleWindowBlur)
+    window.addEventListener('focus', handleWindowFocus)
+
+    return () => {
+      window.removeEventListener('contextmenu', handleContextMenu)
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+      window.removeEventListener('blur', handleWindowBlur)
+      window.removeEventListener('focus', handleWindowFocus)
+      if (blackoutTimer) clearTimeout(blackoutTimer)
+    }
+  }, [])
 
   return (
-    <div className="detail-container">
+    <div
+      className="detail-container"
+      onContextMenu={(e) => e.preventDefault()}
+    >
+      {/* =====================================================================
+          SECURITY BLACKOUT SCREEN (Anti-Screenshot / Snipping Protection)
+          ===================================================================== */}
+      {isBlackout && (
+        <div className="security-blackout-shield">
+          <div className="security-shield-card">
+            <div className="security-shield-icon">🔒</div>
+            <h3 className="security-shield-title">Protected Creative Work</h3>
+            <p className="security-shield-desc">
+              {blackoutMsg || 'Screenshots, screen recordings, and asset downloads are restricted to protect intellectual property.'}
+            </p>
+            <span className="security-shield-badge">© 2026 Vijay Sahu • Design Protected</span>
+          </div>
+        </div>
+      )}
+
       {/* Background Image Layer */}
       <div className="detail-bg-image">
-        <img src={bgImage} alt="" />
+        <img src={bgImage} alt="" draggable="false" />
       </div>
 
       {/* Smooth Moving Purple Ambient Orb */}
@@ -27,19 +146,250 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
           </svg>
         </button>
 
+        <div className="detail-topbar-center-tag">
+          <span className="shield-lock-icon">🔒</span>
+          <span>Protected Portfolio Asset</span>
+        </div>
+
         <button
           className="detail-action-btn"
-          onClick={() => alert(`Launching live interactive prototype for ${project.title}...`)}
+          onClick={() => {
+            if (isGraphicProject) {
+              setIsLightboxOpen(true)
+            } else {
+              alert(`Launching live interactive prototype for ${project.title}...`)
+            }
+          }}
         >
-          <span>View Prototype</span>
+          <span>{isGraphicProject ? 'Inspect Artwork' : 'View Prototype'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
       </header>
 
-      {/* Main Case Study Body */}
-      <main className="detail-content">
+      {/* =====================================================================
+          RENDER BRANCH 1: GRAPHIC DESIGN / FULL ARTWORK SHOWCASE
+          ===================================================================== */}
+      {isGraphicProject ? (
+        <main className="detail-content graphic-showcase-main">
+          {/* SECTION 1: GRAPHIC HERO SHOWCASE */}
+          <section className="graphic-hero-layout">
+            {/* Left: Project Information & Design Context */}
+            <div className="graphic-info-col">
+              <div className="case-category-label">
+                <span>{project.title}</span>
+                <span className="dot-sep">•</span>
+                <span>{categoryLabel || 'Graphic Design'}</span>
+              </div>
+
+              <h1 className="graphic-hero-title">
+                High-Conversion Campaign Design for Fymble.
+              </h1>
+
+              <p className="case-hero-subtitle">
+                {project.description || 'Promotional marketing asset engineered to drive daily gym pass bookings at ₹99 with irresistible iPhone 17 Pro Max lucky draw hook.'}
+              </p>
+
+              {/* Metadata Pills */}
+              <div className="case-meta-row graphic-meta-grid">
+                <div className="case-meta-pill">
+                  <span className="meta-icon">🎨</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Discipline</span>
+                    <span className="meta-val">Visual &amp; Graphic Design</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">🏢</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Brand</span>
+                    <span className="meta-val">Fymble Technologies</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">📐</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Format</span>
+                    <span className="meta-val">1080×1350px &amp; 4K Billboard</span>
+                  </div>
+                </div>
+
+                <div className="case-meta-pill">
+                  <span className="meta-icon">⚡</span>
+                  <div className="meta-text">
+                    <span className="meta-lbl">Tools</span>
+                    <span className="meta-val">Figma, Photoshop, 3D Render</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Strategy Highlight Badges */}
+              <div className="graphic-strategy-row">
+                <div className="strat-badge">
+                  <span className="strat-dot" />
+                  <span>+42% CTR Uplift</span>
+                </div>
+                <div className="strat-badge">
+                  <span className="strat-dot" />
+                  <span>₹99 Price Anchoring</span>
+                </div>
+                <div className="strat-badge">
+                  <span className="strat-dot" />
+                  <span>Photorealistic 3D Renders</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Full High-Res Artwork Showcase Frame */}
+            <div className="graphic-artwork-col">
+              <div className="artwork-glass-frame">
+                <div className="artwork-ambient-glow" />
+
+                {/* The Full Image with Guard Protection Layer */}
+                <div className="artwork-media-wrap">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="artwork-full-img"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+
+                  {/* Invisible Anti-Drag & Anti-Download Protection Shield */}
+                  <div
+                    className="artwork-protection-shield"
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                  >
+                    <div className="shield-watermark-tag">
+                      <span>🔒 Designed by Vijay Sahu • Protected Asset</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Frame Footer Controls */}
+                <div className="artwork-frame-bar">
+                  <span className="artwork-frame-title">{project.title}</span>
+                  <button
+                    className="artwork-expand-btn"
+                    onClick={() => setIsLightboxOpen(true)}
+                    title="Fullscreen Inspect"
+                  >
+                    <span>Full View</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 2: VISUAL STRATEGY & BREAKDOWN */}
+          <section className="case-section-container">
+            <div className="case-section-head">
+              <span className="section-eyebrow eyebrow-purple">CREATIVE STRATEGY</span>
+              <h2 className="case-section-h2">Visual hierarchy engineered for instant conversion.</h2>
+            </div>
+
+            <div className="problem-cards-grid">
+              <div className="problem-card">
+                <div className="card-top-icon">🏷️</div>
+                <h3>1. High-Contrast Price Anchoring</h3>
+                <p>
+                  Placing the prominent <strong>₹99</strong> orange badge at optical center breaks price resistance and instantly communicates ultra-low barrier to entry for users.
+                </p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">📱</div>
+                <h3>2. Realistic 3D Phone Hardware</h3>
+                <p>
+                  Dual angled titanium mockups with warm rim reflections establish luxury prestige and showcase the sleek app interface in a tangible device form.
+                </p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">🎁</div>
+                <h3>3. Viral Gamification Hook</h3>
+                <p>
+                  The starburst <strong>WIN iPhone 17 Pro Max</strong> bottom banner adds irresistible reward gamification, transforming passive viewers into daily active pass buyers.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 3: COLOR PALETTE & ASSET SPECIFICATIONS */}
+          <section className="case-section-container">
+            <div className="case-section-head">
+              <span className="section-eyebrow eyebrow-coral">COLOR SYSTEM &amp; TYPOGRAPHY</span>
+              <h2 className="case-section-h2">Warm sunset energy paired with obsidian dark luxury.</h2>
+            </div>
+
+            <div className="graphic-palette-grid">
+              <div className="palette-card">
+                <div className="swatch-block" style={{ background: '#FF6B00' }} />
+                <div className="swatch-meta">
+                  <span className="swatch-name">Sunset Tangerine</span>
+                  <span className="swatch-hex">#FF6B00</span>
+                  <span className="swatch-use">Primary Callout &amp; Price Tag</span>
+                </div>
+              </div>
+
+              <div className="palette-card">
+                <div className="swatch-block" style={{ background: '#B84E18' }} />
+                <div className="swatch-meta">
+                  <span className="swatch-name">Titanium Copper</span>
+                  <span className="swatch-hex">#B84E18</span>
+                  <span className="swatch-use">Hardware Chasis &amp; Gradient</span>
+                </div>
+              </div>
+
+              <div className="palette-card">
+                <div className="swatch-block" style={{ background: '#121216', border: '1px solid rgba(255,255,255,0.1)' }} />
+                <div className="swatch-meta">
+                  <span className="swatch-name">Obsidian Deep</span>
+                  <span className="swatch-hex">#121216</span>
+                  <span className="swatch-use">Backdrop Shadow &amp; Framing</span>
+                </div>
+              </div>
+
+              <div className="palette-card">
+                <div className="swatch-block" style={{ background: '#FFFFFF' }} />
+                <div className="swatch-meta">
+                  <span className="swatch-name">Pure Ivory</span>
+                  <span className="swatch-hex">#FFFFFF</span>
+                  <span className="swatch-use">High-Legibility Headlines</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer Navigation */}
+          <footer className="case-footer-nav">
+            <button className="case-nav-btn" onClick={onBack}>
+              <span>← Back to All Projects</span>
+            </button>
+
+            <button
+              className="case-nav-btn primary"
+              onClick={() => {
+                if (onNavigateProject) onNavigateProject()
+                else onBack()
+              }}
+            >
+              <span>Next Project →</span>
+            </button>
+          </footer>
+        </main>
+      ) : (
+        /* =====================================================================
+            RENDER BRANCH 2: UX / UI PRODUCT CASE STUDY (3D Phone Ecosystem)
+            ===================================================================== */
+        <main className="detail-content">
         {/* =========================================================================
             SECTION 1: HERO & 3D PHONE MOCKUPS
             ========================================================================= */}
@@ -568,23 +918,64 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
           </div>
         </section>
 
-        {/* Footer Navigation */}
-        <footer className="case-footer-nav">
-          <button className="case-nav-btn" onClick={onBack}>
-            <span>← Back to All Projects</span>
-          </button>
+          {/* Footer Navigation */}
+          <footer className="case-footer-nav">
+            <button className="case-nav-btn" onClick={onBack}>
+              <span>← Back to All Projects</span>
+            </button>
 
-          <button
-            className="case-nav-btn primary"
-            onClick={() => {
-              if (onNavigateProject) onNavigateProject()
-              else onBack()
-            }}
-          >
-            <span>Next Project →</span>
-          </button>
-        </footer>
-      </main>
+            <button
+              className="case-nav-btn primary"
+              onClick={() => {
+                if (onNavigateProject) onNavigateProject()
+                else onBack()
+              }}
+            >
+              <span>Next Project →</span>
+            </button>
+          </footer>
+        </main>
+      )}
+
+      {/* =====================================================================
+          LIGHTBOX MODAL FOR FULLSCREEN ARTWORK INSPECT
+          ===================================================================== */}
+      {isLightboxOpen && isGraphicProject && (
+        <div className="artwork-lightbox-modal" onClick={() => setIsLightboxOpen(false)}>
+          <div className="lightbox-content-box" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="lightbox-close-btn"
+              onClick={() => setIsLightboxOpen(false)}
+              title="Close"
+            >
+              ✕
+            </button>
+
+            <div className="lightbox-img-shield-wrap">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="lightbox-full-img"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+              />
+              <div
+                className="artwork-protection-shield"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              />
+            </div>
+
+            <div className="lightbox-caption-bar">
+              <div className="lb-title-group">
+                <span className="lb-title">{project.title}</span>
+                <span className="lb-sub">Visual &amp; Graphic Design • Vijay Sahu</span>
+              </div>
+              <span className="lb-shield-tag">🔒 Right-Click &amp; Downloads Disabled</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
