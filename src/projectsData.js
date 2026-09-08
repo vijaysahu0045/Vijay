@@ -6,9 +6,9 @@ export const CATEGORIES = [
     label: 'UX / UI Design',
     iconName: 'ux-ui',
     projects: [
-      { id: 1, title: 'Fymble App', image: cardImg1, tag: 'UX / UI DESIGN', description: 'Find gyms near you, book daily passes & get expert diet plans all in one app.' },
-      { id: 2, title: 'Fitness App Design', image: null, tag: 'FITNESS APP', theme: 'theme-blue', icon: '🏃', description: 'Modern fitness tracking, streak counter, and workout companion UI with interactive graphs.' },
-      { id: 3, title: 'Fintech Dashboard', image: null, tag: 'FINTECH UI', theme: 'theme-sunset', icon: '💳', description: 'Personal finance, crypto wallet, and automated portfolio management dashboard.' },
+      { id: 1, title: 'Fymble — Multi-Platform Ecosystem', image: cardImg1, tag: 'FLAGSHIP PRODUCT', description: 'End-to-end UX/UI for 250+ screens supporting 20K+ users and 600+ gym partners with Kyra AI coach.' },
+      { id: 2, title: 'Farmer Near Me — B2B/B2C Platform', image: null, tag: 'B2B/B2C PRODUCT', theme: 'theme-sunset', icon: '🌾', description: '100+ screens designed for farmer-to-consumer marketplace with intuitive checkout and vendor dashboard.' },
+      { id: 3, title: 'Fintech Dashboard', image: null, tag: 'FINTECH UI', theme: 'theme-blue', icon: '💳', description: 'Personal finance, crypto wallet, and automated portfolio management dashboard.' },
       { id: 4, title: 'E-commerce Mobile App', image: null, tag: 'E-COMMERCE', theme: 'theme-purple', icon: '🛍️', description: 'Seamless shopping experience with 1-click checkout and personalized feed.' },
       { id: 5, title: 'Smart Home Hub UI', image: null, tag: 'SMART IOT', theme: 'theme-dark', icon: '🏠', description: 'Intuitive IoT smart home device controls, room automation, and security dashboard.' },
       { id: 6, title: 'SaaS Analytics Platform', image: null, tag: 'SAAS ANALYTICS', theme: 'theme-light', icon: '📊', description: 'Real-time business metrics, KPI visualizers, and user behavior analytics.' },

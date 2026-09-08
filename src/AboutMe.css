@@ -65,15 +65,19 @@
   padding: 24px 20px;
 }
 
-/* Master About Card */
+/* Master About Card - Frosted Glassmorphism */
 .about-master-card {
   position: relative;
   width: 100%;
   max-width: 960px;
-  background: #1c1c23;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 28, 35, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 1px 1px rgba(255, 255, 255, 0.15) inset;
   padding: 46px 48px;
   display: flex;
   align-items: center;
