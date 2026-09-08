@@ -25,96 +25,68 @@ export default function AboutMe({ onBack }) {
         </button>
       </header>
 
-      {/* Main Wrapper */}
+      {/* Main Spacious Content */}
       <main className="about-main-wrapper">
-        <div className="about-master-card">
-          {/* Top Right Dot Matrix Pattern */}
-          <div className="about-card-dot-grid">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <span key={i} />
-            ))}
-          </div>
-
-          {/* Left Column: Text & Content */}
-          <div className="about-left-col">
-            {/* Tag / Category */}
-            <div className="about-tag-wrap">
-              <span className="about-tag-text">ABOUT ME</span>
-              <div className="about-tag-line" />
-            </div>
-
-            {/* Headline */}
-            <h1 className="about-headline">
-              Product Designer crafting{' '}
-              <span className="highlight-purple">
-                thoughtful AI &amp; UX experiences.
-              </span>
-            </h1>
-
-            {/* Body Description */}
-            <p className="about-body-text">
-              I'm <strong>Vijay Sahu</strong>, a Product Designer with 2 years of experience in end-to-end UX/UI and AI UX across B2B and B2C web and mobile platforms. Sole designer at <strong>Fymble</strong>, owning the full product lifecycle from UX strategy to 250+ production screens supporting 20K+ users and 600+ partners.
-            </p>
-
-            {/* Metrics Highlight Strip */}
-            <div className="about-stats-strip">
-              <div className="astat-item">
-                <strong>250+</strong>
-                <span>Screens Shipped</span>
+        <div className="about-content-layout">
+          {/* Top Hero Showcase Card */}
+          <div className="about-hero-card">
+            <div className="about-hero-left">
+              <div className="about-tag-wrap">
+                <span className="about-tag-text">ABOUT VIJAY</span>
+                <div className="about-tag-line" />
               </div>
-              <div className="astat-item">
-                <strong>20K+</strong>
-                <span>Active Users</span>
-              </div>
-              <div className="astat-item">
-                <strong>600+</strong>
-                <span>Gym Partners</span>
+
+              <h1 className="about-headline">
+                Designing products at the intersection of{' '}
+                <span className="highlight-purple">AI, craft &amp; intuition.</span>
+              </h1>
+
+              <p className="about-body-text">
+                Product Designer with 2 years of experience leading end-to-end design at <strong>Fymble</strong>. I specialize in turning complex product journeys into clean, human-centered digital experiences that scale.
+              </p>
+
+              {/* Spacious Metrics Row */}
+              <div className="about-metrics-row">
+                <div className="about-metric-box">
+                  <strong>250+</strong>
+                  <span>Screens Shipped</span>
+                </div>
+                <div className="about-metric-box">
+                  <strong>20K+</strong>
+                  <span>Active Users</span>
+                </div>
+                <div className="about-metric-box">
+                  <strong>600+</strong>
+                  <span>Gym Partners</span>
+                </div>
               </div>
             </div>
 
-            {/* Pill Tags Row */}
-            <div className="about-pills-row">
-              <div className="about-pill-item">
-                <span className="about-pill-icon">✨</span>
-                <span>UI/UX &amp; AI UX</span>
+            <div className="about-hero-right">
+              <div className="about-portrait-frame">
+                <img src={profileImg} alt="Vijay Sahu - Product Designer" />
               </div>
-
-              <div className="about-pill-item">
-                <span className="about-pill-icon">📦</span>
-                <span>B2B / B2C Products</span>
-              </div>
-
-              <div className="about-pill-item">
-                <span className="about-pill-icon">📐</span>
-                <span>Design Systems</span>
-              </div>
-
-              <div className="about-pill-item">
-                <span className="about-pill-icon">⚡</span>
-                <span>UI Motion Design</span>
-              </div>
-            </div>
-
-            {/* Bottom Exploring Line */}
-            <div className="about-exploring-line">
-              <span className="about-sparkle-icon">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
-              </span>
-              <span>
-                Currently exploring →{' '}
-                <span className="about-exploring-highlight">
-                  AI Agents × Design Systems × Micro-Motion
-                </span>
-              </span>
             </div>
           </div>
 
-          {/* Right Column: Portrait Card */}
-          <div className="about-right-col">
-            <div className="about-portrait-card">
-              <img src={profileImg} alt="Vijay Sahu - Product Designer" />
+          {/* Bottom 3 Clean Pillar Cards */}
+          <div className="about-pillars-grid">
+            <div className="about-pillar-card">
+              <div className="pillar-icon">🧠</div>
+              <h3>AI &amp; Multimodal UX</h3>
+              <p>Designing intelligent copilots like Kyra AI, contextual prompt flows, and adaptive interfaces.</p>
+            </div>
+
+            <div className="about-pillar-card">
+              <div className="pillar-icon">📦</div>
+              <h3>0→1 Product Strategy</h3>
+              <p>Owning the complete design lifecycle across B2B &amp; B2C ecosystems with rapid user testing.</p>
+            </div>
+
+            <div className="about-pillar-card">
+              <div className="pillar-icon">📐</div>
+              <h3>Systems &amp; Motion</h3>
+              <p>Building scalable Figma component architectures, design tokens, and fluid 60fps micro-interactions.</p>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ const SKILLS_DATA = [
   {
     id: 'ai-ux',
     title: 'UX/UI & AI UX',
-    desc: 'Designing intuitive consumer flows, AI Copilot assistants (Kyra AI), and adaptive multimodal experiences.',
+    desc: 'Consumer & enterprise workflows, AI Copilot assistants (Kyra AI), and adaptive interfaces.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
@@ -16,7 +16,7 @@ const SKILLS_DATA = [
   {
     id: 'product-design',
     title: 'Product Design',
-    desc: 'Owning end-to-end B2B/B2C product lifecycles from UX strategy to 250+ shipped production screens.',
+    desc: 'End-to-end B2B/B2C product lifecycles, user strategy, and 250+ shipped production screens.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -27,8 +27,8 @@ const SKILLS_DATA = [
   },
   {
     id: 'ux-research',
-    title: 'UX Research & Flows',
-    desc: 'User journey mapping, wireframing, interactive prototyping, and data-backed usability testing.',
+    title: 'UX Research',
+    desc: 'User journey mapping, wireframing, interactive prototyping, and usability testing.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8"/>
@@ -39,7 +39,7 @@ const SKILLS_DATA = [
   {
     id: 'design-systems',
     title: 'Design Systems',
-    desc: 'Building scalable Figma component libraries, typography hierarchy, and accessible token architecture.',
+    desc: 'Scalable Figma component architectures, design tokens, and accessible typography.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2"/>
@@ -51,7 +51,7 @@ const SKILLS_DATA = [
   {
     id: 'motion-design',
     title: 'UI Motion & Lottie',
-    desc: 'Bringing interfaces to life with fluid micro-interactions, gesture physics, and 60fps animations.',
+    desc: 'Delightful micro-interactions, gesture physics, and fluid 60fps animations.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="5 3 19 12 5 21 5 3"/>
@@ -61,7 +61,7 @@ const SKILLS_DATA = [
   {
     id: 'dev-handoff',
     title: 'Dev Handoff & QA',
-    desc: 'Partnering closely with engineering teams on Figma Dev Mode, design tokens, and pixel-perfect QA.',
+    desc: 'Figma Dev Mode specifications, design QA, and seamless developer handoff.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/>
@@ -71,7 +71,7 @@ const SKILLS_DATA = [
   }
 ]
 
-const TOOLS_LIST = ['Figma', 'Figma AI Agent', 'FigJam', 'Dev Mode', 'Adobe XD', 'Photopea', 'Lottie', 'Canva']
+const TOOLS_LIST = ['Figma', 'Figma AI', 'FigJam', 'Dev Mode', 'Adobe XD', 'Photopea', 'Lottie', 'Canva']
 
 export default function Skills({ onBack }) {
   return (
@@ -105,12 +105,12 @@ export default function Skills({ onBack }) {
             ))}
           </div>
 
-          {/* Left Column: Headlines & Tools */}
+          {/* Left Column: Clean & Spacious */}
           <div className="skills-left-col">
             <div className="skills-left-top">
-              {/* Tag / Category */}
+              {/* Tag */}
               <div className="skills-tag-wrap">
-                <span className="skills-tag-text">CORE SKILLS</span>
+                <span className="skills-tag-text">SKILLS</span>
                 <div className="skills-tag-line" />
               </div>
 
@@ -120,12 +120,12 @@ export default function Skills({ onBack }) {
                 <span className="highlight-purple">the table.</span>
               </h1>
 
-              {/* Description */}
+              {/* Short 2-line Clean Description */}
               <p className="skills-body-text">
-                Product Designer with 2 years of experience crafting end-to-end UX/UI, AI product workflows, and design systems for 20K+ users and 600+ partners.
+                Core product design capabilities engineered for scale, clarity, and human delight.
               </p>
 
-              {/* Tools Tags Row */}
+              {/* Clean Tools Badges */}
               <div className="skills-tools-section">
                 <span className="tools-title">PRIMARY TOOLS</span>
                 <div className="skills-tools-pills">
@@ -133,19 +133,6 @@ export default function Skills({ onBack }) {
                     <span key={tool} className="skill-tool-badge">{tool}</span>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            {/* Bottom "Always learning." Card */}
-            <div className="skills-learning-card">
-              <div className="skills-learning-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
-              </div>
-              <div className="skills-learning-text">
-                <h4>Always learning.</h4>
-                <p>Exploring AI agents, generative prompt UX, and interactive micro-motion.</p>
               </div>
             </div>
           </div>

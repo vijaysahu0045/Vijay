@@ -1,10 +1,9 @@
-/* About Me Page Styles - Full Responsive */
+/* About Me Page Styles - Spacious Luxury Glassmorphism Layout */
 .about-page-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
   min-height: 100vh;
-  background: #18181d;
+  background: #121216;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -29,10 +28,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
-/* Pure Floating Back Button (Zero Topbar Strip / No Background Bar) */
+/* Pure Floating Back Button */
 .about-topbar {
   position: fixed;
   top: 16px;
@@ -64,72 +63,46 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-.about-topbar-title {
-  color: #9d9cb8;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
 /* Main Content Wrapper */
 .about-main-wrapper {
   position: relative;
   z-index: 10;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
-}
-
-/* Master About Card - Frosted Glassmorphism */
-.about-master-card {
-  position: relative;
   width: 100%;
-  max-width: 960px;
-  background: rgba(28, 28, 35, 0.45);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.55),
-    0 1px 1px rgba(255, 255, 255, 0.15) inset;
-  padding: 46px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  overflow: hidden;
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Dot Grid Pattern */
-.about-card-dot-grid {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  display: grid;
-  grid-template-columns: repeat(4, 4px);
-  grid-template-rows: repeat(4, 4px);
-  gap: 12px;
-  pointer-events: none;
-  opacity: 0.45;
-}
-
-.about-card-dot-grid span {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #818cf8;
-}
-
-/* Left Column */
-.about-left-col {
-  flex: 1;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 70px 24px 80px 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+
+.about-content-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+/* Top Hero Showcase Card - Frosted Glassmorphism */
+.about-hero-card {
+  background: rgba(28, 28, 36, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 48px 44px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 1px 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.about-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about-tag-wrap {
@@ -139,26 +112,26 @@
 }
 
 .about-tag-text {
-  font-size: 12.5px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: #9d9cb8;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .about-tag-line {
-  width: 30px;
+  width: 32px;
   height: 2px;
-  background: #6366f1;
+  background: #818cf8;
   border-radius: 2px;
 }
 
 .about-headline {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.22;
   color: #FFFFFF;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
 }
 
 .about-headline .highlight-purple {
@@ -169,218 +142,173 @@
 }
 
 .about-body-text {
-  font-size: 13.5px;
-  color: #9493a8;
-  line-height: 1.6;
-  font-weight: 400;
+  font-size: 14.5px;
+  color: #a0a0b6;
+  line-height: 1.65;
+  max-width: 520px;
 }
 
 .about-body-text strong {
   color: #FFFFFF;
 }
 
-/* Metrics Stats Strip */
-.about-stats-strip {
+/* Metrics Row */
+.about-metrics-row {
   display: flex;
-  gap: 20px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  width: max-content;
+  gap: 16px;
+  padding-top: 6px;
+  flex-wrap: wrap;
 }
 
-.astat-item {
+.about-metric-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 10px 18px;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  transition: all 0.2s ease;
 }
 
-.astat-item strong {
-  font-size: 16px;
-  color: #c4b5fd;
-  font-weight: 700;
-}
-
-.astat-item span {
-  font-size: 10.5px;
-  color: #8e8da3;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.about-pills-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.about-pill-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 9px;
-  font-size: 12.5px;
-  color: #c4c3d4;
-  font-weight: 400;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  user-select: none;
-}
-
-.about-pill-item:hover {
-  background: rgba(129, 140, 248, 0.12);
-  border-color: rgba(129, 140, 248, 0.45);
-  color: #FFFFFF;
+.about-metric-box:hover {
+  background: rgba(129, 140, 248, 0.1);
+  border-color: rgba(167, 139, 250, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
 }
 
-.about-pill-icon {
-  width: 14px;
-  height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #a78bfa;
-}
-
-.about-exploring-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  font-size: 13px;
-  color: #8e8da3;
-}
-
-.about-sparkle-icon {
-  width: 18px;
-  height: 18px;
-  color: #a78bfa;
-  flex-shrink: 0;
-}
-
-.about-exploring-highlight {
-  font-weight: 500;
+.about-metric-box strong {
+  font-size: 18px;
+  font-weight: 800;
   background: linear-gradient(135deg, #c4b5fd 0%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Right Column (Portrait Card) */
-.about-right-col {
-  position: relative;
-  flex-shrink: 0;
+.about-metric-box span {
+  font-size: 11px;
+  color: #8e8da3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
-.about-portrait-card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  border-radius: 20px;
+/* Portrait Frame */
+.about-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-portrait-frame {
+  width: 240px;
+  height: 280px;
+  border-radius: 22px;
   overflow: hidden;
-  background: #141418;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 45px rgba(99, 102, 241, 0.28), 0 15px 35px rgba(0, 0, 0, 0.6);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  background: #1c1c24;
 }
 
-.about-portrait-card:hover {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.45), 0 20px 45px rgba(0, 0, 0, 0.7);
-}
-
-.about-portrait-card img {
+.about-portrait-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-portrait-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* Bottom 3 Clean Pillar Cards */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-pillar-card {
+  background: rgba(28, 28, 36, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.about-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(129, 140, 248, 0.1);
+}
+
+.pillar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.about-pillar-card h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.about-pillar-card p {
+  font-size: 13.5px;
+  color: #9493a8;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (About Page)
+   RESPONSIVE MEDIA QUERIES (About Me)
    ========================================================================== */
 
-/* Tablets / Medium Screens (max-width: 880px) */
-@media (max-width: 880px) {
-  .about-master-card {
-    flex-direction: column-reverse;
+@media (max-width: 860px) {
+  .about-hero-card {
+    grid-template-columns: 1fr;
     padding: 36px 28px;
-    gap: 32px;
-    margin: 16px 0;
+    gap: 30px;
   }
 
-  .about-left-col {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
+  .about-portrait-frame {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
   }
 
-  .about-tag-wrap {
-    align-items: center;
-  }
-
-  .about-pills-row {
-    justify-content: center;
-  }
-
-  .about-portrait-card {
-    width: 260px;
-    height: 330px;
-  }
-
-  .about-headline {
-    font-size: 28px;
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Mobile Devices (max-width: 580px) */
-@media (max-width: 580px) {
+@media (max-width: 600px) {
   .about-main-wrapper {
-    padding: 14px 12px;
+    padding: 60px 16px 50px 16px;
   }
 
-  .about-master-card {
-    padding: 26px 18px;
-    border-radius: 20px;
-    gap: 24px;
+  .about-hero-card {
+    padding: 28px 20px;
   }
 
   .about-headline {
-    font-size: 22px;
-    line-height: 1.3;
+    font-size: 26px;
   }
 
-  .about-body-text {
-    font-size: 13px;
-  }
-
-  .about-pill-item {
-    padding: 6px 10px;
-    font-size: 11.5px;
-  }
-
-  .about-portrait-card {
-    width: 200px;
-    height: 260px;
-    border-radius: 16px;
-  }
-
-  .about-card-dot-grid {
-    display: none;
-  }
-
-  .about-exploring-line {
-    font-size: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .about-metrics-row {
+    flex-direction: column;
+    gap: 8px;
   }
 }
