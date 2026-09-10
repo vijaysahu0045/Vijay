@@ -55,8 +55,8 @@ export default function Resume({ onBack }) {
             <a href="tel:+917506182484" className="r-link">
               <span>📞</span> +91 75061 82484
             </a>
-            <a href="mailto:vijaysahu@gmail.com" className="r-link">
-              <span>✉️</span> vijaysahu@gmail.com
+            <a href="mailto:vijaysahu0045@gmail.com" className="r-link">
+              <span>✉️</span> vijaysahu0045@gmail.com
             </a>
             <a href="https://linkedin.com/in/vijaysahu-" target="_blank" rel="noopener noreferrer" className="r-link">
               <span>🔗</span> linkedin.com/in/vijaysahu-

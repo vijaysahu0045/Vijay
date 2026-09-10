@@ -71,7 +71,7 @@ const SKILLS_DATA = [
   }
 ]
 
-const TOOLS_LIST = ['Figma', 'Figma AI', 'FigJam', 'Dev Mode', 'Adobe XD', 'Photopea', 'Lottie', 'Canva']
+const TOOLS_LIST = ['Figma', 'Figma Motion', 'Figma Dev Mode', 'Figma AI Agent', 'FigJam', 'Adobe XD', 'Photopea', 'Canva', 'Envato AI', 'Lottie', 'Vector Art & Illustration']
 
 export default function Skills({ onBack }) {
   return (

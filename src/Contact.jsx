@@ -6,8 +6,8 @@ const CONTACT_ITEMS = [
   {
     id: 'email',
     label: 'EMAIL',
-    value: 'vijaysahu@gmail.com',
-    href: 'mailto:vijaysahu@gmail.com',
+    value: 'vijaysahu0045@gmail.com',
+    href: 'mailto:vijaysahu0045@gmail.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect width="20" height="16" x="2" y="4" rx="2"/>
