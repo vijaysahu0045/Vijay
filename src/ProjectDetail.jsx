@@ -152,11 +152,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
           <span>Back</span>
         </button>
 
-        <div className="detail-topbar-center-tag">
-          <span className="shield-lock-icon">🔒</span>
-          <span>Protected Portfolio Asset</span>
-        </div>
-
         <button
           className="detail-action-btn"
           onClick={() => {
