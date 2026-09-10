@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
 import bgImage from './assets/projects-bg.png'
+import screen1 from './assets/fymble-screen-1.png'
+import screen2 from './assets/fymble-screen-2.png'
+import screen3 from './assets/fymble-screen-3.png'
+import screen4 from './assets/fymble-screen-4.png'
+import screen5 from './assets/fymble-screen-5.png'
 
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
@@ -10,6 +15,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const [isBlackout, setIsBlackout] = useState(false)
   const [blackoutMsg, setBlackoutMsg] = useState('')
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
 
   // 1. Full Image Artwork Project (renders exact high-res image showcase)
   const isImageArtworkProject = Boolean(project.image && project.id !== 1)
@@ -17,14 +23,25 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   // 2. Fymble Multi-Platform Flagship UX/UI Case Study (renders interactive 3D phone ecosystem)
   const isFymbleFlagshipCaseStudy = project.id === 1
 
-  // Dynamic list of UI Screens to be displayed inside the realistic iPhone
+  // Dynamic list of UI Screens displayed inside the photorealistic iPhone 16 Pro
   const fymbleScreens = [
-    { id: 1, title: 'Explore & Gym Discovery', image: null, tag: 'DISCOVERY' },
-    { id: 2, title: 'Choose Flexible Pass', image: null, tag: 'PASSES' },
-    { id: 3, title: 'One-Click Booking', image: null, tag: 'CHECKOUT' },
-    { id: 4, title: 'Workout & Health Tracker', image: null, tag: 'ANALYTICS' },
-    { id: 5, title: 'Kyra AI Health Coach', image: null, tag: 'AI ASSISTANT' },
+    { id: 1, title: 'Gym Discovery & Passes', image: screen1, tag: 'DISCOVERY' },
+    { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
+    { id: 3, title: 'Fitness Class Booking', image: screen3, tag: 'CLASSES' },
+    { id: 4, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
+    { id: 5, title: 'Refer & Daily Rewards', image: screen5, tag: 'REWARDS' },
   ]
+
+  // Auto-scroll slideshow timer for iPhone showcase (every 3.5s)
+  useEffect(() => {
+    if (!isFymbleFlagshipCaseStudy || isAutoplayPaused) return
+
+    const timer = setInterval(() => {
+      setCurrentScreenIdx((prev) => (prev + 1) % fymbleScreens.length)
+    }, 3500)
+
+    return () => clearInterval(timer)
+  }, [isFymbleFlagshipCaseStudy, isAutoplayPaused, fymbleScreens.length])
 
   // =========================================================================
   // ANTI-DOWNLOAD, ANTI-RIGHT-CLICK & ANTI-SCREENSHOT BLACKOUT PROTECTION
@@ -238,134 +255,59 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </div>
           </div>
 
-          {/* Right Column: 3D Multi-Device Showcase */}
+          {/* Right Column: 3D Multi-Device Showcase using Realistic iPhone 16 Pro Hardware */}
           <div className="case-hero-right">
             <div className="phones-hero-showcase">
-              {/* Left Phone (Passes) */}
+              {/* Left Phone (Fitness Class Selection) */}
               <div className="mock-phone phone-left">
-                <div className="phone-screen">
-                  <div className="phone-notch" />
-                  <div className="phone-inner-content">
-                    <div className="mock-header">
-                      <span className="mini-title">Choose your pass</span>
-                      <span className="mini-sub">Pick what works for you</span>
-                    </div>
-
-                    <div className="mini-pass-card">
-                      <div className="pass-top">
-                        <span className="pass-name">Daily Pass</span>
-                        <span className="pass-price">₹99 <small>/day</small></span>
-                      </div>
-                      <span className="pass-note">Valid for 24 hours</span>
-                    </div>
-
-                    <div className="mini-pass-card featured">
-                      <span className="mini-badge-hot">Most Popular</span>
-                      <div className="pass-top">
-                        <span className="pass-name">Weekly Pass</span>
-                        <span className="pass-price">₹499 <small>/week</small></span>
-                      </div>
-                      <span className="pass-note">7 days access</span>
-                    </div>
-
-                    <div className="mini-pass-card">
-                      <div className="pass-top">
-                        <span className="pass-name">14 Day Pass</span>
-                        <span className="pass-price">₹899 <small>/14 days</small></span>
-                      </div>
-                      <span className="pass-note">Double validity</span>
-                    </div>
+                <div className="hero-iphone-chassis">
+                  <div className="hero-iphone-viewport">
+                    <div className="hero-dynamic-island" />
+                    <img
+                      src={screen3}
+                      alt="Fitness Class Selection"
+                      className="hero-phone-screen-img"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                    <div className="hero-phone-glare" />
+                    <div className="hero-home-indicator" />
                   </div>
                 </div>
               </div>
 
-              {/* Center Phone (Featured Home / Gym Discovery) */}
+              {/* Center Phone (Gym Discovery & Passes) */}
               <div className="mock-phone phone-center">
-                <div className="phone-screen">
-                  <div className="phone-notch">
-                    <div className="dynamic-island" />
-                  </div>
-                  <div className="phone-inner-content">
-                    <div className="phone-top-bar">
-                      <span className="location-pin">📍 Mumbai, India ▾</span>
-                      <span className="bell-icon">🔔</span>
-                    </div>
-
-                    <div className="phone-search-input">
-                      <span>🔍 Search gyms, studios, classes...</span>
-                    </div>
-
-                    <div className="phone-category-pills">
-                      <span className="cat-pill active">🏋️ Gym</span>
-                      <span className="cat-pill">🥊 Studio</span>
-                      <span className="cat-pill">🔥 CrossFit</span>
-                      <span className="cat-pill">🧘 Yoga</span>
-                    </div>
-
-                    <div className="phone-featured-gym">
-                      <div className="gym-img-mock">
-                        <span className="gym-badge">Open Now</span>
-                        <span className="gym-heart">❤️</span>
-                      </div>
-                      <div className="gym-info">
-                        <h4>The Strength Co.</h4>
-                        <div className="gym-sub">
-                          <span className="rating">⭐ 4.8</span>
-                          <span>• 1.2 km • Andheri West</span>
-                        </div>
-                        <span className="gym-price">₹99 / day onwards</span>
-                      </div>
-                    </div>
-
-                    <div className="phone-bottom-nav">
-                      <span className="nav-item active">🏠 Home</span>
-                      <span className="nav-item">🔍 Explore</span>
-                      <span className="nav-item">🎫 Passes</span>
-                      <span className="nav-item">👤 Profile</span>
-                    </div>
+                <div className="hero-iphone-chassis">
+                  <div className="hero-iphone-viewport">
+                    <div className="hero-dynamic-island" />
+                    <img
+                      src={screen1}
+                      alt="Gym Discovery & Passes"
+                      className="hero-phone-screen-img"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                    <div className="hero-phone-glare" />
+                    <div className="hero-home-indicator" />
                   </div>
                 </div>
               </div>
 
-              {/* Right Phone (Kyra AI Coach) */}
+              {/* Right Phone (Food Scanner & AI Nutrition) */}
               <div className="mock-phone phone-right">
-                <div className="phone-screen">
-                  <div className="phone-notch" />
-                  <div className="phone-inner-content">
-                    <div className="ai-chat-header">
-                      <div className="ai-avatar">🤖</div>
-                      <div>
-                        <h4>Kyra AI</h4>
-                        <span className="status-online">● Online Health Coach</span>
-                      </div>
-                    </div>
-
-                    <div className="ai-chat-bubble bot">
-                      <p>Hey Vijay! 👋 How are you feeling today?</p>
-                      <span className="time">Just now</span>
-                    </div>
-
-                    <div className="ai-chat-bubble user">
-                      <p>A bit tired, didn't sleep well.</p>
-                      <span className="time">1m ago</span>
-                    </div>
-
-                    <div className="ai-chat-bubble bot">
-                      <p>Okay, let's adapt your plan. How about a light upper body workout today?</p>
-                    </div>
-
-                    <div className="ai-activity-card">
-                      <div className="act-icon">💪</div>
-                      <div>
-                        <h5>Upper Body Activation</h5>
-                        <span>25 mins • Very low fatigue</span>
-                      </div>
-                    </div>
-
-                    <div className="ai-chat-input-bar">
-                      <span>Ask anything...</span>
-                      <span className="mic-btn">🎙️</span>
-                    </div>
+                <div className="hero-iphone-chassis">
+                  <div className="hero-iphone-viewport">
+                    <div className="hero-dynamic-island" />
+                    <img
+                      src={screen2}
+                      alt="Food Scanner & AI Nutrition"
+                      className="hero-phone-screen-img"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                    <div className="hero-phone-glare" />
+                    <div className="hero-home-indicator" />
                   </div>
                 </div>
               </div>
@@ -376,12 +318,21 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         {/* =========================================================================
             SECTION 2: INTERACTIVE IPHONE MOBILE SCREENS SHOWCASE SLIDER
             ========================================================================= */}
-        <section className="case-section-container iphone-showcase-container">
+        <section
+          className="case-section-container iphone-showcase-container"
+          onMouseEnter={() => setIsAutoplayPaused(true)}
+          onMouseLeave={() => setIsAutoplayPaused(false)}
+        >
           <div className="case-section-head">
-            <span className="section-eyebrow eyebrow-purple">MOBILE APP SCREENS</span>
-            <h2 className="case-section-h2">Experience Fymble on iPhone.</h2>
+            <div className="showcase-header-badge-row">
+              <span className="section-eyebrow eyebrow-purple">MOBILE APP SCREENS</span>
+              <span className="autoplay-status-badge">
+                <span className="live-dot" /> Auto-playing
+              </span>
+            </div>
+            <h2 className="case-section-h2">Experience Fymble on iPhone 16 Pro.</h2>
             <p className="case-section-sub">
-              Explore core product flows designed for 250+ screens and 20K+ active users.
+              Interactive high-fidelity screens designed for 250+ flows and 20K+ active users.
             </p>
           </div>
 
