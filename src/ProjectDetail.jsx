@@ -499,7 +499,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                   <div className="figma-loader-spinner-wrap">
                     <div className="figma-loader-spinner" />
                     <div className="figma-loader-icon-center">
-                      <svg width="26" height="26" viewBox="0 0 38 57" fill="none">
+                      <svg width="28" height="28" viewBox="0 0 38 57" fill="none">
                         <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
                         <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
                         <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
@@ -509,15 +509,15 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                     </div>
                   </div>
                   <div className="figma-loading-text-group">
-                    <h4 className="figma-loading-title">Connecting to Live Figma Canvas...</h4>
+                    <h4 className="figma-loading-title">Loading Figma Canvas</h4>
                     <p className="figma-loading-subtitle">
-                      Kripya thoda wait karein — aap yahan pura design system, interactive flows aur wireframes Figma ke andar zoom aur pan karke live dekh sakte hain! ✨
+                      Explore full design system and components live.
                     </p>
                     <button
                       className="figma-force-enter-btn"
                       onClick={() => setIsFigmaLoading(false)}
                     >
-                      <span>🚀 Enter Interactive Canvas</span>
+                      <span>Launch Interactive Canvas ↗</span>
                     </button>
                   </div>
                 </div>
@@ -529,7 +529,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 allowFullScreen
                 className={`figma-iframe ${isFigmaLoading ? 'loading' : 'ready'}`}
                 onLoad={() => {
-                  setTimeout(() => setIsFigmaLoading(false), 2500)
+                  setTimeout(() => setIsFigmaLoading(false), 7000)
                 }}
               />
             </div>
