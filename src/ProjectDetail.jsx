@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
 import bgImage from './assets/projects-bg.png'
+import iphoneFrameImg from './assets/iphone-frame.png'
 
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
 
   const [activeStep, setActiveStep] = useState(0)
+  const [currentScreenIdx, setCurrentScreenIdx] = useState(0)
   const [isBlackout, setIsBlackout] = useState(false)
   const [blackoutMsg, setBlackoutMsg] = useState('')
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
@@ -15,6 +17,15 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
   // 2. Fymble Multi-Platform Flagship UX/UI Case Study (renders interactive 3D phone ecosystem)
   const isFymbleFlagshipCaseStudy = project.id === 1
+
+  // Dynamic list of UI Screens to be displayed inside the realistic iPhone
+  const fymbleScreens = [
+    { id: 1, title: 'Explore & Gym Discovery', image: null, tag: 'DISCOVERY' },
+    { id: 2, title: 'Choose Flexible Pass', image: null, tag: 'PASSES' },
+    { id: 3, title: 'One-Click Booking', image: null, tag: 'CHECKOUT' },
+    { id: 4, title: 'Workout & Health Tracker', image: null, tag: 'ANALYTICS' },
+    { id: 5, title: 'Kyra AI Health Coach', image: null, tag: 'AI ASSISTANT' },
+  ]
 
   // =========================================================================
   // ANTI-DOWNLOAD, ANTI-RIGHT-CLICK & ANTI-SCREENSHOT BLACKOUT PROTECTION
@@ -73,28 +84,14 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       }
     }
 
-    // 3. Window Blur Detection (Triggers when Windows Snipping Tool Win+Shift+S or screen recorder pops up)
-    const handleWindowBlur = () => {
-      setIsBlackout(true)
-      setBlackoutMsg('Screen Capture Protection Active')
-    }
-
-    const handleWindowFocus = () => {
-      setIsBlackout(false)
-    }
-
     window.addEventListener('contextmenu', handleContextMenu)
     window.addEventListener('keydown', handleKeyDown)
     window.addEventListener('keyup', handleKeyUp)
-    window.addEventListener('blur', handleWindowBlur)
-    window.addEventListener('focus', handleWindowFocus)
 
     return () => {
       window.removeEventListener('contextmenu', handleContextMenu)
       window.removeEventListener('keydown', handleKeyDown)
       window.removeEventListener('keyup', handleKeyUp)
-      window.removeEventListener('blur', handleWindowBlur)
-      window.removeEventListener('focus', handleWindowFocus)
       if (blackoutTimer) clearTimeout(blackoutTimer)
     }
   }, [])
@@ -378,348 +375,92 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         </section>
 
         {/* =========================================================================
-            SECTION 2: THE PROBLEM
+            SECTION 2: INTERACTIVE IPHONE MOBILE SCREENS SHOWCASE SLIDER
             ========================================================================= */}
-        <section className="case-section-container">
+        <section className="case-section-container iphone-showcase-container">
           <div className="case-section-head">
-            <span className="section-eyebrow eyebrow-coral">THE PROBLEM</span>
-            <h2 className="case-section-h2">Fitness shouldn't feel like a commitment.</h2>
+            <span className="section-eyebrow eyebrow-purple">MOBILE APP SCREENS</span>
+            <h2 className="case-section-h2">Experience Fymble on iPhone.</h2>
+            <p className="case-section-sub">
+              Explore core product flows designed for 250+ screens and 20K+ active users.
+            </p>
           </div>
 
-          <div className="problem-cards-grid">
-            <div className="problem-card">
-              <div className="problem-icon-wrap">
-                <span className="p-icon">📄</span>
-                <span className="badge-lock">🔒</span>
-              </div>
-              <h3>Rigid memberships</h3>
-              <p>Expensive plans with long-term lock-ins discourage users from trying new fitness routines.</p>
-            </div>
+          <div className="iphone-slider-stage">
+            <div className="iphone-ambient-glow" />
 
-            <div className="problem-card">
-              <div className="problem-icon-wrap">
-                <span className="p-icon">🔍</span>
-              </div>
-              <h3>Hard to compare gyms</h3>
-              <p>Scattered information, hidden pricing and unverified photos make discovery confusing.</p>
-            </div>
+            {/* Left Prev Arrow Button */}
+            <button
+              className="iphone-slider-nav-btn prev"
+              onClick={() => setCurrentScreenIdx((prev) => (prev > 0 ? prev - 1 : fymbleScreens.length - 1))}
+              title="Previous Screen"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
 
-            <div className="problem-card">
-              <div className="problem-icon-wrap">
-                <span className="p-icon">📉</span>
-              </div>
-              <h3>Low consistency</h3>
-              <p>Lack of personalized guidance, accountability and workout adaptivity leads to steep drop-offs.</p>
-            </div>
-          </div>
-        </section>
+            {/* Realistic iPhone Device Frame */}
+            <div className="iphone-device-wrap">
+              <img
+                src={iphoneFrameImg}
+                alt="iPhone Device Frame"
+                className="iphone-frame-img"
+                draggable="false"
+              />
 
-        {/* =========================================================================
-            SECTION 3: THE EXPERIENCE (USER JOURNEY & 4 SCREENS)
-            ========================================================================= */}
-        <section className="case-section-container">
-          <div className="experience-head-row">
-            <div>
-              <span className="section-eyebrow eyebrow-coral">THE EXPERIENCE</span>
-              <h2 className="case-section-h2">A seamless journey from discovery to consistency.</h2>
-            </div>
-
-            {/* Interactive Flow Breadcrumb */}
-            <div className="journey-flow-pills">
-              <span className="flow-step">🔍 Discover</span>
-              <span className="flow-arrow">→</span>
-              <span className="flow-step">📄 Choose Pass</span>
-              <span className="flow-arrow">→</span>
-              <span className="flow-step">📅 Book</span>
-              <span className="flow-arrow">→</span>
-              <span className="flow-step">🏋️ Workout</span>
-              <span className="flow-arrow">→</span>
-              <span className="flow-step">📈 Track</span>
-              <span className="flow-arrow">→</span>
-              <span className="flow-step">🤖 Kyra</span>
-            </div>
-          </div>
-
-          {/* 4 Screens Grid */}
-          <div className="screens-journey-grid">
-            {/* Screen 1: Discover */}
-            <div className="screen-column-card">
-              <div className="standalone-mock-phone">
-                <div className="phone-screen">
-                  <div className="phone-notch"><div className="dynamic-island" /></div>
-                  <div className="phone-inner-content">
-                    <div className="screen-header-mini">
-                      <h4>Explore Gyms</h4>
-                    </div>
-                    <div className="mini-search-box">🔍 Search location or gym...</div>
-                    <div className="mini-filters-row">
-                      <span className="m-chip">⚙️ Filters</span>
-                      <span className="m-chip">Distance ▾</span>
-                      <span className="m-chip">Price ▾</span>
-                    </div>
-                    <div className="mini-map-view">
-                      <div className="map-pin pin-1">📍</div>
-                      <div className="map-pin pin-2">📍</div>
-                      <div className="map-pin pin-3">📍</div>
-                      <div className="map-bottom-card">
-                        <div className="mbc-info">
-                          <h5>The Strength Co.</h5>
-                          <span>⭐ 4.8 (1.2 km)</span>
-                        </div>
-                        <span className="mbc-btn">View Details</span>
-                      </div>
-                    </div>
+              {/* Inside Screen Content Area */}
+              <div className="iphone-screen-viewport">
+                {fymbleScreens[currentScreenIdx]?.image ? (
+                  <img
+                    src={fymbleScreens[currentScreenIdx].image}
+                    alt={fymbleScreens[currentScreenIdx].title}
+                    className="iphone-screen-artwork"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                ) : (
+                  <div className="iphone-screen-ready-state">
+                    <div className="ph-badge">{fymbleScreens[currentScreenIdx]?.tag || 'UI SCREEN'}</div>
+                    <span className="ph-icon">📱</span>
+                    <h4 className="ph-title">{fymbleScreens[currentScreenIdx]?.title || 'Screen Showcase'}</h4>
+                    <p className="ph-desc">Ready for high-fidelity UI screens.</p>
                   </div>
-                </div>
-              </div>
-              <div className="screen-caption">
-                <h4>Discover</h4>
-                <p>Find gyms near you with details that matter.</p>
-              </div>
-            </div>
+                )}
 
-            {/* Screen 2: Choose Pass */}
-            <div className="screen-column-card">
-              <div className="standalone-mock-phone">
-                <div className="phone-screen">
-                  <div className="phone-notch"><div className="dynamic-island" /></div>
-                  <div className="phone-inner-content">
-                    <div className="screen-header-mini">
-                      <h4>Choose your pass</h4>
-                      <span>Pick what works for you</span>
-                    </div>
-
-                    <div className="screen-pass-list">
-                      <div className="sp-card">
-                        <div>
-                          <h6>Daily Pass</h6>
-                          <span>₹99 / day</span>
-                        </div>
-                        <span className="arrow-sm">›</span>
-                      </div>
-
-                      <div className="sp-card featured-glow">
-                        <span className="hot-tag">Most Popular</span>
-                        <div>
-                          <h6>Weekly Pass</h6>
-                          <span className="sp-price">₹499 / week</span>
-                          <small>7 days access</small>
-                        </div>
-                        <span className="arrow-sm">›</span>
-                      </div>
-
-                      <div className="sp-card">
-                        <div>
-                          <h6>10 Day Pass</h6>
-                          <span>₹899 / 14 days</span>
-                        </div>
-                        <span className="arrow-sm">›</span>
-                      </div>
-
-                      <div className="sp-card">
-                        <div>
-                          <h6>Monthly Pass</h6>
-                          <span>₹1,499 / month</span>
-                        </div>
-                        <span className="arrow-sm">›</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="screen-caption">
-                <h4>Choose Pass</h4>
-                <p>Flexible passes that fit your schedule, not the other way around.</p>
+                {/* Anti-Drag & Anti-Save Shield */}
+                <div
+                  className="iphone-screen-protection"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
               </div>
             </div>
 
-            {/* Screen 3: Book */}
-            <div className="screen-column-card">
-              <div className="standalone-mock-phone">
-                <div className="phone-screen">
-                  <div className="phone-notch"><div className="dynamic-island" /></div>
-                  <div className="phone-inner-content">
-                    <div className="screen-gym-banner">
-                      <span>The Strength Co.</span>
-                    </div>
-
-                    <div className="screen-gym-rating-row">
-                      <span>⭐ 4.8 (230 reviews)</span>
-                      <small>Andheri West, Mumbai • 1.2 km</small>
-                    </div>
-
-                    <div className="screen-times-box">
-                      <span className="box-title">Available Today</span>
-                      <div className="time-chips">
-                        <span>6 AM</span>
-                        <span>7 AM</span>
-                        <span className="active-time">8 AM</span>
-                        <span>9 AM</span>
-                        <span>10 AM</span>
-                      </div>
-                    </div>
-
-                    <div className="screen-checkout-card">
-                      <div className="chk-row">
-                        <span>Weekly Pass (7 days)</span>
-                        <span>₹499</span>
-                      </div>
-                      <div className="chk-row total">
-                        <span>Total</span>
-                        <span>₹499</span>
-                      </div>
-                      <button className="confirm-btn">Confirm Booking</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="screen-caption">
-                <h4>Book</h4>
-                <p>Quick booking with real-time availability.</p>
-              </div>
-            </div>
-
-            {/* Screen 4: Track & Improve */}
-            <div className="screen-column-card">
-              <div className="standalone-mock-phone">
-                <div className="phone-screen">
-                  <div className="phone-notch"><div className="dynamic-island" /></div>
-                  <div className="phone-inner-content">
-                    <div className="screen-header-mini">
-                      <h4>Progress</h4>
-                      <span>This Week ▾</span>
-                    </div>
-
-                    <div className="progress-bar-stat">
-                      <div className="p-header">
-                        <span>Workouts</span>
-                        <strong>4</strong>
-                      </div>
-                      <div className="mini-chart-bars">
-                        <div className="bar filled" style={{ height: '60%' }} />
-                        <div className="bar filled" style={{ height: '85%' }} />
-                        <div className="bar filled" style={{ height: '40%' }} />
-                        <div className="bar filled" style={{ height: '90%' }} />
-                        <div className="bar" style={{ height: '20%' }} />
-                        <div className="bar" style={{ height: '10%' }} />
-                        <div className="bar" style={{ height: '10%' }} />
-                      </div>
-                    </div>
-
-                    <div className="progress-dual-metrics">
-                      <div className="metric-box">
-                        <small>Calories</small>
-                        <strong>1,850</strong>
-                        <span>kcal</span>
-                      </div>
-                      <div className="metric-box">
-                        <small>Active Time</small>
-                        <strong>320</strong>
-                        <span>mins</span>
-                      </div>
-                    </div>
-
-                    <div className="health-score-box">
-                      <div>
-                        <small>Health Score</small>
-                        <strong>82 <small>/100</small></strong>
-                        <span className="good-tag">Good going!</span>
-                      </div>
-                      <div className="spark-line">📈</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="screen-caption">
-                <h4>Track &amp; Improve</h4>
-                <p>Track workouts, health score and stay on top of your goals.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =========================================================================
-            SECTION 4: KEY DESIGN DECISIONS
-            ========================================================================= */}
-        <section className="case-section-container">
-          <div className="case-section-head">
-            <span className="section-eyebrow eyebrow-coral">KEY DESIGN DECISIONS</span>
-            <h2 className="case-section-h2">Thoughtful features engineered for high retention.</h2>
+            {/* Right Next Arrow Button */}
+            <button
+              className="iphone-slider-nav-btn next"
+              onClick={() => setCurrentScreenIdx((prev) => (prev < fymbleScreens.length - 1 ? prev + 1 : 0))}
+              title="Next Screen"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
           </div>
 
-          <div className="decisions-cards-grid">
-            {/* Decision 1 */}
-            <div className="decision-card">
-              <div className="decision-top">
-                <div className="decision-icon">🎫</div>
-                <div>
-                  <h3>Flexible access</h3>
-                  <p>Short-duration passes remove the pressure of long-term commitments and make fitness accessible.</p>
-                </div>
-              </div>
-
-              <div className="decision-preview-box">
-                <div className="preview-pass-pill">
-                  <span>Daily</span>
-                  <strong>₹99</strong>
-                </div>
-                <div className="preview-pass-pill active">
-                  <span>Weekly</span>
-                  <strong>₹499</strong>
-                </div>
-                <div className="preview-pass-pill">
-                  <span>14 Day</span>
-                  <strong>₹899</strong>
-                </div>
-                <div className="preview-pass-pill">
-                  <span>Monthly</span>
-                  <strong>₹1,499</strong>
-                </div>
-              </div>
-            </div>
-
-            {/* Decision 2 */}
-            <div className="decision-card">
-              <div className="decision-top">
-                <div className="decision-icon">🔍</div>
-                <div>
-                  <h3>Simple discovery</h3>
-                  <p>Clear filters, map view and key information help users compare and choose the right gym quickly.</p>
-                </div>
-              </div>
-
-              <div className="decision-preview-box">
-                <div className="preview-chips-row">
-                  <span className="p-chip">⚙️ Filters</span>
-                  <span className="p-chip">Distance ▾</span>
-                  <span className="p-chip">Price ▾</span>
-                  <span className="p-chip">Rating ▾</span>
-                </div>
-                <div className="mini-map-strip">
-                  <span>📍 Andheri West, Mumbai</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Decision 3 */}
-            <div className="decision-card">
-              <div className="decision-top">
-                <div className="decision-icon">💬</div>
-                <div>
-                  <h3>Personalized coaching</h3>
-                  <p>Kyra AI connects workouts, nutrition, sleep and recovery into one continuous conversation.</p>
-                </div>
-              </div>
-
-              <div className="decision-preview-box chat-preview">
-                <div className="bubble-bot">
-                  <span>🤖 Have you had enough water today?</span>
-                </div>
-                <div className="bubble-user-action">
-                  <span>Not really, I'll drink more.</span>
-                </div>
-              </div>
-            </div>
+          {/* Screen Navigation Selector Pills */}
+          <div className="iphone-screen-selector-bar">
+            {fymbleScreens.map((screen, idx) => (
+              <button
+                key={screen.id}
+                className={`iphone-nav-tab-pill ${idx === currentScreenIdx ? 'active' : ''}`}
+                onClick={() => setCurrentScreenIdx(idx)}
+              >
+                <span className="tab-idx">0{idx + 1}</span>
+                <span className="tab-name">{screen.title}</span>
+              </button>
+            ))}
           </div>
         </section>
 
