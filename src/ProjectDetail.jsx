@@ -146,9 +146,10 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       {/* Top Header Navigation */}
       <header className="detail-topbar">
         <button className="detail-btn-back" onClick={onBack} title="Back to Projects">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 18l-6-6 6-6"/>
           </svg>
+          <span>Back</span>
         </button>
 
         <div className="detail-topbar-center-tag">
@@ -221,7 +222,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
             <h1 className="case-hero-title">
               Making fitness easier to start — <br className="hide-mobile" />
-              and easier to stick with.
+              <span className="case-hero-title-gradient">and easier to stick with.</span>
             </h1>
 
             <p className="case-hero-subtitle">
