@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
 import bgImage from './assets/projects-bg.png'
-import iphoneFrameImg from './assets/iphone-frame.png'
 
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
@@ -400,40 +399,74 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               </svg>
             </button>
 
-            {/* Realistic iPhone Device Frame */}
+            {/* Photorealistic iPhone 16 Pro 3D Device Model */}
             <div className="iphone-device-wrap">
-              <img
-                src={iphoneFrameImg}
-                alt="iPhone Device Frame"
-                className="iphone-frame-img"
-                draggable="false"
-              />
+              {/* Hardware Side Buttons */}
+              <div className="iphone-btn-action" />
+              <div className="iphone-btn-volume-up" />
+              <div className="iphone-btn-volume-down" />
+              <div className="iphone-btn-power" />
 
-              {/* Inside Screen Content Area */}
-              <div className="iphone-screen-viewport">
-                {fymbleScreens[currentScreenIdx]?.image ? (
-                  <img
-                    src={fymbleScreens[currentScreenIdx].image}
-                    alt={fymbleScreens[currentScreenIdx].title}
-                    className="iphone-screen-artwork"
-                    draggable="false"
-                    onContextMenu={(e) => e.preventDefault()}
-                  />
-                ) : (
-                  <div className="iphone-screen-ready-state">
-                    <div className="ph-badge">{fymbleScreens[currentScreenIdx]?.tag || 'UI SCREEN'}</div>
-                    <span className="ph-icon">📱</span>
-                    <h4 className="ph-title">{fymbleScreens[currentScreenIdx]?.title || 'Screen Showcase'}</h4>
-                    <p className="ph-desc">Ready for high-fidelity UI screens.</p>
+              {/* Outer Titanium Chassis & Inner Screen Viewport */}
+              <div className="iphone-chassis">
+                {/* Screen Viewport */}
+                <div className="iphone-screen-viewport">
+                  {/* Dynamic Island Pill & Front Camera Lens */}
+                  <div className="iphone-dynamic-island">
+                    <div className="island-camera-lens" />
+                    <div className="island-mic-indicator" />
                   </div>
-                )}
 
-                {/* Anti-Drag & Anti-Save Shield */}
-                <div
-                  className="iphone-screen-protection"
-                  onContextMenu={(e) => e.preventDefault()}
-                  onDragStart={(e) => e.preventDefault()}
-                />
+                  {/* Status Bar */}
+                  <div className="iphone-status-bar">
+                    <span className="status-time">9:41</span>
+                    <div className="status-icons">
+                      <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor">
+                        <path d="M1 9.5h2.5V12H1v-2.5zm4-3.5h2.5V12H5V6zm4-3.5h2.5V12H9V2.5zm4-2.5h2.5V12H13V0z"/>
+                      </svg>
+                      <svg width="14" height="11" viewBox="0 0 16 12" fill="currentColor">
+                        <path d="M8 3.6c2.4 0 4.6 1 6.1 2.6l1.4-1.4C13.6 2.9 10.9 1.7 8 1.7 5.1 1.7 2.4 2.9.5 4.8l1.4 1.4C3.4 4.6 5.6 3.6 8 3.6zm0 3.7c1.4 0 2.7.6 3.6 1.6l1.4-1.4C11.8 6.3 10 5.4 8 5.4s-3.8.9-5 2.1l1.4 1.4c.9-1 2.2-1.6 3.6-1.6zm0 3.8c.8 0 1.5.3 2 1l1.4-1.4C10.5 9.8 9.3 9.2 8 9.2s-2.5.6-3.4 1.5L6 12.1c.5-.7 1.2-1 2-1z"/>
+                      </svg>
+                      <div className="status-battery">
+                        <div className="battery-level" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Screen Content Artwork */}
+                  {fymbleScreens[currentScreenIdx]?.image ? (
+                    <img
+                      src={fymbleScreens[currentScreenIdx].image}
+                      alt={fymbleScreens[currentScreenIdx].title}
+                      className="iphone-screen-artwork"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                    />
+                  ) : (
+                    <div className="iphone-screen-ready-state">
+                      <div className="ph-badge">{fymbleScreens[currentScreenIdx]?.tag || 'UI SCREEN'}</div>
+                      <span className="ph-icon">✨</span>
+                      <h4 className="ph-title">{fymbleScreens[currentScreenIdx]?.title || 'Screen Showcase'}</h4>
+                      <p className="ph-desc">Upload your high-fidelity Figma UI screen to render inside this iPhone 16 Pro.</p>
+                      <div className="ph-screen-guide-hint">
+                        <span>📐 Optimal ratio: 9:19.5 (1179 × 2556 px)</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Glass Reflection Highlight & Glare */}
+                  <div className="iphone-glass-glare" />
+
+                  {/* Bottom Home Indicator Bar */}
+                  <div className="iphone-home-indicator" />
+
+                  {/* Anti-Drag & Anti-Save Shield */}
+                  <div
+                    className="iphone-screen-protection"
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                  />
+                </div>
               </div>
             </div>
 
