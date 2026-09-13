@@ -11,8 +11,6 @@ export const CATEGORIES = [
       { id: 2, title: 'Gym Management App', image: null, tag: 'GYM MANAGEMENT B2B', theme: 'theme-purple', icon: '🏋️', description: 'Comprehensive B2B gym management SaaS platform for fitness centers to manage memberships, check-ins, trainers, and revenue analytics.' },
       { id: 3, title: 'Nutrition App', image: null, tag: 'DIET & NUTRITION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized meal plans, macro tracking, healthy recipe explorer, and daily calorie counter.' },
       { id: 4, title: 'Gym Mate App', image: null, tag: 'COMMUNITY & FITNESS', theme: 'theme-blue', icon: '🤝', description: 'Social fitness matching app to find nearby workout buddies, spotters, and local gym partners.' },
-      { id: 5, title: 'Farmer Near Me — B2B/B2C Platform', image: null, tag: 'B2B/B2C PRODUCT', theme: 'theme-dark', icon: '🌾', description: '100+ screens designed for farmer-to-consumer marketplace with intuitive checkout and vendor dashboard.' },
-      { id: 6, title: 'Fintech Dashboard', image: null, tag: 'FINTECH UI', theme: 'theme-light', icon: '💳', description: 'Personal finance, crypto wallet, and automated portfolio management dashboard.' },
     ]
   },
   {
