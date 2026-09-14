@@ -25,6 +25,8 @@ import aiDietCoachScreen2 from './assets/ai-diet-coach-screen-2.png'
 import aiDietCoachScreen3 from './assets/ai-diet-coach-screen-3.png'
 import aiDietCoachScreen4 from './assets/ai-diet-coach-screen-4.png'
 import aiDietCoachScreen5 from './assets/ai-diet-coach-screen-5.png'
+import aiDietCoachScreen6 from './assets/ai-diet-coach-screen-6.png'
+import aiDietCoachScreen7 from './assets/ai-diet-coach-screen-7.png'
 
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
@@ -123,14 +125,16 @@ const CASE_STUDIES = {
     heroPhones: {
       left: { image: aiDietCoachScreen2, alt: 'Personalized AI Diet Plan' },
       center: { image: aiDietCoachScreen1, alt: 'AI Diet Report & Daily Hub' },
-      right: { image: aiDietCoachScreen3, alt: 'AI Plan Generation Engine' }
+      right: { image: aiDietCoachScreen6, alt: 'Macro & Calorie Daily Log' }
     },
     screens: [
       { id: 1, title: 'AI Diet Report & Coach', image: aiDietCoachScreen1, tag: 'COACH HUB' },
-      { id: 2, title: 'Personalized Meal Plan', image: aiDietCoachScreen2, tag: 'DIET PLAN' },
-      { id: 3, title: 'AI Plan Generator Engine', image: aiDietCoachScreen3, tag: 'AI ENGINE' },
-      { id: 4, title: 'Dietary Preference Style', image: aiDietCoachScreen4, tag: 'PREFERENCES' },
-      { id: 5, title: 'Allergies & Dietary Guardrails', image: aiDietCoachScreen5, tag: 'ONBOARDING' },
+      { id: 2, title: 'Macro & Calorie Daily Log', image: aiDietCoachScreen6, tag: 'MACROS & FOOD' },
+      { id: 3, title: 'Personalized Meal Plan', image: aiDietCoachScreen2, tag: 'DIET PLAN' },
+      { id: 4, title: 'AI Plan Generator Engine', image: aiDietCoachScreen3, tag: 'AI ENGINE' },
+      { id: 5, title: 'Target Weight & BMI Goal', image: aiDietCoachScreen7, tag: 'GOAL SETUP' },
+      { id: 6, title: 'Dietary Preference Style', image: aiDietCoachScreen4, tag: 'PREFERENCES' },
+      { id: 7, title: 'Allergies & Dietary Guardrails', image: aiDietCoachScreen5, tag: 'ONBOARDING' },
     ],
     showcaseTitle: 'Experience AI Diet Coach on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive AI conversational nutrition and personalized diet tracking interfaces.',
