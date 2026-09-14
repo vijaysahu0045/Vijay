@@ -18,6 +18,7 @@ import gymMateScreen2 from './assets/gym-mate-screen-2.png'
 import gymMateScreen3 from './assets/gym-mate-screen-3.png'
 import gymMateScreen4 from './assets/gym-mate-screen-4.png'
 import gymMateScreen5 from './assets/gym-mate-screen-5.png'
+import gymMateScreen6 from './assets/gym-mate-screen-6.png'
 
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
@@ -86,16 +87,17 @@ const CASE_STUDIES = {
     timeline: 'Jul – Sep 2024',
     platform: 'iOS & Android',
     heroPhones: {
-      left: { image: gymMateScreen2, alt: 'Discover Gym Partners' },
-      center: { image: gymMateScreen1, alt: 'Gym Mate Discovery Hub' },
-      right: { image: gymMateScreen3, alt: 'Profile Photos & Bio' }
+      left: { image: gymMateScreen1, alt: 'Gym Mate Discovery Hub' },
+      center: { image: gymMateScreen6, alt: 'Find Your Perfect Gym Mate' },
+      right: { image: gymMateScreen2, alt: 'Discover Gym Partners' }
     },
     screens: [
-      { id: 1, title: 'Gym Mate Discovery Hub', image: gymMateScreen1, tag: 'DISCOVERY' },
-      { id: 2, title: 'Discover Gym Partners', image: gymMateScreen2, tag: 'COMMUNITY' },
-      { id: 3, title: 'Profile Photos & Bio', image: gymMateScreen3, tag: 'PROFILE SETUP' },
-      { id: 4, title: 'City Selection & Onboarding', image: gymMateScreen4, tag: 'ONBOARDING' },
-      { id: 5, title: 'Refer & Earn Rewards', image: gymMateScreen5, tag: 'REWARDS' },
+      { id: 1, title: 'Find Perfect Gym Mate', image: gymMateScreen6, tag: 'MATCH SPLASH' },
+      { id: 2, title: 'Gym Mate Discovery Hub', image: gymMateScreen1, tag: 'DISCOVERY' },
+      { id: 3, title: 'Discover Gym Partners', image: gymMateScreen2, tag: 'COMMUNITY' },
+      { id: 4, title: 'Profile Photos & Bio', image: gymMateScreen3, tag: 'PROFILE SETUP' },
+      { id: 5, title: 'City Selection & Onboarding', image: gymMateScreen4, tag: 'ONBOARDING' },
+      { id: 6, title: 'Refer & Earn Rewards', image: gymMateScreen5, tag: 'REWARDS' },
     ],
     showcaseTitle: 'Experience Gym Mate on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive social fitness interfaces designed to connect workout enthusiasts seamlessly.',
