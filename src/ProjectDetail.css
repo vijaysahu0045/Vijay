@@ -230,8 +230,8 @@
 /* Base Device Mockup Styling - Realistic iPhone 16 Pro Models */
 .mock-phone {
   position: absolute;
-  width: 200px;
-  height: 445px;
+  width: 235px;
+  height: 485px;
   background: transparent;
   overflow: visible;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -243,8 +243,8 @@
   width: 100%;
   height: 100%;
   background: #1e1d24;
-  border-radius: 36px;
-  padding: 6px;
+  border-radius: 44px;
+  padding: 8px;
   box-shadow: 
     inset 0 0 0 2px #757482,
     inset 0 0 0 3.5px #2b2a33,
@@ -262,20 +262,29 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 30px;
+  border-radius: 36px;
   overflow: hidden;
-  background: #000000;
+  background: #0d0d12;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .hero-dynamic-island {
-  display: none;
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 22px;
+  background: #000;
+  border-radius: 14px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-phone-screen-img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   display: block;
   pointer-events: none;
   user-select: none;
@@ -287,13 +296,22 @@
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 45%);
   pointer-events: none;
   z-index: 5;
 }
 
 .hero-home-indicator {
-  display: none;
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 3px;
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* 3D Stack Positioning */
@@ -306,7 +324,7 @@
 
 .phone-center {
   z-index: 3;
-  transform: scale(1.02);
+  transform: scale(1.03);
   filter: drop-shadow(0 20px 40px rgba(167, 139, 250, 0.25));
 }
 
@@ -1802,16 +1820,15 @@
 .iphone-device-wrap {
   position: relative;
   z-index: 10;
-  width: 260px;
-  max-width: 88vw;
-  height: 579px;
-  max-height: 72vh;
+  width: 320px;
+  max-width: 90vw;
+  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
   -webkit-user-select: none;
-  filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 30px rgba(167, 139, 250, 0.15));
+  filter: drop-shadow(0 35px 80px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 40px rgba(167, 139, 250, 0.18));
   transition: transform 0.3s ease;
 }
 
@@ -1819,9 +1836,9 @@
 .iphone-btn-action {
   position: absolute;
   left: -4px;
-  top: 90px;
+  top: 105px;
   width: 4px;
-  height: 24px;
+  height: 26px;
   background: linear-gradient(180deg, #6c6b75 0%, #3e3d47 100%);
   border-radius: 3px 0 0 3px;
   box-shadow: -1px 0 3px rgba(0,0,0,0.5);
@@ -1831,9 +1848,9 @@
 .iphone-btn-volume-up {
   position: absolute;
   left: -4px;
-  top: 130px;
+  top: 146px;
   width: 4px;
-  height: 42px;
+  height: 48px;
   background: linear-gradient(180deg, #6c6b75 0%, #3e3d47 100%);
   border-radius: 3px 0 0 3px;
   box-shadow: -1px 0 3px rgba(0,0,0,0.5);
@@ -1843,9 +1860,9 @@
 .iphone-btn-volume-down {
   position: absolute;
   left: -4px;
-  top: 184px;
+  top: 206px;
   width: 4px;
-  height: 42px;
+  height: 48px;
   background: linear-gradient(180deg, #6c6b75 0%, #3e3d47 100%);
   border-radius: 3px 0 0 3px;
   box-shadow: -1px 0 3px rgba(0,0,0,0.5);
@@ -1855,9 +1872,9 @@
 .iphone-btn-power {
   position: absolute;
   right: -4px;
-  top: 140px;
+  top: 155px;
   width: 4px;
-  height: 58px;
+  height: 68px;
   background: linear-gradient(180deg, #6c6b75 0%, #3e3d47 100%);
   border-radius: 0 3px 3px 0;
   box-shadow: 1px 0 3px rgba(0,0,0,0.5);
@@ -1870,16 +1887,16 @@
   width: 100%;
   height: 100%;
   background: #1e1d24;
-  border-radius: 40px;
-  padding: 7px;
+  border-radius: 50px;
+  padding: 10px;
   /* Multi-layered Brushed Titanium & CNC Chamfered Edge */
   box-shadow: 
     inset 0 0 0 2px #757482,
-    inset 0 0 0 3.5px #2b2a33,
-    inset 0 0 0 4.5px #4f4e5a,
-    0 0 0 1.5px #26252e,
-    0 0 0 2.5px #585766,
-    0 0 0 3.5px #1a1921;
+    inset 0 0 0 4px #2b2a33,
+    inset 0 0 0 5px #4f4e5a,
+    0 0 0 2px #26252e,
+    0 0 0 3.5px #585766,
+    0 0 0 4.5px #1a1921;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1891,29 +1908,110 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 34px;
+  border-radius: 42px;
   overflow: hidden;
-  background: #000000;
+  background: #0d0d12;
   display: flex;
   flex-direction: column;
-  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.95);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95);
 }
 
 /* Dynamic Island Cutout */
 .iphone-dynamic-island {
-  display: none;
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 28px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-/* iPhone Status Bar */
+.island-camera-lens {
+  width: 11px;
+  height: 11px;
+  background: radial-gradient(circle at 35% 35%, #182848 0%, #050b14 70%, #000 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 3px rgba(56, 189, 248, 0.4);
+}
+
+.island-mic-indicator {
+  width: 3.5px;
+  height: 3.5px;
+  background: #111;
+  border-radius: 50%;
+}
+
+/* iPhone Status Bar (Time & System Icons) */
 .iphone-status-bar {
-  display: none;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  right: 0;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 25;
+  color: #FFFFFF;
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Roboto, sans-serif;
+}
+
+.status-time {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FFFFFF;
+}
+
+.status-battery {
+  width: 22px;
+  height: 11px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  padding: 1px;
+  position: relative;
+}
+
+.status-battery::after {
+  content: '';
+  position: absolute;
+  right: -3.5px;
+  top: 2.5px;
+  width: 2px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0 1px 1px 0;
+}
+
+.battery-level {
+  width: 75%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 1.5px;
 }
 
 /* Screen Content Artwork */
 .iphone-screen-artwork {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   display: block;
   pointer-events: none;
   user-select: none;
@@ -1934,7 +2032,7 @@
   background: radial-gradient(circle at 50% 30%, #1e1b2e 0%, #0d0d12 100%);
 }
 
-.ph-badge {
+.iphone-screen-ready-state .ph-badge {
   padding: 5px 14px;
   border-radius: 20px;
   background: rgba(167, 139, 250, 0.15);
@@ -1945,19 +2043,19 @@
   letter-spacing: 0.08em;
 }
 
-.ph-icon {
+.iphone-screen-ready-state .ph-icon {
   font-size: 44px;
   filter: drop-shadow(0 10px 20px rgba(167, 139, 250, 0.4));
 }
 
-.ph-title {
+.iphone-screen-ready-state .ph-title {
   font-size: 17px;
   font-weight: 700;
   margin: 0;
   color: #FFFFFF;
 }
 
-.ph-desc {
+.iphone-screen-ready-state .ph-desc {
   font-size: 12.5px;
   color: rgba(255, 255, 255, 0.65);
   margin: 0;
@@ -1989,7 +2087,16 @@
 
 /* Bottom Home Indicator Bar */
 .iphone-home-indicator {
-  display: none;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  z-index: 25;
+  pointer-events: none;
 }
 
 /* Anti-Theft Guard Shield Over Screen */
