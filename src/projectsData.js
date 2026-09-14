@@ -1,7 +1,7 @@
 import cardImg1 from './assets/project-card-1.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
-import gymMateThumbnail from './assets/gym-mate-screen-6.png'
+import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 
 export const CATEGORIES = [
   {
