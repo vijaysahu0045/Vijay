@@ -3,6 +3,7 @@ import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
+import foodScannerThumbnail from './assets/food-scanner-screen-1.png'
 
 export const CATEGORIES = [
   {
@@ -22,7 +23,7 @@ export const CATEGORIES = [
     iconName: 'ai-ux',
     projects: [
       { id: 7, title: 'AI Diet Coach', image: aiDietCoachThumbnail, tag: 'CONVERSATIONAL AI', theme: 'theme-purple', icon: '🤖', description: 'Multimodal AI conversational health coach providing real-time habit guidance, daily check-ins, and adaptive fitness advice.' },
-      { id: 8, title: 'Food Scanner App', image: null, tag: 'AI COMPUTER VISION', theme: 'theme-sunset', icon: '📸', description: 'Instant camera food scanning using AI vision to calculate calories, macronutrients, and nutritional breakdown in seconds.' },
+      { id: 8, title: 'Food Scanner App', image: foodScannerThumbnail, tag: 'AI COMPUTER VISION', theme: 'theme-sunset', icon: '📸', description: 'Instant camera food scanning using AI vision to calculate calories, macronutrients, and nutritional breakdown in seconds.' },
       { id: 9, title: 'AI Nutrition App', image: nutritionAppThumbnail, tag: 'SMART HEALTH AI', theme: 'theme-blue', icon: '🥑', description: 'AI-driven nutrition engine with automated grocery lists, bio-adaptive dietary recommendations, and calorie forecasting.' },
     ]
   },

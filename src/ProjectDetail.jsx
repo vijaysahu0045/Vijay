@@ -28,6 +28,11 @@ import aiDietCoachScreen5 from './assets/ai-diet-coach-screen-5.png'
 import aiDietCoachScreen6 from './assets/ai-diet-coach-screen-6.png'
 import aiDietCoachScreen7 from './assets/ai-diet-coach-screen-7.png'
 
+import foodScannerScreen1 from './assets/food-scanner-screen-1.png'
+import foodScannerScreen2 from './assets/food-scanner-screen-2.png'
+import foodScannerScreen3 from './assets/food-scanner-screen-3.png'
+import foodScannerScreen4 from './assets/food-scanner-screen-4.png'
+
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
   1: {
@@ -141,6 +146,32 @@ const CASE_STUDIES = {
     figmaTitle: 'AI Diet Coach Design System • Figma Canvas',
     figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
+  8: {
+    id: 8,
+    title: 'Food Scanner App',
+    category: 'AI UX',
+    headlinePrefix: 'Instant AI Computer Vision Food Scanning — ',
+    headlineGradient: 'calories, macros & nutrition in seconds.',
+    subtitle: 'Point-and-shoot camera scanner powered by AI vision to instantly analyze meal portions, breakdown macronutrients, and track daily caloric budget.',
+    role: 'AI Product Designer',
+    timeline: 'Aug – Oct 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: foodScannerScreen2, alt: 'Real-Time Camera AI Scanner' },
+      center: { image: foodScannerScreen1, alt: 'Instant Macro & Calorie Breakdown' },
+      right: { image: foodScannerScreen3, alt: 'My Cal Daily Dashboard' }
+    },
+    screens: [
+      { id: 1, title: 'Instant Dish & Macro Analysis', image: foodScannerScreen1, tag: 'AI VISION' },
+      { id: 2, title: 'Live Camera Food Scanner', image: foodScannerScreen2, tag: 'CAMERA SCAN' },
+      { id: 3, title: 'My Cal Daily Nutrition Hub', image: foodScannerScreen3, tag: 'DASHBOARD' },
+      { id: 4, title: 'Kyra Pro AI Coach Upgrade', image: foodScannerScreen4, tag: 'PAYWALL & PRO' },
+    ],
+    showcaseTitle: 'Experience Food Scanner App on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive AI computer vision camera and automated calorie tracking interfaces.',
+    figmaTitle: 'Food Scanner Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
+  },
   9: {
     id: 9,
     title: 'AI Nutrition App',
@@ -184,6 +215,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   // Resolve case study data if available
   const matchedCaseStudy =
     CASE_STUDIES[project.id] ||
+    (project.title?.toLowerCase().includes('food scanner') ? CASE_STUDIES[8] : null) ||
     (project.title?.toLowerCase().includes('diet coach') ? CASE_STUDIES[7] : null) ||
     (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
     (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
