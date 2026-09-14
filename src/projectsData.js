@@ -15,15 +15,12 @@ export const CATEGORIES = [
   },
   {
     id: 'ai-ux',
-    label: 'AI UX / UI Design',
+    label: 'AI UX',
     iconName: 'ai-ux',
     projects: [
       { id: 7, title: 'AI Diet Coach', image: null, tag: 'CONVERSATIONAL AI', theme: 'theme-purple', icon: '🤖', description: 'Multimodal AI conversational health coach providing real-time habit guidance, daily check-ins, and adaptive fitness advice.' },
       { id: 8, title: 'Food Scanner App', image: null, tag: 'AI COMPUTER VISION', theme: 'theme-sunset', icon: '📸', description: 'Instant camera food scanning using AI vision to calculate calories, macronutrients, and nutritional breakdown in seconds.' },
       { id: 9, title: 'AI Nutrition App', image: null, tag: 'SMART HEALTH AI', theme: 'theme-blue', icon: '🥑', description: 'AI-driven nutrition engine with automated grocery lists, bio-adaptive dietary recommendations, and calorie forecasting.' },
-      { id: 10, title: 'AI Copilot Studio', image: null, tag: 'AI WORKFLOW', theme: 'theme-dark', icon: '🧠', description: 'Generative AI assistant interface with context-aware suggestions and multimodal chat.' },
-      { id: 11, title: 'Voice AI Agent App', image: null, tag: 'VOICE AI', theme: 'theme-light', icon: '🎙️', description: 'Real-time speech-to-text conversational interface with low-latency audio wave.' },
-      { id: 12, title: 'Smart Search & RAG UI', image: null, tag: 'ENTERPRISE RAG', theme: 'theme-sunset', icon: '🔍', description: 'Enterprise semantic search with citation linking and vector database integration.' },
     ]
   },
   {
