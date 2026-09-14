@@ -32,6 +32,9 @@ import foodScannerScreen1 from './assets/food-scanner-screen-1.png'
 import foodScannerScreen2 from './assets/food-scanner-screen-2.png'
 import foodScannerScreen3 from './assets/food-scanner-screen-3.png'
 import foodScannerScreen4 from './assets/food-scanner-screen-4.png'
+import foodScannerScreen5 from './assets/food-scanner-screen-5.png'
+import foodScannerScreen6 from './assets/food-scanner-screen-6.png'
+import foodScannerScreen7 from './assets/food-scanner-screen-7.png'
 
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
@@ -159,13 +162,16 @@ const CASE_STUDIES = {
     heroPhones: {
       left: { image: foodScannerScreen2, alt: 'Real-Time Camera AI Scanner' },
       center: { image: foodScannerScreen1, alt: 'Instant Macro & Calorie Breakdown' },
-      right: { image: foodScannerScreen3, alt: 'My Cal Daily Dashboard' }
+      right: { image: foodScannerScreen5, alt: 'Dish Breakdown & Micro Nutrients' }
     },
     screens: [
       { id: 1, title: 'Instant Dish & Macro Analysis', image: foodScannerScreen1, tag: 'AI VISION' },
-      { id: 2, title: 'Live Camera Food Scanner', image: foodScannerScreen2, tag: 'CAMERA SCAN' },
-      { id: 3, title: 'My Cal Daily Nutrition Hub', image: foodScannerScreen3, tag: 'DASHBOARD' },
-      { id: 4, title: 'Kyra Pro AI Coach Upgrade', image: foodScannerScreen4, tag: 'PAYWALL & PRO' },
+      { id: 2, title: 'Dish Breakdown & Micro Nutrients', image: foodScannerScreen5, tag: 'NUTRIENTS' },
+      { id: 3, title: 'Live Camera Food Scanner', image: foodScannerScreen2, tag: 'CAMERA SCAN' },
+      { id: 4, title: 'My Cal Daily Nutrition Hub', image: foodScannerScreen3, tag: 'DASHBOARD' },
+      { id: 5, title: 'Angle Guidance: Bowl Analysis', image: foodScannerScreen6, tag: 'SCAN GUIDE' },
+      { id: 6, title: 'Angle Guidance: Meal & Sandwiches', image: foodScannerScreen7, tag: 'SCAN GUIDE' },
+      { id: 7, title: 'Kyra Pro AI Coach Upgrade', image: foodScannerScreen4, tag: 'PAYWALL & PRO' },
     ],
     showcaseTitle: 'Experience Food Scanner App on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive AI computer vision camera and automated calorie tracking interfaces.',
