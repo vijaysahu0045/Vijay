@@ -1,5 +1,6 @@
 import cardImg1 from './assets/project-card-1.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
+import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 
 export const CATEGORIES = [
   {
@@ -9,7 +10,7 @@ export const CATEGORIES = [
     projects: [
       { id: 1, title: 'Fymble — Multi-Platform Ecosystem', image: cardImg1, tag: 'FLAGSHIP PRODUCT', description: 'End-to-end UX/UI for 250+ screens supporting 20K+ users and 600+ gym partners with Kyra AI coach.' },
       { id: 2, title: 'Gym Management App', image: null, tag: 'GYM MANAGEMENT B2B', theme: 'theme-purple', icon: '🏋️', description: 'Comprehensive B2B gym management SaaS platform for fitness centers to manage memberships, check-ins, trainers, and revenue analytics.' },
-      { id: 3, title: 'Nutrition App', image: null, tag: 'DIET & NUTRITION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized meal plans, macro tracking, healthy recipe explorer, and daily calorie counter.' },
+      { id: 3, title: 'Nutrition App', image: nutritionAppThumbnail, tag: 'DIET & NUTRITION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized meal plans, macro tracking, healthy recipe explorer, and daily calorie counter.' },
       { id: 4, title: 'Gym Mate App', image: null, tag: 'COMMUNITY & FITNESS', theme: 'theme-blue', icon: '🤝', description: 'Social fitness matching app to find nearby workout buddies, spotters, and local gym partners.' },
     ]
   },
@@ -20,7 +21,7 @@ export const CATEGORIES = [
     projects: [
       { id: 7, title: 'AI Diet Coach', image: null, tag: 'CONVERSATIONAL AI', theme: 'theme-purple', icon: '🤖', description: 'Multimodal AI conversational health coach providing real-time habit guidance, daily check-ins, and adaptive fitness advice.' },
       { id: 8, title: 'Food Scanner App', image: null, tag: 'AI COMPUTER VISION', theme: 'theme-sunset', icon: '📸', description: 'Instant camera food scanning using AI vision to calculate calories, macronutrients, and nutritional breakdown in seconds.' },
-      { id: 9, title: 'AI Nutrition App', image: null, tag: 'SMART HEALTH AI', theme: 'theme-blue', icon: '🥑', description: 'AI-driven nutrition engine with automated grocery lists, bio-adaptive dietary recommendations, and calorie forecasting.' },
+      { id: 9, title: 'AI Nutrition App', image: nutritionAppThumbnail, tag: 'SMART HEALTH AI', theme: 'theme-blue', icon: '🥑', description: 'AI-driven nutrition engine with automated grocery lists, bio-adaptive dietary recommendations, and calorie forecasting.' },
     ]
   },
   {
