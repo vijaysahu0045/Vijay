@@ -95,18 +95,27 @@
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
 }
 
-/* Main Content Wrapper */
+/* Main Content Wrapper - Scaled to 80% (20% smaller) for comfortable viewing */
 .detail-content {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 36px 28px 100px 28px;
+  padding: 30px 28px 80px 28px;
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 55px;
   animation: fadeInUp 0.5s ease-out both;
+  zoom: 0.80;
+}
+
+@media (max-width: 768px) {
+  .detail-content {
+    zoom: 1;
+    padding: 20px 16px 60px 16px;
+    gap: 40px;
+  }
 }
 
 /* ==========================================================================
