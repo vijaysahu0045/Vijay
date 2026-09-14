@@ -7,6 +7,12 @@ import screen3 from './assets/fymble-screen-3.png'
 import screen4 from './assets/fymble-screen-4.png'
 import screen5 from './assets/fymble-screen-5.png'
 
+import nutritionScreen1 from './assets/nutrition-screen-1.png'
+import nutritionScreen2 from './assets/nutrition-screen-2.png'
+import nutritionScreen3 from './assets/nutrition-screen-3.png'
+import nutritionScreen4 from './assets/nutrition-screen-4.png'
+import nutritionScreen5 from './assets/nutrition-screen-5.png'
+
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
   1: {
@@ -34,17 +40,7 @@ const CASE_STUDIES = {
     showcaseTitle: 'Experience Fymble on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive high-fidelity screens designed for 250+ flows and 20K+ active users.',
     figmaTitle: 'Fymble Design System • Figma Canvas',
-    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
-    problems: [
-      { icon: '⏳', title: '1. High Friction Booking', desc: 'Fragmented gym discovery and rigid long-term contracts prevented casual fitness enthusiasts from starting.' },
-      { icon: '📉', title: '2. Drop-off & Inconsistency', desc: 'Without personalized daily accountability, 78% of users lost workout motivation after the first 3 weeks.' },
-      { icon: '🧩', title: '3. Disconnected Ecosystem', desc: 'Users juggled 4 different apps for gym access, class booking, calorie tracking, and buddy workouts.' }
-    ],
-    solutions: [
-      { icon: '⚡', title: '1. Instant Daily Passes', desc: 'Pay-per-session gym passes starting at ₹99 with QR-code entry and instant slot confirmation.' },
-      { icon: '🤖', title: '2. Kyra AI Health Coach', desc: 'Conversational workout planning, adaptive recovery advice, and proactive daily check-ins.' },
-      { icon: '🌐', title: '3. All-in-One Fitness Hub', desc: 'Unified experience combining discovery, meal vision scanner, classes, and social spotter matching.' }
-    ]
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
   3: {
     id: 3,
@@ -57,31 +53,21 @@ const CASE_STUDIES = {
     timeline: 'Jun – Aug 2024',
     platform: 'iOS & Android',
     heroPhones: {
-      left: { image: screen2, alt: 'AI Food Scanner' },
-      center: { image: screen4, alt: 'Diet & Nutrition Recipes' },
-      right: { image: screen1, alt: 'Personalized Meal Planner' }
+      left: { image: nutritionScreen2, alt: 'Personalized Nutrition Diet Plan' },
+      center: { image: nutritionScreen1, alt: 'Nutrition & Wellness Hub' },
+      right: { image: nutritionScreen3, alt: 'Healthy Recipe & Ingredients' }
     },
     screens: [
-      { id: 1, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
-      { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
-      { id: 3, title: 'Personalized Meal Planner', image: screen1, tag: 'MEAL PLANS' },
-      { id: 4, title: 'Macro & Calorie Tracker', image: screen3, tag: 'MACRO TRACKER' },
-      { id: 5, title: 'Streak & Progress Analytics', image: screen5, tag: 'ANALYTICS' },
+      { id: 1, title: 'Nutrition & Wellness Hub', image: nutritionScreen1, tag: 'DASHBOARD' },
+      { id: 2, title: 'Personalized Daily Diet Plan', image: nutritionScreen2, tag: 'DIET PLAN' },
+      { id: 3, title: 'Healthy Recipe & Ingredients', image: nutritionScreen3, tag: 'RECIPES' },
+      { id: 4, title: '3D Interactive Body Metrics', image: nutritionScreen4, tag: 'BODY METRICS' },
+      { id: 5, title: 'BMI & Nutrition Consultation Plans', image: nutritionScreen5, tag: 'CONSULTATION' },
     ],
     showcaseTitle: 'Experience Nutrition App on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive high-fidelity nutrition & macro tracking screens designed for effortless daily health.',
     figmaTitle: 'Nutrition App Design System • Figma Canvas',
-    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
-    problems: [
-      { icon: '📝', title: '1. Tedious Food Logging', desc: 'Users abandon diet apps within days because typing each ingredient is slow, frustrating, and inaccurate.' },
-      { icon: '🥗', title: '2. Rigid Generic Diets', desc: 'Standard calorie calculators ignore individual food preferences, cultural cuisines, and busy lifestyles.' },
-      { icon: '📊', title: '3. Macro Confusion & Guilt', desc: 'Complex spreadsheets and strict calorie limits create diet fatigue rather than sustainable healthy habits.' }
-    ],
-    solutions: [
-      { icon: '📸', title: '1. Instant AI Food Scanner', desc: 'Snap a picture of any meal to identify ingredients, calories, and macros in under 3 seconds.' },
-      { icon: '🥑', title: '2. Adaptive Macro Balancing', desc: 'Dynamic daily targets that automatically adjust based on physical activity and previous meal logs.' },
-      { icon: '📖', title: '3. Curated Macro Recipes', desc: 'Personalized recipe recommendations with exact portion guides and smart automated grocery lists.' }
-    ]
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
   9: {
     id: 9,
@@ -94,31 +80,21 @@ const CASE_STUDIES = {
     timeline: 'Jul – Sep 2024',
     platform: 'iOS & Android',
     heroPhones: {
-      left: { image: screen2, alt: 'AI Food Scanner' },
-      center: { image: screen4, alt: 'Diet & Nutrition Recipes' },
-      right: { image: screen1, alt: 'Bio-Adaptive Recommendations' }
+      left: { image: nutritionScreen2, alt: 'Personalized Nutrition Diet Plan' },
+      center: { image: nutritionScreen1, alt: 'Nutrition & Wellness Hub' },
+      right: { image: nutritionScreen3, alt: 'Healthy Recipe & Ingredients' }
     },
     screens: [
-      { id: 1, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
-      { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
-      { id: 3, title: 'Bio-Adaptive Planner', image: screen1, tag: 'ADAPTIVE AI' },
-      { id: 4, title: 'Macro Balance Engine', image: screen3, tag: 'MACROS' },
-      { id: 5, title: 'Streak & Bio Analytics', image: screen5, tag: 'ANALYTICS' },
+      { id: 1, title: 'Nutrition & Wellness Hub', image: nutritionScreen1, tag: 'DASHBOARD' },
+      { id: 2, title: 'Personalized Daily Diet Plan', image: nutritionScreen2, tag: 'DIET PLAN' },
+      { id: 3, title: 'Healthy Recipe & Ingredients', image: nutritionScreen3, tag: 'RECIPES' },
+      { id: 4, title: '3D Interactive Body Metrics', image: nutritionScreen4, tag: 'BODY METRICS' },
+      { id: 5, title: 'BMI & Nutrition Consultation Plans', image: nutritionScreen5, tag: 'CONSULTATION' },
     ],
     showcaseTitle: 'Experience AI Nutrition App on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive AI-powered nutrition intelligence interface crafted for seamless daily consistency.',
     figmaTitle: 'AI Nutrition Design System • Figma Canvas',
-    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
-    problems: [
-      { icon: '📝', title: '1. Tedious Food Logging', desc: 'Manual entry causes high drop-off rates for daily nutrition tracking.' },
-      { icon: '🥗', title: '2. Unpersonalized Plans', desc: 'Generic meal advice fails to adapt to dynamic daily energy expenditure.' },
-      { icon: '📊', title: '3. Data Without Insights', desc: 'Raw numbers without actionable food substitutions lead to frustration.' }
-    ],
-    solutions: [
-      { icon: '📸', title: '1. Multimodal AI Vision', desc: 'Deep learning food recognition with sub-second macronutrient breakdown.' },
-      { icon: '🥑', title: '2. Bio-Adaptive Forecast', desc: 'Predictive macro optimization tailored to biometric telemetry.' },
-      { icon: '📖', title: '3. Smart Ingredient Swap', desc: 'Instant healthy recipe alternatives based on items in your fridge.' }
-    ]
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   }
 }
 
@@ -563,41 +539,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         </section>
 
         {/* =========================================================================
-            SECTION 3: PROBLEM & SOLUTION ARCHITECTURE
-            ========================================================================= */}
-        {activeCaseStudy.problems && (
-          <section className="case-section-container">
-            <div className="case-section-head">
-              <span className="section-eyebrow eyebrow-purple">CHALLENGE &amp; SOLUTION</span>
-              <h2 className="case-section-h2">Designed to remove friction &amp; build sustainable habits.</h2>
-            </div>
-
-            <div className="problem-cards-grid">
-              {activeCaseStudy.problems.map((prob, pIdx) => (
-                <div key={pIdx} className="problem-card">
-                  <div className="card-top-icon">{prob.icon}</div>
-                  <h3>{prob.title}</h3>
-                  <p>{prob.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {activeCaseStudy.solutions && (
-              <div className="problem-cards-grid" style={{ marginTop: '24px' }}>
-                {activeCaseStudy.solutions.map((sol, sIdx) => (
-                  <div key={sIdx} className="problem-card solution-highlight-card">
-                    <div className="card-top-icon">{sol.icon}</div>
-                    <h3>{sol.title}</h3>
-                    <p>{sol.desc}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </section>
-        )}
-
-        {/* =========================================================================
-            SECTION 4: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH
+            SECTION 3: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH
             ========================================================================= */}
         <section id="figma-workbench-section" className="case-section-container figma-workbench-section">
           <div className="case-section-head">
