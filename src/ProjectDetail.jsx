@@ -13,6 +13,12 @@ import nutritionScreen3 from './assets/nutrition-screen-3.png'
 import nutritionScreen4 from './assets/nutrition-screen-4.png'
 import nutritionScreen5 from './assets/nutrition-screen-5.png'
 
+import gymMateScreen1 from './assets/gym-mate-screen-1.png'
+import gymMateScreen2 from './assets/gym-mate-screen-2.png'
+import gymMateScreen3 from './assets/gym-mate-screen-3.png'
+import gymMateScreen4 from './assets/gym-mate-screen-4.png'
+import gymMateScreen5 from './assets/gym-mate-screen-5.png'
+
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
   1: {
@@ -69,6 +75,33 @@ const CASE_STUDIES = {
     figmaTitle: 'Nutrition App Design System • Figma Canvas',
     figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
+  4: {
+    id: 4,
+    title: 'Gym Mate App',
+    category: 'Community & Fitness',
+    headlinePrefix: 'Social Fitness Matching — ',
+    headlineGradient: 'find workout partners & spotters nearby.',
+    subtitle: 'A location-based social fitness matching app connecting gym-goers, workout enthusiasts, and spotters for shared workouts and community motivation.',
+    role: 'UI/UX Designer',
+    timeline: 'Jul – Sep 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: gymMateScreen2, alt: 'Discover Gym Partners' },
+      center: { image: gymMateScreen1, alt: 'Gym Mate Discovery Hub' },
+      right: { image: gymMateScreen3, alt: 'Profile Photos & Bio' }
+    },
+    screens: [
+      { id: 1, title: 'Gym Mate Discovery Hub', image: gymMateScreen1, tag: 'DISCOVERY' },
+      { id: 2, title: 'Discover Gym Partners', image: gymMateScreen2, tag: 'COMMUNITY' },
+      { id: 3, title: 'Profile Photos & Bio', image: gymMateScreen3, tag: 'PROFILE SETUP' },
+      { id: 4, title: 'City Selection & Onboarding', image: gymMateScreen4, tag: 'ONBOARDING' },
+      { id: 5, title: 'Refer & Earn Rewards', image: gymMateScreen5, tag: 'REWARDS' },
+    ],
+    showcaseTitle: 'Experience Gym Mate on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive social fitness interfaces designed to connect workout enthusiasts seamlessly.',
+    figmaTitle: 'Gym Mate Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
+  },
   9: {
     id: 9,
     title: 'AI Nutrition App',
@@ -112,6 +145,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   // Resolve case study data if available
   const matchedCaseStudy =
     CASE_STUDIES[project.id] ||
+    (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
     (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
     (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
 
