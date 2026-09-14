@@ -3,7 +3,7 @@ import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
-import foodScannerThumbnail from './assets/food-scanner-screen-1.png'
+import foodScannerThumbnail from './assets/food-scanner-thumbnail.jpg'
 
 export const CATEGORIES = [
   {
