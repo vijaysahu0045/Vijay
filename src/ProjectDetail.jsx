@@ -20,6 +20,12 @@ import gymMateScreen4 from './assets/gym-mate-screen-4.png'
 import gymMateScreen5 from './assets/gym-mate-screen-5.png'
 import gymMateScreen6 from './assets/gym-mate-screen-6.png'
 
+import aiDietCoachScreen1 from './assets/ai-diet-coach-screen-1.png'
+import aiDietCoachScreen2 from './assets/ai-diet-coach-screen-2.png'
+import aiDietCoachScreen3 from './assets/ai-diet-coach-screen-3.png'
+import aiDietCoachScreen4 from './assets/ai-diet-coach-screen-4.png'
+import aiDietCoachScreen5 from './assets/ai-diet-coach-screen-5.png'
+
 // Dynamic Case Studies Data Dictionary
 const CASE_STUDIES = {
   1: {
@@ -104,6 +110,33 @@ const CASE_STUDIES = {
     figmaTitle: 'Gym Mate Design System • Figma Canvas',
     figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
+  7: {
+    id: 7,
+    title: 'AI Diet Coach',
+    category: 'AI UX',
+    headlinePrefix: 'Conversational Health & Nutrition Intelligence — ',
+    headlineGradient: 'adaptive habits and real-time coaching.',
+    subtitle: 'Multimodal AI conversational health coach providing personalized daily meal plans, allergy-safe nutrition balancing, and adaptive calorie reports.',
+    role: 'AI Product Designer',
+    timeline: 'Aug – Oct 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: aiDietCoachScreen2, alt: 'Personalized AI Diet Plan' },
+      center: { image: aiDietCoachScreen1, alt: 'AI Diet Report & Daily Hub' },
+      right: { image: aiDietCoachScreen3, alt: 'AI Plan Generation Engine' }
+    },
+    screens: [
+      { id: 1, title: 'AI Diet Report & Coach', image: aiDietCoachScreen1, tag: 'COACH HUB' },
+      { id: 2, title: 'Personalized Meal Plan', image: aiDietCoachScreen2, tag: 'DIET PLAN' },
+      { id: 3, title: 'AI Plan Generator Engine', image: aiDietCoachScreen3, tag: 'AI ENGINE' },
+      { id: 4, title: 'Dietary Preference Style', image: aiDietCoachScreen4, tag: 'PREFERENCES' },
+      { id: 5, title: 'Allergies & Dietary Guardrails', image: aiDietCoachScreen5, tag: 'ONBOARDING' },
+    ],
+    showcaseTitle: 'Experience AI Diet Coach on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive AI conversational nutrition and personalized diet tracking interfaces.',
+    figmaTitle: 'AI Diet Coach Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
+  },
   9: {
     id: 9,
     title: 'AI Nutrition App',
@@ -147,6 +180,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   // Resolve case study data if available
   const matchedCaseStudy =
     CASE_STUDIES[project.id] ||
+    (project.title?.toLowerCase().includes('diet coach') ? CASE_STUDIES[7] : null) ||
     (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
     (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
     (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
