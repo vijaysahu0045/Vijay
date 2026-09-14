@@ -2,7 +2,7 @@ import cardImg1 from './assets/project-card-1.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
-import aiDietCoachThumbnail from './assets/ai-diet-coach-screen-1.png'
+import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.jpg'
 
 export const CATEGORIES = [
   {
