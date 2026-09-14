@@ -7,6 +7,121 @@ import screen3 from './assets/fymble-screen-3.png'
 import screen4 from './assets/fymble-screen-4.png'
 import screen5 from './assets/fymble-screen-5.png'
 
+// Dynamic Case Studies Data Dictionary
+const CASE_STUDIES = {
+  1: {
+    id: 1,
+    title: 'Fymble — Multi-Platform Ecosystem',
+    category: 'Product Design',
+    headlinePrefix: 'Making fitness easier to start — ',
+    headlineGradient: 'and easier to stick with.',
+    subtitle: 'A flexible fitness marketplace with an AI health coach that keeps you consistent.',
+    role: 'UI/UX Designer',
+    timeline: 'May – Jul 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: screen3, alt: 'Fitness Class Selection' },
+      center: { image: screen1, alt: 'Gym Discovery & Passes' },
+      right: { image: screen2, alt: 'Food Scanner & AI Nutrition' }
+    },
+    screens: [
+      { id: 1, title: 'Gym Discovery & Passes', image: screen1, tag: 'DISCOVERY' },
+      { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
+      { id: 3, title: 'Fitness Class Booking', image: screen3, tag: 'CLASSES' },
+      { id: 4, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
+      { id: 5, title: 'Refer & Daily Rewards', image: screen5, tag: 'REWARDS' },
+    ],
+    showcaseTitle: 'Experience Fymble on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive high-fidelity screens designed for 250+ flows and 20K+ active users.',
+    figmaTitle: 'Fymble Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
+    problems: [
+      { icon: '⏳', title: '1. High Friction Booking', desc: 'Fragmented gym discovery and rigid long-term contracts prevented casual fitness enthusiasts from starting.' },
+      { icon: '📉', title: '2. Drop-off & Inconsistency', desc: 'Without personalized daily accountability, 78% of users lost workout motivation after the first 3 weeks.' },
+      { icon: '🧩', title: '3. Disconnected Ecosystem', desc: 'Users juggled 4 different apps for gym access, class booking, calorie tracking, and buddy workouts.' }
+    ],
+    solutions: [
+      { icon: '⚡', title: '1. Instant Daily Passes', desc: 'Pay-per-session gym passes starting at ₹99 with QR-code entry and instant slot confirmation.' },
+      { icon: '🤖', title: '2. Kyra AI Health Coach', desc: 'Conversational workout planning, adaptive recovery advice, and proactive daily check-ins.' },
+      { icon: '🌐', title: '3. All-in-One Fitness Hub', desc: 'Unified experience combining discovery, meal vision scanner, classes, and social spotter matching.' }
+    ]
+  },
+  3: {
+    id: 3,
+    title: 'Nutrition App',
+    category: 'UX / UI Design',
+    headlinePrefix: 'Personalized Nutrition & Macro Intelligence — ',
+    headlineGradient: 'simplifying healthy habits every day.',
+    subtitle: 'A seamless nutrition companion featuring AI-powered food tracking, personalized macro balancing, and chef-curated healthy recipes.',
+    role: 'UI/UX Designer',
+    timeline: 'Jun – Aug 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: screen2, alt: 'AI Food Scanner' },
+      center: { image: screen4, alt: 'Diet & Nutrition Recipes' },
+      right: { image: screen1, alt: 'Personalized Meal Planner' }
+    },
+    screens: [
+      { id: 1, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
+      { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
+      { id: 3, title: 'Personalized Meal Planner', image: screen1, tag: 'MEAL PLANS' },
+      { id: 4, title: 'Macro & Calorie Tracker', image: screen3, tag: 'MACRO TRACKER' },
+      { id: 5, title: 'Streak & Progress Analytics', image: screen5, tag: 'ANALYTICS' },
+    ],
+    showcaseTitle: 'Experience Nutrition App on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive high-fidelity nutrition & macro tracking screens designed for effortless daily health.',
+    figmaTitle: 'Nutrition App Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
+    problems: [
+      { icon: '📝', title: '1. Tedious Food Logging', desc: 'Users abandon diet apps within days because typing each ingredient is slow, frustrating, and inaccurate.' },
+      { icon: '🥗', title: '2. Rigid Generic Diets', desc: 'Standard calorie calculators ignore individual food preferences, cultural cuisines, and busy lifestyles.' },
+      { icon: '📊', title: '3. Macro Confusion & Guilt', desc: 'Complex spreadsheets and strict calorie limits create diet fatigue rather than sustainable healthy habits.' }
+    ],
+    solutions: [
+      { icon: '📸', title: '1. Instant AI Food Scanner', desc: 'Snap a picture of any meal to identify ingredients, calories, and macros in under 3 seconds.' },
+      { icon: '🥑', title: '2. Adaptive Macro Balancing', desc: 'Dynamic daily targets that automatically adjust based on physical activity and previous meal logs.' },
+      { icon: '📖', title: '3. Curated Macro Recipes', desc: 'Personalized recipe recommendations with exact portion guides and smart automated grocery lists.' }
+    ]
+  },
+  9: {
+    id: 9,
+    title: 'AI Nutrition App',
+    category: 'AI UX',
+    headlinePrefix: 'AI-Driven Bio-Adaptive Nutrition — ',
+    headlineGradient: 'intelligent macros & automated meal plans.',
+    subtitle: 'Next-generation AI nutrition engine with automated grocery lists, bio-adaptive dietary recommendations, and smart calorie forecasting.',
+    role: 'AI Product Designer',
+    timeline: 'Jul – Sep 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: screen2, alt: 'AI Food Scanner' },
+      center: { image: screen4, alt: 'Diet & Nutrition Recipes' },
+      right: { image: screen1, alt: 'Bio-Adaptive Recommendations' }
+    },
+    screens: [
+      { id: 1, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
+      { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
+      { id: 3, title: 'Bio-Adaptive Planner', image: screen1, tag: 'ADAPTIVE AI' },
+      { id: 4, title: 'Macro Balance Engine', image: screen3, tag: 'MACROS' },
+      { id: 5, title: 'Streak & Bio Analytics', image: screen5, tag: 'ANALYTICS' },
+    ],
+    showcaseTitle: 'Experience AI Nutrition App on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive AI-powered nutrition intelligence interface crafted for seamless daily consistency.',
+    figmaTitle: 'AI Nutrition Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1',
+    problems: [
+      { icon: '📝', title: '1. Tedious Food Logging', desc: 'Manual entry causes high drop-off rates for daily nutrition tracking.' },
+      { icon: '🥗', title: '2. Unpersonalized Plans', desc: 'Generic meal advice fails to adapt to dynamic daily energy expenditure.' },
+      { icon: '📊', title: '3. Data Without Insights', desc: 'Raw numbers without actionable food substitutions lead to frustration.' }
+    ],
+    solutions: [
+      { icon: '📸', title: '1. Multimodal AI Vision', desc: 'Deep learning food recognition with sub-second macronutrient breakdown.' },
+      { icon: '🥑', title: '2. Bio-Adaptive Forecast', desc: 'Predictive macro optimization tailored to biometric telemetry.' },
+      { icon: '📖', title: '3. Smart Ingredient Swap', desc: 'Instant healthy recipe alternatives based on items in your fridge.' }
+    ]
+  }
+}
+
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
 
@@ -18,31 +133,30 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
   const [isFigmaLoading, setIsFigmaLoading] = useState(true)
 
+  // Resolve case study data if available
+  const matchedCaseStudy =
+    CASE_STUDIES[project.id] ||
+    (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
+    (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
+
+  const isCaseStudyProject = Boolean(matchedCaseStudy)
+  const activeCaseStudy = matchedCaseStudy || CASE_STUDIES[1]
+
   // 1. Full Image Artwork Project (renders exact high-res image showcase)
-  const isImageArtworkProject = Boolean(project.image && project.id !== 1)
+  const isImageArtworkProject = Boolean(project.image && !isCaseStudyProject)
 
-  // 2. Fymble Multi-Platform Flagship UX/UI Case Study (renders interactive 3D phone ecosystem)
-  const isFymbleFlagshipCaseStudy = project.id === 1
-
-  // Dynamic list of UI Screens displayed inside the photorealistic iPhone 16 Pro
-  const fymbleScreens = [
-    { id: 1, title: 'Gym Discovery & Passes', image: screen1, tag: 'DISCOVERY' },
-    { id: 2, title: 'Smart Food Scanner', image: screen2, tag: 'AI VISION' },
-    { id: 3, title: 'Fitness Class Booking', image: screen3, tag: 'CLASSES' },
-    { id: 4, title: 'Diet & Nutrition Recipes', image: screen4, tag: 'NUTRITION' },
-    { id: 5, title: 'Refer & Daily Rewards', image: screen5, tag: 'REWARDS' },
-  ]
+  const activeScreens = activeCaseStudy.screens
 
   // Auto-scroll slideshow timer for iPhone showcase (every 3.5s)
   useEffect(() => {
-    if (!isFymbleFlagshipCaseStudy || isAutoplayPaused) return
+    if (!isCaseStudyProject || isAutoplayPaused) return
 
     const timer = setInterval(() => {
-      setCurrentScreenIdx((prev) => (prev + 1) % fymbleScreens.length)
+      setCurrentScreenIdx((prev) => (prev + 1) % activeScreens.length)
     }, 3500)
 
     return () => clearInterval(timer)
-  }, [isFymbleFlagshipCaseStudy, isAutoplayPaused, fymbleScreens.length])
+  }, [isCaseStudyProject, isAutoplayPaused, activeScreens.length])
 
   // =========================================================================
   // ANTI-DOWNLOAD, ANTI-RIGHT-CLICK & ANTI-SCREENSHOT BLACKOUT PROTECTION
@@ -203,9 +317,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </div>
           </div>
         </main>
-      ) : isFymbleFlagshipCaseStudy ? (
+      ) : isCaseStudyProject ? (
         /* =====================================================================
-            RENDER BRANCH 2: FYMBLE FLAGSHIP 3D PHONE ECOSYSTEM CASE STUDY
+            RENDER BRANCH 2: INTERACTIVE 3D PHONE ECOSYSTEM CASE STUDY
             ===================================================================== */
         <main className="detail-content">
         {/* =========================================================================
@@ -214,18 +328,18 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         <section className="case-hero-section">
           <div className="case-hero-left">
             <div className="case-category-label">
-              <span>{project.title || 'Fymble'}</span>
+              <span>{activeCaseStudy.title || project.title}</span>
               <span className="dot-sep">•</span>
-              <span>{categoryLabel || 'Product Design'}</span>
+              <span>{categoryLabel || activeCaseStudy.category || 'Product Design'}</span>
             </div>
 
             <h1 className="case-hero-title">
-              Making fitness easier to start — <br className="hide-mobile" />
-              <span className="case-hero-title-gradient">and easier to stick with.</span>
+              {activeCaseStudy.headlinePrefix} <br className="hide-mobile" />
+              <span className="case-hero-title-gradient">{activeCaseStudy.headlineGradient}</span>
             </h1>
 
             <p className="case-hero-subtitle">
-              {project.description || 'A flexible fitness marketplace with an AI health coach that keeps you consistent.'}
+              {activeCaseStudy.subtitle || project.description}
             </p>
 
             <div className="case-meta-row">
@@ -233,7 +347,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <span className="meta-icon">👤</span>
                 <div className="meta-text">
                   <span className="meta-lbl">Role</span>
-                  <span className="meta-val">UI/UX Designer</span>
+                  <span className="meta-val">{activeCaseStudy.role || 'UI/UX Designer'}</span>
                 </div>
               </div>
 
@@ -241,7 +355,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <span className="meta-icon">📅</span>
                 <div className="meta-text">
                   <span className="meta-lbl">Timeline</span>
-                  <span className="meta-val">May – Jul 2024</span>
+                  <span className="meta-val">{activeCaseStudy.timeline || 'May – Jul 2024'}</span>
                 </div>
               </div>
 
@@ -249,7 +363,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <span className="meta-icon">📱</span>
                 <div className="meta-text">
                   <span className="meta-lbl">Platform</span>
-                  <span className="meta-val">iOS &amp; Android</span>
+                  <span className="meta-val">{activeCaseStudy.platform || 'iOS & Android'}</span>
                 </div>
               </div>
             </div>
@@ -258,14 +372,14 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
           {/* Right Column: 3D Multi-Device Showcase using Realistic iPhone 16 Pro Hardware */}
           <div className="case-hero-right">
             <div className="phones-hero-showcase">
-              {/* Left Phone (Fitness Class Selection) */}
+              {/* Left Phone */}
               <div className="mock-phone phone-left">
                 <div className="hero-iphone-chassis">
                   <div className="hero-iphone-viewport">
                     <div className="hero-dynamic-island" />
                     <img
-                      src={screen3}
-                      alt="Fitness Class Selection"
+                      src={activeCaseStudy.heroPhones.left.image}
+                      alt={activeCaseStudy.heroPhones.left.alt}
                       className="hero-phone-screen-img"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
@@ -276,14 +390,14 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 </div>
               </div>
 
-              {/* Center Phone (Gym Discovery & Passes) */}
+              {/* Center Phone */}
               <div className="mock-phone phone-center">
                 <div className="hero-iphone-chassis">
                   <div className="hero-iphone-viewport">
                     <div className="hero-dynamic-island" />
                     <img
-                      src={screen1}
-                      alt="Gym Discovery & Passes"
+                      src={activeCaseStudy.heroPhones.center.image}
+                      alt={activeCaseStudy.heroPhones.center.alt}
                       className="hero-phone-screen-img"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
@@ -294,14 +408,14 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 </div>
               </div>
 
-              {/* Right Phone (Food Scanner & AI Nutrition) */}
+              {/* Right Phone */}
               <div className="mock-phone phone-right">
                 <div className="hero-iphone-chassis">
                   <div className="hero-iphone-viewport">
                     <div className="hero-dynamic-island" />
                     <img
-                      src={screen2}
-                      alt="Food Scanner & AI Nutrition"
+                      src={activeCaseStudy.heroPhones.right.image}
+                      alt={activeCaseStudy.heroPhones.right.alt}
                       className="hero-phone-screen-img"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
@@ -330,9 +444,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 <span className="live-dot" /> Auto-playing
               </span>
             </div>
-            <h2 className="case-section-h2">Experience Fymble on iPhone 16 Pro.</h2>
+            <h2 className="case-section-h2">{activeCaseStudy.showcaseTitle}</h2>
             <p className="case-section-sub">
-              Interactive high-fidelity screens designed for 250+ flows and 20K+ active users.
+              {activeCaseStudy.showcaseSubtitle}
             </p>
           </div>
 
@@ -342,7 +456,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             {/* Left Prev Arrow Button */}
             <button
               className="iphone-slider-nav-btn prev"
-              onClick={() => setCurrentScreenIdx((prev) => (prev > 0 ? prev - 1 : fymbleScreens.length - 1))}
+              onClick={() => setCurrentScreenIdx((prev) => (prev > 0 ? prev - 1 : activeScreens.length - 1))}
               title="Previous Screen"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -385,19 +499,19 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                   </div>
 
                   {/* Screen Content Artwork */}
-                  {fymbleScreens[currentScreenIdx]?.image ? (
+                  {activeScreens[currentScreenIdx]?.image ? (
                     <img
-                      src={fymbleScreens[currentScreenIdx].image}
-                      alt={fymbleScreens[currentScreenIdx].title}
+                      src={activeScreens[currentScreenIdx].image}
+                      alt={activeScreens[currentScreenIdx].title}
                       className="iphone-screen-artwork"
                       draggable="false"
                       onContextMenu={(e) => e.preventDefault()}
                     />
                   ) : (
                     <div className="iphone-screen-ready-state">
-                      <div className="ph-badge">{fymbleScreens[currentScreenIdx]?.tag || 'UI SCREEN'}</div>
+                      <div className="ph-badge">{activeScreens[currentScreenIdx]?.tag || 'UI SCREEN'}</div>
                       <span className="ph-icon">✨</span>
-                      <h4 className="ph-title">{fymbleScreens[currentScreenIdx]?.title || 'Screen Showcase'}</h4>
+                      <h4 className="ph-title">{activeScreens[currentScreenIdx]?.title || 'Screen Showcase'}</h4>
                       <p className="ph-desc">Upload your high-fidelity Figma UI screen to render inside this iPhone 16 Pro.</p>
                       <div className="ph-screen-guide-hint">
                         <span>📐 Optimal ratio: 9:19.5 (1179 × 2556 px)</span>
@@ -424,7 +538,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             {/* Right Next Arrow Button */}
             <button
               className="iphone-slider-nav-btn next"
-              onClick={() => setCurrentScreenIdx((prev) => (prev < fymbleScreens.length - 1 ? prev + 1 : 0))}
+              onClick={() => setCurrentScreenIdx((prev) => (prev < activeScreens.length - 1 ? prev + 1 : 0))}
               title="Next Screen"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -435,7 +549,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
           {/* Screen Navigation Selector Pills */}
           <div className="iphone-screen-selector-bar">
-            {fymbleScreens.map((screen, idx) => (
+            {activeScreens.map((screen, idx) => (
               <button
                 key={screen.id}
                 className={`iphone-nav-tab-pill ${idx === currentScreenIdx ? 'active' : ''}`}
@@ -449,7 +563,41 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         </section>
 
         {/* =========================================================================
-            SECTION 3: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH
+            SECTION 3: PROBLEM & SOLUTION ARCHITECTURE
+            ========================================================================= */}
+        {activeCaseStudy.problems && (
+          <section className="case-section-container">
+            <div className="case-section-head">
+              <span className="section-eyebrow eyebrow-purple">CHALLENGE &amp; SOLUTION</span>
+              <h2 className="case-section-h2">Designed to remove friction &amp; build sustainable habits.</h2>
+            </div>
+
+            <div className="problem-cards-grid">
+              {activeCaseStudy.problems.map((prob, pIdx) => (
+                <div key={pIdx} className="problem-card">
+                  <div className="card-top-icon">{prob.icon}</div>
+                  <h3>{prob.title}</h3>
+                  <p>{prob.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {activeCaseStudy.solutions && (
+              <div className="problem-cards-grid" style={{ marginTop: '24px' }}>
+                {activeCaseStudy.solutions.map((sol, sIdx) => (
+                  <div key={sIdx} className="problem-card solution-highlight-card">
+                    <div className="card-top-icon">{sol.icon}</div>
+                    <h3>{sol.title}</h3>
+                    <p>{sol.desc}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* =========================================================================
+            SECTION 4: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH
             ========================================================================= */}
         <section id="figma-workbench-section" className="case-section-container figma-workbench-section">
           <div className="case-section-head">
@@ -483,7 +631,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
               <div className="figma-file-title-pill">
                 <span className="figma-file-icon">🎨</span>
-                <span className="figma-file-name">Fymble Design System • Figma Canvas</span>
+                <span className="figma-file-name">{activeCaseStudy.figmaTitle}</span>
               </div>
 
               <div className="figma-hint-pill">
@@ -525,7 +673,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
               <iframe
                 title="Figma Live Canvas Embed"
-                src="https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1"
+                src={activeCaseStudy.figmaUrl}
                 allowFullScreen
                 className={`figma-iframe ${isFigmaLoading ? 'loading' : 'ready'}`}
                 onLoad={() => {
