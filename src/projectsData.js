@@ -28,6 +28,19 @@ export const CATEGORIES = [
     ]
   },
   {
+    id: 'web',
+    label: 'Web Design',
+    iconName: 'web',
+    projects: [
+      { id: 25, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
+      { id: 26, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
+      { id: 27, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
+      { id: 28, title: 'Developer Documentation', image: null, tag: 'API DOCS', theme: 'theme-dark', icon: '📖', description: 'Content-focused API docs with interactive code blocks and quick search.' },
+      { id: 29, title: 'Restaurant Booking Site', image: null, tag: 'RESTAURANT', theme: 'theme-light', icon: '🍽️', description: 'Visual menu presentation, dish story cards, and real-time table booking.' },
+      { id: 30, title: 'Real Estate Portal', image: null, tag: 'REAL ESTATE', theme: 'theme-blue', icon: '🏢', description: 'Interactive map listings, filterable neighborhoods, and virtual home tours.' },
+    ]
+  },
+  {
     id: 'graphic',
     label: 'Graphic Design',
     iconName: 'graphic',
@@ -51,19 +64,6 @@ export const CATEGORIES = [
       { id: 22, title: '3D Scroll Experience', image: null, tag: 'PARALLAX 3D', theme: 'theme-purple', icon: '🌌', description: 'Parallax and WebGL scroll-triggered camera motion with depth shaders.' },
       { id: 23, title: 'Swipe Gestures & Physics', image: null, tag: 'TOUCH PHYSICS', theme: 'theme-light', icon: '👆', description: 'Natural gesture navigation, elastic bounce curves, and drag physics for mobile.' },
       { id: 24, title: 'Logo Reveal Animation', image: null, tag: 'LOGO REVEAL', theme: 'theme-dark', icon: '🎬', description: 'Dynamic 60fps logo splash screen reveal for product launch trailer.' },
-    ]
-  },
-  {
-    id: 'web',
-    label: 'Web Design',
-    iconName: 'web',
-    projects: [
-      { id: 25, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
-      { id: 26, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
-      { id: 27, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
-      { id: 28, title: 'Developer Documentation', image: null, tag: 'API DOCS', theme: 'theme-dark', icon: '📖', description: 'Content-focused API docs with interactive code blocks and quick search.' },
-      { id: 29, title: 'Restaurant Booking Site', image: null, tag: 'RESTAURANT', theme: 'theme-light', icon: '🍽️', description: 'Visual menu presentation, dish story cards, and real-time table booking.' },
-      { id: 30, title: 'Real Estate Portal', image: null, tag: 'REAL ESTATE', theme: 'theme-blue', icon: '🏢', description: 'Interactive map listings, filterable neighborhoods, and virtual home tours.' },
     ]
   },
   {
