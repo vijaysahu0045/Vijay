@@ -230,8 +230,13 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const isCaseStudyProject = Boolean(matchedCaseStudy)
   const activeCaseStudy = matchedCaseStudy || CASE_STUDIES[1]
 
+  const isWebProject =
+    project.categoryId === 'web' ||
+    project.category?.toLowerCase().includes('web') ||
+    (categoryLabel && categoryLabel.toLowerCase().includes('web'))
+
   // 1. Full Image Artwork Project (renders exact high-res image showcase)
-  const isImageArtworkProject = Boolean(project.image && !isCaseStudyProject)
+  const isImageArtworkProject = Boolean(project.image && !isCaseStudyProject && !isWebProject)
 
   const activeScreens = activeCaseStudy.screens
 
@@ -360,6 +365,11 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
           onClick={() => {
             if (isImageArtworkProject) {
               setIsLightboxOpen(true)
+            } else if (isWebProject) {
+              const el = document.getElementById('web-architecture-section')
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' })
+              }
             } else {
               const el = document.getElementById('figma-workbench-section')
               if (el) {
@@ -368,7 +378,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             }
           }}
         >
-          <span>{isImageArtworkProject ? 'Inspect Artwork' : 'View Prototype'}</span>
+          <span>{isImageArtworkProject ? 'Inspect Artwork' : isWebProject ? 'Explore Architecture' : 'View Prototype'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -404,6 +414,222 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               </div>
             </div>
           </div>
+        </main>
+      ) : isWebProject ? (
+        /* =====================================================================
+            RENDER BRANCH 2: MACBOOK PRO 16" LAPTOP SHOWCASE (WEB DESIGN PROJECTS)
+            ===================================================================== */
+        <main className="detail-content web-showcase-main">
+          {/* Top Hero Section */}
+          <section className="web-showcase-hero">
+            <div className="case-category-label">
+              <span>{project.title}</span>
+              <span className="dot-sep">•</span>
+              <span>{categoryLabel || project.category || 'Web Design'}</span>
+            </div>
+
+            <h1 className="web-hero-title">
+              {project.title} — <br className="hide-mobile" />
+              <span className="web-hero-title-gradient">Crafted for High-Impact Web Experiences.</span>
+            </h1>
+
+            <p className="web-hero-subtitle">
+              {project.description || 'Responsive, performant web architecture designed with fluid UX interactions and cohesive design tokens.'}
+            </p>
+
+            <div className="web-meta-row">
+              <div className="case-meta-pill">
+                <span className="meta-icon">💻</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Platform</span>
+                  <span className="meta-val">Responsive Web / SaaS</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">👤</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Role</span>
+                  <span className="meta-val">Lead Web &amp; UI Designer</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">⚡</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Stack</span>
+                  <span className="meta-val">Next.js • Tailwind • Figma</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">🚀</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Status</span>
+                  <span className="meta-val">Live &amp; Production Ready</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Photorealistic MacBook Pro 16" Device Showcase */}
+          <section className="macbook-showcase-section">
+            <div className="macbook-ambient-glow" />
+
+            <div className="macbook-device-wrap">
+              {/* MacBook Top Lid with Display */}
+              <div className="macbook-lid">
+                {/* Center Top Camera Notch */}
+                <div className="macbook-notch">
+                  <div className="macbook-camera-lens" />
+                  <div className="macbook-camera-indicator" />
+                </div>
+
+                {/* Inner Screen & Browser Window */}
+                <div className="macbook-screen-viewport">
+                  {/* Safari / Chrome Browser Top Bar */}
+                  <div className="macbook-browser-bar">
+                    <div className="macbook-traffic-dots">
+                      <span className="dot dot-red" />
+                      <span className="dot dot-yellow" />
+                      <span className="dot dot-green" />
+                    </div>
+
+                    <div className="macbook-url-bar">
+                      <span className="macbook-url-lock">🔒</span>
+                      <span>https://vijay.design/{project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}</span>
+                    </div>
+
+                    <div className="macbook-browser-actions">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
+                        <polyline points="16 6 12 2 8 6"/>
+                        <line x1="12" y1="2" x2="12" y2="15"/>
+                      </svg>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Scrollable Website Canvas Area */}
+                  <div className="macbook-canvas-area">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="macbook-artwork-img"
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                      />
+                    ) : (
+                      <div className="macbook-mock-website">
+                        <header className="mock-web-nav">
+                          <div className="mock-web-logo">
+                            <span>⚡</span>
+                            <span>{project.title}</span>
+                          </div>
+                          <nav className="mock-web-links">
+                            <span>Features</span>
+                            <span>Solutions</span>
+                            <span>Architecture</span>
+                            <span>Pricing</span>
+                          </nav>
+                          <button className="mock-web-cta-btn">Get Started</button>
+                        </header>
+
+                        <div className="mock-web-hero-content">
+                          <span className="mock-web-badge">✨ Next-Gen Web Experience</span>
+                          <h2 className="mock-web-title">
+                            Architected for <span className="mock-web-title-grad">Maximum Velocity &amp; Scale</span>
+                          </h2>
+                          <p className="mock-web-desc">
+                            {project.description || 'Designed with high conversion layouts, accessible typography hierarchy, and sub-second load performance.'}
+                          </p>
+                          <div className="mock-web-cta-row">
+                            <button className="mock-web-btn-primary">Explore Platform</button>
+                            <button className="mock-web-btn-secondary">View Case Study</button>
+                          </div>
+                        </div>
+
+                        <div className="mock-web-cards-row">
+                          <div className="mock-web-card">
+                            <span className="card-ico">⚡</span>
+                            <h5>Sub-Second Performance</h5>
+                            <p>Optimized Core Web Vitals with 100/100 Lighthouse performance metrics.</p>
+                          </div>
+                          <div className="mock-web-card">
+                            <span className="card-ico">📐</span>
+                            <h5>Fluid Responsive Grid</h5>
+                            <p>Pixel-perfect layout consistency from mobile displays up to 4K ultra-wide monitors.</p>
+                          </div>
+                          <div className="mock-web-card">
+                            <span className="card-ico">🔒</span>
+                            <h5>Enterprise UX Standards</h5>
+                            <p>WCAG 2.1 AA accessible contrast tokens and intuitive user feedback loops.</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Lower Aluminum Base Lip with Thumb Notch */}
+              <div className="macbook-base">
+                <div className="macbook-notch-lip" />
+              </div>
+            </div>
+          </section>
+
+          {/* Web Architecture & UX Foundations Section (NO Figma Embed!) */}
+          <section id="web-architecture-section" className="case-section-container">
+            <div className="case-section-head">
+              <span className="section-eyebrow eyebrow-purple">CORE ARCHITECTURE</span>
+              <h2 className="case-section-h2">Design precision engineered for modern web.</h2>
+              <p className="case-section-sub">
+                Every component is built around clean visual hierarchy, fast interaction feedback, and responsive layout resilience.
+              </p>
+            </div>
+
+            <div className="problem-cards-grid">
+              <div className="problem-card">
+                <div className="card-top-icon">📐</div>
+                <h3>1. Fluid Design System</h3>
+                <p>Engineered with scalable design tokens, standardized typography scale, and 8pt spatial grid for unified brand consistency.</p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">⚡</div>
+                <h3>2. High-Performance UX</h3>
+                <p>Minimal layout shifts (zero CLS), predictive micro-interactions, and instant page transitions for effortless user journeys.</p>
+              </div>
+
+              <div className="problem-card">
+                <div className="card-top-icon">📱</div>
+                <h3>3. Cross-Platform Adaptability</h3>
+                <p>Fluid responsive breakpoints rigorously tested across mobile viewports, tablets, laptops, and wide desktop displays.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Footer Navigation */}
+          <footer className="case-footer-nav">
+            <button className="case-nav-btn" onClick={onBack}>
+              <span>← Back to All Projects</span>
+            </button>
+
+            <button
+              className="case-nav-btn primary"
+              onClick={() => {
+                if (onNavigateProject) onNavigateProject()
+                else onBack()
+              }}
+            >
+              <span>Next Project →</span>
+            </button>
+          </footer>
         </main>
       ) : isCaseStudyProject ? (
         /* =====================================================================
