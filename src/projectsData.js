@@ -81,17 +81,21 @@ export const CATEGORIES = [
   }
 ]
 
-// All 36 projects flattened with category info for home slider
-export const ALL_FLATTENED_PROJECTS = CATEGORIES.flatMap((cat) =>
-  cat.projects.map((proj) => ({
-    ...proj,
-    category: cat.label,
-    categoryId: cat.id,
-    author: 'by Vijay'
-  }))
-)
+// Home Slider Filtered Categories: UX/UI Design, AI UX, and Web Design
+export const HOME_ALLOWED_CATEGORY_IDS = ['ux-ui', 'ai-ux', 'web']
 
-// Randomize array helper with deterministic seeded or randomized order
+export const ALL_FLATTENED_PROJECTS = CATEGORIES
+  .filter((cat) => HOME_ALLOWED_CATEGORY_IDS.includes(cat.id))
+  .flatMap((cat) =>
+    cat.projects.map((proj) => ({
+      ...proj,
+      category: cat.label,
+      categoryId: cat.id,
+      author: 'by Vijay'
+    }))
+  )
+
+// Randomize array helper for home slider
 export function getShuffledProjects() {
   const arr = [...ALL_FLATTENED_PROJECTS]
   for (let i = arr.length - 1; i > 0; i--) {
