@@ -420,59 +420,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             RENDER BRANCH 2: MACBOOK PRO 16" LAPTOP SHOWCASE (WEB DESIGN PROJECTS)
             ===================================================================== */
         <main className="detail-content web-showcase-main">
-          {/* Top Hero Section */}
-          <section className="web-showcase-hero">
-            <div className="case-category-label">
-              <span>{project.title}</span>
-              <span className="dot-sep">•</span>
-              <span>{categoryLabel || project.category || 'Web Design'}</span>
-            </div>
-
-            <h1 className="web-hero-title">
-              {project.title} — <br className="hide-mobile" />
-              <span className="web-hero-title-gradient">Crafted for High-Impact Web Experiences.</span>
-            </h1>
-
-            <p className="web-hero-subtitle">
-              {project.description || 'Responsive, performant web architecture designed with fluid UX interactions and cohesive design tokens.'}
-            </p>
-
-            <div className="web-meta-row">
-              <div className="case-meta-pill">
-                <span className="meta-icon">💻</span>
-                <div className="meta-text">
-                  <span className="meta-lbl">Platform</span>
-                  <span className="meta-val">Responsive Web / SaaS</span>
-                </div>
-              </div>
-
-              <div className="case-meta-pill">
-                <span className="meta-icon">👤</span>
-                <div className="meta-text">
-                  <span className="meta-lbl">Role</span>
-                  <span className="meta-val">Lead Web &amp; UI Designer</span>
-                </div>
-              </div>
-
-              <div className="case-meta-pill">
-                <span className="meta-icon">⚡</span>
-                <div className="meta-text">
-                  <span className="meta-lbl">Stack</span>
-                  <span className="meta-val">Next.js • Tailwind • Figma</span>
-                </div>
-              </div>
-
-              <div className="case-meta-pill">
-                <span className="meta-icon">🚀</span>
-                <div className="meta-text">
-                  <span className="meta-lbl">Status</span>
-                  <span className="meta-val">Live &amp; Production Ready</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Photorealistic MacBook Pro 16" Device Showcase */}
+          {/* Section 1: Photorealistic MacBook Pro 16" Device Showcase (Immediately at top!) */}
           <section className="macbook-showcase-section">
             <div className="macbook-ambient-glow" />
 
@@ -583,8 +531,60 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </div>
           </section>
 
-          {/* Web Architecture & UX Foundations Section (NO Figma Embed!) */}
-          <section id="web-architecture-section" className="case-section-container">
+          {/* Section 2: Project Overview & Meta Details (Directly Below Laptop) */}
+          <section id="web-architecture-section" className="web-showcase-hero web-details-below">
+            <div className="case-category-label">
+              <span>{project.title}</span>
+              <span className="dot-sep">•</span>
+              <span>{categoryLabel || project.category || 'Web Design'}</span>
+            </div>
+
+            <h1 className="web-hero-title">
+              {project.title} — <br className="hide-mobile" />
+              <span className="web-hero-title-gradient">Crafted for High-Impact Web Experiences.</span>
+            </h1>
+
+            <p className="web-hero-subtitle">
+              {project.description || 'Responsive, performant web architecture designed with fluid UX interactions and cohesive design tokens.'}
+            </p>
+
+            <div className="web-meta-row">
+              <div className="case-meta-pill">
+                <span className="meta-icon">💻</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Platform</span>
+                  <span className="meta-val">Responsive Web / SaaS</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">👤</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Role</span>
+                  <span className="meta-val">Lead Web &amp; UI Designer</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">⚡</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Stack</span>
+                  <span className="meta-val">Next.js • Tailwind • Figma</span>
+                </div>
+              </div>
+
+              <div className="case-meta-pill">
+                <span className="meta-icon">🚀</span>
+                <div className="meta-text">
+                  <span className="meta-lbl">Status</span>
+                  <span className="meta-val">Live &amp; Production Ready</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3: Web Architecture & UX Foundations Section (NO Figma Embed!) */}
+          <section className="case-section-container">
             <div className="case-section-head">
               <span className="section-eyebrow eyebrow-purple">CORE ARCHITECTURE</span>
               <h2 className="case-section-h2">Design precision engineered for modern web.</h2>
