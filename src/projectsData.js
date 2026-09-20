@@ -5,6 +5,7 @@ import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
 import foodScannerThumbnail from './assets/food-scanner-thumbnail.jpg'
 import nutritionConsultationLanding from './assets/nutrition-consultation-landing.png'
+import nutritionWebsiteThumbnail from './assets/nutrition-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -33,7 +34,7 @@ export const CATEGORIES = [
     label: 'Web Design',
     iconName: 'web',
     projects: [
-      { id: 25, title: '1:1 Nutrition & Diet Consultation Website', image: nutritionConsultationLanding, tag: '1:1 DIET CONSULTATION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized 1:1 nutrition consultation landing page detailing what expert dietitians provide, custom diet plans, real transformation proof, and user consultation benefits.' },
+      { id: 25, title: '1:1 Nutrition & Diet Consultation Website', image: nutritionConsultationLanding, thumbnail: nutritionWebsiteThumbnail, tag: '1:1 DIET CONSULTATION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized 1:1 nutrition consultation landing page detailing what expert dietitians provide, custom diet plans, real transformation proof, and user consultation benefits.' },
       { id: 26, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
       { id: 27, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
       { id: 28, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },

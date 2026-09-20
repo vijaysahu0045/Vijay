@@ -143,9 +143,9 @@ export default function Projects({
                 className="project-card-wrapper"
                 onClick={() => handleCardClick(proj)}
               >
-                <div className={`project-grid-card ${proj.image ? 'with-image' : 'glass-card'}`}>
-                  {proj.image ? (
-                    <img src={proj.image} alt={proj.title} />
+                <div className={`project-grid-card ${proj.thumbnail || proj.image ? 'with-image' : 'glass-card'}`}>
+                  {proj.thumbnail || proj.image ? (
+                    <img src={proj.thumbnail || proj.image} alt={proj.title} />
                   ) : (
                     <div className={`project-card-placeholder ${proj.theme || 'theme-dark'}`}>
                       {proj.icon && <span className="card-mock-icon">{proj.icon}</span>}

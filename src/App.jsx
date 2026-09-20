@@ -251,8 +251,8 @@ function App() {
                 onClick={() => openHomeProject(proj)}
               >
                 <div className="home-card-visual">
-                  {proj.image ? (
-                    <img src={proj.image} alt={proj.title} />
+                  {proj.thumbnail || proj.image ? (
+                    <img src={proj.thumbnail || proj.image} alt={proj.title} />
                   ) : (
                     <div className={`home-card-gradient-mock ${proj.theme || 'theme-dark'}`}>
                       <span className="mock-mini-icon">{proj.icon || '✨'}</span>
