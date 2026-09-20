@@ -363,7 +363,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         <button
           className="detail-action-btn"
           onClick={() => {
-            if (isImageArtworkProject) {
+            if (project.liveUrl) {
+              window.open(project.liveUrl, '_blank', 'noopener,noreferrer')
+            } else if (isImageArtworkProject) {
               setIsLightboxOpen(true)
             } else if (isWebProject) {
               const el = document.getElementById('web-architecture-section')
@@ -378,7 +380,15 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             }
           }}
         >
-          <span>{isImageArtworkProject ? 'Inspect Artwork' : isWebProject ? 'Explore Architecture' : 'View Prototype'}</span>
+          <span>
+            {project.liveUrl
+              ? 'Visit Live Site ↗'
+              : isImageArtworkProject
+              ? 'Inspect Artwork'
+              : isWebProject
+              ? 'Explore Architecture'
+              : 'View Prototype'}
+          </span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -515,6 +525,20 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             <p className="web-hero-subtitle">
               {project.description || 'Responsive, performant web architecture designed with fluid UX interactions and cohesive design tokens.'}
             </p>
+
+            {project.liveUrl && (
+              <div className="web-live-action-banner">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="web-live-launch-btn"
+                >
+                  <span className="live-pulse-dot" />
+                  <span>Visit Live Website • Fymble.app ↗</span>
+                </a>
+              </div>
+            )}
 
             <div className="web-meta-row">
               <div className="case-meta-pill">

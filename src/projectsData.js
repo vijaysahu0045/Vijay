@@ -34,7 +34,17 @@ export const CATEGORIES = [
     label: 'Web Design',
     iconName: 'web',
     projects: [
-      { id: 25, title: '1:1 Nutrition & Diet Consultation Website', image: nutritionConsultationLanding, thumbnail: nutritionWebsiteThumbnail, tag: '1:1 DIET CONSULTATION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized 1:1 nutrition consultation landing page detailing what expert dietitians provide, custom diet plans, real transformation proof, and user consultation benefits.' },
+      { 
+        id: 25, 
+        title: 'Fymble — Live Website (Fymble.app)', 
+        image: nutritionConsultationLanding, 
+        thumbnail: nutritionWebsiteThumbnail, 
+        tag: 'LIVE WEBSITE • FYMBLE.APP', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-purple', 
+        icon: '🌐', 
+        description: 'Official live website and fitness platform for Fymble (Fymble.app) detailing 1:1 expert nutrition consultations, personalized diet plans, and seamless pass booking.' 
+      },
       { id: 26, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
       { id: 27, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
       { id: 28, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
