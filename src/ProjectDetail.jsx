@@ -427,12 +427,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             <div className="macbook-device-wrap">
               {/* MacBook Top Lid with Display */}
               <div className="macbook-lid">
-                {/* Center Top Camera Notch */}
-                <div className="macbook-notch">
-                  <div className="macbook-camera-lens" />
-                  <div className="macbook-camera-indicator" />
-                </div>
-
                 {/* Inner Screen & Browser Window */}
                 <div className="macbook-screen-viewport">
                   {/* Safari / Chrome Browser Top Bar */}
