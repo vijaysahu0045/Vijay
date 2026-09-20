@@ -427,34 +427,8 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             <div className="macbook-device-wrap">
               {/* MacBook Top Lid with Display */}
               <div className="macbook-lid">
-                {/* Inner Screen & Browser Window */}
+                {/* Inner Screen Viewport */}
                 <div className="macbook-screen-viewport">
-                  {/* Safari / Chrome Browser Top Bar */}
-                  <div className="macbook-browser-bar">
-                    <div className="macbook-traffic-dots">
-                      <span className="dot dot-red" />
-                      <span className="dot dot-yellow" />
-                      <span className="dot dot-green" />
-                    </div>
-
-                    <div className="macbook-url-bar">
-                      <span className="macbook-url-lock">🔒</span>
-                      <span>https://vijay.design/{project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}</span>
-                    </div>
-
-                    <div className="macbook-browser-actions">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
-                        <polyline points="16 6 12 2 8 6"/>
-                        <line x1="12" y1="2" x2="12" y2="15"/>
-                      </svg>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <line x1="12" y1="5" x2="12" y2="19"/>
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                      </svg>
-                    </div>
-                  </div>
-
                   {/* Scrollable Website Canvas Area */}
                   <div className="macbook-canvas-area">
                     {project.image ? (
