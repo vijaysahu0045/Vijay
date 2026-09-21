@@ -217,6 +217,34 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
   const [isFigmaLoading, setIsFigmaLoading] = useState(true)
+  const [isTopbarVisible, setIsTopbarVisible] = useState(true)
+  const containerRef = React.useRef(null)
+
+  // Topbar show/hide on scroll detection (hides on scroll down, shows on scroll up)
+  useEffect(() => {
+    let lastY = 0
+
+    const handleScroll = (e) => {
+      const currentY = e.target?.scrollTop ?? window.scrollY ?? 0
+      if (currentY > lastY + 5 && currentY > 40) {
+        setIsTopbarVisible(false) // Scrolling down -> hide
+      } else if (currentY < lastY - 5 || currentY <= 20) {
+        setIsTopbarVisible(true)  // Scrolling up / near top -> show
+      }
+      lastY = currentY
+    }
+
+    const container = containerRef.current
+    if (container) {
+      container.addEventListener('scroll', handleScroll, { passive: true })
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true, capture: true })
+
+    return () => {
+      if (container) container.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScroll, { capture: true })
+    }
+  }, [])
 
   // Resolve case study data if available
   const matchedCaseStudy =
@@ -322,6 +350,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
   return (
     <div
+      ref={containerRef}
       className="detail-container"
       onContextMenu={(e) => e.preventDefault()}
     >
@@ -351,8 +380,8 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Top Header Navigation */}
-      <header className="detail-topbar">
+      {/* Top Header Navigation (Smooth hide on scroll down, reveal on scroll up) */}
+      <header className={`detail-topbar ${!isTopbarVisible ? 'topbar-hidden' : ''}`}>
         <button className="detail-btn-back" onClick={onBack} title="Back to Projects">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 18l-6-6 6-6"/>
