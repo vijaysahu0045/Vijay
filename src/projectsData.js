@@ -8,6 +8,8 @@ import nutritionConsultationLanding from './assets/nutrition-consultation-landin
 import nutritionWebsiteThumbnail from './assets/nutrition-website-thumbnail.png'
 import kyraAiWebsiteLanding from './assets/kyra-ai-website-landing.png'
 import kyraAiWebsiteThumbnail from './assets/kyra-ai-website-thumbnail.png'
+import gymMateWebsiteLanding from './assets/gym-mate-website-landing.png'
+import gymMateWebsiteThumbnail from './assets/gym-mate-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -49,6 +51,17 @@ export const CATEGORIES = [
       },
       { 
         id: 26, 
+        title: 'Gym Mate', 
+        image: gymMateWebsiteLanding, 
+        thumbnail: gymMateWebsiteThumbnail, 
+        tag: 'FITNESS COMMUNITY WEB', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-purple', 
+        icon: '🤝', 
+        description: 'Location-based social workout partner matching landing page for Gym Mate connecting gym-goers, workout enthusiasts, and spotters nearby.' 
+      },
+      { 
+        id: 27, 
         title: '1:1 Nutrition & Diet Consultation Website', 
         image: nutritionConsultationLanding, 
         thumbnail: nutritionWebsiteThumbnail, 
@@ -58,10 +71,9 @@ export const CATEGORIES = [
         icon: '🥗', 
         description: 'Official live website and consultation landing page for Fymble detailing 1:1 expert nutrition consultations, personalized diet plans, and transformation proof.' 
       },
-      { id: 27, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
-      { id: 28, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
-      { id: 29, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
-      { id: 30, title: 'Developer Documentation', image: null, tag: 'API DOCS', theme: 'theme-dark', icon: '📖', description: 'Content-focused API docs with interactive code blocks and quick search.' },
+      { id: 28, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
+      { id: 29, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
+      { id: 30, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
     ]
   },
   {
