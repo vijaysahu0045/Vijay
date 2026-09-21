@@ -10,6 +10,8 @@ import kyraAiWebsiteLanding from './assets/kyra-ai-website-landing.png'
 import kyraAiWebsiteThumbnail from './assets/kyra-ai-website-thumbnail.png'
 import gymMateWebsiteLanding from './assets/gym-mate-website-landing.png'
 import gymMateWebsiteThumbnail from './assets/gym-mate-website-thumbnail.png'
+import weightLossDietWebsiteLanding from './assets/weight-loss-diet-website-landing.png'
+import weightLossDietWebsiteThumbnail from './assets/weight-loss-diet-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -62,6 +64,17 @@ export const CATEGORIES = [
       },
       { 
         id: 27, 
+        title: 'Weight Loss & Diet Consultation', 
+        image: weightLossDietWebsiteLanding, 
+        thumbnail: weightLossDietWebsiteThumbnail, 
+        tag: 'WEIGHT LOSS & DIET WEB', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-sunset', 
+        icon: '🥑', 
+        description: 'High-converting weight loss and personalized 1:1 diet consultation landing page featuring sustainable meal plans, pricing tiers, and real client success stories.' 
+      },
+      { 
+        id: 28, 
         title: '1:1 Nutrition & Diet Consultation Website', 
         image: nutritionConsultationLanding, 
         thumbnail: nutritionWebsiteThumbnail, 
@@ -71,9 +84,8 @@ export const CATEGORIES = [
         icon: '🥗', 
         description: 'Official live website and consultation landing page for Fymble detailing 1:1 expert nutrition consultations, personalized diet plans, and transformation proof.' 
       },
-      { id: 28, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
-      { id: 29, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
-      { id: 30, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
+      { id: 29, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
+      { id: 30, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
     ]
   },
   {
