@@ -1109,10 +1109,10 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       )}
 
       {/* =====================================================================
-          LIGHTBOX MODAL FOR FULLSCREEN ARTWORK & WEB DESIGN INSPECT
+          TRUE FULLSCREEN (F11-STYLE) DESIGN VIEWPORT (ZERO DISTRACTIONS)
           ===================================================================== */}
       {isLightboxOpen && (isImageArtworkProject || isWebProject) && (
-        <div className="artwork-lightbox-modal" onClick={() => setIsLightboxOpen(false)}>
+        <div className="artwork-lightbox-modal true-fullscreen" onClick={() => setIsLightboxOpen(false)}>
           <div className="lightbox-content-box" onClick={(e) => e.stopPropagation()}>
             <button
               className="lightbox-close-btn"
@@ -1135,28 +1135,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               />
-            </div>
-
-            <div className="lightbox-caption-bar">
-              <div className="lb-title-group">
-                <span className="lb-title">{project.title}</span>
-                <span className="lb-sub">
-                  {isWebProject ? 'Official Website Design • High-Resolution Full View' : 'Visual & Graphic Design • Vijay Sahu'}
-                </span>
-              </div>
-              <div className="lb-actions-right">
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="lb-live-link-btn"
-                  >
-                    <span>Visit Live Site ↗</span>
-                  </a>
-                )}
-                <span className="lb-shield-tag">🔒 Right-Click &amp; Downloads Disabled</span>
-              </div>
             </div>
           </div>
         </div>
