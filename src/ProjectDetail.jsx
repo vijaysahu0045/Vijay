@@ -439,6 +439,23 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               <div className="macbook-lid">
                 {/* Inner Screen Viewport */}
                 <div className="macbook-screen-viewport">
+                  {/* Fullscreen Expand / Bada Karke Dekhne Ka Button */}
+                  {project.image && (
+                    <button
+                      className="macbook-fullscreen-btn"
+                      onClick={() => setIsLightboxOpen(true)}
+                      title="Open Fullscreen Design (Bada Karke Dekhein)"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="15 3 21 3 21 9"/>
+                        <polyline points="9 21 3 21 3 15"/>
+                        <line x1="21" y1="3" x2="14" y2="10"/>
+                        <line x1="3" y1="21" x2="10" y2="14"/>
+                      </svg>
+                      <span>Fullscreen View</span>
+                    </button>
+                  )}
+
                   {/* Scrollable Website Canvas Area */}
                   <div className="macbook-canvas-area">
                     {project.image ? (
@@ -1092,20 +1109,20 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
       )}
 
       {/* =====================================================================
-          LIGHTBOX MODAL FOR FULLSCREEN ARTWORK INSPECT
+          LIGHTBOX MODAL FOR FULLSCREEN ARTWORK & WEB DESIGN INSPECT
           ===================================================================== */}
-      {isLightboxOpen && isImageArtworkProject && (
+      {isLightboxOpen && (isImageArtworkProject || isWebProject) && (
         <div className="artwork-lightbox-modal" onClick={() => setIsLightboxOpen(false)}>
           <div className="lightbox-content-box" onClick={(e) => e.stopPropagation()}>
             <button
               className="lightbox-close-btn"
               onClick={() => setIsLightboxOpen(false)}
-              title="Close"
+              title="Close Fullscreen (Esc)"
             >
               ✕
             </button>
 
-            <div className="lightbox-img-shield-wrap">
+            <div className="lightbox-img-shield-wrap web-lightbox-scroll">
               <img
                 src={project.image}
                 alt={project.title}
@@ -1123,9 +1140,23 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             <div className="lightbox-caption-bar">
               <div className="lb-title-group">
                 <span className="lb-title">{project.title}</span>
-                <span className="lb-sub">Visual &amp; Graphic Design • Vijay Sahu</span>
+                <span className="lb-sub">
+                  {isWebProject ? 'Official Website Design • High-Resolution Full View' : 'Visual & Graphic Design • Vijay Sahu'}
+                </span>
               </div>
-              <span className="lb-shield-tag">🔒 Right-Click &amp; Downloads Disabled</span>
+              <div className="lb-actions-right">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lb-live-link-btn"
+                  >
+                    <span>Visit Live Site ↗</span>
+                  </a>
+                )}
+                <span className="lb-shield-tag">🔒 Right-Click &amp; Downloads Disabled</span>
+              </div>
             </div>
           </div>
         </div>
