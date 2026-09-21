@@ -6,6 +6,8 @@ import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
 import foodScannerThumbnail from './assets/food-scanner-thumbnail.jpg'
 import nutritionConsultationLanding from './assets/nutrition-consultation-landing.png'
 import nutritionWebsiteThumbnail from './assets/nutrition-website-thumbnail.png'
+import kyraAiWebsiteLanding from './assets/kyra-ai-website-landing.png'
+import kyraAiWebsiteThumbnail from './assets/kyra-ai-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -36,20 +38,30 @@ export const CATEGORIES = [
     projects: [
       { 
         id: 25, 
-        title: 'Fymble — Live Website (Fymble.app)', 
+        title: 'Kyra AI Health Coach', 
+        image: kyraAiWebsiteLanding, 
+        thumbnail: kyraAiWebsiteThumbnail, 
+        tag: 'AI HEALTH COACH WEB', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-blue', 
+        icon: '🤖', 
+        description: 'Voice-powered AI Health Coach landing page for Kyra AI featuring conversational health analysis, intelligent gym discovery, and instant food scanning.' 
+      },
+      { 
+        id: 26, 
+        title: '1:1 Nutrition & Diet Consultation Website', 
         image: nutritionConsultationLanding, 
         thumbnail: nutritionWebsiteThumbnail, 
-        tag: 'LIVE WEBSITE • FYMBLE.APP', 
+        tag: '1:1 DIET CONSULTATION', 
         liveUrl: 'https://fymble.app',
-        theme: 'theme-purple', 
-        icon: '🌐', 
-        description: 'Official live website and fitness platform for Fymble (Fymble.app) detailing 1:1 expert nutrition consultations, personalized diet plans, and seamless pass booking.' 
+        theme: 'theme-sunset', 
+        icon: '🥗', 
+        description: 'Official live website and consultation landing page for Fymble detailing 1:1 expert nutrition consultations, personalized diet plans, and transformation proof.' 
       },
-      { id: 26, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
-      { id: 27, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
-      { id: 28, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
-      { id: 29, title: 'Developer Documentation', image: null, tag: 'API DOCS', theme: 'theme-dark', icon: '📖', description: 'Content-focused API docs with interactive code blocks and quick search.' },
-      { id: 30, title: 'Restaurant Booking Site', image: null, tag: 'RESTAURANT', theme: 'theme-light', icon: '🍽️', description: 'Visual menu presentation, dish story cards, and real-time table booking.' },
+      { id: 27, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
+      { id: 28, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
+      { id: 29, title: 'Startup Landing Page', image: null, tag: 'STARTUP SAAS', theme: 'theme-sunset', icon: '🚀', description: 'Feature showcase, social proof carousel, and interactive pricing calculator.' },
+      { id: 30, title: 'Developer Documentation', image: null, tag: 'API DOCS', theme: 'theme-dark', icon: '📖', description: 'Content-focused API docs with interactive code blocks and quick search.' },
     ]
   },
   {
