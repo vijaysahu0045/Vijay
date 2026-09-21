@@ -12,6 +12,8 @@ import gymMateWebsiteLanding from './assets/gym-mate-website-landing.png'
 import gymMateWebsiteThumbnail from './assets/gym-mate-website-thumbnail.png'
 import weightLossDietWebsiteLanding from './assets/weight-loss-diet-website-landing.png'
 import weightLossDietWebsiteThumbnail from './assets/weight-loss-diet-website-thumbnail.png'
+import blogPageWebsiteLanding from './assets/blog-page-website-landing.png'
+import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -72,6 +74,17 @@ export const CATEGORIES = [
         theme: 'theme-sunset', 
         icon: '🥑', 
         description: 'High-converting weight loss and personalized 1:1 diet consultation landing page featuring sustainable meal plans, pricing tiers, and real client success stories.' 
+      },
+      { 
+        id: 37, 
+        title: 'Blog Page Design', 
+        image: blogPageWebsiteLanding, 
+        thumbnail: blogPageWebsiteThumbnail, 
+        tag: 'EDITORIAL & BLOG WEB', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-blue', 
+        icon: '📝', 
+        description: 'Editorial Fitness & Wellness blog portal for Fymble featuring featured articles, topic exploration tabs, instant search, and clean reading layouts.' 
       },
       { 
         id: 28, 
