@@ -109,9 +109,7 @@ export const CATEGORIES = [
         theme: 'theme-sunset', 
         icon: '🥗', 
         description: 'Official live website and consultation landing page for Fymble detailing 1:1 expert nutrition consultations, personalized diet plans, and transformation proof.' 
-      },
-      { id: 29, title: 'Agency Portfolio Website', image: null, tag: 'WEB PORTFOLIO', theme: 'theme-blue', icon: '🌐', description: 'Clean, dark-mode portfolio landing page with high conversion and fast loading.' },
-      { id: 30, title: 'E-commerce Storefront', image: null, tag: 'HEADLESS SHOP', theme: 'theme-purple', icon: '🛒', description: 'Ultra-fast headless shop with modern product filters and cart drawer.' },
+      }
     ]
   },
   {
