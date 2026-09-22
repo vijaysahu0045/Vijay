@@ -20,6 +20,12 @@ import gymMateScreen4 from './assets/gym-mate-screen-4.png'
 import gymMateScreen5 from './assets/gym-mate-screen-5.png'
 import gymMateScreen6 from './assets/gym-mate-screen-6.png'
 
+import gymMgmtScreen1 from './assets/gym-mgmt-screen-1.png'
+import gymMgmtScreen2 from './assets/gym-mgmt-screen-2.png'
+import gymMgmtScreen3 from './assets/gym-mgmt-screen-3.png'
+import gymMgmtScreen4 from './assets/gym-mgmt-screen-4.png'
+import gymMgmtScreen5 from './assets/gym-mgmt-screen-5.png'
+
 import aiDietCoachScreen1 from './assets/ai-diet-coach-screen-1.png'
 import aiDietCoachScreen2 from './assets/ai-diet-coach-screen-2.png'
 import aiDietCoachScreen3 from './assets/ai-diet-coach-screen-3.png'
@@ -63,6 +69,33 @@ const CASE_STUDIES = {
     showcaseTitle: 'Experience Fymble on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive high-fidelity screens designed for 250+ flows and 20K+ active users.',
     figmaTitle: 'Fymble Design System • Figma Canvas',
+    figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
+  },
+  2: {
+    id: 2,
+    title: 'Gym Management App',
+    category: 'UX / UI Design',
+    headlinePrefix: 'B2B Fitness Operations & Revenue Hub — ',
+    headlineGradient: 'streamlining member check-ins and growth.',
+    subtitle: 'A powerful B2B gym management SaaS mobile companion empowering gym owners with real-time pass check-ins, member subscriptions, automated marketing offers, and revenue analytics.',
+    role: 'Product Designer',
+    timeline: 'Jun – Aug 2024',
+    platform: 'iOS & Android',
+    heroPhones: {
+      left: { image: gymMgmtScreen2, alt: 'Active Members Directory' },
+      center: { image: gymMgmtScreen1, alt: 'Owner Revenue & Booking Dashboard' },
+      right: { image: gymMgmtScreen3, alt: 'Offers & Promotions Engine' }
+    },
+    screens: [
+      { id: 1, title: 'Owner Dashboard & Earnings', image: gymMgmtScreen1, tag: 'DASHBOARD' },
+      { id: 2, title: 'Member Directory & Passes', image: gymMgmtScreen2, tag: 'MEMBERS' },
+      { id: 3, title: 'Offers & Growth Engine', image: gymMgmtScreen3, tag: 'PROMOTIONS' },
+      { id: 4, title: 'Pass History & Analytics', image: gymMgmtScreen4, tag: 'PASS DETAILS' },
+      { id: 5, title: 'Partner Onboarding & Login', image: gymMgmtScreen5, tag: 'ONBOARDING' },
+    ],
+    showcaseTitle: 'Experience Gym Management on iPhone 16 Pro.',
+    showcaseSubtitle: 'Interactive high-fidelity B2B fitness operations screens crafted for gym owners and staff.',
+    figmaTitle: 'Gym Management App Design System • Figma Canvas',
     figmaUrl: 'https://www.figma.com/embed?embed_host=share&theme=dark&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F5CszbCF6Lf5VfMKI1iyMEh%2FPORTFOLIO%3Fnode-id%3D0-1%26t%3DVfQJiW2c87ssCIl9-1'
   },
   3: {
@@ -252,6 +285,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
     (project.title?.toLowerCase().includes('food scanner') ? CASE_STUDIES[8] : null) ||
     (project.title?.toLowerCase().includes('diet coach') ? CASE_STUDIES[7] : null) ||
     (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
+    (project.title?.toLowerCase().includes('gym management') ? CASE_STUDIES[2] : null) ||
     (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
     (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
 
