@@ -14,6 +14,8 @@ import weightLossDietWebsiteLanding from './assets/weight-loss-diet-website-land
 import weightLossDietWebsiteThumbnail from './assets/weight-loss-diet-website-thumbnail.png'
 import blogPageWebsiteLanding from './assets/blog-page-website-landing.png'
 import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
+import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
+import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
 
 export const CATEGORIES = [
   {
@@ -42,6 +44,17 @@ export const CATEGORIES = [
     label: 'Web Design',
     iconName: 'web',
     projects: [
+      { 
+        id: 38, 
+        title: 'Fymble — Official Website Home Page', 
+        image: fymbleHomeWebsiteLanding, 
+        thumbnail: fymbleHomeWebsiteThumbnail, 
+        tag: 'FLAGSHIP HOME WEBSITE', 
+        liveUrl: 'https://fymble.app',
+        theme: 'theme-purple', 
+        icon: '⚡', 
+        description: 'Official flagship marketing website for Fymble ecosystem featuring AI health coach demo, interactive gym pass booking, app store showcases, and pricing.' 
+      },
       { 
         id: 25, 
         title: 'Kyra AI Health Coach', 
