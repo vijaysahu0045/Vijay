@@ -25,6 +25,7 @@ import gymMgmtScreen2 from './assets/gym-mgmt-screen-2.png'
 import gymMgmtScreen3 from './assets/gym-mgmt-screen-3.png'
 import gymMgmtScreen4 from './assets/gym-mgmt-screen-4.png'
 import gymMgmtScreen5 from './assets/gym-mgmt-screen-5.png'
+import gymMgmtScreen6 from './assets/gym-mgmt-screen-6.png'
 
 import aiDietCoachScreen1 from './assets/ai-diet-coach-screen-1.png'
 import aiDietCoachScreen2 from './assets/ai-diet-coach-screen-2.png'
@@ -92,6 +93,7 @@ const CASE_STUDIES = {
       { id: 3, title: 'Offers & Growth Engine', image: gymMgmtScreen3, tag: 'PROMOTIONS' },
       { id: 4, title: 'Pass History & Analytics', image: gymMgmtScreen4, tag: 'PASS DETAILS' },
       { id: 5, title: 'Partner Onboarding & Login', image: gymMgmtScreen5, tag: 'ONBOARDING' },
+      { id: 6, title: 'In-App Feedback & Ratings', image: gymMgmtScreen6, tag: 'FEEDBACK & CSAT' },
     ],
     showcaseTitle: 'Experience Gym Management on iPhone 16 Pro.',
     showcaseSubtitle: 'Interactive high-fidelity B2B fitness operations screens crafted for gym owners and staff.',
