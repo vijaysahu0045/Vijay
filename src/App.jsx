@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import bgImage from './assets/bg-image.png'
-import logoImg from './assets/logo.png'
 import Projects from './Projects'
 import ProjectDetail from './ProjectDetail'
 import AboutMe from './AboutMe'
@@ -175,10 +174,6 @@ function App() {
       <div className="home-content">
         {/* Animated Rotating Headline with Typewriter Cursor */}
         <div className="home-heading-wrapper">
-          <div className="home-brand-logo-pill">
-            <img src={logoImg} alt="VJ Logo" className="home-brand-logo-img" />
-            <span className="home-brand-name">Vijay Sahu</span>
-          </div>
           <h1 className="home-heading">
             <span className="home-heading-gradient">{displayedPhrase}</span>
             <span className="typewriter-cursor" />
