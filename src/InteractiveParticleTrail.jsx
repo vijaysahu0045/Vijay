@@ -80,19 +80,19 @@ export default function InteractiveParticleTrail() {
 
     // Detonate Chrysanthemum / Willow Flow Burst
     const detonateChrysanthemum = (x, y, power = 1) => {
-      // 1. Central Core Ignition Flash (Soft 50% opacity)
+      // 1. Central Core Ignition Flash (40% larger soft glow)
       coreSparks.push({
         x,
         y,
-        radius: 6 * power,
+        radius: 11 * power,
         alpha: 0.50,
-        decay: 0.015
+        decay: 0.012
       })
 
-      // 2. Compact & Dense Flow-Through Needle Streamers (28 to 38 streamers)
-      const count = Math.floor(28 + Math.random() * 10)
-      // Ultra-slow motion: gentle expanding bloom
-      const baseSpeed = (0.35 + Math.random() * 0.22) * Math.min(power, 1.1)
+      // 2. 40% Larger Flow-Through Needle Streamers (32 to 44 streamers)
+      const count = Math.floor(32 + Math.random() * 12)
+      // 10% speed: ultra-slow, gentle majestic blooming pace
+      const baseSpeed = (0.12 + Math.random() * 0.08) * Math.min(power, 1.05)
 
       for (let i = 0; i < count; i++) {
         const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.18
@@ -103,28 +103,33 @@ export default function InteractiveParticleTrail() {
 
         const color = getStreamerColor(layerType)
 
+        // 40% larger initial radial spread from burst origin
+        const startOffset = 10 + Math.random() * 12
+        const startX = x + Math.cos(angle) * startOffset
+        const startY = y + Math.sin(angle) * startOffset
+
         streamers.push({
-          x,
-          y,
-          prevX: x,
-          prevY: y,
-          history: [{ x, y }],
+          x: startX,
+          y: startY,
+          prevX: startX,
+          prevY: startY,
+          history: [{ x: startX, y: startY }],
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          gravity: 0.006 + Math.random() * 0.005, // Ultra-gentle slow floating gravity
-          friction: 0.982 + Math.random() * 0.008, // Very smooth continuous glide
-          lineWidth: isCoreLayer ? 1.2 : 0.85, // Ultra-fine crisp flowing light threads
+          gravity: 0.0022 + Math.random() * 0.0018, // 10% ultra-gentle floating gravity
+          friction: 0.991 + Math.random() * 0.004, // Ultra-smooth continuous glide
+          lineWidth: isCoreLayer ? 1.5 : 1.15, // 40% bolder crisp flowing light threads
           alpha: 0.50, // Set to 50% opacity
           maxAlpha: 0.50,
-          decay: 0.0030 + Math.random() * 0.0022, // Long calm slow-motion fade (~2.5s - 3.5s)
+          decay: 0.0022 + Math.random() * 0.0018, // Long calm slow-motion fade (~3.5s - 5.0s)
           color,
           twinkle: 0.90 + Math.random() * 0.10
         })
       }
 
       // Safeguard max active streamers
-      if (streamers.length > 260) {
-        streamers.splice(0, streamers.length - 260)
+      if (streamers.length > 280) {
+        streamers.splice(0, streamers.length - 280)
       }
     }
 
@@ -133,7 +138,7 @@ export default function InteractiveParticleTrail() {
       const dx = targetX - startX
       const dy = targetY - startY
       const dist = Math.hypot(dx, dy)
-      const steps = Math.max(Math.floor(dist / 3), 1)
+      const steps = Math.max(Math.floor(dist / 2), 1)
 
       rockets.push({
         x: startX,
@@ -227,15 +232,15 @@ export default function InteractiveParticleTrail() {
         s.x += s.vx
         s.y += s.vy
 
-        // Save position history for extended flowing trail (up to 12 points)
+        // Save position history for extended flowing trail (up to 18 points)
         s.history.unshift({ x: s.x, y: s.y })
-        if (s.history.length > 12) {
+        if (s.history.length > 18) {
           s.history.pop()
         }
 
         s.alpha -= s.decay
 
-        if (s.alpha <= 0.005) {
+        if (s.alpha <= 0.002) {
           streamers.splice(i, 1)
           continue
         }
