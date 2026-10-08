@@ -117,6 +117,17 @@
   animation: smoothFloatOrb 110s ease-in-out infinite;
 }
 
+/* Motion-Activated Dynamic Particle Stardust Trail Canvas */
+.interactive-particle-trail-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
 /* Home Main Content Box */
 .home-content {
   position: relative;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import bgImage from './assets/bg-image.png'
+import InteractiveParticleTrail from './InteractiveParticleTrail'
 import Projects from './Projects'
 import ProjectDetail from './ProjectDetail'
 import AboutMe from './AboutMe'
@@ -76,50 +77,76 @@ function App() {
     }
 
     return (
-      <ProjectDetail
-        project={selectedProject}
-        categoryLabel={selectedProject.category || 'UX / UI Design'}
-        onBack={() => setCurrentPage(detailSource || 'projects')}
-        onNavigateProject={handleNextProject}
-      />
+      <>
+        <InteractiveParticleTrail />
+        <ProjectDetail
+          project={selectedProject}
+          categoryLabel={selectedProject.category || 'UX / UI Design'}
+          onBack={() => setCurrentPage(detailSource || 'projects')}
+          onNavigateProject={handleNextProject}
+        />
+      </>
     )
   }
 
   // Route 2: Projects page
   if (currentPage === 'projects') {
     return (
-      <Projects
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-        onBack={() => setCurrentPage('home')}
-        onOpenProject={(proj, catLabel, catId) => {
-          if (catId) setActiveCategory(catId)
-          setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
-          setDetailSource('projects')
-          setCurrentPage('detail')
-        }}
-      />
+      <>
+        <InteractiveParticleTrail />
+        <Projects
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+          onBack={() => setCurrentPage('home')}
+          onOpenProject={(proj, catLabel, catId) => {
+            if (catId) setActiveCategory(catId)
+            setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
+            setDetailSource('projects')
+            setCurrentPage('detail')
+          }}
+        />
+      </>
     )
   }
 
   // Route 3: About Me page
   if (currentPage === 'about') {
-    return <AboutMe onBack={() => setCurrentPage('home')} />
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <AboutMe onBack={() => setCurrentPage('home')} />
+      </>
+    )
   }
 
   // Route 4: Skills page
   if (currentPage === 'skills') {
-    return <Skills onBack={() => setCurrentPage('home')} />
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <Skills onBack={() => setCurrentPage('home')} />
+      </>
+    )
   }
 
   // Route 5: Resume page
   if (currentPage === 'resume') {
-    return <Resume onBack={() => setCurrentPage('home')} />
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <Resume onBack={() => setCurrentPage('home')} />
+      </>
+    )
   }
 
   // Route 6: Contact page
   if (currentPage === 'contact') {
-    return <Contact onBack={() => setCurrentPage('home')} />
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <Contact onBack={() => setCurrentPage('home')} />
+      </>
+    )
   }
 
   const handleNavClick = (item) => {
@@ -169,6 +196,9 @@ function App() {
         <div className="home-moving-purple-orb" />
         <div className="home-moving-grid-spotlight" />
       </div>
+
+      {/* Motion-Activated Dynamic Particle Stardust Trail */}
+      <InteractiveParticleTrail />
 
       {/* Main Content Area */}
       <div className="home-content">
