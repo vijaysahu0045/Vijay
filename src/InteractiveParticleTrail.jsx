@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 
 /**
- * InteractiveParticleTrail - Soft Flow-Through Chrysanthemum Sky Rocket Firework
+ * InteractiveParticleTrail - Sky Rocket Launch from Bottom & Detonation
  * 
- * - Slightly smaller, elegant and compact burst size (~22px - 32px radius).
- * - 50% soft subtle opacity (never harsh or glaring).
- * - Extended lifetime with continuous flowing line streamer trails (flow-through willow light strands).
- * - Triggers on both Mouse Movement and Mouse Click (pointerdown).
- * - 100% invisible when idle / on page load (0% CPU/GPU).
+ * 1. On Click (pointerdown): Rocket launches from bottom of screen, soars upward, and detonates into grand firework at click coordinate.
+ * 2. 10-Second Continuous Drag/Movement: If user continuously moves/drags mouse for 10s, celebratory rocket launches from bottom and blooms at cursor.
+ * 3. Normal Idle/Browsing: Completely hidden, clean background, 0% CPU/GPU.
  */
 export default function InteractiveParticleTrail() {
   const canvasRef = useRef(null)
@@ -33,12 +31,17 @@ export default function InteractiveParticleTrail() {
     let height = window.innerHeight
     let dpr = Math.min(window.devicePixelRatio || 1, 2)
 
-    // Firework collections
+    // Collections
     const rockets = []
     const streamers = []
     const coreSparks = []
-    let lastMousePos = { x: null, y: null, time: 0 }
-    let accumulatedDist = 0
+    const rocketTailEmbers = []
+
+    // 10-Second Continuous Movement Tracking
+    let lastMoveTime = 0
+    let continuousMoveDuration = 0
+    let lastTickTime = performance.now()
+    let currentCursor = { x: width / 2, y: height / 3 }
 
     // Resize handler
     const handleResize = () => {
@@ -58,7 +61,7 @@ export default function InteractiveParticleTrail() {
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Color Palettes (Rich Purple & Starlight, Soft 50% Blending)
+    // Color Palette (Rich Purple & Starlight theme, soft 50% opacity)
     const getStreamerColor = (layer) => {
       if (layer === 'core') {
         return {
@@ -72,39 +75,38 @@ export default function InteractiveParticleTrail() {
         }
       } else {
         return {
-          r: 165, g: 105, b: 255, // Royal Violet Flowing Line
+          r: 165, g: 105, b: 255, // Royal Violet Willow
           glowR: 130, glowG: 70,  glowB: 245
         }
       }
     }
 
-    // Detonate Chrysanthemum / Willow Flow Burst (Grand Large Bloom)
-    const detonateChrysanthemum = (x, y, power = 1) => {
-      // 1. Central Core Ignition Flash (Large soft starlight glow)
+    // Detonate Grand Chrysanthemum Firecracker Burst
+    const detonateChrysanthemum = (x, y, power = 1.0) => {
+      // 1. Central Core Ignition Flash
       coreSparks.push({
         x,
         y,
-        radius: 18 * power,
-        alpha: 0.50,
-        decay: 0.010
+        radius: 20 * power,
+        alpha: 0.55,
+        decay: 0.012
       })
 
-      // 2. Large & Dense Flow-Through Needle Streamers (42 to 58 streamers)
-      const count = Math.floor(42 + Math.random() * 16)
-      // Smooth slow expansion pace reaching grand 70px - 110px firework dome
-      const baseSpeed = (0.52 + Math.random() * 0.32) * Math.min(power, 1.2)
+      // 2. Large Dense Chrysanthemum Streamers (48 to 64 streamers)
+      const count = Math.floor(48 + Math.random() * 16)
+      const baseSpeed = (0.58 + Math.random() * 0.35) * Math.min(power, 1.25)
 
       for (let i = 0; i < count; i++) {
-        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.16
-        const speed = baseSpeed * (0.7 + Math.random() * 0.6)
+        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.15
+        const speed = baseSpeed * (0.65 + Math.random() * 0.70)
         const isCoreLayer = Math.random() < 0.28
         const isInnerLayer = Math.random() < 0.58
         const layerType = isCoreLayer ? 'core' : (isInnerLayer ? 'inner' : 'outer')
 
         const color = getStreamerColor(layerType)
 
-        // Grand initial radial spread from burst origin (22px to 48px initial radius)
-        const startOffset = 22 + Math.random() * 26
+        // Initial burst radius offset
+        const startOffset = 24 + Math.random() * 28
         const startX = x + Math.cos(angle) * startOffset
         const startY = y + Math.sin(angle) * startOffset
 
@@ -116,40 +118,54 @@ export default function InteractiveParticleTrail() {
           history: [{ x: startX, y: startY }],
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          gravity: 0.005 + Math.random() * 0.004, // Gentle weeping willow drooping arc
-          friction: 0.988 + Math.random() * 0.004, // Smooth continuous glide
-          lineWidth: isCoreLayer ? 1.8 : 1.35, // Clearly visible bold flowing light threads
-          alpha: 0.50, // Set to 50% opacity
+          gravity: 0.0055 + Math.random() * 0.004, // Willow weeping curve
+          friction: 0.988 + Math.random() * 0.004, // Smooth glide
+          lineWidth: isCoreLayer ? 1.85 : 1.35, // Bold crisp flowing light threads
+          alpha: 0.50, // 50% opacity
           maxAlpha: 0.50,
-          decay: 0.0028 + Math.random() * 0.0020, // Long calm slow-motion fade (~3s - 4.5s)
+          decay: 0.0026 + Math.random() * 0.0018, // Long graceful lifetime (~3.5s - 5s)
           color,
           twinkle: 0.90 + Math.random() * 0.10
         })
       }
 
       // Safeguard max active streamers
-      if (streamers.length > 320) {
-        streamers.splice(0, streamers.length - 320)
+      if (streamers.length > 350) {
+        streamers.splice(0, streamers.length - 350)
       }
     }
 
-    // Launch Ascending Rocket (Ultra-slow graceful ascent)
-    const launchRocket = (startX, startY, targetX, targetY) => {
+    // Launch Rocket from Bottom of Viewport
+    const launchRocketFromBottom = (targetX, targetY, power = 1.0) => {
+      // Start near bottom with slight natural variation
+      const startX = targetX + (Math.random() - 0.5) * 40
+      const startY = height + 15
+
       const dx = targetX - startX
       const dy = targetY - startY
       const dist = Math.hypot(dx, dy)
-      const steps = Math.max(Math.floor(dist / 2), 1)
+      // Smooth realistic ascent time
+      const totalSteps = Math.max(Math.floor(dist / 14), 25)
 
       rockets.push({
         x: startX,
         y: startY,
+        startX,
+        startY,
         targetX,
         targetY,
-        vx: dx / steps,
-        vy: dy / steps,
-        life: steps,
-        color: { r: 255, g: 240, b: 220, glowR: 200, glowG: 150, glowB: 255 }
+        dx,
+        dy,
+        step: 0,
+        totalSteps,
+        power,
+        history: [{ x: startX, y: startY }]
       })
+
+      if (!isRunning) {
+        isRunning = true
+        animationFrameId = requestAnimationFrame(render)
+      }
     }
 
     // Animation & rendering loop
@@ -157,10 +173,11 @@ export default function InteractiveParticleTrail() {
       ctx.clearRect(0, 0, width, height)
 
       const hasRockets = rockets.length > 0
+      const hasTailEmbers = rocketTailEmbers.length > 0
       const hasCores = coreSparks.length > 0
       const hasStreamers = streamers.length > 0
 
-      if (!hasRockets && !hasCores && !hasStreamers) {
+      if (!hasRockets && !hasTailEmbers && !hasCores && !hasStreamers) {
         isRunning = false
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId)
@@ -169,36 +186,98 @@ export default function InteractiveParticleTrail() {
         return
       }
 
-      // 1. Render Ascending Rocket Tracers
+      // 1. Update & Render Ascending Rockets from Bottom
       for (let i = rockets.length - 1; i >= 0; i--) {
         const r = rockets[i]
-        const oldX = r.x
-        const oldY = r.y
-        r.x += r.vx
-        r.y += r.vy
-        r.life--
+        r.step++
+        const progress = r.step / r.totalSteps
+        // Easing out slightly as rocket approaches apex
+        const easedProgress = Math.sin(progress * (Math.PI / 2))
 
+        const currentX = r.startX + r.dx * easedProgress
+        const currentY = r.startY + r.dy * easedProgress
+
+        r.history.unshift({ x: currentX, y: currentY })
+        if (r.history.length > 16) {
+          r.history.pop()
+        }
+
+        // Spawn sparkling exhaust embers from rocket tail
+        if (Math.random() > 0.3) {
+          rocketTailEmbers.push({
+            x: currentX + (Math.random() - 0.5) * 4,
+            y: currentY + Math.random() * 4,
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: 0.8 + Math.random() * 1.2,
+            alpha: 0.65,
+            decay: 0.045,
+            size: 1.2 + Math.random() * 1.4
+          })
+        }
+
+        // Draw glowing rocket ascent streak
         ctx.save()
-        ctx.strokeStyle = `rgba(${r.color.r}, ${r.color.g}, ${r.color.b}, 0.45)`
-        ctx.lineWidth = 1.4
         ctx.lineCap = 'round'
+
+        // Soft outer ascent halo
+        ctx.lineWidth = 4.5
+        ctx.strokeStyle = 'rgba(215, 160, 255, 0.25)'
         ctx.beginPath()
-        ctx.moveTo(oldX, oldY)
-        ctx.lineTo(r.x, r.y)
+        ctx.moveTo(r.history[r.history.length - 1].x, r.history[r.history.length - 1].y)
+        for (let h = r.history.length - 2; h >= 0; h--) {
+          ctx.lineTo(r.history[h].x, r.history[h].y)
+        }
         ctx.stroke()
+
+        // Bright burning ascent streak
+        ctx.lineWidth = 2.2
+        ctx.strokeStyle = 'rgba(255, 245, 220, 0.85)'
+        ctx.beginPath()
+        ctx.moveTo(r.history[r.history.length - 1].x, r.history[r.history.length - 1].y)
+        for (let h = r.history.length - 2; h >= 0; h--) {
+          ctx.lineTo(r.history[h].x, r.history[h].y)
+        }
+        ctx.stroke()
+
+        // Rocket head glowing spark
+        ctx.beginPath()
+        ctx.arc(currentX, currentY, 2.5, 0, Math.PI * 2)
+        ctx.fillStyle = '#ffffff'
+        ctx.fill()
         ctx.restore()
 
-        if (r.life <= 0) {
-          detonateChrysanthemum(r.targetX, r.targetY, 1.0)
+        // Detonate at apex
+        if (r.step >= r.totalSteps) {
+          detonateChrysanthemum(r.targetX, r.targetY, r.power)
           rockets.splice(i, 1)
         }
       }
 
-      // 2. Render Core Center Soft Glows
+      // 2. Render Rocket Tail Exhaust Embers
+      for (let i = rocketTailEmbers.length - 1; i >= 0; i--) {
+        const e = rocketTailEmbers[i]
+        e.x += e.vx
+        e.y += e.vy
+        e.alpha -= e.decay
+
+        if (e.alpha <= 0.01) {
+          rocketTailEmbers.splice(i, 1)
+          continue
+        }
+
+        ctx.save()
+        ctx.beginPath()
+        ctx.arc(e.x, e.y, e.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(255, 225, 170, ${e.alpha * 0.50})`
+        ctx.fill()
+        ctx.restore()
+      }
+
+      // 3. Render Core Center Soft Glows
       for (let i = coreSparks.length - 1; i >= 0; i--) {
         const c = coreSparks[i]
         c.alpha -= c.decay
-        c.radius *= 0.94
+        c.radius *= 0.95
 
         if (c.alpha <= 0.01 || c.radius <= 0.5) {
           coreSparks.splice(i, 1)
@@ -207,8 +286,8 @@ export default function InteractiveParticleTrail() {
 
         ctx.save()
         const grad = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.radius * 2)
-        grad.addColorStop(0, `rgba(255, 255, 255, ${c.alpha * 0.50})`)
-        grad.addColorStop(0.4, `rgba(215, 170, 255, ${c.alpha * 0.35})`)
+        grad.addColorStop(0, `rgba(255, 255, 255, ${c.alpha * 0.55})`)
+        grad.addColorStop(0.35, `rgba(215, 170, 255, ${c.alpha * 0.35})`)
         grad.addColorStop(1, `rgba(130, 70, 245, 0)`)
 
         ctx.fillStyle = grad
@@ -218,7 +297,7 @@ export default function InteractiveParticleTrail() {
         ctx.restore()
       }
 
-      // 3. Render Flow-Through Long Streamer Lines
+      // 4. Render Flow-Through Long Streamer Lines
       for (let i = streamers.length - 1; i >= 0; i--) {
         const s = streamers[i]
 
@@ -251,7 +330,7 @@ export default function InteractiveParticleTrail() {
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
 
-        // 3a. Soft outer glowing flow-line aura
+        // 4a. Soft outer glowing flow-line aura
         ctx.lineWidth = s.lineWidth * 2.2
         ctx.strokeStyle = `rgba(${s.color.glowR}, ${s.color.glowG}, ${s.color.glowB}, ${currentAlpha * 0.25})`
         ctx.beginPath()
@@ -261,7 +340,7 @@ export default function InteractiveParticleTrail() {
         }
         ctx.stroke()
 
-        // 3b. Crisp flowing light streak line
+        // 4b. Crisp flowing light streak line
         ctx.lineWidth = s.lineWidth
         ctx.strokeStyle = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, ${currentAlpha * 0.80})`
         ctx.beginPath()
@@ -271,7 +350,7 @@ export default function InteractiveParticleTrail() {
         }
         ctx.stroke()
 
-        // 3c. Leading spark tip
+        // 4c. Leading spark tip
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.lineWidth * 0.8, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`
@@ -280,7 +359,7 @@ export default function InteractiveParticleTrail() {
         ctx.restore()
       }
 
-      if (rockets.length > 0 || coreSparks.length > 0 || streamers.length > 0) {
+      if (rockets.length > 0 || rocketTailEmbers.length > 0 || coreSparks.length > 0 || streamers.length > 0) {
         animationFrameId = requestAnimationFrame(render)
       } else {
         ctx.clearRect(0, 0, width, height)
@@ -288,73 +367,57 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Trigger helper
-    const triggerBurstAt = (x, y, power = 1.0, withRocket = true) => {
-      detonateChrysanthemum(x, y, power)
-      if (withRocket) {
-        const launchY = y + (28 + Math.random() * 22)
-        const launchX = x + (Math.random() - 0.5) * 12
-        launchRocket(launchX, launchY, x, y)
-      }
-
-      if (!isRunning) {
-        isRunning = true
-        animationFrameId = requestAnimationFrame(render)
-      }
+    // User Click: Launch Rocket from Bottom to Click Position
+    const handlePointerDown = (e) => {
+      launchRocketFromBottom(e.clientX, e.clientY, 1.2)
     }
 
-    // Mouse movement listener
+    // Mouse Move & 10-Second Continuous Drag/Move Tracker
     const handleMouseMove = (e) => {
       const now = performance.now()
       const currentX = e.clientX
       const currentY = e.clientY
+      currentCursor = { x: currentX, y: currentY }
 
-      if (lastMousePos.x === null) {
-        lastMousePos = { x: currentX, y: currentY, time: now }
+      if (lastMoveTime === 0) {
+        lastMoveTime = now
+        lastTickTime = now
         return
       }
 
-      const dx = currentX - lastMousePos.x
-      const dy = currentY - lastMousePos.y
-      const dist = Math.hypot(dx, dy)
+      const elapsedSinceLastMove = now - lastMoveTime
 
-      if (dist === 0) return
-
-      accumulatedDist += dist
-
-      const dt = Math.max(now - lastMousePos.time, 1)
-      const speed = dist / dt * 16
-
-      // Detonate every ~30px along movement path
-      const stepDistance = 30
-      if (accumulatedDist >= stepDistance) {
-        const intensity = Math.min(Math.max(speed / 14, 0.85), 1.25)
-        const shouldLaunchTracer = dist > 16 && Math.random() > 0.45
-        triggerBurstAt(currentX, currentY, intensity, shouldLaunchTracer)
-        accumulatedDist = 0
+      // If user paused/stopped moving for more than 900ms, reset 10s counter
+      if (elapsedSinceLastMove > 900) {
+        continuousMoveDuration = 0
+      } else {
+        // Accumulate active movement duration
+        continuousMoveDuration += (now - lastTickTime)
       }
 
-      lastMousePos = { x: currentX, y: currentY, time: now }
-    }
+      lastMoveTime = now
+      lastTickTime = now
 
-    // Click trigger (pointerdown)
-    const handlePointerDown = (e) => {
-      triggerBurstAt(e.clientX, e.clientY, 1.25, true)
+      // When user has moved/dragged continuously for 10 seconds (10,000ms):
+      if (continuousMoveDuration >= 10000) {
+        launchRocketFromBottom(currentX, currentY, 1.35)
+        continuousMoveDuration = 0 // Reset for next cycle
+      }
     }
 
     const handleMouseLeave = () => {
-      lastMousePos = { x: null, y: null, time: 0 }
-      accumulatedDist = 0
+      continuousMoveDuration = 0
+      lastMoveTime = 0
     }
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('pointerdown', handlePointerDown, { passive: true })
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('mouseleave', handleMouseLeave, { passive: true })
 
     return () => {
       window.removeEventListener('resize', handleResize)
-      window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('pointerdown', handlePointerDown)
+      window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseleave', handleMouseLeave)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
