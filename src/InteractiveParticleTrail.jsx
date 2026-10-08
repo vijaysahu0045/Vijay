@@ -78,33 +78,33 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Detonate Chrysanthemum / Willow Flow Burst
+    // Detonate Chrysanthemum / Willow Flow Burst (Grand Large Bloom)
     const detonateChrysanthemum = (x, y, power = 1) => {
-      // 1. Central Core Ignition Flash (40% larger soft glow)
+      // 1. Central Core Ignition Flash (Large soft starlight glow)
       coreSparks.push({
         x,
         y,
-        radius: 11 * power,
+        radius: 18 * power,
         alpha: 0.50,
-        decay: 0.012
+        decay: 0.010
       })
 
-      // 2. 40% Larger Flow-Through Needle Streamers (32 to 44 streamers)
-      const count = Math.floor(32 + Math.random() * 12)
-      // 10% speed: ultra-slow, gentle majestic blooming pace
-      const baseSpeed = (0.12 + Math.random() * 0.08) * Math.min(power, 1.05)
+      // 2. Large & Dense Flow-Through Needle Streamers (42 to 58 streamers)
+      const count = Math.floor(42 + Math.random() * 16)
+      // Smooth slow expansion pace reaching grand 70px - 110px firework dome
+      const baseSpeed = (0.52 + Math.random() * 0.32) * Math.min(power, 1.2)
 
       for (let i = 0; i < count; i++) {
-        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.18
-        const speed = baseSpeed * (0.65 + Math.random() * 0.65)
-        const isCoreLayer = Math.random() < 0.25
-        const isInnerLayer = Math.random() < 0.55
+        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.16
+        const speed = baseSpeed * (0.7 + Math.random() * 0.6)
+        const isCoreLayer = Math.random() < 0.28
+        const isInnerLayer = Math.random() < 0.58
         const layerType = isCoreLayer ? 'core' : (isInnerLayer ? 'inner' : 'outer')
 
         const color = getStreamerColor(layerType)
 
-        // 40% larger initial radial spread from burst origin
-        const startOffset = 10 + Math.random() * 12
+        // Grand initial radial spread from burst origin (22px to 48px initial radius)
+        const startOffset = 22 + Math.random() * 26
         const startX = x + Math.cos(angle) * startOffset
         const startY = y + Math.sin(angle) * startOffset
 
@@ -116,20 +116,20 @@ export default function InteractiveParticleTrail() {
           history: [{ x: startX, y: startY }],
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          gravity: 0.0022 + Math.random() * 0.0018, // 10% ultra-gentle floating gravity
-          friction: 0.991 + Math.random() * 0.004, // Ultra-smooth continuous glide
-          lineWidth: isCoreLayer ? 1.5 : 1.15, // 40% bolder crisp flowing light threads
+          gravity: 0.005 + Math.random() * 0.004, // Gentle weeping willow drooping arc
+          friction: 0.988 + Math.random() * 0.004, // Smooth continuous glide
+          lineWidth: isCoreLayer ? 1.8 : 1.35, // Clearly visible bold flowing light threads
           alpha: 0.50, // Set to 50% opacity
           maxAlpha: 0.50,
-          decay: 0.0022 + Math.random() * 0.0018, // Long calm slow-motion fade (~3.5s - 5.0s)
+          decay: 0.0028 + Math.random() * 0.0020, // Long calm slow-motion fade (~3s - 4.5s)
           color,
           twinkle: 0.90 + Math.random() * 0.10
         })
       }
 
       // Safeguard max active streamers
-      if (streamers.length > 280) {
-        streamers.splice(0, streamers.length - 280)
+      if (streamers.length > 320) {
+        streamers.splice(0, streamers.length - 320)
       }
     }
 
@@ -232,9 +232,9 @@ export default function InteractiveParticleTrail() {
         s.x += s.vx
         s.y += s.vy
 
-        // Save position history for extended flowing trail (up to 18 points)
+        // Save position history for extended flowing trail (up to 24 points)
         s.history.unshift({ x: s.x, y: s.y })
-        if (s.history.length > 18) {
+        if (s.history.length > 24) {
           s.history.pop()
         }
 
