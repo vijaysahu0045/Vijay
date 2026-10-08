@@ -61,40 +61,39 @@ export default function InteractiveParticleTrail() {
       if (dist < 1.5) return // Ignore infinitesimal tremors
 
       // Interpolate count based on movement distance and speed
-      // Keep subtle: 1 to 4 particles for normal movement, up to 7 for fast swipe
-      const count = Math.min(Math.max(Math.floor(dist / 14), 1), 7)
-      const speedFactor = Math.min(speed / 18, 1.3)
+      // 2 to 5 particles for normal movement, up to 9 for fast swipe
+      const count = Math.min(Math.max(Math.floor(dist / 12), 2), 9)
+      const speedFactor = Math.min(speed / 16, 1.4)
 
       for (let i = 0; i < count; i++) {
         const t = (i + Math.random() * 0.6) / count
         const interpX = x1 + (x2 - x1) * t
         const interpY = y1 + (y2 - y1) * t
 
-        // Slight spread around cursor path
-        const spreadRadius = (Math.random() - 0.5) * (14 + speedFactor * 10)
+        // Spread around cursor path
+        const spreadRadius = (Math.random() - 0.5) * (24 + speedFactor * 18)
         const spreadAngle = Math.random() * Math.PI * 2
 
         // Drift velocity with gentle momentum
         const moveAngle = Math.atan2(y2 - y1, x2 - x1)
-        const moveSpeed = Math.min(dist * 0.04, 1.2)
+        const moveSpeed = Math.min(dist * 0.05, 1.8)
 
-        const vx = Math.cos(moveAngle) * moveSpeed * 0.35 + (Math.random() - 0.5) * 0.6
-        const vy = Math.sin(moveAngle) * moveSpeed * 0.35 + (Math.random() - 0.5) * 0.6
+        const vx = Math.cos(moveAngle) * moveSpeed * 0.3 + (Math.random() - 0.5) * 0.9
+        const vy = Math.sin(moveAngle) * moveSpeed * 0.3 + (Math.random() - 0.5) * 0.9
 
-        // Micro-dot / fine stardust size: 0.75px to 1.6px radius
-        const isStarHighlight = Math.random() > 0.68
+        // Noticeably larger particle size: 2.2px to 5.2px radius
+        const isStarHighlight = Math.random() > 0.60
         const baseRadius = isStarHighlight 
-          ? 1.1 + Math.random() * 0.55 
-          : 0.7 + Math.random() * 0.45
+          ? 3.2 + Math.random() * 2.2  // Large luminous star dots (3.2px - 5.4px)
+          : 1.8 + Math.random() * 1.6  // Medium elegant particles (1.8px - 3.4px)
 
-        // Initial alpha scaled subtly by speed (never blinding)
-        const baseAlpha = (0.28 + Math.random() * 0.28) * (0.8 + speedFactor * 0.4)
+        // Alpha scaled smoothly by speed
+        const baseAlpha = (0.42 + Math.random() * 0.35) * (0.85 + speedFactor * 0.35)
 
-        // Palette: Subtle lavender / purple-gray matching portfolio theme
-        // 75% subtle purple-lavender, 25% faint crisp stardust
+        // Palette: Vibrant soft purple-lavender & radiant stardust
         const colorType = isStarHighlight
-          ? { r: 215, g: 205, b: 255 } // Soft crisp stardust
-          : { r: 175, g: 155, b: 245 } // Muted purple-lavender
+          ? { r: 228, g: 220, b: 255, glowR: 165, glowG: 135, glowB: 255 } // Radiant stardust
+          : { r: 178, g: 150, b: 255, glowR: 135, glowG: 100, glowB: 255 } // Rich purple-lavender
 
         particles.push({
           x: interpX + Math.cos(spreadAngle) * spreadRadius,
@@ -102,16 +101,17 @@ export default function InteractiveParticleTrail() {
           vx,
           vy,
           radius: baseRadius,
-          alpha: Math.min(baseAlpha, 0.65),
-          decay: 0.016 + Math.random() * 0.018, // Fade lifetime ~0.4s - 0.75s
+          maxRadius: baseRadius,
+          alpha: Math.min(baseAlpha, 0.85),
+          decay: 0.013 + Math.random() * 0.015, // Smooth ~0.6s - 1.1s lifetime
           color: colorType,
           glow: isStarHighlight
         })
       }
 
       // Max particle safeguard
-      if (particles.length > 120) {
-        particles.splice(0, particles.length - 120)
+      if (particles.length > 150) {
+        particles.splice(0, particles.length - 150)
       }
     }
 
@@ -134,32 +134,38 @@ export default function InteractiveParticleTrail() {
         // Update physics
         p.x += p.vx
         p.y += p.vy
-        p.vx *= 0.95
-        p.vy *= 0.95
+        p.vx *= 0.96
+        p.vy *= 0.96
         p.alpha -= p.decay
-        p.radius *= 0.986
+        p.radius *= 0.990
 
         // Remove dead particle
-        if (p.alpha <= 0.01 || p.radius <= 0.25) {
+        if (p.alpha <= 0.01 || p.radius <= 0.4) {
           particles.splice(i, 1)
           continue
         }
 
-        // Draw particle
+        // Draw particle with lush soft glow aura
         ctx.save()
         
-        // Optional subtle soft halo for star highlights
-        if (p.glow && p.alpha > 0.18) {
-          ctx.beginPath()
-          ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.alpha * 0.25})`
-          ctx.fill()
-        }
-
+        // Soft outer ambient halo
+        const haloRadius = p.radius * (p.glow ? 3.2 : 2.4)
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, haloRadius)
+        gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.alpha * 0.9})`)
+        gradient.addColorStop(0.35, `rgba(${p.color.glowR || p.color.r}, ${p.color.glowG || p.color.g}, ${p.color.glowB || p.color.b}, ${p.alpha * 0.45})`)
+        gradient.addColorStop(1, `rgba(${p.color.glowR || p.color.r}, ${p.color.glowG || p.color.g}, ${p.color.glowB || p.color.b}, 0)`)
+        
+        ctx.fillStyle = gradient
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
+        ctx.arc(p.x, p.y, haloRadius, 0, Math.PI * 2)
+        ctx.fill()
+
+        // Crisp inner solid core
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.radius * 0.65, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.alpha})`
         ctx.fill()
+        
         ctx.restore()
       }
 
