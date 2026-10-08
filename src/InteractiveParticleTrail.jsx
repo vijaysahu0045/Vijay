@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 
 /**
- * InteractiveParticleTrail
+ * InteractiveParticleTrail - Sky Rocket Firecracker / Fireworks Burst Effect
  * 
- * - Renders large, luminous 4-pointed glowing stars/sparkles in the purple theme.
- * - COMPLETELY HIDDEN when mouse is idle / on page load.
+ * - Recreates authentic festival sky rocket cracker bursts in the purple/violet theme.
+ * - Outward exploding radiant spark streaks with realistic gravity cascade and twinkling embers.
+ * - COMPLETELY HIDDEN when mouse is idle / on page load (0% CPU/GPU).
  * - ONLY triggers on actual mouse movement (coordinate delta).
- * - Spawns beautiful 4-point stars along cursor trajectory.
- * - Smoothly fades out and halts requestAnimationFrame (0% CPU/GPU) when stopped.
  */
 export default function InteractiveParticleTrail() {
   const canvasRef = useRef(null)
@@ -33,10 +32,11 @@ export default function InteractiveParticleTrail() {
     let height = window.innerHeight
     let dpr = Math.min(window.devicePixelRatio || 1, 2)
 
-    // Stars collection
-    const stars = []
+    // Sparks & flashes collections
+    const sparks = []
+    const flashes = []
     let lastMousePos = { x: null, y: null, time: 0 }
-    let accumulatedDist = 0
+    let distanceSinceLastBurst = 0
 
     // Resize handler
     const handleResize = () => {
@@ -56,162 +56,58 @@ export default function InteractiveParticleTrail() {
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Helper: Draw 4-pointed curved sparkle star
-    const drawFourPointStar = (ctx, x, y, size, rotation, alpha, colorPalette, starType) => {
-      ctx.save()
-      ctx.translate(x, y)
-      ctx.rotate(rotation)
+    // Firework Sky Rocket Cracker Burst Generator
+    const createSkyRocketBurst = (x, y, intensity = 1) => {
+      // 1. Central Ignition Flash
+      flashes.push({
+        x,
+        y,
+        radius: 18 * intensity,
+        alpha: 0.9,
+        decay: 0.08
+      })
 
-      // 1. Outer ambient radial glow behind star
-      const glowRadius = size * 2.4
-      const glowGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, glowRadius)
-      glowGrad.addColorStop(0, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, ${alpha * 0.55})`)
-      glowGrad.addColorStop(0.4, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, ${alpha * 0.22})`)
-      glowGrad.addColorStop(1, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, 0)`)
+      // 2. Exploding Radiating Sparks (14 to 26 sparks per rocket burst)
+      const sparkCount = Math.floor((14 + Math.random() * 12) * Math.min(intensity, 1.5))
+      const baseSpeed = 3.5 + Math.random() * 3.5 + (intensity * 1.5)
 
-      ctx.fillStyle = glowGrad
-      ctx.beginPath()
-      ctx.arc(0, 0, glowRadius, 0, Math.PI * 2)
-      ctx.fill()
+      // Color Palette: Electric Violet, Lavender Neon, Radiant White, Starlight Gold-Purple
+      const colorPresets = [
+        { r: 215, g: 155, b: 255, glowR: 165, glowG: 90,  glowB: 255 }, // Electric Lavender
+        { r: 175, g: 105, b: 255, glowR: 130, glowG: 60,  glowB: 255 }, // Royal Violet Fire
+        { r: 245, g: 215, b: 255, glowR: 195, glowG: 140, glowB: 255 }, // Bright Starlight Spark
+        { r: 255, g: 235, b: 180, glowR: 215, glowG: 140, glowB: 255 }, // Golden Starlight Embers
+        { r: 255, g: 255, b: 255, glowR: 175, glowG: 120, glowB: 255 }  // Pure White-Violet Core
+      ]
 
-      // 2. Main 4-pointed Star Geometry
-      ctx.beginPath()
-      if (starType === 'curved') {
-        // Organic curved 4-point sparkle star
-        const r = size
-        ctx.moveTo(0, -r)
-        ctx.quadraticCurveTo(0, 0, r, 0)
-        ctx.quadraticCurveTo(0, 0, 0, r)
-        ctx.quadraticCurveTo(0, 0, -r, 0)
-        ctx.quadraticCurveTo(0, 0, 0, -r)
-      } else {
-        // Pinched diamond 4-point star polygon
-        const rOuter = size
-        const rInner = size * 0.30
-        for (let i = 0; i < 4; i++) {
-          const angleOuter = (i * Math.PI) / 2 - Math.PI / 2
-          const angleInner = angleOuter + Math.PI / 4
-          const xOuter = Math.cos(angleOuter) * rOuter
-          const yOuter = Math.sin(angleOuter) * rOuter
-          const xInner = Math.cos(angleInner) * rInner
-          const yInner = Math.sin(angleInner) * rInner
+      for (let i = 0; i < sparkCount; i++) {
+        // Radial 360 degree outward explosion
+        const angle = (i / sparkCount) * Math.PI * 2 + (Math.random() - 0.5) * 0.4
+        const speed = baseSpeed * (0.55 + Math.random() * 0.9)
+        const color = colorPresets[Math.floor(Math.random() * colorPresets.length)]
 
-          if (i === 0) {
-            ctx.moveTo(xOuter, yOuter)
-          } else {
-            ctx.lineTo(xOuter, yOuter)
-          }
-          ctx.lineTo(xInner, yInner)
-        }
-      }
-      ctx.closePath()
-
-      // Gradient star fill in purple theme
-      const starGrad = ctx.createLinearGradient(-size, -size, size, size)
-      starGrad.addColorStop(0, `rgba(${colorPalette.topR}, ${colorPalette.topG}, ${colorPalette.topB}, ${alpha * 0.95})`)
-      starGrad.addColorStop(0.5, `rgba(${colorPalette.midR}, ${colorPalette.midG}, ${colorPalette.midB}, ${alpha * 0.85})`)
-      starGrad.addColorStop(1, `rgba(${colorPalette.botR}, ${colorPalette.botG}, ${colorPalette.botB}, ${alpha * 0.70})`)
-
-      ctx.fillStyle = starGrad
-      ctx.fill()
-
-      // 3. Crisp luminous center core highlight
-      const coreSize = size * 0.38
-      ctx.beginPath()
-      ctx.moveTo(0, -coreSize)
-      ctx.quadraticCurveTo(0, 0, coreSize, 0)
-      ctx.quadraticCurveTo(0, 0, 0, coreSize)
-      ctx.quadraticCurveTo(0, 0, -coreSize, 0)
-      ctx.quadraticCurveTo(0, 0, 0, -coreSize)
-      ctx.closePath()
-      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.85})`
-      ctx.fill()
-
-      ctx.restore()
-    }
-
-    // Spawn stars along movement path
-    const spawnStars = (x1, y1, x2, y2, speed) => {
-      const dist = Math.hypot(x2 - x1, y2 - y1)
-      if (dist < 1) return
-
-      accumulatedDist += dist
-
-      // Spawn a star roughly every 22px of cursor travel
-      const stepDist = 24
-      const count = Math.max(Math.floor(dist / stepDist), 1)
-
-      for (let i = 0; i < count; i++) {
-        const t = (i + Math.random() * 0.5) / count
-        const interpX = x1 + (x2 - x1) * t
-        const interpY = y1 + (y2 - y1) * t
-
-        // Random jitter perpendicular to path
-        const moveAngle = Math.atan2(y2 - y1, x2 - x1)
-        const perpAngle = moveAngle + (Math.PI / 2) * (Math.random() > 0.5 ? 1 : -1)
-        const spread = (Math.random() * 16) + (speed * 0.15)
-
-        const spawnX = interpX + Math.cos(perpAngle) * spread
-        const spawnY = interpY + Math.sin(perpAngle) * spread
-
-        // Large sizes matching reference: 16px to 36px radius (32px to 72px width!)
-        const isBigHeroStar = Math.random() > 0.55
-        const baseSize = isBigHeroStar
-          ? 22 + Math.random() * 14   // 22px - 36px radius (big hero stars)
-          : 14 + Math.random() * 9    // 14px - 23px radius (medium stars)
-
-        // Palette presets (Rich Purple / Lavender / Royal Violet Theme)
-        const paletteChoice = Math.random()
-        let palette
-        if (paletteChoice < 0.45) {
-          // Luminous Lavender / Electric Purple
-          palette = {
-            topR: 235, topG: 220, topB: 255,
-            midR: 175, midG: 135, midB: 255,
-            botR: 125, botG: 80,  botB: 245,
-            glowR: 165, glowG: 120, glowB: 255
-          }
-        } else if (paletteChoice < 0.8) {
-          // Deep Royal Violet & Golden Lavender Amber Accent (subtle touch of warm star fire blended with purple)
-          palette = {
-            topR: 245, topG: 215, topB: 255,
-            midR: 155, midG: 105, midB: 255,
-            botR: 95,  botG: 55,  botB: 220,
-            glowR: 145, glowG: 90,  glowB: 255
-          }
-        } else {
-          // Crisp White-Violet Starlight
-          palette = {
-            topR: 255, topG: 245, topB: 255,
-            midR: 200, midG: 170, midB: 255,
-            botR: 140, botG: 95,  botB: 255,
-            glowR: 185, glowG: 140, glowB: 255
-          }
-        }
-
-        // Slight drift velocity
-        const driftAngle = moveAngle + (Math.random() - 0.5) * 1.2
-        const driftSpeed = Math.min(dist * 0.03, 1.4)
-
-        stars.push({
-          x: spawnX,
-          y: spawnY,
-          vx: Math.cos(driftAngle) * driftSpeed * 0.25 + (Math.random() - 0.5) * 0.4,
-          vy: Math.sin(driftAngle) * driftSpeed * 0.25 + (Math.random() - 0.5) * 0.4,
-          size: baseSize,
-          maxSize: baseSize,
-          rotation: Math.random() * Math.PI * 2,
-          rotSpeed: (Math.random() - 0.5) * 0.025,
-          alpha: 0.88,
-          decay: 0.014 + Math.random() * 0.012, // Smooth ~0.7s - 1.2s graceful lifetime
-          palette,
-          starType: Math.random() > 0.45 ? 'curved' : 'diamond'
+        sparks.push({
+          x,
+          y,
+          prevX: x,
+          prevY: y,
+          history: [{ x, y }],
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          gravity: 0.09 + Math.random() * 0.08, // Gentle downward gravity arch
+          friction: 0.94 + Math.random() * 0.02, // Air resistance
+          lineWidth: 1.4 + Math.random() * 1.6, // Streak thickness
+          alpha: 1.0,
+          decay: 0.016 + Math.random() * 0.016, // Fade duration (~0.6s - 1.1s)
+          color,
+          flickerRate: 0.2 + Math.random() * 0.3,
+          flickerOffset: Math.random() * Math.PI * 2
         })
       }
 
-      // Safeguard max active stars
-      if (stars.length > 70) {
-        stars.splice(0, stars.length - 70)
+      // Safeguard total active sparks
+      if (sparks.length > 250) {
+        sparks.splice(0, sparks.length - 250)
       }
     }
 
@@ -219,7 +115,10 @@ export default function InteractiveParticleTrail() {
     const render = () => {
       ctx.clearRect(0, 0, width, height)
 
-      if (stars.length === 0) {
+      const hasFlashes = flashes.length > 0
+      const hasSparks = sparks.length > 0
+
+      if (!hasFlashes && !hasSparks) {
         isRunning = false
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId)
@@ -228,29 +127,94 @@ export default function InteractiveParticleTrail() {
         return
       }
 
-      for (let i = stars.length - 1; i >= 0; i--) {
-        const s = stars[i]
+      // 1. Render Center Bursts & Flashes
+      for (let i = flashes.length - 1; i >= 0; i--) {
+        const f = flashes[i]
+        f.alpha -= f.decay
+        f.radius *= 0.92
 
-        // Update physics
-        s.x += s.vx
-        s.y += s.vy
-        s.vx *= 0.96
-        s.vy *= 0.96
-        s.rotation += s.rotSpeed
-        s.alpha -= s.decay
-        s.size *= 0.992 // Subtle graceful shrink as it dissolves
-
-        // Remove dead star
-        if (s.alpha <= 0.01 || s.size <= 2) {
-          stars.splice(i, 1)
+        if (f.alpha <= 0.01 || f.radius <= 1) {
+          flashes.splice(i, 1)
           continue
         }
 
-        // Draw star
-        drawFourPointStar(ctx, s.x, s.y, s.size, s.rotation, s.alpha, s.palette, s.starType)
+        ctx.save()
+        const grad = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.radius * 2)
+        grad.addColorStop(0, `rgba(255, 255, 255, ${f.alpha * 0.95})`)
+        grad.addColorStop(0.35, `rgba(195, 140, 255, ${f.alpha * 0.65})`)
+        grad.addColorStop(1, `rgba(130, 70, 255, 0)`)
+
+        ctx.fillStyle = grad
+        ctx.beginPath()
+        ctx.arc(f.x, f.y, f.radius * 2, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.restore()
       }
 
-      if (stars.length > 0) {
+      // 2. Render Sky Rocket Cracker Sparks & Streaks
+      for (let i = sparks.length - 1; i >= 0; i--) {
+        const s = sparks[i]
+
+        // Update physics
+        s.prevX = s.x
+        s.prevY = s.y
+
+        s.vx *= s.friction
+        s.vy *= s.friction
+        s.vy += s.gravity // Gravity pull down
+
+        s.x += s.vx
+        s.y += s.vy
+
+        s.history.unshift({ x: s.x, y: s.y })
+        if (s.history.length > 4) {
+          s.history.pop()
+        }
+
+        s.alpha -= s.decay
+
+        // Remove dead spark
+        if (s.alpha <= 0.01) {
+          sparks.splice(i, 1)
+          continue
+        }
+
+        // Cracker spark flickering effect
+        const flicker = 0.8 + 0.2 * Math.sin(performance.now() * s.flickerRate + s.flickerOffset)
+        const currentAlpha = Math.max(0, Math.min(1, s.alpha * flicker))
+
+        ctx.save()
+        ctx.lineCap = 'round'
+        ctx.lineJoin = 'round'
+
+        // 2a. Soft outer glowing streak aura
+        ctx.lineWidth = s.lineWidth * 2.4
+        ctx.strokeStyle = `rgba(${s.color.glowR}, ${s.color.glowG}, ${s.color.glowB}, ${currentAlpha * 0.35})`
+        ctx.beginPath()
+        ctx.moveTo(s.history[s.history.length - 1].x, s.history[s.history.length - 1].y)
+        for (let h = s.history.length - 2; h >= 0; h--) {
+          ctx.lineTo(s.history[h].x, s.history[h].y)
+        }
+        ctx.stroke()
+
+        // 2b. Crisp inner bright spark streak
+        ctx.lineWidth = s.lineWidth
+        ctx.strokeStyle = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, ${currentAlpha * 0.95})`
+        ctx.beginPath()
+        ctx.moveTo(s.prevX, s.prevY)
+        ctx.lineTo(s.x, s.y)
+        ctx.stroke()
+
+        // 2c. Bright burning tip ember
+        ctx.beginPath()
+        ctx.arc(s.x, s.y, s.lineWidth * 0.9, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`
+        ctx.fill()
+
+        ctx.restore()
+      }
+
+      if (flashes.length > 0 || sparks.length > 0) {
         animationFrameId = requestAnimationFrame(render)
       } else {
         ctx.clearRect(0, 0, width, height)
@@ -258,7 +222,7 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Mouse movement listener (ONLY triggers on actual coordinate delta)
+    // Mouse movement listener (ONLY activates on actual coordinate delta)
     const handleMouseMove = (e) => {
       const now = performance.now()
       const currentX = e.clientX
@@ -276,14 +240,22 @@ export default function InteractiveParticleTrail() {
       // Strict delta check
       if (dist === 0) return
 
+      distanceSinceLastBurst += dist
+
       const dt = Math.max(now - lastMousePos.time, 1)
       const speed = dist / dt * 16
 
-      spawnStars(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
+      // Trigger rocket bursts every ~26px - 36px along cursor movement path
+      const burstThreshold = 28
+      if (distanceSinceLastBurst >= burstThreshold) {
+        const intensity = Math.min(Math.max(speed / 12, 0.85), 1.6)
+        createSkyRocketBurst(currentX, currentY, intensity)
+        distanceSinceLastBurst = 0
+      }
 
       lastMousePos = { x: currentX, y: currentY, time: now }
 
-      if (!isRunning && stars.length > 0) {
+      if (!isRunning && (sparks.length > 0 || flashes.length > 0)) {
         isRunning = true
         animationFrameId = requestAnimationFrame(render)
       }
@@ -291,6 +263,7 @@ export default function InteractiveParticleTrail() {
 
     const handleMouseLeave = () => {
       lastMousePos = { x: null, y: null, time: 0 }
+      distanceSinceLastBurst = 0
     }
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
