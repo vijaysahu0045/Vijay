@@ -367,12 +367,16 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // User Click: Launch Rocket from Bottom to Click Position
+    // User Click: Instant Firecracker Burst Right at Click Position ("wohi pe aayega")
     const handlePointerDown = (e) => {
-      launchRocketFromBottom(e.clientX, e.clientY, 1.2)
+      detonateChrysanthemum(e.clientX, e.clientY, 1.25)
+      if (!isRunning) {
+        isRunning = true
+        animationFrameId = requestAnimationFrame(render)
+      }
     }
 
-    // Mouse Move & 10-Second Continuous Drag/Move Tracker
+    // Mouse Move: 10-Second Continuous Drag Tracker ("10 sec drag par niche se aayega aur upar aake phootega")
     const handleMouseMove = (e) => {
       const now = performance.now()
       const currentX = e.clientX
@@ -387,21 +391,20 @@ export default function InteractiveParticleTrail() {
 
       const elapsedSinceLastMove = now - lastMoveTime
 
-      // If user paused/stopped moving for more than 900ms, reset 10s counter
-      if (elapsedSinceLastMove > 900) {
+      // Reset if user stops moving for more than 1000ms (1 second)
+      if (elapsedSinceLastMove > 1000) {
         continuousMoveDuration = 0
       } else {
-        // Accumulate active movement duration
         continuousMoveDuration += (now - lastTickTime)
       }
 
       lastMoveTime = now
       lastTickTime = now
 
-      // When user has moved/dragged continuously for 10 seconds (10,000ms):
+      // Trigger sky rocket from bottom after 10 continuous seconds of dragging/moving
       if (continuousMoveDuration >= 10000) {
-        launchRocketFromBottom(currentX, currentY, 1.35)
-        continuousMoveDuration = 0 // Reset for next cycle
+        launchRocketFromBottom(currentX, currentY, 1.45)
+        continuousMoveDuration = 0 // Reset for next 10s cycle
       }
     }
 
