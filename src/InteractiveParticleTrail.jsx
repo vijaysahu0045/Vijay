@@ -3,11 +3,11 @@ import React, { useEffect, useRef } from 'react'
 /**
  * InteractiveParticleTrail
  * 
+ * - Renders large, luminous 4-pointed glowing stars/sparkles in the purple theme.
  * - COMPLETELY HIDDEN when mouse is idle / on page load.
  * - ONLY triggers on actual mouse movement (coordinate delta).
- * - Spawns subtle stardust/micro-dot particles along cursor trajectory.
+ * - Spawns beautiful 4-point stars along cursor trajectory.
  * - Smoothly fades out and halts requestAnimationFrame (0% CPU/GPU) when stopped.
- * - Color palette strictly aligned with existing dark + purple theme.
  */
 export default function InteractiveParticleTrail() {
   const canvasRef = useRef(null)
@@ -19,7 +19,7 @@ export default function InteractiveParticleTrail() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
-    // Accessibility & device checks
+    // Accessibility & touch checks
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches
 
@@ -33,9 +33,10 @@ export default function InteractiveParticleTrail() {
     let height = window.innerHeight
     let dpr = Math.min(window.devicePixelRatio || 1, 2)
 
-    // Particles collection
-    const particles = []
+    // Stars collection
+    const stars = []
     let lastMousePos = { x: null, y: null, time: 0 }
+    let accumulatedDist = 0
 
     // Resize handler
     const handleResize = () => {
@@ -55,63 +56,162 @@ export default function InteractiveParticleTrail() {
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Spawning particles along movement path
-    const spawnParticles = (x1, y1, x2, y2, speed) => {
-      const dist = Math.hypot(x2 - x1, y2 - y1)
-      if (dist < 1.5) return // Ignore infinitesimal tremors
+    // Helper: Draw 4-pointed curved sparkle star
+    const drawFourPointStar = (ctx, x, y, size, rotation, alpha, colorPalette, starType) => {
+      ctx.save()
+      ctx.translate(x, y)
+      ctx.rotate(rotation)
 
-      // Interpolate count based on movement distance and speed
-      // 2 to 5 particles for normal movement, up to 9 for fast swipe
-      const count = Math.min(Math.max(Math.floor(dist / 12), 2), 9)
-      const speedFactor = Math.min(speed / 16, 1.4)
+      // 1. Outer ambient radial glow behind star
+      const glowRadius = size * 2.4
+      const glowGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, glowRadius)
+      glowGrad.addColorStop(0, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, ${alpha * 0.55})`)
+      glowGrad.addColorStop(0.4, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, ${alpha * 0.22})`)
+      glowGrad.addColorStop(1, `rgba(${colorPalette.glowR}, ${colorPalette.glowG}, ${colorPalette.glowB}, 0)`)
+
+      ctx.fillStyle = glowGrad
+      ctx.beginPath()
+      ctx.arc(0, 0, glowRadius, 0, Math.PI * 2)
+      ctx.fill()
+
+      // 2. Main 4-pointed Star Geometry
+      ctx.beginPath()
+      if (starType === 'curved') {
+        // Organic curved 4-point sparkle star
+        const r = size
+        ctx.moveTo(0, -r)
+        ctx.quadraticCurveTo(0, 0, r, 0)
+        ctx.quadraticCurveTo(0, 0, 0, r)
+        ctx.quadraticCurveTo(0, 0, -r, 0)
+        ctx.quadraticCurveTo(0, 0, 0, -r)
+      } else {
+        // Pinched diamond 4-point star polygon
+        const rOuter = size
+        const rInner = size * 0.30
+        for (let i = 0; i < 4; i++) {
+          const angleOuter = (i * Math.PI) / 2 - Math.PI / 2
+          const angleInner = angleOuter + Math.PI / 4
+          const xOuter = Math.cos(angleOuter) * rOuter
+          const yOuter = Math.sin(angleOuter) * rOuter
+          const xInner = Math.cos(angleInner) * rInner
+          const yInner = Math.sin(angleInner) * rInner
+
+          if (i === 0) {
+            ctx.moveTo(xOuter, yOuter)
+          } else {
+            ctx.lineTo(xOuter, yOuter)
+          }
+          ctx.lineTo(xInner, yInner)
+        }
+      }
+      ctx.closePath()
+
+      // Gradient star fill in purple theme
+      const starGrad = ctx.createLinearGradient(-size, -size, size, size)
+      starGrad.addColorStop(0, `rgba(${colorPalette.topR}, ${colorPalette.topG}, ${colorPalette.topB}, ${alpha * 0.95})`)
+      starGrad.addColorStop(0.5, `rgba(${colorPalette.midR}, ${colorPalette.midG}, ${colorPalette.midB}, ${alpha * 0.85})`)
+      starGrad.addColorStop(1, `rgba(${colorPalette.botR}, ${colorPalette.botG}, ${colorPalette.botB}, ${alpha * 0.70})`)
+
+      ctx.fillStyle = starGrad
+      ctx.fill()
+
+      // 3. Crisp luminous center core highlight
+      const coreSize = size * 0.38
+      ctx.beginPath()
+      ctx.moveTo(0, -coreSize)
+      ctx.quadraticCurveTo(0, 0, coreSize, 0)
+      ctx.quadraticCurveTo(0, 0, 0, coreSize)
+      ctx.quadraticCurveTo(0, 0, -coreSize, 0)
+      ctx.quadraticCurveTo(0, 0, 0, -coreSize)
+      ctx.closePath()
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.85})`
+      ctx.fill()
+
+      ctx.restore()
+    }
+
+    // Spawn stars along movement path
+    const spawnStars = (x1, y1, x2, y2, speed) => {
+      const dist = Math.hypot(x2 - x1, y2 - y1)
+      if (dist < 1) return
+
+      accumulatedDist += dist
+
+      // Spawn a star roughly every 22px of cursor travel
+      const stepDist = 24
+      const count = Math.max(Math.floor(dist / stepDist), 1)
 
       for (let i = 0; i < count; i++) {
-        const t = (i + Math.random() * 0.6) / count
+        const t = (i + Math.random() * 0.5) / count
         const interpX = x1 + (x2 - x1) * t
         const interpY = y1 + (y2 - y1) * t
 
-        // Spread around cursor path
-        const spreadRadius = (Math.random() - 0.5) * (24 + speedFactor * 18)
-        const spreadAngle = Math.random() * Math.PI * 2
-
-        // Drift velocity with gentle momentum
+        // Random jitter perpendicular to path
         const moveAngle = Math.atan2(y2 - y1, x2 - x1)
-        const moveSpeed = Math.min(dist * 0.05, 1.8)
+        const perpAngle = moveAngle + (Math.PI / 2) * (Math.random() > 0.5 ? 1 : -1)
+        const spread = (Math.random() * 16) + (speed * 0.15)
 
-        const vx = Math.cos(moveAngle) * moveSpeed * 0.3 + (Math.random() - 0.5) * 0.9
-        const vy = Math.sin(moveAngle) * moveSpeed * 0.3 + (Math.random() - 0.5) * 0.9
+        const spawnX = interpX + Math.cos(perpAngle) * spread
+        const spawnY = interpY + Math.sin(perpAngle) * spread
 
-        // Noticeably larger particle size: 2.2px to 5.2px radius
-        const isStarHighlight = Math.random() > 0.60
-        const baseRadius = isStarHighlight 
-          ? 3.2 + Math.random() * 2.2  // Large luminous star dots (3.2px - 5.4px)
-          : 1.8 + Math.random() * 1.6  // Medium elegant particles (1.8px - 3.4px)
+        // Large sizes matching reference: 16px to 36px radius (32px to 72px width!)
+        const isBigHeroStar = Math.random() > 0.55
+        const baseSize = isBigHeroStar
+          ? 22 + Math.random() * 14   // 22px - 36px radius (big hero stars)
+          : 14 + Math.random() * 9    // 14px - 23px radius (medium stars)
 
-        // Alpha scaled smoothly by speed
-        const baseAlpha = (0.42 + Math.random() * 0.35) * (0.85 + speedFactor * 0.35)
+        // Palette presets (Rich Purple / Lavender / Royal Violet Theme)
+        const paletteChoice = Math.random()
+        let palette
+        if (paletteChoice < 0.45) {
+          // Luminous Lavender / Electric Purple
+          palette = {
+            topR: 235, topG: 220, topB: 255,
+            midR: 175, midG: 135, midB: 255,
+            botR: 125, botG: 80,  botB: 245,
+            glowR: 165, glowG: 120, glowB: 255
+          }
+        } else if (paletteChoice < 0.8) {
+          // Deep Royal Violet & Golden Lavender Amber Accent (subtle touch of warm star fire blended with purple)
+          palette = {
+            topR: 245, topG: 215, topB: 255,
+            midR: 155, midG: 105, midB: 255,
+            botR: 95,  botG: 55,  botB: 220,
+            glowR: 145, glowG: 90,  glowB: 255
+          }
+        } else {
+          // Crisp White-Violet Starlight
+          palette = {
+            topR: 255, topG: 245, topB: 255,
+            midR: 200, midG: 170, midB: 255,
+            botR: 140, botG: 95,  botB: 255,
+            glowR: 185, glowG: 140, glowB: 255
+          }
+        }
 
-        // Palette: Vibrant soft purple-lavender & radiant stardust
-        const colorType = isStarHighlight
-          ? { r: 228, g: 220, b: 255, glowR: 165, glowG: 135, glowB: 255 } // Radiant stardust
-          : { r: 178, g: 150, b: 255, glowR: 135, glowG: 100, glowB: 255 } // Rich purple-lavender
+        // Slight drift velocity
+        const driftAngle = moveAngle + (Math.random() - 0.5) * 1.2
+        const driftSpeed = Math.min(dist * 0.03, 1.4)
 
-        particles.push({
-          x: interpX + Math.cos(spreadAngle) * spreadRadius,
-          y: interpY + Math.sin(spreadAngle) * spreadRadius,
-          vx,
-          vy,
-          radius: baseRadius,
-          maxRadius: baseRadius,
-          alpha: Math.min(baseAlpha, 0.85),
-          decay: 0.013 + Math.random() * 0.015, // Smooth ~0.6s - 1.1s lifetime
-          color: colorType,
-          glow: isStarHighlight
+        stars.push({
+          x: spawnX,
+          y: spawnY,
+          vx: Math.cos(driftAngle) * driftSpeed * 0.25 + (Math.random() - 0.5) * 0.4,
+          vy: Math.sin(driftAngle) * driftSpeed * 0.25 + (Math.random() - 0.5) * 0.4,
+          size: baseSize,
+          maxSize: baseSize,
+          rotation: Math.random() * Math.PI * 2,
+          rotSpeed: (Math.random() - 0.5) * 0.025,
+          alpha: 0.88,
+          decay: 0.014 + Math.random() * 0.012, // Smooth ~0.7s - 1.2s graceful lifetime
+          palette,
+          starType: Math.random() > 0.45 ? 'curved' : 'diamond'
         })
       }
 
-      // Max particle safeguard
-      if (particles.length > 150) {
-        particles.splice(0, particles.length - 150)
+      // Safeguard max active stars
+      if (stars.length > 70) {
+        stars.splice(0, stars.length - 70)
       }
     }
 
@@ -119,7 +219,7 @@ export default function InteractiveParticleTrail() {
     const render = () => {
       ctx.clearRect(0, 0, width, height)
 
-      if (particles.length === 0) {
+      if (stars.length === 0) {
         isRunning = false
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId)
@@ -128,48 +228,29 @@ export default function InteractiveParticleTrail() {
         return
       }
 
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i]
+      for (let i = stars.length - 1; i >= 0; i--) {
+        const s = stars[i]
 
         // Update physics
-        p.x += p.vx
-        p.y += p.vy
-        p.vx *= 0.96
-        p.vy *= 0.96
-        p.alpha -= p.decay
-        p.radius *= 0.990
+        s.x += s.vx
+        s.y += s.vy
+        s.vx *= 0.96
+        s.vy *= 0.96
+        s.rotation += s.rotSpeed
+        s.alpha -= s.decay
+        s.size *= 0.992 // Subtle graceful shrink as it dissolves
 
-        // Remove dead particle
-        if (p.alpha <= 0.01 || p.radius <= 0.4) {
-          particles.splice(i, 1)
+        // Remove dead star
+        if (s.alpha <= 0.01 || s.size <= 2) {
+          stars.splice(i, 1)
           continue
         }
 
-        // Draw particle with lush soft glow aura
-        ctx.save()
-        
-        // Soft outer ambient halo
-        const haloRadius = p.radius * (p.glow ? 3.2 : 2.4)
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, haloRadius)
-        gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.alpha * 0.9})`)
-        gradient.addColorStop(0.35, `rgba(${p.color.glowR || p.color.r}, ${p.color.glowG || p.color.g}, ${p.color.glowB || p.color.b}, ${p.alpha * 0.45})`)
-        gradient.addColorStop(1, `rgba(${p.color.glowR || p.color.r}, ${p.color.glowG || p.color.g}, ${p.color.glowB || p.color.b}, 0)`)
-        
-        ctx.fillStyle = gradient
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, haloRadius, 0, Math.PI * 2)
-        ctx.fill()
-
-        // Crisp inner solid core
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.radius * 0.65, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${p.alpha})`
-        ctx.fill()
-        
-        ctx.restore()
+        // Draw star
+        drawFourPointStar(ctx, s.x, s.y, s.size, s.rotation, s.alpha, s.palette, s.starType)
       }
 
-      if (particles.length > 0) {
+      if (stars.length > 0) {
         animationFrameId = requestAnimationFrame(render)
       } else {
         ctx.clearRect(0, 0, width, height)
@@ -177,7 +258,7 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Mouse movement listener (ONLY activates on actual coordinate delta)
+    // Mouse movement listener (ONLY triggers on actual coordinate delta)
     const handleMouseMove = (e) => {
       const now = performance.now()
       const currentX = e.clientX
@@ -192,18 +273,17 @@ export default function InteractiveParticleTrail() {
       const dy = currentY - lastMousePos.y
       const dist = Math.hypot(dx, dy)
 
-      // Strict delta check: ignore if mouse didn't move
+      // Strict delta check
       if (dist === 0) return
 
       const dt = Math.max(now - lastMousePos.time, 1)
-      const speed = dist / dt * 16 // normalized px/frame speed
+      const speed = dist / dt * 16
 
-      spawnParticles(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
+      spawnStars(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
 
       lastMousePos = { x: currentX, y: currentY, time: now }
 
-      // Start loop if not already running
-      if (!isRunning && particles.length > 0) {
+      if (!isRunning && stars.length > 0) {
         isRunning = true
         animationFrameId = requestAnimationFrame(render)
       }
