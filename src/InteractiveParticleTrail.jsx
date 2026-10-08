@@ -391,8 +391,8 @@ export default function InteractiveParticleTrail() {
 
       const elapsedSinceLastMove = now - lastMoveTime
 
-      // Reset if user stops moving for more than 1000ms (1 second)
-      if (elapsedSinceLastMove > 1000) {
+      // Reset if user stops moving for more than 750ms
+      if (elapsedSinceLastMove > 750) {
         continuousMoveDuration = 0
       } else {
         continuousMoveDuration += (now - lastTickTime)
@@ -401,10 +401,10 @@ export default function InteractiveParticleTrail() {
       lastMoveTime = now
       lastTickTime = now
 
-      // Trigger sky rocket from bottom after 10 continuous seconds of dragging/moving
-      if (continuousMoveDuration >= 10000) {
+      // Trigger sky rocket from bottom after 3 continuous seconds of dragging/moving
+      if (continuousMoveDuration >= 3000) {
         launchRocketFromBottom(currentX, currentY, 1.45)
-        continuousMoveDuration = 0 // Reset for next 10s cycle
+        continuousMoveDuration = 0 // Reset for next 3s cycle
       }
     }
 
