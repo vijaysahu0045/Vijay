@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
-import FymbleCaseStudy from './FymbleCaseStudy'
 import bgImage from './assets/projects-bg.png'
 import screen1 from './assets/fymble-screen-1.png'
 import screen2 from './assets/fymble-screen-2.png'
@@ -245,11 +244,6 @@ const CASE_STUDIES = {
 
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
-
-  // Dedicated Editorial UX/UI Case Study for Fymble Flagship
-  if (project.id === 1 || project.title?.toLowerCase().includes('fymble')) {
-    return <FymbleCaseStudy onBack={onBack} onNavigateProject={onNavigateProject} />
-  }
 
   const [activeStep, setActiveStep] = useState(0)
   const [currentScreenIdx, setCurrentScreenIdx] = useState(0)
