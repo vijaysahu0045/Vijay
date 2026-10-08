@@ -84,15 +84,15 @@ export default function InteractiveParticleTrail() {
       coreSparks.push({
         x,
         y,
-        radius: 7 * power,
+        radius: 6 * power,
         alpha: 0.50,
-        decay: 0.025
+        decay: 0.015
       })
 
       // 2. Compact & Dense Flow-Through Needle Streamers (28 to 38 streamers)
       const count = Math.floor(28 + Math.random() * 10)
-      // 60% speed reduction for smooth graceful slow-motion flow
-      const baseSpeed = (0.85 + Math.random() * 0.45) * Math.min(power, 1.15)
+      // Ultra-slow motion: gentle expanding bloom
+      const baseSpeed = (0.35 + Math.random() * 0.22) * Math.min(power, 1.1)
 
       for (let i = 0; i < count; i++) {
         const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.18
@@ -111,14 +111,14 @@ export default function InteractiveParticleTrail() {
           history: [{ x, y }],
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          gravity: 0.015 + Math.random() * 0.010, // 60% reduced gravity for slow graceful floating arch
-          friction: 0.972 + Math.random() * 0.010, // Smooth glide
-          lineWidth: isCoreLayer ? 1.25 : 0.9, // Ultra-fine crisp flowing light threads
+          gravity: 0.006 + Math.random() * 0.005, // Ultra-gentle slow floating gravity
+          friction: 0.982 + Math.random() * 0.008, // Very smooth continuous glide
+          lineWidth: isCoreLayer ? 1.2 : 0.85, // Ultra-fine crisp flowing light threads
           alpha: 0.50, // Set to 50% opacity
           maxAlpha: 0.50,
-          decay: 0.0045 + Math.random() * 0.0035, // Smooth slow-motion fade duration
+          decay: 0.0030 + Math.random() * 0.0022, // Long calm slow-motion fade (~2.5s - 3.5s)
           color,
-          twinkle: 0.88 + Math.random() * 0.12
+          twinkle: 0.90 + Math.random() * 0.10
         })
       }
 
@@ -128,12 +128,12 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Launch Ascending Rocket (Slower graceful ascent)
+    // Launch Ascending Rocket (Ultra-slow graceful ascent)
     const launchRocket = (startX, startY, targetX, targetY) => {
       const dx = targetX - startX
       const dy = targetY - startY
       const dist = Math.hypot(dx, dy)
-      const steps = Math.max(Math.floor(dist / 6), 1)
+      const steps = Math.max(Math.floor(dist / 3), 1)
 
       rockets.push({
         x: startX,
