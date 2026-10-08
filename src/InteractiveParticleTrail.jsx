@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 
 /**
- * InteractiveParticleTrail - Magical Stardust Comet Swirl & Fairy Dust Trail
+ * InteractiveParticleTrail - Premium Purple Comet Stardust Trail
  * 
- * - Recreates the exact magical stardust swirl & fairy dust comet trail from reference image.
- * - Glowing flare head at cursor tip.
- * - Dense, glittering stream of 4-point sparkle stars, glowing embers, and micro-stardust.
- * - Golden-Lavender Starlight palette tailored to our dark luxury theme.
- * - 100% invisible when idle / on page load (0% CPU/GPU).
+ * - High-density flowing particle stream inspired by celestial comet / glowing dust trails.
+ * - Soft purple, lavender, subtle violet & starlight white color palette.
+ * - Activates ONLY during active mouse movement.
+ * - Smooth velocity-driven curvature and density.
+ * - Graceful fade-out when mouse stops (0% CPU/GPU when idle).
+ * - Layered behind UI with pointer-events: none.
  */
 export default function InteractiveParticleTrail() {
   const canvasRef = useRef(null)
@@ -19,7 +20,7 @@ export default function InteractiveParticleTrail() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
-    // Accessibility & touch checks
+    // Accessibility & touch device detection
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches
 
@@ -33,12 +34,12 @@ export default function InteractiveParticleTrail() {
     let height = window.innerHeight
     let dpr = Math.min(window.devicePixelRatio || 1, 2)
 
-    // Particles collection & Flare state
+    // Particle collection & emitter flare
     const particles = []
     let cursor = { x: -9999, y: -9999, active: false }
     let lastMousePos = { x: null, y: null, time: 0 }
-    let flareAlpha = 0
-    let flareTargetAlpha = 0
+    let emitterAlpha = 0
+    let emitterTargetAlpha = 0
 
     // Resize handler
     const handleResize = () => {
@@ -58,13 +59,57 @@ export default function InteractiveParticleTrail() {
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Helper: Draw 4-pointed sharp diamond sparkle star
-    const drawSparkleStar = (ctx, x, y, size, rotation, alpha, r, g, b) => {
+    // Palette: Soft Purple, Lavender, Subtle Violet, Starlight White & Cool Light Gray
+    const THEME_COLORS = [
+      { r: 185, g: 155, b: 255 }, // Luminous Lavender
+      { r: 155, g: 120, b: 250 }, // Soft Violet
+      { r: 215, g: 195, b: 255 }, // Cool Lilac
+      { r: 245, g: 240, b: 255 }, // Starlight White
+      { r: 135, g: 95,  b: 240 }, // Deep Ambient Violet
+      { r: 200, g: 180, b: 245 }  // Subtle Soft Purple
+    ]
+
+    // Helper: Draw Small Emitter Core at Cursor Tip
+    const drawEmitter = (ctx, x, y, alpha) => {
+      if (alpha <= 0.01) return
+      ctx.save()
+
+      // Small central soft purple starlight glow (12px radius)
+      const grad = ctx.createRadialGradient(x, y, 0, x, y, 14)
+      grad.addColorStop(0, `rgba(255, 255, 255, ${alpha * 0.95})`)
+      grad.addColorStop(0.25, `rgba(220, 190, 255, ${alpha * 0.70})`)
+      grad.addColorStop(0.65, `rgba(165, 125, 255, ${alpha * 0.28})`)
+      grad.addColorStop(1, 'rgba(140, 90, 255, 0)')
+
+      ctx.fillStyle = grad
+      ctx.beginPath()
+      ctx.arc(x, y, 14, 0, Math.PI * 2)
+      ctx.fill()
+
+      // Subtle delicate cross-shimmer rays
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.80})`
+      ctx.beginPath()
+      ctx.moveTo(x - 9, y)
+      ctx.quadraticCurveTo(x, y - 0.8, x + 9, y)
+      ctx.quadraticCurveTo(x, y + 0.8, x - 9, y)
+      ctx.fill()
+
+      ctx.beginPath()
+      ctx.moveTo(x, y - 9)
+      ctx.quadraticCurveTo(x - 0.8, y, x, y + 9)
+      ctx.quadraticCurveTo(x + 0.8, y, x, y - 9)
+      ctx.fill()
+
+      ctx.restore()
+    }
+
+    // Helper: Draw 4-point micro sparkle star
+    const drawMicroSparkle = (ctx, x, y, size, rotation, alpha, r, g, b) => {
       ctx.save()
       ctx.translate(x, y)
       ctx.rotate(rotation)
 
-      // Soft outer glow halo
+      // Outer soft aura
       const glowR = size * 2.2
       const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, glowR)
       grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${alpha * 0.45})`)
@@ -74,7 +119,7 @@ export default function InteractiveParticleTrail() {
       ctx.arc(0, 0, glowR, 0, Math.PI * 2)
       ctx.fill()
 
-      // 4-Point Sharp Diamond Star
+      // 4-Point Diamond Sparkle
       const rOuter = size
       const rInner = size * 0.22
       ctx.beginPath()
@@ -85,18 +130,15 @@ export default function InteractiveParticleTrail() {
         const yo = Math.sin(angleOuter) * rOuter
         const xi = Math.cos(angleInner) * rInner
         const yi = Math.sin(angleInner) * rInner
-
         if (i === 0) ctx.moveTo(xo, yo)
         else ctx.lineTo(xo, yo)
         ctx.lineTo(xi, yi)
       }
       ctx.closePath()
-
-      // Bright solid starlight body
-      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha * 0.95})`
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha * 0.90})`
       ctx.fill()
 
-      // Pure white diamond core
+      // Crisp White Diamond Center
       ctx.beginPath()
       const coreR = size * 0.35
       for (let i = 0; i < 4; i++) {
@@ -117,102 +159,59 @@ export default function InteractiveParticleTrail() {
       ctx.restore()
     }
 
-    // Helper: Draw Lens Flare Star at Cursor Tip
-    const drawCursorFlare = (ctx, x, y, alpha) => {
-      if (alpha <= 0.01) return
-      ctx.save()
-      ctx.translate(x, y)
-
-      // Radial central glow
-      const glowGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, 24)
-      glowGrad.addColorStop(0, `rgba(255, 255, 255, ${alpha * 0.95})`)
-      glowGrad.addColorStop(0.25, `rgba(255, 235, 170, ${alpha * 0.70})`)
-      glowGrad.addColorStop(0.65, `rgba(205, 150, 255, ${alpha * 0.30})`)
-      glowGrad.addColorStop(1, 'rgba(150, 90, 255, 0)')
-      ctx.fillStyle = glowGrad
-      ctx.beginPath()
-      ctx.arc(0, 0, 24, 0, Math.PI * 2)
-      ctx.fill()
-
-      // Cross 4-ray starlight spikes
-      ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.90})`
-      
-      // Horizontal ray
-      ctx.beginPath()
-      ctx.moveTo(-18, 0)
-      ctx.quadraticCurveTo(0, -1.2, 18, 0)
-      ctx.quadraticCurveTo(0, 1.2, -18, 0)
-      ctx.fill()
-
-      // Vertical ray
-      ctx.beginPath()
-      ctx.moveTo(0, -18)
-      ctx.quadraticCurveTo(-1.2, 0, 0, 18)
-      ctx.quadraticCurveTo(1.2, 0, 0, -18)
-      ctx.fill()
-
-      ctx.restore()
-    }
-
     // Spawn dense stardust stream along movement line
-    const spawnStardustStream = (x1, y1, x2, y2, speed) => {
+    const spawnCometDust = (x1, y1, x2, y2, speed) => {
       const dist = Math.hypot(x2 - x1, y2 - y1)
       if (dist < 1) return
 
-      // Number of particles proportional to distance & speed for seamless dense ribbon
-      const count = Math.min(Math.max(Math.floor(dist * 0.75), 4), 16)
+      // High density: hundreds of particles during fluid mouse strokes
+      const count = Math.min(Math.max(Math.floor(dist * 0.85), 3), 16)
       const moveAngle = Math.atan2(y2 - y1, x2 - x1)
+      const speedFactor = Math.min(speed / 16, 1.4)
 
       for (let i = 0; i < count; i++) {
-        const t = (i + Math.random() * 0.8) / count
+        const t = (i + Math.random() * 0.75) / count
         const interpX = x1 + (x2 - x1) * t
         const interpY = y1 + (y2 - y1) * t
 
-        // Slight organic spread perpendicular to movement trajectory
+        // Natural perpendicular dispersion (tighter near cursor tip, wider as trail fans out)
         const perpAngle = moveAngle + (Math.PI / 2) * (Math.random() > 0.5 ? 1 : -1)
-        const spreadDist = (Math.random() - 0.5) * (8 + Math.min(speed * 0.3, 12))
+        const spreadDist = (Math.random() - 0.5) * (6 + speedFactor * 11)
 
         const px = interpX + Math.cos(perpAngle) * spreadDist
         const py = interpY + Math.sin(perpAngle) * spreadDist
 
-        // Particle type: 40% Diamond Stars, 45% Stardust Embers, 15% Fine Sparkles
+        // Particle size variation:
+        // 65% tiny micro dots, 28% medium shimmer dust, 7% brighter sparkle stars
         const typeRand = Math.random()
-        let pType = 'star'
-        let baseSize = 2.4 + Math.random() * 2.2 // 2.4px to 4.6px radius stars
-        if (typeRand < 0.45) {
-          pType = 'ember'
-          baseSize = 1.2 + Math.random() * 1.6 // 1.2px to 2.8px embers
-        } else if (typeRand < 0.60) {
-          pType = 'micro'
-          baseSize = 0.6 + Math.random() * 0.8 // 0.6px to 1.4px micro-dust
+        let pType = 'micro'
+        let baseRadius = 0.65 + Math.random() * 0.55 // Tiny micro dot
+
+        if (typeRand > 0.93) {
+          pType = 'star'
+          baseRadius = 2.2 + Math.random() * 1.1 // Luminous sparkle star
+        } else if (typeRand > 0.65) {
+          pType = 'medium'
+          baseRadius = 1.3 + Math.random() * 0.85 // Medium shimmer dot
         }
 
-        // Color Palette: Golden Starlight + Luminous Lavender-Purple + Diamond White
-        const colRand = Math.random()
-        let col = { r: 255, g: 235, b: 160 } // Warm Golden Starlight (like photo)
-        if (colRand < 0.40) {
-          col = { r: 255, g: 248, b: 215 } // Bright Champagne Gold
-        } else if (colRand < 0.75) {
-          col = { r: 230, g: 190, b: 255 } // Luminous Lavender Violet (theme accent)
-        } else {
-          col = { r: 255, g: 255, b: 255 } // Pure Diamond White
-        }
+        // Color from soft purple palette
+        const col = THEME_COLORS[Math.floor(Math.random() * THEME_COLORS.length)]
 
-        // Gentle drift inertia
-        const driftSpeed = 0.2 + Math.random() * 0.6
-        const driftAngle = moveAngle + (Math.random() - 0.5) * 1.5
+        // Drift momentum in movement direction with subtle spread
+        const driftAngle = moveAngle + (Math.random() - 0.5) * 1.4
+        const driftSpeed = (0.15 + Math.random() * 0.55) * (0.8 + speedFactor * 0.3)
 
         particles.push({
           x: px,
           y: py,
-          vx: Math.cos(driftAngle) * driftSpeed * 0.4,
-          vy: Math.sin(driftAngle) * driftSpeed * 0.4 + 0.1, // slight gentle gravity
-          size: baseSize,
-          maxSize: baseSize,
+          vx: Math.cos(driftAngle) * driftSpeed * 0.35,
+          vy: Math.sin(driftAngle) * driftSpeed * 0.35 + 0.05, // subtle ambient gravity
+          radius: baseRadius,
           rotation: Math.random() * Math.PI * 2,
-          rotSpeed: (Math.random() - 0.5) * 0.04,
-          alpha: 0.85 + Math.random() * 0.15,
-          decay: 0.016 + Math.random() * 0.016, // Smooth ~0.5s - 0.9s lifetime
+          rotSpeed: (Math.random() - 0.5) * 0.035,
+          alpha: 0.80 + Math.random() * 0.20,
+          decay: 0.016 + Math.random() * 0.018, // Smooth ~0.45s - 0.85s lifetime
           type: pType,
           color: col,
           twinklePhase: Math.random() * Math.PI * 2,
@@ -220,9 +219,9 @@ export default function InteractiveParticleTrail() {
         })
       }
 
-      // Safeguard total active particles
-      if (particles.length > 250) {
-        particles.splice(0, particles.length - 250)
+      // Safeguard max active particle pool
+      if (particles.length > 380) {
+        particles.splice(0, particles.length - 380)
       }
     }
 
@@ -230,15 +229,15 @@ export default function InteractiveParticleTrail() {
     const render = () => {
       ctx.clearRect(0, 0, width, height)
 
-      // Smooth flare alpha transition
-      flareAlpha += (flareTargetAlpha - flareAlpha) * 0.18
+      // Smooth emitter alpha transition
+      emitterAlpha += (emitterTargetAlpha - emitterAlpha) * 0.22
 
-      // Draw Cursor Tip Star Flare
-      if (cursor.active && flareAlpha > 0.01) {
-        drawCursorFlare(ctx, cursor.x, cursor.y, flareAlpha)
+      // Draw cursor tip emitter flare
+      if (cursor.active && emitterAlpha > 0.01) {
+        drawEmitter(ctx, cursor.x, cursor.y, emitterAlpha)
       }
 
-      if (particles.length === 0 && flareAlpha <= 0.01) {
+      if (particles.length === 0 && emitterAlpha <= 0.01) {
         isRunning = false
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId)
@@ -255,42 +254,41 @@ export default function InteractiveParticleTrail() {
         // Update physics
         p.x += p.vx
         p.y += p.vy
-        p.vx *= 0.96
-        p.vy *= 0.96
+        p.vx *= 0.965
+        p.vy *= 0.965
         p.rotation += p.rotSpeed
         p.alpha -= p.decay
-        p.size *= 0.988
+        p.radius *= 0.987
 
         // Remove dead particle
-        if (p.alpha <= 0.01 || p.size <= 0.3) {
+        if (p.alpha <= 0.01 || p.radius <= 0.25) {
           particles.splice(i, 1)
           continue
         }
 
         // Twinkle factor
-        const twinkle = 0.8 + 0.2 * Math.sin(now * p.twinkleFreq + p.twinklePhase)
+        const twinkle = 0.82 + 0.18 * Math.sin(now * p.twinkleFreq + p.twinklePhase)
         const curAlpha = Math.max(0, Math.min(1, p.alpha * twinkle))
 
         if (p.type === 'star') {
-          // Draw 4-point diamond sparkle star
-          drawSparkleStar(ctx, p.x, p.y, p.size, p.rotation, curAlpha, p.color.r, p.color.g, p.color.b)
+          drawMicroSparkle(ctx, p.x, p.y, p.radius, p.rotation, curAlpha, p.color.r, p.color.g, p.color.b)
         } else {
-          // Draw round glowing dust ember
+          // Render soft glowing stardust dot
           ctx.save()
-          const emberGlow = p.size * (p.type === 'ember' ? 2.2 : 1.6)
-          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, emberGlow)
+          const glowR = p.radius * (p.type === 'medium' ? 2.2 : 1.6)
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowR)
           grad.addColorStop(0, `rgba(255, 255, 255, ${curAlpha * 0.95})`)
-          grad.addColorStop(0.35, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${curAlpha * 0.75})`)
+          grad.addColorStop(0.35, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${curAlpha * 0.70})`)
           grad.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`)
           ctx.fillStyle = grad
           ctx.beginPath()
-          ctx.arc(p.x, p.y, emberGlow, 0, Math.PI * 2)
+          ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2)
           ctx.fill()
           ctx.restore()
         }
       }
 
-      if (particles.length > 0 || flareAlpha > 0.01) {
+      if (particles.length > 0 || emitterAlpha > 0.01) {
         animationFrameId = requestAnimationFrame(render)
       } else {
         ctx.clearRect(0, 0, width, height)
@@ -307,7 +305,7 @@ export default function InteractiveParticleTrail() {
       cursor.x = currentX
       cursor.y = currentY
       cursor.active = true
-      flareTargetAlpha = 0.95
+      emitterTargetAlpha = 0.95
 
       if (lastMousePos.x === null) {
         lastMousePos = { x: currentX, y: currentY, time: now }
@@ -318,13 +316,14 @@ export default function InteractiveParticleTrail() {
       const dy = currentY - lastMousePos.y
       const dist = Math.hypot(dx, dy)
 
+      // Strict delta check: ignore stationary hover
       if (dist === 0) return
 
       const dt = Math.max(now - lastMousePos.time, 1)
       const speed = (dist / dt) * 16
 
-      // Spawn dense stardust stream
-      spawnStardustStream(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
+      // Spawn dense comet dust stream
+      spawnCometDust(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
 
       lastMousePos = { x: currentX, y: currentY, time: now }
 
@@ -336,17 +335,17 @@ export default function InteractiveParticleTrail() {
 
     const handleMouseLeave = () => {
       cursor.active = false
-      flareTargetAlpha = 0
+      emitterTargetAlpha = 0
       lastMousePos = { x: null, y: null, time: 0 }
     }
 
-    // When mouse stops moving: dim the cursor flare
+    // When mouse stops moving: dim the emitter flare immediately
     let idleTimer = null
     const handleIdleCheck = () => {
       if (idleTimer) clearTimeout(idleTimer)
       idleTimer = setTimeout(() => {
-        flareTargetAlpha = 0
-      }, 70)
+        emitterTargetAlpha = 0
+      }, 65)
     }
 
     const onPointerMove = (e) => {
@@ -354,26 +353,13 @@ export default function InteractiveParticleTrail() {
       handleIdleCheck()
     }
 
-    // Click trigger: extra sparkle burst
-    const onPointerDown = (e) => {
-      spawnStardustStream(e.clientX - 6, e.clientY - 6, e.clientX + 6, e.clientY + 6, 20)
-      flareAlpha = 1.0
-      flareTargetAlpha = 0.95
-      if (!isRunning) {
-        isRunning = true
-        animationFrameId = requestAnimationFrame(render)
-      }
-    }
-
     window.addEventListener('mousemove', onPointerMove, { passive: true })
-    window.addEventListener('pointerdown', onPointerDown, { passive: true })
     window.addEventListener('mouseleave', handleMouseLeave, { passive: true })
 
     return () => {
       if (idleTimer) clearTimeout(idleTimer)
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('mousemove', onPointerMove)
-      window.removeEventListener('pointerdown', onPointerDown)
       window.removeEventListener('mouseleave', handleMouseLeave)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
