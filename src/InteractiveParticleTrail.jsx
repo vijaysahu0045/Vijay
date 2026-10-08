@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 
 /**
- * InteractiveParticleTrail - Chrysanthemum / Willow Sky Rocket Fireworks
+ * InteractiveParticleTrail - Soft Flow-Through Chrysanthemum Sky Rocket Firework
  * 
- * - Authentic Japanese Chrysanthemum / Willow Firework bloom matching reference photo.
- * - Dense ultra-fine radiant needle streamers with glowing central core and graceful willow cascade.
- * - Compact & elegant size (not overly large).
- * - COMPLETELY HIDDEN when mouse is idle / on page load (0% CPU/GPU).
- * - ONLY triggers on actual mouse movement.
+ * - Slightly smaller, elegant and compact burst size (~22px - 32px radius).
+ * - 50% soft subtle opacity (never harsh or glaring).
+ * - Extended lifetime with continuous flowing line streamer trails (flow-through willow light strands).
+ * - Triggers on both Mouse Movement and Mouse Click (pointerdown).
+ * - 100% invisible when idle / on page load (0% CPU/GPU).
  */
 export default function InteractiveParticleTrail() {
   const canvasRef = useRef(null)
@@ -58,46 +58,46 @@ export default function InteractiveParticleTrail() {
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Color Palettes (Rich Chrysanthemum Blend: White-Gold Core with Electric Lavender & Deep Violet Streamers)
+    // Color Palettes (Rich Purple & Starlight, Soft 50% Blending)
     const getStreamerColor = (layer) => {
       if (layer === 'core') {
         return {
-          r: 255, g: 245, b: 210, // Bright Golden Starlight
+          r: 255, g: 245, b: 215, // Golden Starlight Core
           glowR: 240, glowG: 200, glowB: 255
         }
       } else if (layer === 'inner') {
         return {
-          r: 235, g: 185, b: 255, // Luminous Lavender
-          glowR: 195, glowG: 120, glowB: 255
+          r: 225, g: 175, b: 255, // Luminous Lavender
+          glowR: 185, glowG: 120, glowB: 255
         }
       } else {
         return {
-          r: 175, g: 110, b: 255, // Deep Royal Violet Willow
-          glowR: 140, glowG: 70,  glowB: 255
+          r: 165, g: 105, b: 255, // Royal Violet Flowing Line
+          glowR: 130, glowG: 70,  glowB: 245
         }
       }
     }
 
-    // Detonate Chrysanthemum / Willow Burst
+    // Detonate Chrysanthemum / Willow Flow Burst
     const detonateChrysanthemum = (x, y, power = 1) => {
-      // 1. Central Core Ignition Flash
+      // 1. Central Core Ignition Flash (Soft 50% opacity)
       coreSparks.push({
         x,
         y,
-        radius: 12 * power,
-        alpha: 0.95,
-        decay: 0.09
+        radius: 8 * power,
+        alpha: 0.50,
+        decay: 0.04
       })
 
-      // 2. Dense Fine-Needle Chrysanthemum Streamers (32 to 46 streamers)
-      const count = Math.floor(32 + Math.random() * 14)
-      const baseSpeed = (3.2 + Math.random() * 1.6) * Math.min(power, 1.25)
+      // 2. Compact & Dense Flow-Through Needle Streamers (28 to 38 streamers)
+      const count = Math.floor(28 + Math.random() * 10)
+      // Compact size: 2.0 to 3.2 base speed (smaller radius ~22px - 32px)
+      const baseSpeed = (2.1 + Math.random() * 1.1) * Math.min(power, 1.2)
 
       for (let i = 0; i < count; i++) {
-        // Spherical shell distribution with slight natural jitter
-        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.15
+        const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.18
         const speed = baseSpeed * (0.65 + Math.random() * 0.65)
-        const isCoreLayer = Math.random() < 0.28
+        const isCoreLayer = Math.random() < 0.25
         const isInnerLayer = Math.random() < 0.55
         const layerType = isCoreLayer ? 'core' : (isInnerLayer ? 'inner' : 'outer')
 
@@ -111,20 +111,20 @@ export default function InteractiveParticleTrail() {
           history: [{ x, y }],
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          gravity: 0.055 + Math.random() * 0.035, // Gentle drooping willow cascade
-          friction: 0.935 + Math.random() * 0.015, // Air resistance forming spherical dome
-          lineWidth: isCoreLayer ? 1.4 : 1.0, // Fine crisp needle-thin streamers
-          alpha: 1.0,
-          decay: isCoreLayer ? 0.024 : 0.014 + Math.random() * 0.012, // Long willow linger
+          gravity: 0.038 + Math.random() * 0.025, // Gentle drooping willow flow
+          friction: 0.962 + Math.random() * 0.012, // High momentum for long silky lines
+          lineWidth: isCoreLayer ? 1.3 : 0.95, // Ultra-fine crisp flowing light threads
+          alpha: 0.50, // Set to 50% opacity
+          maxAlpha: 0.50,
+          decay: 0.007 + Math.random() * 0.006, // Long graceful lifetime (~1.8s - 2.5s)
           color,
-          twinkle: 0.75 + Math.random() * 0.25,
-          twinkleFreq: 0.25 + Math.random() * 0.25
+          twinkle: 0.85 + Math.random() * 0.15
         })
       }
 
       // Safeguard max active streamers
-      if (streamers.length > 220) {
-        streamers.splice(0, streamers.length - 220)
+      if (streamers.length > 260) {
+        streamers.splice(0, streamers.length - 260)
       }
     }
 
@@ -133,7 +133,7 @@ export default function InteractiveParticleTrail() {
       const dx = targetX - startX
       const dy = targetY - startY
       const dist = Math.hypot(dx, dy)
-      const steps = Math.max(Math.floor(dist / 16), 1)
+      const steps = Math.max(Math.floor(dist / 14), 1)
 
       rockets.push({
         x: startX,
@@ -143,7 +143,7 @@ export default function InteractiveParticleTrail() {
         vx: dx / steps,
         vy: dy / steps,
         life: steps,
-        color: { r: 255, g: 245, b: 220, glowR: 210, glowG: 160, glowB: 255 }
+        color: { r: 255, g: 240, b: 220, glowR: 200, glowG: 150, glowB: 255 }
       })
     }
 
@@ -164,7 +164,7 @@ export default function InteractiveParticleTrail() {
         return
       }
 
-      // 1. Update & Render Ascending Rocket Tracers
+      // 1. Render Ascending Rocket Tracers
       for (let i = rockets.length - 1; i >= 0; i--) {
         const r = rockets[i]
         const oldX = r.x
@@ -173,10 +173,9 @@ export default function InteractiveParticleTrail() {
         r.y += r.vy
         r.life--
 
-        // Glowing rocket ascent streak
         ctx.save()
-        ctx.strokeStyle = `rgba(${r.color.r}, ${r.color.g}, ${r.color.b}, 0.85)`
-        ctx.lineWidth = 1.8
+        ctx.strokeStyle = `rgba(${r.color.r}, ${r.color.g}, ${r.color.b}, 0.45)`
+        ctx.lineWidth = 1.4
         ctx.lineCap = 'round'
         ctx.beginPath()
         ctx.moveTo(oldX, oldY)
@@ -190,11 +189,11 @@ export default function InteractiveParticleTrail() {
         }
       }
 
-      // 2. Render Core Center Flashes
+      // 2. Render Core Center Soft Glows
       for (let i = coreSparks.length - 1; i >= 0; i--) {
         const c = coreSparks[i]
         c.alpha -= c.decay
-        c.radius *= 0.90
+        c.radius *= 0.94
 
         if (c.alpha <= 0.01 || c.radius <= 0.5) {
           coreSparks.splice(i, 1)
@@ -203,9 +202,9 @@ export default function InteractiveParticleTrail() {
 
         ctx.save()
         const grad = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.radius * 2)
-        grad.addColorStop(0, `rgba(255, 255, 255, ${c.alpha * 0.95})`)
-        grad.addColorStop(0.4, `rgba(225, 180, 255, ${c.alpha * 0.65})`)
-        grad.addColorStop(1, `rgba(140, 80, 255, 0)`)
+        grad.addColorStop(0, `rgba(255, 255, 255, ${c.alpha * 0.50})`)
+        grad.addColorStop(0.4, `rgba(215, 170, 255, ${c.alpha * 0.35})`)
+        grad.addColorStop(1, `rgba(130, 70, 245, 0)`)
 
         ctx.fillStyle = grad
         ctx.beginPath()
@@ -214,7 +213,7 @@ export default function InteractiveParticleTrail() {
         ctx.restore()
       }
 
-      // 3. Render Chrysanthemum / Willow Streamer Needles
+      // 3. Render Flow-Through Long Streamer Lines
       for (let i = streamers.length - 1; i >= 0; i--) {
         const s = streamers[i]
 
@@ -228,27 +227,28 @@ export default function InteractiveParticleTrail() {
         s.x += s.vx
         s.y += s.vy
 
+        // Save position history for extended flowing trail (up to 12 points)
         s.history.unshift({ x: s.x, y: s.y })
-        if (s.history.length > 5) {
+        if (s.history.length > 12) {
           s.history.pop()
         }
 
         s.alpha -= s.decay
 
-        if (s.alpha <= 0.01) {
+        if (s.alpha <= 0.005) {
           streamers.splice(i, 1)
           continue
         }
 
-        const currentAlpha = Math.max(0, Math.min(1, s.alpha * s.twinkle))
+        const currentAlpha = Math.max(0, Math.min(0.50, s.alpha * s.twinkle))
 
         ctx.save()
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
 
-        // 3a. Ambient soft glow aura
+        // 3a. Soft outer glowing flow-line aura
         ctx.lineWidth = s.lineWidth * 2.2
-        ctx.strokeStyle = `rgba(${s.color.glowR}, ${s.color.glowG}, ${s.color.glowB}, ${currentAlpha * 0.30})`
+        ctx.strokeStyle = `rgba(${s.color.glowR}, ${s.color.glowG}, ${s.color.glowB}, ${currentAlpha * 0.25})`
         ctx.beginPath()
         ctx.moveTo(s.history[s.history.length - 1].x, s.history[s.history.length - 1].y)
         for (let h = s.history.length - 2; h >= 0; h--) {
@@ -256,15 +256,17 @@ export default function InteractiveParticleTrail() {
         }
         ctx.stroke()
 
-        // 3b. Crisp thin streamer line
+        // 3b. Crisp flowing light streak line
         ctx.lineWidth = s.lineWidth
-        ctx.strokeStyle = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, ${currentAlpha * 0.90})`
+        ctx.strokeStyle = `rgba(${s.color.r}, ${s.color.g}, ${s.color.b}, ${currentAlpha * 0.80})`
         ctx.beginPath()
-        ctx.moveTo(s.prevX, s.prevY)
-        ctx.lineTo(s.x, s.y)
+        ctx.moveTo(s.history[s.history.length - 1].x, s.history[s.history.length - 1].y)
+        for (let h = s.history.length - 2; h >= 0; h--) {
+          ctx.lineTo(s.history[h].x, s.history[h].y)
+        }
         ctx.stroke()
 
-        // 3c. Luminous spark head
+        // 3c. Leading spark tip
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.lineWidth * 0.8, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`
@@ -281,7 +283,22 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Mouse movement listener (ONLY activates on actual coordinate delta)
+    // Trigger helper
+    const triggerBurstAt = (x, y, power = 1.0, withRocket = true) => {
+      detonateChrysanthemum(x, y, power)
+      if (withRocket) {
+        const launchY = y + (28 + Math.random() * 22)
+        const launchX = x + (Math.random() - 0.5) * 12
+        launchRocket(launchX, launchY, x, y)
+      }
+
+      if (!isRunning) {
+        isRunning = true
+        animationFrameId = requestAnimationFrame(render)
+      }
+    }
+
+    // Mouse movement listener
     const handleMouseMove = (e) => {
       const now = performance.now()
       const currentX = e.clientX
@@ -303,30 +320,21 @@ export default function InteractiveParticleTrail() {
       const dt = Math.max(now - lastMousePos.time, 1)
       const speed = dist / dt * 16
 
-      // Detonate elegant chrysanthemum burst every ~32px along cursor trail
-      const stepDistance = 32
+      // Detonate every ~30px along movement path
+      const stepDistance = 30
       if (accumulatedDist >= stepDistance) {
-        const intensity = Math.min(Math.max(speed / 14, 0.9), 1.35)
-        
-        // Spawn rocket ascent + immediate burst at cursor point
-        detonateChrysanthemum(currentX, currentY, intensity)
-
-        // Occasional trailing mini-rocket ascent for true sky rocket feel
-        if (dist > 18 && Math.random() > 0.4) {
-          const launchY = currentY + (30 + Math.random() * 25)
-          const launchX = currentX + (Math.random() - 0.5) * 15
-          launchRocket(launchX, launchY, currentX, currentY)
-        }
-
+        const intensity = Math.min(Math.max(speed / 14, 0.85), 1.25)
+        const shouldLaunchTracer = dist > 16 && Math.random() > 0.45
+        triggerBurstAt(currentX, currentY, intensity, shouldLaunchTracer)
         accumulatedDist = 0
       }
 
       lastMousePos = { x: currentX, y: currentY, time: now }
+    }
 
-      if (!isRunning && (streamers.length > 0 || rockets.length > 0 || coreSparks.length > 0)) {
-        isRunning = true
-        animationFrameId = requestAnimationFrame(render)
-      }
+    // Click trigger (pointerdown)
+    const handlePointerDown = (e) => {
+      triggerBurstAt(e.clientX, e.clientY, 1.25, true)
     }
 
     const handleMouseLeave = () => {
@@ -335,11 +343,13 @@ export default function InteractiveParticleTrail() {
     }
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    window.addEventListener('pointerdown', handlePointerDown, { passive: true })
     window.addEventListener('mouseleave', handleMouseLeave, { passive: true })
 
     return () => {
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('pointerdown', handlePointerDown)
       window.removeEventListener('mouseleave', handleMouseLeave)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
