@@ -110,6 +110,50 @@ export default function Contact({ onBack }) {
       {/* Main Wrapper */}
       <main className="contact-main-wrapper">
         <div className="contact-master-card">
+          {/* First Line: Official Resume & CV Quick Access */}
+          <div className="contact-resume-banner">
+            <div className="resume-banner-left">
+              <div className="resume-banner-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div className="resume-banner-info">
+                <span className="resume-banner-tag">OFFICIAL RESUME / CV</span>
+                <h3 className="resume-banner-title">Vijay Sahu — Product Designer (UX/UI & AI UX)</h3>
+                <p className="resume-banner-sub">2+ Years Experience • 250+ Screens • Fymble Product Designer</p>
+              </div>
+            </div>
+            <div className="resume-banner-actions">
+              <a
+                href="/Vijay_Sahu_Resume.pdf"
+                download="Vijay_Sahu_Resume.pdf"
+                className="resume-btn-download"
+                title="Download Official Resume PDF"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span>Download Resume PDF</span>
+              </a>
+              <a
+                href="/Vijay_Sahu_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-btn-view"
+                title="View Resume in New Tab"
+              >
+                <span>View CV ↗</span>
+              </a>
+            </div>
+          </div>
+
           {/* Main 2-Column Body */}
           <div className="contact-body-grid">
             {/* Left Column: Headlines & Work Together */}

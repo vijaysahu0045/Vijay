@@ -4,6 +4,7 @@ import bgImage from './assets/bg-image.png'
 import InteractiveParticleTrail from './InteractiveParticleTrail'
 import Projects from './Projects'
 import ProjectDetail from './ProjectDetail'
+import DesignThinking from './DesignThinking'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Resume from './Resume'
@@ -89,8 +90,18 @@ function App() {
     )
   }
 
-  // Route 2: Projects page
-  if (currentPage === 'projects') {
+  // Route 2: Design Thinking page
+  if (currentPage === 'design-thinking') {
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <DesignThinking onBack={() => setCurrentPage('home')} />
+      </>
+    )
+  }
+
+  // Route 3: Projects / Case Studies page
+  if (currentPage === 'projects' || currentPage === 'case-study') {
     return (
       <>
         <InteractiveParticleTrail />
@@ -101,7 +112,7 @@ function App() {
           onOpenProject={(proj, catLabel, catId) => {
             if (catId) setActiveCategory(catId)
             setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
-            setDetailSource('projects')
+            setDetailSource(currentPage)
             setCurrentPage('detail')
           }}
         />
@@ -109,7 +120,7 @@ function App() {
     )
   }
 
-  // Route 3: About Me page
+  // Route 4: About Me page (with integrated Skills)
   if (currentPage === 'about') {
     return (
       <>
@@ -119,17 +130,17 @@ function App() {
     )
   }
 
-  // Route 4: Skills page
+  // Route 5: Skills page (fallback)
   if (currentPage === 'skills') {
     return (
       <>
         <InteractiveParticleTrail />
-        <Skills onBack={() => setCurrentPage('home')} />
+        <AboutMe onBack={() => setCurrentPage('home')} />
       </>
     )
   }
 
-  // Route 5: Resume page
+  // Route 6: Resume page (fallback)
   if (currentPage === 'resume') {
     return (
       <>
@@ -139,7 +150,7 @@ function App() {
     )
   }
 
-  // Route 6: Contact page
+  // Route 7: Contact page (with top Resume download banner)
   if (currentPage === 'contact') {
     return (
       <>
@@ -151,17 +162,18 @@ function App() {
 
   const handleNavClick = (item) => {
     switch (item) {
+      case 'Case Study':
+        setActiveCategory('ux-ui')
+        setCurrentPage('case-study')
+        break
+      case 'Design Thinking':
+        setCurrentPage('design-thinking')
+        break
       case 'Projects':
         setCurrentPage('projects')
         break
       case 'About Me':
         setCurrentPage('about')
-        break
-      case 'Skills':
-        setCurrentPage('skills')
-        break
-      case 'Resume':
-        setCurrentPage('resume')
         break
       case 'Contact':
         setCurrentPage('contact')
@@ -210,9 +222,9 @@ function App() {
           </h1>
         </div>
 
-        {/* AI Navigation Bar */}
+        {/* AI Navigation Bar: Case Study | Design Thinking | Projects | About Me | Contact */}
         <div className="ai-nav-bar">
-          {['Projects', 'About Me', 'Skills', 'Resume', 'Contact'].map((item) => (
+          {['Case Study', 'Design Thinking', 'Projects', 'About Me', 'Contact'].map((item) => (
             <div
               className="ai-nav-pill"
               key={item}
