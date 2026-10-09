@@ -3944,6 +3944,282 @@
   }
 }
 
+/* ===================================================================
+   SECTION 12: RESULTS & FINAL IMPACT STYLES
+   =================================================================== */
+.cs12-results-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.cs12-results-hero-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.4px;
+}
+
+.cs12-feedback-section {
+  margin: 40px 0 30px;
+  text-align: left;
+}
+
+.cs12-feedback-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.3px;
+}
+
+.cs12-feedback-pills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cs12-feedback-capsule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 8px 24px 8px 8px;
+  width: fit-content;
+  max-width: 100%;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.cs12-feedback-capsule:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cs12-feedback-avatar-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.cs12-feedback-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cs12-feedback-capsule-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  color: #cbd5e1;
+  letter-spacing: -0.2px;
+}
+
+.cs12-feedback-capsule-text strong {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.cs12-results-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+.cs12-results-summary-col {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.cs12-results-summary-col p {
+  margin: 0;
+}
+
+.cs12-results-metric-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cs12-rmetric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cs12-rmetric-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cs12-rmetric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.cs12-rmetric-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+
+.cs12-rmetric-badge {
+  background: #1e2026;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.cs12-rmetric-subtext {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0 0 10px 0;
+}
+
+/* Card 1: Dot Matrix */
+.cs12-rmetric-dot-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 90px;
+  margin-top: auto;
+}
+
+.cs12-dot-column {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.cs12-chart-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.cs12-chart-dot.active {
+  background: #FF5757;
+  box-shadow: 0 0 4px rgba(255, 87, 87, 0.6);
+}
+
+.cs12-chart-dot.inactive {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Card 2: Radial Gauge */
+.cs12-rmetric-gauge-box {
+  position: relative;
+  width: 100%;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.cs12-gauge-svg {
+  width: 140px;
+  height: 75px;
+}
+
+.cs12-gauge-center-val {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cs12-gauge-pct {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.cs12-gauge-lbl {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* Card 3: Waveform Bars */
+.cs12-rmetric-bars-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 80px;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.cs12-rmetric-bar {
+  flex: 1;
+  border-radius: 2px;
+  transition: height 0.3s ease;
+}
+
+.cs12-rmetric-bar.active-bar {
+  background: #FF5757;
+}
+
+.cs12-rmetric-bar.idle-bar {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  .cs12-results-bottom-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cs12-results-metric-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
 

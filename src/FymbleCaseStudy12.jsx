@@ -21,7 +21,8 @@ const SECTIONS_INDEX = [
   { num: '08', id: 'sec-08', label: 'User Flow' },
   { num: '09', id: 'sec-09', label: 'Grid System' },
   { num: '10', id: 'sec-10', label: 'Core Experience' },
-  { num: '11', id: 'sec-11', label: 'User Testing Result' }
+  { num: '11', id: 'sec-11', label: 'User Testing Result' },
+  { num: '12', id: 'sec-12', label: 'Results' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
@@ -1963,6 +1964,161 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 12: RESULTS & FINAL IMPACT
+            =================================================================== */}
+        <section id="sec-12" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-results-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">12</span>
+                <h2 className="cs12-scope-title">Results</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <h3 className="cs12-results-hero-heading">
+                  Delivering a seamless fitness experience through intuitive design
+                </h3>
+                <p>
+                  Through user research, usability testing, and iterative design improvements, we created a motivating, habit-building fitness companion that drives daily user engagement.
+                </p>
+              </div>
+            </div>
+
+            {/* Middle Section: User Feedback */}
+            <div className="cs12-feedback-section">
+              <h3 className="cs12-feedback-title">User Feedback</h3>
+
+              <div className="cs12-feedback-pills-list">
+                {/* Feedback 1 */}
+                <div className="cs12-feedback-capsule">
+                  <div className="cs12-feedback-avatar-ring">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                      alt="User 1"
+                      className="cs12-feedback-avatar-img"
+                    />
+                  </div>
+                  <span className="cs12-feedback-capsule-text">
+                    <strong>89%</strong> Preferred the simplified habit tracking flow over traditional fitness apps.
+                  </span>
+                </div>
+
+                {/* Feedback 2 */}
+                <div className="cs12-feedback-capsule">
+                  <div className="cs12-feedback-avatar-ring">
+                    <img
+                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80"
+                      alt="User 2"
+                      className="cs12-feedback-avatar-img"
+                    />
+                  </div>
+                  <span className="cs12-feedback-capsule-text">
+                    <strong>91%</strong> Users completed essential workout and meal logging without assistance.
+                  </span>
+                </div>
+
+                {/* Feedback 3 */}
+                <div className="cs12-feedback-capsule">
+                  <div className="cs12-feedback-avatar-ring">
+                    <img
+                      src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80"
+                      alt="User 3"
+                      className="cs12-feedback-avatar-img"
+                    />
+                  </div>
+                  <span className="cs12-feedback-capsule-text">
+                    <strong>94%</strong> Found the navigation clear, rewarding, and intuitive.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row: Left Summary & Right 3 Metric Cards */}
+            <div className="cs12-results-bottom-row">
+              {/* Left Summary Text */}
+              <div className="cs12-results-summary-col">
+                <p>
+                  The final product delivers a modern fitness and habit experience that combines simplicity, smart coaching, and gamified streak rewards to empower users in managing their daily health goals.
+                </p>
+              </div>
+
+              {/* Right 3 Metric Cards */}
+              <div className="cs12-results-metric-cards-grid">
+
+                {/* Metric Card 1: Task Success Rate */}
+                <div className="cs12-rmetric-card card-dot-matrix">
+                  <div className="cs12-rmetric-header">
+                    <span className="cs12-rmetric-title">Task Success<br />Rate</span>
+                    <span className="cs12-rmetric-badge">92%</span>
+                  </div>
+                  <div className="cs12-rmetric-dot-chart">
+                    {[4, 5, 3, 6, 4, 7, 5, 8, 12, 11].map((count, colIdx) => (
+                      <div key={colIdx} className="cs12-dot-column">
+                        {Array.from({ length: 12 }).map((_, dotIdx) => (
+                          <span
+                            key={dotIdx}
+                            className={`cs12-chart-dot ${dotIdx < count ? 'active' : 'inactive'}`}
+                          />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Metric Card 2: Confidence Radial Gauge */}
+                <div className="cs12-rmetric-card card-radial-gauge">
+                  <div className="cs12-rmetric-header">
+                    <span className="cs12-rmetric-title">Did users complete<br />routines confidently?</span>
+                  </div>
+                  <p className="cs12-rmetric-subtext">Users completed routines effortlessly.</p>
+
+                  <div className="cs12-rmetric-gauge-box">
+                    <svg viewBox="0 0 160 90" className="cs12-gauge-svg">
+                      <path
+                        d="M 20 80 A 60 60 0 0 1 140 80"
+                        fill="none"
+                        stroke="rgba(255, 255, 255, 0.12)"
+                        strokeWidth="10"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M 20 80 A 60 60 0 0 1 128 40"
+                        fill="none"
+                        stroke="#FF5757"
+                        strokeWidth="10"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <div className="cs12-gauge-center-val">
+                      <span className="cs12-gauge-pct">86%</span>
+                      <span className="cs12-gauge-lbl">Successful Routines</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Metric Card 3: Overall Completion Rate */}
+                <div className="cs12-rmetric-card card-waveform-chart">
+                  <div className="cs12-rmetric-header">
+                    <span className="cs12-rmetric-title">Overall Completion<br />Rate</span>
+                    <span className="cs12-rmetric-badge">98%</span>
+                  </div>
+                  <div className="cs12-rmetric-bars-row">
+                    {[12, 16, 20, 18, 24, 20, 28, 36, 48, 62, 78, 92, 70, 85, 96, 75, 80, 88, 100, 40, 20, 15, 15, 15].map((h, i) => (
+                      <span
+                        key={i}
+                        className={`cs12-rmetric-bar ${i >= 8 && i <= 18 ? 'active-bar' : 'idle-bar'}`}
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </section>
 
