@@ -757,36 +757,115 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 05: INFORMATION ARCHITECTURE & USER FLOW
+            SECTION 05: PROBLEM & SOLUTION
             =================================================================== */}
         <section id="sec-05" className="cs12-section">
-          <div className="cs12-section-badge">
-            <span className="cs12-num-tag">NO. 05</span>
-            <span className="cs12-section-name">INFORMATION ARCHITECTURE</span>
-          </div>
-
-          <h2 className="cs12-section-heading">Frictionless 8-step end-to-end ecosystem flow.</h2>
-          <p className="cs12-section-intro">
-            From initial gym discovery to post-workout AI dietary logging and streak gamification:
-          </p>
-
-          <div className="cs12-flow-timeline">
-            {[
-              { step: '01', title: 'Location Radar', desc: 'Auto-detects closest gyms & live amenities' },
-              { step: '02', title: 'Studio Details', desc: 'Inspect photos, equipment, trainers & reviews' },
-              { step: '03', title: 'Pass Selection', desc: 'Choose Daily ₹99, Weekly or Monthly Pass' },
-              { step: '04', title: '1-Tap UPI Pay', desc: 'Frictionless checkout with zero subscription lock-in' },
-              { step: '05', title: 'QR Gate Check-In', desc: 'Scan turnstile code for instant verified entry' },
-              { step: '06', title: 'Workout Logging', desc: 'Auto-logs session duration and calories burned' },
-              { step: '07', title: 'Kyra AI Meal Scan', desc: 'Photo scan post-workout meal for macro balance' },
-              { step: '08', title: 'Streak Retention', desc: 'Dynamic streak rewards to maintain consistency' },
-            ].map((node) => (
-              <div key={node.step} className="cs12-flow-node">
-                <span className="cs12-node-num">{node.step}</span>
-                <h4>{node.title}</h4>
-                <p>{node.desc}</p>
+          <div className="cs12-scope-of-work-card cs12-problem-solution-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">05</span>
+                <h2 className="cs12-scope-title">Problem &amp; Solution</h2>
               </div>
-            ))}
+            </div>
+
+            {/* Problem Statement Centered Paragraph */}
+            <div className="cs12-ps-problem-statement">
+              <p>
+                <strong>Fragmented health tools</strong> and a <strong>rigid annual gym subscription process</strong> make it difficult for people to maintain consistency, understand their nutrition, and make <strong>confident daily fitness decisions.</strong>
+              </p>
+            </div>
+
+            {/* Core Visual: 3-Petal Tri-Fold Hub Diagram */}
+            <div className="cs12-ps-diagram-wrapper">
+              {/* Left Problem 1 Callout */}
+              <div className="cs12-ps-callout-card callout-left">
+                <div className="cs12-ps-badge">
+                  <span className="cs12-badge-dot coral-dot" />
+                  <span>Problem 1</span>
+                </div>
+                <div className="cs12-ps-metric-row">
+                  <span className="cs12-ps-metric">68<small>%</small></span>
+                </div>
+                <p className="cs12-ps-metric-desc">
+                  Face challenges juggling multiple disconnected apps for gym passes and meal tracking.
+                </p>
+              </div>
+
+              {/* Center 3-Petal Hub Orb */}
+              <div className="cs12-ps-hub-orb">
+                <svg viewBox="0 0 340 340" className="cs12-ps-hub-svg">
+                  {/* Gradients */}
+                  <defs>
+                    <linearGradient id="orbGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
+                      <stop offset="100%" stopColor="rgba(10,10,15,0.8)" />
+                    </linearGradient>
+                    <linearGradient id="coralPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FF7A7A" />
+                      <stop offset="100%" stopColor="#FF5757" />
+                    </linearGradient>
+                    <linearGradient id="greenPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4ADE80" />
+                      <stop offset="100%" stopColor="#22C55E" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Outer Glowing Glass Orb Base */}
+                  <circle cx="170" cy="170" r="120" fill="url(#orbGlassGrad)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
+
+                  {/* Petal 01: Top Left (Coral Red) */}
+                  <path
+                    d="M 170 170 L 110 70 A 120 120 0 0 0 55 170 Q 115 170 170 170 Z"
+                    fill="url(#coralPetalGrad)"
+                  />
+
+                  {/* Petal 02: Top Right (Coral Red) */}
+                  <path
+                    d="M 170 170 L 230 70 A 120 120 0 0 1 285 170 Q 225 170 170 170 Z"
+                    fill="url(#coralPetalGrad)"
+                  />
+
+                  {/* Petal 03: Bottom (Vibrant Green / Solution) */}
+                  <path
+                    d="M 170 170 L 85 245 A 120 120 0 0 0 255 245 Q 210 190 170 170 Z"
+                    fill="url(#greenPetalGrad)"
+                  />
+
+                  {/* Center Floating White Core */}
+                  <circle cx="170" cy="170" r="72" fill="#ffffff" />
+
+                  {/* Inner Text Labels inside Petals */}
+                  <text x="125" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
+                  <text x="215" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
+                  <text x="170" y="248" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
+                </svg>
+              </div>
+
+              {/* Right Problem 2 Callout */}
+              <div className="cs12-ps-callout-card callout-right">
+                <div className="cs12-ps-badge">
+                  <span className="cs12-badge-dot coral-dot" />
+                  <span>Problem 2</span>
+                </div>
+                <div className="cs12-ps-metric-row">
+                  <span className="cs12-ps-metric">36<small>%</small></span>
+                </div>
+                <p className="cs12-ps-metric-desc">
+                  Find rigid 12-month gym memberships expensive, confusing, and time-consuming.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Solution Section Anchor */}
+            <div className="cs12-ps-solution-anchor">
+              <div className="cs12-solution-dot-pulse">
+                <span className="cs12-sol-dot" />
+              </div>
+              <h3 className="cs12-ps-solution-title">Solution</h3>
+              <p className="cs12-ps-solution-desc">
+                We created a unified fitness ecosystem that simplifies discovery, offers flexible ₹99 on-demand gym passes, automates AI meal tracking, and gives users complete control over their daily health journey.
+              </p>
+            </div>
           </div>
         </section>
 
