@@ -400,16 +400,11 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   </div>
                   <div className="cs12-sprint-content">
                     <h3 className="cs12-sprint-name">CEO Collaboration</h3>
-                    <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-role">Product vision &amp; feature planning</span>
-                    </div>
-                    <p className="cs12-strategy-pillar-desc">
-                      Worked directly with leadership to define product roadmaps, prioritize feature backlogs, translate business goals into design solutions, and align monetization models.
-                    </p>
+                    <div className="cs12-strategy-pillar-subtag">Product Vision &amp; Feature Planning</div>
                     <ul className="cs12-sprint-list">
-                      <li>Product Vision &amp; Feature Roadmaps</li>
-                      <li>Business Goal &amp; Revenue Alignment</li>
-                      <li>Executive Reviews &amp; Rapid Iterations</li>
+                      <li>Product Vision &amp; Roadmaps</li>
+                      <li>Business Goal Alignment</li>
+                      <li>Feature Prioritization</li>
                     </ul>
                   </div>
                 </div>
@@ -431,15 +426,10 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   </div>
                   <div className="cs12-sprint-content">
                     <h3 className="cs12-sprint-name">Tech Team</h3>
-                    <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-role">UX feasibility &amp; implementation planning</span>
-                    </div>
-                    <p className="cs12-strategy-pillar-desc">
-                      Partnered with engineers to validate technical feasibility, deliver modular design systems, review dev builds, and ensure smooth micro-interactions across iOS and Android.
-                    </p>
+                    <div className="cs12-strategy-pillar-subtag">UX Feasibility &amp; Dev Handoff</div>
                     <ul className="cs12-sprint-list">
-                      <li>UX Feasibility &amp; Edge Cases</li>
-                      <li>Design System &amp; Token Handoff</li>
+                      <li>UX Feasibility Reviews</li>
+                      <li>Design System &amp; Tokens</li>
                       <li>Build QA &amp; Interaction Audits</li>
                     </ul>
                   </div>
@@ -461,16 +451,11 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   </div>
                   <div className="cs12-sprint-content">
                     <h3 className="cs12-sprint-name">Marketing Team</h3>
-                    <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-role">Campaign creatives &amp; launch coordination</span>
-                    </div>
-                    <p className="cs12-strategy-pillar-desc">
-                      Coordinated go-to-market rollouts, designed high-converting App Store &amp; Play Store screenshots, promo banners, and designed viral referral gamification flows.
-                    </p>
+                    <div className="cs12-strategy-pillar-subtag">Campaigns &amp; Launch Rollout</div>
                     <ul className="cs12-sprint-list">
-                      <li>App &amp; Play Store Visual Creatives</li>
-                      <li>Go-To-Market Launch Coordination</li>
-                      <li>Viral Referral &amp; Reward Mechanics</li>
+                      <li>App &amp; Play Store Visuals</li>
+                      <li>Launch Banners &amp; Creatives</li>
+                      <li>Viral Referral Mechanics</li>
                     </ul>
                   </div>
                 </div>
