@@ -364,18 +364,18 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 02: STRATEGY PLAN (STAGGERED 3-PILLAR STRATEGY TIMELINE)
+            SECTION 02: STRATEGY & PLANNING (COLLABORATIVE FLOW)
             =================================================================== */}
         <section id="sec-02" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-strategy-plan-card">
             <div className="cs12-scope-header-row">
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">02</span>
-                <h2 className="cs12-scope-title">Strategy Plan</h2>
+                <h2 className="cs12-scope-title">Strategy &amp; Planning</h2>
               </div>
               <div className="cs12-scope-desc-col">
                 <p>
-                  Through iterative stakeholder workshops and user research, we identified critical friction points and structured our product execution across 3 strategic pillars.
+                  Collaborated with the CEO, development team, and marketing team to plan product features, define user experiences, align business goals, and coordinate product launches.
                 </p>
               </div>
             </div>
@@ -383,98 +383,94 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             {/* Staggered 3-Pillar Waterfall Stepper */}
             <div className="cs12-sprint-waterfall-wrapper">
               <div className="cs12-sprint-grid cs12-strategy-grid-3">
-                {/* Pillar 1: Research (Sophia L.) */}
+                {/* Pillar 1: CEO Collaboration */}
                 <div className="cs12-sprint-column sprint-col-1">
                   <div className="cs12-sprint-badge-row">
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">1 Pillar</span>
-                      <div className="cs12-strategy-avatar-circle">
-                        <img
-                          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
-                          alt="Sophia L."
-                        />
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
                       </div>
                     </div>
                     <div className="cs12-dotted-tail-line" />
                   </div>
                   <div className="cs12-sprint-content">
-                    <h3 className="cs12-sprint-name">UX Research</h3>
-                    <p className="cs12-strategy-pillar-desc">
-                      <strong>Research showed users struggled with fragmented apps.</strong> We unified gym passes, AI meal tracking, and coach guidance into a centralized ecosystem.
-                    </p>
+                    <h3 className="cs12-sprint-name">CEO Collaboration</h3>
                     <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-name">Sophia L.</span>
-                      <span className="cs12-author-role">UX Research Lead</span>
+                      <span className="cs12-author-role">Product vision &amp; feature planning</span>
                     </div>
+                    <p className="cs12-strategy-pillar-desc">
+                      Worked directly with leadership to define product roadmaps, prioritize feature backlogs, translate business goals into design solutions, and align monetization models.
+                    </p>
                     <ul className="cs12-sprint-list">
-                      <li>Cross-App Journey Unification</li>
-                      <li>Habit Retention Loops</li>
-                      <li>User Interview Synthesis</li>
+                      <li>Product Vision &amp; Feature Roadmaps</li>
+                      <li>Business Goal &amp; Revenue Alignment</li>
+                      <li>Executive Reviews &amp; Rapid Iterations</li>
                     </ul>
                   </div>
                 </div>
 
-                {/* Pillar 2: Strategy (Emma R.) */}
+                {/* Pillar 2: Tech Team */}
                 <div className="cs12-sprint-column sprint-col-2">
                   <div className="cs12-sprint-badge-row">
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">2 Pillar</span>
-                      <div className="cs12-strategy-avatar-circle">
-                        <img
-                          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80"
-                          alt="Emma R."
-                        />
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="16 18 22 12 16 6"/>
+                          <polyline points="8 6 2 12 8 18"/>
+                        </svg>
                       </div>
                     </div>
                     <div className="cs12-dotted-tail-line" />
                   </div>
                   <div className="cs12-sprint-content">
-                    <h3 className="cs12-sprint-name">Product Strategy</h3>
-                    <p className="cs12-strategy-pillar-desc">
-                      <strong>Stakeholder workshops proved lock-ins deter users.</strong> We built an on-demand pass engine with dynamic ₹99/day pricing across 600+ partner fitness studios.
-                    </p>
+                    <h3 className="cs12-sprint-name">Tech Team</h3>
                     <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-name">Emma R.</span>
-                      <span className="cs12-author-role">Chief Product Officer</span>
+                      <span className="cs12-author-role">UX feasibility &amp; implementation planning</span>
                     </div>
+                    <p className="cs12-strategy-pillar-desc">
+                      Partnered with engineers to validate technical feasibility, deliver modular design systems, review dev builds, and ensure smooth micro-interactions across iOS and Android.
+                    </p>
                     <ul className="cs12-sprint-list">
-                      <li>Pay-as-you-go Pass Engine</li>
-                      <li>Multi-Studio B2B Ecosystem</li>
-                      <li>Zero Annual Commitments</li>
+                      <li>UX Feasibility &amp; Edge Cases</li>
+                      <li>Design System &amp; Token Handoff</li>
+                      <li>Build QA &amp; Interaction Audits</li>
                     </ul>
                   </div>
                 </div>
 
-                {/* Pillar 3: UI Design (Daniel P.) */}
+                {/* Pillar 3: Marketing Team */}
                 <div className="cs12-sprint-column sprint-col-3">
                   <div className="cs12-sprint-badge-row">
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">3 Pillar</span>
-                      <div className="cs12-strategy-avatar-circle">
-                        <img
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
-                          alt="Daniel P."
-                        />
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
                       </div>
                     </div>
                     <div className="cs12-dotted-tail-line" />
                   </div>
                   <div className="cs12-sprint-content">
-                    <h3 className="cs12-sprint-name">UI/UX Design</h3>
-                    <p className="cs12-strategy-pillar-desc">
-                      <strong>User interviews revealed logging fatigue.</strong> We simplified navigation, introduced AI food scanning, and surfaced instant check-in flows.
-                    </p>
+                    <h3 className="cs12-sprint-name">Marketing Team</h3>
                     <div className="cs12-strategy-author-meta">
-                      <span className="cs12-author-name">Daniel P.</span>
-                      <span className="cs12-author-role">Lead Product Designer</span>
+                      <span className="cs12-author-role">Campaign creatives &amp; launch coordination</span>
                     </div>
+                    <p className="cs12-strategy-pillar-desc">
+                      Coordinated go-to-market rollouts, designed high-converting App Store &amp; Play Store screenshots, promo banners, and designed viral referral gamification flows.
+                    </p>
                     <ul className="cs12-sprint-list">
-                      <li>1-Click AI Food Vision</li>
-                      <li>Frictionless Studio Check-in</li>
-                      <li>Kyra AI Assistant Integration</li>
+                      <li>App &amp; Play Store Visual Creatives</li>
+                      <li>Go-To-Market Launch Coordination</li>
+                      <li>Viral Referral &amp; Reward Mechanics</li>
                     </ul>
                   </div>
                 </div>
