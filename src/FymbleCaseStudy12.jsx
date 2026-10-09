@@ -283,102 +283,78 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Wide Panoramic 5-Device Studio Showcase (Zero Overlap, Crystal-Clear UI Visibility) */}
+          {/* Spotlight Hero + Side Screens Showcase (Frameless Pure UI, Maximum Design Visibility) */}
           <div className="cs12-hero-showcase-box">
-            <div className="cs12-panoramic-studio-grid">
-              {/* Phone 1: Food Scanner */}
-              <div className="cs12-panoramic-card">
-                <div className="cs12-screen-badge">
-                  <span className="cs12-badge-dot" />
-                  <span className="cs12-badge-text">AI Food Scanner</span>
-                </div>
-                <div className="cs12-panoramic-iphone">
-                  <div className="cs12-iphone-chassis">
-                    <div className="cs12-iphone-viewport">
-                      <div className="cs12-dynamic-island" />
-                      <div className="cs12-phone-glare" />
-                      <img src={foodScanner1} alt="Fymble AI Food Scanner UI" className="cs12-phone-img" />
-                      <div className="cs12-home-indicator" />
-                    </div>
+            <div className="cs12-spotlight-showcase-wrapper">
+              {/* Left Side Screens */}
+              <div className="cs12-spotlight-side-col">
+                {/* Screen 1: Food Scanner */}
+                <div className="cs12-spotlight-card">
+                  <div className="cs12-screen-badge">
+                    <span className="cs12-badge-dot" />
+                    <span className="cs12-badge-text">AI Food Scanner</span>
                   </div>
+                  <div className="cs12-pure-ui-frame">
+                    <img src={foodScanner1} alt="Fymble AI Food Scanner UI" className="cs12-pure-ui-img" />
+                  </div>
+                  <span className="cs12-screen-sublabel">Instant Macro Vision</span>
                 </div>
-                <span className="cs12-screen-sublabel">Instant Macro Vision</span>
+
+                {/* Screen 2: Class Booking */}
+                <div className="cs12-spotlight-card">
+                  <div className="cs12-screen-badge">
+                    <span className="cs12-badge-dot" />
+                    <span className="cs12-badge-text">Class Booking</span>
+                  </div>
+                  <div className="cs12-pure-ui-frame">
+                    <img src={screen3} alt="Fymble Class Selection UI" className="cs12-pure-ui-img" />
+                  </div>
+                  <span className="cs12-screen-sublabel">Multi-Studio Access</span>
+                </div>
               </div>
 
-              {/* Phone 2: Class Selection */}
-              <div className="cs12-panoramic-card">
-                <div className="cs12-screen-badge">
-                  <span className="cs12-badge-dot" />
-                  <span className="cs12-badge-text">Class Booking</span>
-                </div>
-                <div className="cs12-panoramic-iphone">
-                  <div className="cs12-iphone-chassis">
-                    <div className="cs12-iphone-viewport">
-                      <div className="cs12-dynamic-island" />
-                      <div className="cs12-phone-glare" />
-                      <img src={screen3} alt="Fymble Class Selection UI" className="cs12-phone-img" />
-                      <div className="cs12-home-indicator" />
-                    </div>
+              {/* Center Spotlight Hero Screen */}
+              <div className="cs12-spotlight-hero-col">
+                <div className="cs12-spotlight-card is-hero-spotlight">
+                  <div className="cs12-screen-badge center-badge">
+                    <span className="cs12-badge-dot-glow" />
+                    <span className="cs12-badge-text">Flagship Experience</span>
+                  </div>
+                  <div className="cs12-pure-ui-frame hero-frame">
+                    <img src={screen1} alt="Fymble Pass Discovery UI" className="cs12-pure-ui-img hero-img" />
+                  </div>
+                  <div className="cs12-hero-info-tag">
+                    <h4 className="cs12-hero-info-title">Fymble Discovery &amp; Passes</h4>
+                    <p className="cs12-hero-info-desc">Dynamic pricing passes, nearby fitness hub &amp; Kyra AI Assistant</p>
                   </div>
                 </div>
-                <span className="cs12-screen-sublabel">Multi-Studio Access</span>
               </div>
 
-              {/* Phone 3: Hero Home & Discovery */}
-              <div className="cs12-panoramic-card center-hero-card">
-                <div className="cs12-screen-badge center-badge">
-                  <span className="cs12-badge-dot-glow" />
-                  <span className="cs12-badge-text">Core Discovery Hub</span>
-                </div>
-                <div className="cs12-panoramic-iphone center-hero-phone">
-                  <div className="cs12-iphone-chassis center-chassis">
-                    <div className="cs12-iphone-viewport">
-                      <div className="cs12-dynamic-island" />
-                      <div className="cs12-phone-glare" />
-                      <img src={screen1} alt="Fymble Pass Discovery UI" className="cs12-phone-img" />
-                      <div className="cs12-home-indicator" />
-                    </div>
+              {/* Right Side Screens */}
+              <div className="cs12-spotlight-side-col">
+                {/* Screen 3: Nutrition */}
+                <div className="cs12-spotlight-card">
+                  <div className="cs12-screen-badge">
+                    <span className="cs12-badge-dot" />
+                    <span className="cs12-badge-text">Nutrition &amp; Meals</span>
                   </div>
+                  <div className="cs12-pure-ui-frame">
+                    <img src={nutritionScreen3} alt="Fymble Nutrition Recipes UI" className="cs12-pure-ui-img" />
+                  </div>
+                  <span className="cs12-screen-sublabel">Smart Recipe Logs</span>
                 </div>
-                <span className="cs12-screen-sublabel center-sublabel">Daily Pass &amp; Kyra AI</span>
-              </div>
 
-              {/* Phone 4: Nutrition & Diet */}
-              <div className="cs12-panoramic-card">
-                <div className="cs12-screen-badge">
-                  <span className="cs12-badge-dot" />
-                  <span className="cs12-badge-text">Nutrition &amp; Meals</span>
-                </div>
-                <div className="cs12-panoramic-iphone">
-                  <div className="cs12-iphone-chassis">
-                    <div className="cs12-iphone-viewport">
-                      <div className="cs12-dynamic-island" />
-                      <div className="cs12-phone-glare" />
-                      <img src={nutritionScreen3} alt="Fymble Nutrition Recipes UI" className="cs12-phone-img" />
-                      <div className="cs12-home-indicator" />
-                    </div>
+                {/* Screen 4: Social & Rewards */}
+                <div className="cs12-spotlight-card">
+                  <div className="cs12-screen-badge">
+                    <span className="cs12-badge-dot" />
+                    <span className="cs12-badge-text">Social &amp; Rewards</span>
                   </div>
-                </div>
-                <span className="cs12-screen-sublabel">Smart Recipe Logs</span>
-              </div>
-
-              {/* Phone 5: Referrals & Habits */}
-              <div className="cs12-panoramic-card">
-                <div className="cs12-screen-badge">
-                  <span className="cs12-badge-dot" />
-                  <span className="cs12-badge-text">Social &amp; Rewards</span>
-                </div>
-                <div className="cs12-panoramic-iphone">
-                  <div className="cs12-iphone-chassis">
-                    <div className="cs12-iphone-viewport">
-                      <div className="cs12-dynamic-island" />
-                      <div className="cs12-phone-glare" />
-                      <img src={screen5} alt="Fymble Referrals & Rewards UI" className="cs12-phone-img" />
-                      <div className="cs12-home-indicator" />
-                    </div>
+                  <div className="cs12-pure-ui-frame">
+                    <img src={screen5} alt="Fymble Referrals & Rewards UI" className="cs12-pure-ui-img" />
                   </div>
+                  <span className="cs12-screen-sublabel">Viral Gamification</span>
                 </div>
-                <span className="cs12-screen-sublabel">Viral Gamification</span>
               </div>
             </div>
             <div className="cs12-showcase-caption">

@@ -487,46 +487,51 @@
 
 /* Hero Showcase 5-Screen Fan with Realistic iPhone 16 Pro Frames */
 .cs12-hero-showcase-box {
-  background: radial-gradient(circle at 50% 30%, rgba(124, 58, 237, 0.08) 0%, rgba(0, 0, 0, 0.5) 70%);
+  background: radial-gradient(circle at 50% 35%, rgba(124, 58, 237, 0.1) 0%, rgba(5, 5, 10, 0.6) 70%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
-  padding: 36px 16px 24px 16px;
+  padding: 40px 20px 28px 20px;
   overflow: hidden;
   text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
-.cs12-panoramic-studio-grid {
+.cs12-spotlight-showcase-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 10px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.cs12-spotlight-side-col {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 10px 14px 10px;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(124, 58, 237, 0.4) transparent;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
 }
 
-.cs12-panoramic-studio-grid::-webkit-scrollbar {
-  height: 6px;
-}
-.cs12-panoramic-studio-grid::-webkit-scrollbar-thumb {
-  background: rgba(124, 58, 237, 0.4);
-  border-radius: 3px;
-}
-
-.cs12-panoramic-card {
+.cs12-spotlight-hero-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  flex: 0 0 auto;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  justify-content: center;
 }
 
-.cs12-panoramic-card:hover {
-  transform: translateY(-8px);
+.cs12-spotlight-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  width: 100%;
+}
+
+.cs12-spotlight-card:hover {
+  transform: translateY(-6px);
 }
 
 .cs12-screen-badge {
@@ -544,17 +549,18 @@
   transition: all 0.3s ease;
 }
 
-.cs12-panoramic-card:hover .cs12-screen-badge {
-  background: rgba(255, 255, 255, 0.08);
+.cs12-spotlight-card:hover .cs12-screen-badge {
+  background: rgba(255, 255, 255, 0.09);
   border-color: rgba(255, 255, 255, 0.25);
   color: #f8fafc;
 }
 
 .cs12-screen-badge.center-badge {
-  background: rgba(124, 58, 237, 0.18);
-  border-color: rgba(167, 139, 250, 0.45);
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(167, 139, 250, 0.5);
   color: #e9d5ff;
-  box-shadow: 0 0 14px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.3);
+  padding: 6px 14px;
 }
 
 .cs12-badge-dot {
@@ -568,28 +574,77 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #a78bfa;
+  background: #c4b5fd;
   box-shadow: 0 0 8px #a78bfa;
 }
 
-.cs12-panoramic-iphone {
-  width: 180px;
-  height: 375px;
+/* Frameless Pure UI Card Frames (No Bulky Edges) */
+.cs12-pure-ui-frame {
   position: relative;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
+  width: 225px;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 16px rgba(124, 58, 237, 0.1);
+  background: #0c0a17;
+  transition: all 0.35s ease;
 }
 
-.cs12-panoramic-iphone.center-hero-phone {
-  width: 195px;
-  height: 405px;
+.cs12-spotlight-card:hover .cs12-pure-ui-frame {
+  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 24px rgba(124, 58, 237, 0.25);
 }
 
-.cs12-panoramic-card:hover .cs12-panoramic-iphone {
-  filter: drop-shadow(0 15px 30px rgba(124, 58, 237, 0.25));
+.cs12-pure-ui-frame.hero-frame {
+  width: 290px;
+  height: 480px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(167, 139, 250, 0.45);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8), 0 0 35px rgba(124, 58, 237, 0.35);
+}
+
+.cs12-spotlight-card.is-hero-spotlight:hover .cs12-pure-ui-frame.hero-frame {
+  border-color: rgba(196, 181, 253, 0.7);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.85), 0 0 45px rgba(147, 51, 234, 0.5);
+}
+
+.cs12-pure-ui-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs12-spotlight-card:hover .cs12-pure-ui-img {
+  transform: scale(1.02);
+}
+
+.cs12-hero-info-tag {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cs12-hero-info-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.2px;
+}
+
+.cs12-hero-info-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  max-width: 280px;
+  line-height: 1.45;
+  margin: 0;
 }
 
 .cs12-screen-sublabel {
@@ -599,113 +654,31 @@
   transition: color 0.3s ease;
 }
 
-.cs12-panoramic-card:hover .cs12-screen-sublabel {
+.cs12-spotlight-card:hover .cs12-screen-sublabel {
   color: #94a3b8;
 }
 
-.cs12-screen-sublabel.center-sublabel {
-  color: #a78bfa;
-  font-weight: 600;
-}
-
-/* High-Performance Silky Smooth Glassmorphism iPhone Chassis */
-.cs12-iphone-chassis {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.16) 0%, rgba(30, 27, 46, 0.85) 35%, rgba(15, 13, 26, 0.95) 100%);
-  border-radius: 36px;
-  padding: 6.5px;
-  border: 1.5px solid rgba(255, 255, 255, 0.26);
-  box-shadow: 
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
-    inset 0 -1.5px 2px rgba(0, 0, 0, 0.6),
-    inset 0 0 10px rgba(255, 255, 255, 0.06),
-    0 16px 36px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(167, 139, 250, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.cs12-iphone-chassis.center-chassis {
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.22) 0%, rgba(124, 58, 237, 0.3) 40%, rgba(20, 14, 38, 0.95) 100%);
-  border: 1.8px solid rgba(216, 180, 254, 0.65);
-  box-shadow: 
-    inset 0 2px 3px rgba(255, 255, 255, 0.8),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.5),
-    inset 0 0 16px rgba(196, 181, 253, 0.25),
-    0 22px 50px rgba(0, 0, 0, 0.7),
-    0 0 30px rgba(147, 51, 234, 0.4);
-}
-
-.cs12-iphone-viewport {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  overflow: hidden;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.85);
-  box-sizing: border-box;
-}
-
-.cs12-dynamic-island {
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 16px;
-  background: #000;
-  border-radius: 10px;
-  z-index: 10;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-.cs12-phone-glare {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, transparent 45%);
-  pointer-events: none;
-  z-index: 5;
-}
-
-.cs12-phone-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-}
-
-.cs12-home-indicator {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 3px;
-  z-index: 10;
-  pointer-events: none;
-}
-
 .cs12-showcase-caption {
-  margin-top: 24px;
+  margin-top: 28px;
   font-size: 13px;
   color: #94a3b8;
   font-style: italic;
 }
 
 @media (max-width: 960px) {
-  .cs12-panoramic-studio-grid {
-    justify-content: flex-start;
-    padding-bottom: 20px;
+  .cs12-spotlight-showcase-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .cs12-spotlight-side-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .cs12-pure-ui-frame {
+    width: 210px;
+    height: 270px;
   }
 }
 
