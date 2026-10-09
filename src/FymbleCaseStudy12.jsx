@@ -9,16 +9,47 @@ import screen3 from './assets/fymble-screen-3.png'
 import screen4 from './assets/fymble-screen-4.png'
 import screen5 from './assets/fymble-screen-5.png'
 
+// Kyra AI & Food Scanner Assets
+import aiDiet1 from './assets/ai-diet-coach-screen-1.png'
+import aiDiet2 from './assets/ai-diet-coach-screen-2.png'
+import aiDiet3 from './assets/ai-diet-coach-screen-3.png'
+import aiDiet4 from './assets/ai-diet-coach-screen-4.png'
+import foodScanner1 from './assets/food-scanner-screen-1.png'
+import foodScanner2 from './assets/food-scanner-screen-2.png'
+import foodScanner3 from './assets/food-scanner-screen-3.png'
+
+// B2B Gym SaaS Assets
+import gymMgmt1 from './assets/gym-mgmt-screen-1.png'
+import gymMgmt2 from './assets/gym-mgmt-screen-2.png'
+import gymMgmt3 from './assets/gym-mgmt-screen-3.png'
+import gymMgmt4 from './assets/gym-mgmt-screen-4.png'
+
+import nutritionScreen3 from './assets/nutrition-screen-3.png'
+import fymbleWebLanding from './assets/fymble-home-website-landing.png'
+import kyraWebLanding from './assets/kyra-ai-website-landing.png'
+import gymPassBanner from './assets/fymble-gym-pass-banner.jpg'
+import nutritionConsultLanding from './assets/nutrition-consultation-landing.png'
+import blogLanding from './assets/blog-page-website-landing.png'
+
 const SECTIONS_INDEX = [
-  { num: '01', id: 'sec-01', label: 'Scope of Work' },
-  { num: '02', id: 'sec-02', label: 'Strategy & Planning' },
-  { num: '03', id: 'sec-03', label: 'Typography & Colors' },
+  { num: '01', id: 'sec-01', label: 'Overview' },
+  { num: '02', id: 'sec-02', label: 'The Problem' },
+  { num: '03', id: 'sec-03', label: 'The Solution' },
   { num: '04', id: 'sec-04', label: 'User Research' },
-  { num: '05', id: 'sec-05', label: 'Problem & Solution' }
+  { num: '05', id: 'sec-05', label: 'Architecture' },
+  { num: '06', id: 'sec-06', label: 'Design System' },
+  { num: '07', id: 'sec-07', label: 'Gym Discovery' },
+  { num: '08', id: 'sec-08', label: 'Kyra AI Coach' },
+  { num: '09', id: 'sec-09', label: 'Food Scanner' },
+  { num: '10', id: 'sec-10', label: 'B2B Platform' },
+  { num: '11', id: 'sec-11', label: 'Web Ecosystem' },
+  { num: '12', id: 'sec-12', label: 'Impact & Results' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [activeNav, setActiveNav] = useState('sec-01')
+  const [activePassTab, setActivePassTab] = useState('daily')
+  const [activePersona, setActivePersona] = useState('trainee')
 
   // Scroll spy
   useEffect(() => {
@@ -816,17 +847,356 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
           </div>
         </section>
 
-        {/* Bottom Footer Navigation Row */}
-        <div className="cs12-case-footer-nav" style={{ margin: '80px 0 40px', display: 'flex', justifyContent: 'center', gap: '20px' }}>
-          <button className="cs12-action-btn primary" onClick={onBack}>
-            <span>← Back to Case Studies</span>
-          </button>
-          {onNavigateProject && (
-            <button className="cs12-action-btn secondary" onClick={onNavigateProject}>
-              <span>Next Project: Gym Management SaaS →</span>
-            </button>
-          )}
-        </div>
+        {/* ===================================================================
+            SECTION 06: VISUAL IDENTITY & DESIGN SYSTEM
+            =================================================================== */}
+        <section id="sec-06" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 06</span>
+            <span className="cs12-section-name">DESIGN SYSTEM &amp; TOKENS</span>
+          </div>
+
+          <h2 className="cs12-section-heading">High-contrast visual language engineered for high energy.</h2>
+          <p className="cs12-section-intro">
+            Built with a core <strong>#FF5757 Fymble Coral</strong> primary token, paired with OLED dark themes and clean light surfaces.
+          </p>
+
+          <div className="cs12-system-grid">
+            {/* Color Palette */}
+            <div className="cs12-system-card">
+              <h3 className="cs12-card-title">Color Palette Tokens</h3>
+              <div className="cs12-swatches-row">
+                <div className="cs12-swatch-box" style={{ background: '#FF5757' }}>
+                  <span className="cs12-swatch-hex">#FF5757</span>
+                  <span className="cs12-swatch-name">Primary Coral</span>
+                </div>
+                <div className="cs12-swatch-box" style={{ background: '#FF7676' }}>
+                  <span className="cs12-swatch-hex">#FF7676</span>
+                  <span className="cs12-swatch-name">Coral Glow</span>
+                </div>
+                <div className="cs12-swatch-box" style={{ background: '#121216' }}>
+                  <span className="cs12-swatch-hex">#121216</span>
+                  <span className="cs12-swatch-name">Dark Surface</span>
+                </div>
+                <div className="cs12-swatch-box" style={{ background: '#1F1F27' }}>
+                  <span className="cs12-swatch-hex">#1F1F27</span>
+                  <span className="cs12-swatch-name">Elevated Card</span>
+                </div>
+                <div className="cs12-swatch-box" style={{ background: '#FFFFFF', color: '#111' }}>
+                  <span className="cs12-swatch-hex" style={{ color: '#111' }}>#FFFFFF</span>
+                  <span className="cs12-swatch-name" style={{ color: '#111' }}>Clean White</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Typography & Spatial Baseline */}
+            <div className="cs12-system-card">
+              <h3 className="cs12-card-title">Spatial Tokens &amp; Geometry</h3>
+              <div className="cs12-token-specs-grid">
+                <div className="cs12-spec-item">
+                  <span className="spec-label">GRID BASELINE</span>
+                  <strong>8pt Spatial System</strong>
+                </div>
+                <div className="cs12-spec-item">
+                  <span className="spec-label">CORNER RADII</span>
+                  <strong>12px / 18px / 24px</strong>
+                </div>
+                <div className="cs12-spec-item">
+                  <span className="spec-label">GLASS BLUR</span>
+                  <strong>Backdrop Blur 24px</strong>
+                </div>
+                <div className="cs12-spec-item">
+                  <span className="spec-label">TYPOGRAPHY</span>
+                  <strong>Inter &amp; SF Pro Display</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 07: B2C GYM DISCOVERY & PASS BOOKING EXPERIENCE
+            =================================================================== */}
+        <section id="sec-07" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 07</span>
+            <span className="cs12-section-name">GYM DISCOVERY &amp; PASSES</span>
+          </div>
+
+          <h2 className="cs12-section-heading">Location-aware gym radar and 1-tap pass checkout.</h2>
+          <p className="cs12-section-intro">
+            Redesigning the discovery experience to reduce the time from app opening to active gym check-in down to under 45 seconds.
+          </p>
+
+          <div className="cs12-showcase-split">
+            <div className="cs12-split-left">
+              <div className="cs12-feature-block">
+                <span className="cs12-pill-tag">LIVE PROXIMITY RADAR</span>
+                <h3>Instant Amenities &amp; Trainer Availability</h3>
+                <p>Interactive filtering lets trainees view live floor occupancy, air conditioning status, specialized equipment, and certified trainers.</p>
+              </div>
+
+              <div className="cs12-feature-block">
+                <span className="cs12-pill-tag">FLEXIBLE PRICING TIERS</span>
+                <h3>Daily ₹99, Weekly &amp; Monthly Passes</h3>
+                <p>Transparent pricing with zero hidden registration fees or lock-in clauses.</p>
+              </div>
+
+              <div className="cs12-feature-block">
+                <span className="cs12-pill-tag">QR ENTRY PASS</span>
+                <h3>Dynamic Authenticated Gate Check-In</h3>
+                <p>Secure offline-compatible QR codes refreshed every 30 seconds to prevent unauthorized pass sharing.</p>
+              </div>
+            </div>
+
+            <div className="cs12-split-right">
+              <div className="cs12-phone-frame-pair">
+                <div className="cs12-phone-card">
+                  <img src={screen1} alt="Fymble Pass Booking" />
+                  <span className="cs12-phone-label">Pass Checkout Screen</span>
+                </div>
+                <div className="cs12-phone-card">
+                  <img src={screen4} alt="Fymble Pass QR Code" />
+                  <span className="cs12-phone-label">Verified Gate Pass</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 08: KYRA AI — MULTIMODAL HEALTH & HABIT COMPANION
+            =================================================================== */}
+        <section id="sec-08" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 08</span>
+            <span className="cs12-section-name">KYRA AI HEALTH COMPANION</span>
+          </div>
+
+          <h2 className="cs12-section-heading">Conversational AI that adapts to daily workout fatigue.</h2>
+          <p className="cs12-section-intro">
+            Kyra AI serves as an intelligent copilot inside Fymble, interpreting user energy levels, dietary patterns, and recovery metrics.
+          </p>
+
+          <div className="cs12-ai-showcase-grid">
+            <div className="cs12-ai-screen-card">
+              <img src={aiDiet1} alt="Kyra AI Chat Interface" />
+              <div className="cs12-ai-card-info">
+                <h4>Conversational Habit Coach</h4>
+                <p>Provides daily nutrition suggestions based on logged muscle fatigue and target calories.</p>
+              </div>
+            </div>
+
+            <div className="cs12-ai-screen-card">
+              <img src={aiDiet2} alt="Kyra AI Meal Plan Generation" />
+              <div className="cs12-ai-card-info">
+                <h4>Dynamic Meal Plan Generation</h4>
+                <p>Calculates exact protein, carbs, and micronutrient ratios from local Indian and international foods.</p>
+              </div>
+            </div>
+
+            <div className="cs12-ai-screen-card">
+              <img src={aiDiet3} alt="Kyra AI Progress Telemetry" />
+              <div className="cs12-ai-card-info">
+                <h4>Consistency &amp; Recovery Tracker</h4>
+                <p>Predictive recovery advice preventing overtraining through resting heart rate signals.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 09: AI FOOD SCANNER & COMPUTER VISION NUTRITION
+            =================================================================== */}
+        <section id="sec-09" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 09</span>
+            <span className="cs12-section-name">AI FOOD SCANNER</span>
+          </div>
+
+          <h2 className="cs12-section-heading">Instant camera food logging with 96% macronutrient accuracy.</h2>
+          <p className="cs12-section-intro">
+            Eliminating tedious manual text entry with real-time visual recognition for complex multi-ingredient meals.
+          </p>
+
+          <div className="cs12-scanner-trio-row">
+            <div className="cs12-scanner-item">
+              <div className="cs12-scanner-frame">
+                <img src={foodScanner1} alt="AI Camera Food Scanner" />
+              </div>
+              <h4>01. Point &amp; Scan</h4>
+              <p>Camera scans plate and detects items in under 1.2 seconds.</p>
+            </div>
+
+            <div className="cs12-scanner-item">
+              <div className="cs12-scanner-frame">
+                <img src={foodScanner2} alt="AI Macro Breakdown" />
+              </div>
+              <h4>02. Macro Calculation</h4>
+              <p>Instant calorie, protein, carbohydrate, and fat breakdown.</p>
+            </div>
+
+            <div className="cs12-scanner-item">
+              <div className="cs12-scanner-frame">
+                <img src={foodScanner3} alt="AI Daily Calorie Target" />
+              </div>
+              <h4>03. Auto-Sync Daily Log</h4>
+              <p>Updates daily metabolic allowance and alerts Kyra AI coach.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 10: B2B GYM OPERATING SYSTEM & SAAS PLATFORM
+            =================================================================== */}
+        <section id="sec-10" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 10</span>
+            <span className="cs12-section-name">B2B GYM SAAS PLATFORM</span>
+          </div>
+
+          <h2 className="cs12-section-heading">An enterprise dashboard empowering 600+ partner fitness centers.</h2>
+          <p className="cs12-section-intro">
+            Comprehensive business operations for gym owners: real-time turnstile check-ins, automated payout telemetry, and trainer scheduling.
+          </p>
+
+          <div className="cs12-saas-grid">
+            <div className="cs12-saas-card">
+              <div className="cs12-saas-img-wrap">
+                <img src={gymMgmt1} alt="B2B Dashboard Home" />
+              </div>
+              <div className="cs12-saas-text">
+                <h3>Real-Time Live Check-In Telemetry</h3>
+                <p>Instant verification of Fymble daily pass holders entering the gym floor, automatically tracking peak capacity hours.</p>
+              </div>
+            </div>
+
+            <div className="cs12-saas-card">
+              <div className="cs12-saas-img-wrap">
+                <img src={gymMgmt2} alt="B2B Revenue Analytics" />
+              </div>
+              <div className="cs12-saas-text">
+                <h3>Revenue &amp; Payout Analytics</h3>
+                <p>Transparent breakdown of daily pass redemptions, direct bank settlements, and member growth retention curves.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 11: WEB PLATFORM & HIGH-CONVERTING LANDING EXPERIENCES
+            =================================================================== */}
+        <section id="sec-11" className="cs12-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 11</span>
+            <span className="cs12-section-name">WEB ECOSYSTEM</span>
+          </div>
+
+          <h2 className="cs12-section-heading">Responsive web platform and high-converting marketing portals.</h2>
+          <p className="cs12-section-intro">
+            Designing the official desktop and mobile web experiences at <strong>fymble.app</strong> to drive organic customer acquisition.
+          </p>
+
+          <div className="cs12-web-showcase-stack">
+            <div className="cs12-web-card">
+              <div className="cs12-browser-bar">
+                <div className="cs12-browser-dots">
+                  <span /><span /><span />
+                </div>
+                <div className="cs12-browser-url">https://fymble.app</div>
+              </div>
+              <div className="cs12-web-viewport">
+                <img src={fymbleWebLanding} alt="Fymble Official Home Website" />
+              </div>
+              <div className="cs12-web-meta">
+                <h4>Fymble Flagship Web Portal</h4>
+                <p>Interactive 3D pass calculator, app download triggers, and partner gym onboarding forms.</p>
+              </div>
+            </div>
+
+            <div className="cs12-web-dual-row">
+              <div className="cs12-web-subcard">
+                <div className="cs12-browser-bar">
+                  <div className="cs12-browser-url">https://fymble.app/kyra-ai</div>
+                </div>
+                <img src={kyraWebLanding} alt="Kyra AI Web Landing" />
+                <h5>Kyra AI Health Companion Portal</h5>
+              </div>
+
+              <div className="cs12-web-subcard">
+                <div className="cs12-browser-bar">
+                  <div className="cs12-browser-url">https://fymble.app/consultation</div>
+                </div>
+                <img src={nutritionConsultLanding} alt="1:1 Diet Consultation Web" />
+                <h5>1:1 Nutrition &amp; Consultation Booking</h5>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 12: MEASURABLE IMPACT, PRODUCTION SHIPPED & REFLECTION
+            =================================================================== */}
+        <section id="sec-12" className="cs12-section cs12-final-section">
+          <div className="cs12-section-badge">
+            <span className="cs12-num-tag">NO. 12</span>
+            <span className="cs12-section-name">MEASURABLE IMPACT &amp; REFLECTION</span>
+          </div>
+
+          <h2 className="cs12-section-heading">Real production metrics and shipped outcomes.</h2>
+          <p className="cs12-section-intro">
+            Fymble is a live, production-tested platform delivering real value to thousands of trainees daily.
+          </p>
+
+          {/* 4 Core Verified Metrics */}
+          <div className="cs12-stats-grid">
+            <div className="cs12-stat-box">
+              <strong className="cs12-stat-number">250+</strong>
+              <span className="cs12-stat-label">Production Screens Designed</span>
+              <p className="cs12-stat-sub">Across iOS, Android, Web &amp; B2B SaaS</p>
+            </div>
+
+            <div className="cs12-stat-box">
+              <strong className="cs12-stat-number">20K+</strong>
+              <span className="cs12-stat-label">Active Trainees Onboarded</span>
+              <p className="cs12-stat-sub">Active fitness marketplace users</p>
+            </div>
+
+            <div className="cs12-stat-box">
+              <strong className="cs12-stat-number">600+</strong>
+              <span className="cs12-stat-label">Partner Gyms &amp; Studios</span>
+              <p className="cs12-stat-sub">Integrated on the B2B SaaS operating system</p>
+            </div>
+
+            <div className="cs12-stat-box">
+              <strong className="cs12-stat-number">+38%</strong>
+              <span className="cs12-stat-label">30-Day Trainee Retention</span>
+              <p className="cs12-stat-sub">Driven by Kyra AI habit coaching</p>
+            </div>
+          </div>
+
+          {/* Designer Reflection Card */}
+          <div className="cs12-reflection-card">
+            <span className="cs12-reflection-tag">PRODUCT DESIGNER REFLECTION</span>
+            <h3 className="cs12-reflection-quote">
+              "Great product design in fitness isn't about fancy workout graphics. It's about removing the psychological and financial friction that prevents people from showing up."
+            </h3>
+            <p className="cs12-reflection-body">
+              Leading the end-to-end design of Fymble required balancing deep consumer empathy with robust SaaS business economics. By pairing flexible passes with autonomous AI habit reinforcement, we built a product that empowers urban trainees to stay consistent without feeling trapped.
+            </p>
+
+            <div className="cs12-footer-action-row">
+              <button className="cs12-action-btn primary" onClick={onBack}>
+                <span>← Back to Case Studies</span>
+              </button>
+              {onNavigateProject && (
+                <button className="cs12-action-btn secondary" onClick={onNavigateProject}>
+                  <span>Next Project: Gym Management SaaS →</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </section>
 
       </main>
     </div>
