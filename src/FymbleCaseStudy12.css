@@ -2437,3 +2437,274 @@
     gap: 16px;
   }
 }
+
+/* ==========================================================================
+   SECTION 07: USER JOURNEY MAP MATRIX & CONTEXT CARDS
+   ========================================================================== */
+.cs12-journey-map-card {
+  margin-top: 10px;
+}
+
+.cs12-journey-top-cards {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1.25fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.cs12-jtop-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.cs12-jtop-card.card-persona {
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+
+.cs12-jtop-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(167, 139, 250, 0.4);
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cs12-jtop-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs12-jtop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs12-jtop-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.cs12-jtop-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 10px;
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cs12-jmeta-item strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.cs12-jtop-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cs12-jtop-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(167, 139, 250, 0.15);
+  color: #c4b5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs12-jtop-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.cs12-jtop-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.cs12-jtop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs12-jtop-list li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #94a3b8;
+  position: relative;
+  padding-left: 14px;
+}
+
+.cs12-jtop-list li::before {
+  content: '•';
+  position: absolute;
+  left: 2px;
+  color: #a78bfa;
+  font-size: 14px;
+}
+
+/* Matrix Table Grid */
+.cs12-journey-matrix-wrapper {
+  overflow-x: auto;
+  margin-top: 36px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 8, 14, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  padding: 16px;
+}
+
+.cs12-journey-matrix {
+  min-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs12-jmatrix-row {
+  display: grid;
+  grid-template-columns: 130px repeat(7, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.cs12-jlabel-cell {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.cs12-jlabel-cell.label-pain {
+  background: #FF5757;
+  color: #ffffff;
+  border-color: #FF5757;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(255, 87, 87, 0.35);
+}
+
+.cs12-jstage-cell {
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e9d5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 6px;
+  text-align: center;
+}
+
+.cs12-jcontent-cell {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #cbd5e1;
+}
+
+.cs12-jcontent-cell p {
+  margin: 0;
+}
+
+.cs12-jcontent-cell.pain-cell {
+  background: rgba(255, 87, 87, 0.08);
+  border-color: rgba(255, 87, 87, 0.2);
+  color: #fca5a5;
+}
+
+.cs12-jemotion-cell {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.cs12-jemotion-cell.highlight-grow {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.cs12-emoji-icon {
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.cs12-emotion-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs12-emotion-tags li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+  .cs12-journey-top-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

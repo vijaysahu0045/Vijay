@@ -15,7 +15,8 @@ const SECTIONS_INDEX = [
   { num: '03', id: 'sec-03', label: 'Typography & Colors' },
   { num: '04', id: 'sec-04', label: 'User Research' },
   { num: '05', id: 'sec-05', label: 'Problem & Solution' },
-  { num: '06', id: 'sec-06', label: 'User Persona' }
+  { num: '06', id: 'sec-06', label: 'User Persona' },
+  { num: '07', id: 'sec-07', label: 'User Journey Map' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
@@ -1017,6 +1018,248 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <p className="cs12-insight-desc">
                   Users miss key consistency milestones due to lack of timely, personalized habit alerts and coaching insights.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 07: USER JOURNEY MAP
+            =================================================================== */}
+        <section id="sec-07" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-journey-map-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">07</span>
+                <h2 className="cs12-scope-title">User Journey Map</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Mapped the holistic user journey across all touchpoints to eliminate friction during discovery, onboarding, gym check-in, nutrition tracking, and long-term habit retention.
+                </p>
+              </div>
+            </div>
+
+            {/* Top Row: 3 Persona & Context Cards */}
+            <div className="cs12-journey-top-cards">
+              {/* Card 1: Persona Summary */}
+              <div className="cs12-jtop-card card-persona">
+                <div className="cs12-jtop-avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                    alt="Jenny Wilson"
+                  />
+                </div>
+                <div className="cs12-jtop-info">
+                  <h3 className="cs12-jtop-name">Jenny Wilson</h3>
+                  <div className="cs12-jtop-meta-grid">
+                    <span className="cs12-jmeta-item"><strong>Age:</strong> 31</span>
+                    <span className="cs12-jmeta-item"><strong>Occupation:</strong> Product Manager</span>
+                    <span className="cs12-jmeta-item"><strong>Location:</strong> Bangalore, India</span>
+                    <span className="cs12-jmeta-item"><strong>Status:</strong> Married</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Scenario */}
+              <div className="cs12-jtop-card card-scenario">
+                <div className="cs12-jtop-header">
+                  <div className="cs12-jtop-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                  </div>
+                  <h4 className="cs12-jtop-title">Scenario</h4>
+                </div>
+                <p className="cs12-jtop-text">
+                  Jenny Wilson actively manages a hectic corporate schedule while trying to maintain workout consistency, find flexible gym passes near client meetings, and track daily meal nutrition without complex manual effort.
+                </p>
+              </div>
+
+              {/* Card 3: Goals & Expectations */}
+              <div className="cs12-jtop-card card-goals">
+                <div className="cs12-jtop-header">
+                  <div className="cs12-jtop-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <circle cx="12" cy="12" r="2" />
+                    </svg>
+                  </div>
+                  <h4 className="cs12-jtop-title">Goals &amp; Expectations</h4>
+                </div>
+                <ul className="cs12-jtop-list">
+                  <li>Easy gym discovery and on-demand pass checkout</li>
+                  <li>Quick, automated camera meal logging with AI accuracy</li>
+                  <li>Smart Kyra AI habit coaching &amp; workout recovery guidance</li>
+                  <li>Reliable QR gym check-in with zero membership lock-ins</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Journey Map Matrix Grid */}
+            <div className="cs12-journey-matrix-wrapper">
+              <div className="cs12-journey-matrix">
+                {/* Header Row: Stages */}
+                <div className="cs12-jmatrix-row row-stages">
+                  <div className="cs12-jlabel-cell">Stages</div>
+                  <div className="cs12-jstage-cell">Discover</div>
+                  <div className="cs12-jstage-cell">Onboarding</div>
+                  <div className="cs12-jstage-cell">Explore</div>
+                  <div className="cs12-jstage-cell">Pass Booking</div>
+                  <div className="cs12-jstage-cell">Track &amp; Manage</div>
+                  <div className="cs12-jstage-cell">Grow</div>
+                  <div className="cs12-jstage-cell">Support</div>
+                </div>
+
+                {/* Row 2: Activities */}
+                <div className="cs12-jmatrix-row row-activities">
+                  <div className="cs12-jlabel-cell">Activities</div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Discovers Fymble through fitness creators, friends, or App Store.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Signs up via phone, selects fitness goals &amp; dietary preferences.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Explores nearby partner gyms, live amenities &amp; class schedules.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Selects flexible ₹99 day-pass with instant 1-tap checkout.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Scans meals with AI camera, tracks workout sets &amp; daily macros.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Kyra AI adapts workout intensity, unlocks streak rewards &amp; badges.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Accesses 24/7 support for pass redemption &amp; trainer advice.</p>
+                  </div>
+                </div>
+
+                {/* Row 3: Pain Points */}
+                <div className="cs12-jmatrix-row row-pain-points">
+                  <div className="cs12-jlabel-cell label-pain">Pain Points</div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Unclear features and rigid lock-in packages in legacy apps.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Lengthy registration forms and tedious onboarding steps.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Difficult to find real gym photos and amenity details.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Hidden registration fees &amp; complex admission processes.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Manual calorie counting is time-consuming and inconsistent.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Generic workout advice without personalized recovery.</p>
+                  </div>
+                  <div className="cs12-jcontent-cell pain-cell">
+                    <p>Slow support turnaround from traditional gym desks.</p>
+                  </div>
+                </div>
+
+                {/* Row 4: Touchpoints */}
+                <div className="cs12-jmatrix-row row-touchpoints">
+                  <div className="cs12-jlabel-cell">Touch points</div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Social media ads, Reviews, Web portal</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Sign up screen, Kyra AI intro, Goal selector</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Gym radar map, Filter chips, Amenities modal</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>UPI / Card payment, Dynamic QR gate pass</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>AI Food Scanner, Workout log, Macro charts</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>Streak tracker, Recovery stats, Rewards hub</p>
+                  </div>
+                  <div className="cs12-jcontent-cell">
+                    <p>In-app chat, Help center, Trainer hotline</p>
+                  </div>
+                </div>
+
+                {/* Row 5: Emotional & Sentiment */}
+                <div className="cs12-jmatrix-row row-emotional">
+                  <div className="cs12-jlabel-cell">Emotional</div>
+                  
+                  {/* Stage 1 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">🤔</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Curious</li>
+                      <li>Hopeful</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 2 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">😐</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Unsure</li>
+                      <li>Evaluative</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 3 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">🧐</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Intrigued</li>
+                      <li>Optimistic</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 4 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">😊</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Relieved</li>
+                      <li>Satisfied</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 5 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">🙂</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Informed</li>
+                      <li>In Control</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 6 */}
+                  <div className="cs12-jemotion-cell highlight-grow">
+                    <span className="cs12-emoji-icon">😃</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Confident</li>
+                      <li>Empowered</li>
+                    </ul>
+                  </div>
+
+                  {/* Stage 7 */}
+                  <div className="cs12-jemotion-cell">
+                    <span className="cs12-emoji-icon">😌</span>
+                    <ul className="cs12-emotion-tags">
+                      <li>Heard</li>
+                      <li>Supported</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
