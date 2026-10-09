@@ -364,39 +364,83 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 02: THE PROBLEM & MARKET FRICTION POINTS
+            SECTION 02: STRATEGY PLAN (Connected Research & Stakeholder Insights)
             =================================================================== */}
-        <section id="sec-02" className="cs12-section">
-          <div className="cs12-section-badge">
-            <span className="cs12-num-tag">NO. 02</span>
-            <span className="cs12-section-name">THE PROBLEM</span>
+        <section id="sec-02" className="cs12-section cs12-strategy-plan-section">
+          <div className="cs12-strategy-header">
+            <span className="cs12-strategy-num">02</span>
+            <h2 className="cs12-strategy-title">Strategy Plan</h2>
           </div>
 
-          <h2 className="cs12-section-heading">Why 78% of people drop out of fitness within 60 days.</h2>
-          <p className="cs12-section-intro">
-            Traditional fitness experiences create unnecessary friction at every stage — from financial lock-in to fragmented dietary tracking.
-          </p>
+          <div className="cs12-strategy-flow-container">
+            {/* SVG Serpentine Dotted Connecting Line */}
+            <svg className="cs12-strategy-svg-line" viewBox="0 0 800 650" fill="none" preserveAspectRatio="none">
+              <path
+                d="M 540 80 C 200 80, 160 180, 160 260 C 160 380, 480 380, 480 490"
+                stroke="rgba(255, 255, 255, 0.25)"
+                strokeWidth="1.5"
+                strokeDasharray="6 6"
+              />
+            </svg>
 
-          <div className="cs12-friction-grid">
-            <div className="cs12-friction-card">
-              <div className="cs12-friction-icon">🔒</div>
-              <span className="cs12-card-tag">FRICTION 01</span>
-              <h3>Annual Subscription Traps</h3>
-              <p>Traditional gyms force users into 6 to 12-month lock-in contracts, forcing modern mobile professionals to pay for facilities they rarely use.</p>
+            {/* Node 1: Top Right - UX Research */}
+            <div className="cs12-strategy-node node-1">
+              <div className="cs12-node-avatar-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=80"
+                  alt="Sophia L. - UX Research Lead"
+                  className="cs12-node-avatar"
+                />
+              </div>
+              <div className="cs12-node-content">
+                <p className="cs12-node-quote">
+                  <strong>Research showed users struggled to track daily workouts</strong>, calorie macros, and gym bookings across fragmented apps. <strong>We prioritized a unified fitness dashboard</strong> to centralize on-demand gym passes, AI meal tracking, and coach assistance in one place.
+                </p>
+                <div className="cs12-node-author">
+                  <h4 className="cs12-node-name">Sophia L.</h4>
+                  <span className="cs12-node-role">UX Research Lead</span>
+                </div>
+              </div>
             </div>
 
-            <div className="cs12-friction-card">
-              <div className="cs12-friction-icon">🧩</div>
-              <span className="cs12-card-tag">FRICTION 02</span>
-              <h3>Fragmented Health Ecosystem</h3>
-              <p>Users juggle 3 to 4 disconnected apps: one for gym passes, one for calorie logging, and another for trainer communication.</p>
+            {/* Node 2: Middle Left - Product Strategy */}
+            <div className="cs12-strategy-node node-2">
+              <div className="cs12-node-avatar-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=240&q=80"
+                  alt="Emma R. - Chief Product Officer"
+                  className="cs12-node-avatar"
+                />
+              </div>
+              <div className="cs12-node-content">
+                <p className="cs12-node-quote">
+                  <strong>Stakeholder workshops highlighted the need for flexible</strong>, commitment-free fitness access. <strong>We focused on building a pay-as-you-go pass engine</strong> that gives users instant access to 600+ fitness studios, dynamic per-day pricing, and zero annual lock-ins.
+                </p>
+                <div className="cs12-node-author">
+                  <h4 className="cs12-node-name">Emma R.</h4>
+                  <span className="cs12-node-role">Chief Product Officer</span>
+                </div>
+              </div>
             </div>
 
-            <div className="cs12-friction-card">
-              <div className="cs12-friction-icon">📉</div>
-              <span className="cs12-card-tag">FRICTION 03</span>
-              <h3>Zero Habit Retention Loop</h3>
-              <p>Without contextual motivation and real-time habit feedback, motivation evaporates when work schedules change.</p>
+            {/* Node 3: Bottom Right - Product Design */}
+            <div className="cs12-strategy-node node-3">
+              <div className="cs12-node-avatar-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=240&q=80"
+                  alt="Daniel P. - Lead Product Designer"
+                  className="cs12-node-avatar"
+                />
+              </div>
+              <div className="cs12-node-content">
+                <p className="cs12-node-quote">
+                  <strong>User interviews revealed friction in tedious manual food logging</strong> and rigid gym memberships. <strong>This led us to simplify AI food scanning, surface instant check-ins earlier</strong>, and eliminate unnecessary steps across key daily health journeys.
+                </p>
+                <div className="cs12-node-author">
+                  <h4 className="cs12-node-name">Daniel P.</h4>
+                  <span className="cs12-node-role">Lead Product Designer</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
