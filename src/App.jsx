@@ -5,6 +5,7 @@ import InteractiveParticleTrail from './InteractiveParticleTrail'
 import Projects from './Projects'
 import ProjectDetail from './ProjectDetail'
 import DesignThinking from './DesignThinking'
+import FymbleCaseStudy12 from './FymbleCaseStudy12'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import Resume from './Resume'
@@ -90,7 +91,25 @@ function App() {
     )
   }
 
-  // Route 2: Design Thinking page
+  // Route 2: Direct Fymble Case Study page
+  if (currentPage === 'case-study') {
+    return (
+      <>
+        <InteractiveParticleTrail />
+        <FymbleCaseStudy12
+          onBack={() => setCurrentPage('home')}
+          onNavigateProject={() => {
+            const nextProj = projectsList.find(p => p.id === 2) || projectsList[1]
+            setSelectedProject(nextProj)
+            setDetailSource('case-study')
+            setCurrentPage('detail')
+          }}
+        />
+      </>
+    )
+  }
+
+  // Route 3: Design Thinking page
   if (currentPage === 'design-thinking') {
     return (
       <>
@@ -100,8 +119,8 @@ function App() {
     )
   }
 
-  // Route 3: Projects / Case Studies page
-  if (currentPage === 'projects' || currentPage === 'case-study') {
+  // Route 4: All Projects page
+  if (currentPage === 'projects') {
     return (
       <>
         <InteractiveParticleTrail />
@@ -112,7 +131,7 @@ function App() {
           onOpenProject={(proj, catLabel, catId) => {
             if (catId) setActiveCategory(catId)
             setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
-            setDetailSource(currentPage)
+            setDetailSource('projects')
             setCurrentPage('detail')
           }}
         />
