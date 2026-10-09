@@ -17,7 +17,8 @@ const SECTIONS_INDEX = [
   { num: '05', id: 'sec-05', label: 'Problem & Solution' },
   { num: '06', id: 'sec-06', label: 'User Persona' },
   { num: '07', id: 'sec-07', label: 'User Journey Map' },
-  { num: '08', id: 'sec-08', label: 'User Flow' }
+  { num: '08', id: 'sec-08', label: 'User Flow' },
+  { num: '09', id: 'sec-09', label: 'Grid System' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
@@ -1600,6 +1601,114 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 </div>
 
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 09: GRID SYSTEM
+            =================================================================== */}
+        <section id="sec-09" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-grid-system-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">09</span>
+                <h2 className="cs12-scope-title">Grid System</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  A harmonized, mathematical layout grid calibrated for responsive fidelity across desktop displays and mobile viewports, maintaining proportional rhythm, precise gutters, and structured content alignment.
+                </p>
+              </div>
+            </div>
+
+            {/* Grid Showcases Comparison */}
+            <div className="cs12-grid-showcase-row">
+
+              {/* Desktop Showcase */}
+              <div className="cs12-grid-column-item desktop-item">
+                <div className="cs12-grid-device-tag">Desktop</div>
+
+                {/* Visual Artboard Container */}
+                <div className="cs12-grid-artboard desktop-artboard">
+                  <div className="cs12-grid-columns-container desktop-cols">
+                    {Array.from({ length: 12 }).map((_, i) => (
+                      <div key={i} className="cs12-grid-stripe" />
+                    ))}
+                  </div>
+
+                  {/* Floating Badges */}
+                  <div className="cs12-grid-callout callout-gutters-desktop">
+                    <span className="cs12-callout-icon">↔</span>
+                    <span>Gutters 24px</span>
+                  </div>
+
+                  <div className="cs12-grid-callout callout-columns-desktop">
+                    <span className="cs12-callout-icon">↔</span>
+                    <span>12 Columns</span>
+                  </div>
+
+                  <div className="cs12-grid-callout callout-margins-desktop">
+                    <span>Margins 120px</span>
+                    <span className="cs12-callout-icon">↔</span>
+                  </div>
+                </div>
+
+                {/* Dimension Line & Pill */}
+                <div className="cs12-grid-dimension-wrapper">
+                  <div className="cs12-grid-dimension-line">
+                    <span className="dim-arrow-left">◀</span>
+                    <span className="dim-bar" />
+                    <span className="dim-arrow-right">▶</span>
+                  </div>
+                  <div className="cs12-grid-width-pill">
+                    Width 1440px
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Showcase */}
+              <div className="cs12-grid-column-item mobile-item">
+                <div className="cs12-grid-device-tag">Mobile</div>
+
+                {/* Visual Artboard Container */}
+                <div className="cs12-grid-artboard mobile-artboard">
+                  <div className="cs12-grid-columns-container mobile-cols">
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <div key={i} className="cs12-grid-stripe" />
+                    ))}
+                  </div>
+
+                  {/* Floating Badges */}
+                  <div className="cs12-grid-callout callout-margins-mobile">
+                    <span className="cs12-callout-icon">↔</span>
+                    <span>Margins 16px</span>
+                  </div>
+
+                  <div className="cs12-grid-callout callout-columns-mobile">
+                    <span className="cs12-callout-icon">↔</span>
+                    <span>6 Columns</span>
+                  </div>
+
+                  <div className="cs12-grid-callout callout-gutters-mobile">
+                    <span className="cs12-callout-icon">↔</span>
+                    <span>Gutters 16px</span>
+                  </div>
+                </div>
+
+                {/* Dimension Line & Pill */}
+                <div className="cs12-grid-dimension-wrapper">
+                  <div className="cs12-grid-dimension-line">
+                    <span className="dim-arrow-left">◀</span>
+                    <span className="dim-bar" />
+                    <span className="dim-arrow-right">▶</span>
+                  </div>
+                  <div className="cs12-grid-width-pill">
+                    Width 375px
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

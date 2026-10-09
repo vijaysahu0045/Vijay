@@ -3220,4 +3220,232 @@
   fill: none;
 }
 
+/* ===================================================================
+   SECTION 09: GRID SYSTEM STYLES
+   =================================================================== */
+.cs12-grid-system-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.cs12-grid-showcase-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 36px;
+  padding: 10px 0 20px;
+}
+
+.cs12-grid-column-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cs12-grid-column-item.desktop-item {
+  flex: 1.6;
+}
+
+.cs12-grid-column-item.mobile-item {
+  flex: 1;
+}
+
+.cs12-grid-device-tag {
+  background: #ffffff;
+  color: #0b0b0f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 20px;
+  border-radius: 9999px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  letter-spacing: -0.2px;
+}
+
+.cs12-grid-artboard {
+  width: 100%;
+  position: relative;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 87, 87, 0.12) 0%, rgba(255, 255, 255, 0.02) 75%);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  transition: border-color 0.3s ease;
+}
+
+.cs12-grid-artboard:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cs12-grid-artboard.desktop-artboard {
+  height: 420px;
+  padding: 24px 32px;
+}
+
+.cs12-grid-artboard.mobile-artboard {
+  height: 420px;
+  padding: 24px 20px;
+}
+
+.cs12-grid-columns-container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.cs12-grid-columns-container.desktop-cols {
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.cs12-grid-columns-container.mobile-cols {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.cs12-grid-stripe {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 12px;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cs12-grid-artboard:hover .cs12-grid-stripe {
+  background: #ffffff;
+}
+
+/* Floating Callout Badges */
+.cs12-grid-callout {
+  position: absolute;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.2px;
+  animation: cs12-float-subtle 4s ease-in-out infinite alternate;
+}
+
+@keyframes cs12-float-subtle {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-3px); }
+}
+
+.callout-gutters-desktop {
+  top: 18%;
+  left: 10%;
+}
+
+.callout-columns-desktop {
+  bottom: 25%;
+  left: 36%;
+}
+
+.callout-margins-desktop {
+  top: 28%;
+  right: 10%;
+}
+
+.callout-margins-mobile {
+  top: 20%;
+  left: -20px;
+}
+
+.callout-columns-mobile {
+  bottom: 26%;
+  left: 30%;
+}
+
+.callout-gutters-mobile {
+  top: 32%;
+  right: -15px;
+}
+
+.cs12-callout-icon {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* Dimension Footers */
+.cs12-grid-dimension-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+  width: 100%;
+}
+
+.cs12-grid-dimension-line {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  color: #94a3b8;
+  font-size: 8px;
+}
+
+.dim-arrow-left,
+.dim-arrow-right {
+  font-size: 9px;
+  line-height: 1;
+  color: #64748b;
+}
+
+.dim-bar {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 4px;
+}
+
+.cs12-grid-width-pill {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 900px) {
+  .cs12-grid-showcase-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .cs12-grid-column-item.desktop-item,
+  .cs12-grid-column-item.mobile-item {
+    width: 100%;
+  }
+
+  .callout-margins-mobile {
+    left: 10px;
+  }
+  
+  .callout-gutters-mobile {
+    right: 10px;
+  }
+}
+
+
 
