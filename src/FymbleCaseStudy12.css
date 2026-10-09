@@ -552,44 +552,48 @@
   opacity: 1 !important;
 }
 
-/* Realistic iPhone Chassis & Screen */
+/* Realistic iPhone Chassis & Screen with Glassmorphism Edge */
 .cs12-iphone-chassis {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #1a1921;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 40%, rgba(124, 58, 237, 0.08) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 42px;
-  padding: 7px;
+  padding: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
   box-shadow: 
-    inset 0 0 0 1.5px #6e6d7d,
-    inset 0 0 0 3px #282730,
-    inset 0 0 0 4px #44434f,
-    0 0 0 1.5px #201f27,
-    0 0 0 2.5px #4d4c5a,
-    0 25px 60px rgba(0, 0, 0, 0.85);
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.4),
+    inset 0 0 14px rgba(255, 255, 255, 0.08),
+    0 15px 40px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(167, 139, 250, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .cs12-iphone-chassis.center-chassis {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(167, 139, 250, 0.15) 45%, rgba(124, 58, 237, 0.22) 100%);
+  border: 1.8px solid rgba(216, 180, 254, 0.7);
   box-shadow: 
-    inset 0 0 0 1.5px #c4b5fd,
-    inset 0 0 0 3px #7c3aed,
-    inset 0 0 0 4.5px #38246d,
-    0 0 0 2px #7c3aed,
-    0 0 0 3.5px #a78bfa,
-    0 25px 65px rgba(124, 58, 237, 0.45);
+    inset 0 2px 3px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.45),
+    inset 0 0 22px rgba(196, 181, 253, 0.35),
+    0 25px 65px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(147, 51, 234, 0.45);
 }
 
 .cs12-iphone-viewport {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 35px;
+  border-radius: 34px;
   overflow: hidden;
   background: #000;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.9);
 }
 
 .cs12-dynamic-island {
