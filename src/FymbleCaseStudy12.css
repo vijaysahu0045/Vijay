@@ -735,8 +735,36 @@
 }
 
 /* ==========================================================================
-   SECTION 03: SOLUTION PILLARS
+   BEHANCE OPEN SECTION HEADERS & CANVAS
    ========================================================================== */
+.cs12-behance-open-section {
+  position: relative;
+  padding: 40px 0 60px;
+}
+
+.cs12-behance-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.cs12-behance-num {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.cs12-behance-title {
+  font-size: clamp(32px, 3.8vw, 44px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.2;
+}
+
 /* ==========================================================================
    SECTION 03: TYPOGRAPHY & COLORS (DESIGN SYSTEM)
    ========================================================================== */

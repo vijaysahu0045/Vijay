@@ -467,96 +467,87 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         {/* ===================================================================
             SECTION 03: TYPOGRAPHY & COLORS (DESIGN SYSTEM FOUNDATION)
             =================================================================== */}
-        <section id="sec-03" className="cs12-section">
-          <div className="cs12-scope-of-work-card cs12-typography-colors-card">
-            <div className="cs12-scope-header-row">
-              <div className="cs12-scope-title-col">
-                <span className="cs12-scope-index">03</span>
-                <h2 className="cs12-scope-title">Typography &amp; Colors</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Crafted a clean, high-contrast visual system using Roboto typography and energetic fitness color tokens optimized for legibility and visual hierarchy across AMOLED displays.
-                </p>
-              </div>
-            </div>
+        <section id="sec-03" className="cs12-section cs12-behance-open-section">
+          <div className="cs12-behance-header">
+            <span className="cs12-behance-num">03</span>
+            <h2 className="cs12-behance-title">Typography &amp; Colors</h2>
+          </div>
 
-            {/* Giant Roboto Showcase with Floating Weight Badge */}
-            <div className="cs12-type-hero-display">
-              <span className="cs12-type-huge-name">Roboto</span>
-              <div className="cs12-type-weight-card">
-                <span className="cs12-weight-title">Weight</span>
-                <div className="cs12-weight-items">
-                  <span className="cs12-weight-row weight-regular">Regular <span>400</span></span>
-                  <span className="cs12-weight-row weight-medium">Medium <span>500</span></span>
-                  <span className="cs12-weight-row weight-bold">Semibold <span>700</span></span>
-                </div>
+          {/* Giant Roboto Showcase with Floating Weight Badge */}
+          <div className="cs12-type-hero-display">
+            <span className="cs12-type-huge-name">Roboto</span>
+            <div className="cs12-type-weight-card">
+              <span className="cs12-weight-title">Weight</span>
+              <div className="cs12-weight-items">
+                <span className="cs12-weight-row weight-regular">Regular <span>400</span></span>
+                <span className="cs12-weight-row weight-medium">Medium <span>500</span></span>
+                <span className="cs12-weight-row weight-bold">Semibold <span>700</span></span>
               </div>
             </div>
+          </div>
 
-            {/* Specimen & Type Hierarchy Scale Grid */}
-            <div className="cs12-type-specimen-grid">
-              {/* Left: Glyphs & Alphabets */}
-              <div className="cs12-type-specimen-left">
-                <div className="cs12-specimen-block">
-                  <span className="cs12-specimen-label">Headings</span>
-                  <div className="cs12-specimen-glyphs">
-                    <p className="cs12-glyph-alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-                    <p className="cs12-glyph-digits">0123456789</p>
-                  </div>
-                </div>
-
-                <div className="cs12-specimen-block">
-                  <span className="cs12-specimen-label">Text</span>
-                  <div className="cs12-specimen-glyphs">
-                    <p className="cs12-glyph-alpha">abcdefghijklmnopqrstuvwxyz</p>
-                    <p className="cs12-glyph-digits">0123456789</p>
-                  </div>
+          {/* Specimen & Type Hierarchy Scale Grid */}
+          <div className="cs12-type-specimen-grid">
+            {/* Left: Glyphs & Alphabets */}
+            <div className="cs12-type-specimen-left">
+              <div className="cs12-specimen-block">
+                <span className="cs12-specimen-label">Headings</span>
+                <div className="cs12-specimen-glyphs">
+                  <p className="cs12-glyph-alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                  <p className="cs12-glyph-digits">0123456789</p>
                 </div>
               </div>
 
-              {/* Right: Type Scale Spec Box */}
-              <div className="cs12-type-scale-card">
-                <div className="cs12-type-scale-row">
-                  <span className="cs12-scale-name">Headline</span>
-                  <span className="cs12-scale-val">48px</span>
-                </div>
-                <div className="cs12-type-scale-row">
-                  <span className="cs12-scale-name">Subheadline</span>
-                  <span className="cs12-scale-val">24px</span>
-                </div>
-                <div className="cs12-type-scale-row">
-                  <span className="cs12-scale-name">Body Text</span>
-                  <span className="cs12-scale-val">16px</span>
+              <div className="cs12-specimen-block">
+                <span className="cs12-specimen-label">Text</span>
+                <div className="cs12-specimen-glyphs">
+                  <p className="cs12-glyph-alpha">abcdefghijklmnopqrstuvwxyz</p>
+                  <p className="cs12-glyph-digits">0123456789</p>
                 </div>
               </div>
             </div>
 
-            {/* Exact 3 Brand Color Palette Cards */}
-            <div className="cs12-color-palette-grid cs12-colors-3-grid">
-              {/* Color 1: Deep Black */}
-              <div className="cs12-color-card color-black">
-                <div className="cs12-color-swatch-body">
-                  <span className="cs12-hex-code">#000000</span>
-                </div>
-                <div className="cs12-color-bottom-bar bar-black" />
+            {/* Right: Type Scale Spec Box */}
+            <div className="cs12-type-scale-card">
+              <div className="cs12-type-scale-row">
+                <span className="cs12-scale-name">Headline</span>
+                <span className="cs12-scale-val">48px</span>
               </div>
+              <div className="cs12-type-scale-row">
+                <span className="cs12-scale-name">Subheadline</span>
+                <span className="cs12-scale-val">24px</span>
+              </div>
+              <div className="cs12-type-scale-row">
+                <span className="cs12-scale-name">Body Text</span>
+                <span className="cs12-scale-val">16px</span>
+              </div>
+            </div>
+          </div>
 
-              {/* Color 2: Pure White */}
-              <div className="cs12-color-card color-white">
-                <div className="cs12-color-swatch-body">
-                  <span className="cs12-hex-code">#FFFFFF</span>
-                </div>
-                <div className="cs12-color-bottom-bar bar-white" />
+          {/* Exact 3 Brand Color Palette Cards */}
+          <div className="cs12-color-palette-grid cs12-colors-3-grid">
+            {/* Color 1: Deep Black */}
+            <div className="cs12-color-card color-black">
+              <div className="cs12-color-swatch-body">
+                <span className="cs12-hex-code">#000000</span>
               </div>
+              <div className="cs12-color-bottom-bar bar-black" />
+            </div>
 
-              {/* Color 3: Fymble Brand Coral */}
-              <div className="cs12-color-card color-fymble-coral">
-                <div className="cs12-color-swatch-body">
-                  <span className="cs12-hex-code">#FF5757</span>
-                </div>
-                <div className="cs12-color-bottom-bar bar-fymble-coral" />
+            {/* Color 2: Pure White */}
+            <div className="cs12-color-card color-white">
+              <div className="cs12-color-swatch-body">
+                <span className="cs12-hex-code">#FFFFFF</span>
               </div>
+              <div className="cs12-color-bottom-bar bar-white" />
+            </div>
+
+            {/* Color 3: Fymble Brand Coral */}
+            <div className="cs12-color-card color-fymble-coral">
+              <div className="cs12-color-swatch-body">
+                <span className="cs12-hex-code">#FF5757</span>
+              </div>
+              <div className="cs12-color-bottom-bar bar-fymble-coral" />
             </div>
           </div>
         </section>
@@ -564,192 +555,183 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         {/* ===================================================================
             SECTION 04: USER RESEARCH & KEY INSIGHTS
             =================================================================== */}
-        <section id="sec-04" className="cs12-section">
-          <div className="cs12-scope-of-work-card cs12-user-research-card">
-            <div className="cs12-scope-header-row">
-              <div className="cs12-scope-title-col">
-                <span className="cs12-scope-index">04</span>
-                <h2 className="cs12-scope-title">User Research &amp; Key Insights</h2>
+        <section id="sec-04" className="cs12-section cs12-behance-open-section">
+          <div className="cs12-behance-header">
+            <span className="cs12-behance-num">04</span>
+            <h2 className="cs12-behance-title">User Research &amp; Key Insights</h2>
+          </div>
+
+          {/* Research Layout: 2x2 Alternating Grid matching Behance Design */}
+          <div className="cs12-research-insights-container">
+            {/* Row 1: Survey Question 1 (Top Right) */}
+            <div className="cs12-research-row-grid">
+              <div className="cs12-research-question-col">
+                <h3 className="cs12-research-question-title">
+                  Have you experienced difficulties while managing your fitness &amp; diet?
+                </h3>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Conducted quantitative user surveys and in-depth interviews across 120+ active gym-goers and fitness beginners to discover core behavioral blockers in habit retention.
-                </p>
+
+              <div className="cs12-research-chart-card">
+                <div className="cs12-chart-card-header">
+                  <span className="cs12-chart-title">User Result</span>
+                </div>
+                <div className="cs12-chart-bars-list">
+                  {/* Bar 1: Yes 85% */}
+                  <div className="cs12-chart-bar-item">
+                    <span className="cs12-bar-label">Yes</span>
+                    <div className="cs12-bar-track">
+                      <div className="cs12-bar-fill fill-coral" style={{ width: '85%' }}>
+                        <span className="cs12-bar-percent">85%</span>
+                      </div>
+                    </div>
+                    <div className="cs12-avatar-cluster">
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="User 1" />
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="User 2" />
+                    </div>
+                  </div>
+
+                  {/* Bar 2: Occasionally 54% */}
+                  <div className="cs12-chart-bar-item">
+                    <span className="cs12-bar-label">Occasionally</span>
+                    <div className="cs12-bar-track">
+                      <div className="cs12-bar-fill fill-coral-light" style={{ width: '54%' }}>
+                        <span className="cs12-bar-percent">54%</span>
+                      </div>
+                    </div>
+                    <div className="cs12-avatar-cluster">
+                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=60&q=80" alt="User 3" />
+                      <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=60&q=80" alt="User 4" />
+                    </div>
+                  </div>
+
+                  {/* Bar 3: No 13% */}
+                  <div className="cs12-chart-bar-item">
+                    <span className="cs12-bar-label">No</span>
+                    <div className="cs12-bar-track">
+                      <div className="cs12-bar-fill fill-gray" style={{ width: '13%' }}>
+                        <span className="cs12-bar-percent">13%</span>
+                      </div>
+                    </div>
+                    <div className="cs12-avatar-cluster">
+                      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="User 5" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Research Layout: 2x2 Alternating Grid matching Behance Design */}
-            <div className="cs12-research-insights-container">
-              {/* Row 1: Survey Question 1 (Top Right) */}
-              <div className="cs12-research-row-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    Have you experienced difficulties while managing your fitness &amp; diet?
-                  </h3>
+            {/* Row 2: Survey Question 2 (Bottom Left) */}
+            <div className="cs12-research-row-grid reverse-grid">
+              <div className="cs12-research-question-col">
+                <h3 className="cs12-research-question-title">
+                  Which fitness challenges do you encounter most frequently?
+                </h3>
+              </div>
+
+              <div className="cs12-research-chart-card">
+                <div className="cs12-chart-card-header">
+                  <span className="cs12-chart-title">Key User Challenges</span>
                 </div>
+                
+                {/* Semi-Circular Radial Arc Chart */}
+                <div className="cs12-arc-chart-wrapper">
+                  <svg viewBox="0 0 320 180" className="cs12-arc-chart-svg">
+                    {/* Arc Base Gray */}
+                    <path d="M 40 160 A 120 120 0 0 1 280 160" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="12" strokeLinecap="round" />
+                    {/* Segment 1: Green 85% */}
+                    <path d="M 40 160 A 120 120 0 0 1 105 58" fill="none" stroke="#22C55E" strokeWidth="12" strokeLinecap="round" />
+                    {/* Segment 2: Red-Coral 45% */}
+                    <path d="M 112 52 A 120 120 0 0 1 210 52" fill="none" stroke="#FF5757" strokeWidth="12" strokeLinecap="round" />
+                    {/* Segment 3: Slate 65% */}
+                    <path d="M 218 58 A 120 120 0 0 1 280 160" fill="none" stroke="#64748b" strokeWidth="12" strokeLinecap="round" />
+                  </svg>
 
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-title">User Result</span>
-                  </div>
-                  <div className="cs12-chart-bars-list">
-                    {/* Bar 1: Yes 85% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">Yes</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-coral" style={{ width: '85%' }}>
-                          <span className="cs12-bar-percent">85%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="User 1" />
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="User 2" />
-                      </div>
+                  {/* Radial Arc Legend & Data Points */}
+                  <div className="cs12-arc-legend-grid">
+                    <div className="cs12-arc-legend-item left-item">
+                      <span className="cs12-arc-percent green-text">85%</span>
+                      <span className="cs12-arc-label">Membership Lock-in</span>
                     </div>
-
-                    {/* Bar 2: Occasionally 54% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">Occasionally</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-coral-light" style={{ width: '54%' }}>
-                          <span className="cs12-bar-percent">54%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=60&q=80" alt="User 3" />
-                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=60&q=80" alt="User 4" />
-                      </div>
+                    <div className="cs12-arc-legend-item center-item">
+                      <span className="cs12-arc-percent coral-text">45%</span>
+                      <span className="cs12-arc-label">Inconsistent Habits</span>
                     </div>
-
-                    {/* Bar 3: No 13% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">No</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-gray" style={{ width: '13%' }}>
-                          <span className="cs12-bar-percent">13%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="User 5" />
-                      </div>
+                    <div className="cs12-arc-legend-item right-item">
+                      <span className="cs12-arc-percent slate-text">65%</span>
+                      <span className="cs12-arc-label">Manual Meal Logging</span>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Row 2: Survey Question 2 (Bottom Left) */}
-              <div className="cs12-research-row-grid reverse-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    Which fitness challenges do you encounter most frequently?
-                  </h3>
+            {/* Row 3: Survey Question 3 (Top Right in Image 2) */}
+            <div className="cs12-research-row-grid">
+              <div className="cs12-research-question-col">
+                <h3 className="cs12-research-question-title">
+                  How easy is it to manage workouts &amp; diet using current apps?
+                </h3>
+              </div>
+
+              <div className="cs12-research-chart-card">
+                <div className="cs12-chart-card-header">
+                  <span className="cs12-chart-subtitle-text">Users expect a simpler, unified fitness experience.</span>
                 </div>
 
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-title">Key User Challenges</span>
-                  </div>
-                  
-                  {/* Semi-Circular Radial Arc Chart */}
-                  <div className="cs12-arc-chart-wrapper">
-                    <svg viewBox="0 0 320 180" className="cs12-arc-chart-svg">
-                      {/* Arc Base Gray */}
-                      <path d="M 40 160 A 120 120 0 0 1 280 160" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="12" strokeLinecap="round" />
-                      {/* Segment 1: Green 85% */}
-                      <path d="M 40 160 A 120 120 0 0 1 105 58" fill="none" stroke="#22C55E" strokeWidth="12" strokeLinecap="round" />
-                      {/* Segment 2: Red-Coral 45% */}
-                      <path d="M 112 52 A 120 120 0 0 1 210 52" fill="none" stroke="#FF5757" strokeWidth="12" strokeLinecap="round" />
-                      {/* Segment 3: Slate 65% */}
-                      <path d="M 218 58 A 120 120 0 0 1 280 160" fill="none" stroke="#64748b" strokeWidth="12" strokeLinecap="round" />
-                    </svg>
-
-                    {/* Radial Arc Legend & Data Points */}
-                    <div className="cs12-arc-legend-grid">
-                      <div className="cs12-arc-legend-item left-item">
-                        <span className="cs12-arc-percent green-text">85%</span>
-                        <span className="cs12-arc-label">Membership Lock-in</span>
-                      </div>
-                      <div className="cs12-arc-legend-item center-item">
-                        <span className="cs12-arc-percent coral-text">45%</span>
-                        <span className="cs12-arc-label">Inconsistent Habits</span>
-                      </div>
-                      <div className="cs12-arc-legend-item right-item">
-                        <span className="cs12-arc-percent slate-text">65%</span>
-                        <span className="cs12-arc-label">Manual Meal Logging</span>
-                      </div>
+                {/* Staircase Step Progression Chart */}
+                <div className="cs12-staircase-chart-container">
+                  <div className="cs12-staircase-steps">
+                    {/* Step 1 */}
+                    <div className="cs12-stair-col stair-1">
+                      <span className="cs12-stair-percent coral-text">56%</span>
+                      <span className="cs12-stair-name">Very Difficult</span>
+                      <div className="cs12-stair-bar" style={{ height: '30px', background: '#FF5757' }} />
+                    </div>
+                    {/* Step 2 */}
+                    <div className="cs12-stair-col stair-2">
+                      <span className="cs12-stair-percent coral-text">45%</span>
+                      <span className="cs12-stair-name">Difficult</span>
+                      <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 87, 87, 0.6)' }} />
+                    </div>
+                    {/* Step 3 */}
+                    <div className="cs12-stair-col stair-3">
+                      <span className="cs12-stair-percent">32%</span>
+                      <span className="cs12-stair-name">Neutral</span>
+                      <div className="cs12-stair-bar" style={{ height: '70px', background: 'rgba(255, 255, 255, 0.2)' }} />
+                    </div>
+                    {/* Step 4 */}
+                    <div className="cs12-stair-col stair-4">
+                      <span className="cs12-stair-percent green-text">25%</span>
+                      <span className="cs12-stair-name">Easy</span>
+                      <div className="cs12-stair-bar" style={{ height: '90px', background: 'rgba(34, 197, 94, 0.6)' }} />
+                    </div>
+                    {/* Step 5 */}
+                    <div className="cs12-stair-col stair-5">
+                      <span className="cs12-stair-percent green-text">15%</span>
+                      <span className="cs12-stair-name">Very Easy</span>
+                      <div className="cs12-stair-bar" style={{ height: '110px', background: '#22C55E' }} />
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Row 3: Survey Question 3 (Top Right in Image 2) */}
-              <div className="cs12-research-row-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    How easy is it to manage workouts &amp; diet using current apps?
-                  </h3>
+            {/* Row 4: Key Persona Quote (Bottom Left in Image 2) */}
+            <div className="cs12-research-quote-card">
+              <span className="cs12-quote-big-mark">“</span>
+              <p className="cs12-featured-persona-quote">
+                <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
+              </p>
+              <div className="cs12-quote-persona-author">
+                <div className="cs12-persona-avatar-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                    alt="Emma Wilson"
+                  />
                 </div>
-
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-subtitle-text">Users expect a simpler, unified fitness experience.</span>
-                  </div>
-
-                  {/* Staircase Step Progression Chart */}
-                  <div className="cs12-staircase-chart-container">
-                    <div className="cs12-staircase-steps">
-                      {/* Step 1 */}
-                      <div className="cs12-stair-col stair-1">
-                        <span className="cs12-stair-percent coral-text">56%</span>
-                        <span className="cs12-stair-name">Very Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '30px', background: '#FF5757' }} />
-                      </div>
-                      {/* Step 2 */}
-                      <div className="cs12-stair-col stair-2">
-                        <span className="cs12-stair-percent coral-text">45%</span>
-                        <span className="cs12-stair-name">Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 87, 87, 0.6)' }} />
-                      </div>
-                      {/* Step 3 */}
-                      <div className="cs12-stair-col stair-3">
-                        <span className="cs12-stair-percent">32%</span>
-                        <span className="cs12-stair-name">Neutral</span>
-                        <div className="cs12-stair-bar" style={{ height: '70px', background: 'rgba(255, 255, 255, 0.2)' }} />
-                      </div>
-                      {/* Step 4 */}
-                      <div className="cs12-stair-col stair-4">
-                        <span className="cs12-stair-percent green-text">25%</span>
-                        <span className="cs12-stair-name">Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '90px', background: 'rgba(34, 197, 94, 0.6)' }} />
-                      </div>
-                      {/* Step 5 */}
-                      <div className="cs12-stair-col stair-5">
-                        <span className="cs12-stair-percent green-text">15%</span>
-                        <span className="cs12-stair-name">Very Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '110px', background: '#22C55E' }} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Row 4: Key Persona Quote (Bottom Left in Image 2) */}
-              <div className="cs12-research-quote-card">
-                <span className="cs12-quote-big-mark">“</span>
-                <p className="cs12-featured-persona-quote">
-                  <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
-                </p>
-                <div className="cs12-quote-persona-author">
-                  <div className="cs12-persona-avatar-wrap">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                      alt="Emma Wilson"
-                    />
-                  </div>
-                  <div className="cs12-persona-author-info">
-                    <h4 className="cs12-persona-author-name">Emma Wilson</h4>
-                    <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
-                  </div>
+                <div className="cs12-persona-author-info">
+                  <h4 className="cs12-persona-author-name">Emma Wilson</h4>
+                  <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
                 </div>
               </div>
             </div>
@@ -759,113 +741,109 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         {/* ===================================================================
             SECTION 05: PROBLEM & SOLUTION
             =================================================================== */}
-        <section id="sec-05" className="cs12-section">
-          <div className="cs12-scope-of-work-card cs12-problem-solution-card">
-            <div className="cs12-scope-header-row">
-              <div className="cs12-scope-title-col">
-                <span className="cs12-scope-index">05</span>
-                <h2 className="cs12-scope-title">Problem &amp; Solution</h2>
-              </div>
-            </div>
+        <section id="sec-05" className="cs12-section cs12-behance-open-section">
+          <div className="cs12-behance-header">
+            <span className="cs12-behance-num">05</span>
+            <h2 className="cs12-behance-title">Problem &amp; Solution</h2>
+          </div>
 
-            {/* Problem Statement Centered Paragraph */}
-            <div className="cs12-ps-problem-statement">
-              <p>
-                <strong>Fragmented health tools</strong> and a <strong>rigid annual gym subscription process</strong> make it difficult for people to maintain consistency, understand their nutrition, and make <strong>confident daily fitness decisions.</strong>
+          {/* Problem Statement Centered Paragraph */}
+          <div className="cs12-ps-problem-statement">
+            <p>
+              <strong>Fragmented health tools</strong> and a <strong>rigid annual gym subscription process</strong> make it difficult for people to maintain consistency, understand their nutrition, and make <strong>confident daily fitness decisions.</strong>
+            </p>
+          </div>
+
+          {/* Core Visual: 3-Petal Tri-Fold Hub Diagram */}
+          <div className="cs12-ps-diagram-wrapper">
+            {/* Left Problem 1 Callout */}
+            <div className="cs12-ps-callout-card callout-left">
+              <div className="cs12-ps-badge">
+                <span className="cs12-badge-dot coral-dot" />
+                <span>Problem 1</span>
+              </div>
+              <div className="cs12-ps-metric-row">
+                <span className="cs12-ps-metric">68<small>%</small></span>
+              </div>
+              <p className="cs12-ps-metric-desc">
+                Face challenges juggling multiple disconnected apps for gym passes and meal tracking.
               </p>
             </div>
 
-            {/* Core Visual: 3-Petal Tri-Fold Hub Diagram */}
-            <div className="cs12-ps-diagram-wrapper">
-              {/* Left Problem 1 Callout */}
-              <div className="cs12-ps-callout-card callout-left">
-                <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot coral-dot" />
-                  <span>Problem 1</span>
-                </div>
-                <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">68<small>%</small></span>
-                </div>
-                <p className="cs12-ps-metric-desc">
-                  Face challenges juggling multiple disconnected apps for gym passes and meal tracking.
-                </p>
-              </div>
+            {/* Center 3-Petal Hub Orb */}
+            <div className="cs12-ps-hub-orb">
+              <svg viewBox="0 0 340 340" className="cs12-ps-hub-svg">
+                {/* Gradients */}
+                <defs>
+                  <linearGradient id="orbGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
+                    <stop offset="100%" stopColor="rgba(10,10,15,0.8)" />
+                  </linearGradient>
+                  <linearGradient id="coralPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FF7A7A" />
+                    <stop offset="100%" stopColor="#FF5757" />
+                  </linearGradient>
+                  <linearGradient id="greenPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#4ADE80" />
+                    <stop offset="100%" stopColor="#22C55E" />
+                  </linearGradient>
+                </defs>
 
-              {/* Center 3-Petal Hub Orb */}
-              <div className="cs12-ps-hub-orb">
-                <svg viewBox="0 0 340 340" className="cs12-ps-hub-svg">
-                  {/* Gradients */}
-                  <defs>
-                    <linearGradient id="orbGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
-                      <stop offset="100%" stopColor="rgba(10,10,15,0.8)" />
-                    </linearGradient>
-                    <linearGradient id="coralPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FF7A7A" />
-                      <stop offset="100%" stopColor="#FF5757" />
-                    </linearGradient>
-                    <linearGradient id="greenPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#4ADE80" />
-                      <stop offset="100%" stopColor="#22C55E" />
-                    </linearGradient>
-                  </defs>
+                {/* Outer Glowing Glass Orb Base */}
+                <circle cx="170" cy="170" r="120" fill="url(#orbGlassGrad)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
 
-                  {/* Outer Glowing Glass Orb Base */}
-                  <circle cx="170" cy="170" r="120" fill="url(#orbGlassGrad)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
+                {/* Petal 01: Top Left (Coral Red) */}
+                <path
+                  d="M 170 170 L 110 70 A 120 120 0 0 0 55 170 Q 115 170 170 170 Z"
+                  fill="url(#coralPetalGrad)"
+                />
 
-                  {/* Petal 01: Top Left (Coral Red) */}
-                  <path
-                    d="M 170 170 L 110 70 A 120 120 0 0 0 55 170 Q 115 170 170 170 Z"
-                    fill="url(#coralPetalGrad)"
-                  />
+                {/* Petal 02: Top Right (Coral Red) */}
+                <path
+                  d="M 170 170 L 230 70 A 120 120 0 0 1 285 170 Q 225 170 170 170 Z"
+                  fill="url(#coralPetalGrad)"
+                />
 
-                  {/* Petal 02: Top Right (Coral Red) */}
-                  <path
-                    d="M 170 170 L 230 70 A 120 120 0 0 1 285 170 Q 225 170 170 170 Z"
-                    fill="url(#coralPetalGrad)"
-                  />
+                {/* Petal 03: Bottom (Vibrant Green / Solution) */}
+                <path
+                  d="M 170 170 L 85 245 A 120 120 0 0 0 255 245 Q 210 190 170 170 Z"
+                  fill="url(#greenPetalGrad)"
+                />
 
-                  {/* Petal 03: Bottom (Vibrant Green / Solution) */}
-                  <path
-                    d="M 170 170 L 85 245 A 120 120 0 0 0 255 245 Q 210 190 170 170 Z"
-                    fill="url(#greenPetalGrad)"
-                  />
+                {/* Center Floating White Core */}
+                <circle cx="170" cy="170" r="72" fill="#ffffff" />
 
-                  {/* Center Floating White Core */}
-                  <circle cx="170" cy="170" r="72" fill="#ffffff" />
-
-                  {/* Inner Text Labels inside Petals */}
-                  <text x="125" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
-                  <text x="215" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
-                  <text x="170" y="248" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
-                </svg>
-              </div>
-
-              {/* Right Problem 2 Callout */}
-              <div className="cs12-ps-callout-card callout-right">
-                <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot coral-dot" />
-                  <span>Problem 2</span>
-                </div>
-                <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">36<small>%</small></span>
-                </div>
-                <p className="cs12-ps-metric-desc">
-                  Find rigid 12-month gym memberships expensive, confusing, and time-consuming.
-                </p>
-              </div>
+                {/* Inner Text Labels inside Petals */}
+                <text x="125" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
+                <text x="215" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
+                <text x="170" y="248" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
+              </svg>
             </div>
 
-            {/* Bottom Solution Section Anchor */}
-            <div className="cs12-ps-solution-anchor">
-              <div className="cs12-solution-dot-pulse">
-                <span className="cs12-sol-dot" />
+            {/* Right Problem 2 Callout */}
+            <div className="cs12-ps-callout-card callout-right">
+              <div className="cs12-ps-badge">
+                <span className="cs12-badge-dot coral-dot" />
+                <span>Problem 2</span>
               </div>
-              <h3 className="cs12-ps-solution-title">Solution</h3>
-              <p className="cs12-ps-solution-desc">
-                We created a unified fitness ecosystem that simplifies discovery, offers flexible ₹99 on-demand gym passes, automates AI meal tracking, and gives users complete control over their daily health journey.
+              <div className="cs12-ps-metric-row">
+                <span className="cs12-ps-metric">36<small>%</small></span>
+              </div>
+              <p className="cs12-ps-metric-desc">
+                Find rigid 12-month gym memberships expensive, confusing, and time-consuming.
               </p>
             </div>
+          </div>
+
+          {/* Bottom Solution Section Anchor */}
+          <div className="cs12-ps-solution-anchor">
+            <div className="cs12-solution-dot-pulse">
+              <span className="cs12-sol-dot" />
+            </div>
+            <h3 className="cs12-ps-solution-title">Solution</h3>
+            <p className="cs12-ps-solution-desc">
+              We created a unified fitness ecosystem that simplifies discovery, offers flexible ₹99 on-demand gym passes, automates AI meal tracking, and gives users complete control over their daily health journey.
+            </p>
           </div>
         </section>
 
