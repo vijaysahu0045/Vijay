@@ -283,71 +283,106 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Large Hero 5-Device Isometric Mockup Fan with Realistic iPhone Frames */}
+          {/* Wide Panoramic 5-Device Studio Showcase (Zero Overlap, Crystal-Clear UI Visibility) */}
           <div className="cs12-hero-showcase-box">
-            <div className="cs12-screens-fan-row">
-              {/* Phone 1 (Far Left): Food Scanner */}
-              <div className="cs12-fan-iphone iphone-1">
-                <div className="cs12-iphone-chassis">
-                  <div className="cs12-iphone-viewport">
-                    <div className="cs12-dynamic-island" />
-                    <div className="cs12-phone-glare" />
-                    <img src={foodScanner1} alt="Fymble Food Scanner" className="cs12-phone-img" />
-                    <div className="cs12-home-indicator" />
+            <div className="cs12-panoramic-studio-grid">
+              {/* Phone 1: Food Scanner */}
+              <div className="cs12-panoramic-card">
+                <div className="cs12-screen-badge">
+                  <span className="cs12-badge-dot" />
+                  <span className="cs12-badge-text">AI Food Scanner</span>
+                </div>
+                <div className="cs12-panoramic-iphone">
+                  <div className="cs12-iphone-chassis">
+                    <div className="cs12-iphone-viewport">
+                      <div className="cs12-dynamic-island" />
+                      <div className="cs12-phone-glare" />
+                      <img src={foodScanner1} alt="Fymble AI Food Scanner UI" className="cs12-phone-img" />
+                      <div className="cs12-home-indicator" />
+                    </div>
                   </div>
                 </div>
+                <span className="cs12-screen-sublabel">Instant Macro Vision</span>
               </div>
 
-              {/* Phone 2 (Left): Class Selection */}
-              <div className="cs12-fan-iphone iphone-2">
-                <div className="cs12-iphone-chassis">
-                  <div className="cs12-iphone-viewport">
-                    <div className="cs12-dynamic-island" />
-                    <div className="cs12-phone-glare" />
-                    <img src={screen3} alt="Fymble Class Selection" className="cs12-phone-img" />
-                    <div className="cs12-home-indicator" />
+              {/* Phone 2: Class Selection */}
+              <div className="cs12-panoramic-card">
+                <div className="cs12-screen-badge">
+                  <span className="cs12-badge-dot" />
+                  <span className="cs12-badge-text">Class Booking</span>
+                </div>
+                <div className="cs12-panoramic-iphone">
+                  <div className="cs12-iphone-chassis">
+                    <div className="cs12-iphone-viewport">
+                      <div className="cs12-dynamic-island" />
+                      <div className="cs12-phone-glare" />
+                      <img src={screen3} alt="Fymble Class Selection UI" className="cs12-phone-img" />
+                      <div className="cs12-home-indicator" />
+                    </div>
                   </div>
                 </div>
+                <span className="cs12-screen-sublabel">Multi-Studio Access</span>
               </div>
 
-              {/* Phone 3 (Center): Fymble Home & Pass Discovery (Elevated & Glowing) */}
-              <div className="cs12-fan-iphone iphone-center">
-                <div className="cs12-iphone-chassis center-chassis">
-                  <div className="cs12-iphone-viewport">
-                    <div className="cs12-dynamic-island" />
-                    <div className="cs12-phone-glare" />
-                    <img src={screen1} alt="Fymble Pass Discovery" className="cs12-phone-img" />
-                    <div className="cs12-home-indicator" />
+              {/* Phone 3: Hero Home & Discovery */}
+              <div className="cs12-panoramic-card center-hero-card">
+                <div className="cs12-screen-badge center-badge">
+                  <span className="cs12-badge-dot-glow" />
+                  <span className="cs12-badge-text">Core Discovery Hub</span>
+                </div>
+                <div className="cs12-panoramic-iphone center-hero-phone">
+                  <div className="cs12-iphone-chassis center-chassis">
+                    <div className="cs12-iphone-viewport">
+                      <div className="cs12-dynamic-island" />
+                      <div className="cs12-phone-glare" />
+                      <img src={screen1} alt="Fymble Pass Discovery UI" className="cs12-phone-img" />
+                      <div className="cs12-home-indicator" />
+                    </div>
                   </div>
                 </div>
+                <span className="cs12-screen-sublabel center-sublabel">Daily Pass &amp; Kyra AI</span>
               </div>
 
-              {/* Phone 4 (Right): Nutrition Recipes */}
-              <div className="cs12-fan-iphone iphone-4">
-                <div className="cs12-iphone-chassis">
-                  <div className="cs12-iphone-viewport">
-                    <div className="cs12-dynamic-island" />
-                    <div className="cs12-phone-glare" />
-                    <img src={nutritionScreen3} alt="Fymble Food Recipes" className="cs12-phone-img" />
-                    <div className="cs12-home-indicator" />
+              {/* Phone 4: Nutrition & Diet */}
+              <div className="cs12-panoramic-card">
+                <div className="cs12-screen-badge">
+                  <span className="cs12-badge-dot" />
+                  <span className="cs12-badge-text">Nutrition &amp; Meals</span>
+                </div>
+                <div className="cs12-panoramic-iphone">
+                  <div className="cs12-iphone-chassis">
+                    <div className="cs12-iphone-viewport">
+                      <div className="cs12-dynamic-island" />
+                      <div className="cs12-phone-glare" />
+                      <img src={nutritionScreen3} alt="Fymble Nutrition Recipes UI" className="cs12-phone-img" />
+                      <div className="cs12-home-indicator" />
+                    </div>
                   </div>
                 </div>
+                <span className="cs12-screen-sublabel">Smart Recipe Logs</span>
               </div>
 
-              {/* Phone 5 (Far Right): Refer & Earn */}
-              <div className="cs12-fan-iphone iphone-5">
-                <div className="cs12-iphone-chassis">
-                  <div className="cs12-iphone-viewport">
-                    <div className="cs12-dynamic-island" />
-                    <div className="cs12-phone-glare" />
-                    <img src={screen5} alt="Fymble Activity & Rewards" className="cs12-phone-img" />
-                    <div className="cs12-home-indicator" />
+              {/* Phone 5: Referrals & Habits */}
+              <div className="cs12-panoramic-card">
+                <div className="cs12-screen-badge">
+                  <span className="cs12-badge-dot" />
+                  <span className="cs12-badge-text">Social &amp; Rewards</span>
+                </div>
+                <div className="cs12-panoramic-iphone">
+                  <div className="cs12-iphone-chassis">
+                    <div className="cs12-iphone-viewport">
+                      <div className="cs12-dynamic-island" />
+                      <div className="cs12-phone-glare" />
+                      <img src={screen5} alt="Fymble Referrals & Rewards UI" className="cs12-phone-img" />
+                      <div className="cs12-home-indicator" />
+                    </div>
                   </div>
                 </div>
+                <span className="cs12-screen-sublabel">Viral Gamification</span>
               </div>
             </div>
             <div className="cs12-showcase-caption">
-              <span>Figure 1.1: Core B2C Trainee Journey — Discovery, Passes, Instant Check-in &amp; Habit Retention</span>
+              <span>Figure 1.1: Core B2C Ecosystem — Complete user journey from smart discovery to daily retention</span>
             </div>
           </div>
         </section>

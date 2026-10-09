@@ -487,74 +487,125 @@
 
 /* Hero Showcase 5-Screen Fan with Realistic iPhone 16 Pro Frames */
 .cs12-hero-showcase-box {
-  background: rgba(0, 0, 0, 0.45);
+  background: radial-gradient(circle at 50% 30%, rgba(124, 58, 237, 0.08) 0%, rgba(0, 0, 0, 0.5) 70%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
-  padding: 40px 10px 24px 10px;
+  padding: 36px 16px 24px 16px;
   overflow: hidden;
   text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.cs12-screens-fan-row {
+.cs12-panoramic-studio-grid {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 24px 10px;
-  perspective: 1000px;
-  min-height: 420px;
-  contain: layout style;
+  gap: 20px;
+  padding: 20px 10px 14px 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 58, 237, 0.4) transparent;
 }
 
-.cs12-fan-iphone {
-  width: 190px;
-  height: 390px;
+.cs12-panoramic-studio-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.cs12-panoramic-studio-grid::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 3px;
+}
+
+.cs12-panoramic-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.cs12-panoramic-card:hover {
+  transform: translateY(-8px);
+}
+
+.cs12-screen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.cs12-panoramic-card:hover .cs12-screen-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #f8fafc;
+}
+
+.cs12-screen-badge.center-badge {
+  background: rgba(124, 58, 237, 0.18);
+  border-color: rgba(167, 139, 250, 0.45);
+  color: #e9d5ff;
+  box-shadow: 0 0 14px rgba(124, 58, 237, 0.25);
+}
+
+.cs12-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.cs12-badge-dot-glow {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a78bfa;
+  box-shadow: 0 0 8px #a78bfa;
+}
+
+.cs12-panoramic-iphone {
+  width: 180px;
+  height: 375px;
   position: relative;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.25, 1), opacity 0.35s ease;
-  flex-shrink: 0;
-  user-select: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-.cs12-fan-iphone.iphone-1 {
-  transform: rotate(-13deg) translateY(24px) scale(0.9) translateZ(0);
-  z-index: 1;
-  opacity: 0.92;
+.cs12-panoramic-iphone.center-hero-phone {
+  width: 195px;
+  height: 405px;
 }
 
-.cs12-fan-iphone.iphone-2 {
-  transform: rotate(-6.5deg) translateY(10px) scale(0.95) translateZ(0);
-  z-index: 2;
-  margin-left: -48px;
-  opacity: 0.96;
+.cs12-panoramic-card:hover .cs12-panoramic-iphone {
+  filter: drop-shadow(0 15px 30px rgba(124, 58, 237, 0.25));
 }
 
-.cs12-fan-iphone.iphone-center {
-  transform: scale(1.05) translateY(-6px) translateZ(0);
-  z-index: 5;
-  margin-left: -48px;
-  margin-right: -48px;
+.cs12-screen-sublabel {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.cs12-fan-iphone.iphone-4 {
-  transform: rotate(6.5deg) translateY(10px) scale(0.95) translateZ(0);
-  z-index: 2;
-  opacity: 0.96;
+.cs12-panoramic-card:hover .cs12-screen-sublabel {
+  color: #94a3b8;
 }
 
-.cs12-fan-iphone.iphone-5 {
-  transform: rotate(13deg) translateY(24px) scale(0.9) translateZ(0);
-  z-index: 1;
-  margin-left: -48px;
-  opacity: 0.92;
-}
-
-.cs12-fan-iphone:hover {
-  transform: scale(1.07) translateY(-12px) translateZ(0) !important;
-  z-index: 10 !important;
-  opacity: 1 !important;
+.cs12-screen-sublabel.center-sublabel {
+  color: #a78bfa;
+  font-weight: 600;
 }
 
 /* High-Performance Silky Smooth Glassmorphism iPhone Chassis */
@@ -645,24 +696,16 @@
 }
 
 .cs12-showcase-caption {
-  margin-top: 20px;
+  margin-top: 24px;
   font-size: 13px;
   color: #94a3b8;
   font-style: italic;
 }
 
 @media (max-width: 960px) {
-  .cs12-screens-fan-row {
-    flex-wrap: wrap;
-    gap: 20px;
-    min-height: auto;
-  }
-  .cs12-fan-iphone {
-    width: 170px;
-    height: 350px;
-    transform: none !important;
-    margin: 0 !important;
-    opacity: 1 !important;
+  .cs12-panoramic-studio-grid {
+    justify-content: flex-start;
+    padding-bottom: 20px;
   }
 }
 
