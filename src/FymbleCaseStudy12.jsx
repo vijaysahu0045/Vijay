@@ -158,6 +158,134 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
+          {/* =================================================================
+              SCOPE OF WORK (STAGGERED 4-SPRINT WATERFALL TIMELINE)
+              ================================================================= */}
+          <div className="cs12-scope-of-work-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">01</span>
+                <h2 className="cs12-scope-title">Scope of work</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Throughout our journey we've gone from research to final design ensuring the user feels confident in testing and defining the final version.
+                </p>
+              </div>
+            </div>
+
+            {/* Staggered 4-Sprint Waterfall Stepper */}
+            <div className="cs12-sprint-waterfall-wrapper">
+              <div className="cs12-sprint-grid">
+                {/* Sprint 1: Research */}
+                <div className="cs12-sprint-column sprint-col-1">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">1 Sprint</span>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                          <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">Research</h3>
+                    <ul className="cs12-sprint-list">
+                      <li>User Interviews</li>
+                      <li>Competitor Analysis</li>
+                      <li>Behavior Research</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Sprint 2: Strategy */}
+                <div className="cs12-sprint-column sprint-col-2">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">2 Sprint</span>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10"/>
+                          <circle cx="12" cy="12" r="6"/>
+                          <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">Strategy</h3>
+                    <ul className="cs12-sprint-list">
+                      <li>User Personas</li>
+                      <li>User Journey Mapping</li>
+                      <li>Feature Prioritization</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Sprint 3: UI Design */}
+                <div className="cs12-sprint-column sprint-col-3">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">3 Sprint</span>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m12 19 7-7 3 3-7 7-3-3z"/>
+                          <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                          <path d="m2 2 7.586 7.586"/>
+                          <circle cx="11" cy="11" r="2"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">UI Design</h3>
+                    <ul className="cs12-sprint-list">
+                      <li>Wireframing</li>
+                      <li>Visual Design System</li>
+                      <li>Interactive Prototyping</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Sprint 4: Delivery */}
+                <div className="cs12-sprint-column sprint-col-4">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">4 Sprint</span>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 12 20 22 4 22 4 12"/>
+                          <rect width="20" height="5" x="2" y="7"/>
+                          <line x1="12" y1="22" x2="12" y2="7"/>
+                          <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                          <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">Delivery</h3>
+                    <ul className="cs12-sprint-list">
+                      <li>Usability Testing</li>
+                      <li>Design Refinement</li>
+                      <li>Developer Handoff</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Large Hero 5-Device Isometric Mockup Fan */}
           <div className="cs12-hero-showcase-box">
             <div className="cs12-screens-fan-row">

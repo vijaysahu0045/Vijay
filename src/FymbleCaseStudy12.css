@@ -258,6 +258,207 @@
   gap: 6px;
 }
 
+/* ==========================================================================
+   SCOPE OF WORK (STAGGERED WATERFALL SPRINT TIMELINE)
+   ========================================================================== */
+.cs12-scope-of-work-card {
+  background: rgba(20, 20, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 26px;
+  padding: 44px 40px 60px 40px;
+  margin-bottom: 44px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs12-scope-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.cs12-scope-title-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs12-scope-index {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.cs12-scope-title {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cs12-scope-desc-col {
+  max-width: 440px;
+}
+
+.cs12-scope-desc-col p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Staggered 4-Sprint Waterfall Stepper */
+.cs12-sprint-waterfall-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.cs12-sprint-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+.cs12-sprint-column {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.sprint-col-1 {
+  margin-top: 0px;
+}
+
+.sprint-col-2 {
+  margin-top: 45px;
+}
+
+.sprint-col-3 {
+  margin-top: 90px;
+}
+
+.sprint-col-4 {
+  margin-top: 135px;
+}
+
+.cs12-sprint-badge-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cs12-dotted-leader-line,
+.cs12-dotted-tail-line {
+  flex: 1;
+  height: 0;
+  border-top: 1.5px dotted rgba(255, 255, 255, 0.2);
+}
+
+.cs12-sprint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #20202c;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 5px 6px 5px 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  transition: all 0.25s ease;
+}
+
+.cs12-sprint-pill:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  background: #282838;
+  transform: translateY(-2px);
+}
+
+.cs12-sprint-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.cs12-sprint-icon-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #121216;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cs12-sprint-content {
+  padding-left: 6px;
+}
+
+.cs12-sprint-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.cs12-sprint-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs12-sprint-list li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.cs12-sprint-list li:hover {
+  color: #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .cs12-scope-header-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cs12-sprint-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .sprint-col-1,
+  .sprint-col-2,
+  .sprint-col-3,
+  .sprint-col-4 {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cs12-scope-of-work-card {
+    padding: 28px 20px;
+  }
+  .cs12-sprint-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 .cs12-meta-label {
   font-size: 10.5px;
   font-weight: 800;
