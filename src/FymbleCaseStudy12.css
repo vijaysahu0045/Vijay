@@ -918,12 +918,11 @@
   color: #ffffff;
 }
 
-/* Color Palette Swatches */
-.cs12-color-palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 36px;
+.cs12-colors-3-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  max-width: 860px;
+  margin: 36px auto 0;
 }
 
 .cs12-color-card {
@@ -944,20 +943,16 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
 }
 
-.color-obsidian {
-  background: linear-gradient(180deg, rgba(65, 65, 64, 0.45) 0%, rgba(20, 20, 22, 0.95) 100%);
+.color-black {
+  background: linear-gradient(180deg, rgba(30, 30, 35, 0.6) 0%, rgba(5, 5, 8, 0.98) 100%);
 }
 
 .color-white {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(235, 235, 240, 0.98) 100%);
 }
 
-.color-green {
-  background: linear-gradient(180deg, rgba(56, 188, 55, 0.3) 0%, rgba(20, 45, 25, 0.95) 100%);
-}
-
-.color-red {
-  background: linear-gradient(180deg, rgba(244, 67, 54, 0.3) 0%, rgba(50, 18, 20, 0.95) 100%);
+.color-fymble-coral {
+  background: linear-gradient(180deg, rgba(255, 87, 87, 0.35) 0%, rgba(55, 12, 14, 0.95) 100%);
 }
 
 .cs12-color-swatch-body {
@@ -974,9 +969,8 @@
   letter-spacing: 0.5px;
 }
 
-.color-obsidian .cs12-hex-code,
-.color-green .cs12-hex-code,
-.color-red .cs12-hex-code {
+.color-black .cs12-hex-code,
+.color-fymble-coral .cs12-hex-code {
   color: #ffffff;
 }
 
@@ -989,17 +983,15 @@
   width: 100%;
 }
 
-.bar-obsidian {
-  background: #414140;
+.bar-black {
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .bar-white {
   background: #ffffff;
 }
-.bar-green {
-  background: #38BC37;
-}
-.bar-red {
-  background: #F44336;
+.bar-fymble-coral {
+  background: #FF5757;
 }
 
 @media (max-width: 900px) {
@@ -1007,8 +999,8 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .cs12-color-palette-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cs12-colors-3-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
   .cs12-type-weight-card {
     right: 5%;
@@ -1016,8 +1008,8 @@
 }
 
 @media (max-width: 600px) {
-  .cs12-color-palette-grid {
-    grid-template-columns: 1fr;
+  .cs12-colors-3-grid {
+    grid-template-columns: 1fr !important;
   }
   .cs12-specimen-block {
     flex-direction: column;
