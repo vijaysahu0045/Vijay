@@ -4,6 +4,7 @@ import bgImage from './assets/projects-bg.png'
 
 // Actual Fymble Product Screen Assets
 import screen1 from './assets/fymble-screen-1.png'
+import screen2 from './assets/fymble-screen-2.png'
 import screen3 from './assets/fymble-screen-3.png'
 import screen5 from './assets/fymble-screen-5.png'
 import foodScanner1 from './assets/food-scanner-screen-1.png'
@@ -18,7 +19,8 @@ const SECTIONS_INDEX = [
   { num: '06', id: 'sec-06', label: 'User Persona' },
   { num: '07', id: 'sec-07', label: 'User Journey Map' },
   { num: '08', id: 'sec-08', label: 'User Flow' },
-  { num: '09', id: 'sec-09', label: 'Grid System' }
+  { num: '09', id: 'sec-09', label: 'Grid System' },
+  { num: '10', id: 'sec-10', label: 'Core Experience' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
@@ -1707,6 +1709,133 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     Width 375px
                   </div>
                 </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 10: CORE EXPERIENCE / SPOTLIGHT
+            =================================================================== */}
+        <section id="sec-10" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-core-exp-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">10</span>
+                <h2 className="cs12-scope-title">Core Experience</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  A deep dive into the frictionless interactive core of Fymble — engineered for effortless daily routine tracking, instant workout logging, meal swaps, and real-time habit calibration.
+                </p>
+              </div>
+            </div>
+
+            {/* Showcase Stage */}
+            <div className="cs12-core-exp-stage">
+
+              {/* Big Hero Statement Headline */}
+              <div className="cs12-core-exp-hero-text">
+                <h2>
+                  Seamless habit & workout tracking<br />
+                  for a better <span className="highlight-text">fitness</span><br />
+                  <span className="muted-text">Experience.</span>
+                </h2>
+              </div>
+
+              {/* Main Interactive Spotlight Canvas */}
+              <div className="cs12-spotlight-canvas">
+
+                {/* Left Annotation */}
+                <div className="cs12-spotlight-side-annotation left-side">
+                  <div className="cs12-side-icon-box paper-plane">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 2L11 13" />
+                      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+                    </svg>
+                  </div>
+                  <p className="cs12-side-desc">
+                    A simple and intuitive flow that helps users log habits, track workouts, and swap routines in just a few taps. Clear input metrics, smart goal detection.
+                  </p>
+                </div>
+
+                {/* Central Floating Phone Mockup */}
+                <div className="cs12-spotlight-phone-wrapper">
+                  <div className="cs12-spotlight-phone-frame">
+                    <div className="cs12-spotlight-phone-island" />
+                    <img src={screen2} alt="Fymble Swap & Track Screen" className="cs12-spotlight-screen-img" />
+                    <div className="cs12-spotlight-phone-glow" />
+                  </div>
+
+                  {/* SVG Connector Lines to Floating Detail Cards */}
+                  <svg className="cs12-spotlight-connectors" viewBox="0 0 700 500">
+                    {/* Top right curve */}
+                    <path d="M 370 190 C 430 190, 450 140, 500 140" className="cs12-spotlight-path" />
+                    <circle cx="370" cy="190" r="3.5" className="cs12-spotlight-dot" />
+                    <circle cx="500" cy="140" r="3.5" className="cs12-spotlight-dot" />
+
+                    {/* Bottom left curve */}
+                    <path d="M 330 330 C 270 330, 240 400, 190 400" className="cs12-spotlight-path" />
+                    <circle cx="330" cy="330" r="3.5" className="cs12-spotlight-dot" />
+                    <circle cx="190" cy="400" r="3.5" className="cs12-spotlight-dot" />
+                  </svg>
+
+                  {/* Top-Right Floating UI Callout Card */}
+                  <div className="cs12-floating-detail-card card-top-right">
+                    <div className="cs12-fdc-header">
+                      <span className="cs12-fdc-label">Daily Burn Goal</span>
+                      <div className="cs12-fdc-balance">
+                        <span>Target: <strong>650 kcal</strong></span>
+                        <span className="cs12-fdc-max-pill">Active</span>
+                      </div>
+                    </div>
+                    <div className="cs12-fdc-body">
+                      <div className="cs12-fdc-token">
+                        <div className="cs12-fdc-token-icon gold-burn">🔥</div>
+                        <span className="cs12-fdc-token-name">HIIT Workout</span>
+                      </div>
+                      <div className="cs12-fdc-value-col">
+                        <span className="cs12-fdc-val">450 kcal</span>
+                        <span className="cs12-fdc-subval">= 45 min completed</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom-Left Floating UI Callout Card */}
+                  <div className="cs12-floating-detail-card card-bottom-left">
+                    <div className="cs12-fdc-header">
+                      <span className="cs12-fdc-label">Protein Target</span>
+                      <div className="cs12-fdc-balance">
+                        <span>Daily Goal: <strong>140.0g</strong></span>
+                      </div>
+                    </div>
+                    <div className="cs12-fdc-body">
+                      <div className="cs12-fdc-token">
+                        <div className="cs12-fdc-token-icon green-nutrition">🥗</div>
+                        <span className="cs12-fdc-token-name">Macro Intake</span>
+                      </div>
+                      <div className="cs12-fdc-value-col">
+                        <span className="cs12-fdc-val">115.5g</span>
+                        <span className="cs12-fdc-subval">= 82.5% achieved</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Right Annotation */}
+                <div className="cs12-spotlight-side-annotation right-side">
+                  <div className="cs12-side-icon-box sync-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19" />
+                    </svg>
+                  </div>
+                  <p className="cs12-side-desc">
+                    Swap workouts and meal plans dynamically with live biometric feedback, automated macro tracking, and real-time habit calibration for peak consistency.
+                  </p>
+                </div>
+
               </div>
 
             </div>

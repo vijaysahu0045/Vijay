@@ -3447,5 +3447,333 @@
   }
 }
 
+/* ===================================================================
+   SECTION 10: CORE EXPERIENCE / SPOTLIGHT STYLES
+   =================================================================== */
+.cs12-core-exp-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.cs12-core-exp-stage {
+  padding: 20px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cs12-core-exp-hero-text {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.cs12-core-exp-hero-text h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.cs12-core-exp-hero-text .highlight-text {
+  color: #FF5757;
+}
+
+.cs12-core-exp-hero-text .muted-text {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.cs12-spotlight-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 520px;
+  margin-top: 10px;
+}
+
+.cs12-spotlight-side-annotation {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 5;
+}
+
+.cs12-side-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cs12-side-icon-box.paper-plane {
+  color: #e2e8f0;
+}
+
+.cs12-side-icon-box.sync-icon {
+  color: #FF5757;
+  background: rgba(255, 87, 87, 0.1);
+  border-color: rgba(255, 87, 87, 0.25);
+}
+
+.cs12-side-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cs12-spotlight-phone-wrapper {
+  position: relative;
+  width: 340px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs12-spotlight-phone-frame {
+  width: 260px;
+  height: 490px;
+  background: #0b0c10;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 87, 87, 0.12);
+  z-index: 4;
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease;
+}
+
+.cs12-spotlight-phone-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.cs12-spotlight-phone-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 14px;
+  background: #000000;
+  border-radius: 10px;
+  z-index: 6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cs12-spotlight-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.cs12-spotlight-phone-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(11, 12, 16, 0.85), transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* SVG Connectors */
+.cs12-spotlight-connectors {
+  position: absolute;
+  top: 0;
+  left: -180px;
+  width: 700px;
+  height: 500px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.cs12-spotlight-path {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 4 4;
+}
+
+.cs12-spotlight-dot {
+  fill: #ffffff;
+  stroke: #FF5757;
+  stroke-width: 1.5;
+}
+
+/* Floating Detail Cards */
+.cs12-floating-detail-card {
+  position: absolute;
+  background: rgba(22, 24, 30, 0.92);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: 14px 18px;
+  width: 230px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  animation: cs12-float-subtle 4s ease-in-out infinite alternate;
+}
+
+.cs12-floating-detail-card.card-top-right {
+  top: 50px;
+  right: -100px;
+  animation-delay: 0.5s;
+}
+
+.cs12-floating-detail-card.card-bottom-left {
+  bottom: 50px;
+  left: -100px;
+  animation-delay: 1.5s;
+}
+
+.cs12-fdc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cs12-fdc-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.cs12-fdc-balance {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs12-fdc-max-pill {
+  background: rgba(255, 87, 87, 0.2);
+  color: #FF5757;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cs12-fdc-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cs12-fdc-token {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs12-fdc-token-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.cs12-fdc-token-icon.gold-burn {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.cs12-fdc-token-icon.green-nutrition {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.cs12-fdc-token-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cs12-fdc-value-col {
+  text-align: right;
+}
+
+.cs12-fdc-val {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+}
+
+.cs12-fdc-subval {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.5px;
+  color: #94a3b8;
+  display: block;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .cs12-spotlight-canvas {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cs12-spotlight-side-annotation {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cs12-spotlight-connectors {
+    display: none;
+  }
+
+  .cs12-floating-detail-card.card-top-right {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .cs12-floating-detail-card.card-bottom-left {
+    position: static;
+    margin-top: 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .cs12-core-exp-hero-text h2 {
+    font-size: 28px;
+  }
+}
+
+
 
 
