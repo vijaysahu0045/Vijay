@@ -465,44 +465,105 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 03: THE STRATEGIC SOLUTION & CORE PILLARS
+            SECTION 03: TYPOGRAPHY & COLORS (DESIGN SYSTEM FOUNDATION)
             =================================================================== */}
         <section id="sec-03" className="cs12-section">
-          <div className="cs12-section-badge">
-            <span className="cs12-num-tag">NO. 03</span>
-            <span className="cs12-section-name">THE SOLUTION</span>
-          </div>
-
-          <h2 className="cs12-section-heading">A unified fitness marketplace paired with an AI Copilot.</h2>
-          <p className="cs12-section-intro">
-            Fymble reimagines fitness accessibility across 3 synergistic product pillars:
-          </p>
-
-          <div className="cs12-solution-pillars-grid">
-            <div className="cs12-sol-card">
-              <div className="cs12-sol-badge">PILLAR 01</div>
-              <h3>Flexible On-Demand Passes</h3>
-              <p>Pay-as-you-go Daily (₹99), Weekly, and Monthly passes across 600+ partner fitness studios with zero long-term lock-in.</p>
-              <div className="cs12-sol-preview-img">
-                <img src={gymPassBanner} alt="Fymble Daily Pass ₹99" />
+          <div className="cs12-scope-of-work-card cs12-typography-colors-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">03</span>
+                <h2 className="cs12-scope-title">Typography &amp; Colors</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Crafted a clean, high-contrast visual system using Roboto typography and energetic fitness color tokens optimized for legibility and visual hierarchy across AMOLED displays.
+                </p>
               </div>
             </div>
 
-            <div className="cs12-sol-card">
-              <div className="cs12-sol-badge">PILLAR 02</div>
-              <h3>Kyra AI Health Companion</h3>
-              <p>Conversational multimodal AI coach providing real-time meal analysis, instant workout adjustments, and dietary streak motivation.</p>
-              <div className="cs12-sol-preview-img">
-                <img src={aiDiet1} alt="Kyra AI Assistant" />
+            {/* Giant Roboto Showcase with Floating Weight Badge */}
+            <div className="cs12-type-hero-display">
+              <span className="cs12-type-huge-name">Roboto</span>
+              <div className="cs12-type-weight-card">
+                <span className="cs12-weight-title">Weight</span>
+                <div className="cs12-weight-items">
+                  <span className="cs12-weight-row weight-regular">Regular <span>400</span></span>
+                  <span className="cs12-weight-row weight-medium">Medium <span>500</span></span>
+                  <span className="cs12-weight-row weight-bold">Semibold <span>700</span></span>
+                </div>
               </div>
             </div>
 
-            <div className="cs12-sol-card">
-              <div className="cs12-sol-badge">PILLAR 03</div>
-              <h3>B2B Gym Partner SaaS</h3>
-              <p>Enterprise operating system enabling gym owners to manage live QR check-ins, revenue telemetry, trainer schedules, and member analytics.</p>
-              <div className="cs12-sol-preview-img">
-                <img src={gymMgmt1} alt="B2B SaaS Dashboard" />
+            {/* Specimen & Type Hierarchy Scale Grid */}
+            <div className="cs12-type-specimen-grid">
+              {/* Left: Glyphs & Alphabets */}
+              <div className="cs12-type-specimen-left">
+                <div className="cs12-specimen-block">
+                  <span className="cs12-specimen-label">Headings</span>
+                  <div className="cs12-specimen-glyphs">
+                    <p className="cs12-glyph-alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                    <p className="cs12-glyph-digits">0123456789</p>
+                  </div>
+                </div>
+
+                <div className="cs12-specimen-block">
+                  <span className="cs12-specimen-label">Text</span>
+                  <div className="cs12-specimen-glyphs">
+                    <p className="cs12-glyph-alpha">abcdefghijklmnopqrstuvwxyz</p>
+                    <p className="cs12-glyph-digits">0123456789</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Type Scale Spec Box */}
+              <div className="cs12-type-scale-card">
+                <div className="cs12-type-scale-row">
+                  <span className="cs12-scale-name">Headline</span>
+                  <span className="cs12-scale-val">48px</span>
+                </div>
+                <div className="cs12-type-scale-row">
+                  <span className="cs12-scale-name">Subheadline</span>
+                  <span className="cs12-scale-val">24px</span>
+                </div>
+                <div className="cs12-type-scale-row">
+                  <span className="cs12-scale-name">Body Text</span>
+                  <span className="cs12-scale-val">16px</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Color Palette Cards */}
+            <div className="cs12-color-palette-grid">
+              {/* Color 1: Obsidian Charcoal */}
+              <div className="cs12-color-card color-obsidian">
+                <div className="cs12-color-swatch-body">
+                  <span className="cs12-hex-code">#414140</span>
+                </div>
+                <div className="cs12-color-bottom-bar bar-obsidian" />
+              </div>
+
+              {/* Color 2: Pure White */}
+              <div className="cs12-color-card color-white">
+                <div className="cs12-color-swatch-body">
+                  <span className="cs12-hex-code">#FFFFFF</span>
+                </div>
+                <div className="cs12-color-bottom-bar bar-white" />
+              </div>
+
+              {/* Color 3: Fitness Vigor Green */}
+              <div className="cs12-color-card color-green">
+                <div className="cs12-color-swatch-body">
+                  <span className="cs12-hex-code">#38BC37</span>
+                </div>
+                <div className="cs12-color-bottom-bar bar-green" />
+              </div>
+
+              {/* Color 4: Fymble Crimson Red */}
+              <div className="cs12-color-card color-red">
+                <div className="cs12-color-swatch-body">
+                  <span className="cs12-hex-code">#F44336</span>
+                </div>
+                <div className="cs12-color-bottom-bar bar-red" />
               </div>
             </div>
           </div>
