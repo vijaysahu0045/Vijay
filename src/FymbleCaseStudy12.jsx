@@ -562,74 +562,198 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 04: USER RESEARCH & DUAL-SIDED PERSONAS
+            SECTION 04: USER RESEARCH & KEY INSIGHTS
             =================================================================== */}
         <section id="sec-04" className="cs12-section">
-          <div className="cs12-section-badge">
-            <span className="cs12-num-tag">NO. 04</span>
-            <span className="cs12-section-name">USER RESEARCH &amp; PERSONAS</span>
-          </div>
-
-          <h2 className="cs12-section-heading">Balancing the dual needs of trainees and gym owners.</h2>
-          <p className="cs12-section-intro">
-            Fymble operates a two-sided marketplace. Success depended on understanding both sides of the fitness counter.
-          </p>
-
-          {/* Persona Switcher Tabs */}
-          <div className="cs12-persona-tabs">
-            <button
-              className={`cs12-tab-btn ${activePersona === 'trainee' ? 'active' : ''}`}
-              onClick={() => setActivePersona('trainee')}
-            >
-              <span>🏃‍♂️ Trainee: Rohan (Urban Professional)</span>
-            </button>
-            <button
-              className={`cs12-tab-btn ${activePersona === 'owner' ? 'active' : ''}`}
-              onClick={() => setActivePersona('owner')}
-            >
-              <span>🏋️ Gym Owner: Vikram (Studio Founder)</span>
-            </button>
-          </div>
-
-          {activePersona === 'trainee' ? (
-            <div className="cs12-persona-card">
-              <div className="cs12-persona-left">
-                <span className="cs12-role-pill">B2C END USER</span>
-                <h3>Rohan Mehta, 27</h3>
-                <p className="cs12-persona-bio">Software Engineer living in Bengaluru. Works hybrid and frequently travels between Indiranagar and Whitefield.</p>
-                <div className="cs12-quote-box">
-                  <em>"I want to work out 4 days a week, but paying ₹25,000 upfront for a gym I can only visit on weekends makes no sense."</em>
-                </div>
+          <div className="cs12-scope-of-work-card cs12-user-research-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">04</span>
+                <h2 className="cs12-scope-title">User Research &amp; Key Insights</h2>
               </div>
-              <div className="cs12-persona-right">
-                <h4>Core Needs &amp; Pain Points:</h4>
-                <ul className="cs12-check-list">
-                  <li>Needs pay-per-visit flexibility near office and residence</li>
-                  <li>Wants clear calorie &amp; macronutrient feedback without typing numbers</li>
-                  <li>Requires instant QR check-in without front-desk delay</li>
-                </ul>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Conducted quantitative user surveys and in-depth interviews across 120+ active gym-goers and fitness beginners to discover core behavioral blockers in habit retention.
+                </p>
               </div>
             </div>
-          ) : (
-            <div className="cs12-persona-card">
-              <div className="cs12-persona-left">
-                <span className="cs12-role-pill">B2B PARTNER</span>
-                <h3>Vikram Singhal, 42</h3>
-                <p className="cs12-persona-bio">Owner of a premium CrossFit &amp; Functional Fitness studio in Koramangala with 12 trainers.</p>
-                <div className="cs12-quote-box">
-                  <em>"Between 11 AM and 5 PM our floor is 70% empty. We need recurring footfall without slashing our annual brand value."</em>
+
+            {/* Research Layout: 2x2 Alternating Grid matching Behance Design */}
+            <div className="cs12-research-insights-container">
+              {/* Row 1: Survey Question 1 (Top Right) */}
+              <div className="cs12-research-row-grid">
+                <div className="cs12-research-question-col">
+                  <h3 className="cs12-research-question-title">
+                    Have you experienced difficulties while managing your fitness &amp; diet?
+                  </h3>
+                </div>
+
+                <div className="cs12-research-chart-card">
+                  <div className="cs12-chart-card-header">
+                    <span className="cs12-chart-title">User Result</span>
+                  </div>
+                  <div className="cs12-chart-bars-list">
+                    {/* Bar 1: Yes 85% */}
+                    <div className="cs12-chart-bar-item">
+                      <span className="cs12-bar-label">Yes</span>
+                      <div className="cs12-bar-track">
+                        <div className="cs12-bar-fill fill-coral" style={{ width: '85%' }}>
+                          <span className="cs12-bar-percent">85%</span>
+                        </div>
+                      </div>
+                      <div className="cs12-avatar-cluster">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="User 1" />
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="User 2" />
+                      </div>
+                    </div>
+
+                    {/* Bar 2: Occasionally 54% */}
+                    <div className="cs12-chart-bar-item">
+                      <span className="cs12-bar-label">Occasionally</span>
+                      <div className="cs12-bar-track">
+                        <div className="cs12-bar-fill fill-coral-light" style={{ width: '54%' }}>
+                          <span className="cs12-bar-percent">54%</span>
+                        </div>
+                      </div>
+                      <div className="cs12-avatar-cluster">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=60&q=80" alt="User 3" />
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=60&q=80" alt="User 4" />
+                      </div>
+                    </div>
+
+                    {/* Bar 3: No 13% */}
+                    <div className="cs12-chart-bar-item">
+                      <span className="cs12-bar-label">No</span>
+                      <div className="cs12-bar-track">
+                        <div className="cs12-bar-fill fill-gray" style={{ width: '13%' }}>
+                          <span className="cs12-bar-percent">13%</span>
+                        </div>
+                      </div>
+                      <div className="cs12-avatar-cluster">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="User 5" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="cs12-persona-right">
-                <h4>Core Needs &amp; Pain Points:</h4>
-                <ul className="cs12-check-list">
-                  <li>Monetize off-peak gym floor capacity through daily pass visitors</li>
-                  <li>Automate guest check-in verification via QR code scanning</li>
-                  <li>Real-time automated payouts and daily footfall reporting</li>
-                </ul>
+
+              {/* Row 2: Survey Question 2 (Bottom Left) */}
+              <div className="cs12-research-row-grid reverse-grid">
+                <div className="cs12-research-question-col">
+                  <h3 className="cs12-research-question-title">
+                    Which fitness challenges do you encounter most frequently?
+                  </h3>
+                </div>
+
+                <div className="cs12-research-chart-card">
+                  <div className="cs12-chart-card-header">
+                    <span className="cs12-chart-title">Key User Challenges</span>
+                  </div>
+                  
+                  {/* Semi-Circular Radial Arc Chart */}
+                  <div className="cs12-arc-chart-wrapper">
+                    <svg viewBox="0 0 320 180" className="cs12-arc-chart-svg">
+                      {/* Arc Base Gray */}
+                      <path d="M 40 160 A 120 120 0 0 1 280 160" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="12" strokeLinecap="round" />
+                      {/* Segment 1: Green 85% */}
+                      <path d="M 40 160 A 120 120 0 0 1 105 58" fill="none" stroke="#22C55E" strokeWidth="12" strokeLinecap="round" />
+                      {/* Segment 2: Red-Coral 45% */}
+                      <path d="M 112 52 A 120 120 0 0 1 210 52" fill="none" stroke="#FF5757" strokeWidth="12" strokeLinecap="round" />
+                      {/* Segment 3: Slate 65% */}
+                      <path d="M 218 58 A 120 120 0 0 1 280 160" fill="none" stroke="#64748b" strokeWidth="12" strokeLinecap="round" />
+                    </svg>
+
+                    {/* Radial Arc Legend & Data Points */}
+                    <div className="cs12-arc-legend-grid">
+                      <div className="cs12-arc-legend-item left-item">
+                        <span className="cs12-arc-percent green-text">85%</span>
+                        <span className="cs12-arc-label">Membership Lock-in</span>
+                      </div>
+                      <div className="cs12-arc-legend-item center-item">
+                        <span className="cs12-arc-percent coral-text">45%</span>
+                        <span className="cs12-arc-label">Inconsistent Habits</span>
+                      </div>
+                      <div className="cs12-arc-legend-item right-item">
+                        <span className="cs12-arc-percent slate-text">65%</span>
+                        <span className="cs12-arc-label">Manual Meal Logging</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 3: Survey Question 3 (Top Right in Image 2) */}
+              <div className="cs12-research-row-grid">
+                <div className="cs12-research-question-col">
+                  <h3 className="cs12-research-question-title">
+                    How easy is it to manage workouts &amp; diet using current apps?
+                  </h3>
+                </div>
+
+                <div className="cs12-research-chart-card">
+                  <div className="cs12-chart-card-header">
+                    <span className="cs12-chart-subtitle-text">Users expect a simpler, unified fitness experience.</span>
+                  </div>
+
+                  {/* Staircase Step Progression Chart */}
+                  <div className="cs12-staircase-chart-container">
+                    <div className="cs12-staircase-steps">
+                      {/* Step 1 */}
+                      <div className="cs12-stair-col stair-1">
+                        <span className="cs12-stair-percent coral-text">56%</span>
+                        <span className="cs12-stair-name">Very Difficult</span>
+                        <div className="cs12-stair-bar" style={{ height: '30px', background: '#FF5757' }} />
+                      </div>
+                      {/* Step 2 */}
+                      <div className="cs12-stair-col stair-2">
+                        <span className="cs12-stair-percent coral-text">45%</span>
+                        <span className="cs12-stair-name">Difficult</span>
+                        <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 87, 87, 0.6)' }} />
+                      </div>
+                      {/* Step 3 */}
+                      <div className="cs12-stair-col stair-3">
+                        <span className="cs12-stair-percent">32%</span>
+                        <span className="cs12-stair-name">Neutral</span>
+                        <div className="cs12-stair-bar" style={{ height: '70px', background: 'rgba(255, 255, 255, 0.2)' }} />
+                      </div>
+                      {/* Step 4 */}
+                      <div className="cs12-stair-col stair-4">
+                        <span className="cs12-stair-percent green-text">25%</span>
+                        <span className="cs12-stair-name">Easy</span>
+                        <div className="cs12-stair-bar" style={{ height: '90px', background: 'rgba(34, 197, 94, 0.6)' }} />
+                      </div>
+                      {/* Step 5 */}
+                      <div className="cs12-stair-col stair-5">
+                        <span className="cs12-stair-percent green-text">15%</span>
+                        <span className="cs12-stair-name">Very Easy</span>
+                        <div className="cs12-stair-bar" style={{ height: '110px', background: '#22C55E' }} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 4: Key Persona Quote (Bottom Left in Image 2) */}
+              <div className="cs12-research-quote-card">
+                <span className="cs12-quote-big-mark">“</span>
+                <p className="cs12-featured-persona-quote">
+                  <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
+                </p>
+                <div className="cs12-quote-persona-author">
+                  <div className="cs12-persona-avatar-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                      alt="Emma Wilson"
+                    />
+                  </div>
+                  <div className="cs12-persona-author-info">
+                    <h4 className="cs12-persona-author-name">Emma Wilson</h4>
+                    <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
+                  </div>
+                </div>
               </div>
             </div>
-          )}
+          </div>
         </section>
 
         {/* ===================================================================
