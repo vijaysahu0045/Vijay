@@ -131,9 +131,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             <h1 className="cs12-main-title">
               Fymble — <span className="highlight-purple">Redefining Fitness &amp; Health</span>
             </h1>
-            <p className="cs12-lead-desc">
-              Designing the complete 0→1 digital product ecosystem that eliminates high-barrier gym memberships through flexible daily passes and autonomous AI dietary habit coaching.
-            </p>
           </div>
 
           {/* Project Snapshot Grid */}

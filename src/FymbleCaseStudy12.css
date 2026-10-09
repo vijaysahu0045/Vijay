@@ -223,7 +223,7 @@
   font-size: clamp(32px, 4.5vw, 48px);
   font-weight: 800;
   line-height: 1.15;
-  margin: 0 0 18px;
+  margin: 0 0 32px;
   letter-spacing: -0.03em;
 }
 
