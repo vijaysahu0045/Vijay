@@ -24,7 +24,7 @@ import gymMgmt2 from './assets/gym-mgmt-screen-2.png'
 import gymMgmt3 from './assets/gym-mgmt-screen-3.png'
 import gymMgmt4 from './assets/gym-mgmt-screen-4.png'
 
-// Web & Marketing Landing Assets
+import nutritionScreen3 from './assets/nutrition-screen-3.png'
 import fymbleWebLanding from './assets/fymble-home-website-landing.png'
 import kyraWebLanding from './assets/kyra-ai-website-landing.png'
 import gymPassBanner from './assets/fymble-gym-pass-banner.jpg'
@@ -283,27 +283,71 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Large Hero 5-Device Isometric Mockup Fan */}
+          {/* Large Hero 5-Device Isometric Mockup Fan with Realistic iPhone Frames */}
           <div className="cs12-hero-showcase-box">
             <div className="cs12-screens-fan-row">
-              <div className="cs12-fan-screen screen-1">
-                <img src={screen2} alt="Fymble Studio Discovery" />
+              {/* Phone 1 (Far Left): Food Scanner */}
+              <div className="cs12-fan-iphone iphone-1">
+                <div className="cs12-iphone-chassis">
+                  <div className="cs12-iphone-viewport">
+                    <div className="cs12-dynamic-island" />
+                    <div className="cs12-phone-glare" />
+                    <img src={foodScanner1} alt="Fymble Food Scanner" className="cs12-phone-img" />
+                    <div className="cs12-home-indicator" />
+                  </div>
+                </div>
               </div>
-              <div className="cs12-fan-screen screen-2">
-                <img src={screen3} alt="Fymble Class Selection" />
+
+              {/* Phone 2 (Left): Class Selection */}
+              <div className="cs12-fan-iphone iphone-2">
+                <div className="cs12-iphone-chassis">
+                  <div className="cs12-iphone-viewport">
+                    <div className="cs12-dynamic-island" />
+                    <div className="cs12-phone-glare" />
+                    <img src={screen3} alt="Fymble Class Selection" className="cs12-phone-img" />
+                    <div className="cs12-home-indicator" />
+                  </div>
+                </div>
               </div>
-              <div className="cs12-fan-screen screen-center">
-                <img src={screen1} alt="Fymble Flexible Pass Booking" />
+
+              {/* Phone 3 (Center): Fymble Home & Pass Discovery (Elevated & Glowing) */}
+              <div className="cs12-fan-iphone iphone-center">
+                <div className="cs12-iphone-chassis center-chassis">
+                  <div className="cs12-iphone-viewport">
+                    <div className="cs12-dynamic-island" />
+                    <div className="cs12-phone-glare" />
+                    <img src={screen1} alt="Fymble Pass Discovery" className="cs12-phone-img" />
+                    <div className="cs12-home-indicator" />
+                  </div>
+                </div>
               </div>
-              <div className="cs12-fan-screen screen-4">
-                <img src={screen4} alt="Fymble Pass Pass Details" />
+
+              {/* Phone 4 (Right): Nutrition Recipes */}
+              <div className="cs12-fan-iphone iphone-4">
+                <div className="cs12-iphone-chassis">
+                  <div className="cs12-iphone-viewport">
+                    <div className="cs12-dynamic-island" />
+                    <div className="cs12-phone-glare" />
+                    <img src={nutritionScreen3} alt="Fymble Food Recipes" className="cs12-phone-img" />
+                    <div className="cs12-home-indicator" />
+                  </div>
+                </div>
               </div>
-              <div className="cs12-fan-screen screen-5">
-                <img src={screen5} alt="Fymble Trainee Activity Hub" />
+
+              {/* Phone 5 (Far Right): Refer & Earn */}
+              <div className="cs12-fan-iphone iphone-5">
+                <div className="cs12-iphone-chassis">
+                  <div className="cs12-iphone-viewport">
+                    <div className="cs12-dynamic-island" />
+                    <div className="cs12-phone-glare" />
+                    <img src={screen5} alt="Fymble Activity & Rewards" className="cs12-phone-img" />
+                    <div className="cs12-home-indicator" />
+                  </div>
+                </div>
               </div>
             </div>
             <div className="cs12-showcase-caption">
-              <span>Figure 1.1: Core B2C Trainee Journey — Discovery, Passes, Instant Check-in &amp; Progress</span>
+              <span>Figure 1.1: Core B2C Trainee Journey — Discovery, Passes, Instant Check-in &amp; Habit Retention</span>
             </div>
           </div>
         </section>
