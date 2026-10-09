@@ -20,7 +20,8 @@ const SECTIONS_INDEX = [
   { num: '07', id: 'sec-07', label: 'User Journey Map' },
   { num: '08', id: 'sec-08', label: 'User Flow' },
   { num: '09', id: 'sec-09', label: 'Grid System' },
-  { num: '10', id: 'sec-10', label: 'Core Experience' }
+  { num: '10', id: 'sec-10', label: 'Core Experience' },
+  { num: '11', id: 'sec-11', label: 'User Testing Result' }
 ]
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
@@ -1836,6 +1837,129 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   </p>
                 </div>
 
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 11: USER TESTING RESULT
+            =================================================================== */}
+        <section id="sec-11" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-testing-result-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">11</span>
+                <h2 className="cs12-scope-title">User testing Result</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Usability testing with 30 participants helped validate key flows, measure real-world friction, and refine the fitness & habit experience before launch.
+                </p>
+              </div>
+            </div>
+
+            {/* Matrix Container */}
+            <div className="cs12-testing-table-wrapper">
+              <h3 className="cs12-testing-table-title">Mission</h3>
+
+              {/* Table Header Row */}
+              <div className="cs12-testing-grid-row cs12-testing-grid-header">
+                <div className="cs12-testing-cell cell-task">Task</div>
+                <div className="cs12-testing-cell cell-time">Average Time</div>
+                <div className="cs12-testing-cell cell-rate">Success Rate</div>
+                <div className="cs12-testing-cell cell-comp">Completion</div>
+              </div>
+
+              {/* Row 1 */}
+              <div className="cs12-testing-grid-row cs12-testing-data-row">
+                <div className="cs12-testing-cell cell-task">
+                  <span className="cs12-task-text">Sign in & Access Dashboard</span>
+                </div>
+                <div className="cs12-testing-metric-track">
+                  <div className="cs12-testing-cell cell-time">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">18</span><span className="pill-unit">s</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-rate">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">87</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-comp">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">100</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="cs12-testing-grid-row cs12-testing-data-row">
+                <div className="cs12-testing-cell cell-task">
+                  <span className="cs12-task-text">Book a Gym Pass & Check-In</span>
+                </div>
+                <div className="cs12-testing-metric-track">
+                  <div className="cs12-testing-cell cell-time">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">37</span><span className="pill-unit">s</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-rate">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">93</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-comp">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">97</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="cs12-testing-grid-row cs12-testing-data-row">
+                <div className="cs12-testing-cell cell-task">
+                  <span className="cs12-task-text">Customize Habit Routine & Set Reminders</span>
+                </div>
+                <div className="cs12-testing-metric-track">
+                  <div className="cs12-testing-cell cell-time">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">45</span><span className="pill-unit">s</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-rate">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">95</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                  <div className="cs12-testing-cell cell-comp">
+                    <div className="cs12-test-pill">
+                      <span className="pill-dot left" />
+                      <span className="pill-num">100</span><span className="pill-unit">%</span>
+                      <span className="pill-dot right" />
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
