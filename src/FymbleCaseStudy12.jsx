@@ -32,17 +32,17 @@ import nutritionConsultLanding from './assets/nutrition-consultation-landing.png
 import blogLanding from './assets/blog-page-website-landing.png'
 
 const SECTIONS_INDEX = [
-  { num: '01', id: 'sec-01', label: 'Overview' },
-  { num: '02', id: 'sec-02', label: 'The Problem' },
-  { num: '03', id: 'sec-03', label: 'The Solution' },
+  { num: '01', id: 'sec-01', label: 'Scope of Work' },
+  { num: '02', id: 'sec-02', label: 'Strategy & Planning' },
+  { num: '03', id: 'sec-03', label: 'Typography & Colors' },
   { num: '04', id: 'sec-04', label: 'User Research' },
-  { num: '05', id: 'sec-05', label: 'Architecture' },
-  { num: '06', id: 'sec-06', label: 'Design System' },
-  { num: '07', id: 'sec-07', label: 'Gym Discovery' },
-  { num: '08', id: 'sec-08', label: 'Kyra AI Coach' },
-  { num: '09', id: 'sec-09', label: 'Food Scanner' },
-  { num: '10', id: 'sec-10', label: 'B2B Platform' },
-  { num: '11', id: 'sec-11', label: 'Web Ecosystem' },
+  { num: '05', id: 'sec-05', label: 'Problem & Solution' },
+  { num: '06', id: 'sec-06', label: 'User Persona' },
+  { num: '07', id: 'sec-07', label: 'Design System' },
+  { num: '08', id: 'sec-08', label: 'Gym Discovery' },
+  { num: '09', id: 'sec-09', label: 'Kyra AI Coach' },
+  { num: '10', id: 'sec-10', label: 'Food Scanner' },
+  { num: '11', id: 'sec-11', label: 'B2B Platform' },
   { num: '12', id: 'sec-12', label: 'Impact & Results' }
 ]
 
@@ -875,11 +875,189 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 06: VISUAL IDENTITY & DESIGN SYSTEM
+            SECTION 06: USER PERSONA & BEHAVIORAL ARCHETYPES
             =================================================================== */}
         <section id="sec-06" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-user-persona-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">06</span>
+                <h2 className="cs12-scope-title">User Persona</h2>
+              </div>
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Architected user-centered journeys by synthesizing target motivations, routine hurdles, and habit friction into actionable product priorities.
+                </p>
+              </div>
+            </div>
+
+            {/* Main Persona Canvas (Top Row: Portrait Card + Quote & 3 Stacks) */}
+            <div className="cs12-persona-main-grid">
+              {/* Left Column: Portrait Card */}
+              <div className="cs12-persona-portrait-card">
+                <div className="cs12-persona-image-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                    alt="Wade Warren Persona"
+                    className="cs12-persona-img"
+                  />
+                  <div className="cs12-persona-img-gradient" />
+                </div>
+                <div className="cs12-persona-badge-info">
+                  <h3 className="cs12-persona-name">Wade Warren</h3>
+                  <span className="cs12-persona-role">Marketing Manager</span>
+                </div>
+              </div>
+
+              {/* Right Column: Quote + 3 Glass Cards */}
+              <div className="cs12-persona-details-col">
+                {/* Quote Header */}
+                <div className="cs12-persona-quote-box">
+                  <span className="cs12-persona-quote-icon">“</span>
+                  <p className="cs12-persona-quote-text">
+                    I want complete visibility over my fitness and diet, with clear insights into my workouts, calories, and progress without navigating through multiple apps.
+                  </p>
+                </div>
+
+                {/* 3 Frosted Pill Cards: Goals, Pain Points, Needs */}
+                <div className="cs12-persona-cards-stack">
+                  {/* Card 1: User Goals */}
+                  <div className="cs12-persona-spec-card card-goals">
+                    <div className="cs12-spec-card-header">
+                      <div className="cs12-spec-icon-circle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <circle cx="12" cy="12" r="6" />
+                          <circle cx="12" cy="12" r="2" />
+                        </svg>
+                      </div>
+                      <h4 className="cs12-spec-title">User Goals</h4>
+                    </div>
+                    <ul className="cs12-spec-list">
+                      <li>Get a clear overview of all nearby gyms and flexible passes</li>
+                      <li>Track daily workout routines and manage calorie budgets better</li>
+                      <li>Make smarter, data-driven daily fitness decisions</li>
+                    </ul>
+                  </div>
+
+                  {/* Card 2: User Pain Points */}
+                  <div className="cs12-persona-spec-card card-pain">
+                    <div className="cs12-spec-card-header">
+                      <div className="cs12-spec-icon-circle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <line x1="12" y1="8" x2="12" y2="12" />
+                          <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                      </div>
+                      <h4 className="cs12-spec-title">User Pain Points</h4>
+                    </div>
+                    <ul className="cs12-spec-list">
+                      <li>Hard to track health metrics across multiple disconnected apps</li>
+                      <li>Unclear calorie burn patterns and inconsistent motivation</li>
+                      <li>Too many complicated steps to book single-day gym passes</li>
+                    </ul>
+                  </div>
+
+                  {/* Card 3: User Needs */}
+                  <div className="cs12-persona-spec-card card-needs">
+                    <div className="cs12-spec-card-header">
+                      <div className="cs12-spec-icon-circle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                          <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                      </div>
+                      <h4 className="cs12-spec-title">User Needs</h4>
+                    </div>
+                    <ul className="cs12-spec-list">
+                      <li>Unified dashboard for workouts, daily nutrition, and active passes</li>
+                      <li>Automated camera food logging and instant macro categorization</li>
+                      <li>Real-time Kyra AI insights with simple, secure 1-tap check-in</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row: 3 Insight Waveform Equalizer Cards */}
+            <div className="cs12-persona-insights-grid">
+              {/* Insight 1 */}
+              <div className="cs12-insight-card">
+                <div className="cs12-insight-header">
+                  <span className="cs12-insight-title">Insight 1</span>
+                  <span className="cs12-insight-badge">64%</span>
+                </div>
+                <div className="cs12-equalizer-wrapper">
+                  <div className="cs12-eq-bars">
+                    {[16, 22, 18, 28, 20, 32, 24, 38, 52, 68, 82, 94, 76, 100, 84, 60, 42, 28, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
+                      <span
+                        key={i}
+                        className={`cs12-eq-bar ${i >= 8 && i <= 16 ? 'active-green' : 'idle-gray'}`}
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="cs12-insight-desc">
+                  Users struggle to track their daily calories and workouts across multiple disconnected apps.
+                </p>
+              </div>
+
+              {/* Insight 2 */}
+              <div className="cs12-insight-card">
+                <div className="cs12-insight-header">
+                  <span className="cs12-insight-title">Insight 2</span>
+                  <span className="cs12-insight-badge">75%</span>
+                </div>
+                <div className="cs12-equalizer-wrapper">
+                  <div className="cs12-eq-bars">
+                    {[18, 24, 20, 30, 22, 34, 46, 62, 78, 88, 72, 96, 82, 100, 88, 70, 54, 36, 24, 20, 20, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
+                      <span
+                        key={i}
+                        className={`cs12-eq-bar ${i >= 6 && i <= 17 ? 'active-green' : 'idle-gray'}`}
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="cs12-insight-desc">
+                  Users find it difficult to identify where their habit routine is dropping and which areas need focus.
+                </p>
+              </div>
+
+              {/* Insight 3 */}
+              <div className="cs12-insight-card">
+                <div className="cs12-insight-header">
+                  <span className="cs12-insight-title">Insight 3</span>
+                  <span className="cs12-insight-badge">85%</span>
+                </div>
+                <div className="cs12-equalizer-wrapper">
+                  <div className="cs12-eq-bars">
+                    {[20, 26, 22, 32, 26, 40, 54, 72, 86, 92, 80, 98, 88, 100, 94, 98, 92, 80, 62, 40, 24, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
+                      <span
+                        key={i}
+                        className={`cs12-eq-bar ${i >= 5 && i <= 19 ? 'active-green' : 'idle-gray'}`}
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <p className="cs12-insight-desc">
+                  Users miss key consistency milestones due to lack of timely, personalized habit alerts and coaching insights.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================================================================
+            SECTION 07: VISUAL IDENTITY & DESIGN SYSTEM
+            =================================================================== */}
+        <section id="sec-07" className="cs12-section">
           <div className="cs12-section-badge">
-            <span className="cs12-num-tag">NO. 06</span>
+            <span className="cs12-num-tag">NO. 07</span>
             <span className="cs12-section-name">DESIGN SYSTEM &amp; TOKENS</span>
           </div>
 
