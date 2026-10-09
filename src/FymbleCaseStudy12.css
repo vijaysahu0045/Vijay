@@ -683,156 +683,74 @@
 }
 
 /* ==========================================================================
-   SECTION 02: STRATEGY PLAN (Connected Research & Stakeholder Insights)
+   SECTION 02: STRATEGY PLAN (STAGGERED 3-PILLAR STRATEGY TIMELINE)
    ========================================================================== */
-.cs12-strategy-plan-section {
-  position: relative;
-  padding: 60px 0 80px 0;
+.cs12-strategy-plan-card {
+  margin-top: 10px;
 }
 
-.cs12-strategy-header {
-  margin-bottom: 50px;
+.cs12-strategy-grid-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
 }
 
-.cs12-strategy-num {
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
-  color: #64748b;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
-}
-
-.cs12-strategy-title {
-  font-size: clamp(32px, 3.8vw, 44px);
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
-  margin: 0;
-}
-
-.cs12-strategy-flow-container {
-  position: relative;
-  min-height: 640px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.cs12-strategy-svg-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.cs12-strategy-node {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  max-width: 440px;
-  transition: transform 0.3s ease;
-}
-
-.cs12-strategy-node:hover {
-  transform: translateY(-4px);
-}
-
-/* Node Positions matching the Behance layout */
-.cs12-strategy-node.node-1 {
-  margin-left: auto;
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.cs12-strategy-node.node-2 {
-  margin-left: 30px;
-  margin-right: auto;
-  margin-bottom: 40px;
-}
-
-.cs12-strategy-node.node-3 {
-  margin-left: auto;
-  margin-right: 80px;
-}
-
-.cs12-node-avatar-wrap {
-  position: relative;
-  width: 74px;
-  height: 74px;
+.cs12-strategy-avatar-circle {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(124, 58, 237, 0.4) 100%);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(124, 58, 237, 0.2);
+  overflow: hidden;
+  border: 1.5px solid rgba(167, 139, 250, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.cs12-node-avatar {
+.cs12-strategy-avatar-circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  display: block;
 }
 
-.cs12-node-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.cs12-node-quote {
-  font-size: 15px;
-  line-height: 1.65;
+.cs12-strategy-pillar-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
   color: #94a3b8;
-  margin: 0;
+  margin: 0 0 14px 0;
 }
 
-.cs12-node-quote strong {
+.cs12-strategy-pillar-desc strong {
   color: #f1f5f9;
   font-weight: 600;
 }
 
-.cs12-node-author {
+.cs12-strategy-author-meta {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-top: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 14px;
 }
 
-.cs12-node-name {
-  font-size: 15px;
+.cs12-author-name {
+  font-size: 13.5px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0;
 }
 
-.cs12-node-role {
-  font-size: 12.5px;
-  color: #64748b;
-  font-weight: 500;
+.cs12-author-role {
+  font-size: 11.5px;
+  color: #a78bfa;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
-@media (max-width: 768px) {
-  .cs12-strategy-svg-line {
-    display: none;
-  }
-  .cs12-strategy-flow-container {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  .cs12-strategy-node.node-1,
-  .cs12-strategy-node.node-2,
-  .cs12-strategy-node.node-3 {
-    margin: 0 auto;
-    max-width: 100%;
+@media (max-width: 900px) {
+  .cs12-strategy-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 }
 

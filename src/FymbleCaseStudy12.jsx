@@ -364,81 +364,119 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 02: STRATEGY PLAN (Connected Research & Stakeholder Insights)
+            SECTION 02: STRATEGY PLAN (STAGGERED 3-PILLAR STRATEGY TIMELINE)
             =================================================================== */}
-        <section id="sec-02" className="cs12-section cs12-strategy-plan-section">
-          <div className="cs12-strategy-header">
-            <span className="cs12-strategy-num">02</span>
-            <h2 className="cs12-strategy-title">Strategy Plan</h2>
-          </div>
-
-          <div className="cs12-strategy-flow-container">
-            {/* SVG Serpentine Dotted Connecting Line */}
-            <svg className="cs12-strategy-svg-line" viewBox="0 0 800 650" fill="none" preserveAspectRatio="none">
-              <path
-                d="M 540 80 C 200 80, 160 180, 160 260 C 160 380, 480 380, 480 490"
-                stroke="rgba(255, 255, 255, 0.25)"
-                strokeWidth="1.5"
-                strokeDasharray="6 6"
-              />
-            </svg>
-
-            {/* Node 1: Top Right - UX Research */}
-            <div className="cs12-strategy-node node-1">
-              <div className="cs12-node-avatar-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=80"
-                  alt="Sophia L. - UX Research Lead"
-                  className="cs12-node-avatar"
-                />
+        <section id="sec-02" className="cs12-section">
+          <div className="cs12-scope-of-work-card cs12-strategy-plan-card">
+            <div className="cs12-scope-header-row">
+              <div className="cs12-scope-title-col">
+                <span className="cs12-scope-index">02</span>
+                <h2 className="cs12-scope-title">Strategy Plan</h2>
               </div>
-              <div className="cs12-node-content">
-                <p className="cs12-node-quote">
-                  <strong>Research showed users struggled to track daily workouts</strong>, calorie macros, and gym bookings across fragmented apps. <strong>We prioritized a unified fitness dashboard</strong> to centralize on-demand gym passes, AI meal tracking, and coach assistance in one place.
+              <div className="cs12-scope-desc-col">
+                <p>
+                  Through iterative stakeholder workshops and user research, we identified critical friction points and structured our product execution across 3 strategic pillars.
                 </p>
-                <div className="cs12-node-author">
-                  <h4 className="cs12-node-name">Sophia L.</h4>
-                  <span className="cs12-node-role">UX Research Lead</span>
-                </div>
               </div>
             </div>
 
-            {/* Node 2: Middle Left - Product Strategy */}
-            <div className="cs12-strategy-node node-2">
-              <div className="cs12-node-avatar-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=240&q=80"
-                  alt="Emma R. - Chief Product Officer"
-                  className="cs12-node-avatar"
-                />
-              </div>
-              <div className="cs12-node-content">
-                <p className="cs12-node-quote">
-                  <strong>Stakeholder workshops highlighted the need for flexible</strong>, commitment-free fitness access. <strong>We focused on building a pay-as-you-go pass engine</strong> that gives users instant access to 600+ fitness studios, dynamic per-day pricing, and zero annual lock-ins.
-                </p>
-                <div className="cs12-node-author">
-                  <h4 className="cs12-node-name">Emma R.</h4>
-                  <span className="cs12-node-role">Chief Product Officer</span>
+            {/* Staggered 3-Pillar Waterfall Stepper */}
+            <div className="cs12-sprint-waterfall-wrapper">
+              <div className="cs12-sprint-grid cs12-strategy-grid-3">
+                {/* Pillar 1: Research (Sophia L.) */}
+                <div className="cs12-sprint-column sprint-col-1">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">1 Pillar</span>
+                      <div className="cs12-strategy-avatar-circle">
+                        <img
+                          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                          alt="Sophia L."
+                        />
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">UX Research</h3>
+                    <p className="cs12-strategy-pillar-desc">
+                      <strong>Research showed users struggled with fragmented apps.</strong> We unified gym passes, AI meal tracking, and coach guidance into a centralized ecosystem.
+                    </p>
+                    <div className="cs12-strategy-author-meta">
+                      <span className="cs12-author-name">Sophia L.</span>
+                      <span className="cs12-author-role">UX Research Lead</span>
+                    </div>
+                    <ul className="cs12-sprint-list">
+                      <li>Cross-App Journey Unification</li>
+                      <li>Habit Retention Loops</li>
+                      <li>User Interview Synthesis</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Node 3: Bottom Right - Product Design */}
-            <div className="cs12-strategy-node node-3">
-              <div className="cs12-node-avatar-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=240&q=80"
-                  alt="Daniel P. - Lead Product Designer"
-                  className="cs12-node-avatar"
-                />
-              </div>
-              <div className="cs12-node-content">
-                <p className="cs12-node-quote">
-                  <strong>User interviews revealed friction in tedious manual food logging</strong> and rigid gym memberships. <strong>This led us to simplify AI food scanning, surface instant check-ins earlier</strong>, and eliminate unnecessary steps across key daily health journeys.
-                </p>
-                <div className="cs12-node-author">
-                  <h4 className="cs12-node-name">Daniel P.</h4>
-                  <span className="cs12-node-role">Lead Product Designer</span>
+                {/* Pillar 2: Strategy (Emma R.) */}
+                <div className="cs12-sprint-column sprint-col-2">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">2 Pillar</span>
+                      <div className="cs12-strategy-avatar-circle">
+                        <img
+                          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80"
+                          alt="Emma R."
+                        />
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">Product Strategy</h3>
+                    <p className="cs12-strategy-pillar-desc">
+                      <strong>Stakeholder workshops proved lock-ins deter users.</strong> We built an on-demand pass engine with dynamic ₹99/day pricing across 600+ partner fitness studios.
+                    </p>
+                    <div className="cs12-strategy-author-meta">
+                      <span className="cs12-author-name">Emma R.</span>
+                      <span className="cs12-author-role">Chief Product Officer</span>
+                    </div>
+                    <ul className="cs12-sprint-list">
+                      <li>Pay-as-you-go Pass Engine</li>
+                      <li>Multi-Studio B2B Ecosystem</li>
+                      <li>Zero Annual Commitments</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Pillar 3: UI Design (Daniel P.) */}
+                <div className="cs12-sprint-column sprint-col-3">
+                  <div className="cs12-sprint-badge-row">
+                    <div className="cs12-dotted-leader-line" />
+                    <div className="cs12-sprint-pill">
+                      <span className="cs12-sprint-label">3 Pillar</span>
+                      <div className="cs12-strategy-avatar-circle">
+                        <img
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+                          alt="Daniel P."
+                        />
+                      </div>
+                    </div>
+                    <div className="cs12-dotted-tail-line" />
+                  </div>
+                  <div className="cs12-sprint-content">
+                    <h3 className="cs12-sprint-name">UI/UX Design</h3>
+                    <p className="cs12-strategy-pillar-desc">
+                      <strong>User interviews revealed logging fatigue.</strong> We simplified navigation, introduced AI food scanning, and surfaced instant check-in flows.
+                    </p>
+                    <div className="cs12-strategy-author-meta">
+                      <span className="cs12-author-name">Daniel P.</span>
+                      <span className="cs12-author-role">Lead Product Designer</span>
+                    </div>
+                    <ul className="cs12-sprint-list">
+                      <li>1-Click AI Food Vision</li>
+                      <li>Frictionless Studio Check-in</li>
+                      <li>Kyra AI Assistant Integration</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
