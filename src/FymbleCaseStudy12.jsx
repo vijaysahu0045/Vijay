@@ -180,8 +180,8 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">1 Sprint</span>
-                      <div className="cs12-sprint-icon-circle" title="Research & Analytics">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
                           <path d="M22 12A10 10 0 0 0 12 2v10z"/>
                         </svg>
@@ -205,14 +205,11 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">2 Sprint</span>
-                      <div className="cs12-sprint-icon-circle" title="Strategy & Targeting">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="7"/>
-                          <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                          <line x1="12" y1="2" x2="12" y2="5"/>
-                          <line x1="12" y1="19" x2="12" y2="22"/>
-                          <line x1="2" y1="12" x2="5" y2="12"/>
-                          <line x1="19" y1="12" x2="22" y2="12"/>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10"/>
+                          <circle cx="12" cy="12" r="6"/>
+                          <circle cx="12" cy="12" r="2"/>
                         </svg>
                       </div>
                     </div>
@@ -234,12 +231,12 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">3 Sprint</span>
-                      <div className="cs12-sprint-icon-circle" title="UI Design & Vector System">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 15l-3.5-3.5 7-7 3.5 3.5-7 7z"/>
-                          <path d="M8.5 11.5L5 15l1 3 3 1 3.5-3.5"/>
-                          <circle cx="3.5" cy="20.5" r="1.5" fill="currentColor"/>
-                          <circle cx="20.5" cy="3.5" r="1.5" fill="currentColor"/>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="m12 19 7-7 3 3-7 7-3-3z"/>
+                          <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                          <path d="m2 2 7.586 7.586"/>
+                          <circle cx="11" cy="11" r="2"/>
                         </svg>
                       </div>
                     </div>
@@ -261,13 +258,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     <div className="cs12-dotted-leader-line" />
                     <div className="cs12-sprint-pill">
                       <span className="cs12-sprint-label">4 Sprint</span>
-                      <div className="cs12-sprint-icon-circle" title="Delivery & Handoff">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="8" width="18" height="13" rx="2"/>
-                          <path d="M12 8v13"/>
-                          <path d="M3 14h18"/>
-                          <path d="M12 8c-2-2.5-4-1.5-4 0 0 1.5 4 1.5 4 0z"/>
-                          <path d="M12 8c2-2.5 4-1.5 4 0 0 1.5-4 1.5-4 0z"/>
+                      <div className="cs12-sprint-icon-circle">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 12 20 22 4 22 4 12"/>
+                          <rect width="20" height="5" x="2" y="7"/>
+                          <line x1="12" y1="22" x2="12" y2="7"/>
+                          <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                          <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
                         </svg>
                       </div>
                     </div>
