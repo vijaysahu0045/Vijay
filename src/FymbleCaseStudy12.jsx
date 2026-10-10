@@ -519,11 +519,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     </div>
                   </div>
                 </div>
-
-                <div className="cs12-pillar-takeaway">
-                  <span className="cs12-takeaway-dot dot-coral" />
-                  <p>85% struggle with routine consistency due to rigid structures.</p>
-                </div>
               </div>
 
               {/* PILLAR 2: Core Behavioral Challenges (Circular Donut/Arc) */}
@@ -572,11 +567,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     </div>
                   </div>
                 </div>
-
-                <div className="cs12-pillar-takeaway">
-                  <span className="cs12-takeaway-dot dot-green" />
-                  <p>Inflexible annual memberships directly drive gym dropout rates.</p>
-                </div>
               </div>
 
               {/* PILLAR 3: Market Usability & Frustration */}
@@ -618,33 +608,8 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     </div>
                   </div>
                 </div>
-
-                <div className="cs12-pillar-takeaway">
-                  <span className="cs12-takeaway-dot dot-purple" />
-                  <p>Existing fitness apps are fragmented across disconnected silos.</p>
-                </div>
               </div>
 
-            </div>
-
-            {/* Bottom Spotlight Persona Voice Card */}
-            <div className="cs12-research-quote-card">
-              <span className="cs12-quote-big-mark">“</span>
-              <p className="cs12-featured-persona-quote">
-                <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
-              </p>
-              <div className="cs12-quote-persona-author">
-                <div className="cs12-persona-avatar-wrap">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                    alt="Emma Wilson"
-                  />
-                </div>
-                <div className="cs12-persona-author-info">
-                  <h4 className="cs12-persona-author-name">Emma Wilson</h4>
-                  <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
