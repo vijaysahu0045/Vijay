@@ -448,30 +448,38 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Exact 3 Brand Color Palette Cards */}
-            <div className="cs12-color-palette-grid cs12-colors-3-grid">
-              {/* Color 1: Deep Black */}
-              <div className="cs12-color-card color-black">
+            {/* 4 Brand Color Palette Cards (#414140, #FFFFFF, #38BC37, #F44336) */}
+            <div className="cs12-color-palette-grid cs12-colors-4-grid">
+              {/* Color 1: Charcoal Gray */}
+              <div className="cs12-color-card color-palette-charcoal">
                 <div className="cs12-color-swatch-body">
-                  <span className="cs12-hex-code">#000000</span>
+                  <span className="cs12-hex-code">#414140</span>
                 </div>
-                <div className="cs12-color-bottom-bar bar-black" />
+                <div className="cs12-color-bottom-bar bar-charcoal" />
               </div>
 
               {/* Color 2: Pure White */}
-              <div className="cs12-color-card color-white">
+              <div className="cs12-color-card color-palette-white">
                 <div className="cs12-color-swatch-body">
                   <span className="cs12-hex-code">#FFFFFF</span>
                 </div>
                 <div className="cs12-color-bottom-bar bar-white" />
               </div>
 
-              {/* Color 3: Fymble Brand Coral */}
-              <div className="cs12-color-card color-fymble-coral">
+              {/* Color 3: Vibrant Green */}
+              <div className="cs12-color-card color-palette-green">
                 <div className="cs12-color-swatch-body">
-                  <span className="cs12-hex-code">#FF5757</span>
+                  <span className="cs12-hex-code">#38BC37</span>
                 </div>
-                <div className="cs12-color-bottom-bar bar-fymble-coral" />
+                <div className="cs12-color-bottom-bar bar-green" />
+              </div>
+
+              {/* Color 4: Coral Red */}
+              <div className="cs12-color-card color-palette-red">
+                <div className="cs12-color-swatch-body">
+                  <span className="cs12-hex-code">#F44336</span>
+                </div>
+                <div className="cs12-color-bottom-bar bar-red" />
               </div>
             </div>
           </div>
