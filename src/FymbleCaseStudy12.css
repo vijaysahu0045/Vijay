@@ -1058,11 +1058,12 @@
 }
 
 .cs12-research-question-title {
+  font-family: 'Roboto', sans-serif;
   font-size: clamp(15.5px, 1.6vw, 19px);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.4;
-  letter-spacing: -0.2px;
+  font-weight: 500;
+  color: #f1f5f9;
+  line-height: 1.45;
+  letter-spacing: -0.1px;
   margin: 0;
 }
 
