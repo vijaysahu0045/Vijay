@@ -2677,7 +2677,7 @@
 .cs12-uf-diagram-inner {
   display: flex;
   align-items: center;
-  min-width: 1100px;
+  min-width: 820px; justify-content: center;
   position: relative;
   padding: 20px 10px;
 }
@@ -3004,7 +3004,7 @@
 }
 
 .cs12-svg-dot {
-  fill: #cbd5e1;
+  fill: #c4b5fd;
   stroke: #17191e;
   stroke-width: 1.5;
 }
@@ -3034,14 +3034,15 @@
 
 .cs12-uf-pill.dark:hover {
   transform: scale(1.04);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(167, 139, 250, 0.45);
   background: #343740;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .cs12-uf-pill.dark.hero-dashboard {
-  background: #22242c;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(34, 36, 44, 0.9) 100%);
+  border: 1.5px solid rgba(167, 139, 250, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(124, 58, 237, 0.3);
   font-size: 14.5px;
   font-weight: 700;
   padding: 14px 28px;
