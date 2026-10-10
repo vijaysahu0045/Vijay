@@ -1044,13 +1044,13 @@
 
 .cs12-research-row-grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 24px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
   align-items: center;
 }
 
 .cs12-research-row-grid.reverse-grid {
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 1.15fr 0.85fr;
 }
 
 .cs12-research-question-col {
@@ -1069,10 +1069,13 @@
 
 /* Common Chart Card */
 .cs12-research-chart-card {
+  width: 100%;
+  max-width: 410px;
+  margin-left: auto;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 16px;
-  padding: 18px 22px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1351,7 +1354,11 @@
   .cs12-research-row-grid,
   .cs12-research-row-grid.reverse-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+  }
+  .cs12-research-chart-card {
+    max-width: 100%;
+    margin-left: 0;
   }
 }
 
