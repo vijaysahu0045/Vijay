@@ -2475,7 +2475,7 @@
 }
 
 /* ==========================================================================
-   SECTION 07: USER JOURNEY (EXECUTIVE PRODUCT PIPELINE IN DARK THEME)
+   SECTION 07: USER JOURNEY (STREAMLINED PIPELINE - PUNCHY BOXES)
    ========================================================================== */
 .cs12-journey-map-card {
   margin-top: 10px;
@@ -2484,19 +2484,10 @@
 .cs12-journey-header-flex {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 34px;
-}
-
-.cs12-journey-header-desc {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #94a3b8;
-  margin: 6px 0 0 0;
-  max-width: 680px;
+  margin-bottom: 28px;
 }
 
 .cs12-journey-tabs-switch {
@@ -2513,30 +2504,30 @@
 .cs12-journey-swimlanes-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
-.cs12-jswimlane {
-  display: grid;
-  grid-template-columns: 290px 1fr;
-  gap: 24px;
+/* Phase Card */
+.cs12-jphase-card {
   background: rgba(255, 255, 255, 0.018);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 24px;
-  padding: 26px;
-  align-items: stretch;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 20px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
-.cs12-jswimlane:hover {
+.cs12-jphase-card:hover {
   border-color: rgba(59, 130, 246, 0.25);
 }
 
-/* Theme Accents for Swimlanes */
-.cs12-jswimlane.theme-blue::before {
+/* Accent Stripes */
+.cs12-jphase-card.theme-blue::before {
   content: '';
   position: absolute;
   top: 0;
@@ -2546,7 +2537,7 @@
   background: linear-gradient(180deg, #3B82F6 0%, rgba(59, 130, 246, 0.2) 100%);
 }
 
-.cs12-jswimlane.theme-cyan::before {
+.cs12-jphase-card.theme-cyan::before {
   content: '';
   position: absolute;
   top: 0;
@@ -2556,7 +2547,7 @@
   background: linear-gradient(180deg, #38BDF8 0%, rgba(56, 189, 248, 0.2) 100%);
 }
 
-.cs12-jswimlane.theme-indigo::before {
+.cs12-jphase-card.theme-indigo::before {
   content: '';
   position: absolute;
   top: 0;
@@ -2566,172 +2557,129 @@
   background: linear-gradient(180deg, #818CF8 0%, rgba(129, 140, 248, 0.2) 100%);
 }
 
-/* Left Phase Info & User Goal Card */
-.cs12-jswim-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 22px 20px;
-  text-align: left;
-}
-
-.cs12-jswim-header-box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.cs12-jswim-badge-row {
+/* Phase Header */
+.cs12-jphase-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cs12-jphase-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .cs12-jphase-num {
   font-family: 'Roboto', sans-serif;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.8px;
   color: #38BDF8;
   background: rgba(56, 189, 248, 0.1);
   border: 1px solid rgba(56, 189, 248, 0.25);
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 6px;
   text-transform: uppercase;
 }
 
-.cs12-jphase-kpi {
+.cs12-jphase-title {
   font-family: 'Roboto', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
-.cs12-jswim-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.3px;
-  line-height: 1.3;
 }
 
-.cs12-jswim-desc {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: #94a3b8;
-  margin: 0;
-}
-
-/* User Goal Card Inside Left Column */
-.cs12-jswim-goal-card {
-  background: rgba(59, 130, 246, 0.04);
-  border: 1px solid rgba(59, 130, 246, 0.16);
-  border-radius: 14px;
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.cs12-jgoal-head {
+.cs12-jphase-pills {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 10.5px;
-  font-weight: 800;
-  color: #38BDF8;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.cs12-jgoal-icon {
-  font-size: 13px;
-}
-
-.cs12-jgoal-txt {
+.cs12-jphase-kpi {
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 11px;
+  font-weight: 700;
   color: #cbd5e1;
-  margin: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-/* Right Flow Track: Horizontal Pipeline */
-.cs12-jswim-flow-row {
+.cs12-jphase-goal {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #38BDF8;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Steps Horizontal Track */
+.cs12-jsteps-track {
   display: flex;
   align-items: center;
   gap: 10px;
   overflow-x: auto;
-  padding: 6px 4px 12px 4px;
+  padding: 4px 2px 8px 2px;
   scrollbar-width: thin;
   scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
-.cs12-jswim-flow-row::-webkit-scrollbar {
-  height: 6px;
+.cs12-jsteps-track::-webkit-scrollbar {
+  height: 5px;
 }
-.cs12-jswim-flow-row::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 999px;
-}
-.cs12-jswim-flow-row::-webkit-scrollbar-thumb {
+.cs12-jsteps-track::-webkit-scrollbar-thumb {
   background: rgba(59, 130, 246, 0.35);
   border-radius: 999px;
 }
 
-/* Executive Pipeline Step Card */
-.cs12-jpipeline-card {
-  flex: 0 0 195px;
-  width: 195px;
-  min-height: 190px;
-  background: rgba(255, 255, 255, 0.022);
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  border-radius: 18px;
-  padding: 18px 16px;
+/* Step Box */
+.cs12-jstep-box {
+  flex: 1;
+  min-width: 175px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 14px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 12px;
   text-align: left;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.cs12-jpipeline-card:hover {
-  transform: translateY(-4px);
+.cs12-jstep-box:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.04);
   border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 18px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 16px rgba(59, 130, 246, 0.15);
 }
 
-.cs12-jpipeline-card.highlight-step {
-  background: linear-gradient(145deg, rgba(59, 130, 246, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border-color: rgba(59, 130, 246, 0.25);
+.cs12-jstep-box.highlight-step {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-/* Pipeline Head */
-.cs12-jpipeline-head {
+.cs12-jstep-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
 }
 
-.cs12-jpipe-badge {
+.cs12-jstep-num {
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   font-weight: 800;
@@ -2746,14 +2694,14 @@
   justify-content: center;
 }
 
-.cs12-jpipe-badge.active {
+.cs12-jstep-num.active {
   background: #3B82F6;
   border-color: #3B82F6;
   color: #ffffff;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
 }
 
-.cs12-jpipe-icon-box {
+.cs12-jstep-icon {
   width: 32px;
   height: 32px;
   border-radius: 9px;
@@ -2766,99 +2714,62 @@
   transition: all 0.25s ease;
 }
 
-.cs12-jpipeline-card:hover .cs12-jpipe-icon-box {
+.cs12-jstep-box:hover .cs12-jstep-icon {
   background: rgba(59, 130, 246, 0.15);
   border-color: rgba(59, 130, 246, 0.35);
   color: #ffffff;
 }
 
-.cs12-jpipe-icon-box.active {
+.cs12-jstep-icon.active {
   background: rgba(59, 130, 246, 0.2);
   border-color: rgba(59, 130, 246, 0.45);
   color: #ffffff;
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.35);
 }
 
-/* Pipeline Body */
-.cs12-jpipeline-body {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 14px;
-  flex: 1;
-}
-
-.cs12-jpipe-title {
+.cs12-jstep-title {
   font-family: 'Roboto', sans-serif;
   font-size: 14.5px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.35;
   letter-spacing: -0.2px;
 }
 
-.cs12-jpipe-desc {
-  font-family: 'Roboto', sans-serif;
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: #94a3b8;
-  margin: 0;
-}
-
-/* Pipeline Foot Tag */
-.cs12-jpipeline-foot {
-  display: flex;
-  align-items: center;
-}
-
-.cs12-jpipe-tag {
-  font-family: 'Roboto', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  color: #64748b;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 3px 8px;
-  border-radius: 6px;
-  letter-spacing: 0.2px;
-}
-
-.cs12-jpipe-tag.active {
-  color: #38BDF8;
-  background: rgba(56, 189, 248, 0.08);
-  border-color: rgba(56, 189, 248, 0.25);
-}
-
-/* Connecting Pipeline Arrow */
-.cs12-jflow-connector {
+/* Arrow between steps */
+.cs12-jstep-arrow {
+  color: #475569;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 24px;
-  flex-shrink: 0;
-  user-select: none;
+  opacity: 0.5;
+  transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-.cs12-jconn-line {
-  width: 14px;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(59, 130, 246, 0.4));
+.cs12-jsteps-track:hover .cs12-jstep-arrow {
+  opacity: 0.9;
+  color: #38BDF8;
+  transform: translateX(2px);
 }
 
-.cs12-jconn-arrow {
-  font-size: 18px;
-  line-height: 1;
-  color: #3B82F6;
-  font-weight: 700;
-  margin-left: -3px;
-  opacity: 0.7;
+@media (max-width: 992px) {
+  .cs12-jstep-box {
+    min-width: 160px;
+  }
+  .cs12-jphase-title {
+    font-size: 16px;
+  }
 }
 
-@media (max-width: 1150px) {
-  .cs12-jswimlane {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .cs12-jphase-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cs12-jphase-pills {
+    width: 100%;
   }
 }
 
