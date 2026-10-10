@@ -517,9 +517,88 @@
   margin-bottom: 0;
 }
 
+/* Bottom-Right Store Badges */
+.cs12-get-the-app-container {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 5;
+  background: rgba(10, 10, 16, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 14px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.cs12-get-app-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.cs12-store-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs12-store-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.cs12-store-badge-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.cs12-store-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.cs12-store-sub {
+  font-size: 8px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.cs12-store-main {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
 @media (max-width: 768px) {
   .cs12-scope-hand-showcase-card {
     padding: 24px 10px 0;
+  }
+  .cs12-get-the-app-container {
+    position: static;
+    margin: 14px auto 16px;
+    align-items: center;
   }
 }
 
