@@ -629,7 +629,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             {/* Problem Statement Centered Paragraph */}
             <div className="cs12-ps-problem-statement">
               <p>
-                <strong>Fragmented health tools</strong> and a <strong>rigid annual gym subscription process</strong> make it difficult for people to maintain consistency, understand their nutrition, and make <strong>confident daily fitness decisions.</strong>
+                <strong>Fragmented health tools</strong> and <strong>rigid annual gym subscriptions</strong> make it difficult for users to maintain consistency, track nutrition, and make <strong>confident daily fitness decisions.</strong>
               </p>
             </div>
 
@@ -639,13 +639,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-ps-callout-card callout-left">
                 <div className="cs12-ps-badge">
                   <span className="cs12-badge-dot coral-dot" />
-                  <span>Problem 1</span>
+                  <span>Problem 01</span>
                 </div>
                 <div className="cs12-ps-metric-row">
                   <span className="cs12-ps-metric">68<small>%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
-                  Face challenges juggling multiple disconnected apps for gym passes and meal tracking.
+                  Struggle managing multiple disconnected apps for gym passes and daily meal tracking.
                 </p>
               </div>
 
@@ -690,12 +690,12 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   />
 
                   {/* Center Floating White Core */}
-                  <circle cx="170" cy="170" r="72" fill="#ffffff" />
+                  <circle cx="170" cy="170" r="68" fill="#ffffff" />
 
                   {/* Inner Text Labels inside Petals */}
-                  <text x="125" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
-                  <text x="215" y="140" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
-                  <text x="170" y="248" fill="#ffffff" fontSize="16" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
+                  <text x="125" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
+                  <text x="215" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
+                  <text x="170" y="248" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
                 </svg>
               </div>
 
@@ -703,13 +703,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-ps-callout-card callout-right">
                 <div className="cs12-ps-badge">
                   <span className="cs12-badge-dot coral-dot" />
-                  <span>Problem 2</span>
+                  <span>Problem 02</span>
                 </div>
                 <div className="cs12-ps-metric-row">
                   <span className="cs12-ps-metric">36<small>%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
-                  Find rigid 12-month gym memberships expensive, confusing, and time-consuming.
+                  Find expensive 12-month memberships rigid, inconvenient, and financially wasteful.
                 </p>
               </div>
             </div>
@@ -719,16 +719,16 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-solution-dot-pulse">
                 <span className="cs12-sol-dot" />
               </div>
-              <h3 className="cs12-ps-solution-title">Solution</h3>
+              <h3 className="cs12-ps-solution-title">The Solution</h3>
               <p className="cs12-ps-solution-desc">
-                We created a unified fitness ecosystem that simplifies discovery, offers flexible ₹99 on-demand gym passes, automates AI meal tracking, and gives users complete control over their daily health journey.
+                A unified ecosystem with ₹99 on-demand gym passes, AI camera nutrition logging, and personalized Kyra coaching in a single tap.
               </p>
             </div>
           </div>
         </section>
 
         {/* ===================================================================
-            SECTION 06: USER PERSONA & BEHAVIORAL ARCHETYPES
+            SECTION 06: USER PERSONA (CLEAN, SCANNABLE BENTO DESIGN)
             =================================================================== */}
         <section id="sec-06" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-user-persona-card">
@@ -739,162 +739,140 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Main Persona Canvas (Top Row: Portrait Card + Quote & 3 Stacks) */}
-            <div className="cs12-persona-main-grid">
-              {/* Left Column: Portrait Card */}
-              <div className="cs12-persona-portrait-card">
-                <div className="cs12-persona-image-wrap">
+            {/* Clean Persona Bento Layout */}
+            <div className="cs12-persona-bento-grid">
+              {/* Left Column: Sleek Profile Card */}
+              <div className="cs12-persona-profile-card">
+                <div className="cs12-persona-avatar-wrap">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
                     alt="Wade Warren Persona"
-                    className="cs12-persona-img"
+                    className="cs12-persona-avatar"
                   />
-                  <div className="cs12-persona-img-gradient" />
-                </div>
-                <div className="cs12-persona-badge-info">
-                  <h3 className="cs12-persona-name">Wade Warren</h3>
-                  <span className="cs12-persona-role">Marketing Manager</span>
-                </div>
-              </div>
-
-              {/* Right Column: Quote + 3 Glass Cards */}
-              <div className="cs12-persona-details-col">
-                {/* Quote Header */}
-                <div className="cs12-persona-quote-box">
-                  <span className="cs12-persona-quote-icon">“</span>
-                  <p className="cs12-persona-quote-text">
-                    I want complete visibility over my fitness and diet, with clear insights into my workouts, calories, and progress without navigating through multiple apps.
-                  </p>
+                  <div className="cs12-persona-tag-pill">
+                    <span className="cs12-persona-pulse" />
+                    <span>Active Fitness Enthusiast</span>
+                  </div>
                 </div>
 
-                {/* 3 Frosted Pill Cards: Goals, Pain Points, Needs */}
-                <div className="cs12-persona-cards-stack">
-                  {/* Card 1: User Goals */}
-                  <div className="cs12-persona-spec-card card-goals">
-                    <div className="cs12-spec-card-header">
-                      <div className="cs12-spec-icon-circle">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <circle cx="12" cy="12" r="6" />
-                          <circle cx="12" cy="12" r="2" />
-                        </svg>
-                      </div>
-                      <h4 className="cs12-spec-title">User Goals</h4>
+                <div className="cs12-persona-bio-box">
+                  <h3 className="cs12-persona-name">Wade Warren, 28</h3>
+                  <p className="cs12-persona-role">Marketing Manager • Bengaluru</p>
+
+                  <div className="cs12-persona-quote-bubble">
+                    <span className="cs12-persona-quote-mark">“</span>
+                    <p>I need flexible workouts and automatic meal tracking in one app without being locked into yearly gym contracts.</p>
+                  </div>
+
+                  <div className="cs12-persona-quick-stats">
+                    <div className="cs12-persona-stat-chip">
+                      <span className="cs12-chip-label">Workout</span>
+                      <span className="cs12-chip-val">4-5 Days/Wk</span>
                     </div>
-                    <ul className="cs12-spec-list">
-                      <li>Get a clear overview of all nearby gyms and flexible passes</li>
-                      <li>Track daily workout routines and manage calorie budgets better</li>
-                      <li>Make smarter, data-driven daily fitness decisions</li>
-                    </ul>
-                  </div>
-
-                  {/* Card 2: User Pain Points */}
-                  <div className="cs12-persona-spec-card card-pain">
-                    <div className="cs12-spec-card-header">
-                      <div className="cs12-spec-icon-circle">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <line x1="12" y1="8" x2="12" y2="12" />
-                          <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </svg>
-                      </div>
-                      <h4 className="cs12-spec-title">User Pain Points</h4>
+                    <div className="cs12-persona-stat-chip">
+                      <span className="cs12-chip-label">Primary Goal</span>
+                      <span className="cs12-chip-val">Strength &amp; Fat Loss</span>
                     </div>
-                    <ul className="cs12-spec-list">
-                      <li>Hard to track health metrics across multiple disconnected apps</li>
-                      <li>Unclear calorie burn patterns and inconsistent motivation</li>
-                      <li>Too many complicated steps to book single-day gym passes</li>
-                    </ul>
-                  </div>
-
-                  {/* Card 3: User Needs */}
-                  <div className="cs12-persona-spec-card card-needs">
-                    <div className="cs12-spec-card-header">
-                      <div className="cs12-spec-icon-circle">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                          <line x1="12" y1="17" x2="12.01" y2="17" />
-                        </svg>
-                      </div>
-                      <h4 className="cs12-spec-title">User Needs</h4>
+                    <div className="cs12-persona-stat-chip">
+                      <span className="cs12-chip-label">Main Friction</span>
+                      <span className="cs12-chip-val">App Switching</span>
                     </div>
-                    <ul className="cs12-spec-list">
-                      <li>Unified dashboard for workouts, daily nutrition, and active passes</li>
-                      <li>Automated camera food logging and instant macro categorization</li>
-                      <li>Real-time Kyra AI insights with simple, secure 1-tap check-in</li>
-                    </ul>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Bottom Row: 3 Insight Waveform Equalizer Cards */}
-            <div className="cs12-persona-insights-grid">
-              {/* Insight 1 */}
-              <div className="cs12-insight-card">
-                <div className="cs12-insight-header">
-                  <span className="cs12-insight-title">Insight 1</span>
-                  <span className="cs12-insight-badge">64%</span>
-                </div>
-                <div className="cs12-equalizer-wrapper">
-                  <div className="cs12-eq-bars">
-                    {[16, 22, 18, 28, 20, 32, 24, 38, 52, 68, 82, 94, 76, 100, 84, 60, 42, 28, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
-                      <span
-                        key={i}
-                        className={`cs12-eq-bar ${i >= 8 && i <= 16 ? 'active-green' : 'idle-gray'}`}
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
+              {/* Right Column: 3 Clean Visual Cards */}
+              <div className="cs12-persona-pillars-col">
+                {/* Card 1: Goals */}
+                <div className="cs12-persona-bento-card bento-goals">
+                  <div className="cs12-bento-card-top">
+                    <div className="cs12-bento-icon-box icon-goals">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="cs12-bento-title">Core Goals</h4>
+                      <span className="cs12-bento-subtitle">What Wade wants to achieve</span>
+                    </div>
+                  </div>
+                  <div className="cs12-bento-pills-list">
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-goals">✓</span>
+                      <span>Flexible on-demand gym access near work &amp; home</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-goals">✓</span>
+                      <span>Unified tracking for daily workouts, calories &amp; hydration</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-goals">✓</span>
+                      <span>Consistent fitness habits with actionable AI guidance</span>
+                    </div>
                   </div>
                 </div>
-                <p className="cs12-insight-desc">
-                  Users struggle to track their daily calories and workouts across multiple disconnected apps.
-                </p>
-              </div>
 
-              {/* Insight 2 */}
-              <div className="cs12-insight-card">
-                <div className="cs12-insight-header">
-                  <span className="cs12-insight-title">Insight 2</span>
-                  <span className="cs12-insight-badge">75%</span>
-                </div>
-                <div className="cs12-equalizer-wrapper">
-                  <div className="cs12-eq-bars">
-                    {[18, 24, 20, 30, 22, 34, 46, 62, 78, 88, 72, 96, 82, 100, 88, 70, 54, 36, 24, 20, 20, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
-                      <span
-                        key={i}
-                        className={`cs12-eq-bar ${i >= 6 && i <= 17 ? 'active-green' : 'idle-gray'}`}
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
+                {/* Card 2: Pain Points */}
+                <div className="cs12-persona-bento-card bento-pain">
+                  <div className="cs12-bento-card-top">
+                    <div className="cs12-bento-icon-box icon-pain">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="cs12-bento-title">Frustrations &amp; Pain Points</h4>
+                      <span className="cs12-bento-subtitle">What slows him down</span>
+                    </div>
+                  </div>
+                  <div className="cs12-bento-pills-list">
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-pain">✕</span>
+                      <span>Locked into expensive 12-month memberships</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-pain">✕</span>
+                      <span>Tired of switching between 3+ separate fitness apps</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-pain">✕</span>
+                      <span>Tedious manual food logging and nutrition guesswork</span>
+                    </div>
                   </div>
                 </div>
-                <p className="cs12-insight-desc">
-                  Users find it difficult to identify where their habit routine is dropping and which areas need focus.
-                </p>
-              </div>
 
-              {/* Insight 3 */}
-              <div className="cs12-insight-card">
-                <div className="cs12-insight-header">
-                  <span className="cs12-insight-title">Insight 3</span>
-                  <span className="cs12-insight-badge">85%</span>
-                </div>
-                <div className="cs12-equalizer-wrapper">
-                  <div className="cs12-eq-bars">
-                    {[20, 26, 22, 32, 26, 40, 54, 72, 86, 92, 80, 98, 88, 100, 94, 98, 92, 80, 62, 40, 24, 20, 20, 20, 20, 20, 20, 20].map((h, i) => (
-                      <span
-                        key={i}
-                        className={`cs12-eq-bar ${i >= 5 && i <= 19 ? 'active-green' : 'idle-gray'}`}
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
+                {/* Card 3: Key Expectations & Needs */}
+                <div className="cs12-persona-bento-card bento-solution">
+                  <div className="cs12-bento-card-top">
+                    <div className="cs12-bento-icon-box icon-solution">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="cs12-bento-title">Ideal Fymble Solution</h4>
+                      <span className="cs12-bento-subtitle">How Fymble solves it</span>
+                    </div>
+                  </div>
+                  <div className="cs12-bento-pills-list">
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-solution">★</span>
+                      <span><strong>₹99 On-Demand Pass:</strong> Pay only when you work out</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-solution">★</span>
+                      <span><strong>AI Photo Logging:</strong> Snap meal for instant calorie &amp; macro breakdown</span>
+                    </div>
+                    <div className="cs12-bento-item">
+                      <span className="cs12-item-check check-solution">★</span>
+                      <span><strong>Kyra AI Assistant:</strong> Personalized habit accountability &amp; insights</span>
+                    </div>
                   </div>
                 </div>
-                <p className="cs12-insight-desc">
-                  Users miss key consistency milestones due to lack of timely, personalized habit alerts and coaching insights.
-                </p>
               </div>
             </div>
           </div>
