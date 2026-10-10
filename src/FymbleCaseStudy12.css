@@ -2228,7 +2228,7 @@
 
 .cs12-ptab-btn.active {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
   color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
@@ -2242,8 +2242,8 @@
 }
 
 .cs12-ptab-btn.active .cs12-tab-dot {
-  background: #FF5757;
-  box-shadow: 0 0 8px #FF5757;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
 }
 
 /* 3-Column Clean Persona Grid (Seamlessly Integrated on Main Card Surface) */
@@ -2276,7 +2276,7 @@
 
 .cs12-ptri-block:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(59, 130, 246, 0.28);
 }
 
 .cs12-ptri-block-header {
@@ -2292,8 +2292,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #FF5757;
-  box-shadow: 0 0 6px #FF5757;
+  background: #3B82F6;
+  box-shadow: 0 0 6px #3B82F6;
   flex-shrink: 0;
 }
 
@@ -2330,7 +2330,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: #FF5757;
+  color: #3B82F6;
   font-size: 13px;
 }
 
@@ -2354,7 +2354,7 @@
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 87, 87, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(59, 130, 246, 0.2);
   margin: 0 auto;
 }
 
@@ -2409,7 +2409,7 @@
   font-family: serif;
   font-size: 18px;
   line-height: 1;
-  color: #FF5757;
+  color: #3B82F6;
   font-weight: bold;
   display: inline-block;
 }
