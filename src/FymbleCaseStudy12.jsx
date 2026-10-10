@@ -758,14 +758,14 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 06: USER & PARTNER PERSONAS (DUAL-ARCHETYPE 3-COLUMN LAYOUT)
+            SECTION 06: USER & PARTNER PERSONAS (PORTFOLIO THEME)
             =================================================================== */}
         <section id="sec-06" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-user-persona-card">
             <div className="cs12-scope-header-row cs12-persona-header-flex">
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">06</span>
-                <h2 className="cs12-scope-title">User &amp; Partner Personas</h2>
+                <h2 className="cs12-scope-title">User Persona</h2>
               </div>
 
               {/* Dual Persona Switcher */}
@@ -775,7 +775,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   className={`cs12-ptab-btn ${activePersonaTab === 'user' ? 'active' : ''}`}
                   onClick={() => setActivePersonaTab('user')}
                 >
-                  <span className="cs12-ptab-emoji">🏃</span>
+                  <span className="cs12-tab-dot" />
                   <span>Fitness Enthusiast (User)</span>
                 </button>
                 <button
@@ -783,19 +783,20 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   className={`cs12-ptab-btn ${activePersonaTab === 'partner' ? 'active' : ''}`}
                   onClick={() => setActivePersonaTab('partner')}
                 >
-                  <span className="cs12-ptab-emoji">🏋️</span>
+                  <span className="cs12-tab-dot" />
                   <span>Gym Owner (Partner)</span>
                 </button>
               </div>
             </div>
 
-            {/* 3-Column Clean Persona Canvas */}
-            <div className="cs12-persona-tri-card">
+            {/* 3-Column Clean Persona Grid */}
+            <div className="cs12-persona-tri-grid">
               {/* Left Column: 2 Stacked Specification Cards */}
               <div className="cs12-ptri-col ptri-col-left">
                 {/* Top Card: Interests / Core Goals */}
                 <div className="cs12-ptri-block">
                   <div className="cs12-ptri-block-header">
+                    <span className="cs12-ptri-dot" />
                     <h4>{activePersonaTab === 'user' ? 'Interests & Goals' : 'Business Goals'}</h4>
                   </div>
                   <ul className="cs12-ptri-list">
@@ -818,6 +819,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 {/* Bottom Card: Values / Frustrations */}
                 <div className="cs12-ptri-block">
                   <div className="cs12-ptri-block-header">
+                    <span className="cs12-ptri-dot" />
                     <h4>{activePersonaTab === 'user' ? 'Frustrations & Values' : 'Operational Pain Points'}</h4>
                   </div>
                   <ul className="cs12-ptri-list">
@@ -859,7 +861,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   <span className="cs12-ptri-role">
                     {activePersonaTab === 'user'
                       ? 'Marketing Manager • 28 Yrs • Bengaluru'
-                      : 'Studio Owner • Pulse Fitness Club (120+ Capacity)'}
+                      : 'Studio Owner • Pulse Fitness (120+ Cap)'}
                   </span>
                 </div>
 
@@ -879,6 +881,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 {/* Top Card: Personality / Behaviors */}
                 <div className="cs12-ptri-block">
                   <div className="cs12-ptri-block-header">
+                    <span className="cs12-ptri-dot" />
                     <h4>{activePersonaTab === 'user' ? 'Behaviors & Habits' : 'Management Traits'}</h4>
                   </div>
                   <ul className="cs12-ptri-list">
@@ -901,6 +904,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 {/* Bottom Card: Ideal Solution */}
                 <div className="cs12-ptri-block">
                   <div className="cs12-ptri-block-header">
+                    <span className="cs12-ptri-dot" />
                     <h4>{activePersonaTab === 'user' ? 'Ideal Fymble Solution' : 'Fymble Partner Solution'}</h4>
                   </div>
                   <ul className="cs12-ptri-list">
