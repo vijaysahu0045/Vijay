@@ -29,6 +29,7 @@ const SECTIONS_INDEX = [
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [activeNav, setActiveNav] = useState('sec-01')
   const [activePersonaTab, setActivePersonaTab] = useState('user')
+  const [activeJourneyFilter, setActiveJourneyFilter] = useState('all')
 
   // Scroll spy
   useEffect(() => {
@@ -1031,236 +1032,723 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         {/* ===================================================================
             SECTION 07: USER JOURNEY MAP
             =================================================================== */}
+        {/* ===================================================================
+            SECTION 07: USER JOURNEY (3-PHASE VISUAL SWIMLANES IN DARK THEME)
+            =================================================================== */}
         <section id="sec-07" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-journey-map-card">
-            <div className="cs12-scope-header-row">
+            <div className="cs12-scope-header-row cs12-journey-header-flex">
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">07</span>
-                <h2 className="cs12-scope-title">User Journey Map</h2>
-              </div>
-            </div>
-
-            {/* Top Row: 3 Persona & Context Cards */}
-            <div className="cs12-journey-top-cards">
-              {/* Card 1: Persona Summary */}
-              <div className="cs12-jtop-card card-persona">
-                <div className="cs12-jtop-avatar">
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
-                    alt="Jenny Wilson"
-                  />
-                </div>
-                <div className="cs12-jtop-info">
-                  <h3 className="cs12-jtop-name">Jenny Wilson</h3>
-                  <div className="cs12-jtop-meta-grid">
-                    <span className="cs12-jmeta-item"><strong>Age:</strong> 31</span>
-                    <span className="cs12-jmeta-item"><strong>Occupation:</strong> Product Manager</span>
-                    <span className="cs12-jmeta-item"><strong>Location:</strong> Bangalore, India</span>
-                    <span className="cs12-jmeta-item"><strong>Status:</strong> Married</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 2: Scenario */}
-              <div className="cs12-jtop-card card-scenario">
-                <div className="cs12-jtop-header">
-                  <div className="cs12-jtop-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                    </svg>
-                  </div>
-                  <h4 className="cs12-jtop-title">Scenario</h4>
-                </div>
-                <p className="cs12-jtop-text">
-                  Jenny Wilson actively manages a hectic corporate schedule while trying to maintain workout consistency, find flexible gym passes near client meetings, and track daily meal nutrition without complex manual effort.
+                <h2 className="cs12-scope-title">User Journey</h2>
+                <p className="cs12-journey-header-desc">
+                  A complete fitness journey on Fymble — from discovering the right gym to getting AI guidance, tracking nutrition and building consistency.
                 </p>
               </div>
 
-              {/* Card 3: Goals & Expectations */}
-              <div className="cs12-jtop-card card-goals">
-                <div className="cs12-jtop-header">
-                  <div className="cs12-jtop-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <circle cx="12" cy="12" r="6" />
-                      <circle cx="12" cy="12" r="2" />
-                    </svg>
-                  </div>
-                  <h4 className="cs12-jtop-title">Goals &amp; Expectations</h4>
-                </div>
-                <ul className="cs12-jtop-list">
-                  <li>Easy gym discovery and on-demand pass checkout</li>
-                  <li>Quick, automated camera meal logging with AI accuracy</li>
-                  <li>Smart Kyra AI habit coaching &amp; workout recovery guidance</li>
-                  <li>Reliable QR gym check-in with zero membership lock-ins</li>
-                </ul>
+              {/* Journey Flow Filter Switcher */}
+              <div className="cs12-journey-tabs-switch">
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activeJourneyFilter === 'all' ? 'active' : ''}`}
+                  onClick={() => setActiveJourneyFilter('all')}
+                >
+                  <span className="cs12-tab-dot" />
+                  <span>All Journeys</span>
+                </button>
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activeJourneyFilter === 'gym' ? 'active' : ''}`}
+                  onClick={() => setActiveJourneyFilter('gym')}
+                >
+                  <span className="cs12-tab-dot" />
+                  <span>01 Gym Passes</span>
+                </button>
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activeJourneyFilter === 'kyra' ? 'active' : ''}`}
+                  onClick={() => setActiveJourneyFilter('kyra')}
+                >
+                  <span className="cs12-tab-dot" />
+                  <span>02 Kyra AI</span>
+                </button>
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activeJourneyFilter === 'nutrition' ? 'active' : ''}`}
+                  onClick={() => setActiveJourneyFilter('nutrition')}
+                >
+                  <span className="cs12-tab-dot" />
+                  <span>03 Nutrition</span>
+                </button>
               </div>
             </div>
 
-            {/* Journey Map Matrix Grid */}
-            <div className="cs12-journey-matrix-wrapper">
-              <div className="cs12-journey-matrix">
-                {/* Header Row: Stages */}
-                <div className="cs12-jmatrix-row row-stages">
-                  <div className="cs12-jlabel-cell">Stages</div>
-                  <div className="cs12-jstage-cell">Discover</div>
-                  <div className="cs12-jstage-cell">Onboarding</div>
-                  <div className="cs12-jstage-cell">Explore</div>
-                  <div className="cs12-jstage-cell">Pass Booking</div>
-                  <div className="cs12-jstage-cell">Track &amp; Manage</div>
-                  <div className="cs12-jstage-cell">Grow</div>
-                  <div className="cs12-jstage-cell">Support</div>
+            {/* Swimlanes Container */}
+            <div className="cs12-journey-swimlanes-list">
+              {/* =============================================================
+                  SWIMLANE 01: Discover & Book a Gym
+                  ============================================================= */}
+              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'gym') && (
+                <div className="cs12-jswimlane">
+                  {/* Left Column: Phase Identity & User Goal */}
+                  <div className="cs12-jswim-left">
+                    <div className="cs12-jswim-header-box">
+                      <div className="cs12-jswim-badge-row">
+                        <span className="cs12-jphase-num">01</span>
+                        <h3 className="cs12-jswim-title">Discover &amp; Book a Gym</h3>
+                      </div>
+                      <p className="cs12-jswim-desc">
+                        Find, explore and book gyms with flexible passes.
+                      </p>
+                    </div>
+
+                    <div className="cs12-jswim-goal-card">
+                      <div className="cs12-jgoal-head">
+                        <span className="cs12-jgoal-icon">🎯</span>
+                        <span className="cs12-jgoal-lbl">User Goal</span>
+                      </div>
+                      <p className="cs12-jgoal-txt">
+                        Find a nearby gym and book a pass easily without annual lock-ins.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Flow: 5 Connected Mobile UI Screens */}
+                  <div className="cs12-jswim-flow-row">
+                    {/* Step 1 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-searchbar">
+                            <span className="cs12-jui-search-icon">🔍</span>
+                            <span>Search gyms, areas...</span>
+                          </div>
+                          <div className="cs12-jui-chips-row">
+                            <span className="cs12-jui-chip active">All</span>
+                            <span className="cs12-jui-chip">Gym</span>
+                            <span className="cs12-jui-chip">Yoga</span>
+                            <span className="cs12-jui-chip">CrossFit</span>
+                          </div>
+                          <div className="cs12-jui-sec-label">Nearby Gyms</div>
+                          <div className="cs12-jui-gym-card">
+                            <img
+                              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80"
+                              alt="Cult Fitness"
+                              className="cs12-jui-card-img"
+                            />
+                            <div className="cs12-jui-card-info">
+                              <span className="cs12-jui-card-name">Cult Fitness</span>
+                              <div className="cs12-jui-card-meta">
+                                <span>⭐ 4.8</span>
+                                <span>📍 1.2 km</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">1</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Explore Gyms</h4>
+                          <p className="cs12-jstep-desc">Browse nearby gyms and studios</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 2 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-detail-hero">
+                            <img
+                              src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=300&q=80"
+                              alt="Gym interior"
+                              className="cs12-jui-hero-img"
+                            />
+                            <div className="cs12-jui-hero-overlay">
+                              <span className="cs12-jui-hero-name">Cult Fitness</span>
+                              <span className="cs12-jui-hero-sub">⭐ 4.8 (1.2k) • 📍 1.2 km</span>
+                            </div>
+                          </div>
+                          <div className="cs12-jui-tag-row">
+                            <span className="cs12-jui-tag">Gym</span>
+                            <span className="cs12-jui-tag">Strength</span>
+                            <span className="cs12-jui-tag">Cardio</span>
+                          </div>
+                          <div className="cs12-jui-sec-label">Photos &amp; Facilities</div>
+                          <div className="cs12-jui-thumb-row">
+                            <div className="cs12-jui-thumb" />
+                            <div className="cs12-jui-thumb" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">2</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">View Details</h4>
+                          <p className="cs12-jstep-desc">Check gym info, photos &amp; facilities</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 3 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-screen-title">Select a Pass</div>
+                          <div className="cs12-jui-pass-option">
+                            <div className="cs12-jui-pass-text">
+                              <span className="cs12-jui-pass-name">Daily Pass</span>
+                              <span className="cs12-jui-pass-price">₹99</span>
+                            </div>
+                            <span className="cs12-jui-radio" />
+                          </div>
+                          <div className="cs12-jui-pass-option active">
+                            <div className="cs12-jui-popular-badge">Popular</div>
+                            <div className="cs12-jui-pass-text">
+                              <span className="cs12-jui-pass-name">Weekly Pass</span>
+                              <span className="cs12-jui-pass-price">₹66/day</span>
+                            </div>
+                            <span className="cs12-jui-radio active" />
+                          </div>
+                          <div className="cs12-jui-pass-option">
+                            <div className="cs12-jui-pass-text">
+                              <span className="cs12-jui-pass-name">14-Day Pass</span>
+                              <span className="cs12-jui-pass-price">₹57/day</span>
+                            </div>
+                            <span className="cs12-jui-radio" />
+                          </div>
+                          <button type="button" className="cs12-jui-btn-primary">Continue</button>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">3</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Choose a Pass</h4>
+                          <p className="cs12-jstep-desc">Pick a pass that fits your schedule</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 4 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-sec-label">Select Date</div>
+                          <div className="cs12-jui-date-grid">
+                            <div className="cs12-jui-date-box"><span>Mon</span><strong>12</strong></div>
+                            <div className="cs12-jui-date-box active"><span>Tue</span><strong>13</strong></div>
+                            <div className="cs12-jui-date-box"><span>Wed</span><strong>14</strong></div>
+                            <div className="cs12-jui-date-box"><span>Thu</span><strong>15</strong></div>
+                          </div>
+                          <div className="cs12-jui-sec-label">Select Time</div>
+                          <div className="cs12-jui-time-grid">
+                            <span className="cs12-jui-time-pill">6:00 AM</span>
+                            <span className="cs12-jui-time-pill">7:00 AM</span>
+                            <span className="cs12-jui-time-pill active">8:00 AM</span>
+                            <span className="cs12-jui-time-pill">10:00 AM</span>
+                          </div>
+                          <button type="button" className="cs12-jui-btn-primary">Book Now</button>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">4</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Book a Gym</h4>
+                          <p className="cs12-jstep-desc">Select date &amp; time and confirm</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 5 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body cs12-jdevice-centered">
+                          <div className="cs12-jui-success-circle">✓</div>
+                          <span className="cs12-jui-success-title">Booking Confirmed!</span>
+                          <div className="cs12-jui-summary-box">
+                            <span className="cs12-jui-sum-gym">Cult Fitness</span>
+                            <span className="cs12-jui-sum-date">Tue, 13 Aug • 8:00 AM</span>
+                          </div>
+                          <button type="button" className="cs12-jui-btn-primary">View Booking</button>
+                          <span className="cs12-jui-sub-action">Add to Calendar</span>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">5</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Start Workout</h4>
+                          <p className="cs12-jstep-desc">Instant QR code pass &amp; gym check-in</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              )}
 
-                {/* Row 2: Activities */}
-                <div className="cs12-jmatrix-row row-activities">
-                  <div className="cs12-jlabel-cell">Activities</div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Discovers Fymble through fitness creators, friends, or App Store.</p>
+              {/* =============================================================
+                  SWIMLANE 02: Get Personalised Guidance with Kyra AI
+                  ============================================================= */}
+              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'kyra') && (
+                <div className="cs12-jswimlane">
+                  {/* Left Column */}
+                  <div className="cs12-jswim-left">
+                    <div className="cs12-jswim-header-box">
+                      <div className="cs12-jswim-badge-row">
+                        <span className="cs12-jphase-num">02</span>
+                        <h3 className="cs12-jswim-title">Get Guidance with Kyra AI</h3>
+                      </div>
+                      <p className="cs12-jswim-desc">
+                        Chat with Kyra for workout, diet and wellness guidance.
+                      </p>
+                    </div>
+
+                    <div className="cs12-jswim-goal-card">
+                      <div className="cs12-jgoal-head">
+                        <span className="cs12-jgoal-icon">🎯</span>
+                        <span className="cs12-jgoal-lbl">User Goal</span>
+                      </div>
+                      <p className="cs12-jgoal-txt">
+                        Get expert personalized guidance anytime, anywhere in real-time.
+                      </p>
+                    </div>
                   </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Signs up via phone, selects fitness goals &amp; dietary preferences.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Explores nearby partner gyms, live amenities &amp; class schedules.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Selects flexible ₹99 day-pass with instant 1-tap checkout.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Scans meals with AI camera, tracks workout sets &amp; daily macros.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Kyra AI adapts workout intensity, unlocks streak rewards &amp; badges.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Accesses 24/7 support for pass redemption &amp; trainer advice.</p>
+
+                  {/* Right Flow */}
+                  <div className="cs12-jswim-flow-row">
+                    {/* Step 1 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-ai-header">
+                            <span className="cs12-jui-ai-avatar">🤖</span>
+                            <div className="cs12-jui-ai-head-info">
+                              <span className="cs12-jui-ai-name">Kyra AI</span>
+                              <span className="cs12-jui-ai-status">Online</span>
+                            </div>
+                          </div>
+                          <div className="cs12-jui-ai-bubble">
+                            Hi! I'm Kyra 👋 Your AI fitness coach. How can I help today?
+                          </div>
+                          <div className="cs12-jui-prompt-list">
+                            <span className="cs12-jui-prompt">💬 Create workout plan</span>
+                            <span className="cs12-jui-prompt">🥗 Suggest diet plan</span>
+                            <span className="cs12-jui-prompt">📊 Track my progress</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">1</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Start a Chat</h4>
+                          <p className="cs12-jstep-desc">Open Kyra and ask anything</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 2 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-user-bubble">
+                            I want a workout plan for weight loss
+                          </div>
+                          <div className="cs12-jui-ai-bubble">
+                            Sure! Here's a 4-week personalized plan for you.
+                          </div>
+                          <div className="cs12-jui-plan-card">
+                            <span className="cs12-jui-plan-tag">Week 1</span>
+                            <span className="cs12-jui-plan-title">Full Body • 3 days/week</span>
+                            <div className="cs12-jui-plan-thumb" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">2</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Get Recommendations</h4>
+                          <p className="cs12-jstep-desc">Receive tailored workout &amp; diet plans</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 3 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-screen-title">Your Workout Plan</div>
+                          <div className="cs12-jui-day-tabs">
+                            <span className="cs12-jui-day-tab active">Day 1</span>
+                            <span className="cs12-jui-day-tab">Day 2</span>
+                            <span className="cs12-jui-day-tab">Day 3</span>
+                          </div>
+                          <div className="cs12-jui-exercise-row">
+                            <span className="cs12-jui-ex-icon">🏋️</span>
+                            <div className="cs12-jui-ex-info">
+                              <span className="cs12-jui-ex-name">Squats</span>
+                              <span className="cs12-jui-ex-sets">3 sets • 12 reps</span>
+                            </div>
+                          </div>
+                          <div className="cs12-jui-exercise-row">
+                            <span className="cs12-jui-ex-icon">💪</span>
+                            <div className="cs12-jui-ex-info">
+                              <span className="cs12-jui-ex-name">Push Ups</span>
+                              <span className="cs12-jui-ex-sets">3 sets • 12 reps</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">3</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Follow the Plan</h4>
+                          <p className="cs12-jstep-desc">Get step-by-step workout guidance</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 4 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-user-bubble">
+                            What should I eat for today?
+                          </div>
+                          <div className="cs12-jui-ai-bubble">
+                            Here are some healthy options for you.
+                          </div>
+                          <div className="cs12-jui-meal-tabs">
+                            <span className="cs12-jui-meal-tab active">Breakfast</span>
+                            <span className="cs12-jui-meal-tab">Lunch</span>
+                          </div>
+                          <div className="cs12-jui-recipe-card">
+                            <img
+                              src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=200&q=80"
+                              alt="Oats bowl"
+                              className="cs12-jui-recipe-img"
+                            />
+                            <div className="cs12-jui-recipe-meta">
+                              <span className="cs12-jui-recipe-name">Oats with Fruits</span>
+                              <span className="cs12-jui-recipe-kcal">320 kcal</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">4</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Get Diet Advice</h4>
+                          <p className="cs12-jstep-desc">Personal meal tips &amp; nutritional alternatives</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 5 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-ai-bubble highlight">
+                            You're doing great! 🔥 Keep going. Want me to adjust your plan?
+                          </div>
+                          <div className="cs12-jui-quick-actions">
+                            <span className="cs12-jui-qbtn">⚡ Make it harder</span>
+                            <span className="cs12-jui-qbtn">🎯 Focus on abs</span>
+                            <span className="cs12-jui-qbtn">🥗 Change diet plan</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">5</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Stay Consistent</h4>
+                          <p className="cs12-jstep-desc">Ongoing chat motivation &amp; accountability</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              )}
 
-                {/* Row 3: Pain Points */}
-                <div className="cs12-jmatrix-row row-pain-points">
-                  <div className="cs12-jlabel-cell label-pain">Pain Points</div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Unclear features and rigid lock-in packages in legacy apps.</p>
+              {/* =============================================================
+                  SWIMLANE 03: Track Nutrition & See Progress
+                  ============================================================= */}
+              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'nutrition') && (
+                <div className="cs12-jswimlane">
+                  {/* Left Column */}
+                  <div className="cs12-jswim-left">
+                    <div className="cs12-jswim-header-box">
+                      <div className="cs12-jswim-badge-row">
+                        <span className="cs12-jphase-num">03</span>
+                        <h3 className="cs12-jswim-title">Track Nutrition &amp; See Progress</h3>
+                      </div>
+                      <p className="cs12-jswim-desc">
+                        Scan your meals and track your fitness progress.
+                      </p>
+                    </div>
+
+                    <div className="cs12-jswim-goal-card">
+                      <div className="cs12-jgoal-head">
+                        <span className="cs12-jgoal-icon">🎯</span>
+                        <span className="cs12-jgoal-lbl">User Goal</span>
+                      </div>
+                      <p className="cs12-jgoal-txt">
+                        Understand daily macros, calories and see real physical progress.
+                      </p>
+                    </div>
                   </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Lengthy registration forms and tedious onboarding steps.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Difficult to find real gym photos and amenity details.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Hidden registration fees &amp; complex admission processes.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Manual calorie counting is time-consuming and inconsistent.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Generic workout advice without personalized recovery.</p>
-                  </div>
-                  <div className="cs12-jcontent-cell pain-cell">
-                    <p>Slow support turnaround from traditional gym desks.</p>
+
+                  {/* Right Flow */}
+                  <div className="cs12-jswim-flow-row">
+                    {/* Step 1 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body cs12-jui-cam-view">
+                          <div className="cs12-jui-cam-header">Food Scanner</div>
+                          <div className="cs12-jui-cam-frame">
+                            <span className="corner tl" />
+                            <span className="corner tr" />
+                            <span className="corner bl" />
+                            <span className="corner br" />
+                            <img
+                              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=260&q=80"
+                              alt="Food plate"
+                              className="cs12-jui-cam-target"
+                            />
+                          </div>
+                          <div className="cs12-jui-shutter-btn" />
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">1</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Scan Your Food</h4>
+                          <p className="cs12-jstep-desc">Take a photo of your meal</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 2 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-dish-thumb-box">
+                            <img
+                              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=260&q=80"
+                              alt="Chicken bowl"
+                              className="cs12-jui-dish-img"
+                            />
+                          </div>
+                          <div className="cs12-jui-dish-title">Chicken Bowl</div>
+                          <div className="cs12-jui-macro-grid">
+                            <div className="cs12-jui-mitem"><strong>420</strong><span>kcal</span></div>
+                            <div className="cs12-jui-mitem"><strong>32g</strong><span>Protein</span></div>
+                            <div className="cs12-jui-mitem"><strong>42g</strong><span>Carbs</span></div>
+                            <div className="cs12-jui-mitem"><strong>12g</strong><span>Fats</span></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">2</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Get Nutrition Info</h4>
+                          <p className="cs12-jstep-desc">Instant calories and macro breakdown</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 3 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-screen-title">Log Meal</div>
+                          <div className="cs12-jui-log-item">
+                            <span className="cs12-jui-log-icon">🥗</span>
+                            <div>
+                              <span className="cs12-jui-log-dish">Chicken Bowl</span>
+                              <span className="cs12-jui-log-kcal">420 kcal</span>
+                            </div>
+                          </div>
+                          <div className="cs12-jui-field">
+                            <span>Meal Type</span>
+                            <strong>Lunch</strong>
+                          </div>
+                          <div className="cs12-jui-field">
+                            <span>Date</span>
+                            <strong>Tue, 13 Aug</strong>
+                          </div>
+                          <button type="button" className="cs12-jui-btn-primary">Save Meal</button>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">3</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Save &amp; Track</h4>
+                          <p className="cs12-jstep-desc">Log your meals easily with 1 tap</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 4 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body">
+                          <div className="cs12-jui-screen-title">My Progress</div>
+                          <div className="cs12-jui-chart-tabs">
+                            <span className="cs12-jui-ctab active">Workouts</span>
+                            <span className="cs12-jui-ctab">Nutrition</span>
+                          </div>
+                          <div className="cs12-jui-mini-bars">
+                            <div className="cs12-jui-mbar" style={{ height: '40%' }} />
+                            <div className="cs12-jui-mbar" style={{ height: '70%' }} />
+                            <div className="cs12-jui-mbar" style={{ height: '55%' }} />
+                            <div className="cs12-jui-mbar active" style={{ height: '90%' }} />
+                            <div className="cs12-jui-mbar" style={{ height: '65%' }} />
+                            <div className="cs12-jui-mbar" style={{ height: '80%' }} />
+                            <div className="cs12-jui-mbar" style={{ height: '45%' }} />
+                          </div>
+                          <div className="cs12-jui-stat-row">
+                            <div className="cs12-jui-stat-sub">
+                              <span>Workouts</span>
+                              <strong>4 / 5</strong>
+                            </div>
+                            <div className="cs12-jui-stat-sub">
+                              <span>Streak</span>
+                              <strong>7 Days 🔥</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">4</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Track Your Progress</h4>
+                          <p className="cs12-jstep-desc">Review activity, macros and consistency</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="cs12-jstep-arrow">→</div>
+
+                    {/* Step 5 */}
+                    <div className="cs12-jstep-card">
+                      <div className="cs12-jmini-device">
+                        <div className="cs12-jdevice-topbar">
+                          <span>9:41</span>
+                          <span className="cs12-jdevice-notch" />
+                          <span>5G</span>
+                        </div>
+                        <div className="cs12-jdevice-body cs12-jdevice-centered">
+                          <div className="cs12-jui-flame-icon">🔥</div>
+                          <span className="cs12-jui-success-title">Great Progress!</span>
+                          <p className="cs12-jui-success-desc">
+                            You worked out 4 times this week.
+                          </p>
+                          <button type="button" className="cs12-jui-btn-primary">Keep Going</button>
+                        </div>
+                      </div>
+                      <div className="cs12-jstep-info">
+                        <div className="cs12-jstep-badge">5</div>
+                        <div className="cs12-jstep-meta">
+                          <h4 className="cs12-jstep-title">Stay Motivated</h4>
+                          <p className="cs12-jstep-desc">See results and build long-term consistency</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Row 4: Touchpoints */}
-                <div className="cs12-jmatrix-row row-touchpoints">
-                  <div className="cs12-jlabel-cell">Touch points</div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Social media ads, Reviews, Web portal</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Sign up screen, Kyra AI intro, Goal selector</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Gym radar map, Filter chips, Amenities modal</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>UPI / Card payment, Dynamic QR gate pass</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>AI Food Scanner, Workout log, Macro charts</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>Streak tracker, Recovery stats, Rewards hub</p>
-                  </div>
-                  <div className="cs12-jcontent-cell">
-                    <p>In-app chat, Help center, Trainer hotline</p>
-                  </div>
-                </div>
-
-                {/* Row 5: Emotional & Sentiment */}
-                <div className="cs12-jmatrix-row row-emotional">
-                  <div className="cs12-jlabel-cell">Emotional</div>
-                  
-                  {/* Stage 1 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">🤔</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Curious</li>
-                      <li>Hopeful</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 2 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">😐</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Unsure</li>
-                      <li>Evaluative</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 3 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">🧐</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Intrigued</li>
-                      <li>Optimistic</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 4 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">😊</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Relieved</li>
-                      <li>Satisfied</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 5 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">🙂</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Informed</li>
-                      <li>In Control</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 6 */}
-                  <div className="cs12-jemotion-cell highlight-grow">
-                    <span className="cs12-emoji-icon">😃</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Confident</li>
-                      <li>Empowered</li>
-                    </ul>
-                  </div>
-
-                  {/* Stage 7 */}
-                  <div className="cs12-jemotion-cell">
-                    <span className="cs12-emoji-icon">😌</span>
-                    <ul className="cs12-emotion-tags">
-                      <li>Heard</li>
-                      <li>Supported</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
