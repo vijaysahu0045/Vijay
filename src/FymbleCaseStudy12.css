@@ -2475,7 +2475,7 @@
 }
 
 /* ==========================================================================
-   SECTION 07: USER JOURNEY (MINIMALIST CLEAN TEXT FLOW)
+   SECTION 07: USER JOURNEY
    ========================================================================== */
 .cs12-journey-map-card {
   margin-top: 10px;
@@ -2483,28 +2483,16 @@
 
 .cs12-journey-header-flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
   margin-bottom: 24px;
-}
-
-.cs12-journey-tabs-switch {
-  display: inline-flex;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  padding: 3px;
-  gap: 4px;
-  flex-wrap: wrap;
 }
 
 /* Swimlanes Container */
 .cs12-journey-swimlanes-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 /* Phase Card */
@@ -2512,13 +2500,11 @@
   background: rgba(255, 255, 255, 0.016);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 18px;
-  padding: 20px 24px 22px 24px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  position: relative;
-  overflow: hidden;
   transition: border-color 0.25s ease;
 }
 
@@ -2526,44 +2512,10 @@
   border-color: rgba(59, 130, 246, 0.3);
 }
 
-/* Accent Stripes */
-.cs12-jphase-card.theme-blue::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #3B82F6 0%, rgba(59, 130, 246, 0.2) 100%);
-}
-
-.cs12-jphase-card.theme-cyan::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #38BDF8 0%, rgba(56, 189, 248, 0.2) 100%);
-}
-
-.cs12-jphase-card.theme-indigo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #818CF8 0%, rgba(129, 140, 248, 0.2) 100%);
-}
-
 /* Phase Header */
 .cs12-jphase-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -2596,43 +2548,14 @@
   letter-spacing: -0.3px;
 }
 
-.cs12-jphase-pills {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.cs12-jphase-kpi {
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.cs12-jphase-goal {
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #38BDF8;
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-/* Steps Minimal Flow (No Bg Boxes, No Icons, No Numbers) */
+/* Steps Minimal Flow */
 .cs12-jsteps-flow {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
   overflow-x: auto;
-  padding: 6px 2px 2px 2px;
+  padding: 4px 2px;
   scrollbar-width: none;
 }
 
@@ -2647,7 +2570,7 @@
   color: #cbd5e1;
   letter-spacing: -0.2px;
   white-space: nowrap;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease;
   cursor: default;
 }
 
@@ -2664,7 +2587,7 @@
   color: #475569;
   flex: 0 0 auto;
   opacity: 0.55;
-  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .cs12-jsteps-flow:hover .cs12-jstep-arrow {
@@ -2690,15 +2613,11 @@
 }
 
 @media (max-width: 768px) {
-  .cs12-jphase-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .cs12-jphase-pills {
-    width: 100%;
+  .cs12-jphase-title {
+    font-size: 15px;
   }
   .cs12-jstep-text {
-    font-size: 14px;
+    font-size: 13.5px;
   }
 }
 

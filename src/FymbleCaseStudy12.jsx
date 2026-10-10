@@ -29,7 +29,6 @@ const SECTIONS_INDEX = [
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [activeNav, setActiveNav] = useState('sec-01')
   const [activePersonaTab, setActivePersonaTab] = useState('user')
-  const [activeJourneyFilter, setActiveJourneyFilter] = useState('all')
 
   // Scroll spy
   useEffect(() => {
@@ -1036,7 +1035,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             SECTION 07: USER JOURNEY (STREAMLINED PIPELINE - PUNCHY BOXES)
             =================================================================== */}
         {/* ===================================================================
-            SECTION 07: USER JOURNEY (MINIMALIST CLEAN TEXT FLOW)
+            SECTION 07: USER JOURNEY
             =================================================================== */}
         <section id="sec-07" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-journey-map-card">
@@ -1045,159 +1044,99 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">07</span>
                 <h2 className="cs12-scope-title">User Journey</h2>
               </div>
-
-              {/* Journey Flow Filter Switcher */}
-              <div className="cs12-journey-tabs-switch">
-                <button
-                  type="button"
-                  className={`cs12-ptab-btn ${activeJourneyFilter === 'all' ? 'active' : ''}`}
-                  onClick={() => setActiveJourneyFilter('all')}
-                >
-                  <span className="cs12-tab-dot" />
-                  <span>All Journeys</span>
-                </button>
-                <button
-                  type="button"
-                  className={`cs12-ptab-btn ${activeJourneyFilter === 'gym' ? 'active' : ''}`}
-                  onClick={() => setActiveJourneyFilter('gym')}
-                >
-                  <span className="cs12-tab-dot" />
-                  <span>01 Gym Passes</span>
-                </button>
-                <button
-                  type="button"
-                  className={`cs12-ptab-btn ${activeJourneyFilter === 'kyra' ? 'active' : ''}`}
-                  onClick={() => setActiveJourneyFilter('kyra')}
-                >
-                  <span className="cs12-tab-dot" />
-                  <span>02 Kyra AI</span>
-                </button>
-                <button
-                  type="button"
-                  className={`cs12-ptab-btn ${activeJourneyFilter === 'nutrition' ? 'active' : ''}`}
-                  onClick={() => setActiveJourneyFilter('nutrition')}
-                >
-                  <span className="cs12-tab-dot" />
-                  <span>03 Nutrition</span>
-                </button>
-              </div>
             </div>
 
             {/* Journey Tracks */}
             <div className="cs12-journey-swimlanes-list">
-              {/* =============================================================
-                  PHASE 01: Discover & Book a Gym
-                  ============================================================= */}
-              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'gym') && (
-                <div className="cs12-jphase-card theme-blue">
-                  <div className="cs12-jphase-header">
-                    <div className="cs12-jphase-info">
-                      <span className="cs12-jphase-num">PHASE 01</span>
-                      <h3 className="cs12-jphase-title">Discover &amp; Book a Gym</h3>
-                    </div>
-                    <div className="cs12-jphase-pills">
-                      <span className="cs12-jphase-kpi">⚡ &lt;60s Checkout</span>
-                      <span className="cs12-jphase-goal">🎯 Instant Nearby Booking</span>
-                    </div>
-                  </div>
-
-                  <div className="cs12-jsteps-flow">
-                    <span className="cs12-jstep-text">Explore Gyms</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">View Details</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Choose a Pass</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Book &amp; Schedule</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text active">Start Workout</span>
+              {/* PHASE 01: Discover & Book a Gym */}
+              <div className="cs12-jphase-card">
+                <div className="cs12-jphase-header">
+                  <div className="cs12-jphase-info">
+                    <span className="cs12-jphase-num">PHASE 01</span>
+                    <h3 className="cs12-jphase-title">Discover &amp; Book a Gym</h3>
                   </div>
                 </div>
-              )}
 
-              {/* =============================================================
-                  PHASE 02: Guidance with Kyra AI
-                  ============================================================= */}
-              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'kyra') && (
-                <div className="cs12-jphase-card theme-cyan">
-                  <div className="cs12-jphase-header">
-                    <div className="cs12-jphase-info">
-                      <span className="cs12-jphase-num">PHASE 02</span>
-                      <h3 className="cs12-jphase-title">Guidance with Kyra AI</h3>
-                    </div>
-                    <div className="cs12-jphase-pills">
-                      <span className="cs12-jphase-kpi">🤖 24/7 AI Coach</span>
-                      <span className="cs12-jphase-goal">🎯 Tailored Fitness Routine</span>
-                    </div>
-                  </div>
+                <div className="cs12-jsteps-flow">
+                  <span className="cs12-jstep-text">Explore Gyms</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">View Details</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Choose a Pass</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Book &amp; Schedule</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text active">Start Workout</span>
+                </div>
+              </div>
 
-                  <div className="cs12-jsteps-flow">
-                    <span className="cs12-jstep-text">Start a Chat</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Get Recommendations</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Follow the Plan</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Get Diet Advice</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text active">Stay Consistent</span>
+              {/* PHASE 02: Guidance with Kyra AI */}
+              <div className="cs12-jphase-card">
+                <div className="cs12-jphase-header">
+                  <div className="cs12-jphase-info">
+                    <span className="cs12-jphase-num">PHASE 02</span>
+                    <h3 className="cs12-jphase-title">Guidance with Kyra AI</h3>
                   </div>
                 </div>
-              )}
 
-              {/* =============================================================
-                  PHASE 03: Track Nutrition & See Progress
-                  ============================================================= */}
-              {(activeJourneyFilter === 'all' || activeJourneyFilter === 'nutrition') && (
-                <div className="cs12-jphase-card theme-indigo">
-                  <div className="cs12-jphase-header">
-                    <div className="cs12-jphase-info">
-                      <span className="cs12-jphase-num">PHASE 03</span>
-                      <h3 className="cs12-jphase-title">Track Nutrition &amp; Progress</h3>
-                    </div>
-                    <div className="cs12-jphase-pills">
-                      <span className="cs12-jphase-kpi">📸 3s AI Scan</span>
-                      <span className="cs12-jphase-goal">🎯 Effortless Macro Tracking</span>
-                    </div>
-                  </div>
+                <div className="cs12-jsteps-flow">
+                  <span className="cs12-jstep-text">Start a Chat</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Get Recommendations</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Follow the Plan</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Get Diet Advice</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text active">Stay Consistent</span>
+                </div>
+              </div>
 
-                  <div className="cs12-jsteps-flow">
-                    <span className="cs12-jstep-text">Scan Your Food</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Get Nutrition Info</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">Save &amp; Track Daily</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text">View Weekly Insights</span>
-                    <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                    <span className="cs12-jstep-text active">Celebrate Streaks</span>
+              {/* PHASE 03: Track Nutrition & See Progress */}
+              <div className="cs12-jphase-card">
+                <div className="cs12-jphase-header">
+                  <div className="cs12-jphase-info">
+                    <span className="cs12-jphase-num">PHASE 03</span>
+                    <h3 className="cs12-jphase-title">Track Nutrition &amp; Progress</h3>
                   </div>
                 </div>
-              )}
+
+                <div className="cs12-jsteps-flow">
+                  <span className="cs12-jstep-text">Scan Your Food</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Get Nutrition Info</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">Save &amp; Track Daily</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text">View Weekly Insights</span>
+                  <svg className="cs12-jstep-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                  <span className="cs12-jstep-text active">Celebrate Streaks</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
