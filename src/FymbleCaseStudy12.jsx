@@ -656,23 +656,16 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Problem Statement Centered Paragraph */}
-            <div className="cs12-ps-problem-statement">
-              <p>
-                Fragmented health tools and rigid annual gym subscriptions make it difficult for users to maintain consistency, track nutrition, and make confident daily fitness decisions.
-              </p>
-            </div>
-
             {/* Core Visual: Precision Telemetry Convergence Hub */}
             <div className="cs12-ps-diagram-wrapper">
               {/* Left Problem 1 Callout */}
               <div className="cs12-ps-callout-card callout-left">
                 <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot coral-dot" />
+                  <span className="cs12-badge-dot blue-dot" />
                   <span>Problem 01</span>
                 </div>
                 <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">68<small>%</small></span>
+                  <span className="cs12-ps-metric">68<small className="blue-small">%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
                   Struggle managing multiple disconnected apps for gym passes and daily meal tracking.
@@ -685,8 +678,8 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   <defs>
                     {/* Ambient Glow Gradient */}
                     <radialGradient id="psHubGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="rgba(255, 87, 87, 0.22)" />
-                      <stop offset="45%" stopColor="rgba(56, 189, 248, 0.12)" />
+                      <stop offset="0%" stopColor="rgba(59, 130, 246, 0.28)" />
+                      <stop offset="50%" stopColor="rgba(56, 189, 248, 0.12)" />
                       <stop offset="100%" stopColor="transparent" />
                     </radialGradient>
 
@@ -697,18 +690,18 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                       <stop offset="100%" stopColor="#0a0a10" />
                     </radialGradient>
 
-                    {/* Problem 01 Arc Gradient (Coral Red) */}
-                    <linearGradient id="psCoralArc" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFA07A" />
-                      <stop offset="50%" stopColor="#FF5757" />
-                      <stop offset="100%" stopColor="#E11D48" />
+                    {/* Problem 01 Arc Gradient (Electric Digital Blue) */}
+                    <linearGradient id="psElectricBlueArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#93C5FD" />
+                      <stop offset="50%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#1D4ED8" />
                     </linearGradient>
 
-                    {/* Problem 02 Arc Gradient (Vibrant Cyan Blue) */}
-                    <linearGradient id="psBlueArc" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#7DD3FC" />
+                    {/* Problem 02 Arc Gradient (Vibrant Cyan Ice Blue) */}
+                    <linearGradient id="psCyanArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#A5F3FC" />
                       <stop offset="50%" stopColor="#38BDF8" />
-                      <stop offset="100%" stopColor="#2563EB" />
+                      <stop offset="100%" stopColor="#0284C7" />
                     </linearGradient>
 
                     {/* Glowing Filter */}
@@ -756,16 +749,16 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     cy="160"
                     r="114"
                     fill="none"
-                    stroke="url(#psCoralArc)"
+                    stroke="url(#psElectricBlueArc)"
                     strokeWidth="8.5"
                     strokeLinecap="round"
                     strokeDasharray="487.07 716.28"
                     strokeDashoffset="0"
                     transform="rotate(-90 160 160)"
-                    filter="drop-shadow(0 0 8px rgba(255, 87, 87, 0.45))"
+                    filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.55))"
                   />
                   {/* End Beacon Dot at 68% (154.8 deg) */}
-                  <circle cx="56.8" cy="208.5" r="5" fill="#FF5757" filter="url(#psBeaconGlow)" />
+                  <circle cx="56.8" cy="208.5" r="5" fill="#3B82F6" filter="url(#psBeaconGlow)" />
                   <circle cx="56.8" cy="208.5" r="2" fill="#ffffff" />
 
                   {/* ---------------------------------------------------- */}
@@ -785,13 +778,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     cy="160"
                     r="92"
                     fill="none"
-                    stroke="url(#psBlueArc)"
+                    stroke="url(#psCyanArc)"
                     strokeWidth="8.5"
                     strokeLinecap="round"
                     strokeDasharray="208.10 578.05"
                     strokeDashoffset="0"
                     transform="rotate(-90 160 160)"
-                    filter="drop-shadow(0 0 8px rgba(56, 189, 248, 0.45))"
+                    filter="drop-shadow(0 0 10px rgba(56, 189, 248, 0.55))"
                   />
                   {/* End Beacon Dot at 36% (39.6 deg) */}
                   <circle cx="230.9" cy="218.6" r="5" fill="#38BDF8" filter="url(#psBeaconGlow)" />
@@ -827,21 +820,21 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     stroke="rgba(255, 255, 255, 0.2)"
                     strokeWidth="1.2"
                   />
-                  <line x1="160" y1="126" x2="160" y2="145" stroke="rgba(255, 87, 87, 0.6)" strokeWidth="1.2" />
-                  <line x1="138" y1="154" x2="160" y2="145" stroke="rgba(56, 189, 248, 0.6)" strokeWidth="1.2" />
-                  <line x1="182" y1="154" x2="160" y2="145" stroke="rgba(34, 197, 94, 0.6)" strokeWidth="1.2" />
+                  <line x1="160" y1="126" x2="160" y2="145" stroke="rgba(59, 130, 246, 0.7)" strokeWidth="1.2" />
+                  <line x1="138" y1="154" x2="160" y2="145" stroke="rgba(56, 189, 248, 0.7)" strokeWidth="1.2" />
+                  <line x1="182" y1="154" x2="160" y2="145" stroke="rgba(129, 140, 248, 0.7)" strokeWidth="1.2" />
 
                   {/* Triad Nodes */}
-                  {/* Top: Gym Pass (Coral) */}
-                  <circle cx="160" cy="126" r="4" fill="#FF5757" filter="url(#psBeaconGlow)" />
+                  {/* Top: Gym Pass (Electric Blue) */}
+                  <circle cx="160" cy="126" r="4" fill="#3B82F6" filter="url(#psBeaconGlow)" />
                   <circle cx="160" cy="126" r="1.8" fill="#ffffff" />
                   
-                  {/* Bottom Left: Macro Scanner (Blue) */}
+                  {/* Bottom Left: Macro Scanner (Cyan Blue) */}
                   <circle cx="138" cy="154" r="4" fill="#38BDF8" filter="url(#psBeaconGlow)" />
                   <circle cx="138" cy="154" r="1.8" fill="#ffffff" />
                   
-                  {/* Bottom Right: Kyra AI Coach (Green) */}
-                  <circle cx="182" cy="154" r="4" fill="#22C55E" filter="url(#psBeaconGlow)" />
+                  {/* Bottom Right: Kyra AI Coach (Indigo Blue) */}
+                  <circle cx="182" cy="154" r="4" fill="#818CF8" filter="url(#psBeaconGlow)" />
                   <circle cx="182" cy="154" r="1.8" fill="#ffffff" />
 
                   {/* Central Convergence Beacon */}
