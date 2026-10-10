@@ -508,7 +508,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               
               {/* PILLAR 1: Quantitative Survey */}
               <div className="cs12-pillar-card">
-                <div className="cs12-pillar-badge-tag tag-coral">
+                <div className="cs12-pillar-badge-tag tag-purple">
                   <span>01 • Survey Results</span>
                 </div>
                 <h3 className="cs12-pillar-question">
@@ -521,10 +521,10 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     <div className="cs12-pbar-row">
                       <div className="cs12-pbar-head">
                         <span className="cs12-pbar-name">Yes</span>
-                        <span className="cs12-pbar-val coral-val">85%</span>
+                        <span className="cs12-pbar-val purple-val">85%</span>
                       </div>
                       <div className="cs12-pbar-track">
-                        <div className="cs12-pbar-fill fill-coral" style={{ width: '85%' }} />
+                        <div className="cs12-pbar-fill fill-purple-primary" style={{ width: '85%' }} />
                       </div>
                     </div>
 
@@ -534,7 +534,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                         <span className="cs12-pbar-val">54%</span>
                       </div>
                       <div className="cs12-pbar-track">
-                        <div className="cs12-pbar-fill fill-coral-subtle" style={{ width: '54%' }} />
+                        <div className="cs12-pbar-fill fill-purple-subtle" style={{ width: '54%' }} />
                       </div>
                     </div>
 
@@ -553,7 +553,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
 
               {/* PILLAR 2: Core Behavioral Challenges (Circular Donut/Arc) */}
               <div className="cs12-pillar-card highlight-card">
-                <div className="cs12-pillar-badge-tag tag-green">
+                <div className="cs12-pillar-badge-tag tag-purple">
                   <span>02 • Core Challenges</span>
                 </div>
                 <h3 className="cs12-pillar-question">
@@ -567,13 +567,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                       {/* Background Ring */}
                       <circle cx="80" cy="80" r="60" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="11" />
                       {/* Segment 1: Green 85% */}
-                      <circle cx="80" cy="80" r="60" fill="none" stroke="#22C55E" strokeWidth="11"
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#a78bfa" strokeWidth="11"
                         strokeDasharray="210 380" strokeDashoffset="0" strokeLinecap="round" transform="rotate(-90 80 80)" />
                       {/* Segment 2: Slate 65% */}
-                      <circle cx="80" cy="80" r="60" fill="none" stroke="#64748b" strokeWidth="11"
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#7c3aed" strokeWidth="11"
                         strokeDasharray="95 380" strokeDashoffset="-220" strokeLinecap="round" transform="rotate(-90 80 80)" />
                       {/* Segment 3: Coral 45% */}
-                      <circle cx="80" cy="80" r="60" fill="none" stroke="#FF5757" strokeWidth="11"
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#4c1d95" strokeWidth="11"
                         strokeDasharray="50 380" strokeDashoffset="-320" strokeLinecap="round" transform="rotate(-90 80 80)" />
                     </svg>
                     <div className="cs12-donut-center-badge">
@@ -584,15 +584,15 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
 
                   <div className="cs12-donut-mini-legend">
                     <div className="cs12-dleg-item">
-                      <span className="cs12-dleg-dot dot-green" />
+                      <span className="cs12-dleg-dot dot-light-purple" />
                       <span className="cs12-dleg-text">Lock-in Contracts <strong>85%</strong></span>
                     </div>
                     <div className="cs12-dleg-item">
-                      <span className="cs12-dleg-dot dot-slate" />
+                      <span className="cs12-dleg-dot dot-dark-purple" />
                       <span className="cs12-dleg-text">Manual Logging <strong>65%</strong></span>
                     </div>
                     <div className="cs12-dleg-item">
-                      <span className="cs12-dleg-dot dot-coral" />
+                      <span className="cs12-dleg-dot dot-subtle-purple" />
                       <span className="cs12-dleg-text">Habit Churn <strong>45%</strong></span>
                     </div>
                   </div>
@@ -612,13 +612,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <div className="cs12-pillar-chart-box cs12-stair-pillar-box">
                   <div className="cs12-mini-staircase">
                     <div className="cs12-mstair-item">
-                      <span className="cs12-mstair-val coral-val">56%</span>
-                      <div className="cs12-mstair-bar" style={{ height: '32px', background: '#FF5757' }} />
+                      <span className="cs12-mstair-val purple-val">56%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '32px', background: '#7c3aed' }} />
                       <span className="cs12-mstair-lbl">V. Hard</span>
                     </div>
                     <div className="cs12-mstair-item">
-                      <span className="cs12-mstair-val coral-val">45%</span>
-                      <div className="cs12-mstair-bar" style={{ height: '48px', background: 'rgba(255, 87, 87, 0.65)' }} />
+                      <span className="cs12-mstair-val purple-val">45%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '48px', background: 'rgba(124, 58, 237, 0.75)' }} />
                       <span className="cs12-mstair-lbl">Hard</span>
                     </div>
                     <div className="cs12-mstair-item">
@@ -627,13 +627,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                       <span className="cs12-mstair-lbl">Neutral</span>
                     </div>
                     <div className="cs12-mstair-item">
-                      <span className="cs12-mstair-val green-val">25%</span>
-                      <div className="cs12-mstair-bar" style={{ height: '76px', background: 'rgba(34, 197, 94, 0.65)' }} />
+                      <span className="cs12-mstair-val light-purple-val">25%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '76px', background: 'rgba(167, 139, 250, 0.7)' }} />
                       <span className="cs12-mstair-lbl">Easy</span>
                     </div>
                     <div className="cs12-mstair-item">
-                      <span className="cs12-mstair-val green-val">15%</span>
-                      <div className="cs12-mstair-bar" style={{ height: '90px', background: '#22C55E' }} />
+                      <span className="cs12-mstair-val light-purple-val">15%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '90px', background: '#a78bfa' }} />
                       <span className="cs12-mstair-lbl">V. Easy</span>
                     </div>
                   </div>
@@ -661,11 +661,11 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               {/* Left Problem 1 Callout */}
               <div className="cs12-ps-callout-card callout-left">
                 <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot blue-dot" />
+                  <span className="cs12-badge-dot purple-dot" />
                   <span>Problem 01</span>
                 </div>
                 <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">68<small className="blue-small">%</small></span>
+                  <span className="cs12-ps-metric">68<small className="purple-small">%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
                   Struggle managing multiple disconnected apps for gym passes and daily meal tracking.
@@ -678,30 +678,30 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   <defs>
                     {/* Ambient Glow Gradient */}
                     <radialGradient id="psHubGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="rgba(59, 130, 246, 0.28)" />
-                      <stop offset="50%" stopColor="rgba(56, 189, 248, 0.12)" />
+                      <stop offset="0%" stopColor="rgba(124, 58, 237, 0.32)" />
+                      <stop offset="50%" stopColor="rgba(167, 139, 250, 0.12)" />
                       <stop offset="100%" stopColor="transparent" />
                     </radialGradient>
 
                     {/* Dark Metallic Glass Core */}
                     <radialGradient id="psGlassCoreGrad" cx="35%" cy="30%" r="70%">
-                      <stop offset="0%" stopColor="#252536" />
-                      <stop offset="55%" stopColor="#14141e" />
-                      <stop offset="100%" stopColor="#0a0a10" />
+                      <stop offset="0%" stopColor="#252036" />
+                      <stop offset="55%" stopColor="#151322" />
+                      <stop offset="100%" stopColor="#0b0914" />
                     </radialGradient>
 
                     {/* Problem 01 Arc Gradient (Electric Digital Blue) */}
-                    <linearGradient id="psElectricBlueArc" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#93C5FD" />
-                      <stop offset="50%" stopColor="#3B82F6" />
-                      <stop offset="100%" stopColor="#1D4ED8" />
+                    <linearGradient id="psLightPurpleArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#e9d5ff" />
+                      <stop offset="50%" stopColor="#c4b5fd" />
+                      <stop offset="100%" stopColor="#a78bfa" />
                     </linearGradient>
 
                     {/* Problem 02 Arc Gradient (Vibrant Cyan Ice Blue) */}
-                    <linearGradient id="psCyanArc" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#A5F3FC" />
-                      <stop offset="50%" stopColor="#38BDF8" />
-                      <stop offset="100%" stopColor="#0284C7" />
+                    <linearGradient id="psDarkPurpleArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#a78bfa" />
+                      <stop offset="50%" stopColor="#7c3aed" />
+                      <stop offset="100%" stopColor="#5b21b6" />
                     </linearGradient>
 
                     {/* Glowing Filter */}
@@ -749,13 +749,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     cy="160"
                     r="114"
                     fill="none"
-                    stroke="url(#psElectricBlueArc)"
+                    stroke="url(#psLightPurpleArc)"
                     strokeWidth="8.5"
                     strokeLinecap="round"
                     strokeDasharray="487.07 716.28"
                     strokeDashoffset="0"
                     transform="rotate(-90 160 160)"
-                    filter="drop-shadow(0 0 10px rgba(59, 130, 246, 0.55))"
+                    filter="drop-shadow(0 0 10px rgba(167, 139, 250, 0.65))"
                   />
                   {/* End Beacon Dot at 68% (154.8 deg) */}
                   <circle cx="56.8" cy="208.5" r="5" fill="#3B82F6" filter="url(#psBeaconGlow)" />
@@ -778,7 +778,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     cy="160"
                     r="92"
                     fill="none"
-                    stroke="url(#psCyanArc)"
+                    stroke="url(#psDarkPurpleArc)"
                     strokeWidth="8.5"
                     strokeLinecap="round"
                     strokeDasharray="208.10 578.05"
@@ -787,7 +787,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     filter="drop-shadow(0 0 10px rgba(56, 189, 248, 0.55))"
                   />
                   {/* End Beacon Dot at 36% (39.6 deg) */}
-                  <circle cx="230.9" cy="218.6" r="5" fill="#38BDF8" filter="url(#psBeaconGlow)" />
+                  <circle cx="230.9" cy="218.6" r="5" fill="#a78bfa" filter="url(#psBeaconGlow)" />
                   <circle cx="230.9" cy="218.6" r="2" fill="#ffffff" />
 
                   {/* ---------------------------------------------------- */}
@@ -832,11 +832,11 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               {/* Right Problem 2 Callout */}
               <div className="cs12-ps-callout-card callout-right">
                 <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot blue-dot" />
+                  <span className="cs12-badge-dot dark-purple-dot" />
                   <span>Problem 02</span>
                 </div>
                 <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">36<small className="blue-small">%</small></span>
+                  <span className="cs12-ps-metric">36<small className="dark-purple-small">%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
                   Find expensive 12-month memberships rigid, inconvenient, and financially wasteful.
