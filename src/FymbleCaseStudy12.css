@@ -486,176 +486,49 @@
 }
 
 /* ==========================================================================
-   SECTION 01: DUAL IPHONE 15 PRO 3D SHOWCASE
+   SECTION 01: HAND MOCKUP & MULTI-SCREEN SHOWCASE
    ========================================================================== */
-.cs12-dual-showcase-card {
-  padding: 40px 20px 60px;
+.cs12-scope-hand-showcase-card {
+  padding: 30px 20px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
+  background: rgba(20, 20, 28, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 26px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
-.cs12-dual-mockup-wrapper {
-  position: relative;
+.cs12-scope-showcase-img-wrap {
   width: 100%;
+  max-width: 1020px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 20px;
-  perspective: 1200px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cs12-dual-mockup-canvas {
-  position: relative;
-  width: 660px;
-  height: 540px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cs12-scope-showcase-img-wrap:hover {
+  transform: scale(1.015);
 }
 
-.cs12-iphone-device {
-  position: absolute;
-  width: 275px;
-  height: 550px;
-  border-radius: 46px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-  cursor: pointer;
-}
-
-.cs12-iphone-device.device-left {
-  left: 60px;
-  top: 10px;
-  z-index: 2;
-  transform: rotate(-14deg) scale(0.96);
-  filter: drop-shadow(-20px 30px 45px rgba(0, 0, 0, 0.75));
-}
-
-.cs12-iphone-device.device-left:hover {
-  transform: rotate(-10deg) scale(1.0);
-  z-index: 5;
-  filter: drop-shadow(-25px 35px 55px rgba(0, 0, 0, 0.85));
-}
-
-.cs12-iphone-device.device-right {
-  right: 60px;
-  top: -15px;
-  z-index: 3;
-  transform: rotate(15deg) scale(1.02);
-  filter: drop-shadow(25px 35px 50px rgba(0, 0, 0, 0.85));
-}
-
-.cs12-iphone-device.device-right:hover {
-  transform: rotate(11deg) scale(1.05);
-  z-index: 5;
-  filter: drop-shadow(30px 40px 60px rgba(0, 0, 0, 0.95));
-}
-
-.cs12-iphone-frame {
+.cs12-scope-hand-showcase-img {
   width: 100%;
-  height: 100%;
-  background: #15171e;
-  border: 4px solid #383b46;
-  border-radius: 46px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 0 3px #181a22;
-  position: relative;
-  overflow: hidden;
-}
-
-.cs12-iphone-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 42px;
-  overflow: hidden;
-  position: relative;
-  background: #000000;
-}
-
-.cs12-device-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
   display: block;
-}
-
-.cs12-iphone-glare {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(125deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 35%, transparent 60%);
-  pointer-events: none;
-  z-index: 8;
-}
-
-.cs12-device-status-bar {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  right: 0;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9;
-  color: #ffffff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.cs12-device-island {
-  width: 66px;
-  height: 15px;
-  background: #000000;
-  border-radius: 10px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.cs12-status-icons {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 10px;
-}
-
-.cs12-wifi-icon {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.cs12-device-home-bar {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 3.5px;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 4px;
-  z-index: 9;
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.7));
 }
 
 @media (max-width: 768px) {
-  .cs12-dual-mockup-wrapper {
-    padding: 20px 0 40px;
+  .cs12-scope-hand-showcase-card {
+    padding: 20px 12px 28px;
   }
-  .cs12-dual-mockup-canvas {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .cs12-iphone-device {
-    position: static;
-    transform: none !important;
-    width: 250px;
-    height: 500px;
+  .cs12-scope-hand-showcase-img {
+    max-height: 380px;
   }
 }
 

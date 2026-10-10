@@ -9,6 +9,7 @@ import screen3 from './assets/fymble-screen-3.png'
 import screen5 from './assets/fymble-screen-5.png'
 import foodScanner1 from './assets/food-scanner-screen-1.png'
 import nutritionScreen3 from './assets/nutrition-screen-3.png'
+import scopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
 
 const SECTIONS_INDEX = [
   { num: '01', id: 'sec-01', label: 'Scope of Work' },
@@ -237,56 +238,14 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Dual iPhone 15 Pro Showcase Box */}
-          <div className="cs12-scope-of-work-card cs12-dual-showcase-card">
-            <div className="cs12-dual-mockup-wrapper">
-              <div className="cs12-dual-mockup-canvas">
-
-                {/* Left Phone Mockup (Angled Left / Overview Screen) */}
-                <div className="cs12-iphone-device device-left">
-                  <div className="cs12-iphone-frame">
-                    <div className="cs12-iphone-glare" />
-                    <div className="cs12-iphone-screen">
-                      <img src={screen1} alt="Fymble Overview Screen" className="cs12-device-img" />
-                      
-                      {/* Status Bar & Dynamic Island */}
-                      <div className="cs12-device-status-bar">
-                        <span className="cs12-status-time">9:41</span>
-                        <div className="cs12-device-island" />
-                        <div className="cs12-status-icons">
-                          <span className="cs12-wifi-icon">5G</span>
-                          <span className="battery-icon">100%</span>
-                        </div>
-                      </div>
-
-                      <div className="cs12-device-home-bar" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Phone Mockup (Overlapping Front / Flagship App Screen) */}
-                <div className="cs12-iphone-device device-right">
-                  <div className="cs12-iphone-frame">
-                    <div className="cs12-iphone-glare" />
-                    <div className="cs12-iphone-screen">
-                      <img src={screen3} alt="Fymble Flagship Experience" className="cs12-device-img" />
-                      
-                      {/* Status Bar & Dynamic Island */}
-                      <div className="cs12-device-status-bar">
-                        <span className="cs12-status-time">9:41</span>
-                        <div className="cs12-device-island" />
-                        <div className="cs12-status-icons">
-                          <span className="cs12-wifi-icon">5G</span>
-                          <span className="battery-icon">100%</span>
-                        </div>
-                      </div>
-
-                      <div className="cs12-device-home-bar" />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+          {/* Hand Mockup & Multi-Screen Showcase Box */}
+          <div className="cs12-scope-of-work-card cs12-scope-hand-showcase-card">
+            <div className="cs12-scope-showcase-img-wrap">
+              <img
+                src={scopeHandShowcase}
+                alt="Fymble Hand Mockup & Product Ecosystem Showcase"
+                className="cs12-scope-hand-showcase-img"
+              />
             </div>
           </div>
         </section>
