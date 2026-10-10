@@ -663,7 +663,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </p>
             </div>
 
-            {/* Core Visual: 3-Petal Tri-Fold Hub Diagram */}
+            {/* Core Visual: Precision Telemetry Convergence Hub */}
             <div className="cs12-ps-diagram-wrapper">
               {/* Left Problem 1 Callout */}
               <div className="cs12-ps-callout-card callout-left">
@@ -679,64 +679,210 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 </p>
               </div>
 
-              {/* Center 3-Petal Hub Orb */}
+              {/* Center Precision Convergence Telemetry Hub */}
               <div className="cs12-ps-hub-orb">
-                <svg viewBox="0 0 340 340" className="cs12-ps-hub-svg">
-                  {/* Gradients */}
+                <svg viewBox="0 0 320 320" className="cs12-ps-hub-svg">
                   <defs>
-                    <linearGradient id="orbGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
-                      <stop offset="100%" stopColor="rgba(10,10,15,0.8)" />
+                    {/* Ambient Glow Gradient */}
+                    <radialGradient id="psHubGlow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="rgba(255, 87, 87, 0.22)" />
+                      <stop offset="45%" stopColor="rgba(56, 189, 248, 0.12)" />
+                      <stop offset="100%" stopColor="transparent" />
+                    </radialGradient>
+
+                    {/* Dark Metallic Glass Core */}
+                    <radialGradient id="psGlassCoreGrad" cx="35%" cy="30%" r="70%">
+                      <stop offset="0%" stopColor="#252536" />
+                      <stop offset="55%" stopColor="#14141e" />
+                      <stop offset="100%" stopColor="#0a0a10" />
+                    </radialGradient>
+
+                    {/* Problem 01 Arc Gradient (Coral Red) */}
+                    <linearGradient id="psCoralArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FFA07A" />
+                      <stop offset="50%" stopColor="#FF5757" />
+                      <stop offset="100%" stopColor="#E11D48" />
                     </linearGradient>
-                    <linearGradient id="coralPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FF7A7A" />
-                      <stop offset="100%" stopColor="#FF5757" />
+
+                    {/* Problem 02 Arc Gradient (Vibrant Cyan Blue) */}
+                    <linearGradient id="psBlueArc" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#7DD3FC" />
+                      <stop offset="50%" stopColor="#38BDF8" />
+                      <stop offset="100%" stopColor="#2563EB" />
                     </linearGradient>
-                    <linearGradient id="greenPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#4ADE80" />
-                      <stop offset="100%" stopColor="#22C55E" />
-                    </linearGradient>
+
+                    {/* Glowing Filter */}
+                    <filter id="psBeaconGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3.5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
                   </defs>
 
-                  {/* Outer Glowing Glass Orb Base */}
-                  <circle cx="170" cy="170" r="120" fill="url(#orbGlassGrad)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
+                  {/* Ambient Backdrop Aura */}
+                  <circle cx="160" cy="160" r="148" fill="url(#psHubGlow)" />
 
-                  {/* Petal 01: Top Left (Coral Red) */}
-                  <path
-                    d="M 170 170 L 110 70 A 120 120 0 0 0 55 170 Q 115 170 170 170 Z"
-                    fill="url(#coralPetalGrad)"
+                  {/* Outer Precision Telemetry Ticks (12 Radial Markers) */}
+                  <circle cx="160" cy="160" r="136" fill="none" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" strokeDasharray="2 6" />
+                  {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
+                    <line
+                      key={deg}
+                      x1="160"
+                      y1="20"
+                      x2="160"
+                      y2={deg % 90 === 0 ? "27" : "24"}
+                      stroke={deg % 90 === 0 ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.15)"}
+                      strokeWidth={deg % 90 === 0 ? "1.5" : "1"}
+                      transform={`rotate(${deg} 160 160)`}
+                    />
+                  ))}
+
+                  {/* ---------------------------------------------------- */}
+                  {/* RING 01: Problem 01 Arc (68% - Multi-App Friction)   */}
+                  {/* Radius 114: C = 2 * PI * 114 = 716.28. 68% = 487.07 */}
+                  {/* ---------------------------------------------------- */}
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="114"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.05)"
+                    strokeWidth="8.5"
+                  />
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="114"
+                    fill="none"
+                    stroke="url(#psCoralArc)"
+                    strokeWidth="8.5"
+                    strokeLinecap="round"
+                    strokeDasharray="487.07 716.28"
+                    strokeDashoffset="0"
+                    transform="rotate(-90 160 160)"
+                    filter="drop-shadow(0 0 8px rgba(255, 87, 87, 0.45))"
+                  />
+                  {/* End Beacon Dot at 68% (154.8 deg) */}
+                  <circle cx="56.8" cy="208.5" r="5" fill="#FF5757" filter="url(#psBeaconGlow)" />
+                  <circle cx="56.8" cy="208.5" r="2" fill="#ffffff" />
+
+                  {/* ---------------------------------------------------- */}
+                  {/* RING 02: Problem 02 Arc (36% - Rigid Subscriptions) */}
+                  {/* Radius 92: C = 2 * PI * 92 = 578.05. 36% = 208.10   */}
+                  {/* ---------------------------------------------------- */}
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="92"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.05)"
+                    strokeWidth="8.5"
+                  />
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="92"
+                    fill="none"
+                    stroke="url(#psBlueArc)"
+                    strokeWidth="8.5"
+                    strokeLinecap="round"
+                    strokeDasharray="208.10 578.05"
+                    strokeDashoffset="0"
+                    transform="rotate(-90 160 160)"
+                    filter="drop-shadow(0 0 8px rgba(56, 189, 248, 0.45))"
+                  />
+                  {/* End Beacon Dot at 36% (39.6 deg) */}
+                  <circle cx="230.9" cy="218.6" r="5" fill="#38BDF8" filter="url(#psBeaconGlow)" />
+                  <circle cx="230.9" cy="218.6" r="2" fill="#ffffff" />
+
+                  {/* ---------------------------------------------------- */}
+                  {/* CENTER CORE: Frosted Dark Glass Nexus                */}
+                  {/* ---------------------------------------------------- */}
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="68"
+                    fill="url(#psGlassCoreGrad)"
+                    stroke="rgba(255, 255, 255, 0.14)"
+                    strokeWidth="1.5"
+                    filter="drop-shadow(0 12px 30px rgba(0, 0, 0, 0.8))"
+                  />
+                  <circle
+                    cx="160"
+                    cy="160"
+                    r="55"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.08)"
+                    strokeWidth="1"
+                    strokeDasharray="3 4"
                   />
 
-                  {/* Petal 02: Top Right (Coral Red) */}
-                  <path
-                    d="M 170 170 L 230 70 A 120 120 0 0 1 285 170 Q 225 170 170 170 Z"
-                    fill="url(#coralPetalGrad)"
+                  {/* 3-Pillar Triad Convergence Vectors */}
+                  {/* Connecting lines between triad nodes */}
+                  <polygon
+                    points="160,126 138,154 182,154"
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.2)"
+                    strokeWidth="1.2"
                   />
+                  <line x1="160" y1="126" x2="160" y2="145" stroke="rgba(255, 87, 87, 0.6)" strokeWidth="1.2" />
+                  <line x1="138" y1="154" x2="160" y2="145" stroke="rgba(56, 189, 248, 0.6)" strokeWidth="1.2" />
+                  <line x1="182" y1="154" x2="160" y2="145" stroke="rgba(34, 197, 94, 0.6)" strokeWidth="1.2" />
 
-                  {/* Petal 03: Bottom (Vibrant Green / Solution) */}
-                  <path
-                    d="M 170 170 L 85 245 A 120 120 0 0 0 255 245 Q 210 190 170 170 Z"
-                    fill="url(#greenPetalGrad)"
-                  />
+                  {/* Triad Nodes */}
+                  {/* Top: Gym Pass (Coral) */}
+                  <circle cx="160" cy="126" r="4" fill="#FF5757" filter="url(#psBeaconGlow)" />
+                  <circle cx="160" cy="126" r="1.8" fill="#ffffff" />
+                  
+                  {/* Bottom Left: Macro Scanner (Blue) */}
+                  <circle cx="138" cy="154" r="4" fill="#38BDF8" filter="url(#psBeaconGlow)" />
+                  <circle cx="138" cy="154" r="1.8" fill="#ffffff" />
+                  
+                  {/* Bottom Right: Kyra AI Coach (Green) */}
+                  <circle cx="182" cy="154" r="4" fill="#22C55E" filter="url(#psBeaconGlow)" />
+                  <circle cx="182" cy="154" r="1.8" fill="#ffffff" />
 
-                  {/* Center Floating White Core */}
-                  <circle cx="170" cy="170" r="68" fill="#ffffff" />
+                  {/* Central Convergence Beacon */}
+                  <circle cx="160" cy="145" r="3" fill="#ffffff" filter="url(#psBeaconGlow)" />
 
-                  {/* Inner Text Labels inside Petals */}
-                  <text x="125" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
-                  <text x="215" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
-                  <text x="170" y="248" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
+                  {/* Core Typography */}
+                  <text
+                    x="160"
+                    y="178"
+                    fill="#ffffff"
+                    fontSize="11"
+                    fontWeight="800"
+                    textAnchor="middle"
+                    letterSpacing="2.5"
+                    fontFamily="Roboto, sans-serif"
+                  >
+                    FYMBLE
+                  </text>
+                  <text
+                    x="160"
+                    y="192"
+                    fill="#94a3b8"
+                    fontSize="7.5"
+                    fontWeight="600"
+                    textAnchor="middle"
+                    letterSpacing="1.2"
+                    fontFamily="Roboto, sans-serif"
+                  >
+                    CONVERGENCE
+                  </text>
                 </svg>
               </div>
 
               {/* Right Problem 2 Callout */}
               <div className="cs12-ps-callout-card callout-right">
                 <div className="cs12-ps-badge">
-                  <span className="cs12-badge-dot coral-dot" />
+                  <span className="cs12-badge-dot blue-dot" />
                   <span>Problem 02</span>
                 </div>
                 <div className="cs12-ps-metric-row">
-                  <span className="cs12-ps-metric">36<small>%</small></span>
+                  <span className="cs12-ps-metric">36<small className="blue-small">%</small></span>
                 </div>
                 <p className="cs12-ps-metric-desc">
                   Find expensive 12-month memberships rigid, inconvenient, and financially wasteful.
