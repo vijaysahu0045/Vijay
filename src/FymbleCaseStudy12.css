@@ -3799,7 +3799,7 @@
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.2px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.22);
   margin-bottom: 8px;
 }
 
@@ -3824,7 +3824,7 @@
 }
 
 .cs12-testing-data-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(124, 58, 237, 0.08);
 }
 
 .cs12-task-text {
@@ -3848,8 +3848,8 @@
   top: 50%;
   left: 12%;
   right: 12%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.12);
+  height: 1.5px;
+  background: rgba(167, 139, 250, 0.3);
   z-index: 1;
 }
 
@@ -3865,32 +3865,35 @@
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  background: #ffffff;
-  color: #0f172a;
+  background: rgba(124, 58, 237, 0.16);
+  color: #ffffff;
+  border: 1.5px solid rgba(167, 139, 250, 0.42);
   font-family: 'Roboto', sans-serif;
   border-radius: 9999px;
   padding: 8px 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(124, 58, 237, 0.22);
   min-width: 90px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .cs12-test-pill:hover {
-  transform: scale(1.06);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transform: scale(1.08);
+  background: rgba(124, 58, 237, 0.28);
+  border-color: #a78bfa;
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.45), 0 0 24px rgba(167, 139, 250, 0.45);
 }
 
 .cs12-test-pill .pill-num {
   font-size: 16px;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff;
   letter-spacing: -0.3px;
 }
 
 .cs12-test-pill .pill-unit {
   font-size: 12.5px;
-  font-weight: 600;
-  color: #64748b;
+  font-weight: 700;
+  color: #c4b5fd;
   margin-left: 2px;
 }
 
@@ -3900,9 +3903,9 @@
   transform: translateY(-50%);
   width: 5px;
   height: 5px;
-  background: #ffffff;
+  background: #a78bfa;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.95);
 }
 
 .cs12-test-pill .pill-dot.left {
@@ -3922,7 +3925,9 @@
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 18px 12px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 14px;
   }
 
   .cs12-testing-metric-track {
@@ -4121,8 +4126,8 @@
 }
 
 .cs12-chart-dot.active {
-  background: #FF5757;
-  box-shadow: 0 0 4px rgba(255, 87, 87, 0.6);
+  background: #a78bfa;
+  box-shadow: 0 0 6px rgba(167, 139, 250, 0.8);
 }
 
 .cs12-chart-dot.inactive {
@@ -4192,7 +4197,7 @@
 }
 
 .cs12-rmetric-bar.active-bar {
-  background: #FF5757;
+  background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
 }
 
 .cs12-rmetric-bar.idle-bar {
