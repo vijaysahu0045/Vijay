@@ -491,178 +491,199 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Research Layout: 2x2 Alternating Grid matching Behance Design */}
-            <div className="cs12-research-insights-container">
-              {/* Row 1: Survey Question 1 (Top Right) */}
-              <div className="cs12-research-row-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    Have you experienced difficulties while managing your fitness &amp; diet?
-                  </h3>
+            {/* Top Quick Research KPI Badges */}
+            <div className="cs12-research-stats-strip">
+              <div className="cs12-stat-pill-item">
+                <span className="cs12-stat-num">120+</span>
+                <span className="cs12-stat-lbl">Gym-Goers Surveyed</span>
+              </div>
+              <div className="cs12-stat-divider" />
+              <div className="cs12-stat-pill-item">
+                <span className="cs12-stat-num">30+</span>
+                <span className="cs12-stat-lbl">1-on-1 User Interviews</span>
+              </div>
+              <div className="cs12-stat-divider" />
+              <div className="cs12-stat-pill-item">
+                <span className="cs12-stat-num">85%</span>
+                <span className="cs12-stat-lbl">Reported Habit Friction</span>
+              </div>
+              <div className="cs12-stat-divider" />
+              <div className="cs12-stat-pill-item">
+                <span className="cs12-stat-num">3.2x</span>
+                <span className="cs12-stat-lbl">Higher Churn with Lock-ins</span>
+              </div>
+            </div>
+
+            {/* 3-Column Pillar Cards Grid */}
+            <div className="cs12-research-3pillar-grid">
+              
+              {/* PILLAR 1: Quantitative Survey */}
+              <div className="cs12-pillar-card">
+                <div className="cs12-pillar-badge-tag tag-coral">
+                  <span>01 • Survey Results</span>
+                </div>
+                <h3 className="cs12-pillar-question">
+                  Have you experienced difficulties while managing your fitness &amp; diet?
+                </h3>
+                
+                {/* Visual Chart 1: Progress Bars */}
+                <div className="cs12-pillar-chart-box">
+                  <div className="cs12-pillar-bar-list">
+                    <div className="cs12-pbar-row">
+                      <div className="cs12-pbar-head">
+                        <span className="cs12-pbar-name">Yes</span>
+                        <span className="cs12-pbar-val coral-val">85%</span>
+                      </div>
+                      <div className="cs12-pbar-track">
+                        <div className="cs12-pbar-fill fill-coral" style={{ width: '85%' }} />
+                      </div>
+                    </div>
+
+                    <div className="cs12-pbar-row">
+                      <div className="cs12-pbar-head">
+                        <span className="cs12-pbar-name">Occasionally</span>
+                        <span className="cs12-pbar-val">54%</span>
+                      </div>
+                      <div className="cs12-pbar-track">
+                        <div className="cs12-pbar-fill fill-coral-subtle" style={{ width: '54%' }} />
+                      </div>
+                    </div>
+
+                    <div className="cs12-pbar-row">
+                      <div className="cs12-pbar-head">
+                        <span className="cs12-pbar-name">No</span>
+                        <span className="cs12-pbar-val slate-val">13%</span>
+                      </div>
+                      <div className="cs12-pbar-track">
+                        <div className="cs12-pbar-fill fill-slate" style={{ width: '13%' }} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-title">User Result</span>
-                  </div>
-                  <div className="cs12-chart-bars-list">
-                    {/* Bar 1: Yes 85% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">Yes</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-coral" style={{ width: '85%' }}>
-                          <span className="cs12-bar-percent">85%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="User 1" />
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" alt="User 2" />
-                      </div>
-                    </div>
-
-                    {/* Bar 2: Occasionally 54% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">Occasionally</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-coral-light" style={{ width: '54%' }}>
-                          <span className="cs12-bar-percent">54%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=60&q=80" alt="User 3" />
-                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=60&q=80" alt="User 4" />
-                      </div>
-                    </div>
-
-                    {/* Bar 3: No 13% */}
-                    <div className="cs12-chart-bar-item">
-                      <span className="cs12-bar-label">No</span>
-                      <div className="cs12-bar-track">
-                        <div className="cs12-bar-fill fill-gray" style={{ width: '13%' }}>
-                          <span className="cs12-bar-percent">13%</span>
-                        </div>
-                      </div>
-                      <div className="cs12-avatar-cluster">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="User 5" />
-                      </div>
-                    </div>
-                  </div>
+                <div className="cs12-pillar-takeaway">
+                  <span className="cs12-takeaway-dot dot-coral" />
+                  <p>85% struggle with routine consistency due to rigid structures.</p>
                 </div>
               </div>
 
-              {/* Row 2: Survey Question 2 (Bottom Left) */}
-              <div className="cs12-research-row-grid reverse-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    Which fitness challenges do you encounter most frequently?
-                  </h3>
+              {/* PILLAR 2: Core Behavioral Challenges (Circular Donut/Arc) */}
+              <div className="cs12-pillar-card highlight-card">
+                <div className="cs12-pillar-badge-tag tag-green">
+                  <span>02 • Core Challenges</span>
                 </div>
+                <h3 className="cs12-pillar-question">
+                  Which fitness challenges do you encounter most frequently?
+                </h3>
 
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-title">Key User Challenges</span>
-                  </div>
-                  
-                  {/* Semi-Circular Radial Arc Chart */}
-                  <div className="cs12-arc-chart-wrapper">
-                    <svg viewBox="0 0 320 180" className="cs12-arc-chart-svg">
-                      {/* Arc Base Gray */}
-                      <path d="M 40 160 A 120 120 0 0 1 280 160" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="12" strokeLinecap="round" />
+                {/* Visual Chart 2: Circular Donut / Gauge */}
+                <div className="cs12-pillar-chart-box cs12-donut-chart-box">
+                  <div className="cs12-donut-svg-wrap">
+                    <svg viewBox="0 0 160 160" className="cs12-donut-svg">
+                      {/* Background Ring */}
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="11" />
                       {/* Segment 1: Green 85% */}
-                      <path d="M 40 160 A 120 120 0 0 1 105 58" fill="none" stroke="#22C55E" strokeWidth="12" strokeLinecap="round" />
-                      {/* Segment 2: Red-Coral 45% */}
-                      <path d="M 112 52 A 120 120 0 0 1 210 52" fill="none" stroke="#FF5757" strokeWidth="12" strokeLinecap="round" />
-                      {/* Segment 3: Slate 65% */}
-                      <path d="M 218 58 A 120 120 0 0 1 280 160" fill="none" stroke="#64748b" strokeWidth="12" strokeLinecap="round" />
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#22C55E" strokeWidth="11"
+                        strokeDasharray="210 380" strokeDashoffset="0" strokeLinecap="round" transform="rotate(-90 80 80)" />
+                      {/* Segment 2: Slate 65% */}
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#64748b" strokeWidth="11"
+                        strokeDasharray="95 380" strokeDashoffset="-220" strokeLinecap="round" transform="rotate(-90 80 80)" />
+                      {/* Segment 3: Coral 45% */}
+                      <circle cx="80" cy="80" r="60" fill="none" stroke="#FF5757" strokeWidth="11"
+                        strokeDasharray="50 380" strokeDashoffset="-320" strokeLinecap="round" transform="rotate(-90 80 80)" />
                     </svg>
+                    <div className="cs12-donut-center-badge">
+                      <span className="cs12-donut-big-num">85%</span>
+                      <span className="cs12-donut-sub-lbl">Top Hurdle</span>
+                    </div>
+                  </div>
 
-                    {/* Radial Arc Legend & Data Points */}
-                    <div className="cs12-arc-legend-grid">
-                      <div className="cs12-arc-legend-item left-item">
-                        <span className="cs12-arc-percent green-text">85%</span>
-                        <span className="cs12-arc-label">Membership Lock-in</span>
-                      </div>
-                      <div className="cs12-arc-legend-item center-item">
-                        <span className="cs12-arc-percent coral-text">45%</span>
-                        <span className="cs12-arc-label">Inconsistent Habits</span>
-                      </div>
-                      <div className="cs12-arc-legend-item right-item">
-                        <span className="cs12-arc-percent slate-text">65%</span>
-                        <span className="cs12-arc-label">Manual Meal Logging</span>
-                      </div>
+                  <div className="cs12-donut-mini-legend">
+                    <div className="cs12-dleg-item">
+                      <span className="cs12-dleg-dot dot-green" />
+                      <span className="cs12-dleg-text">Lock-in Contracts <strong>85%</strong></span>
+                    </div>
+                    <div className="cs12-dleg-item">
+                      <span className="cs12-dleg-dot dot-slate" />
+                      <span className="cs12-dleg-text">Manual Logging <strong>65%</strong></span>
+                    </div>
+                    <div className="cs12-dleg-item">
+                      <span className="cs12-dleg-dot dot-coral" />
+                      <span className="cs12-dleg-text">Habit Churn <strong>45%</strong></span>
                     </div>
                   </div>
                 </div>
+
+                <div className="cs12-pillar-takeaway">
+                  <span className="cs12-takeaway-dot dot-green" />
+                  <p>Inflexible annual memberships directly drive gym dropout rates.</p>
+                </div>
               </div>
 
-              {/* Row 3: Survey Question 3 (Top Right in Image 2) */}
-              <div className="cs12-research-row-grid">
-                <div className="cs12-research-question-col">
-                  <h3 className="cs12-research-question-title">
-                    How easy is it to manage workouts &amp; diet using current apps?
-                  </h3>
+              {/* PILLAR 3: Market Usability & Frustration */}
+              <div className="cs12-pillar-card">
+                <div className="cs12-pillar-badge-tag tag-purple">
+                  <span>03 • Market Gap</span>
                 </div>
+                <h3 className="cs12-pillar-question">
+                  How easy is it to manage workouts &amp; diet using current apps?
+                </h3>
 
-                <div className="cs12-research-chart-card">
-                  <div className="cs12-chart-card-header">
-                    <span className="cs12-chart-subtitle-text">Users expect a simpler, unified fitness experience.</span>
-                  </div>
-
-                  {/* Staircase Step Progression Chart */}
-                  <div className="cs12-staircase-chart-container">
-                    <div className="cs12-staircase-steps">
-                      {/* Step 1 */}
-                      <div className="cs12-stair-col stair-1">
-                        <span className="cs12-stair-percent coral-text">56%</span>
-                        <span className="cs12-stair-name">Very Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '22px', background: '#FF5757' }} />
-                      </div>
-                      {/* Step 2 */}
-                      <div className="cs12-stair-col stair-2">
-                        <span className="cs12-stair-percent coral-text">45%</span>
-                        <span className="cs12-stair-name">Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '36px', background: 'rgba(255, 87, 87, 0.6)' }} />
-                      </div>
-                      {/* Step 3 */}
-                      <div className="cs12-stair-col stair-3">
-                        <span className="cs12-stair-percent">32%</span>
-                        <span className="cs12-stair-name">Neutral</span>
-                        <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 255, 255, 0.2)' }} />
-                      </div>
-                      {/* Step 4 */}
-                      <div className="cs12-stair-col stair-4">
-                        <span className="cs12-stair-percent green-text">25%</span>
-                        <span className="cs12-stair-name">Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '64px', background: 'rgba(34, 197, 94, 0.6)' }} />
-                      </div>
-                      {/* Step 5 */}
-                      <div className="cs12-stair-col stair-5">
-                        <span className="cs12-stair-percent green-text">15%</span>
-                        <span className="cs12-stair-name">Very Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '78px', background: '#22C55E' }} />
-                      </div>
+                {/* Visual Chart 3: Staircase Stepper Bars */}
+                <div className="cs12-pillar-chart-box cs12-stair-pillar-box">
+                  <div className="cs12-mini-staircase">
+                    <div className="cs12-mstair-item">
+                      <span className="cs12-mstair-val coral-val">56%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '32px', background: '#FF5757' }} />
+                      <span className="cs12-mstair-lbl">V. Hard</span>
+                    </div>
+                    <div className="cs12-mstair-item">
+                      <span className="cs12-mstair-val coral-val">45%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '48px', background: 'rgba(255, 87, 87, 0.65)' }} />
+                      <span className="cs12-mstair-lbl">Hard</span>
+                    </div>
+                    <div className="cs12-mstair-item">
+                      <span className="cs12-mstair-val">32%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '62px', background: 'rgba(255, 255, 255, 0.2)' }} />
+                      <span className="cs12-mstair-lbl">Neutral</span>
+                    </div>
+                    <div className="cs12-mstair-item">
+                      <span className="cs12-mstair-val green-val">25%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '76px', background: 'rgba(34, 197, 94, 0.65)' }} />
+                      <span className="cs12-mstair-lbl">Easy</span>
+                    </div>
+                    <div className="cs12-mstair-item">
+                      <span className="cs12-mstair-val green-val">15%</span>
+                      <div className="cs12-mstair-bar" style={{ height: '90px', background: '#22C55E' }} />
+                      <span className="cs12-mstair-lbl">V. Easy</span>
                     </div>
                   </div>
                 </div>
+
+                <div className="cs12-pillar-takeaway">
+                  <span className="cs12-takeaway-dot dot-purple" />
+                  <p>Existing fitness apps are fragmented across disconnected silos.</p>
+                </div>
               </div>
 
-              {/* Row 4: Key Persona Quote (Bottom Left in Image 2) */}
-              <div className="cs12-research-quote-card">
-                <span className="cs12-quote-big-mark">“</span>
-                <p className="cs12-featured-persona-quote">
-                  <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
-                </p>
-                <div className="cs12-quote-persona-author">
-                  <div className="cs12-persona-avatar-wrap">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                      alt="Emma Wilson"
-                    />
-                  </div>
-                  <div className="cs12-persona-author-info">
-                    <h4 className="cs12-persona-author-name">Emma Wilson</h4>
-                    <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
-                  </div>
+            </div>
+
+            {/* Bottom Spotlight Persona Voice Card */}
+            <div className="cs12-research-quote-card">
+              <span className="cs12-quote-big-mark">“</span>
+              <p className="cs12-featured-persona-quote">
+                <strong>I want complete flexibility over my gym passes and diet</strong>, with clear insights into my workouts, calories, and progress <strong>without navigating through multiple screens.</strong>
+              </p>
+              <div className="cs12-quote-persona-author">
+                <div className="cs12-persona-avatar-wrap">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                    alt="Emma Wilson"
+                  />
+                </div>
+                <div className="cs12-persona-author-info">
+                  <h4 className="cs12-persona-author-name">Emma Wilson</h4>
+                  <span className="cs12-persona-author-role">Active Gym Member &amp; Product Designer</span>
                 </div>
               </div>
             </div>
