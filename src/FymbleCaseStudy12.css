@@ -744,7 +744,7 @@
 .cs12-type-hero-display {
   position: relative;
   width: 100%;
-  padding: 30px 0 10px;
+  padding: 35px 0 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,11 +752,11 @@
 
 .cs12-type-huge-name {
   font-family: 'Roboto', sans-serif;
-  font-size: clamp(80px, 15vw, 180px);
+  font-size: clamp(70px, 14vw, 175px);
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -2px;
-  line-height: 0.95;
+  line-height: 1;
   user-select: none;
   background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
   -webkit-background-clip: text;
@@ -765,8 +765,8 @@
 
 .cs12-type-weight-card {
   position: absolute;
-  top: 10px;
-  right: 18%;
+  top: -25px;
+  right: 25px;
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -779,6 +779,7 @@
   gap: 8px;
   min-width: 130px;
   text-align: left;
+  z-index: 3;
 }
 
 .cs12-weight-title {
@@ -999,11 +1000,20 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .cs12-type-weight-card {
-    right: 5%;
+    top: -20px;
+    right: 10px;
   }
 }
 
 @media (max-width: 600px) {
+  .cs12-type-hero-display {
+    flex-direction: column-reverse;
+    gap: 16px;
+    padding: 15px 0;
+  }
+  .cs12-type-weight-card {
+    position: static;
+  }
   .cs12-colors-3-grid {
     grid-template-columns: 1fr !important;
   }
