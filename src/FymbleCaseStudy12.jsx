@@ -237,54 +237,56 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Dual iPhone 15 Pro Showcase */}
-          <div className="cs12-dual-mockup-wrapper">
-            <div className="cs12-dual-mockup-canvas">
+          {/* Dual iPhone 15 Pro Showcase Box */}
+          <div className="cs12-scope-of-work-card cs12-dual-showcase-card">
+            <div className="cs12-dual-mockup-wrapper">
+              <div className="cs12-dual-mockup-canvas">
 
-              {/* Left Phone Mockup (Angled Left / Overview Screen) */}
-              <div className="cs12-iphone-device device-left">
-                <div className="cs12-iphone-frame">
-                  <div className="cs12-iphone-glare" />
-                  <div className="cs12-iphone-screen">
-                    <img src={screen1} alt="Fymble Overview Screen" className="cs12-device-img" />
-                    
-                    {/* Status Bar & Dynamic Island */}
-                    <div className="cs12-device-status-bar">
-                      <span className="cs12-status-time">9:41</span>
-                      <div className="cs12-device-island" />
-                      <div className="cs12-status-icons">
-                        <span className="cs12-wifi-icon">5G</span>
-                        <span className="battery-icon">100%</span>
+                {/* Left Phone Mockup (Angled Left / Overview Screen) */}
+                <div className="cs12-iphone-device device-left">
+                  <div className="cs12-iphone-frame">
+                    <div className="cs12-iphone-glare" />
+                    <div className="cs12-iphone-screen">
+                      <img src={screen1} alt="Fymble Overview Screen" className="cs12-device-img" />
+                      
+                      {/* Status Bar & Dynamic Island */}
+                      <div className="cs12-device-status-bar">
+                        <span className="cs12-status-time">9:41</span>
+                        <div className="cs12-device-island" />
+                        <div className="cs12-status-icons">
+                          <span className="cs12-wifi-icon">5G</span>
+                          <span className="battery-icon">100%</span>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="cs12-device-home-bar" />
+                      <div className="cs12-device-home-bar" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right Phone Mockup (Overlapping Front / Flagship App Screen) */}
-              <div className="cs12-iphone-device device-right">
-                <div className="cs12-iphone-frame">
-                  <div className="cs12-iphone-glare" />
-                  <div className="cs12-iphone-screen">
-                    <img src={screen3} alt="Fymble Flagship Experience" className="cs12-device-img" />
-                    
-                    {/* Status Bar & Dynamic Island */}
-                    <div className="cs12-device-status-bar">
-                      <span className="cs12-status-time">9:41</span>
-                      <div className="cs12-device-island" />
-                      <div className="cs12-status-icons">
-                        <span className="cs12-wifi-icon">5G</span>
-                        <span className="battery-icon">100%</span>
+                {/* Right Phone Mockup (Overlapping Front / Flagship App Screen) */}
+                <div className="cs12-iphone-device device-right">
+                  <div className="cs12-iphone-frame">
+                    <div className="cs12-iphone-glare" />
+                    <div className="cs12-iphone-screen">
+                      <img src={screen3} alt="Fymble Flagship Experience" className="cs12-device-img" />
+                      
+                      {/* Status Bar & Dynamic Island */}
+                      <div className="cs12-device-status-bar">
+                        <span className="cs12-status-time">9:41</span>
+                        <div className="cs12-device-island" />
+                        <div className="cs12-status-icons">
+                          <span className="cs12-wifi-icon">5G</span>
+                          <span className="battery-icon">100%</span>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="cs12-device-home-bar" />
+                      <div className="cs12-device-home-bar" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
         </section>

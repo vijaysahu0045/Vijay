@@ -488,13 +488,22 @@
 /* ==========================================================================
    SECTION 01: DUAL IPHONE 15 PRO 3D SHOWCASE
    ========================================================================== */
+.cs12-dual-showcase-card {
+  padding: 40px 20px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
 .cs12-dual-mockup-wrapper {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0 50px;
+  padding: 10px 0 20px;
   perspective: 1200px;
 }
 
