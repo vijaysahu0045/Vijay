@@ -924,18 +924,18 @@
   color: #ffffff;
 }
 
-.cs12-colors-4-grid {
+.cs12-colors-3-grid {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 16px !important;
-  max-width: 900px;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  max-width: 880px;
   margin: 36px auto 0;
 }
 
 .cs12-color-card {
   position: relative;
   height: 155px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -951,7 +951,7 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
 }
 
-.color-palette-charcoal {
+.color-palette-black {
   background: linear-gradient(180deg, #f0f1f3 0%, #e2e4e8 60%, #cbd0d8 100%);
 }
 
@@ -959,11 +959,7 @@
   background: linear-gradient(180deg, #ffffff 0%, #fafafa 60%, #f1f3f5 100%);
 }
 
-.color-palette-green {
-  background: linear-gradient(180deg, #f0f9f1 0%, #e2f5e4 60%, #d2f0d5 100%);
-}
-
-.color-palette-red {
+.color-palette-coral {
   background: linear-gradient(180deg, #fef2f2 0%, #fee4e4 60%, #fbd4d3 100%);
 }
 
@@ -987,18 +983,15 @@
   width: 100%;
 }
 
-.bar-charcoal {
-  background: #414140;
+.bar-black {
+  background: #000000;
 }
 .bar-white {
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
-.bar-green {
-  background: #38BC37;
-}
-.bar-red {
-  background: #F44336;
+.bar-coral {
+  background: #FF5757;
 }
 
 @media (max-width: 900px) {
@@ -1006,9 +999,9 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .cs12-colors-4-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+  .cs12-colors-3-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
   }
   .cs12-type-weight-card {
     top: -20px;
@@ -1025,9 +1018,9 @@
   .cs12-type-weight-card {
     position: static;
   }
-  .cs12-colors-4-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+  .cs12-colors-3-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
   }
   .cs12-specimen-block {
     flex-direction: column;
