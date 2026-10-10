@@ -646,9 +646,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         {/* ===================================================================
             SECTION 05: PROBLEM & SOLUTION
             =================================================================== */}
-        {/* ===================================================================
-            SECTION 05: PROBLEM & SOLUTION (SIDE-BY-SIDE BEFORE VS AFTER MATRIX)
-            =================================================================== */}
         <section id="sec-05" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-problem-solution-card">
             <div className="cs12-scope-header-row">
@@ -658,136 +655,103 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Sub-Header Statement */}
+            {/* Problem Statement Centered Paragraph */}
             <div className="cs12-ps-problem-statement">
               <p>
-                Transforming <strong>fragmented fitness tools &amp; rigid yearly contracts</strong> into a single <strong>flexible, AI-driven daily health ecosystem.</strong>
+                <strong>Fragmented health tools</strong> and <strong>rigid annual gym subscriptions</strong> make it difficult for users to maintain consistency, track nutrition, and make <strong>confident daily fitness decisions.</strong>
               </p>
             </div>
 
-            {/* Split Comparison Matrix */}
-            <div className="cs12-ps-comparison-matrix">
-              {/* Left Column: The Friction (Problem) */}
-              <div className="cs12-ps-matrix-side ps-side-problem">
-                <div className="cs12-ps-side-header">
-                  <div className="cs12-ps-side-badge badge-problem">
-                    <span className="cs12-side-dot dot-coral" />
-                    <span>THE FRICTION • BEFORE</span>
-                  </div>
-                  <h3 className="cs12-ps-side-heading">Current Industry Gaps</h3>
+            {/* Core Visual: 3-Petal Tri-Fold Hub Diagram */}
+            <div className="cs12-ps-diagram-wrapper">
+              {/* Left Problem 1 Callout */}
+              <div className="cs12-ps-callout-card callout-left">
+                <div className="cs12-ps-badge">
+                  <span className="cs12-badge-dot coral-dot" />
+                  <span>Problem 01</span>
                 </div>
-
-                <div className="cs12-ps-side-cards">
-                  {/* Problem Card 1 */}
-                  <div className="cs12-ps-card ps-card-coral">
-                    <div className="cs12-ps-card-top">
-                      <div className="cs12-ps-card-metric coral-metric">68<small>%</small></div>
-                      <span className="cs12-ps-card-tag tag-coral">Tool Overload</span>
-                    </div>
-                    <h4 className="cs12-ps-card-title">App Fragmentation &amp; Manual Fatigue</h4>
-                    <p className="cs12-ps-card-desc">
-                      Users juggle 3+ disconnected apps for calorie logging, workout routines, and gym memberships, leading to fast cognitive burnout.
-                    </p>
-                    <div className="cs12-ps-card-chips">
-                      <span className="ps-chip chip-coral">✕ 3+ Separate Apps</span>
-                      <span className="ps-chip chip-coral">✕ Manual Logging</span>
-                    </div>
-                  </div>
-
-                  {/* Problem Card 2 */}
-                  <div className="cs12-ps-card ps-card-coral">
-                    <div className="cs12-ps-card-top">
-                      <div className="cs12-ps-card-metric coral-metric">36<small>%</small></div>
-                      <span className="cs12-ps-card-tag tag-coral">Financial Lock-In</span>
-                    </div>
-                    <h4 className="cs12-ps-card-title">Rigid 12-Month Gym Subscriptions</h4>
-                    <p className="cs12-ps-card-desc">
-                      Traditional gyms demand ₹15,000+ upfront yearly fees with strict lock-ins, causing wasted money when users travel or miss workouts.
-                    </p>
-                    <div className="cs12-ps-card-chips">
-                      <span className="ps-chip chip-coral">✕ Expensive Upfront</span>
-                      <span className="ps-chip chip-coral">✕ Zero Flexibility</span>
-                    </div>
-                  </div>
+                <div className="cs12-ps-metric-row">
+                  <span className="cs12-ps-metric">68<small>%</small></span>
                 </div>
+                <p className="cs12-ps-metric-desc">
+                  Struggle managing multiple disconnected apps for gym passes and daily meal tracking.
+                </p>
               </div>
 
-              {/* Center Transformation Bridge */}
-              <div className="cs12-ps-bridge-divider">
-                <div className="cs12-ps-bridge-line" />
-                <div className="cs12-ps-bridge-node">
-                  <div className="cs12-ps-bridge-pulse" />
-                  <span className="cs12-ps-bridge-text">TRANSFORM</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="cs12-ps-bridge-arrow">
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </div>
-                <div className="cs12-ps-bridge-line" />
+              {/* Center 3-Petal Hub Orb */}
+              <div className="cs12-ps-hub-orb">
+                <svg viewBox="0 0 340 340" className="cs12-ps-hub-svg">
+                  {/* Gradients */}
+                  <defs>
+                    <linearGradient id="orbGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(255,255,255,0.08)" />
+                      <stop offset="100%" stopColor="rgba(10,10,15,0.8)" />
+                    </linearGradient>
+                    <linearGradient id="coralPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FF7A7A" />
+                      <stop offset="100%" stopColor="#FF5757" />
+                    </linearGradient>
+                    <linearGradient id="greenPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4ADE80" />
+                      <stop offset="100%" stopColor="#22C55E" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Outer Glowing Glass Orb Base */}
+                  <circle cx="170" cy="170" r="120" fill="url(#orbGlassGrad)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
+
+                  {/* Petal 01: Top Left (Coral Red) */}
+                  <path
+                    d="M 170 170 L 110 70 A 120 120 0 0 0 55 170 Q 115 170 170 170 Z"
+                    fill="url(#coralPetalGrad)"
+                  />
+
+                  {/* Petal 02: Top Right (Coral Red) */}
+                  <path
+                    d="M 170 170 L 230 70 A 120 120 0 0 1 285 170 Q 225 170 170 170 Z"
+                    fill="url(#coralPetalGrad)"
+                  />
+
+                  {/* Petal 03: Bottom (Vibrant Green / Solution) */}
+                  <path
+                    d="M 170 170 L 85 245 A 120 120 0 0 0 255 245 Q 210 190 170 170 Z"
+                    fill="url(#greenPetalGrad)"
+                  />
+
+                  {/* Center Floating White Core */}
+                  <circle cx="170" cy="170" r="68" fill="#ffffff" />
+
+                  {/* Inner Text Labels inside Petals */}
+                  <text x="125" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">01</text>
+                  <text x="215" y="140" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">02</text>
+                  <text x="170" y="248" fill="#ffffff" fontSize="15" fontWeight="700" textAnchor="middle" fontFamily="Roboto">03</text>
+                </svg>
               </div>
 
-              {/* Right Column: The Breakthrough (Solution) */}
-              <div className="cs12-ps-matrix-side ps-side-solution">
-                <div className="cs12-ps-side-header">
-                  <div className="cs12-ps-side-badge badge-solution">
-                    <span className="cs12-side-dot dot-emerald" />
-                    <span>THE BREAKTHROUGH • FYMBLE</span>
-                  </div>
-                  <h3 className="cs12-ps-side-heading">The Unified Solution</h3>
+              {/* Right Problem 2 Callout */}
+              <div className="cs12-ps-callout-card callout-right">
+                <div className="cs12-ps-badge">
+                  <span className="cs12-badge-dot coral-dot" />
+                  <span>Problem 02</span>
                 </div>
-
-                <div className="cs12-ps-side-cards">
-                  {/* Solution Card 1 */}
-                  <div className="cs12-ps-card ps-card-emerald">
-                    <div className="cs12-ps-card-top">
-                      <div className="cs12-ps-card-metric emerald-metric">₹99<small>/pass</small></div>
-                      <span className="cs12-ps-card-tag tag-emerald">1-Tap Access</span>
-                    </div>
-                    <h4 className="cs12-ps-card-title">On-Demand Flexible Gym Network</h4>
-                    <p className="cs12-ps-card-desc">
-                      Work out at any certified partner gym with instant 1-tap QR check-ins. No long-term contracts, pay only when you actually train.
-                    </p>
-                    <div className="cs12-ps-card-chips">
-                      <span className="ps-chip chip-emerald">✓ Instant QR Entry</span>
-                      <span className="ps-chip chip-emerald">✓ Pay-Per-Workout</span>
-                    </div>
-                  </div>
-
-                  {/* Solution Card 2 */}
-                  <div className="cs12-ps-card ps-card-emerald">
-                    <div className="cs12-ps-card-top">
-                      <div className="cs12-ps-card-metric emerald-metric">3s<small> AI Scan</small></div>
-                      <span className="cs12-ps-card-tag tag-emerald">Smart Automation</span>
-                    </div>
-                    <h4 className="cs12-ps-card-title">AI Camera Nutrition &amp; Kyra Coaching</h4>
-                    <p className="cs12-ps-card-desc">
-                      Snap a single photo of any meal for instant calorie &amp; macro breakdown, paired with Kyra AI for proactive daily consistency nudges.
-                    </p>
-                    <div className="cs12-ps-card-chips">
-                      <span className="ps-chip chip-emerald">✓ Auto Macro Breakdown</span>
-                      <span className="ps-chip chip-emerald">✓ 24/7 Kyra AI Accountability</span>
-                    </div>
-                  </div>
+                <div className="cs12-ps-metric-row">
+                  <span className="cs12-ps-metric">36<small>%</small></span>
                 </div>
+                <p className="cs12-ps-metric-desc">
+                  Find expensive 12-month memberships rigid, inconvenient, and financially wasteful.
+                </p>
               </div>
             </div>
 
-            {/* Bottom Takeaway Impact Bar */}
-            <div className="cs12-ps-impact-bar">
-              <div className="cs12-ps-impact-item">
-                <span className="cs12-ps-impact-num">74%</span>
-                <span className="cs12-ps-impact-lbl">Drop in daily tracking friction</span>
+            {/* Bottom Solution Section Anchor */}
+            <div className="cs12-ps-solution-anchor">
+              <div className="cs12-solution-dot-pulse">
+                <span className="cs12-sol-dot" />
               </div>
-              <div className="cs12-ps-impact-divider" />
-              <div className="cs12-ps-impact-item">
-                <span className="cs12-ps-impact-num">1 App</span>
-                <span className="cs12-ps-impact-lbl">For gym discovery, passes &amp; diet</span>
-              </div>
-              <div className="cs12-ps-impact-divider" />
-              <div className="cs12-ps-impact-item">
-                <span className="cs12-ps-impact-num">0</span>
-                <span className="cs12-ps-impact-lbl">Rigid lock-ins or hidden contracts</span>
-              </div>
+              <h3 className="cs12-ps-solution-title">The Solution</h3>
+              <p className="cs12-ps-solution-desc">
+                A unified ecosystem with ₹99 on-demand gym passes, AI camera nutrition logging, and personalized Kyra coaching in a single tap.
+              </p>
             </div>
           </div>
         </section>
