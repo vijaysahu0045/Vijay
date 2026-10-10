@@ -237,82 +237,54 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
 
-          {/* Spotlight Hero + Side Screens Showcase (Frameless Pure UI, Maximum Design Visibility) */}
-          <div className="cs12-hero-showcase-box">
-            <div className="cs12-spotlight-showcase-wrapper">
-              {/* Left Side Screens */}
-              <div className="cs12-spotlight-side-col">
-                {/* Screen 1: Food Scanner */}
-                <div className="cs12-spotlight-card">
-                  <div className="cs12-screen-badge">
-                    <span className="cs12-badge-dot" />
-                    <span className="cs12-badge-text">AI Food Scanner</span>
-                  </div>
-                  <div className="cs12-pure-ui-frame">
-                    <img src={foodScanner1} alt="Fymble AI Food Scanner UI" className="cs12-pure-ui-img" />
-                  </div>
-                  <span className="cs12-screen-sublabel">Instant Macro Vision</span>
-                </div>
+          {/* Dual iPhone 15 Pro Showcase */}
+          <div className="cs12-dual-mockup-wrapper">
+            <div className="cs12-dual-mockup-canvas">
 
-                {/* Screen 2: Class Booking */}
-                <div className="cs12-spotlight-card">
-                  <div className="cs12-screen-badge">
-                    <span className="cs12-badge-dot" />
-                    <span className="cs12-badge-text">Class Booking</span>
-                  </div>
-                  <div className="cs12-pure-ui-frame">
-                    <img src={screen3} alt="Fymble Class Selection UI" className="cs12-pure-ui-img" />
-                  </div>
-                  <span className="cs12-screen-sublabel">Multi-Studio Access</span>
-                </div>
-              </div>
+              {/* Left Phone Mockup (Angled Left / Overview Screen) */}
+              <div className="cs12-iphone-device device-left">
+                <div className="cs12-iphone-frame">
+                  <div className="cs12-iphone-glare" />
+                  <div className="cs12-iphone-screen">
+                    <img src={screen1} alt="Fymble Overview Screen" className="cs12-device-img" />
+                    
+                    {/* Status Bar & Dynamic Island */}
+                    <div className="cs12-device-status-bar">
+                      <span className="cs12-status-time">9:41</span>
+                      <div className="cs12-device-island" />
+                      <div className="cs12-status-icons">
+                        <span className="cs12-wifi-icon">5G</span>
+                        <span className="battery-icon">100%</span>
+                      </div>
+                    </div>
 
-              {/* Center Spotlight Hero Screen */}
-              <div className="cs12-spotlight-hero-col">
-                <div className="cs12-spotlight-card is-hero-spotlight">
-                  <div className="cs12-screen-badge center-badge">
-                    <span className="cs12-badge-dot-glow" />
-                    <span className="cs12-badge-text">Flagship Experience</span>
-                  </div>
-                  <div className="cs12-pure-ui-frame hero-frame">
-                    <img src={screen1} alt="Fymble Pass Discovery UI" className="cs12-pure-ui-img hero-img" />
-                  </div>
-                  <div className="cs12-hero-info-tag">
-                    <h4 className="cs12-hero-info-title">Fymble Discovery &amp; Passes</h4>
-                    <p className="cs12-hero-info-desc">Dynamic pricing passes, nearby fitness hub &amp; Kyra AI Assistant</p>
+                    <div className="cs12-device-home-bar" />
                   </div>
                 </div>
               </div>
 
-              {/* Right Side Screens */}
-              <div className="cs12-spotlight-side-col">
-                {/* Screen 3: Nutrition */}
-                <div className="cs12-spotlight-card">
-                  <div className="cs12-screen-badge">
-                    <span className="cs12-badge-dot" />
-                    <span className="cs12-badge-text">Nutrition &amp; Meals</span>
-                  </div>
-                  <div className="cs12-pure-ui-frame">
-                    <img src={nutritionScreen3} alt="Fymble Nutrition Recipes UI" className="cs12-pure-ui-img" />
-                  </div>
-                  <span className="cs12-screen-sublabel">Smart Recipe Logs</span>
-                </div>
+              {/* Right Phone Mockup (Overlapping Front / Flagship App Screen) */}
+              <div className="cs12-iphone-device device-right">
+                <div className="cs12-iphone-frame">
+                  <div className="cs12-iphone-glare" />
+                  <div className="cs12-iphone-screen">
+                    <img src={screen3} alt="Fymble Flagship Experience" className="cs12-device-img" />
+                    
+                    {/* Status Bar & Dynamic Island */}
+                    <div className="cs12-device-status-bar">
+                      <span className="cs12-status-time">9:41</span>
+                      <div className="cs12-device-island" />
+                      <div className="cs12-status-icons">
+                        <span className="cs12-wifi-icon">5G</span>
+                        <span className="battery-icon">100%</span>
+                      </div>
+                    </div>
 
-                {/* Screen 4: Social & Rewards */}
-                <div className="cs12-spotlight-card">
-                  <div className="cs12-screen-badge">
-                    <span className="cs12-badge-dot" />
-                    <span className="cs12-badge-text">Social &amp; Rewards</span>
+                    <div className="cs12-device-home-bar" />
                   </div>
-                  <div className="cs12-pure-ui-frame">
-                    <img src={screen5} alt="Fymble Referrals & Rewards UI" className="cs12-pure-ui-img" />
-                  </div>
-                  <span className="cs12-screen-sublabel">Viral Gamification</span>
                 </div>
               </div>
-            </div>
-            <div className="cs12-showcase-caption">
-              <span>Figure 1.1: Core B2C Ecosystem — Complete user journey from smart discovery to daily retention</span>
+
             </div>
           </div>
         </section>

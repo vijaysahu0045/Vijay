@@ -485,200 +485,168 @@
   text-decoration: underline;
 }
 
-/* Hero Showcase 5-Screen Fan with Realistic iPhone 16 Pro Frames */
-.cs12-hero-showcase-box {
-  background: radial-gradient(circle at 50% 35%, rgba(124, 58, 237, 0.1) 0%, rgba(5, 5, 10, 0.6) 70%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 26px;
-  padding: 40px 20px 28px 20px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 25px 60px rgba(0, 0, 0, 0.6);
-}
-
-.cs12-spotlight-showcase-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr 1fr;
-  align-items: center;
-  gap: 32px;
-  padding: 16px 10px;
-  max-width: 1060px;
-  margin: 0 auto;
-}
-
-.cs12-spotlight-side-col {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  align-items: center;
-}
-
-.cs12-spotlight-hero-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cs12-spotlight-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  width: 100%;
-}
-
-.cs12-spotlight-card:hover {
-  transform: translateY(-6px);
-}
-
-.cs12-screen-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #cbd5e1;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-}
-
-.cs12-spotlight-card:hover .cs12-screen-badge {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: #f8fafc;
-}
-
-.cs12-screen-badge.center-badge {
-  background: rgba(124, 58, 237, 0.2);
-  border-color: rgba(167, 139, 250, 0.5);
-  color: #e9d5ff;
-  box-shadow: 0 0 16px rgba(124, 58, 237, 0.3);
-  padding: 6px 14px;
-}
-
-.cs12-badge-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #94a3b8;
-}
-
-.cs12-badge-dot-glow {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #c4b5fd;
-  box-shadow: 0 0 8px #a78bfa;
-}
-
-/* Frameless Pure UI Card Frames (No Bulky Edges) */
-.cs12-pure-ui-frame {
+/* ==========================================================================
+   SECTION 01: DUAL IPHONE 15 PRO 3D SHOWCASE
+   ========================================================================== */
+.cs12-dual-mockup-wrapper {
   position: relative;
-  width: 225px;
-  height: 280px;
-  border-radius: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 50px;
+  perspective: 1200px;
+}
+
+.cs12-dual-mockup-canvas {
+  position: relative;
+  width: 660px;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs12-iphone-device {
+  position: absolute;
+  width: 275px;
+  height: 550px;
+  border-radius: 46px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  cursor: pointer;
+}
+
+.cs12-iphone-device.device-left {
+  left: 60px;
+  top: 10px;
+  z-index: 2;
+  transform: rotate(-14deg) scale(0.96);
+  filter: drop-shadow(-20px 30px 45px rgba(0, 0, 0, 0.75));
+}
+
+.cs12-iphone-device.device-left:hover {
+  transform: rotate(-10deg) scale(1.0);
+  z-index: 5;
+  filter: drop-shadow(-25px 35px 55px rgba(0, 0, 0, 0.85));
+}
+
+.cs12-iphone-device.device-right {
+  right: 60px;
+  top: -15px;
+  z-index: 3;
+  transform: rotate(15deg) scale(1.02);
+  filter: drop-shadow(25px 35px 50px rgba(0, 0, 0, 0.85));
+}
+
+.cs12-iphone-device.device-right:hover {
+  transform: rotate(11deg) scale(1.05);
+  z-index: 5;
+  filter: drop-shadow(30px 40px 60px rgba(0, 0, 0, 0.95));
+}
+
+.cs12-iphone-frame {
+  width: 100%;
+  height: 100%;
+  background: #15171e;
+  border: 4px solid #383b46;
+  border-radius: 46px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 0 3px #181a22;
+  position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 16px rgba(124, 58, 237, 0.1);
-  background: #0c0a17;
-  transition: all 0.35s ease;
 }
 
-.cs12-spotlight-card:hover .cs12-pure-ui-frame {
-  border-color: rgba(167, 139, 250, 0.4);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 24px rgba(124, 58, 237, 0.25);
+.cs12-iphone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 42px;
+  overflow: hidden;
+  position: relative;
+  background: #000000;
 }
 
-.cs12-pure-ui-frame.hero-frame {
-  width: 290px;
-  height: 480px;
-  border-radius: 24px;
-  border: 1.5px solid rgba(167, 139, 250, 0.45);
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8), 0 0 35px rgba(124, 58, 237, 0.35);
-}
-
-.cs12-spotlight-card.is-hero-spotlight:hover .cs12-pure-ui-frame.hero-frame {
-  border-color: rgba(196, 181, 253, 0.7);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.85), 0 0 45px rgba(147, 51, 234, 0.5);
-}
-
-.cs12-pure-ui-img {
+.cs12-device-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   display: block;
+}
+
+.cs12-iphone-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 35%, transparent 60%);
   pointer-events: none;
-  user-select: none;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 8;
 }
 
-.cs12-spotlight-card:hover .cs12-pure-ui-img {
-  transform: scale(1.02);
-}
-
-.cs12-hero-info-tag {
-  margin-top: 6px;
+.cs12-device-status-bar {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
-}
-
-.cs12-hero-info-title {
-  font-size: 15px;
+  z-index: 9;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-  color: #f8fafc;
-  letter-spacing: -0.2px;
 }
 
-.cs12-hero-info-desc {
-  font-size: 12px;
-  color: #94a3b8;
-  max-width: 280px;
-  line-height: 1.45;
-  margin: 0;
+.cs12-device-island {
+  width: 66px;
+  height: 15px;
+  background: #000000;
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.cs12-screen-sublabel {
-  font-size: 11.5px;
-  color: #64748b;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.cs12-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
 }
 
-.cs12-spotlight-card:hover .cs12-screen-sublabel {
-  color: #94a3b8;
+.cs12-wifi-icon {
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.cs12-showcase-caption {
-  margin-top: 28px;
-  font-size: 13px;
-  color: #94a3b8;
-  font-style: italic;
+.cs12-device-home-bar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  z-index: 9;
 }
 
-@media (max-width: 960px) {
-  .cs12-spotlight-showcase-wrapper {
-    grid-template-columns: 1fr;
-    gap: 32px;
+@media (max-width: 768px) {
+  .cs12-dual-mockup-wrapper {
+    padding: 20px 0 40px;
   }
-  .cs12-spotlight-side-col {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  .cs12-dual-mockup-canvas {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
   }
-  .cs12-pure-ui-frame {
-    width: 210px;
-    height: 270px;
+  .cs12-iphone-device {
+    position: static;
+    transform: none !important;
+    width: 250px;
+    height: 500px;
   }
 }
 
