@@ -1217,15 +1217,15 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   type="button"
                   className="cs12-uf-enlarge-btn"
                   onClick={() => setIsUfFullscreen(true)}
-                  title="Expand to Fullscreen"
+                  title="Fullscreen / Enlarge View"
+                  aria-label="Fullscreen / Enlarge View"
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="15 3 21 3 21 9" />
                     <polyline points="9 21 3 21 3 15" />
                     <line x1="21" y1="3" x2="14" y2="10" />
                     <line x1="3" y1="21" x2="10" y2="14" />
                   </svg>
-                  <span>Enlarge / Fullscreen</span>
                 </button>
               </div>
             </div>
@@ -1799,12 +1799,13 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   type="button"
                   className="cs12-uf-modal-close-btn"
                   onClick={() => setIsUfFullscreen(false)}
+                  title="Close (Esc)"
+                  aria-label="Close"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span>Close (Esc)</span>
                 </button>
               </div>
             </div>
