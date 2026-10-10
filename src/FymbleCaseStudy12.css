@@ -489,7 +489,7 @@
    SECTION 01: HAND MOCKUP & MULTI-SCREEN SHOWCASE
    ========================================================================== */
 .cs12-scope-hand-showcase-card {
-  padding: 40px 24px 0;
+  padding: 40px 20px 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -503,29 +503,23 @@
 
 .cs12-scope-showcase-img-wrap {
   width: 100%;
-  max-width: 920px;
+  max-width: 1024px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  line-height: 0;
 }
 
 .cs12-scope-hand-showcase-img {
   width: 100%;
-  max-width: 920px;
+  max-width: 1024px;
   height: auto;
-  object-fit: contain;
   display: block;
-  margin-bottom: -4px;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
   .cs12-scope-hand-showcase-card {
-    padding: 24px 12px 0;
+    padding: 24px 10px 0;
   }
 }
 
