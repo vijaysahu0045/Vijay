@@ -2181,289 +2181,233 @@
 }
 
 /* ==========================================================================
-   SECTION 06: USER PERSONA (CLEAN, SCANNABLE BENTO DESIGN)
+   SECTION 06: USER & PARTNER PERSONAS (3-COLUMN REFERENCE LAYOUT)
    ========================================================================== */
 .cs12-user-persona-card {
   margin-top: 10px;
 }
 
-.cs12-persona-bento-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 24px;
-  align-items: stretch;
-  margin-top: 24px;
+.cs12-persona-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-/* Left Column: Sleek Profile Card */
-.cs12-persona-profile-card {
-  background: rgba(255, 255, 255, 0.025);
+/* Dual Persona Switcher */
+.cs12-persona-tabs-switch {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.cs12-ptab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cs12-ptab-btn:hover {
+  color: #ffffff;
+}
+
+.cs12-ptab-btn.active {
+  background: #FF5757;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(255, 87, 87, 0.4);
+}
+
+.cs12-ptab-emoji {
+  font-size: 15px;
+}
+
+/* 3-Column Clean Persona Canvas */
+.cs12-persona-tri-card {
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 24px;
+  padding: 34px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 28px;
+  align-items: center;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.cs12-ptri-col {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  gap: 18px;
+  justify-content: center;
 }
 
-.cs12-persona-avatar-wrap {
-  position: relative;
-  width: 100%;
-  height: 220px;
+/* Specification Block (Matching Reference Top Banner Style) */
+.cs12-ptri-block {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
   overflow: hidden;
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.cs12-persona-avatar {
+.cs12-ptri-block:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 112, 82, 0.35);
+}
+
+.cs12-ptri-block-header {
+  background: linear-gradient(90deg, rgba(255, 107, 74, 0.22) 0%, rgba(255, 87, 87, 0.12) 100%);
+  border-bottom: 1px solid rgba(255, 87, 87, 0.2);
+  padding: 9px 16px;
+}
+
+.cs12-ptri-block-header h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #FF9B8A;
+  margin: 0;
+  letter-spacing: -0.1px;
+}
+
+.cs12-ptri-list {
+  list-style: none;
+  margin: 0;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs12-ptri-list li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #cbd5e1;
+  position: relative;
+  padding-left: 14px;
+}
+
+.cs12-ptri-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FF7052;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Center Column */
+.cs12-ptri-col.ptri-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 0 10px;
+}
+
+.cs12-ptri-avatar-ring {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 112, 82, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 87, 87, 0.2);
+  margin: 0 auto;
+}
+
+.cs12-ptri-avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  filter: brightness(0.92) contrast(1.05);
 }
 
-.cs12-persona-tag-pill {
-  position: absolute;
-  bottom: 14px;
-  left: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(10, 10, 16, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #38bdf8;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
-.cs12-persona-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
-}
-
-.cs12-persona-bio-box {
-  padding: 20px 22px;
+.cs12-ptri-identity {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  text-align: left;
-  flex: 1;
-  justify-content: space-between;
+  gap: 4px;
 }
 
-.cs12-persona-name {
+.cs12-ptri-name {
   font-family: 'Roboto', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   color: #ffffff;
   margin: 0;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
 }
 
-.cs12-persona-role {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #94a3b8;
-  margin: -8px 0 0;
-}
-
-.cs12-persona-quote-bubble {
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid #FF5757;
-  padding: 10px 14px;
-  border-radius: 0 10px 10px 0;
-  position: relative;
-}
-
-.cs12-persona-quote-mark {
-  font-size: 20px;
-  line-height: 1;
-  color: #FF5757;
-  font-family: serif;
-  font-weight: bold;
-}
-
-.cs12-persona-quote-bubble p {
+.cs12-ptri-role {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
-  line-height: 1.5;
-  color: #cbd5e1;
+  font-weight: 500;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.cs12-ptri-quote-box {
+  position: relative;
+  max-width: 320px;
+  margin: 4px auto 0;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.cs12-ptri-quote-mark,
+.cs12-ptri-quote-mark-end {
+  font-family: serif;
+  font-size: 22px;
+  line-height: 1;
+  color: #FF7052;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.cs12-ptri-quote-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #f1f5f9;
   margin: 0;
   font-style: italic;
+  display: inline;
 }
 
-.cs12-persona-quick-stats {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
-}
-
-.cs12-persona-stat-chip {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  padding: 6px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cs12-chip-label {
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  color: #64748b;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.cs12-chip-val {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  color: #f1f5f9;
-  font-weight: 600;
-}
-
-/* Right Column: 3 Pillars */
-.cs12-persona-pillars-col {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: space-between;
-}
-
-.cs12-persona-bento-card {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 16px 20px;
-  text-align: left;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.cs12-persona-bento-card:hover {
-  transform: translateX(3px);
-  border-color: rgba(255, 255, 255, 0.16);
-}
-
-.cs12-bento-card-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.cs12-bento-icon-box {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.icon-goals {
-  background: rgba(56, 189, 248, 0.12);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-}
-
-.icon-pain {
-  background: rgba(255, 87, 87, 0.12);
-  color: #FF5757;
-  border: 1px solid rgba(255, 87, 87, 0.25);
-}
-
-.icon-solution {
-  background: rgba(34, 197, 94, 0.12);
-  color: #22C55E;
-  border: 1px solid rgba(34, 197, 94, 0.25);
-}
-
-.cs12-bento-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  letter-spacing: -0.2px;
-}
-
-.cs12-bento-subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  color: #64748b;
-  font-weight: 500;
-}
-
-.cs12-bento-pills-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.cs12-bento-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 12.5px;
-  line-height: 1.45;
-  color: #94a3b8;
-}
-
-.cs12-bento-item strong {
-  color: #f1f5f9;
-  font-weight: 600;
-}
-
-.cs12-item-check {
-  font-size: 11px;
-  font-weight: 800;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.check-goals {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.15);
-}
-
-.check-pain {
-  color: #FF5757;
-  background: rgba(255, 87, 87, 0.15);
-}
-
-.check-solution {
-  color: #22C55E;
-  background: rgba(34, 197, 94, 0.15);
-}
-
-@media (max-width: 900px) {
-  .cs12-persona-bento-grid {
+@media (max-width: 950px) {
+  .cs12-persona-tri-card {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px;
+    padding: 24px 18px;
   }
-  .cs12-persona-avatar-wrap {
-    height: 200px;
+  .cs12-ptri-col.ptri-col-center {
+    order: -1;
+  }
+  .cs12-persona-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cs12-persona-tabs-switch {
+    width: 100%;
+    justify-content: center;
   }
 }
 

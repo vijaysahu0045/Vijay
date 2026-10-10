@@ -28,6 +28,7 @@ const SECTIONS_INDEX = [
 
 export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [activeNav, setActiveNav] = useState('sec-01')
+  const [activePersonaTab, setActivePersonaTab] = useState('user')
 
   // Scroll spy
   useEffect(() => {
@@ -757,150 +758,166 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         </section>
 
         {/* ===================================================================
-            SECTION 06: USER PERSONA (CLEAN, SCANNABLE BENTO DESIGN)
+            SECTION 06: USER & PARTNER PERSONAS (DUAL-ARCHETYPE 3-COLUMN LAYOUT)
             =================================================================== */}
         <section id="sec-06" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-user-persona-card">
-            <div className="cs12-scope-header-row">
+            <div className="cs12-scope-header-row cs12-persona-header-flex">
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">06</span>
-                <h2 className="cs12-scope-title">User Persona</h2>
+                <h2 className="cs12-scope-title">User &amp; Partner Personas</h2>
+              </div>
+
+              {/* Dual Persona Switcher */}
+              <div className="cs12-persona-tabs-switch">
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activePersonaTab === 'user' ? 'active' : ''}`}
+                  onClick={() => setActivePersonaTab('user')}
+                >
+                  <span className="cs12-ptab-emoji">🏃</span>
+                  <span>Fitness Enthusiast (User)</span>
+                </button>
+                <button
+                  type="button"
+                  className={`cs12-ptab-btn ${activePersonaTab === 'partner' ? 'active' : ''}`}
+                  onClick={() => setActivePersonaTab('partner')}
+                >
+                  <span className="cs12-ptab-emoji">🏋️</span>
+                  <span>Gym Owner (Partner)</span>
+                </button>
               </div>
             </div>
 
-            {/* Clean Persona Bento Layout */}
-            <div className="cs12-persona-bento-grid">
-              {/* Left Column: Sleek Profile Card */}
-              <div className="cs12-persona-profile-card">
-                <div className="cs12-persona-avatar-wrap">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                    alt="Wade Warren Persona"
-                    className="cs12-persona-avatar"
-                  />
-                  <div className="cs12-persona-tag-pill">
-                    <span className="cs12-persona-pulse" />
-                    <span>Active Fitness Enthusiast</span>
+            {/* 3-Column Clean Persona Canvas */}
+            <div className="cs12-persona-tri-card">
+              {/* Left Column: 2 Stacked Specification Cards */}
+              <div className="cs12-ptri-col ptri-col-left">
+                {/* Top Card: Interests / Core Goals */}
+                <div className="cs12-ptri-block">
+                  <div className="cs12-ptri-block-header">
+                    <h4>{activePersonaTab === 'user' ? 'Interests & Goals' : 'Business Goals'}</h4>
                   </div>
+                  <ul className="cs12-ptri-list">
+                    {activePersonaTab === 'user' ? (
+                      <>
+                        <li>Flexible daily workouts &amp; on-demand gym visits</li>
+                        <li>Automated photo calorie and macro logging</li>
+                        <li>Maintaining long-term fitness consistency</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>Monetize empty off-peak gym slots (11am – 5pm)</li>
+                        <li>Increase daily walk-in footfall without ad budgets</li>
+                        <li>Instant digital pass validation &amp; weekly payouts</li>
+                      </>
+                    )}
+                  </ul>
                 </div>
 
-                <div className="cs12-persona-bio-box">
-                  <h3 className="cs12-persona-name">Wade Warren, 28</h3>
-                  <p className="cs12-persona-role">Marketing Manager • Bengaluru</p>
-
-                  <div className="cs12-persona-quote-bubble">
-                    <span className="cs12-persona-quote-mark">“</span>
-                    <p>I need flexible workouts and automatic meal tracking in one app without being locked into yearly gym contracts.</p>
+                {/* Bottom Card: Values / Frustrations */}
+                <div className="cs12-ptri-block">
+                  <div className="cs12-ptri-block-header">
+                    <h4>{activePersonaTab === 'user' ? 'Frustrations & Values' : 'Operational Pain Points'}</h4>
                   </div>
-
-                  <div className="cs12-persona-quick-stats">
-                    <div className="cs12-persona-stat-chip">
-                      <span className="cs12-chip-label">Workout</span>
-                      <span className="cs12-chip-val">4-5 Days/Wk</span>
-                    </div>
-                    <div className="cs12-persona-stat-chip">
-                      <span className="cs12-chip-label">Primary Goal</span>
-                      <span className="cs12-chip-val">Strength &amp; Fat Loss</span>
-                    </div>
-                    <div className="cs12-persona-stat-chip">
-                      <span className="cs12-chip-label">Main Friction</span>
-                      <span className="cs12-chip-val">App Switching</span>
-                    </div>
-                  </div>
+                  <ul className="cs12-ptri-list">
+                    {activePersonaTab === 'user' ? (
+                      <>
+                        <li>Frustrated with expensive 12-month annual lock-ins</li>
+                        <li>Tired of juggling 3+ disconnected fitness apps</li>
+                        <li>Values daily flexibility, transparency &amp; control</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>40% idle floor capacity during mid-day hours</li>
+                        <li>Dropping renewal rates on annual memberships</li>
+                        <li>Messy paper logbooks and manual cash disputes</li>
+                      </>
+                    )}
+                  </ul>
                 </div>
               </div>
 
-              {/* Right Column: 3 Clean Visual Cards */}
-              <div className="cs12-persona-pillars-col">
-                {/* Card 1: Goals */}
-                <div className="cs12-persona-bento-card bento-goals">
-                  <div className="cs12-bento-card-top">
-                    <div className="cs12-bento-icon-box icon-goals">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="6" />
-                        <circle cx="12" cy="12" r="2" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="cs12-bento-title">Core Goals</h4>
-                      <span className="cs12-bento-subtitle">What Wade wants to achieve</span>
-                    </div>
-                  </div>
-                  <div className="cs12-bento-pills-list">
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-goals">✓</span>
-                      <span>Flexible on-demand gym access near work &amp; home</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-goals">✓</span>
-                      <span>Unified tracking for daily workouts, calories &amp; hydration</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-goals">✓</span>
-                      <span>Consistent fitness habits with actionable AI guidance</span>
-                    </div>
-                  </div>
+              {/* Center Column: Portrait, Name & Emphasized Quote */}
+              <div className="cs12-ptri-col ptri-col-center">
+                <div className="cs12-ptri-avatar-ring">
+                  <img
+                    src={
+                      activePersonaTab === 'user'
+                        ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'
+                        : 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
+                    }
+                    alt={activePersonaTab === 'user' ? 'Wade Warren' : 'Rajesh Sharma'}
+                    className="cs12-ptri-avatar-img"
+                  />
                 </div>
 
-                {/* Card 2: Pain Points */}
-                <div className="cs12-persona-bento-card bento-pain">
-                  <div className="cs12-bento-card-top">
-                    <div className="cs12-bento-icon-box icon-pain">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="8" x2="12" y2="12" />
-                        <line x1="12" y1="16" x2="12.01" y2="16" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="cs12-bento-title">Frustrations &amp; Pain Points</h4>
-                      <span className="cs12-bento-subtitle">What slows him down</span>
-                    </div>
-                  </div>
-                  <div className="cs12-bento-pills-list">
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-pain">✕</span>
-                      <span>Locked into expensive 12-month memberships</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-pain">✕</span>
-                      <span>Tired of switching between 3+ separate fitness apps</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-pain">✕</span>
-                      <span>Tedious manual food logging and nutrition guesswork</span>
-                    </div>
-                  </div>
+                <div className="cs12-ptri-identity">
+                  <h3 className="cs12-ptri-name">
+                    {activePersonaTab === 'user' ? 'Wade Warren' : 'Rajesh Sharma'}
+                  </h3>
+                  <span className="cs12-ptri-role">
+                    {activePersonaTab === 'user'
+                      ? 'Marketing Manager • 28 Yrs • Bengaluru'
+                      : 'Studio Owner • Pulse Fitness Club (120+ Capacity)'}
+                  </span>
                 </div>
 
-                {/* Card 3: Key Expectations & Needs */}
-                <div className="cs12-persona-bento-card bento-solution">
-                  <div className="cs12-bento-card-top">
-                    <div className="cs12-bento-icon-box icon-solution">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="cs12-bento-title">Ideal Fymble Solution</h4>
-                      <span className="cs12-bento-subtitle">How Fymble solves it</span>
-                    </div>
+                <div className="cs12-ptri-quote-box">
+                  <span className="cs12-ptri-quote-mark">“</span>
+                  <p className="cs12-ptri-quote-text">
+                    {activePersonaTab === 'user'
+                      ? 'I want complete freedom over my workouts and diet without rigid annual lock-ins or switching across 3 separate apps.'
+                      : 'We have empty machines during afternoons. We need continuous daily footfall and hassle-free pass payouts without administrative burden.'}
+                  </p>
+                  <span className="cs12-ptri-quote-mark-end">”</span>
+                </div>
+              </div>
+
+              {/* Right Column: 2 Stacked Specification Cards */}
+              <div className="cs12-ptri-col ptri-col-right">
+                {/* Top Card: Personality / Behaviors */}
+                <div className="cs12-ptri-block">
+                  <div className="cs12-ptri-block-header">
+                    <h4>{activePersonaTab === 'user' ? 'Behaviors & Habits' : 'Management Traits'}</h4>
                   </div>
-                  <div className="cs12-bento-pills-list">
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-solution">★</span>
-                      <span><strong>₹99 On-Demand Pass:</strong> Pay only when you work out</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-solution">★</span>
-                      <span><strong>AI Photo Logging:</strong> Snap meal for instant calorie &amp; macro breakdown</span>
-                    </div>
-                    <div className="cs12-bento-item">
-                      <span className="cs12-item-check check-solution">★</span>
-                      <span><strong>Kyra AI Assistant:</strong> Personalized habit accountability &amp; insights</span>
-                    </div>
+                  <ul className="cs12-ptri-list">
+                    {activePersonaTab === 'user' ? (
+                      <>
+                        <li>Trains 4-5 days a week before or after office hours</li>
+                        <li>Prefers 1-tap UPI payments &amp; instant QR entry</li>
+                        <li>Active on smartphone for daily habit notifications</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>Runs gym floor operations with a small front-desk staff</li>
+                        <li>Relies on WhatsApp broadcasts &amp; flyers for local reach</li>
+                        <li>Wants all member visits verified on a single digital dashboard</li>
+                      </>
+                    )}
+                  </ul>
+                </div>
+
+                {/* Bottom Card: Ideal Solution */}
+                <div className="cs12-ptri-block">
+                  <div className="cs12-ptri-block-header">
+                    <h4>{activePersonaTab === 'user' ? 'Ideal Fymble Solution' : 'Fymble Partner Solution'}</h4>
                   </div>
+                  <ul className="cs12-ptri-list">
+                    {activePersonaTab === 'user' ? (
+                      <>
+                        <li>₹99 On-demand passes across any certified partner gym</li>
+                        <li>3-Second AI camera meal scan for calories &amp; macros</li>
+                        <li>Kyra AI assistant providing daily streak accountability</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>Guaranteed ₹99 pass revenue deposited weekly to bank</li>
+                        <li>1-Second QR scanner on partner mobile app</li>
+                        <li>Live footfall analytics &amp; member conversion opportunities</li>
+                      </>
+                    )}
+                  </ul>
                 </div>
               </div>
             </div>
