@@ -3982,19 +3982,21 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(124, 58, 237, 0.12);
+  border: 1.5px solid rgba(167, 139, 250, 0.35);
   border-radius: 9999px;
   padding: 8px 24px 8px 8px;
   width: fit-content;
   max-width: 100%;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cs12-feedback-capsule:hover {
   transform: translateX(6px);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(124, 58, 237, 0.22);
+  border-color: #a78bfa;
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.4);
 }
 
 .cs12-feedback-avatar-ring {
@@ -4002,7 +4004,8 @@
   height: 36px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 1.5px solid #a78bfa;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
   flex-shrink: 0;
 }
 
@@ -4021,7 +4024,7 @@
 }
 
 .cs12-feedback-capsule-text strong {
-  color: #ffffff;
+  color: #c4b5fd;
   font-weight: 800;
 }
 
@@ -4053,7 +4056,7 @@
 
 .cs12-rmetric-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
   border-radius: 20px;
   padding: 20px;
   text-align: left;
@@ -4061,13 +4064,14 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 220px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(124, 58, 237, 0.1);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cs12-rmetric-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 30px rgba(124, 58, 237, 0.3);
 }
 
 .cs12-rmetric-header {
@@ -4087,14 +4091,15 @@
 }
 
 .cs12-rmetric-badge {
-  background: #1e2026;
+  background: rgba(124, 58, 237, 0.2);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.45);
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   font-weight: 800;
   padding: 4px 10px;
   border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.3);
 }
 
 .cs12-rmetric-subtext {

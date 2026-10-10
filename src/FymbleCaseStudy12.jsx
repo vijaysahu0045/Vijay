@@ -1689,7 +1689,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                       <path
                         d="M 20 80 A 60 60 0 0 1 140 80"
                         fill="none"
-                        stroke="rgba(255, 255, 255, 0.12)"
+                        stroke="rgba(167, 139, 250, 0.2)"
                         strokeWidth="10"
                         strokeLinecap="round"
                       />
