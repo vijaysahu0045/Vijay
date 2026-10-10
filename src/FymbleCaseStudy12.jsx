@@ -33,6 +33,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [ufZoom, setUfZoom] = useState(1)
   const [isUfFullscreen, setIsUfFullscreen] = useState(false)
   const [ufModalZoom, setUfModalZoom] = useState(1.1)
+  const [showScrollBack, setShowScrollBack] = useState(false)
 
   // Esc key listener and body lock for fullscreen User Flow modal
   useEffect(() => {
@@ -53,13 +54,16 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
     }
   }, [isUfFullscreen])
 
-  // Scroll spy
+  // Scroll spy & floating back button detection
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 180
+      const scrollY = window.scrollY
+      setShowScrollBack(scrollY > 60)
+
+      const spyY = scrollY + 180
       for (let i = SECTIONS_INDEX.length - 1; i >= 0; i--) {
         const el = document.getElementById(SECTIONS_INDEX[i].id)
-        if (el && el.offsetTop <= scrollY) {
+        if (el && el.offsetTop <= spyY) {
           setActiveNav(SECTIONS_INDEX[i].id)
           break
         }
@@ -87,8 +91,21 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Sticky Top Header Navigation */}
-      <header className="cs12-topbar">
+      {/* Floating Fixed Back Button (Appears as soon as user scrolls down) */}
+      <button
+        className={`cs12-floating-scroll-back-btn ${showScrollBack ? 'visible' : ''}`}
+        onClick={onBack}
+        title="Back to Portfolio"
+        aria-label="Back to Portfolio"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        <span>Back</span>
+      </button>
+
+      {/* Top Header Navigation */}
+      <header className={`cs12-topbar ${showScrollBack ? 'scrolled-away' : ''}`}>
         <div className="cs12-topbar-left">
           <button className="cs12-back-btn" onClick={onBack} title="Back to Portfolio">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

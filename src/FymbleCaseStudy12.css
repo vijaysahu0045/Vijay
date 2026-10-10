@@ -27,9 +27,64 @@
   object-fit: cover;
 }
 
-/* Sticky Top Navigation Bar with 12-Section Progress */
+/* Floating Fixed Back Button (Slides in as soon as user scrolls down) */
+.cs12-floating-scroll-back-btn {
+  position: fixed;
+  top: 22px;
+  left: 28px;
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(14, 15, 22, 0.88);
+  border: 1.5px solid rgba(167, 139, 250, 0.38);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55), 0 0 16px rgba(124, 58, 237, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  transform: translateY(-14px);
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.cs12-floating-scroll-back-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cs12-floating-scroll-back-btn svg {
+  color: #c4b5fd;
+  transition: transform 0.2s ease;
+}
+
+.cs12-floating-scroll-back-btn:hover {
+  background: rgba(124, 58, 237, 0.32);
+  border-color: #a78bfa;
+  transform: translateY(0) translateX(-3px);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5), 0 0 22px rgba(167, 139, 250, 0.45);
+}
+
+.cs12-floating-scroll-back-btn:hover svg {
+  transform: translateX(-2px);
+  color: #ffffff;
+}
+
+.cs12-floating-scroll-back-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Top Navigation Bar */
 .cs12-topbar {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 100;
   display: flex;
@@ -41,6 +96,12 @@
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: opacity 0.25s ease;
+}
+
+.cs12-topbar.scrolled-away {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .cs12-topbar-left {
