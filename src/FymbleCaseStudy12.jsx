@@ -1042,7 +1042,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">07</span>
                 <h2 className="cs12-scope-title">User Journey</h2>
                 <p className="cs12-journey-header-desc">
-                  A complete fitness journey on Fymble — from discovering the right gym to getting AI guidance, tracking nutrition and building consistency.
+                  An end-to-end architectural journey across Fymble's 3 core product pillars — structured from initial discovery to daily habit retention.
                 </p>
               </div>
 
@@ -1083,22 +1083,23 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               </div>
             </div>
 
-            {/* Swimlanes Container */}
+            {/* Swimlanes List */}
             <div className="cs12-journey-swimlanes-list">
               {/* =============================================================
-                  SWIMLANE 01: Discover & Book a Gym
+                  PHASE 01: Discover & Book a Gym
                   ============================================================= */}
               {(activeJourneyFilter === 'all' || activeJourneyFilter === 'gym') && (
-                <div className="cs12-jswimlane">
-                  {/* Left Column: Phase Identity & User Goal */}
+                <div className="cs12-jswimlane theme-blue">
+                  {/* Left Phase Identity & User Goal Card */}
                   <div className="cs12-jswim-left">
                     <div className="cs12-jswim-header-box">
                       <div className="cs12-jswim-badge-row">
-                        <span className="cs12-jphase-num">01</span>
-                        <h3 className="cs12-jswim-title">Discover &amp; Book a Gym</h3>
+                        <span className="cs12-jphase-num">PHASE 01</span>
+                        <span className="cs12-jphase-kpi">⚡ &lt;60s Checkout</span>
                       </div>
+                      <h3 className="cs12-jswim-title">Discover &amp; Book a Gym</h3>
                       <p className="cs12-jswim-desc">
-                        Find, explore and book gyms with flexible passes.
+                        Explore certified fitness partner clubs and secure flexible passes on demand without rigid annual commitments.
                       </p>
                     </div>
 
@@ -1108,211 +1109,143 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                         <span className="cs12-jgoal-lbl">User Goal</span>
                       </div>
                       <p className="cs12-jgoal-txt">
-                        Find a nearby gym and book a pass easily without annual lock-ins.
+                        Find a high-quality nearby gym within 2 km and check in seamlessly with zero administrative paperwork.
                       </p>
                     </div>
                   </div>
 
-                  {/* Right Flow: 5 Connected Mobile UI Screens */}
+                  {/* Right Flow: 5 Executive Pipeline Step Cards */}
                   <div className="cs12-jswim-flow-row">
                     {/* Step 1 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-searchbar">
-                            <span className="cs12-jui-search-icon">🔍</span>
-                            <span>Search gyms, areas...</span>
-                          </div>
-                          <div className="cs12-jui-chips-row">
-                            <span className="cs12-jui-chip active">All</span>
-                            <span className="cs12-jui-chip">Gym</span>
-                            <span className="cs12-jui-chip">Yoga</span>
-                            <span className="cs12-jui-chip">CrossFit</span>
-                          </div>
-                          <div className="cs12-jui-sec-label">Nearby Gyms</div>
-                          <div className="cs12-jui-gym-card">
-                            <img
-                              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80"
-                              alt="Cult Fitness"
-                              className="cs12-jui-card-img"
-                            />
-                            <div className="cs12-jui-card-info">
-                              <span className="cs12-jui-card-name">Cult Fitness</span>
-                              <div className="cs12-jui-card-meta">
-                                <span>⭐ 4.8</span>
-                                <span>📍 1.2 km</span>
-                              </div>
-                            </div>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">01</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">1</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Explore Gyms</h4>
-                          <p className="cs12-jstep-desc">Browse nearby gyms and studios</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Explore Gyms</h4>
+                        <p className="cs12-jpipe-desc">
+                          Browse verified partner clubs with interactive map filters, distance radius, and live amenity tags.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Radar Search</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 2 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-detail-hero">
-                            <img
-                              src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=300&q=80"
-                              alt="Gym interior"
-                              className="cs12-jui-hero-img"
-                            />
-                            <div className="cs12-jui-hero-overlay">
-                              <span className="cs12-jui-hero-name">Cult Fitness</span>
-                              <span className="cs12-jui-hero-sub">⭐ 4.8 (1.2k) • 📍 1.2 km</span>
-                            </div>
-                          </div>
-                          <div className="cs12-jui-tag-row">
-                            <span className="cs12-jui-tag">Gym</span>
-                            <span className="cs12-jui-tag">Strength</span>
-                            <span className="cs12-jui-tag">Cardio</span>
-                          </div>
-                          <div className="cs12-jui-sec-label">Photos &amp; Facilities</div>
-                          <div className="cs12-jui-thumb-row">
-                            <div className="cs12-jui-thumb" />
-                            <div className="cs12-jui-thumb" />
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">02</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">2</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">View Details</h4>
-                          <p className="cs12-jstep-desc">Check gym info, photos &amp; facilities</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">View Details</h4>
+                        <p className="cs12-jpipe-desc">
+                          Inspect verified equipment photos, community ratings, trainer roster, and peak crowd hours.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Amenities &amp; Crowd</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 3 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-screen-title">Select a Pass</div>
-                          <div className="cs12-jui-pass-option">
-                            <div className="cs12-jui-pass-text">
-                              <span className="cs12-jui-pass-name">Daily Pass</span>
-                              <span className="cs12-jui-pass-price">₹99</span>
-                            </div>
-                            <span className="cs12-jui-radio" />
-                          </div>
-                          <div className="cs12-jui-pass-option active">
-                            <div className="cs12-jui-popular-badge">Popular</div>
-                            <div className="cs12-jui-pass-text">
-                              <span className="cs12-jui-pass-name">Weekly Pass</span>
-                              <span className="cs12-jui-pass-price">₹66/day</span>
-                            </div>
-                            <span className="cs12-jui-radio active" />
-                          </div>
-                          <div className="cs12-jui-pass-option">
-                            <div className="cs12-jui-pass-text">
-                              <span className="cs12-jui-pass-name">14-Day Pass</span>
-                              <span className="cs12-jui-pass-price">₹57/day</span>
-                            </div>
-                            <span className="cs12-jui-radio" />
-                          </div>
-                          <button type="button" className="cs12-jui-btn-primary">Continue</button>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">03</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">3</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Choose a Pass</h4>
-                          <p className="cs12-jstep-desc">Pick a pass that fits your schedule</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Choose a Pass</h4>
+                        <p className="cs12-jpipe-desc">
+                          Select an on-demand ₹99 single pass, weekly flex pack, or 14-day bundle with 100% price transparency.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">₹99 Day Pass</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 4 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-sec-label">Select Date</div>
-                          <div className="cs12-jui-date-grid">
-                            <div className="cs12-jui-date-box"><span>Mon</span><strong>12</strong></div>
-                            <div className="cs12-jui-date-box active"><span>Tue</span><strong>13</strong></div>
-                            <div className="cs12-jui-date-box"><span>Wed</span><strong>14</strong></div>
-                            <div className="cs12-jui-date-box"><span>Thu</span><strong>15</strong></div>
-                          </div>
-                          <div className="cs12-jui-sec-label">Select Time</div>
-                          <div className="cs12-jui-time-grid">
-                            <span className="cs12-jui-time-pill">6:00 AM</span>
-                            <span className="cs12-jui-time-pill">7:00 AM</span>
-                            <span className="cs12-jui-time-pill active">8:00 AM</span>
-                            <span className="cs12-jui-time-pill">10:00 AM</span>
-                          </div>
-                          <button type="button" className="cs12-jui-btn-primary">Book Now</button>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">04</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">4</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Book a Gym</h4>
-                          <p className="cs12-jstep-desc">Select date &amp; time and confirm</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Book &amp; Schedule</h4>
+                        <p className="cs12-jpipe-desc">
+                          Select preferred date &amp; entry hour, followed by instant 1-tap checkout via UPI or Apple Pay.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">1-Tap Checkout</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 5 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body cs12-jdevice-centered">
-                          <div className="cs12-jui-success-circle">✓</div>
-                          <span className="cs12-jui-success-title">Booking Confirmed!</span>
-                          <div className="cs12-jui-summary-box">
-                            <span className="cs12-jui-sum-gym">Cult Fitness</span>
-                            <span className="cs12-jui-sum-date">Tue, 13 Aug • 8:00 AM</span>
-                          </div>
-                          <button type="button" className="cs12-jui-btn-primary">View Booking</button>
-                          <span className="cs12-jui-sub-action">Add to Calendar</span>
+                    <div className="cs12-jpipeline-card highlight-step">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge active">05</span>
+                        <div className="cs12-jpipe-icon-box active">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">5</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Start Workout</h4>
-                          <p className="cs12-jstep-desc">Instant QR code pass &amp; gym check-in</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Start Workout</h4>
+                        <p className="cs12-jpipe-desc">
+                          Instant dynamic QR gate pass generated for 1-second scanner check-in directly at the partner front-desk.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag active">Dynamic QR Entry</span>
                       </div>
                     </div>
                   </div>
@@ -1320,19 +1253,20 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               )}
 
               {/* =============================================================
-                  SWIMLANE 02: Get Personalised Guidance with Kyra AI
+                  PHASE 02: Get Personalised Guidance with Kyra AI
                   ============================================================= */}
               {(activeJourneyFilter === 'all' || activeJourneyFilter === 'kyra') && (
-                <div className="cs12-jswimlane">
-                  {/* Left Column */}
+                <div className="cs12-jswimlane theme-cyan">
+                  {/* Left Phase Identity & User Goal Card */}
                   <div className="cs12-jswim-left">
                     <div className="cs12-jswim-header-box">
                       <div className="cs12-jswim-badge-row">
-                        <span className="cs12-jphase-num">02</span>
-                        <h3 className="cs12-jswim-title">Get Guidance with Kyra AI</h3>
+                        <span className="cs12-jphase-num">PHASE 02</span>
+                        <span className="cs12-jphase-kpi">🤖 24/7 AI Coach</span>
                       </div>
+                      <h3 className="cs12-jswim-title">Guidance with Kyra AI</h3>
                       <p className="cs12-jswim-desc">
-                        Chat with Kyra for workout, diet and wellness guidance.
+                        Interact with an adaptive AI fitness companion for personalized workout splits, diet alternatives, and form checks.
                       </p>
                     </div>
 
@@ -1342,193 +1276,141 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                         <span className="cs12-jgoal-lbl">User Goal</span>
                       </div>
                       <p className="cs12-jgoal-txt">
-                        Get expert personalized guidance anytime, anywhere in real-time.
+                        Receive expert, tailored fitness &amp; nutrition advice anytime without paying costly personal trainer retainers.
                       </p>
                     </div>
                   </div>
 
-                  {/* Right Flow */}
+                  {/* Right Flow: 5 Executive Pipeline Step Cards */}
                   <div className="cs12-jswim-flow-row">
                     {/* Step 1 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-ai-header">
-                            <span className="cs12-jui-ai-avatar">🤖</span>
-                            <div className="cs12-jui-ai-head-info">
-                              <span className="cs12-jui-ai-name">Kyra AI</span>
-                              <span className="cs12-jui-ai-status">Online</span>
-                            </div>
-                          </div>
-                          <div className="cs12-jui-ai-bubble">
-                            Hi! I'm Kyra 👋 Your AI fitness coach. How can I help today?
-                          </div>
-                          <div className="cs12-jui-prompt-list">
-                            <span className="cs12-jui-prompt">💬 Create workout plan</span>
-                            <span className="cs12-jui-prompt">🥗 Suggest diet plan</span>
-                            <span className="cs12-jui-prompt">📊 Track my progress</span>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">01</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">1</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Start a Chat</h4>
-                          <p className="cs12-jstep-desc">Open Kyra and ask anything</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Start a Chat</h4>
+                        <p className="cs12-jpipe-desc">
+                          Open Kyra with contextual quick prompt pills: custom workouts, diet advice, or workout recovery.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">1-Tap Prompt</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 2 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-user-bubble">
-                            I want a workout plan for weight loss
-                          </div>
-                          <div className="cs12-jui-ai-bubble">
-                            Sure! Here's a 4-week personalized plan for you.
-                          </div>
-                          <div className="cs12-jui-plan-card">
-                            <span className="cs12-jui-plan-tag">Week 1</span>
-                            <span className="cs12-jui-plan-title">Full Body • 3 days/week</span>
-                            <div className="cs12-jui-plan-thumb" />
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">02</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">2</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Get Recommendations</h4>
-                          <p className="cs12-jstep-desc">Receive tailored workout &amp; diet plans</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Get Recommendations</h4>
+                        <p className="cs12-jpipe-desc">
+                          Receive custom 4-week workout plans calibrated to your current BMI, available days, and strength goals.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Custom Plan</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 3 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-screen-title">Your Workout Plan</div>
-                          <div className="cs12-jui-day-tabs">
-                            <span className="cs12-jui-day-tab active">Day 1</span>
-                            <span className="cs12-jui-day-tab">Day 2</span>
-                            <span className="cs12-jui-day-tab">Day 3</span>
-                          </div>
-                          <div className="cs12-jui-exercise-row">
-                            <span className="cs12-jui-ex-icon">🏋️</span>
-                            <div className="cs12-jui-ex-info">
-                              <span className="cs12-jui-ex-name">Squats</span>
-                              <span className="cs12-jui-ex-sets">3 sets • 12 reps</span>
-                            </div>
-                          </div>
-                          <div className="cs12-jui-exercise-row">
-                            <span className="cs12-jui-ex-icon">💪</span>
-                            <div className="cs12-jui-ex-info">
-                              <span className="cs12-jui-ex-name">Push Ups</span>
-                              <span className="cs12-jui-ex-sets">3 sets • 12 reps</span>
-                            </div>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">03</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="8" y1="6" x2="21" y2="6" />
+                            <line x1="8" y1="12" x2="21" y2="12" />
+                            <line x1="8" y1="18" x2="21" y2="18" />
+                            <line x1="3" y1="6" x2="3.01" y2="6" />
+                            <line x1="3" y1="12" x2="3.01" y2="12" />
+                            <line x1="3" y1="18" x2="3.01" y2="18" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">3</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Follow the Plan</h4>
-                          <p className="cs12-jstep-desc">Get step-by-step workout guidance</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Follow the Plan</h4>
+                        <p className="cs12-jpipe-desc">
+                          Execute curated daily exercise routines with target sets, rep ranges, animated posture cues, and rest timers.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Guided Sets</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 4 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-user-bubble">
-                            What should I eat for today?
-                          </div>
-                          <div className="cs12-jui-ai-bubble">
-                            Here are some healthy options for you.
-                          </div>
-                          <div className="cs12-jui-meal-tabs">
-                            <span className="cs12-jui-meal-tab active">Breakfast</span>
-                            <span className="cs12-jui-meal-tab">Lunch</span>
-                          </div>
-                          <div className="cs12-jui-recipe-card">
-                            <img
-                              src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=200&q=80"
-                              alt="Oats bowl"
-                              className="cs12-jui-recipe-img"
-                            />
-                            <div className="cs12-jui-recipe-meta">
-                              <span className="cs12-jui-recipe-name">Oats with Fruits</span>
-                              <span className="cs12-jui-recipe-kcal">320 kcal</span>
-                            </div>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">04</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12A10 10 0 0 1 12 2z" />
+                            <path d="M12 6v6l4 2" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">4</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Get Diet Advice</h4>
-                          <p className="cs12-jstep-desc">Personal meal tips &amp; nutritional alternatives</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Get Diet Advice</h4>
+                        <p className="cs12-jpipe-desc">
+                          Request instant meal suggestions, swap high-carb foods with healthier alternatives, and calculate macro gaps.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Macro Balancing</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 5 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-ai-bubble highlight">
-                            You're doing great! 🔥 Keep going. Want me to adjust your plan?
-                          </div>
-                          <div className="cs12-jui-quick-actions">
-                            <span className="cs12-jui-qbtn">⚡ Make it harder</span>
-                            <span className="cs12-jui-qbtn">🎯 Focus on abs</span>
-                            <span className="cs12-jui-qbtn">🥗 Change diet plan</span>
-                          </div>
+                    <div className="cs12-jpipeline-card highlight-step">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge active">05</span>
+                        <div className="cs12-jpipe-icon-box active">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">5</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Stay Consistent</h4>
-                          <p className="cs12-jstep-desc">Ongoing chat motivation &amp; accountability</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Stay Consistent</h4>
+                        <p className="cs12-jpipe-desc">
+                          Continuous streak accountability, habit check-ins, automated plan tuning, and motivational positive feedback.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag active">Streak Retention</span>
                       </div>
                     </div>
                   </div>
@@ -1536,19 +1418,20 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               )}
 
               {/* =============================================================
-                  SWIMLANE 03: Track Nutrition & See Progress
+                  PHASE 03: Track Nutrition & See Progress
                   ============================================================= */}
               {(activeJourneyFilter === 'all' || activeJourneyFilter === 'nutrition') && (
-                <div className="cs12-jswimlane">
-                  {/* Left Column */}
+                <div className="cs12-jswimlane theme-indigo">
+                  {/* Left Phase Identity & User Goal Card */}
                   <div className="cs12-jswim-left">
                     <div className="cs12-jswim-header-box">
                       <div className="cs12-jswim-badge-row">
-                        <span className="cs12-jphase-num">03</span>
-                        <h3 className="cs12-jswim-title">Track Nutrition &amp; See Progress</h3>
+                        <span className="cs12-jphase-num">PHASE 03</span>
+                        <span className="cs12-jphase-kpi">📸 3s AI Scan</span>
                       </div>
+                      <h3 className="cs12-jswim-title">Track Nutrition &amp; Progress</h3>
                       <p className="cs12-jswim-desc">
-                        Scan your meals and track your fitness progress.
+                        Snap food photos for instantaneous AI macro quantification and monitor tangible fitness improvements week over week.
                       </p>
                     </div>
 
@@ -1558,192 +1441,143 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                         <span className="cs12-jgoal-lbl">User Goal</span>
                       </div>
                       <p className="cs12-jgoal-txt">
-                        Understand daily macros, calories and see real physical progress.
+                        Track daily calories in under 3 seconds without tedious manual entry and visually confirm fitness progress.
                       </p>
                     </div>
                   </div>
 
-                  {/* Right Flow */}
+                  {/* Right Flow: 5 Executive Pipeline Step Cards */}
                   <div className="cs12-jswim-flow-row">
                     {/* Step 1 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body cs12-jui-cam-view">
-                          <div className="cs12-jui-cam-header">Food Scanner</div>
-                          <div className="cs12-jui-cam-frame">
-                            <span className="corner tl" />
-                            <span className="corner tr" />
-                            <span className="corner bl" />
-                            <span className="corner br" />
-                            <img
-                              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=260&q=80"
-                              alt="Food plate"
-                              className="cs12-jui-cam-target"
-                            />
-                          </div>
-                          <div className="cs12-jui-shutter-btn" />
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">01</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                            <circle cx="12" cy="13" r="4" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">1</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Scan Your Food</h4>
-                          <p className="cs12-jstep-desc">Take a photo of your meal</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Scan Your Food</h4>
+                        <p className="cs12-jpipe-desc">
+                          Capture any meal photo using the AI camera lens viewfinder; automatically recognizes complex multi-item dishes.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">AI Camera Lens</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 2 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-dish-thumb-box">
-                            <img
-                              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=260&q=80"
-                              alt="Chicken bowl"
-                              className="cs12-jui-dish-img"
-                            />
-                          </div>
-                          <div className="cs12-jui-dish-title">Chicken Bowl</div>
-                          <div className="cs12-jui-macro-grid">
-                            <div className="cs12-jui-mitem"><strong>420</strong><span>kcal</span></div>
-                            <div className="cs12-jui-mitem"><strong>32g</strong><span>Protein</span></div>
-                            <div className="cs12-jui-mitem"><strong>42g</strong><span>Carbs</span></div>
-                            <div className="cs12-jui-mitem"><strong>12g</strong><span>Fats</span></div>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">02</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">2</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Get Nutrition Info</h4>
-                          <p className="cs12-jstep-desc">Instant calories and macro breakdown</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Get Nutrition Info</h4>
+                        <p className="cs12-jpipe-desc">
+                          Instant breakdown of total calories, protein, carbs, and fats with 94% verified computer vision precision.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Macro Breakdown</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 3 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-screen-title">Log Meal</div>
-                          <div className="cs12-jui-log-item">
-                            <span className="cs12-jui-log-icon">🥗</span>
-                            <div>
-                              <span className="cs12-jui-log-dish">Chicken Bowl</span>
-                              <span className="cs12-jui-log-kcal">420 kcal</span>
-                            </div>
-                          </div>
-                          <div className="cs12-jui-field">
-                            <span>Meal Type</span>
-                            <strong>Lunch</strong>
-                          </div>
-                          <div className="cs12-jui-field">
-                            <span>Date</span>
-                            <strong>Tue, 13 Aug</strong>
-                          </div>
-                          <button type="button" className="cs12-jui-btn-primary">Save Meal</button>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">03</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                            <polyline points="17 21 17 13 7 13 7 21" />
+                            <polyline points="7 3 7 8 15 8" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">3</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Save &amp; Track</h4>
-                          <p className="cs12-jstep-desc">Log your meals easily with 1 tap</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Save &amp; Track</h4>
+                        <p className="cs12-jpipe-desc">
+                          Log meal to breakfast, lunch, or dinner with 1-tap save; immediately updates remaining daily calorie allowance.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">1-Tap Log Sync</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 4 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body">
-                          <div className="cs12-jui-screen-title">My Progress</div>
-                          <div className="cs12-jui-chart-tabs">
-                            <span className="cs12-jui-ctab active">Workouts</span>
-                            <span className="cs12-jui-ctab">Nutrition</span>
-                          </div>
-                          <div className="cs12-jui-mini-bars">
-                            <div className="cs12-jui-mbar" style={{ height: '40%' }} />
-                            <div className="cs12-jui-mbar" style={{ height: '70%' }} />
-                            <div className="cs12-jui-mbar" style={{ height: '55%' }} />
-                            <div className="cs12-jui-mbar active" style={{ height: '90%' }} />
-                            <div className="cs12-jui-mbar" style={{ height: '65%' }} />
-                            <div className="cs12-jui-mbar" style={{ height: '80%' }} />
-                            <div className="cs12-jui-mbar" style={{ height: '45%' }} />
-                          </div>
-                          <div className="cs12-jui-stat-row">
-                            <div className="cs12-jui-stat-sub">
-                              <span>Workouts</span>
-                              <strong>4 / 5</strong>
-                            </div>
-                            <div className="cs12-jui-stat-sub">
-                              <span>Streak</span>
-                              <strong>7 Days 🔥</strong>
-                            </div>
-                          </div>
+                    <div className="cs12-jpipeline-card">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge">04</span>
+                        <div className="cs12-jpipe-icon-box">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">4</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Track Your Progress</h4>
-                          <p className="cs12-jstep-desc">Review activity, macros and consistency</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Track Progress</h4>
+                        <p className="cs12-jpipe-desc">
+                          Monitor weekly calorie compliance graphs, workout volume trends, and consistency streaks on clean analytics charts.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag">Weekly Analytics</span>
                       </div>
                     </div>
 
-                    <div className="cs12-jstep-arrow">→</div>
+                    <div className="cs12-jflow-connector">
+                      <div className="cs12-jconn-line" />
+                      <span className="cs12-jconn-arrow">›</span>
+                    </div>
 
                     {/* Step 5 */}
-                    <div className="cs12-jstep-card">
-                      <div className="cs12-jmini-device">
-                        <div className="cs12-jdevice-topbar">
-                          <span>9:41</span>
-                          <span className="cs12-jdevice-notch" />
-                          <span>5G</span>
-                        </div>
-                        <div className="cs12-jdevice-body cs12-jdevice-centered">
-                          <div className="cs12-jui-flame-icon">🔥</div>
-                          <span className="cs12-jui-success-title">Great Progress!</span>
-                          <p className="cs12-jui-success-desc">
-                            You worked out 4 times this week.
-                          </p>
-                          <button type="button" className="cs12-jui-btn-primary">Keep Going</button>
+                    <div className="cs12-jpipeline-card highlight-step">
+                      <div className="cs12-jpipeline-head">
+                        <span className="cs12-jpipe-badge active">05</span>
+                        <div className="cs12-jpipe-icon-box active">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="8" r="7" />
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                          </svg>
                         </div>
                       </div>
-                      <div className="cs12-jstep-info">
-                        <div className="cs12-jstep-badge">5</div>
-                        <div className="cs12-jstep-meta">
-                          <h4 className="cs12-jstep-title">Stay Motivated</h4>
-                          <p className="cs12-jstep-desc">See results and build long-term consistency</p>
-                        </div>
+                      <div className="cs12-jpipeline-body">
+                        <h4 className="cs12-jpipe-title">Stay Motivated</h4>
+                        <p className="cs12-jpipe-desc">
+                          Unlock milestone fitness badges, build habit resilience, and sustain long-term physical transformations.
+                        </p>
+                      </div>
+                      <div className="cs12-jpipeline-foot">
+                        <span className="cs12-jpipe-tag active">Habit Mastery</span>
                       </div>
                     </div>
                   </div>
@@ -1752,11 +1586,8 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </div>
           </div>
         </section>
-
-        {/* ===================================================================
-            SECTION 08: USER FLOW
-            =================================================================== */}
-        <section id="sec-08" className="cs12-section">
+        
+<section id="sec-08" className="cs12-section">
           <div className="cs12-scope-of-work-card cs12-user-flow-card">
             <div className="cs12-scope-header-row">
               <div className="cs12-scope-title-col">
