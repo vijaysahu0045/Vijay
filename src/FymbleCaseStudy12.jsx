@@ -812,58 +812,19 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                     strokeDasharray="3 4"
                   />
 
-                  {/* 3-Pillar Triad Convergence Vectors */}
-                  {/* Connecting lines between triad nodes */}
-                  <polygon
-                    points="160,126 138,154 182,154"
-                    fill="none"
-                    stroke="rgba(255, 255, 255, 0.2)"
-                    strokeWidth="1.2"
-                  />
-                  <line x1="160" y1="126" x2="160" y2="145" stroke="rgba(59, 130, 246, 0.7)" strokeWidth="1.2" />
-                  <line x1="138" y1="154" x2="160" y2="145" stroke="rgba(56, 189, 248, 0.7)" strokeWidth="1.2" />
-                  <line x1="182" y1="154" x2="160" y2="145" stroke="rgba(129, 140, 248, 0.7)" strokeWidth="1.2" />
-
-                  {/* Triad Nodes */}
-                  {/* Top: Gym Pass (Electric Blue) */}
-                  <circle cx="160" cy="126" r="4" fill="#3B82F6" filter="url(#psBeaconGlow)" />
-                  <circle cx="160" cy="126" r="1.8" fill="#ffffff" />
-                  
-                  {/* Bottom Left: Macro Scanner (Cyan Blue) */}
-                  <circle cx="138" cy="154" r="4" fill="#38BDF8" filter="url(#psBeaconGlow)" />
-                  <circle cx="138" cy="154" r="1.8" fill="#ffffff" />
-                  
-                  {/* Bottom Right: Kyra AI Coach (Indigo Blue) */}
-                  <circle cx="182" cy="154" r="4" fill="#818CF8" filter="url(#psBeaconGlow)" />
-                  <circle cx="182" cy="154" r="1.8" fill="#ffffff" />
-
-                  {/* Central Convergence Beacon */}
-                  <circle cx="160" cy="145" r="3" fill="#ffffff" filter="url(#psBeaconGlow)" />
-
-                  {/* Core Typography */}
+                  {/* Center Clean Typography Only */}
                   <text
                     x="160"
-                    y="178"
+                    y="160"
+                    dominantBaseline="central"
                     fill="#ffffff"
-                    fontSize="11"
+                    fontSize="15"
                     fontWeight="800"
                     textAnchor="middle"
-                    letterSpacing="2.5"
+                    letterSpacing="3.5"
                     fontFamily="Roboto, sans-serif"
                   >
                     FYMBLE
-                  </text>
-                  <text
-                    x="160"
-                    y="192"
-                    fill="#94a3b8"
-                    fontSize="7.5"
-                    fontWeight="600"
-                    textAnchor="middle"
-                    letterSpacing="1.2"
-                    fontFamily="Roboto, sans-serif"
-                  >
-                    CONVERGENCE
                   </text>
                 </svg>
               </div>
