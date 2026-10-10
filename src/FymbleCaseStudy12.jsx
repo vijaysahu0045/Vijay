@@ -615,31 +615,31 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                       <div className="cs12-stair-col stair-1">
                         <span className="cs12-stair-percent coral-text">56%</span>
                         <span className="cs12-stair-name">Very Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '30px', background: '#FF5757' }} />
+                        <div className="cs12-stair-bar" style={{ height: '22px', background: '#FF5757' }} />
                       </div>
                       {/* Step 2 */}
                       <div className="cs12-stair-col stair-2">
                         <span className="cs12-stair-percent coral-text">45%</span>
                         <span className="cs12-stair-name">Difficult</span>
-                        <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 87, 87, 0.6)' }} />
+                        <div className="cs12-stair-bar" style={{ height: '36px', background: 'rgba(255, 87, 87, 0.6)' }} />
                       </div>
                       {/* Step 3 */}
                       <div className="cs12-stair-col stair-3">
                         <span className="cs12-stair-percent">32%</span>
                         <span className="cs12-stair-name">Neutral</span>
-                        <div className="cs12-stair-bar" style={{ height: '70px', background: 'rgba(255, 255, 255, 0.2)' }} />
+                        <div className="cs12-stair-bar" style={{ height: '50px', background: 'rgba(255, 255, 255, 0.2)' }} />
                       </div>
                       {/* Step 4 */}
                       <div className="cs12-stair-col stair-4">
                         <span className="cs12-stair-percent green-text">25%</span>
                         <span className="cs12-stair-name">Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '90px', background: 'rgba(34, 197, 94, 0.6)' }} />
+                        <div className="cs12-stair-bar" style={{ height: '64px', background: 'rgba(34, 197, 94, 0.6)' }} />
                       </div>
                       {/* Step 5 */}
                       <div className="cs12-stair-col stair-5">
                         <span className="cs12-stair-percent green-text">15%</span>
                         <span className="cs12-stair-name">Very Easy</span>
-                        <div className="cs12-stair-bar" style={{ height: '110px', background: '#22C55E' }} />
+                        <div className="cs12-stair-bar" style={{ height: '78px', background: '#22C55E' }} />
                       </div>
                     </div>
                   </div>

@@ -1038,14 +1038,14 @@
 .cs12-research-insights-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-top: 30px;
+  gap: 28px;
+  margin-top: 20px;
 }
 
 .cs12-research-row-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  gap: 40px;
+  gap: 24px;
   align-items: center;
 }
 
@@ -1058,11 +1058,11 @@
 }
 
 .cs12-research-question-title {
-  font-size: clamp(22px, 2.4vw, 30px);
+  font-size: clamp(15.5px, 1.6vw, 19px);
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.35;
-  letter-spacing: -0.4px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
   margin: 0;
 }
 
@@ -1070,12 +1070,12 @@
 .cs12-research-chart-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 22px;
-  padding: 28px 32px;
+  border-radius: 16px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
   text-align: left;
 }
 
@@ -1086,14 +1086,14 @@
 }
 
 .cs12-chart-title {
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.2px;
 }
 
 .cs12-chart-subtitle-text {
-  font-size: 14.5px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #cbd5e1;
 }
@@ -1102,18 +1102,18 @@
 .cs12-chart-bars-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .cs12-chart-bar-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .cs12-bar-label {
-  width: 90px;
-  font-size: 13.5px;
+  width: 75px;
+  font-size: 12px;
   color: #94a3b8;
   font-weight: 500;
   flex-shrink: 0;
@@ -1121,7 +1121,7 @@
 
 .cs12-bar-track {
   flex: 1;
-  height: 16px;
+  height: 12px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 999px;
   overflow: hidden;
@@ -1134,7 +1134,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 8px;
+  padding-right: 6px;
   transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1151,7 +1151,7 @@
 }
 
 .cs12-bar-percent {
-  font-size: 11px;
+  font-size: 9.5px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -1159,15 +1159,15 @@
 .cs12-avatar-cluster {
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .cs12-avatar-cluster img {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 1.5px solid #1a1a24;
-  margin-left: -8px;
+  margin-left: -6px;
   object-fit: cover;
 }
 
@@ -1186,15 +1186,15 @@
 
 .cs12-arc-chart-svg {
   width: 100%;
-  max-width: 280px;
+  max-width: 190px;
   height: auto;
 }
 
 .cs12-arc-legend-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 12px;
+  gap: 8px;
+  margin-top: 8px;
   width: 100%;
 }
 
@@ -1207,7 +1207,7 @@
 }
 
 .cs12-arc-percent {
-  font-size: 16px;
+  font-size: 13.5px;
   font-weight: 800;
 }
 
@@ -1222,41 +1222,41 @@
 }
 
 .cs12-arc-label {
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: #64748b;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 /* Staircase Chart */
 .cs12-staircase-chart-container {
   width: 100%;
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .cs12-staircase-steps {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  gap: 10px;
   align-items: flex-end;
-  height: 170px;
+  height: 110px;
 }
 
 .cs12-stair-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .cs12-stair-percent {
-  font-size: 13.5px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #ffffff;
 }
 
 .cs12-stair-name {
-  font-size: 11px;
+  font-size: 9.5px;
   color: #64748b;
   font-weight: 600;
   white-space: nowrap;
@@ -1264,7 +1264,7 @@
 
 .cs12-stair-bar {
   width: 100%;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
   transition: transform 0.3s ease;
 }
 
@@ -1275,18 +1275,18 @@
 /* Featured Persona Quote */
 .cs12-research-quote-card {
   position: relative;
-  padding: 44px 36px;
+  padding: 22px 26px;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   text-align: left;
 }
 
 .cs12-quote-big-mark {
-  font-size: 64px;
+  font-size: 38px;
   line-height: 0.5;
   color: #FF5757;
   font-family: serif;
@@ -1294,8 +1294,8 @@
 }
 
 .cs12-featured-persona-quote {
-  font-size: clamp(17px, 2vw, 24px);
-  line-height: 1.55;
+  font-size: clamp(13.5px, 1.3vw, 16px);
+  line-height: 1.5;
   color: #94a3b8;
   margin: 0;
 }
@@ -1308,13 +1308,13 @@
 .cs12-quote-persona-author {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 4px;
 }
 
 .cs12-persona-avatar-wrap {
-  width: 56px;
-  height: 56px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid rgba(255, 87, 87, 0.5);
@@ -1334,14 +1334,14 @@
 }
 
 .cs12-persona-author-name {
-  font-size: 16px;
+  font-size: 13.5px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
 }
 
 .cs12-persona-author-role {
-  font-size: 13px;
+  font-size: 11.5px;
   color: #FF5757;
   font-weight: 500;
 }
