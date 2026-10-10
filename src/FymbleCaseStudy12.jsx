@@ -71,25 +71,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             </svg>
             <span>Back</span>
           </button>
-          <div className="cs12-brand-badge">
-            <span className="cs12-brand-dot" />
-            <span className="cs12-brand-title">FYMBLE CASE STUDY</span>
-          </div>
         </div>
-
-        {/* 12-Section Quick Scroller Strip */}
-        <nav className="cs12-sections-nav">
-          {SECTIONS_INDEX.map((sec) => (
-            <button
-              key={sec.id}
-              className={`cs12-nav-item ${activeNav === sec.id ? 'active' : ''}`}
-              onClick={() => scrollTo(sec.id)}
-            >
-              <span className="cs12-nav-num">{sec.num}</span>
-              <span className="cs12-nav-name">{sec.label}</span>
-            </button>
-          ))}
-        </nav>
       </header>
 
       {/* Main Long-Form Case Study Wrapper */}
