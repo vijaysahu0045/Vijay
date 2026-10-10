@@ -658,7 +658,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
             {/* Problem Statement Centered Paragraph */}
             <div className="cs12-ps-problem-statement">
               <p>
-                <strong>Fragmented health tools</strong> and <strong>rigid annual gym subscriptions</strong> make it difficult for users to maintain consistency, track nutrition, and make <strong>confident daily fitness decisions.</strong>
+                Fragmented health tools and rigid annual gym subscriptions make it difficult for users to maintain consistency, track nutrition, and make confident daily fitness decisions.
               </p>
             </div>
 
