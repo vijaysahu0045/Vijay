@@ -123,11 +123,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">01</span>
                 <h2 className="cs12-scope-title">Scope of work</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Throughout our journey we've gone from research to final design ensuring the user feels confident in testing and defining the final version.
-                </p>
-              </div>
             </div>
 
             {/* Staggered 4-Sprint Waterfall Stepper */}
@@ -332,11 +327,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">02</span>
                 <h2 className="cs12-scope-title">Strategy &amp; Planning</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Collaborated with the CEO, development team, and marketing team to plan product features, define user experiences, align business goals, and coordinate product launches.
-                </p>
-              </div>
             </div>
 
             {/* Staggered 3-Pillar Waterfall Stepper */}
@@ -433,11 +423,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">03</span>
                 <h2 className="cs12-scope-title">Typography &amp; Colors</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Visual system built with Roboto typography and high-contrast fitness tokens optimized for clarity across AMOLED displays.
-                </p>
-              </div>
             </div>
 
             {/* Giant Roboto Showcase with Floating Weight Badge */}
@@ -529,11 +514,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">04</span>
                 <h2 className="cs12-scope-title">User Research &amp; Key Insights</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Quantitative surveys and user interviews across 120+ active gym-goers uncovering core behavioral friction points.
-                </p>
               </div>
             </div>
 
@@ -725,11 +705,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">05</span>
                 <h2 className="cs12-scope-title">Problem &amp; Solution</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Bridging fragmented fitness tracking and rigid annual gym contracts with an on-demand AI habit ecosystem.
-                </p>
-              </div>
             </div>
 
             {/* Problem Statement Centered Paragraph */}
@@ -842,11 +817,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">06</span>
                 <h2 className="cs12-scope-title">User Persona</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Architected user-centered journeys by synthesizing target motivations, routine hurdles, and habit friction into actionable product priorities.
-                </p>
               </div>
             </div>
 
@@ -1020,11 +990,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">07</span>
                 <h2 className="cs12-scope-title">User Journey Map</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Mapped the holistic user journey across all touchpoints to eliminate friction during discovery, onboarding, gym check-in, nutrition tracking, and long-term habit retention.
-                </p>
               </div>
             </div>
 
@@ -1262,11 +1227,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">08</span>
                 <h2 className="cs12-scope-title">User Flow</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  A complete visual architecture mapping every core user pathway from frictionless onboarding and authentication through centralized dashboard navigation, transaction modules, analytics, and reward exchange.
-                </p>
               </div>
             </div>
 
@@ -1601,11 +1561,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">09</span>
                 <h2 className="cs12-scope-title">Grid System</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  A harmonized, mathematical layout grid calibrated for responsive fidelity across desktop displays and mobile viewports, maintaining proportional rhythm, precise gutters, and structured content alignment.
-                </p>
-              </div>
             </div>
 
             {/* Grid Showcases Comparison */}
@@ -1708,11 +1663,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">10</span>
                 <h2 className="cs12-scope-title">Core Experience</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  A deep dive into the frictionless interactive core of Fymble — engineered for effortless daily routine tracking, instant workout logging, meal swaps, and real-time habit calibration.
-                </p>
               </div>
             </div>
 
@@ -1836,11 +1786,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <span className="cs12-scope-index">11</span>
                 <h2 className="cs12-scope-title">User testing Result</h2>
               </div>
-              <div className="cs12-scope-desc-col">
-                <p>
-                  Usability testing with 30 participants helped validate key flows, measure real-world friction, and refine the fitness & habit experience before launch.
-                </p>
-              </div>
             </div>
 
             {/* Matrix Container */}
@@ -1958,14 +1903,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               <div className="cs12-scope-title-col">
                 <span className="cs12-scope-index">12</span>
                 <h2 className="cs12-scope-title">Results</h2>
-              </div>
-              <div className="cs12-scope-desc-col">
-                <h3 className="cs12-results-hero-heading">
-                  Delivering a seamless fitness experience through intuitive design
-                </h3>
-                <p>
-                  Through user research, usability testing, and iterative design improvements, we created a motivating, habit-building fitness companion that drives daily user engagement.
-                </p>
               </div>
             </div>
 
