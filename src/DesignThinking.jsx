@@ -15,14 +15,12 @@ export default function DesignThinking({ onBack }) {
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Top Header Bar */}
-      <header className="dt-topbar">
-        <button className="dt-home-btn" onClick={onBack} title="Back to Home">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-      </header>
+      {/* Fixed Back Button (Always available, no bar across the screen) */}
+      <button className="dt-home-btn" onClick={onBack} title="Back to Home" aria-label="Back to Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
 
       {/* Main Content Area (Cleared) */}
       <main className="dt-main-wrapper">

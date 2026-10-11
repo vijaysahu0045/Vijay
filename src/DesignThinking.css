@@ -24,35 +24,36 @@
   object-fit: cover;
 }
 
-.dt-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  padding: 20px 40px;
-  background: rgba(11, 11, 15, 0.7);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
+/* Fixed Minimalist Back Button (Always available anywhere on page, no bar across screen) */
 .dt-home-btn {
+  position: fixed;
+  top: 24px;
+  left: 32px;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
   color: #CCCCCC;
-  padding: 6px;
+  padding: 8px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85));
 }
 
 .dt-home-btn:hover {
   color: #FFFFFF;
   transform: translateX(-3px);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .dt-home-btn {
+    top: 18px;
+    left: 18px;
+  }
 }
 
 .dt-main-wrapper {
@@ -60,7 +61,7 @@
   z-index: 10;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 24px 0;
+  padding: 60px 24px 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -389,9 +390,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .dt-topbar {
-    padding: 16px 20px;
-  }
   .dt-hero-card,
   .dt-active-stage-card,
   .dt-proof-banner {
