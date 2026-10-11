@@ -159,14 +159,14 @@ export default function DesignThinking({ onBack }) {
                 <svg className="dt-curved-arrow" viewBox="0 0 160 70" fill="none">
                   <path
                     d="M 140 10 C 90 10, 40 30, 20 60"
-                    stroke="#ff5757"
+                    stroke="#c084fc"
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeDasharray="4 2"
                   />
                   <path
                     d="M 15 50 L 20 62 L 32 58"
-                    stroke="#ff5757"
+                    stroke="#c084fc"
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -253,7 +253,7 @@ export default function DesignThinking({ onBack }) {
                 Key <span className="dt-highlight-red">UX Improvements</span>
               </h2>
               <div className="dt-imp-sub-wrap">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff5757" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 5v14M19 12l-7 7-7-7" />
                 </svg>
                 <span className="dt-imp-sub">
