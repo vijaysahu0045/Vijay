@@ -252,14 +252,6 @@ export default function DesignThinking({ onBack }) {
               <h2 className="dt-imp-heading">
                 Key <span className="dt-highlight-red">UX Improvements</span>
               </h2>
-              <div className="dt-imp-sub-wrap">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 5v14M19 12l-7 7-7-7" />
-                </svg>
-                <span className="dt-imp-sub">
-                  A more focused, intuitive and action-driven home page experience.
-                </span>
-              </div>
             </div>
 
             {/* 5 Improvement Cards Grid */}
@@ -275,22 +267,6 @@ export default function DesignThinking({ onBack }) {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Board Footer / Full Board Inspect Link */}
-          <div className="dt-board-footer-row">
-            <button
-              className="dt-inspect-full-btn"
-              onClick={() => openModal(redesignBoardImg, 'Full Resolution Case Study Board')}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                <line x1="11" y1="8" x2="11" y2="14" />
-                <line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-              <span>Inspect Full Resolution Graphic</span>
-            </button>
           </div>
 
         </div>
