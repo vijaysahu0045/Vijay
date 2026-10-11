@@ -33,7 +33,6 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
   const [ufZoom, setUfZoom] = useState(1)
   const [isUfFullscreen, setIsUfFullscreen] = useState(false)
   const [ufModalZoom, setUfModalZoom] = useState(1.1)
-  const [isTopbarVisible, setIsTopbarVisible] = useState(true)
 
   // Esc key listener and body lock for fullscreen User Flow modal
   useEffect(() => {
@@ -54,22 +53,10 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
     }
   }, [isUfFullscreen])
 
-  // Scroll spy & smart topbar show/hide (hides on scroll down, smoothly reveals on scroll up)
+  // Scroll spy
   useEffect(() => {
-    let lastY = window.scrollY || 0
-
     const handleScroll = () => {
       const scrollY = window.scrollY || 0
-
-      // Hide on scroll down, immediately show when scrolling UP or near top
-      if (scrollY > lastY + 8 && scrollY > 60) {
-        setIsTopbarVisible(false) // Scrolling down -> hide
-      } else if (scrollY < lastY - 5 || scrollY <= 25) {
-        setIsTopbarVisible(true)  // Scrolling up / near top -> show
-      }
-      lastY = scrollY
-
-      // Scroll spy
       const spyY = scrollY + 180
       for (let i = SECTIONS_INDEX.length - 1; i >= 0; i--) {
         const el = document.getElementById(SECTIONS_INDEX[i].id)
@@ -102,16 +89,12 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Top Header Navigation (Hides on scroll down, slides down on scroll up) */}
-      <header className={`cs12-topbar ${!isTopbarVisible ? 'topbar-hidden' : ''}`}>
-        <div className="cs12-topbar-left">
-          <button className="cs12-back-btn" onClick={onBack} title="Back to Portfolio">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6"/>
-            </svg>
-          </button>
-        </div>
-      </header>
+      {/* Fixed Back Button (Always available, no bar, pure icon) */}
+      <button className="cs12-back-btn" onClick={onBack} title="Back to Portfolio" aria-label="Back to Portfolio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
 
       {/* Main Long-Form Case Study Wrapper */}
       <main className="cs12-main-content">
