@@ -1379,9 +1379,9 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
               {/* Big Hero Statement Headline */}
               <div className="cs12-core-exp-hero-text">
                 <h2>
-                  Seamless habit & workout tracking<br />
-                  for a better <span className="highlight-text">fitness</span><br />
-                  <span className="muted-text">Experience.</span>
+                  <span className="cs12-hero-line-1">Seamless habit &amp; workout tracking</span>
+                  <span className="cs12-hero-line-2">for a better <span className="highlight-text">fitness</span></span>
+                  <span className="cs12-hero-line-3">Experience.</span>
                 </h2>
               </div>
 
