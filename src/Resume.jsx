@@ -61,8 +61,8 @@ export default function Resume({ onBack }) {
             <a href="https://linkedin.com/in/vijaysahu-" target="_blank" rel="noopener noreferrer" className="r-link">
               <span>🔗</span> linkedin.com/in/vijaysahu-
             </a>
-            <a href="https://vijay-henna.vercel.app" target="_blank" rel="noopener noreferrer" className="r-link">
-              <span>🌐</span> vijay-henna.vercel.app
+            <a href="https://vijaysahu-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="r-link">
+              <span>🌐</span> vijaysahu-portfolio.vercel.app
             </a>
           </div>
         </div>

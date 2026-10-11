@@ -18,8 +18,8 @@ const CONTACT_ITEMS = [
   {
     id: 'portfolio',
     label: 'PORTFOLIO',
-    value: 'vijay-henna.vercel.app',
-    href: 'https://vijay-henna.vercel.app',
+    value: 'vijaysahu-portfolio.vercel.app',
+    href: 'https://vijaysahu-portfolio.vercel.app',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
