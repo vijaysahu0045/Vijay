@@ -27,71 +27,26 @@
   object-fit: cover;
 }
 
-/* Floating Fixed Back Button (Icon only, boxless, slides in on scroll) */
-.cs12-floating-scroll-back-btn {
-  position: fixed;
-  top: 18px;
-  left: 28px;
-  z-index: 99999;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  background: transparent;
-  border: none;
-  color: #CCCCCC;
-  cursor: pointer;
-  border-radius: 8px;
-  opacity: 0;
-  transform: translateY(-12px);
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease, color 0.2s ease, background 0.2s ease;
-  user-select: none;
-}
-
-.cs12-floating-scroll-back-btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.cs12-floating-scroll-back-btn svg {
-  color: #CCCCCC;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.cs12-floating-scroll-back-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(0) translateX(-3px);
-}
-
-.cs12-floating-scroll-back-btn:hover svg {
-  color: #ffffff;
-}
-
-.cs12-floating-scroll-back-btn:active {
-  transform: translateY(0) scale(0.95);
-}
-
-/* Top Navigation Bar */
+/* Top Sticky Navigation Bar (Smart hide on scroll down, instant reveal on scroll up) */
 .cs12-topbar {
-  position: relative;
+  position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 14px 32px;
-  background: rgba(11, 11, 15, 0.85);
+  background: rgba(11, 11, 15, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: opacity 0.25s ease;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
+  will-change: transform, opacity;
 }
 
-.cs12-topbar.scrolled-away {
+.cs12-topbar.topbar-hidden {
+  transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
 }
