@@ -37,23 +37,22 @@
 }
 
 .dt-home-btn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  border: none;
+  color: #CCCCCC;
+  padding: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
 }
 
 .dt-home-btn:hover {
-  background: rgba(124, 58, 237, 0.25);
-  border-color: rgba(167, 139, 250, 0.5);
+  color: #FFFFFF;
   transform: translateX(-3px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .dt-main-wrapper {

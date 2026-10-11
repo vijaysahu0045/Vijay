@@ -61,24 +61,20 @@
 .detail-btn-back {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #2a2a35;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  justify-content: center;
+  background: transparent;
+  border: none;
   color: #CCCCCC;
-  padding: 6px 14px;
+  padding: 6px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 13px;
-  font-weight: 500;
 }
 
 .detail-btn-back:hover {
   color: #FFFFFF;
-  background: #383848;
-  border-color: #6366f1;
-  transform: translateX(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transform: translateX(-3px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .detail-action-btn {
