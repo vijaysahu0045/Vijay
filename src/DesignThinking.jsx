@@ -206,10 +206,29 @@ export default function DesignThinking({ onBack }) {
             {/* Column 2: Phone Mockup 1 (Before) */}
             <div className="dt-stage-col dt-phone-col">
               <div className="dt-iphone-mockup" onClick={() => openModal(homeBeforeImg, 'Old Home Page (Before)')}>
-                <div className="dt-iphone-notch" />
-                <img src={homeBeforeImg} alt="Old Home Page (Before)" className="dt-iphone-screen" />
-                <div className="dt-iphone-overlay">
-                  <span>Click to zoom</span>
+                {/* Physical Hardware Buttons */}
+                <div className="dt-phone-btn dt-btn-action" />
+                <div className="dt-phone-btn dt-btn-vol-up" />
+                <div className="dt-phone-btn dt-btn-vol-down" />
+                <div className="dt-phone-btn dt-btn-power" />
+                {/* Top Speaker Ear-piece */}
+                <div className="dt-phone-speaker" />
+
+                {/* Inner Screen Display */}
+                <div className="dt-phone-screen-wrap">
+                  {/* Dynamic Island */}
+                  <div className="dt-phone-island">
+                    <div className="dt-island-sensor" />
+                    <div className="dt-island-lens" />
+                  </div>
+                  {/* Subtle 3D Glass Sheen */}
+                  <div className="dt-phone-glare" />
+                  <img src={homeBeforeImg} alt="Old Home Page (Before)" className="dt-iphone-screen" />
+                  {/* Home Bar Indicator */}
+                  <div className="dt-phone-home-bar" />
+                  <div className="dt-iphone-overlay">
+                    <span>Click to zoom</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -217,10 +236,29 @@ export default function DesignThinking({ onBack }) {
             {/* Column 3: Phone Mockup 2 (After) */}
             <div className="dt-stage-col dt-phone-col">
               <div className="dt-iphone-mockup dt-iphone-after" onClick={() => openModal(homeAfterImg, 'Updated Home Page (After)')}>
-                <div className="dt-iphone-notch" />
-                <img src={homeAfterImg} alt="Updated Home Page (After)" className="dt-iphone-screen" />
-                <div className="dt-iphone-overlay">
-                  <span>Click to zoom</span>
+                {/* Physical Hardware Buttons */}
+                <div className="dt-phone-btn dt-btn-action" />
+                <div className="dt-phone-btn dt-btn-vol-up" />
+                <div className="dt-phone-btn dt-btn-vol-down" />
+                <div className="dt-phone-btn dt-btn-power" />
+                {/* Top Speaker Ear-piece */}
+                <div className="dt-phone-speaker" />
+
+                {/* Inner Screen Display */}
+                <div className="dt-phone-screen-wrap">
+                  {/* Dynamic Island */}
+                  <div className="dt-phone-island">
+                    <div className="dt-island-sensor" />
+                    <div className="dt-island-lens" />
+                  </div>
+                  {/* Subtle 3D Glass Sheen */}
+                  <div className="dt-phone-glare" />
+                  <img src={homeAfterImg} alt="Updated Home Page (After)" className="dt-iphone-screen" />
+                  {/* Home Bar Indicator */}
+                  <div className="dt-phone-home-bar" />
+                  <div className="dt-iphone-overlay">
+                    <span>Click to zoom</span>
+                  </div>
                 </div>
               </div>
             </div>
