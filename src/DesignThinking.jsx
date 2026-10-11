@@ -9,7 +9,6 @@ export default function DesignThinking({ onBack }) {
   const [modalImg, setModalImg] = useState(null)
   const [modalTitle, setModalTitle] = useState('')
   const [zoomLevel, setZoomLevel] = useState(1)
-  const [viewMode, setViewMode] = useState('comparison') // 'comparison' | 'board'
 
   const openModal = (img, title) => {
     setModalImg(img)
@@ -114,7 +113,7 @@ export default function DesignThinking({ onBack }) {
         <div className="page-moving-purple-orb" />
       </div>
 
-      {/* Fixed Back Button (Unified clean icon, always accessible) */}
+      {/* Fixed Minimalist Back Button */}
       <button className="dt-home-btn" onClick={onBack} title="Back to Portfolio" aria-label="Back to Portfolio">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M15 18l-6-6 6-6" />
@@ -123,202 +122,182 @@ export default function DesignThinking({ onBack }) {
 
       {/* Main Container */}
       <main className="dt-main-wrapper">
-
         {/* ===================================================================
-            HEADER: CASE STUDY META & HERO HEADLINE
+            THE EXACT FYMBLE HOME PAGE REDESIGN BOARD
             =================================================================== */}
-        <section className="dt-hero-card">
-          <div className="dt-header-meta">
-            <div className="dt-pill-badge">
-              <span className="dt-pill-brand">FYMBLE</span>
-              <span className="dt-pill-sep">|</span>
-              <span className="dt-pill-type">UX CASE STUDY</span>
+        <div className="dt-board-card">
+
+          {/* Top Board Meta Header */}
+          <div className="dt-board-top-meta">
+            <div className="dt-board-meta-left">
+              <span className="dt-meta-brand">FYMBLE</span>
+              <span className="dt-meta-bar">|</span>
+              <span className="dt-meta-tag">UX CASE STUDY</span>
             </div>
-            <span className="dt-app-tag">Fitness Marketplace App</span>
+            <div className="dt-board-meta-right">
+              <span className="dt-meta-category">Fitness Marketplace App</span>
+              <span className="dt-meta-dash" />
+            </div>
           </div>
 
-          <div className="dt-hero-text">
-            <h1 className="dt-main-title">
-              Home Page <span className="dt-gradient-text">Redesign</span>
-            </h1>
-            <p className="dt-subtitle">
-              From a promotion-focused layout to a user-centric fitness marketplace experience.
-            </p>
+          {/* Main Board Hero Title */}
+          <div className="dt-board-title-row">
+            <div className="dt-board-title-col">
+              <h1 className="dt-board-heading">
+                Home Page<br />
+                <span className="dt-highlight-red">Redesign</span>
+              </h1>
+              <p className="dt-board-subheading">
+                From a promotion-focused layout to a user-centric<br />
+                fitness marketplace experience.
+              </p>
+            </div>
+
+            {/* Handwritten Style Annotation with Arrow */}
+            <div className="dt-board-annotation-col">
+              <div className="dt-annotation-doodle">
+                <svg className="dt-curved-arrow" viewBox="0 0 160 70" fill="none">
+                  <path
+                    d="M 140 10 C 90 10, 40 30, 20 60"
+                    stroke="#ff5757"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeDasharray="4 2"
+                  />
+                  <path
+                    d="M 15 50 L 20 62 L 32 58"
+                    stroke="#ff5757"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="dt-doodle-text">
+                  A cleaner, more intuitive<br />
+                  home page to help users<br />
+                  discover gyms and book faster.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="dt-annotation-callout">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="dt-callout-icon">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            </svg>
-            <span className="dt-callout-text">
-              "A cleaner, more intuitive home page to help users discover gyms and book faster."
-            </span>
-          </div>
+          {/* ===================================================================
+              MIDDLE SHOWCASE: 4-COLUMN EXACT BEFORE vs AFTER MOCKUP LAYOUT
+              =================================================================== */}
+          <div className="dt-showcase-stage">
 
-          {/* View Toggle */}
-          <div className="dt-view-toggle">
-            <button
-              className={`dt-toggle-btn ${viewMode === 'comparison' ? 'active' : ''}`}
-              onClick={() => setViewMode('comparison')}
-            >
-              Side-by-Side Comparison
-            </button>
-            <button
-              className={`dt-toggle-btn ${viewMode === 'board' ? 'active' : ''}`}
-              onClick={() => setViewMode('board')}
-            >
-              Full Case Study Board
-            </button>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            VIEW 1: SIDE-BY-SIDE COMPARISON (BEFORE vs AFTER)
-            =================================================================== */}
-        {viewMode === 'comparison' ? (
-          <section className="dt-comparison-section">
-            <div className="dt-comparison-grid">
-
-              {/* ---------- BEFORE COLUMN ---------- */}
-              <div className="dt-comp-column dt-before-col">
-                <div className="dt-col-header">
-                  <div className="dt-col-badge before-badge">Before</div>
-                  <h3 className="dt-col-title">Old Home Page</h3>
-                </div>
-
-                {/* Pain Points */}
-                <ul className="dt-points-list">
-                  {beforePoints.map((point, idx) => (
-                    <li key={idx} className="dt-point-item before-item">
-                      <span className="dt-point-icon before-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="18" y1="6" x2="6" y2="18" />
-                          <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
-                      </span>
-                      <span className="dt-point-text">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Phone Mockup Frame */}
-                <div className="dt-phone-mockup-wrapper" onClick={() => openModal(homeBeforeImg, 'Old Home Page (Before)')}>
-                  <div className="dt-phone-frame">
-                    <div className="dt-phone-island" />
-                    <img src={homeBeforeImg} alt="Old Home Page Before" className="dt-phone-screen-img" />
-                    <div className="dt-phone-hover-overlay">
-                      <span className="dt-zoom-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <circle cx="11" cy="11" r="8" />
-                          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                          <line x1="11" y1="8" x2="11" y2="14" />
-                          <line x1="8" y1="11" x2="14" y2="11" />
-                        </svg>
-                        Click to enlarge
-                      </span>
-                    </div>
-                  </div>
-                </div>
+            {/* Column 1: Before Pain Points */}
+            <div className="dt-stage-col dt-before-points-col">
+              <div className="dt-badge-wrap">
+                <span className="dt-badge dt-badge-before">Before</span>
+                <span className="dt-badge-sub">Old Home Page</span>
               </div>
 
-              {/* ---------- AFTER COLUMN ---------- */}
-              <div className="dt-comp-column dt-after-col">
-                <div className="dt-col-header">
-                  <div className="dt-col-badge after-badge">After</div>
-                  <h3 className="dt-col-title">Updated Home Page</h3>
-                </div>
+              <ul className="dt-points-list">
+                {beforePoints.map((item, idx) => (
+                  <li key={idx} className="dt-point-row">
+                    <span className="dt-point-icon dt-icon-cross">✕</span>
+                    <span className="dt-point-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                {/* Solution Highlights */}
-                <ul className="dt-points-list">
-                  {afterPoints.map((point, idx) => (
-                    <li key={idx} className="dt-point-item after-item">
-                      <span className="dt-point-icon after-icon">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      </span>
-                      <span className="dt-point-text">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Phone Mockup Frame */}
-                <div className="dt-phone-mockup-wrapper" onClick={() => openModal(homeAfterImg, 'Updated Home Page (After)')}>
-                  <div className="dt-phone-frame active-glow">
-                    <div className="dt-phone-island" />
-                    <img src={homeAfterImg} alt="Updated Home Page After" className="dt-phone-screen-img" />
-                    <div className="dt-phone-hover-overlay">
-                      <span className="dt-zoom-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <circle cx="11" cy="11" r="8" />
-                          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                          <line x1="11" y1="8" x2="11" y2="14" />
-                          <line x1="8" y1="11" x2="14" y2="11" />
-                        </svg>
-                        Click to enlarge
-                      </span>
-                    </div>
-                  </div>
+            {/* Column 2: Phone Mockup 1 (Before) */}
+            <div className="dt-stage-col dt-phone-col">
+              <div className="dt-iphone-mockup" onClick={() => openModal(homeBeforeImg, 'Old Home Page (Before)')}>
+                <div className="dt-iphone-notch" />
+                <img src={homeBeforeImg} alt="Old Home Page (Before)" className="dt-iphone-screen" />
+                <div className="dt-iphone-overlay">
+                  <span>Click to zoom</span>
                 </div>
               </div>
-
             </div>
-          </section>
-        ) : (
-          /* ===================================================================
-              VIEW 2: FULL CASE STUDY BOARD OVERVIEW
-              =================================================================== */
-          <section className="dt-board-section">
-            <div className="dt-board-card" onClick={() => openModal(redesignBoardImg, 'Full Case Study Board')}>
-              <img src={redesignBoardImg} alt="Fymble Full UX Case Study Board" className="dt-board-img" />
-              <div className="dt-board-overlay">
-                <span className="dt-zoom-tag">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    <line x1="11" y1="8" x2="11" y2="14" />
-                    <line x1="8" y1="11" x2="14" y2="11" />
-                  </svg>
-                  Click to inspect full resolution board
+
+            {/* Column 3: Phone Mockup 2 (After) */}
+            <div className="dt-stage-col dt-phone-col">
+              <div className="dt-iphone-mockup dt-iphone-after" onClick={() => openModal(homeAfterImg, 'Updated Home Page (After)')}>
+                <div className="dt-iphone-notch" />
+                <img src={homeAfterImg} alt="Updated Home Page (After)" className="dt-iphone-screen" />
+                <div className="dt-iphone-overlay">
+                  <span>Click to zoom</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 4: After Improvements */}
+            <div className="dt-stage-col dt-after-points-col">
+              <div className="dt-badge-wrap">
+                <span className="dt-badge dt-badge-after">After</span>
+                <span className="dt-badge-sub">Updated Home Page</span>
+              </div>
+
+              <ul className="dt-points-list">
+                {afterPoints.map((item, idx) => (
+                  <li key={idx} className="dt-point-row">
+                    <span className="dt-point-icon dt-icon-check">✓</span>
+                    <span className="dt-point-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          {/* ===================================================================
+              BOTTOM SECTION: KEY UX IMPROVEMENTS (5 CARDS)
+              =================================================================== */}
+          <div className="dt-improvements-container">
+            <div className="dt-imp-header">
+              <h2 className="dt-imp-heading">
+                Key <span className="dt-highlight-red">UX Improvements</span>
+              </h2>
+              <div className="dt-imp-sub-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff5757" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+                <span className="dt-imp-sub">
+                  A more focused, intuitive and action-driven home page experience.
                 </span>
               </div>
             </div>
-          </section>
-        )}
 
-        {/* ===================================================================
-            SECTION: KEY UX IMPROVEMENTS (5 PILLARS)
-            =================================================================== */}
-        <section className="dt-improvements-section">
-          <div className="dt-sec-header">
-            <div className="dt-sec-title-wrap">
-              <h2 className="dt-sec-title">
-                Key <span className="dt-gradient-text">UX Improvements</span>
-              </h2>
-              <p className="dt-sec-sub">
-                A more focused, intuitive and action-driven home page experience.
-              </p>
+            {/* 5 Improvement Cards Grid */}
+            <div className="dt-imp-grid">
+              {keyImprovements.map((card, idx) => (
+                <div key={idx} className="dt-card-box">
+                  <div className="dt-card-top-row">
+                    <div className="dt-card-icon-bubble">{card.icon}</div>
+                    <span className="dt-card-num-tag">{card.num}</span>
+                  </div>
+                  <h3 className="dt-card-name">{card.title}</h3>
+                  <p className="dt-card-desc">{card.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="dt-improvements-grid">
-            {keyImprovements.map((card, idx) => (
-              <div key={idx} className="dt-imp-card">
-                <div className="dt-imp-card-top">
-                  <div className="dt-imp-icon-box">{card.icon}</div>
-                  <span className="dt-imp-num">{card.num}</span>
-                </div>
-                <h3 className="dt-imp-title">{card.title}</h3>
-                <p className="dt-imp-desc">{card.desc}</p>
-              </div>
-            ))}
+          {/* Board Footer / Full Board Inspect Link */}
+          <div className="dt-board-footer-row">
+            <button
+              className="dt-inspect-full-btn"
+              onClick={() => openModal(redesignBoardImg, 'Full Resolution Case Study Board')}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+              <span>Inspect Full Resolution Graphic</span>
+            </button>
           </div>
-        </section>
 
+        </div>
       </main>
 
       {/* ===================================================================
-          MODAL LIGHTBOX (CLICK TO ENLARGE)
+          MODAL LIGHTBOX (ZOOM IN/OUT INSPECT)
           =================================================================== */}
       {modalImg && (
         <div className="dt-modal-overlay" onClick={closeModal}>
