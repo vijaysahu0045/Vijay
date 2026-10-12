@@ -458,261 +458,166 @@
 
 
 /* ===================================================================
-   SECTION 2: DEEP DIVE BREAKDOWN — HOME PAGE DESIGN & UX (7 ANNOTATED POINTS)
+   SECTION 2: HOME PAGE UX STRATEGY (EXACT FIGMA MASTER IN DARK THEME)
    =================================================================== */
-.dt-ux-deepdive-board {
-  margin: 64px 0 52px;
+.dt-ux-strategy-board {
+  margin: 68px 0 52px;
   padding-top: 52px;
   border-top: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
-.dt-ux-header-row {
+/* Top Brand Row */
+.dt-strat-top-bar {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.dt-ux-header-left {
-  flex: 1;
-  min-width: 320px;
-}
-
-.dt-ux-sub-badge {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 800;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dt-strat-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.dt-strat-brand-name {
+  font-family: 'Roboto', Inter, sans-serif;
+  font-size: 26px;
+  font-weight: 900;
   color: #ff5757;
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  margin-bottom: 8px;
+  letter-spacing: -0.6px;
 }
 
-.dt-ux-badge-tag {
-  background: rgba(255, 87, 87, 0.14);
-  border: 1px solid rgba(255, 87, 87, 0.35);
-  padding: 3px 9px;
-  border-radius: 6px;
-}
-
-.dt-ux-badge-sep {
-  color: #64748b;
-}
-
-.dt-ux-badge-info {
+.dt-strat-brand-sub {
+  font-size: 11px;
   color: #94a3b8;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-top: 2px;
 }
 
-.dt-ux-title {
+.dt-strat-pill-meta {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+}
+
+/* Hero Title Row */
+.dt-strat-title-row {
+  margin-bottom: 44px;
+}
+
+.dt-strat-heading {
   font-family: 'Roboto', Inter, sans-serif;
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 900;
-  line-height: 1.15;
   color: #ffffff;
-  letter-spacing: -1px;
-  margin: 0 0 10px;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  margin: 0 0 12px;
 }
 
-.dt-ux-subtitle {
+.dt-strat-subtitle {
   font-size: 15px;
   line-height: 1.55;
-  color: #cbd5e1;
+  color: #94a3b8;
   margin: 0;
-  max-width: 680px;
+  max-width: 650px;
   font-weight: 400;
 }
 
-/* Sequential Walkthrough Control Bar */
-.dt-ux-player-bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: rgba(18, 19, 28, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  padding: 6px 14px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-}
-
-.dt-ux-player-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12.5px;
-  color: #e2e8f0;
-  font-weight: 600;
-}
-
-.dt-ux-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff5757;
-  box-shadow: 0 0 10px #ff5757;
-  animation: dt-pulse-dot 1.4s infinite;
-}
-
-@keyframes dt-pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-.dt-ux-step-pills {
-  display: flex;
-  gap: 5px;
-}
-
-.dt-step-pill-btn {
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
-  color: #94a3b8;
-  font-size: 11.5px;
-  font-weight: 800;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.22s ease;
-}
-
-.dt-step-pill-btn.revealed {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.dt-step-pill-btn.active {
-  background: linear-gradient(135deg, #ff5757 0%, #ef4444 100%);
-  color: #ffffff;
-  border-color: #ff5757;
-  box-shadow: 0 0 14px rgba(255, 87, 87, 0.65);
-  transform: scale(1.12);
-}
-
-.dt-ux-player-actions {
-  display: flex;
-  gap: 6px;
-}
-
-.dt-ux-ctrl-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #f1f5f9;
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.dt-ux-ctrl-btn:hover {
-  background: rgba(255, 87, 87, 0.22);
-  border-color: #ff5757;
-  color: #ffffff;
-}
-
-.dt-ux-reset-btn {
-  color: #94a3b8;
-}
-
-/* 3-Column Interactive Stage Layout */
-.dt-ux-stage-layout {
+/* 3-Column Visual Stage */
+.dt-strat-stage {
   display: grid;
   grid-template-columns: 1.05fr 295px 1.05fr;
   gap: 24px;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
-.dt-ux-col {
+.dt-strat-col {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
-.dt-ux-col-center {
+.dt-strat-center-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.dt-ux-phone-wrapper {
+.dt-strat-phone {
   position: relative;
   width: 100%;
   max-width: 295px;
   border-radius: 48px;
-  filter: drop-shadow(0 24px 50px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(255, 87, 87, 0.22));
+  filter: drop-shadow(0 26px 55px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(255, 87, 87, 0.22));
   transition: transform 0.3s ease;
 }
 
-.dt-ux-phone-wrapper:hover {
-  transform: translateY(-4px) scale(1.015);
+.dt-strat-phone:hover {
+  transform: translateY(-3px);
 }
 
-.dt-ux-phone-img {
+.dt-strat-phone-img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Floating Pins positioned on the phone screen */
-.dt-ux-pin {
+/* 7 Numbered Pointer Pins on Phone */
+.dt-strat-pin {
   position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff5757 0%, #ef4444 100%);
+  background: linear-gradient(135deg, #ff5757 0%, #ee3a3a 100%);
   color: #ffffff;
-  border: 2px solid #ffffff;
-  font-size: 12px;
+  border: 1.5px solid #ffffff;
+  font-size: 11px;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 15;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, box-shadow 0.25s ease;
-  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, box-shadow 0.3s ease;
 }
 
-.dt-ux-pin.pin-muted {
-  opacity: 0.38;
-  transform: scale(0.9);
+.dt-strat-pin.pin-hidden {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
 }
 
-.dt-ux-pin.pin-revealed {
+.dt-strat-pin.pin-visible {
   opacity: 1;
   transform: scale(1);
+  pointer-events: auto;
 }
 
-.dt-ux-pin.pin-active {
-  transform: scale(1.22);
+.dt-strat-pin.pin-active {
+  transform: scale(1.25);
   z-index: 25;
   box-shadow: 0 0 20px #ff5757, 0 4px 14px rgba(0, 0, 0, 0.9);
 }
 
-.dt-pin-num {
-  line-height: 1;
-}
-
-.dt-pin-glow-ring {
+.dt-strat-pin-glow {
   position: absolute;
-  inset: -7px;
+  inset: -6px;
   border-radius: 50%;
   border: 2px solid #ff5757;
-  animation: dt-pin-ripple 1.6s infinite ease-out;
+  animation: dt-pin-ripple 1.5s infinite ease-out;
   pointer-events: none;
 }
 
@@ -721,57 +626,54 @@
   100% { transform: scale(1.85); opacity: 0; }
 }
 
-/* 7 Annotated Cards */
-.dt-ux-card {
-  background: rgba(17, 18, 27, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+/* 7 Cards */
+.dt-strat-card {
+  background: rgba(18, 19, 29, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 18px 20px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 16px;
+  padding: 15px 18px;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
 }
 
-.dt-ux-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.2);
+.dt-strat-card.card-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
 }
 
-.dt-ux-card.card-waiting {
-  opacity: 0.35;
-  filter: grayscale(35%);
-  transform: translateY(8px);
-}
-
-.dt-ux-card.card-revealed {
+.dt-strat-card.card-shown {
   opacity: 1;
-  filter: none;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
-.dt-ux-card.card-active {
-  border-color: rgba(255, 87, 87, 0.7);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 28px rgba(255, 87, 87, 0.24);
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(25, 22, 34, 0.92);
+.dt-strat-card:hover,
+.dt-strat-card.card-hovered {
+  border-color: rgba(255, 87, 87, 0.65);
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.75), 0 0 22px rgba(255, 87, 87, 0.22);
+  background: rgba(24, 23, 35, 0.94);
 }
 
-.dt-ux-card-header {
+.dt-strat-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
-.dt-ux-card-badge {
-  width: 24px;
-  height: 24px;
+.dt-strat-badge {
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff5757 0%, #ef4444 100%);
+  background: linear-gradient(135deg, #ff5757 0%, #ee3a3a 100%);
   color: #ffffff;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -780,195 +682,146 @@
   box-shadow: 0 2px 8px rgba(255, 87, 87, 0.5);
 }
 
-.dt-ux-card-title {
+.dt-strat-card-title {
   font-family: 'Roboto', Inter, sans-serif;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 800;
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.2px;
 }
 
-.dt-ux-card-desc {
-  font-size: 12.8px;
-  line-height: 1.48;
-  color: #cbd5e1;
-  margin: 0 0 12px;
-  font-weight: 400;
-}
-
-/* Micro-Preview: Location Tag */
-.dt-ux-location-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 87, 87, 0.1);
-  border: 1px solid rgba(255, 87, 87, 0.25);
-  border-radius: 10px;
-  padding: 8px 14px;
-  margin-top: 4px;
-}
-
-.dt-ux-loc-icon {
-  font-size: 16px;
-}
-
-.dt-ux-loc-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.dt-ux-loc-text strong {
-  font-size: 12.5px;
-  color: #ffffff;
+.dt-strat-tag {
+  margin-left: auto;
+  background: rgba(255, 87, 87, 0.12);
+  border: 1px solid rgba(255, 87, 87, 0.28);
+  color: #ff7878;
+  font-size: 11px;
   font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
-.dt-ux-loc-text span {
-  font-size: 11px;
-  color: #94a3b8;
-}
-
-/* Micro-Preview: Promo Banner */
-.dt-ux-promo-pill {
+.dt-strat-card-body {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dt-strat-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   background: rgba(255, 87, 87, 0.1);
-  border: 1px solid rgba(255, 87, 87, 0.25);
-  border-radius: 10px;
-  padding: 8px 14px;
-  margin-top: 4px;
-}
-
-.dt-ux-promo-icon {
-  font-size: 16px;
+  border: 1px solid rgba(255, 87, 87, 0.24);
   color: #ff5757;
-}
-
-.dt-ux-promo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.dt-ux-promo-text strong {
-  font-size: 12.5px;
-  color: #ff5757;
-  font-weight: 800;
-}
-
-.dt-ux-promo-text span {
-  font-size: 11px;
-  color: #94a3b8;
-}
-
-/* Micro-Preview: Gym Feature Chips */
-.dt-ux-chips-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 6px;
-}
-
-.dt-ux-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 11.5px;
-  color: #e2e8f0;
-  font-weight: 600;
-}
-
-.dt-ux-chip-icon {
-  font-size: 12px;
-}
-
-/* Micro-Preview: Quick Explore Tabs */
-.dt-ux-tabs-row {
-  display: flex;
-  gap: 6px;
-  background: rgba(14, 15, 22, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 4px;
-  margin-top: 6px;
-}
-
-.dt-ux-tab {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 5px 8px;
-  border-radius: 7px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #94a3b8;
-}
-
-.dt-ux-tab.active {
-  background: linear-gradient(135deg, #ff5757 0%, #ef4444 100%);
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(255, 87, 87, 0.4);
-}
-
-.dt-tab-icon {
-  font-size: 10px;
-}
-
-/* Media Block with Thumbnail & Bullets */
-.dt-ux-media-block {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 6px;
-}
-
-.dt-ux-media-thumb {
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
-.dt-ux-media-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.dt-strat-card-desc {
+  font-size: 12.5px;
+  line-height: 1.48;
+  color: #cbd5e1;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===================================================================
+   BOTTOM UX OBJECTIVE BANNER (EXACT REPLICA IN DARK THEME)
+   =================================================================== */
+.dt-ux-objective-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: rgba(18, 19, 29, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px 32px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  flex-wrap: wrap;
+}
+
+.dt-ux-obj-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.dt-ux-obj-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ff5757;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
   display: block;
+  margin-bottom: 6px;
 }
 
-.dt-ux-bullets-wrap {
+.dt-ux-obj-heading {
+  font-family: 'Roboto', Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.dt-ux-obj-pillars {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.dt-ux-pillar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dt-pillar-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 87, 87, 0.12);
+  border: 1px solid rgba(255, 87, 87, 0.28);
+  color: #ff5757;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dt-pillar-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  flex: 1;
 }
 
-.dt-ux-bullet-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
+.dt-pillar-info h4 {
+  font-family: 'Roboto', Inter, sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px;
+}
+
+.dt-pillar-info p {
   font-size: 11.5px;
-  line-height: 1.35;
-  color: #cbd5e1;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 500;
 }
 
-.dt-ux-bullet-dot {
-  font-size: 11px;
-  flex-shrink: 0;
-  color: #ff5757;
-  margin-top: 1px;
+.dt-pillar-divider {
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ===================================================================
@@ -993,25 +846,35 @@
     order: 4;
   }
 
-  .dt-ux-stage-layout {
+  .dt-strat-stage {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .dt-ux-col-center {
+  .dt-strat-center-wrap {
     order: 1;
   }
 
-  .dt-ux-col-left {
+  .dt-strat-col-left {
     order: 2;
   }
 
-  .dt-ux-col-right {
+  .dt-strat-col-right {
     order: 3;
   }
 
-  .dt-ux-phone-wrapper {
+  .dt-strat-phone {
     max-width: 275px;
+  }
+
+  .dt-ux-objective-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .dt-pillar-divider {
+    display: none;
   }
 
   .dt-imp-grid {
@@ -1029,7 +892,8 @@
     border-radius: 20px;
   }
 
-  .dt-board-heading {
+  .dt-board-heading,
+  .dt-strat-heading {
     font-size: 34px;
   }
 
@@ -1056,20 +920,15 @@
     order: 4;
   }
 
-  .dt-ux-header-row {
+  .dt-strat-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dt-ux-obj-pillars {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-  }
-
-  .dt-ux-title {
-    font-size: 30px;
-  }
-
-  .dt-ux-player-bar {
-    width: 100%;
-    flex-wrap: wrap;
-    border-radius: 16px;
   }
 
   .dt-imp-grid {
