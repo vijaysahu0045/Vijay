@@ -21,6 +21,11 @@ import graphicSimranKyraDialogue from './assets/graphic-simran-kyra-dialogue.png
 import graphicFymbleDelhiHaryanaLive from './assets/graphic-fymble-delhi-haryana-live.jpg'
 import graphicKyraHealthPartner from './assets/graphic-kyra-health-partner.png'
 import graphicCoffeeSkip66Pass from './assets/graphic-coffee-skip-66-pass.jpg'
+import graphicNutritionExpert2499 from './assets/graphic-nutrition-expert-2499.png'
+import graphicDailyPass99Bicep from './assets/graphic-daily-pass-99-iphone-bicep.jpg'
+import graphicScanKnowEatSmart from './assets/graphic-scan-know-eat-smart.jpg'
+import graphicFreedomSale66Pass from './assets/graphic-freedom-sale-66-pass.jpg'
+import graphicHappyIndependenceDay from './assets/graphic-happy-independence-day.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -326,6 +331,51 @@ export const CATEGORIES = [
         theme: 'theme-dark',
         icon: '☕',
         description: 'Punchy coffee cup takeaway ad: Skip a coffee, not your workout — ₹66/day Fymble weekly fitness pass.'
+      },
+      {
+        id: 121,
+        title: 'Real Results? Not Just Apps — Nutrition Expert',
+        image: graphicNutritionExpert2499,
+        tag: 'NUTRITION SUBSCRIPTION',
+        theme: 'theme-blue',
+        icon: '🥗',
+        description: 'Premium nutrition consulting campaign poster starting at ₹2499/month with dedicated assistant & custom diet plan.'
+      },
+      {
+        id: 122,
+        title: 'Book Daily Gym Pass ₹99 — Win iPhone 17 Pro Max',
+        image: graphicDailyPass99Bicep,
+        tag: 'FITNESS PASS CAMPAIGN',
+        theme: 'theme-blue',
+        icon: '🏋️‍♂️',
+        description: 'High-contrast athlete workout campaign for ₹99 daily gym pass with iPhone 17 Pro Max lucky giveaway hook.'
+      },
+      {
+        id: 123,
+        title: 'Scan. Know. Eat Smart — Food Scan with Kyra AI',
+        image: graphicScanKnowEatSmart,
+        tag: 'AI VISION CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '📸',
+        description: 'Multimodal AI food scanning feature poster: Scan your meal and get calories, macros, and health scores in 1 second.'
+      },
+      {
+        id: 124,
+        title: 'Freedom Sale is Live! 80% Off Passes',
+        image: graphicFreedomSale66Pass,
+        tag: 'FESTIVE SALE BANNER',
+        theme: 'theme-sunset',
+        icon: '🇮🇳',
+        description: 'National festival campaign visual offering 80% off on weekly gym passes starting at ₹66/day.'
+      },
+      {
+        id: 125,
+        title: 'Happy Independence Day — A Healthy Nation is Strong',
+        image: graphicHappyIndependenceDay,
+        tag: 'NATIONAL CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '🇮🇳',
+        description: 'Cinematic Independence Day brand campaign featuring marathon runners against the historic Red Fort.'
       }
     ]
   },
