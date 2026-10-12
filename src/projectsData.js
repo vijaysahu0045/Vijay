@@ -11,6 +11,11 @@ import graphicWinIphoneReward from './assets/graphic-win-iphone-reward.png'
 import graphicReadyWorkout from './assets/graphic-ready-workout.png'
 import graphicEatRightBowl from './assets/graphic-eat-right-bowl.png'
 import graphicTrackEveryStep from './assets/graphic-track-every-step.png'
+import graphicStayHydrated from './assets/graphic-stay-hydrated.png'
+import graphicGymMateCouple from './assets/graphic-gym-mate-couple.jpg'
+import graphicGymMatesTogether from './assets/graphic-gym-mates-together.jpg'
+import graphicKyraStepsToday from './assets/graphic-kyra-steps-today.jpg'
+import graphicPictureAbhiBaakiHai from './assets/graphic-picture-abhi-baaki-hai.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -226,6 +231,51 @@ export const CATEGORIES = [
         theme: 'theme-blue',
         icon: '🏃‍♀️',
         description: 'Dynamic step tracking promotional visual highlighting smart pedometer, calorie monitoring, and daily distance goals.'
+      },
+      {
+        id: 111,
+        title: 'Stay Hydrated — Water Intake Tracker',
+        image: graphicStayHydrated,
+        tag: 'WELLNESS & HYDRATION',
+        theme: 'theme-blue',
+        icon: '💧',
+        description: 'Refreshing water splash visual promoting daily hydration tracking and personalized hydration goals.'
+      },
+      {
+        id: 112,
+        title: 'Gym Mate — 92% Match Workout Partner',
+        image: graphicGymMateCouple,
+        tag: 'COMMUNITY CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '🤝',
+        description: 'Social gym matching campaign visual: Find your workout partner, train together, and stay consistent.'
+      },
+      {
+        id: 113,
+        title: 'Gym Mates — Stronger Together',
+        image: graphicGymMatesTogether,
+        tag: 'FITNESS MOTIVATION',
+        theme: 'theme-sunset',
+        icon: '💪',
+        description: 'Buddy workout motivation poster: Find nearby gym mates, train together, push each other, and achieve fitness goals faster.'
+      },
+      {
+        id: 114,
+        title: 'Steps You Took Today? Ask Kyra AI',
+        image: graphicKyraStepsToday,
+        tag: 'AI HEALTH CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '👟',
+        description: 'Interactive step tracking campaign featuring Kyra AI health coach conversational assistance, calorie burn, and distance metrics.'
+      },
+      {
+        id: 115,
+        title: 'Picture Abhi Baaki Hai — Kyra AI Launch',
+        image: graphicPictureAbhiBaakiHai,
+        tag: 'BOLLYWOOD HOOK AD',
+        theme: 'theme-sunset',
+        icon: '🎬',
+        description: 'High-energy Bollywood hook campaign for Kyra AI: Talk, track, and thrive with all-in-one voice chat health coaching.'
       }
     ]
   },
