@@ -1,6 +1,10 @@
 import cardImg1 from './assets/project-card-1.png'
 import gymMgmtThumbnail from './assets/gym-mgmt-thumbnail.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
+import fymbleScopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
+import fymbleRedesignBoard from './assets/fymble-redesign-board.jpg'
+import fymbleUserJourneyMap from './assets/fymble-user-journey-map.jpg'
+import fymbleBanner from './assets/fymble-banner.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -118,12 +122,60 @@ export const CATEGORIES = [
     label: 'Graphic Design',
     iconName: 'graphic',
     projects: [
-      { id: 13, title: 'Brand Identity & Guidelines', image: null, tag: 'BRAND IDENTITY', theme: 'theme-purple', icon: '🎨', description: 'Complete visual identity system, logos, typography rules, and color palettes.' },
-      { id: 14, title: 'Fymble — Daily Gym Pass Banner', image: fymbleGymPassBanner, tag: 'CAMPAIGN BANNER', theme: 'theme-sunset', icon: '📢', description: 'High-converting promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.' },
-      { id: 15, title: 'Vector Illustration Pack', image: null, tag: 'ILLUSTRATIONS', theme: 'theme-blue', icon: '🖌️', description: 'Custom illustrated character sets, micro-icons, and storytelling graphics.' },
-      { id: 16, title: 'Product Packaging Design', image: null, tag: 'PACKAGING', theme: 'theme-dark', icon: '📦', description: 'Modern eco-friendly retail package designs with 3D print mockups.' },
-      { id: 17, title: 'Typography Posters', image: null, tag: 'TYPOGRAPHY', theme: 'theme-light', icon: '🔤', description: 'Experimental editorial typography art and Swiss-style poster compositions.' },
-      { id: 18, title: '3D Mockup Showcase', image: null, tag: '3D RENDERS', theme: 'theme-purple', icon: '📐', description: 'Photorealistic device mockups, isometric scenes, and branding 3D renders.' },
+      {
+        id: 14,
+        title: 'Fymble — Daily Gym Pass Banner',
+        image: fymbleGymPassBanner,
+        tag: 'CAMPAIGN BANNER',
+        theme: 'theme-sunset',
+        icon: '📢',
+        description: 'High-converting promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.'
+      },
+      {
+        id: 13,
+        title: 'Fymble — 3D Multi-Device Artwork',
+        image: fymbleScopeHandShowcase,
+        tag: '3D MOCKUP POSTER',
+        theme: 'theme-purple',
+        icon: '📱',
+        description: 'Isometric hand-held 3D flagship smartphone showcase poster featuring multi-app interfaces.'
+      },
+      {
+        id: 15,
+        title: 'Fymble — Ecosystem Design Board',
+        image: fymbleRedesignBoard,
+        tag: 'DESIGN POSTER',
+        theme: 'theme-blue',
+        icon: '🎨',
+        description: 'Comprehensive design thinking and UI ecosystem architecture master board.'
+      },
+      {
+        id: 16,
+        title: 'Brand Showcase & Guidelines Art',
+        image: cardImg1,
+        tag: 'BRAND IDENTITY',
+        theme: 'theme-dark',
+        icon: '✨',
+        description: 'Official branding lineup and device fleet presentation poster.'
+      },
+      {
+        id: 17,
+        title: 'Complete Fitness User Journey Map',
+        image: fymbleUserJourneyMap,
+        tag: 'INFOGRAPHIC POSTER',
+        theme: 'theme-light',
+        icon: '🗺️',
+        description: 'Step-by-step visual infographic mapping user discovery, Kyra AI guidance, and nutrition tracking.'
+      },
+      {
+        id: 18,
+        title: 'Marketing Platform Hero Banner',
+        image: fymbleBanner,
+        tag: 'DIGITAL BANNER',
+        theme: 'theme-purple',
+        icon: '📐',
+        description: 'Wide promotional hero banner composition showcasing fitness platform launch.'
+      },
     ]
   },
   {

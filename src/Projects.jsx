@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Projects.css'
 import bgImage from './assets/projects-bg.png'
 import ProjectDetail from './ProjectDetail'
@@ -56,8 +56,30 @@ export default function Projects({
   const activeCategory = parentActiveCategory !== undefined ? parentActiveCategory : internalCategory
   const setActiveCategory = onCategoryChange || setInternalCategory
   const [selectedProject, setSelectedProject] = useState(null)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
 
   const currentCategoryObj = CATEGORIES.find(c => c.id === activeCategory) || CATEGORIES[0]
+
+  // Reset lightbox whenever category changes
+  useEffect(() => {
+    setLightboxIndex(null)
+  }, [activeCategory])
+
+  // Handle keyboard navigation for Pinterest Lightbox
+  useEffect(() => {
+    if (lightboxIndex === null) return
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setLightboxIndex(null)
+      } else if (e.key === 'ArrowLeft') {
+        setLightboxIndex((prev) => (prev > 0 ? prev - 1 : currentCategoryObj.projects.length - 1))
+      } else if (e.key === 'ArrowRight') {
+        setLightboxIndex((prev) => (prev < currentCategoryObj.projects.length - 1 ? prev + 1 : 0))
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [lightboxIndex, currentCategoryObj.projects.length])
 
   if (selectedProject) {
     const handleNext = () => {
@@ -132,33 +154,152 @@ export default function Projects({
         <main className="projects-content-area">
           <div className="projects-category-heading">
             <span>{currentCategoryObj.label}</span>
-            <span className="projects-count-badge">{currentCategoryObj.projects.length} Projects</span>
+            <span className="projects-count-badge">
+              {currentCategoryObj.projects.length} {activeCategory === 'graphic' ? 'Artworks' : 'Projects'}
+            </span>
           </div>
 
-          {/* 6 Projects Grid */}
-          <div className="projects-grid">
-            {currentCategoryObj.projects.map((proj) => (
-              <div
-                key={proj.id}
-                className="project-card-wrapper"
-                onClick={() => handleCardClick(proj)}
-              >
-                <div className={`project-grid-card ${proj.thumbnail || proj.image ? 'with-image' : 'glass-card'}`}>
-                  {proj.thumbnail || proj.image ? (
-                    <img src={proj.thumbnail || proj.image} alt={proj.title} />
-                  ) : (
-                    <div className={`project-card-placeholder ${proj.theme || 'theme-dark'}`}>
-                      {proj.icon && <span className="card-mock-icon">{proj.icon}</span>}
-                      <span className="card-placeholder-text">{proj.tag || proj.title}</span>
+          {activeCategory === 'graphic' ? (
+            /* PINTEREST-STYLE MASONRY GALLERY FOR GRAPHIC DESIGN */
+            <div className="pinterest-gallery-masonry">
+              {currentCategoryObj.projects.map((proj, idx) => (
+                <div
+                  key={proj.id || idx}
+                  className="pinterest-pin-card"
+                  onClick={() => setLightboxIndex(idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === 'Enter') setLightboxIndex(idx) }}
+                >
+                  <div className="pin-img-wrapper">
+                    <img src={proj.image} alt={proj.title} loading="lazy" />
+                    <div className="pin-hover-overlay">
+                      <div className="pin-view-pill">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="15 3 21 3 21 9" />
+                          <polyline points="9 21 3 21 3 15" />
+                          <line x1="21" y1="3" x2="14" y2="10" />
+                          <line x1="3" y1="21" x2="10" y2="14" />
+                        </svg>
+                        <span>View Full</span>
+                      </div>
+                      <div className="pin-meta-box">
+                        <span className="pin-tag-badge">{proj.tag || 'GRAPHIC DESIGN'}</span>
+                        <h3 className="pin-title-text">{proj.title}</h3>
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
-                <div className="project-card-title">{proj.title}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            /* Standard Grid for other categories */
+            <div className="projects-grid">
+              {currentCategoryObj.projects.map((proj) => (
+                <div
+                  key={proj.id}
+                  className="project-card-wrapper"
+                  onClick={() => handleCardClick(proj)}
+                >
+                  <div className={`project-grid-card ${proj.thumbnail || proj.image ? 'with-image' : 'glass-card'}`}>
+                    {proj.thumbnail || proj.image ? (
+                      <img src={proj.thumbnail || proj.image} alt={proj.title} />
+                    ) : (
+                      <div className={`project-card-placeholder ${proj.theme || 'theme-dark'}`}>
+                        {proj.icon && <span className="card-mock-icon">{proj.icon}</span>}
+                        <span className="card-placeholder-text">{proj.tag || proj.title}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="project-card-title">{proj.title}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </main>
       </div>
+
+      {/* PINTEREST FULLSCREEN AUTO-ADJUST LIGHTBOX MODAL */}
+      {lightboxIndex !== null && currentCategoryObj.projects[lightboxIndex] && (
+        <div className="pinterest-lightbox-overlay" onClick={() => setLightboxIndex(null)}>
+          <div className="pinterest-lightbox-container" onClick={(e) => e.stopPropagation()}>
+            {/* Top Controls Bar */}
+            <div className="pinterest-lightbox-topbar">
+              <div className="lightbox-info-badge">
+                <span className="lightbox-index-num">
+                  {lightboxIndex + 1} / {currentCategoryObj.projects.length}
+                </span>
+                <span className="lightbox-sep">•</span>
+                <span className="lightbox-tag-txt">
+                  {currentCategoryObj.projects[lightboxIndex].tag || 'Graphic Design'}
+                </span>
+              </div>
+              <button
+                className="lightbox-close-icon-btn"
+                onClick={() => setLightboxIndex(null)}
+                title="Close (Esc)"
+                aria-label="Close"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Navigation Arrows */}
+            {currentCategoryObj.projects.length > 1 && (
+              <>
+                <button
+                  className="lightbox-arrow-btn lightbox-prev-btn"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setLightboxIndex((prev) => (prev > 0 ? prev - 1 : currentCategoryObj.projects.length - 1))
+                  }}
+                  title="Previous"
+                >
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <button
+                  className="lightbox-arrow-btn lightbox-next-btn"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setLightboxIndex((prev) => (prev < currentCategoryObj.projects.length - 1 ? prev + 1 : 0))
+                  }}
+                  title="Next"
+                >
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </>
+            )}
+
+            {/* Auto-Sizing Image Display Area */}
+            <div className="lightbox-stage-wrap">
+              <img
+                src={currentCategoryObj.projects[lightboxIndex].image}
+                alt={currentCategoryObj.projects[lightboxIndex].title}
+                className="pinterest-lightbox-img"
+              />
+            </div>
+
+            {/* Caption / Title info */}
+            <div className="pinterest-lightbox-caption">
+              <h3 className="lightbox-caption-title">
+                {currentCategoryObj.projects[lightboxIndex].title}
+              </h3>
+              {currentCategoryObj.projects[lightboxIndex].description && (
+                <p className="lightbox-caption-description">
+                  {currentCategoryObj.projects[lightboxIndex].description}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

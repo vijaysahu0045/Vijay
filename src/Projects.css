@@ -312,3 +312,301 @@
     height: 160px;
   }
 }
+
+/* ==========================================================================
+   PINTEREST-STYLE MASONRY GALLERY (FOR GRAPHIC DESIGN)
+   ========================================================================== */
+.pinterest-gallery-masonry {
+  column-count: 3;
+  column-gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  padding-bottom: 40px;
+}
+
+.pinterest-pin-card {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #1c1c24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pinterest-pin-card:hover {
+  transform: translateY(-5px) scale(1.015);
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 28px rgba(168, 85, 247, 0.22);
+}
+
+.pin-img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.pin-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pinterest-pin-card:hover .pin-img-wrapper img {
+  transform: scale(1.03);
+}
+
+.pin-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.0) 30%, rgba(10, 10, 16, 0.9) 100%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.pinterest-pin-card:hover .pin-hover-overlay {
+  opacity: 1;
+}
+
+.pin-view-pill {
+  align-self: flex-end;
+  background: rgba(168, 85, 247, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.pin-meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pin-tag-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #c084fc;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.pin-title-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   PINTEREST FULLSCREEN AUTO-ADJUST LIGHTBOX MODAL
+   ========================================================================== */
+.pinterest-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(5, 5, 10, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: dt-lightbox-fade 0.25s ease-out;
+}
+
+@keyframes dt-lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pinterest-lightbox-container {
+  position: relative;
+  max-width: 94vw;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: dt-lightbox-pop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dt-lightbox-pop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.pinterest-lightbox-topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.lightbox-info-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  color: #e2e8f0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.lightbox-index-num {
+  font-weight: 800;
+  color: #c084fc;
+}
+
+.lightbox-sep {
+  opacity: 0.4;
+}
+
+.lightbox-tag-txt {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.lightbox-close-icon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close-icon-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.08);
+}
+
+.lightbox-stage-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 76vh;
+}
+
+.pinterest-lightbox-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-arrow-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(18, 19, 28, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.2s ease;
+  z-index: 100001;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-prev-btn {
+  left: 24px;
+}
+
+.lightbox-next-btn {
+  right: 24px;
+}
+
+.lightbox-arrow-btn:hover {
+  background: rgba(168, 85, 247, 0.85);
+  border-color: rgba(168, 85, 247, 0.9);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.6);
+}
+
+.pinterest-lightbox-caption {
+  margin-top: 14px;
+  text-align: center;
+  max-width: 720px;
+}
+
+.lightbox-caption-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.lightbox-caption-description {
+  color: #94a3b8;
+  font-size: 12.5px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .pinterest-gallery-masonry {
+    column-count: 2;
+    column-gap: 16px;
+  }
+  .lightbox-prev-btn {
+    left: 10px;
+  }
+  .lightbox-next-btn {
+    right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pinterest-gallery-masonry {
+    column-count: 1;
+  }
+  .pinterest-lightbox-img {
+    max-height: 65vh;
+  }
+}
