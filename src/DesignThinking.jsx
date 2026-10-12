@@ -1,11 +1,171 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './DesignThinking.css'
 import bgImage from './assets/projects-bg.png'
 import homeBeforeImg from './assets/fymble-mockup-before.png'
 import homeAfterImg from './assets/fymble-mockup-after.png'
-import redesignBoardImg from './assets/fymble-redesign-board.jpg'
+import point6Img from './assets/dt-point6-preview.png'
+import point7Img from './assets/dt-point7-preview.png'
+
+const UX_POINTS = [
+  {
+    id: 1,
+    col: 'left',
+    badge: '1',
+    title: 'Location First',
+    desc: "Shows user's current location so they can instantly find gyms near them. Reduces search effort and shows relevant results.",
+    pinPos: { top: '10.5%', left: '17%' },
+    chip: {
+      icon: '📍',
+      title: 'Jayanagar',
+      subtitle: '28th Main Rd, Bengaluru'
+    }
+  },
+  {
+    id: 2,
+    col: 'right',
+    badge: '2',
+    title: 'Promotional Banner (GIF)',
+    desc: 'A high-visibility banner that instantly communicates the core value – lowest prices. Creates interest, builds price awareness and is easy to share with friends.',
+    pinPos: { top: '23%', right: '17%' },
+    promo: {
+      icon: '⚡',
+      title: 'Lowest Price Ever',
+      subtitle: 'Builds instant attention and drives exploration.'
+    }
+  },
+  {
+    id: 3,
+    col: 'left',
+    badge: '3',
+    title: 'Gym Listing at a Glance',
+    desc: 'Shows gym image, name, location, distance and daily price in one card. Users can quickly compare options and book directly without opening multiple screens.',
+    pinPos: { top: '48%', left: '17%' },
+    chipsList: [
+      { icon: '🖼️', text: 'Gym image' },
+      { icon: '📍', text: 'Distance & location' },
+      { icon: '₹', text: 'Daily price' },
+      { icon: '🎟️', text: 'Book CTA' }
+    ]
+  },
+  {
+    id: 4,
+    col: 'right',
+    badge: '4',
+    title: 'Quick Explore Tabs',
+    desc: 'Multiple entry points to explore gyms based on different user needs. Helps users quickly discover relevant gyms, nearby options, total gym count and special offers.',
+    pinPos: { top: '33.5%', right: '17%' },
+    tabs: [
+      { label: 'All', icon: '▦', active: true },
+      { label: 'Nearby', icon: '📍' },
+      { label: '63 Gyms', count: true },
+      { label: 'Offer', icon: '🏷️' }
+    ]
+  },
+  {
+    id: 5,
+    col: 'right',
+    badge: '5',
+    title: 'Kyra AI – Personalised Health Coach',
+    desc: 'An AI agent that chats with users, answers their questions and provides personalised guidance for fitness, nutrition and overall health.',
+    pinPos: { top: '67.5%', right: '17%' },
+    bullets: [
+      'Instant answers to fitness questions',
+      'Personalised recommendations',
+      'Always accessible from home and bottom nav'
+    ],
+    bulletIcon: '💬'
+  },
+  {
+    id: 6,
+    col: 'left',
+    badge: '6',
+    title: 'AI Scanner – Food Insights',
+    desc: 'Scan your food and get nutritional insights including calories, protein, carbs, fats and more. Helps users make better food choices and stay on track with their goals.',
+    pinPos: { top: '86.5%', left: '46%' },
+    image: point6Img,
+    bullets: [
+      'Scan food',
+      'Get nutrition insights',
+      'Track your diet easily'
+    ],
+    bulletIcon: '📷'
+  },
+  {
+    id: 7,
+    col: 'right',
+    badge: '7',
+    title: 'Gym Mate – Find Workout Partners',
+    desc: 'Helps users find nearby fitness partners and book a gym together. Makes fitness more social, engaging and motivating.',
+    pinPos: { top: '86.5%', right: '37%' },
+    image: point7Img,
+    bullets: [
+      'Find nearby fitness partners',
+      'Book a gym together',
+      'Stay motivated and consistent'
+    ],
+    bulletIcon: '👥'
+  }
+]
 
 export default function DesignThinking({ onBack }) {
+  const [activeUxStep, setActiveUxStep] = useState(1)
+  const [revealedCount, setRevealedCount] = useState(1)
+  const [isUxPlaying, setIsUxPlaying] = useState(true)
+  const [isHoverPaused, setIsHoverPaused] = useState(false)
+  const [hasInView, setHasInView] = useState(false)
+  const uxSectionRef = useRef(null)
+
+  // IntersectionObserver to auto-start sequence when user scrolls to this section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasInView(true)
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    if (uxSectionRef.current) {
+      observer.observe(uxSectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  // Timed sequential reveal effect (~4 seconds per point)
+  useEffect(() => {
+    if (!hasInView || !isUxPlaying || isHoverPaused) return
+
+    const timer = setInterval(() => {
+      setRevealedCount((prevRevealed) => {
+        if (prevRevealed < 7) {
+          const next = prevRevealed + 1
+          setActiveUxStep(next)
+          return next
+        } else {
+          // Once all 7 are revealed, gentle spotlight cycle
+          setActiveUxStep((prevStep) => (prevStep % 7) + 1)
+          return prevRevealed
+        }
+      })
+    }, 4000)
+
+    return () => clearInterval(timer)
+  }, [hasInView, isUxPlaying, isHoverPaused])
+
+  const handleSelectStep = (stepId) => {
+    setActiveUxStep(stepId)
+    if (stepId > revealedCount) {
+      setRevealedCount(stepId)
+    }
+  }
+
+  const handleResetSequence = () => {
+    setRevealedCount(1)
+    setActiveUxStep(1)
+    setIsUxPlaying(true)
+  }
 
   const beforePoints = [
     'Heavy banner with limited information',
@@ -105,8 +265,9 @@ export default function DesignThinking({ onBack }) {
 
       {/* Main Container */}
       <main className="dt-main-wrapper">
+
         {/* ===================================================================
-            THE EXACT FYMBLE HOME PAGE REDESIGN BOARD
+            SECTION 1: THE FYMBLE HOME PAGE REDESIGN BOARD (BEFORE vs AFTER)
             =================================================================== */}
         <div className="dt-board-card">
 
@@ -164,9 +325,7 @@ export default function DesignThinking({ onBack }) {
             </div>
           </div>
 
-          {/* ===================================================================
-              MIDDLE SHOWCASE: 4-COLUMN EXACT BEFORE vs AFTER MOCKUP LAYOUT
-              =================================================================== */}
+          {/* MIDDLE SHOWCASE: 4-COLUMN EXACT BEFORE vs AFTER MOCKUP LAYOUT */}
           <div className="dt-showcase-stage">
 
             {/* Column 1: Before Pain Points */}
@@ -220,7 +379,136 @@ export default function DesignThinking({ onBack }) {
           </div>
 
           {/* ===================================================================
-              BOTTOM SECTION: KEY UX IMPROVEMENTS (5 CARDS)
+              SECTION 2: DEEP DIVE BREAKDOWN — HOME PAGE DESIGN & UX (7 ANNOTATED POINTS)
+              Sequential reveal: Point 1 appears first, then Point 2, Point 3, etc.
+              =================================================================== */}
+          <div ref={uxSectionRef} className="dt-ux-deepdive-board">
+
+            {/* Header of Section 2 */}
+            <div className="dt-ux-header-row">
+              <div className="dt-ux-header-left">
+                <div className="dt-ux-sub-badge">
+                  <span className="dt-ux-badge-tag">UX ANNOTATIONS</span>
+                  <span className="dt-ux-badge-sep">•</span>
+                  <span className="dt-ux-badge-info">India's First Pay Per Day Fitness App</span>
+                </div>
+                <h2 className="dt-ux-title">
+                  Home Page <span className="dt-highlight-red">Design & UX</span>
+                </h2>
+                <p className="dt-ux-subtitle">
+                  A location-first, discovery-driven home page that helps users find, compare and book gyms easily, while also providing AI-powered fitness support.
+                </p>
+              </div>
+
+              {/* Sequential Walkthrough Player & Control Bar */}
+              <div className="dt-ux-player-bar">
+                <div className="dt-ux-player-status">
+                  <span className="dt-ux-pulse-dot" />
+                  <span className="dt-ux-step-label">
+                    Point <strong>0{activeUxStep}</strong> of 07
+                  </span>
+                </div>
+
+                <div className="dt-ux-step-pills">
+                  {UX_POINTS.map((pt) => {
+                    const isRevealed = pt.id <= revealedCount
+                    const isActive = pt.id === activeUxStep
+                    return (
+                      <button
+                        key={pt.id}
+                        className={`dt-step-pill-btn ${isActive ? 'active' : ''} ${isRevealed ? 'revealed' : 'locked'}`}
+                        onClick={() => handleSelectStep(pt.id)}
+                        title={`Point ${pt.id}: ${pt.title}`}
+                        aria-label={`Jump to point ${pt.id}`}
+                      >
+                        {pt.badge}
+                      </button>
+                    )
+                  })}
+                </div>
+
+                <div className="dt-ux-player-actions">
+                  <button
+                    className="dt-ux-ctrl-btn"
+                    onClick={() => setIsUxPlaying(!isUxPlaying)}
+                    title={isUxPlaying ? 'Pause automatic walkthrough' : 'Resume walkthrough'}
+                  >
+                    {isUxPlaying ? '⏸ Pause' : '▶ Play'}
+                  </button>
+                  <button
+                    className="dt-ux-ctrl-btn dt-ux-reset-btn"
+                    onClick={handleResetSequence}
+                    title="Replay sequence from Point 1"
+                  >
+                    ↺ Replay
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* 3-Column Interactive Stage: Left Cards | Center Phone + Pins | Right Cards */}
+            <div
+              className="dt-ux-stage-layout"
+              onMouseEnter={() => setIsHoverPaused(true)}
+              onMouseLeave={() => setIsHoverPaused(false)}
+            >
+              {/* Left Column (Points 1, 3, 6) */}
+              <div className="dt-ux-col dt-ux-col-left">
+                {UX_POINTS.filter((p) => p.col === 'left').map((pt) => (
+                  <UxPointCard
+                    key={pt.id}
+                    point={pt}
+                    isRevealed={pt.id <= revealedCount}
+                    isActive={pt.id === activeUxStep}
+                    onSelect={() => handleSelectStep(pt.id)}
+                  />
+                ))}
+              </div>
+
+              {/* Center Column: Phone Mockup with 7 Interactive Floating Pins */}
+              <div className="dt-ux-col dt-ux-col-center">
+                <div className="dt-ux-phone-wrapper">
+                  <img src={homeAfterImg} alt="Fymble Redesigned Home Page" className="dt-ux-phone-img" />
+
+                  {/* 7 Interactive Pins positioned on the phone screen */}
+                  {UX_POINTS.map((pt) => {
+                    const isActive = pt.id === activeUxStep
+                    const isRevealed = pt.id <= revealedCount
+                    return (
+                      <button
+                        key={pt.id}
+                        className={`dt-ux-pin ${isActive ? 'pin-active' : ''} ${isRevealed ? 'pin-revealed' : 'pin-muted'}`}
+                        style={pt.pinPos}
+                        onClick={() => handleSelectStep(pt.id)}
+                        title={`Point ${pt.id}: ${pt.title}`}
+                        aria-label={`Highlight ${pt.title}`}
+                      >
+                        <span className="dt-pin-num">{pt.badge}</span>
+                        {isActive && <span className="dt-pin-glow-ring" />}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Right Column (Points 2, 4, 5, 7) */}
+              <div className="dt-ux-col dt-ux-col-right">
+                {UX_POINTS.filter((p) => p.col === 'right').map((pt) => (
+                  <UxPointCard
+                    key={pt.id}
+                    point={pt}
+                    isRevealed={pt.id <= revealedCount}
+                    isActive={pt.id === activeUxStep}
+                    onSelect={() => handleSelectStep(pt.id)}
+                  />
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* ===================================================================
+              SECTION 3: KEY UX IMPROVEMENTS (5 CARDS)
               =================================================================== */}
           <div className="dt-improvements-container">
             <div className="dt-imp-header">
@@ -246,6 +534,90 @@ export default function DesignThinking({ onBack }) {
 
         </div>
       </main>
+    </div>
+  )
+}
+
+function UxPointCard({ point, isRevealed, isActive, onSelect }) {
+  return (
+    <div
+      className={`dt-ux-card ${isRevealed ? 'card-revealed' : 'card-waiting'} ${isActive ? 'card-active' : ''}`}
+      onClick={onSelect}
+    >
+      <div className="dt-ux-card-header">
+        <span className="dt-ux-card-badge">{point.badge}</span>
+        <h3 className="dt-ux-card-title">{point.title}</h3>
+      </div>
+
+      <p className="dt-ux-card-desc">{point.desc}</p>
+
+      {/* Point 1 Micro Preview: Location Tag */}
+      {point.chip && (
+        <div className="dt-ux-location-pill">
+          <span className="dt-ux-loc-icon">{point.chip.icon}</span>
+          <div className="dt-ux-loc-text">
+            <strong>{point.chip.title}</strong>
+            <span>{point.chip.subtitle}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Point 2 Micro Preview: Promo Banner Hook */}
+      {point.promo && (
+        <div className="dt-ux-promo-pill">
+          <span className="dt-ux-promo-icon">{point.promo.icon}</span>
+          <div className="dt-ux-promo-text">
+            <strong>{point.promo.title}</strong>
+            <span>{point.promo.subtitle}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Point 3 Micro Preview: 4 Gym Feature Chips */}
+      {point.chipsList && (
+        <div className="dt-ux-chips-row">
+          {point.chipsList.map((item, idx) => (
+            <span key={idx} className="dt-ux-chip">
+              <span className="dt-ux-chip-icon">{item.icon}</span>
+              <span className="dt-ux-chip-text">{item.text}</span>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Point 4 Micro Preview: Quick Explore Tabs */}
+      {point.tabs && (
+        <div className="dt-ux-tabs-row">
+          {point.tabs.map((tab, idx) => (
+            <span key={idx} className={`dt-ux-tab ${tab.active ? 'active' : ''}`}>
+              {tab.icon && <span className="dt-tab-icon">{tab.icon}</span>}
+              <span className="dt-tab-label">{tab.label}</span>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Point 5, 6, 7: Visual Thumbnails & Bullet Points */}
+      {(point.image || point.bullets) && (
+        <div className="dt-ux-media-block">
+          {point.image && (
+            <div className="dt-ux-media-thumb">
+              <img src={point.image} alt={point.title} />
+            </div>
+          )}
+
+          {point.bullets && (
+            <div className="dt-ux-bullets-wrap">
+              {point.bullets.map((b, idx) => (
+                <div key={idx} className="dt-ux-bullet-item">
+                  <span className="dt-ux-bullet-dot">{point.bulletIcon || '•'}</span>
+                  <span className="dt-ux-bullet-text">{b}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }
