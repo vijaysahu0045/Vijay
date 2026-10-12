@@ -31,6 +31,11 @@ import graphicKyraHealthPartnerLocations from './assets/graphic-kyra-health-part
 import graphicFitnessSeHealthTak from './assets/graphic-fitness-se-health-tak.png'
 import graphicKyraSaathDetiHai from './assets/graphic-kyra-saath-deti-hai.png'
 import graphicIndependenceDayWhiteFort from './assets/graphic-independence-day-white-fort.png'
+import graphic7DayWeeklyPass66 from './assets/graphic-7day-weekly-pass-66.png'
+import graphicWeeklyPassesCards from './assets/graphic-weekly-passes-7-14-cards.jpg'
+import graphicLoseWeightAskKyra from './assets/graphic-lose-weight-ask-kyra.jpg'
+import graphicHologramKyraCoach from './assets/graphic-hologram-kyra-ai-coach.jpg'
+import graphicNeedAGymAskKyra from './assets/graphic-need-a-gym-ask-kyra.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -426,6 +431,51 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '🇮🇳',
         description: 'Panoramic Indian Independence Day celebration artwork featuring the tricolor wave, Ashoka Chakra, and white Red Fort monument.'
+      },
+      {
+        id: 131,
+        title: 'Train for 14 Days with 7-Day Weekly Pass — ₹66/Day',
+        image: graphic7DayWeeklyPass66,
+        tag: 'OFFER LAUNCH',
+        theme: 'theme-sunset',
+        icon: '🎟️',
+        description: 'Minimalist red membership card poster: ₹66/day pass with 14-day validity & zero long-term commitment.'
+      },
+      {
+        id: 132,
+        title: 'Flexible Weekly Passes — 7 & 14 Day Access',
+        image: graphicWeeklyPassesCards,
+        tag: 'PRODUCT PASS CARDS',
+        theme: 'theme-sunset',
+        icon: '⚡',
+        description: '3D glossy pass cards showcasing total freedom to train your way with 7-day and 14-day validity options.'
+      },
+      {
+        id: 133,
+        title: 'Lose Weight. Ask Kyra AI — Custom Fat Loss Plan',
+        image: graphicLoseWeightAskKyra,
+        tag: 'WEIGHT LOSS CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '🥗',
+        description: 'Empathetic fat loss campaign featuring real meal plan downloads, target goal calendar, and daily AI check-ins.'
+      },
+      {
+        id: 134,
+        title: 'Ask Kyra AI — Hologram Coach in Your Hand',
+        image: graphicHologramKyraCoach,
+        tag: 'FUTURISTIC AI VISUAL',
+        theme: 'theme-sunset',
+        icon: '🔮',
+        description: 'Futuristic palm hologram visual representing 24/7 personal health coaching, meal plans, and sleep optimization.'
+      },
+      {
+        id: 135,
+        title: 'Need a Gym? Ask Kyra — Passes Starting ₹99',
+        image: graphicNeedAGymAskKyra,
+        tag: 'GYM FINDER CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '📍',
+        description: 'Location-based gym discovery campaign poster finding nearby fitness centers with instant ₹99 day passes.'
       }
     ]
   },
