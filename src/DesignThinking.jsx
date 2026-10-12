@@ -371,26 +371,11 @@ export default function DesignThinking({ onBack }) {
               =================================================================== */}
           <div ref={strategyRef} className="dt-ux-strategy-board">
 
-            {/* Top Brand Header */}
-            <div className="dt-strat-top-bar">
-              <div className="dt-strat-brand">
-                <span className="dt-strat-brand-name">Fymble</span>
-                <span className="dt-strat-brand-sub">Fitness for Everyone</span>
-              </div>
-              <div className="dt-strat-pill-meta">
-                India's First Pay Per Day Fitness App
-              </div>
-            </div>
-
             {/* Hero Title Row */}
             <div className="dt-strat-title-row">
               <h2 className="dt-strat-heading">
-                Home Page<br />
-                <span className="dt-highlight-red">UX Strategy</span>
+                Home Page <span className="dt-highlight-red">UX Strategy</span>
               </h2>
-              <p className="dt-strat-subtitle">
-                A simple, location-first home page designed to help users find, compare and book gyms quickly — with AI-powered fitness support.
-              </p>
             </div>
 
             {/* 3-Column Visual Stage: Left Cards | Center Phone with Pointer Lines | Right Cards */}
