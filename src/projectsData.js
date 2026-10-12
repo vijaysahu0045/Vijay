@@ -41,6 +41,9 @@ import graphicAankhonAankhonMeinMatch from './assets/graphic-aankhon-aankhon-mei
 import graphicWhyWorkoutAlone from './assets/graphic-why-workout-alone.png'
 import graphicScanYourFoodBowlUi from './assets/graphic-scan-your-food-bowl-ui.png'
 import graphicFindYourPerfectGymMate from './assets/graphic-find-your-perfect-gym-mate.png'
+import graphicRealResultsNotJustAppsWide from './assets/graphic-real-results-not-just-apps-wide.png'
+import graphicConfusedWhatToEat499 from './assets/graphic-confused-what-to-eat-499.png'
+import graphicStillConfusedNutritionist199 from './assets/graphic-still-confused-nutritionist-199.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -526,6 +529,33 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '🤝',
         description: 'Interactive matching onboarding screen: Connect with local workout partners in less than 20 seconds.'
+      },
+      {
+        id: 141,
+        title: 'Real Results? Not Just Apps — ₹2499/Month (4 Sessions)',
+        image: graphicRealResultsNotJustAppsWide,
+        tag: 'NUTRITION CONSULTATION',
+        theme: 'theme-blue',
+        icon: '🥗',
+        description: 'Landscape marketing banner: Get a real nutrition expert guiding you daily with 4 one-on-one sessions.'
+      },
+      {
+        id: 142,
+        title: 'Confused About What to Eat? Kyra AI Just ₹499',
+        image: graphicConfusedWhatToEat499,
+        tag: 'AI DIET COACH',
+        theme: 'theme-sunset',
+        icon: '🍛',
+        description: 'Smart meal choices campaign poster: Kyra AI helps you pick the right Indian meals for just ₹499.'
+      },
+      {
+        id: 143,
+        title: 'Still Confused About Your Diet? Talk to Expert — ₹199',
+        image: graphicStillConfusedNutritionist199,
+        tag: 'NUTRITIONIST 1:1',
+        theme: 'theme-blue',
+        icon: '👩‍⚕️',
+        description: '60-min personalized consultation poster featuring a certified nutritionist guiding your health goals from ₹199.'
       }
     ]
   },
