@@ -482,10 +482,7 @@ function StrategyCard({ item, isRevealed, isHovered, onHover, onLeave }) {
         {item.tag && <span className="dt-strat-tag">{item.tag}</span>}
       </div>
 
-      <div className="dt-strat-card-body">
-        <div className="dt-strat-icon-box">{item.icon}</div>
-        <p className="dt-strat-card-desc">{item.desc}</p>
-      </div>
+      <p className="dt-strat-card-desc">{item.desc}</p>
     </div>
   )
 }
