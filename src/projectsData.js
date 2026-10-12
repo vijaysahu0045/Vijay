@@ -6,6 +6,11 @@ import graphicCoffeeSubscription from './assets/graphic-coffee-subscription.jpg'
 import graphicChaiSubscription from './assets/graphic-chai-subscription.jpg'
 import graphicDailyPassBoxing from './assets/graphic-daily-pass-boxing.png'
 import graphicKyraAiPoster from './assets/graphic-kyra-ai-poster.png'
+import graphicNutritionConsultation199 from './assets/graphic-nutrition-consultation-199.png'
+import graphicWinIphoneReward from './assets/graphic-win-iphone-reward.png'
+import graphicReadyWorkout from './assets/graphic-ready-workout.png'
+import graphicEatRightBowl from './assets/graphic-eat-right-bowl.png'
+import graphicTrackEveryStep from './assets/graphic-track-every-step.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -176,6 +181,51 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '📢',
         description: 'Promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.'
+      },
+      {
+        id: 106,
+        title: 'Nutrition Consultation Under ₹199',
+        image: graphicNutritionConsultation199,
+        tag: 'CONSULTATION AD',
+        theme: 'theme-sunset',
+        icon: '🥗',
+        description: '60 Min Personal Nutrition Session campaign ad poster with expert dietitian consultation call-to-action.'
+      },
+      {
+        id: 107,
+        title: 'Win iPhone 17 Pro Max — Rewards Campaign',
+        image: graphicWinIphoneReward,
+        tag: 'REWARD CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '🎁',
+        description: 'Limited-time rewards promotional card featuring iPhone 17 Pro Max hook for pass bookings and member referrals.'
+      },
+      {
+        id: 108,
+        title: "Ready for Today's Workout?",
+        image: graphicReadyWorkout,
+        tag: 'WORKOUT MOTIVATION',
+        theme: 'theme-sunset',
+        icon: '🔥',
+        description: 'High-impact dumbbell workout motivation modal banner encouraging users to start their training journey.'
+      },
+      {
+        id: 109,
+        title: 'Eat Right, Achieve More — Healthy Bowls',
+        image: graphicEatRightBowl,
+        tag: 'NUTRITION & DIET',
+        theme: 'theme-blue',
+        icon: '🥑',
+        description: 'Vibrant healthy meal bowl visual promoting personalized diet plans and automated calorie tracking.'
+      },
+      {
+        id: 110,
+        title: 'Track Every Step — Activity Monitor',
+        image: graphicTrackEveryStep,
+        tag: 'ACTIVITY TRACKING',
+        theme: 'theme-blue',
+        icon: '🏃‍♀️',
+        description: 'Dynamic step tracking promotional visual highlighting smart pedometer, calorie monitoring, and daily distance goals.'
       }
     ]
   },
