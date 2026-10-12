@@ -36,6 +36,11 @@ import graphicWeeklyPassesCards from './assets/graphic-weekly-passes-7-14-cards.
 import graphicLoseWeightAskKyra from './assets/graphic-lose-weight-ask-kyra.jpg'
 import graphicHologramKyraCoach from './assets/graphic-hologram-kyra-ai-coach.jpg'
 import graphicNeedAGymAskKyra from './assets/graphic-need-a-gym-ask-kyra.jpg'
+import graphicKhoonKaRishtaNahiGym from './assets/graphic-khoon-ka-rishta-nahi-gym.png'
+import graphicAankhonAankhonMeinMatch from './assets/graphic-aankhon-aankhon-mein-match.png'
+import graphicWhyWorkoutAlone from './assets/graphic-why-workout-alone.png'
+import graphicScanYourFoodBowlUi from './assets/graphic-scan-your-food-bowl-ui.png'
+import graphicFindYourPerfectGymMate from './assets/graphic-find-your-perfect-gym-mate.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -476,6 +481,51 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '📍',
         description: 'Location-based gym discovery campaign poster finding nearby fitness centers with instant ₹99 day passes.'
+      },
+      {
+        id: 136,
+        title: 'Khoon Ka Rishta Nahi, Gym Ka Rishta Hai',
+        image: graphicKhoonKaRishtaNahiGym,
+        tag: 'BROTHERHOOD & GYM MATES',
+        theme: 'theme-sunset',
+        icon: '💪',
+        description: 'Iconic Gym Mate connection campaign: Find your workout partner and train together with mutual accountability.'
+      },
+      {
+        id: 137,
+        title: 'Aankhon Aankhon Mein... Match Ho Gaya',
+        image: graphicAankhonAankhonMeinMatch,
+        tag: 'SOCIAL MATCHING HOOK',
+        theme: 'theme-sunset',
+        icon: '❤️',
+        description: 'Playful fitness chemistry banner: Match with a dedicated workout buddy and build consistent gym habits.'
+      },
+      {
+        id: 138,
+        title: 'Why Workout Alone? Push Each Other & Grow',
+        image: graphicWhyWorkoutAlone,
+        tag: 'WORKOUT BUDDY MOTIVATION',
+        theme: 'theme-sunset',
+        icon: '👊',
+        description: 'Motivational fist-bump campaign: Find someone to train with, push each other, and achieve fitness goals together.'
+      },
+      {
+        id: 139,
+        title: 'Scan Your Food, Know What’s Inside — 1-Sec Insights',
+        image: graphicScanYourFoodBowlUi,
+        tag: 'AI FOOD VISION',
+        theme: 'theme-sunset',
+        icon: '📸',
+        description: 'Multimodal AI food camera feature ad: Instant calories, macros, vitamins, and minerals with 5 free scans.'
+      },
+      {
+        id: 140,
+        title: 'Find Your Perfect Gym Mate — No More Solo Workouts',
+        image: graphicFindYourPerfectGymMate,
+        tag: 'COMMUNITY ONBOARDING',
+        theme: 'theme-sunset',
+        icon: '🤝',
+        description: 'Interactive matching onboarding screen: Connect with local workout partners in less than 20 seconds.'
       }
     ]
   },
