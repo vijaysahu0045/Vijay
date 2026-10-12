@@ -1,6 +1,11 @@
 import cardImg1 from './assets/project-card-1.png'
 import gymMgmtThumbnail from './assets/gym-mgmt-thumbnail.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
+import graphicFymbleMembership from './assets/graphic-fymble-membership.jpg'
+import graphicCoffeeSubscription from './assets/graphic-coffee-subscription.jpg'
+import graphicChaiSubscription from './assets/graphic-chai-subscription.jpg'
+import graphicDailyPassBoxing from './assets/graphic-daily-pass-boxing.png'
+import graphicKyraAiPoster from './assets/graphic-kyra-ai-poster.png'
 import fymbleScopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
 import fymbleRedesignBoard from './assets/fymble-redesign-board.jpg'
 import fymbleUserJourneyMap from './assets/fymble-user-journey-map.jpg'
@@ -123,13 +128,58 @@ export const CATEGORIES = [
     iconName: 'graphic',
     projects: [
       {
+        id: 101,
+        title: 'Fymble — Gym Membership Campaign',
+        image: graphicFymbleMembership,
+        tag: 'PROMOTIONAL POSTER',
+        theme: 'theme-sunset',
+        icon: '🏋️',
+        description: 'High-energy fitness campaign visual for Fymble gym membership booking with free subscription & 1:1 nutrition consultation perks.'
+      },
+      {
+        id: 102,
+        title: 'Fymble — Coffee Metaphor ₹6/day Ad',
+        image: graphicCoffeeSubscription,
+        tag: 'CREATIVE AD',
+        theme: 'theme-dark',
+        icon: '☕',
+        description: 'Creative metaphor marketing poster comparing Fymble daily subscription cost (₹6/day) with a morning cup of coffee.'
+      },
+      {
+        id: 103,
+        title: 'Fymble — Cutting Chai Dumbbell Ad',
+        image: graphicChaiSubscription,
+        tag: 'SHADOW AD CREATIVE',
+        theme: 'theme-sunset',
+        icon: '☕',
+        description: 'Clever visual ad featuring a hot glass of Indian cutting chai casting a dumbbell shadow with ₹6/day value hook.'
+      },
+      {
+        id: 104,
+        title: 'Fymble — Daily Gym Pass Action Poster',
+        image: graphicDailyPassBoxing,
+        tag: 'CAMPAIGN POSTER',
+        theme: 'theme-blue',
+        icon: '🥊',
+        description: 'Action-packed boxing athlete visual campaign promoting Fymble ₹99/day gym pass with instant app download hooks.'
+      },
+      {
+        id: 105,
+        title: 'Kyra AI — Health Coach Launch Poster',
+        image: graphicKyraAiPoster,
+        tag: 'PRODUCT LAUNCH',
+        theme: 'theme-purple',
+        icon: '✨',
+        description: 'Vibrant product launch poster for Kyra AI personal health coach covering fitness, nutrition, sleep, and wellness.'
+      },
+      {
         id: 14,
-        title: 'Fymble — Daily Gym Pass Banner',
+        title: 'Fymble — Daily Gym Pass ₹99 Giveaway',
         image: fymbleGymPassBanner,
-        tag: 'CAMPAIGN BANNER',
+        tag: 'OFFER BANNER',
         theme: 'theme-sunset',
         icon: '📢',
-        description: 'High-converting promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.'
+        description: 'Promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.'
       },
       {
         id: 13,
@@ -166,15 +216,6 @@ export const CATEGORIES = [
         theme: 'theme-light',
         icon: '🗺️',
         description: 'Step-by-step visual infographic mapping user discovery, Kyra AI guidance, and nutrition tracking.'
-      },
-      {
-        id: 18,
-        title: 'Marketing Platform Hero Banner',
-        image: fymbleBanner,
-        tag: 'DIGITAL BANNER',
-        theme: 'theme-purple',
-        icon: '📐',
-        description: 'Wide promotional hero banner composition showcasing fitness platform launch.'
       },
     ]
   },
