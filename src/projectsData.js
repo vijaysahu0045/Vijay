@@ -16,6 +16,11 @@ import graphicGymMateCouple from './assets/graphic-gym-mate-couple.jpg'
 import graphicGymMatesTogether from './assets/graphic-gym-mates-together.jpg'
 import graphicKyraStepsToday from './assets/graphic-kyra-steps-today.jpg'
 import graphicPictureAbhiBaakiHai from './assets/graphic-picture-abhi-baaki-hai.jpg'
+import graphicModiKyraLive from './assets/graphic-modi-kyra-live.png'
+import graphicSimranKyraDialogue from './assets/graphic-simran-kyra-dialogue.png'
+import graphicFymbleDelhiHaryanaLive from './assets/graphic-fymble-delhi-haryana-live.jpg'
+import graphicKyraHealthPartner from './assets/graphic-kyra-health-partner.png'
+import graphicCoffeeSkip66Pass from './assets/graphic-coffee-skip-66-pass.jpg'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -276,6 +281,51 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '🎬',
         description: 'High-energy Bollywood hook campaign for Kyra AI: Talk, track, and thrive with all-in-one voice chat health coaching.'
+      },
+      {
+        id: 116,
+        title: 'Hello Friends, Kyra AI Live Now',
+        image: graphicModiKyraLive,
+        tag: 'VIRAL POPULAR HOOK',
+        theme: 'theme-sunset',
+        icon: '👋',
+        description: 'Engaging vector caricature hook campaign announcing Kyra AI launch across Google Play & App Store.'
+      },
+      {
+        id: 117,
+        title: 'Jaa Simran... Jaa Kyra Se Baat Kar Le',
+        image: graphicSimranKyraDialogue,
+        tag: 'BOLLYWOOD MEME CREATIVE',
+        theme: 'theme-sunset',
+        icon: '🎙️',
+        description: 'Iconic DDLJ dialogue meme marketing poster promoting Kyra AI voice consultation and wellness coaching.'
+      },
+      {
+        id: 118,
+        title: 'Fymble Going Live in Delhi & Haryana',
+        image: graphicFymbleDelhiHaryanaLive,
+        tag: 'EXPANSION LAUNCH',
+        theme: 'theme-sunset',
+        icon: '📍',
+        description: 'Geographic market expansion campaign poster announcing Fymble partner gym onboarding across Delhi NCR & Haryana.'
+      },
+      {
+        id: 119,
+        title: 'Fitness Apps Bahut Hain, Health Partner Ek Hai',
+        image: graphicKyraHealthPartner,
+        tag: 'BRAND POSITIONING',
+        theme: 'theme-blue',
+        icon: '📱',
+        description: 'Clean phone UI mock-and-copy positioning Kyra AI as a lifelong personal health companion rather than just another fitness app.'
+      },
+      {
+        id: 120,
+        title: 'Less Than Your Daily Coffee — ₹66/Day Pass',
+        image: graphicCoffeeSkip66Pass,
+        tag: 'VALUE PROPOSITION AD',
+        theme: 'theme-dark',
+        icon: '☕',
+        description: 'Punchy coffee cup takeaway ad: Skip a coffee, not your workout — ₹66/day Fymble weekly fitness pass.'
       }
     ]
   },
