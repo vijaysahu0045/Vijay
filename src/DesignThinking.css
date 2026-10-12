@@ -78,20 +78,28 @@
    DARK GLASSMORPHIC CASE STUDY BOARD CONTAINER (SIGNATURE PURPLE THEME)
    =================================================================== */
 .dt-board-card {
-  background: transparent;
+  background: rgba(18, 19, 26, 0.88);
   color: #f1f5f9;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 10px 0 36px;
+  border-radius: 28px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.75), 0 0 50px rgba(124, 58, 237, 0.14);
+  padding: 44px 48px 36px;
   width: 100%;
   position: relative;
-  border: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .dt-board-card::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.22) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 /* Top Meta Row */
@@ -453,8 +461,9 @@
    SECTION 2: HOME PAGE UX STRATEGY (EXACT FIGMA MASTER IN DARK THEME)
    =================================================================== */
 .dt-ux-strategy-board {
-  margin: 54px 0 44px;
-  padding-top: 10px;
+  margin: 68px 0 52px;
+  padding-top: 52px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
 /* Top Brand Row */
