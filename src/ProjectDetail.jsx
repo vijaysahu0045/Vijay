@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './ProjectDetail.css'
-import FymbleCaseStudy12 from './FymbleCaseStudy12'
 import bgImage from './assets/projects-bg.png'
 import screen1 from './assets/fymble-screen-1.png'
 import screen2 from './assets/fymble-screen-2.png'
@@ -246,11 +245,6 @@ const CASE_STUDIES = {
 export default function ProjectDetail({ project, categoryLabel, onBack, onNavigateProject }) {
   if (!project) return null
 
-  // 12-Section Editorial Case Study for Fymble Flagship
-  if (project.id === 1 || project.title?.toLowerCase().includes('fymble')) {
-    return <FymbleCaseStudy12 onBack={onBack} onNavigateProject={onNavigateProject} />
-  }
-
   const [activeStep, setActiveStep] = useState(0)
   const [currentScreenIdx, setCurrentScreenIdx] = useState(0)
   const [isBlackout, setIsBlackout] = useState(false)
@@ -287,23 +281,34 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
     }
   }, [])
 
-  // Resolve case study data if available
-  const matchedCaseStudy =
-    CASE_STUDIES[project.id] ||
-    (project.title?.toLowerCase().includes('food scanner') ? CASE_STUDIES[8] : null) ||
-    (project.title?.toLowerCase().includes('diet coach') ? CASE_STUDIES[7] : null) ||
-    (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
-    (project.title?.toLowerCase().includes('gym management') ? CASE_STUDIES[2] : null) ||
-    (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
-    (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
-
-  const isCaseStudyProject = Boolean(matchedCaseStudy)
-  const activeCaseStudy = matchedCaseStudy || CASE_STUDIES[1]
-
   const isWebProject =
     project.categoryId === 'web' ||
     project.category?.toLowerCase().includes('web') ||
     (categoryLabel && categoryLabel.toLowerCase().includes('web'))
+
+  const isGraphicOrMotion =
+    project.categoryId === 'graphic' ||
+    project.categoryId === 'motion' ||
+    project.category?.toLowerCase().includes('graphic') ||
+    project.category?.toLowerCase().includes('motion') ||
+    (categoryLabel && (categoryLabel.toLowerCase().includes('graphic') || categoryLabel.toLowerCase().includes('motion')))
+
+  // Resolve case study data if available
+  const matchedCaseStudy =
+    !isWebProject && !isGraphicOrMotion
+      ? (
+          CASE_STUDIES[project.id] ||
+          (project.title?.toLowerCase().includes('food scanner') ? CASE_STUDIES[8] : null) ||
+          (project.title?.toLowerCase().includes('diet coach') ? CASE_STUDIES[7] : null) ||
+          (project.title?.toLowerCase().includes('gym mate') ? CASE_STUDIES[4] : null) ||
+          (project.title?.toLowerCase().includes('gym management') ? CASE_STUDIES[2] : null) ||
+          (project.title?.toLowerCase().includes('nutrition') ? CASE_STUDIES[3] : null) ||
+          (project.title?.toLowerCase().includes('fymble') ? CASE_STUDIES[1] : null)
+        )
+      : null
+
+  const isCaseStudyProject = Boolean(matchedCaseStudy)
+  const activeCaseStudy = matchedCaseStudy || CASE_STUDIES[1]
 
   // 1. Full Image Artwork Project (renders exact high-res image showcase)
   const isImageArtworkProject = Boolean(project.image && !isCaseStudyProject && !isWebProject)
