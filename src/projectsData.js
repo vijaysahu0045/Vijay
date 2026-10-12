@@ -30,6 +30,7 @@ import graphicMedicationReminderKyra from './assets/graphic-medication-reminder-
 import graphicKyraHealthPartnerLocations from './assets/graphic-kyra-health-partner-locations.png'
 import graphicFitnessSeHealthTak from './assets/graphic-fitness-se-health-tak.png'
 import graphicKyraSaathDetiHai from './assets/graphic-kyra-saath-deti-hai.png'
+import graphicIndependenceDayWhiteFort from './assets/graphic-independence-day-white-fort.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -416,6 +417,15 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '🤝',
         description: 'Relatable and emotionally engaging marketing creative highlighting real companion support versus generic advice.'
+      },
+      {
+        id: 130,
+        title: 'Happy Independence Day — Freedom is Our Pride',
+        image: graphicIndependenceDayWhiteFort,
+        tag: 'NATIONAL CELEBRATION',
+        theme: 'theme-sunset',
+        icon: '🇮🇳',
+        description: 'Panoramic Indian Independence Day celebration artwork featuring the tricolor wave, Ashoka Chakra, and white Red Fort monument.'
       }
     ]
   },
