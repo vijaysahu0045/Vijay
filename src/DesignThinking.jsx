@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './DesignThinking.css'
 import bgImage from './assets/projects-bg.png'
 import homeBeforeImg from './assets/fymble-mockup-before.png'
@@ -6,23 +6,6 @@ import homeAfterImg from './assets/fymble-mockup-after.png'
 import redesignBoardImg from './assets/fymble-redesign-board.jpg'
 
 export default function DesignThinking({ onBack }) {
-  const [modalImg, setModalImg] = useState(null)
-  const [modalTitle, setModalTitle] = useState('')
-  const [zoomLevel, setZoomLevel] = useState(1)
-
-  const openModal = (img, title) => {
-    setModalImg(img)
-    setModalTitle(title)
-    setZoomLevel(1)
-    document.body.style.overflow = 'hidden'
-  }
-
-  const closeModal = () => {
-    setModalImg(null)
-    setModalTitle('')
-    setZoomLevel(1)
-    document.body.style.overflow = ''
-  }
 
   const beforePoints = [
     'Heavy banner with limited information',
@@ -205,21 +188,15 @@ export default function DesignThinking({ onBack }) {
 
             {/* Column 2: Phone Mockup 1 (Before) */}
             <div className="dt-stage-col dt-phone-col">
-              <div className="dt-iphone-mockup" onClick={() => openModal(homeBeforeImg, 'Old Home Page (Before)')}>
+              <div className="dt-iphone-mockup">
                 <img src={homeBeforeImg} alt="Old Home Page (Before)" className="dt-iphone-img" />
-                <div className="dt-iphone-overlay">
-                  <span>Click to zoom</span>
-                </div>
               </div>
             </div>
 
             {/* Column 3: Phone Mockup 2 (After) */}
             <div className="dt-stage-col dt-phone-col">
-              <div className="dt-iphone-mockup dt-iphone-after" onClick={() => openModal(homeAfterImg, 'Updated Home Page (After)')}>
+              <div className="dt-iphone-mockup dt-iphone-after">
                 <img src={homeAfterImg} alt="Updated Home Page (After)" className="dt-iphone-img" />
-                <div className="dt-iphone-overlay">
-                  <span>Click to zoom</span>
-                </div>
               </div>
             </div>
 
@@ -269,48 +246,6 @@ export default function DesignThinking({ onBack }) {
 
         </div>
       </main>
-
-      {/* ===================================================================
-          MODAL LIGHTBOX (ZOOM IN/OUT INSPECT)
-          =================================================================== */}
-      {modalImg && (
-        <div className="dt-modal-overlay" onClick={closeModal}>
-          <div className="dt-modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="dt-modal-header">
-              <h3 className="dt-modal-title">{modalTitle}</h3>
-              <div className="dt-modal-controls">
-                <button
-                  className="dt-ctrl-btn"
-                  onClick={() => setZoomLevel((z) => Math.max(0.6, z - 0.2))}
-                  title="Zoom Out"
-                >
-                  −
-                </button>
-                <span className="dt-zoom-indicator">{Math.round(zoomLevel * 100)}%</span>
-                <button
-                  className="dt-ctrl-btn"
-                  onClick={() => setZoomLevel((z) => Math.min(2.5, z + 0.2))}
-                  title="Zoom In"
-                >
-                  +
-                </button>
-                <button className="dt-modal-close-btn" onClick={closeModal} title="Close">
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            <div className="dt-modal-body">
-              <img
-                src={modalImg}
-                alt={modalTitle}
-                className="dt-modal-img"
-                style={{ transform: `scale(${zoomLevel})` }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
