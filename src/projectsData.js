@@ -26,6 +26,10 @@ import graphicDailyPass99Bicep from './assets/graphic-daily-pass-99-iphone-bicep
 import graphicScanKnowEatSmart from './assets/graphic-scan-know-eat-smart.jpg'
 import graphicFreedomSale66Pass from './assets/graphic-freedom-sale-66-pass.jpg'
 import graphicHappyIndependenceDay from './assets/graphic-happy-independence-day.png'
+import graphicMedicationReminderKyra from './assets/graphic-medication-reminder-kyra.png'
+import graphicKyraHealthPartnerLocations from './assets/graphic-kyra-health-partner-locations.png'
+import graphicFitnessSeHealthTak from './assets/graphic-fitness-se-health-tak.png'
+import graphicKyraSaathDetiHai from './assets/graphic-kyra-saath-deti-hai.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -376,6 +380,42 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '🇮🇳',
         description: 'Cinematic Independence Day brand campaign featuring marathon runners against the historic Red Fort.'
+      },
+      {
+        id: 126,
+        title: 'Never Miss a Medication Again — Ask Kyra AI',
+        image: graphicMedicationReminderKyra,
+        tag: 'SMART HEALTHCARE',
+        theme: 'theme-sunset',
+        icon: '💊',
+        description: 'Pill and vitamin schedule notification campaign poster powered by Kyra AI personal medicine reminders.'
+      },
+      {
+        id: 127,
+        title: 'Health Partner For Life — Everywhere You Go',
+        image: graphicKyraHealthPartnerLocations,
+        tag: 'OMNIPRESENT AI',
+        theme: 'theme-sunset',
+        icon: '🌐',
+        description: 'Contextual AI coaching campaign illustrating guidance at home, work, gym, and on the go.'
+      },
+      {
+        id: 128,
+        title: 'Fitness Se Health Tak, Sab Kuch Ek Jagah',
+        image: graphicFitnessSeHealthTak,
+        tag: 'ECOSYSTEM CAMPAIGN',
+        theme: 'theme-sunset',
+        icon: '❤️',
+        description: 'All-in-one health ecosystem poster combining smart workouts, custom diet plans, and recovery under one coach.'
+      },
+      {
+        id: 129,
+        title: 'Sab Advice Dete Hain, Kyra Saath Deti Hai',
+        image: graphicKyraSaathDetiHai,
+        tag: 'EMPATHETIC AI COMPANION',
+        theme: 'theme-sunset',
+        icon: '🤝',
+        description: 'Relatable and emotionally engaging marketing creative highlighting real companion support versus generic advice.'
       }
     ]
   },
