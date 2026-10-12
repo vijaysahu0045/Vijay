@@ -6,10 +6,6 @@ import graphicCoffeeSubscription from './assets/graphic-coffee-subscription.jpg'
 import graphicChaiSubscription from './assets/graphic-chai-subscription.jpg'
 import graphicDailyPassBoxing from './assets/graphic-daily-pass-boxing.png'
 import graphicKyraAiPoster from './assets/graphic-kyra-ai-poster.png'
-import fymbleScopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
-import fymbleRedesignBoard from './assets/fymble-redesign-board.jpg'
-import fymbleUserJourneyMap from './assets/fymble-user-journey-map.jpg'
-import fymbleBanner from './assets/fymble-banner.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
 import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
@@ -180,43 +176,7 @@ export const CATEGORIES = [
         theme: 'theme-sunset',
         icon: '📢',
         description: 'Promotional marketing poster designed for Fymble Daily Gym Pass ₹99 campaign with iPhone giveaway hook.'
-      },
-      {
-        id: 13,
-        title: 'Fymble — 3D Multi-Device Artwork',
-        image: fymbleScopeHandShowcase,
-        tag: '3D MOCKUP POSTER',
-        theme: 'theme-purple',
-        icon: '📱',
-        description: 'Isometric hand-held 3D flagship smartphone showcase poster featuring multi-app interfaces.'
-      },
-      {
-        id: 15,
-        title: 'Fymble — Ecosystem Design Board',
-        image: fymbleRedesignBoard,
-        tag: 'DESIGN POSTER',
-        theme: 'theme-blue',
-        icon: '🎨',
-        description: 'Comprehensive design thinking and UI ecosystem architecture master board.'
-      },
-      {
-        id: 16,
-        title: 'Brand Showcase & Guidelines Art',
-        image: cardImg1,
-        tag: 'BRAND IDENTITY',
-        theme: 'theme-dark',
-        icon: '✨',
-        description: 'Official branding lineup and device fleet presentation poster.'
-      },
-      {
-        id: 17,
-        title: 'Complete Fitness User Journey Map',
-        image: fymbleUserJourneyMap,
-        tag: 'INFOGRAPHIC POSTER',
-        theme: 'theme-light',
-        icon: '🗺️',
-        description: 'Step-by-step visual infographic mapping user discovery, Kyra AI guidance, and nutrition tracking.'
-      },
+      }
     ]
   },
   {
