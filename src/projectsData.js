@@ -60,6 +60,7 @@ import blogPageWebsiteLanding from './assets/blog-page-website-landing.png'
 import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
 import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
 import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
+import uiMotion1 from './assets/ui-motion-1.gif'
 
 export const CATEGORIES = [
   {
@@ -564,7 +565,7 @@ export const CATEGORIES = [
     label: 'UI Motion Design',
     iconName: 'motion',
     projects: [
-      { id: 19, title: 'Micro-interactions & Lottie', image: null, tag: 'MICRO-MOTION', theme: 'theme-dark', icon: '⚡', description: 'Smooth button transitions, physics-based gesture interactions, and micro-animations.' },
+      { id: 19, title: 'UI Motion & Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
       { id: 20, title: 'Onboarding Flow Animation', image: null, tag: 'ONBOARDING', theme: 'theme-sunset', icon: '🚀', description: 'Interactive walkthrough storytelling with multi-step delightful card morphs.' },
       { id: 21, title: 'Data Viz Transitions', image: null, tag: 'DATA MOTION', theme: 'theme-blue', icon: '📈', description: 'Fluid chart morphing, count-up numbers, and live telemetry motion widgets.' },
       { id: 22, title: '3D Scroll Experience', image: null, tag: 'PARALLAX 3D', theme: 'theme-purple', icon: '🌌', description: 'Parallax and WebGL scroll-triggered camera motion with depth shaders.' },
