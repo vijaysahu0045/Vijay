@@ -62,6 +62,11 @@ import uiuxCameraScanner from './assets/uiux-camera-scanner.png'
 import uiuxDietReport from './assets/uiux-diet-report.png'
 import uiuxFoodScannerIntro from './assets/uiux-food-scanner-intro.png'
 import uiuxFoodBreakdown from './assets/uiux-food-breakdown.png'
+import uiuxBookSession from './assets/uiux-book-session.jpg'
+import uiuxFittbotNutritionHub from './assets/uiux-fittbot-nutrition-hub.jpg'
+import uiuxBodyMetrics from './assets/uiux-body-metrics.png'
+import uiuxPersonalizedDietPlan from './assets/uiux-personalized-diet-plan.png'
+import uiuxFoodRecipes from './assets/uiux-food-recipes.png'
 
 export const CATEGORIES = [
   {
@@ -113,6 +118,51 @@ export const CATEGORIES = [
         theme: 'theme-blue',
         icon: '🥑',
         description: 'Detailed post-scan nutrition screen showing ingredient-level calories, AI Coach advice, Smart Food Swaps, nearby workout classes, and 1:1 nutritionist consultation.'
+      },
+      {
+        id: 206,
+        title: 'Book Session — Nutritionist Slot & Calendar Picker UI',
+        image: uiuxBookSession,
+        tag: 'BOOKING FLOW UI',
+        theme: 'theme-blue',
+        icon: '📅',
+        description: 'Interactive session booking screen with monthly calendar selector, color-coded time slot states (Available, Selected, Booked), and instant confirmation.'
+      },
+      {
+        id: 207,
+        title: 'Fittbot Nutrition Hub & Progress Dashboard UI',
+        image: uiuxFittbotNutritionHub,
+        tag: 'SUPERAPP DASHBOARD UI',
+        theme: 'theme-purple',
+        icon: '⚡',
+        description: 'All-in-one nutrition hub featuring 15-day diet plan access, 3D body metrics, 1:1 nutritionist chat, water & weight tracking, workout stats, and weekly weight graph.'
+      },
+      {
+        id: 208,
+        title: '3D Body Metrics & Measurement Tracker UI',
+        image: uiuxBodyMetrics,
+        tag: '3D ANATOMY UI',
+        theme: 'theme-sunset',
+        icon: '🧍',
+        description: 'Interactive 3D anatomical body map highlighting Chest, Upper Arm, Abdomen, Lower Abdomen, and Thigh measurements with quick metric cards.'
+      },
+      {
+        id: 209,
+        title: 'Personalized Nutrition Diet Plan — Daily Meal Timeline UI',
+        image: uiuxPersonalizedDietPlan,
+        tag: 'DIET TIMELINE UI',
+        theme: 'theme-blue',
+        icon: '🍱',
+        description: 'Day-by-day meal schedule displaying Pre-Breakfast, Breakfast, and Lunch cards with full macro/micronutrient rings, recipe links, and one-tap food logging.'
+      },
+      {
+        id: 210,
+        title: 'Healthy Food Recipes — Dietary Filter & Bowl Grid UI',
+        image: uiuxFoodRecipes,
+        tag: 'RECIPE DISCOVERY UI',
+        theme: 'theme-dark',
+        icon: '🍲',
+        description: 'Clean 2-column recipe discovery screen with dietary category pills (All, Vegan, Vegetarian, Eggetarian, Non-vegetarian) and overhead high-protein bowl cards.'
       }
     ]
   },
