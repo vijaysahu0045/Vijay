@@ -185,7 +185,6 @@ export default function Projects({
                       </div>
                       <div className="pin-meta-box">
                         <span className="pin-tag-badge">{proj.tag || 'GRAPHIC DESIGN'}</span>
-                        <h3 className="pin-title-text">{proj.title}</h3>
                       </div>
                     </div>
                   </div>
