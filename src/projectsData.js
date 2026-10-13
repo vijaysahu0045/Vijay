@@ -1,5 +1,3 @@
-import cardImg1 from './assets/project-card-1.png'
-import gymMgmtThumbnail from './assets/gym-mgmt-thumbnail.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import graphicFymbleMembership from './assets/graphic-fymble-membership.jpg'
 import graphicCoffeeSubscription from './assets/graphic-coffee-subscription.jpg'
@@ -45,7 +43,6 @@ import graphicRealResultsNotJustAppsWide from './assets/graphic-real-results-not
 import graphicConfusedWhatToEat499 from './assets/graphic-confused-what-to-eat-499.png'
 import graphicStillConfusedNutritionist199 from './assets/graphic-still-confused-nutritionist-199.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
-import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
 import foodScannerThumbnail from './assets/food-scanner-thumbnail.jpg'
 import nutritionConsultationLanding from './assets/nutrition-consultation-landing.png'
@@ -66,12 +63,7 @@ export const CATEGORIES = [
     id: 'ux-ui',
     label: 'UX / UI Design',
     iconName: 'ux-ui',
-    projects: [
-      { id: 1, title: 'Fymble — Redefining Fitness & Health', image: cardImg1, tag: 'FLAGSHIP PRODUCT', description: 'End-to-end UX/UI for 250+ screens supporting 20K+ users and 600+ gym partners with Kyra AI coach.' },
-      { id: 2, title: 'Gym Management App', image: gymMgmtThumbnail, tag: 'GYM MANAGEMENT B2B', theme: 'theme-purple', icon: '🏋️', description: 'Comprehensive B2B gym management SaaS platform for fitness centers to manage memberships, check-ins, trainers, and revenue analytics.' },
-      { id: 3, title: 'Nutrition App', image: nutritionAppThumbnail, tag: 'DIET & NUTRITION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized meal plans, macro tracking, healthy recipe explorer, and daily calorie counter.' },
-      { id: 4, title: 'Gym Mate App', image: gymMateThumbnail, tag: 'COMMUNITY & FITNESS', theme: 'theme-blue', icon: '🤝', description: 'Social fitness matching app to find nearby workout buddies, spotters, and local gym partners.' },
-    ]
+    projects: []
   },
   {
     id: 'ai-ux',
