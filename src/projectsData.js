@@ -1,3 +1,5 @@
+import cardImg1 from './assets/project-card-1.png'
+import gymMgmtThumbnail from './assets/gym-mgmt-thumbnail.png'
 import fymbleGymPassBanner from './assets/fymble-gym-pass-banner.jpg'
 import graphicFymbleMembership from './assets/graphic-fymble-membership.jpg'
 import graphicCoffeeSubscription from './assets/graphic-coffee-subscription.jpg'
@@ -43,6 +45,7 @@ import graphicRealResultsNotJustAppsWide from './assets/graphic-real-results-not
 import graphicConfusedWhatToEat499 from './assets/graphic-confused-what-to-eat-499.png'
 import graphicStillConfusedNutritionist199 from './assets/graphic-still-confused-nutritionist-199.png'
 import nutritionAppThumbnail from './assets/nutrition-app-thumbnail.jpg'
+import gymMateThumbnail from './assets/gym-mate-thumbnail.jpg'
 import aiDietCoachThumbnail from './assets/ai-diet-coach-thumbnail.png'
 import foodScannerThumbnail from './assets/food-scanner-thumbnail.jpg'
 import nutritionConsultationLanding from './assets/nutrition-consultation-landing.png'
@@ -57,16 +60,6 @@ import blogPageWebsiteLanding from './assets/blog-page-website-landing.png'
 import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
 import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
 import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
-import uiuxMyCalDashboard from './assets/uiux-my-cal-dashboard.png'
-import uiuxCameraScanner from './assets/uiux-camera-scanner.png'
-import uiuxDietReport from './assets/uiux-diet-report.png'
-import uiuxFoodScannerIntro from './assets/uiux-food-scanner-intro.png'
-import uiuxFoodBreakdown from './assets/uiux-food-breakdown.png'
-import uiuxBookSession from './assets/uiux-book-session.jpg'
-import uiuxFittbotNutritionHub from './assets/uiux-fittbot-nutrition-hub.jpg'
-import uiuxBodyMetrics from './assets/uiux-body-metrics.png'
-import uiuxPersonalizedDietPlan from './assets/uiux-personalized-diet-plan.png'
-import uiuxFoodRecipes from './assets/uiux-food-recipes.png'
 
 export const CATEGORIES = [
   {
@@ -74,96 +67,10 @@ export const CATEGORIES = [
     label: 'UX / UI Design',
     iconName: 'ux-ui',
     projects: [
-      {
-        id: 201,
-        title: 'My Cal — Daily Calorie & Nutrition Dashboard',
-        image: uiuxMyCalDashboard,
-        tag: 'MOBILE APP UI',
-        theme: 'theme-blue',
-        icon: '🔥',
-        description: 'Daily calorie and macro tracker dashboard with AI meal photo scanner, nutrition diet chart, and custom diet template builder.'
-      },
-      {
-        id: 202,
-        title: 'AI Food Camera Scanner — Live Viewfinder UI',
-        image: uiuxCameraScanner,
-        tag: 'CAMERA SCANNER UI',
-        theme: 'theme-dark',
-        icon: '📸',
-        description: 'Minimalist camera scanner interface with instant meal-slot selector (Breakfast, Lunch, Snacks, Dinner) for one-tap AI food logging.'
-      },
-      {
-        id: 203,
-        title: 'Diet Report & AI Coach Insights Screen',
-        image: uiuxDietReport,
-        tag: 'HEALTH ANALYTICS UI',
-        theme: 'theme-purple',
-        icon: '📊',
-        description: 'Comprehensive diet analytics report featuring Kyra AI meal feedback, micro-nutrient breakdown, daily food log, weekly calorie trends, and high-protein food suggestions.'
-      },
-      {
-        id: 204,
-        title: 'Food Scanner — Know What’s Inside Onboarding UI',
-        image: uiuxFoodScannerIntro,
-        tag: 'ONBOARDING UI',
-        theme: 'theme-sunset',
-        icon: '🥗',
-        description: 'Visual onboarding screen showcasing real-time macro and vitamin detection around an Indian meal bowl with one-tap scan CTA.'
-      },
-      {
-        id: 205,
-        title: 'Meal Breakdown & Smart Food Swaps UI',
-        image: uiuxFoodBreakdown,
-        tag: 'NUTRITION DETAIL UI',
-        theme: 'theme-blue',
-        icon: '🥑',
-        description: 'Detailed post-scan nutrition screen showing ingredient-level calories, AI Coach advice, Smart Food Swaps, nearby workout classes, and 1:1 nutritionist consultation.'
-      },
-      {
-        id: 206,
-        title: 'Book Session — Nutritionist Slot & Calendar Picker UI',
-        image: uiuxBookSession,
-        tag: 'BOOKING FLOW UI',
-        theme: 'theme-blue',
-        icon: '📅',
-        description: 'Interactive session booking screen with monthly calendar selector, color-coded time slot states (Available, Selected, Booked), and instant confirmation.'
-      },
-      {
-        id: 207,
-        title: 'Fittbot Nutrition Hub & Progress Dashboard UI',
-        image: uiuxFittbotNutritionHub,
-        tag: 'SUPERAPP DASHBOARD UI',
-        theme: 'theme-purple',
-        icon: '⚡',
-        description: 'All-in-one nutrition hub featuring 15-day diet plan access, 3D body metrics, 1:1 nutritionist chat, water & weight tracking, workout stats, and weekly weight graph.'
-      },
-      {
-        id: 208,
-        title: '3D Body Metrics & Measurement Tracker UI',
-        image: uiuxBodyMetrics,
-        tag: '3D ANATOMY UI',
-        theme: 'theme-sunset',
-        icon: '🧍',
-        description: 'Interactive 3D anatomical body map highlighting Chest, Upper Arm, Abdomen, Lower Abdomen, and Thigh measurements with quick metric cards.'
-      },
-      {
-        id: 209,
-        title: 'Personalized Nutrition Diet Plan — Daily Meal Timeline UI',
-        image: uiuxPersonalizedDietPlan,
-        tag: 'DIET TIMELINE UI',
-        theme: 'theme-blue',
-        icon: '🍱',
-        description: 'Day-by-day meal schedule displaying Pre-Breakfast, Breakfast, and Lunch cards with full macro/micronutrient rings, recipe links, and one-tap food logging.'
-      },
-      {
-        id: 210,
-        title: 'Healthy Food Recipes — Dietary Filter & Bowl Grid UI',
-        image: uiuxFoodRecipes,
-        tag: 'RECIPE DISCOVERY UI',
-        theme: 'theme-dark',
-        icon: '🍲',
-        description: 'Clean 2-column recipe discovery screen with dietary category pills (All, Vegan, Vegetarian, Eggetarian, Non-vegetarian) and overhead high-protein bowl cards.'
-      }
+      { id: 1, title: 'Fymble — Redefining Fitness & Health', image: cardImg1, tag: 'FLAGSHIP PRODUCT', description: 'End-to-end UX/UI for 250+ screens supporting 20K+ users and 600+ gym partners with Kyra AI coach.' },
+      { id: 2, title: 'Gym Management App', image: gymMgmtThumbnail, tag: 'GYM MANAGEMENT B2B', theme: 'theme-purple', icon: '🏋️', description: 'Comprehensive B2B gym management SaaS platform for fitness centers to manage memberships, check-ins, trainers, and revenue analytics.' },
+      { id: 3, title: 'Nutrition App', image: nutritionAppThumbnail, tag: 'DIET & NUTRITION', theme: 'theme-sunset', icon: '🥗', description: 'Personalized meal plans, macro tracking, healthy recipe explorer, and daily calorie counter.' },
+      { id: 4, title: 'Gym Mate App', image: gymMateThumbnail, tag: 'COMMUNITY & FITNESS', theme: 'theme-blue', icon: '🤝', description: 'Social fitness matching app to find nearby workout buddies, spotters, and local gym partners.' },
     ]
   },
   {

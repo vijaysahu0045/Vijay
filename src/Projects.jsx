@@ -155,12 +155,12 @@ export default function Projects({
           <div className="projects-category-heading">
             <span>{currentCategoryObj.label}</span>
             <span className="projects-count-badge">
-              {currentCategoryObj.projects.length} {activeCategory === 'graphic' || activeCategory === 'ux-ui' ? 'Artworks' : 'Projects'}
+              {currentCategoryObj.projects.length} {activeCategory === 'graphic' ? 'Artworks' : 'Projects'}
             </span>
           </div>
 
-          {activeCategory === 'graphic' || activeCategory === 'ux-ui' ? (
-            /* PINTEREST-STYLE MASONRY GALLERY FOR GRAPHIC DESIGN & UX / UI DESIGN */
+          {activeCategory === 'graphic' ? (
+            /* PINTEREST-STYLE MASONRY GALLERY FOR GRAPHIC DESIGN */
             <div className="pinterest-gallery-masonry">
               {currentCategoryObj.projects.map((proj, idx) => (
                 <div
@@ -184,7 +184,7 @@ export default function Projects({
                         <span>View Full</span>
                       </div>
                       <div className="pin-meta-box">
-                        <span className="pin-tag-badge">{proj.tag || currentCategoryObj.label}</span>
+                        <span className="pin-tag-badge">{proj.tag || 'GRAPHIC DESIGN'}</span>
                       </div>
                     </div>
                   </div>
