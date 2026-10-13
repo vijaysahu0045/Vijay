@@ -10,6 +10,7 @@ import screen5 from './assets/fymble-screen-5.png'
 import foodScanner1 from './assets/food-scanner-screen-1.png'
 import nutritionScreen3 from './assets/nutrition-screen-3.png'
 import scopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
+import userPersonaAvatar from './assets/user-persona-avatar.png'
 import UserFlowTreeDiagram from './UserFlowTreeDiagram'
 
 const SECTIONS_INDEX = [
@@ -966,7 +967,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                   <img
                     src={
                       activePersonaTab === 'user'
-                        ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'
+                        ? userPersonaAvatar
                         : 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
                     }
                     alt={activePersonaTab === 'user' ? 'Wade Warren' : 'Rajesh Sharma'}
