@@ -568,10 +568,6 @@ export const CATEGORIES = [
     projects: [
       { id: 19, title: 'UI Motion 1 — Interactive Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
       { id: 20, title: 'UI Motion 2 — Kinetic Component Transitions', image: uiMotion2, tag: 'UI MOTION', theme: 'theme-blue', icon: '✨', description: 'Fluid interaction choreography and kinetic UI animation designed for delightful UX.' },
-      { id: 21, title: 'Data Viz Transitions', image: null, tag: 'DATA MOTION', theme: 'theme-blue', icon: '📈', description: 'Fluid chart morphing, count-up numbers, and live telemetry motion widgets.' },
-      { id: 22, title: '3D Scroll Experience', image: null, tag: 'PARALLAX 3D', theme: 'theme-purple', icon: '🌌', description: 'Parallax and WebGL scroll-triggered camera motion with depth shaders.' },
-      { id: 23, title: 'Swipe Gestures & Physics', image: null, tag: 'TOUCH PHYSICS', theme: 'theme-light', icon: '👆', description: 'Natural gesture navigation, elastic bounce curves, and drag physics for mobile.' },
-      { id: 24, title: 'Logo Reveal Animation', image: null, tag: 'LOGO REVEAL', theme: 'theme-dark', icon: '🎬', description: 'Dynamic 60fps logo splash screen reveal for product launch trailer.' },
     ]
   },
   {
@@ -605,12 +601,20 @@ export const ALL_FLATTENED_PROJECTS = CATEGORIES
       }))
   )
 
-// Randomize array helper for home slider
+// Randomize array helper for home slider (features motion in initial view)
 export function getShuffledProjects() {
   const arr = [...ALL_FLATTENED_PROJECTS]
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  // Ensure a motion project is featured in the initial 3 visible cards on home page load
+  const motionIdx = arr.findIndex(p => p.categoryId === 'motion')
+  if (motionIdx > 2) {
+    const swapTarget = 1
+    const temp = arr[swapTarget]
+    arr[swapTarget] = arr[motionIdx]
+    arr[motionIdx] = temp
   }
   return arr
 }
