@@ -62,6 +62,7 @@ import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
 import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
 import uiMotion1 from './assets/ui-motion-1.gif'
 import uiMotion2 from './assets/ui-motion-2.gif'
+import portfolioWebdevLanding from './assets/portfolio-webdev-landing.png'
 
 export const CATEGORIES = [
   {
@@ -572,21 +573,26 @@ export const CATEGORIES = [
   },
   {
     id: 'frontend',
-    label: 'Frontend Dev',
+    label: 'Web Dev',
     iconName: 'frontend',
     projects: [
-      { id: 31, title: 'React Component Library', image: null, tag: 'COMPONENT SYSTEM', theme: 'theme-light', icon: '⚛️', description: 'Accessible, themeable design system built with Radix, Tailwind, and custom tokens.' },
-      { id: 32, title: 'Web3 Crypto Wallet DApp', image: null, tag: 'WEB3 DAPP', theme: 'theme-purple', icon: '🪙', description: 'Ethers.js web3 interface for token swaps, wallet connect, and yield staking.' },
-      { id: 33, title: 'Fullstack Next.js Blog', image: null, tag: 'NEXT.JS APP', theme: 'theme-dark', icon: '📝', description: 'SEO optimized MDX content engine with server actions and edge caching.' },
-      { id: 34, title: 'Realtime Chat Application', image: null, tag: 'SOCKET CHAT', theme: 'theme-blue', icon: '💬', description: 'Socket.io powered chat with live channels, typing indicators, and media sharing.' },
-      { id: 35, title: 'Interactive Music Synth', image: null, tag: 'AUDIO SYNTH', theme: 'theme-sunset', icon: '🎹', description: 'Web Audio API synthesizer with real-time waveform visualizer canvas.' },
-      { id: 36, title: 'Kanban Task Manager', image: null, tag: 'KANBAN BOARD', theme: 'theme-light', icon: '📋', description: 'Smooth drag-and-drop workflow board with local persistence and tags.' },
+      {
+        id: 31,
+        title: 'Vijay Sahu — Interactive Portfolio Website',
+        image: portfolioWebdevLanding,
+        thumbnail: portfolioWebdevLanding,
+        tag: 'REACT & WEB DEV',
+        liveUrl: 'https://vijaysahu-portfolio.vercel.app',
+        theme: 'theme-purple',
+        icon: '💻',
+        description: 'Modern, high-performance interactive developer portfolio engineered with React, Vite, CSS glassmorphism architecture, dynamic particle physics, and device showcases.'
+      }
     ]
   }
 ]
 
-// Home Slider Filtered Categories: UX/UI Design, AI UX, Web Design, and UI Motion
-export const HOME_ALLOWED_CATEGORY_IDS = ['ux-ui', 'ai-ux', 'web', 'motion']
+// Home Slider Filtered Categories: UX/UI Design, AI UX, Web Design, UI Motion, and Web Dev
+export const HOME_ALLOWED_CATEGORY_IDS = ['ux-ui', 'ai-ux', 'web', 'motion', 'frontend']
 
 export const ALL_FLATTENED_PROJECTS = CATEGORIES
   .filter((cat) => HOME_ALLOWED_CATEGORY_IDS.includes(cat.id))

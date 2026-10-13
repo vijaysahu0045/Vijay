@@ -283,6 +283,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
 
   const isWebProject =
     project.categoryId === 'web' ||
+    project.categoryId === 'frontend' ||
     project.category?.toLowerCase().includes('web') ||
     (categoryLabel && categoryLabel.toLowerCase().includes('web'))
 
