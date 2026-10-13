@@ -11,6 +11,9 @@ import foodScanner1 from './assets/food-scanner-screen-1.png'
 import nutritionScreen3 from './assets/nutrition-screen-3.png'
 import scopeHandShowcase from './assets/fymble-scope-hand-showcase.png'
 import userPersonaAvatar from './assets/user-persona-avatar.png'
+import feedbackUser1 from './assets/feedback-user-1.png'
+import feedbackUser2 from './assets/feedback-user-2.png'
+import feedbackUser3 from './assets/feedback-user-3.jpg'
 import UserFlowTreeDiagram from './UserFlowTreeDiagram'
 
 const SECTIONS_INDEX = [
@@ -1603,7 +1606,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <div className="cs12-feedback-capsule">
                   <div className="cs12-feedback-avatar-ring">
                     <img
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                      src={feedbackUser1}
                       alt="User 1"
                       className="cs12-feedback-avatar-img"
                     />
@@ -1617,7 +1620,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <div className="cs12-feedback-capsule">
                   <div className="cs12-feedback-avatar-ring">
                     <img
-                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80"
+                      src={feedbackUser2}
                       alt="User 2"
                       className="cs12-feedback-avatar-img"
                     />
@@ -1631,7 +1634,7 @@ export default function FymbleCaseStudy12({ onBack, onNavigateProject }) {
                 <div className="cs12-feedback-capsule">
                   <div className="cs12-feedback-avatar-ring">
                     <img
-                      src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80"
+                      src={feedbackUser3}
                       alt="User 3"
                       className="cs12-feedback-avatar-img"
                     />
