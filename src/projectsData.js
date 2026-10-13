@@ -61,6 +61,7 @@ import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
 import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
 import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
 import uiMotion1 from './assets/ui-motion-1.gif'
+import uiMotion2 from './assets/ui-motion-2.gif'
 
 export const CATEGORIES = [
   {
@@ -565,8 +566,8 @@ export const CATEGORIES = [
     label: 'UI Motion Design',
     iconName: 'motion',
     projects: [
-      { id: 19, title: 'UI Motion & Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
-      { id: 20, title: 'Onboarding Flow Animation', image: null, tag: 'ONBOARDING', theme: 'theme-sunset', icon: '🚀', description: 'Interactive walkthrough storytelling with multi-step delightful card morphs.' },
+      { id: 19, title: 'UI Motion 1 — Interactive Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
+      { id: 20, title: 'UI Motion 2 — Kinetic Component Transitions', image: uiMotion2, tag: 'UI MOTION', theme: 'theme-blue', icon: '✨', description: 'Fluid interaction choreography and kinetic UI animation designed for delightful UX.' },
       { id: 21, title: 'Data Viz Transitions', image: null, tag: 'DATA MOTION', theme: 'theme-blue', icon: '📈', description: 'Fluid chart morphing, count-up numbers, and live telemetry motion widgets.' },
       { id: 22, title: '3D Scroll Experience', image: null, tag: 'PARALLAX 3D', theme: 'theme-purple', icon: '🌌', description: 'Parallax and WebGL scroll-triggered camera motion with depth shaders.' },
       { id: 23, title: 'Swipe Gestures & Physics', image: null, tag: 'TOUCH PHYSICS', theme: 'theme-light', icon: '👆', description: 'Natural gesture navigation, elastic bounce curves, and drag physics for mobile.' },
@@ -588,18 +589,20 @@ export const CATEGORIES = [
   }
 ]
 
-// Home Slider Filtered Categories: UX/UI Design, AI UX, and Web Design
-export const HOME_ALLOWED_CATEGORY_IDS = ['ux-ui', 'ai-ux', 'web']
+// Home Slider Filtered Categories: UX/UI Design, AI UX, Web Design, and UI Motion
+export const HOME_ALLOWED_CATEGORY_IDS = ['ux-ui', 'ai-ux', 'web', 'motion']
 
 export const ALL_FLATTENED_PROJECTS = CATEGORIES
   .filter((cat) => HOME_ALLOWED_CATEGORY_IDS.includes(cat.id))
   .flatMap((cat) =>
-    cat.projects.map((proj) => ({
-      ...proj,
-      category: cat.label,
-      categoryId: cat.id,
-      author: 'by Vijay'
-    }))
+    cat.projects
+      .filter((proj) => Boolean(proj.image || proj.thumbnail))
+      .map((proj) => ({
+        ...proj,
+        category: cat.label,
+        categoryId: cat.id,
+        author: 'by Vijay'
+      }))
   )
 
 // Randomize array helper for home slider
