@@ -57,13 +57,64 @@ import blogPageWebsiteLanding from './assets/blog-page-website-landing.png'
 import blogPageWebsiteThumbnail from './assets/blog-page-website-thumbnail.png'
 import fymbleHomeWebsiteLanding from './assets/fymble-home-website-landing.png'
 import fymbleHomeWebsiteThumbnail from './assets/fymble-home-website-thumbnail.png'
+import uiuxMyCalDashboard from './assets/uiux-my-cal-dashboard.png'
+import uiuxCameraScanner from './assets/uiux-camera-scanner.png'
+import uiuxDietReport from './assets/uiux-diet-report.png'
+import uiuxFoodScannerIntro from './assets/uiux-food-scanner-intro.png'
+import uiuxFoodBreakdown from './assets/uiux-food-breakdown.png'
 
 export const CATEGORIES = [
   {
     id: 'ux-ui',
     label: 'UX / UI Design',
     iconName: 'ux-ui',
-    projects: []
+    projects: [
+      {
+        id: 201,
+        title: 'My Cal — Daily Calorie & Nutrition Dashboard',
+        image: uiuxMyCalDashboard,
+        tag: 'MOBILE APP UI',
+        theme: 'theme-blue',
+        icon: '🔥',
+        description: 'Daily calorie and macro tracker dashboard with AI meal photo scanner, nutrition diet chart, and custom diet template builder.'
+      },
+      {
+        id: 202,
+        title: 'AI Food Camera Scanner — Live Viewfinder UI',
+        image: uiuxCameraScanner,
+        tag: 'CAMERA SCANNER UI',
+        theme: 'theme-dark',
+        icon: '📸',
+        description: 'Minimalist camera scanner interface with instant meal-slot selector (Breakfast, Lunch, Snacks, Dinner) for one-tap AI food logging.'
+      },
+      {
+        id: 203,
+        title: 'Diet Report & AI Coach Insights Screen',
+        image: uiuxDietReport,
+        tag: 'HEALTH ANALYTICS UI',
+        theme: 'theme-purple',
+        icon: '📊',
+        description: 'Comprehensive diet analytics report featuring Kyra AI meal feedback, micro-nutrient breakdown, daily food log, weekly calorie trends, and high-protein food suggestions.'
+      },
+      {
+        id: 204,
+        title: 'Food Scanner — Know What’s Inside Onboarding UI',
+        image: uiuxFoodScannerIntro,
+        tag: 'ONBOARDING UI',
+        theme: 'theme-sunset',
+        icon: '🥗',
+        description: 'Visual onboarding screen showcasing real-time macro and vitamin detection around an Indian meal bowl with one-tap scan CTA.'
+      },
+      {
+        id: 205,
+        title: 'Meal Breakdown & Smart Food Swaps UI',
+        image: uiuxFoodBreakdown,
+        tag: 'NUTRITION DETAIL UI',
+        theme: 'theme-blue',
+        icon: '🥑',
+        description: 'Detailed post-scan nutrition screen showing ingredient-level calories, AI Coach advice, Smart Food Swaps, nearby workout classes, and 1:1 nutritionist consultation.'
+      }
+    ]
   },
   {
     id: 'ai-ux',
