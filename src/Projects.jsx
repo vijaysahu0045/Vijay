@@ -210,7 +210,12 @@ export default function Projects({
                       </div>
                     )}
                   </div>
-                  <div className="project-card-title">{proj.title}</div>
+                  <div className="project-card-title-row">
+                    <span className="project-card-title">{proj.title}</span>
+                    {proj.liveUrl && (
+                      <span className="project-live-indicator" title="Live Project Link">LIVE ↗</span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

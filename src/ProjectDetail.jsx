@@ -628,7 +628,9 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
                   className="web-live-launch-btn"
                 >
                   <span className="live-pulse-dot" />
-                  <span>Visit Live Website • Fymble.app ↗</span>
+                  <span>
+                    Visit Live Website • {project.liveUrl ? project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'Open Link'} ↗
+                  </span>
                 </a>
               </div>
             )}
