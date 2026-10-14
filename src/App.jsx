@@ -68,7 +68,7 @@ function App() {
   }, [])
 
   const isMobile = windowWidth <= 600
-  const isTablet = windowWidth > 600 && windowWidth <= 860
+  const isTablet = windowWidth > 600 && windowWidth <= 1024
   const cardsPerView = isMobile ? 1 : isTablet ? 2 : 3
 
   // Max slide index (adapts to mobile, tablet & desktop)
@@ -357,8 +357,8 @@ function App() {
               transform: isMobile
                 ? `translateX(calc(-${carouselIndex} * (100% + 16px)))`
                 : isTablet
-                ? `translateX(calc(-${carouselIndex} * ((100% - 18px) / 2 + 18px)))`
-                : `translateX(calc(-${carouselIndex} * ((100% - 36px) / 3 + 18px)))`
+                ? `translateX(calc(-${carouselIndex} * ((100% + 16px) / 2)))`
+                : `translateX(calc(-${carouselIndex} * ((100% + 18px) / 3)))`
             }}
           >
             {projectsList.map((proj) => (
