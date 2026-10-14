@@ -619,8 +619,8 @@
   }
 
   .home-card-visual {
-    height: 195px;
-    border-radius: 16px;
+    height: 156px;
+    border-radius: 14px;
   }
 
   .home-card-title {
@@ -794,10 +794,10 @@
   }
 
   .home-card-visual {
-    height: 218px;
-    border-radius: 18px;
+    height: 175px;
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
   }
 
   .home-card-meta {
