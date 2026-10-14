@@ -2983,6 +2983,12 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .figma-workbench-section {
+    display: none !important;
+  }
+}
+
 @media (max-width: 900px) {
   .web-hero-title {
     font-size: 30px;
@@ -3001,6 +3007,12 @@
   }
   .macbook-base {
     width: calc(100% + 24px);
+  }
+}
+
+@media (max-width: 600px) {
+  .iphone-slider-nav-btn {
+    display: none !important;
   }
 }
 

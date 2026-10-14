@@ -615,16 +615,23 @@
   line-height: 1.4;
 }
 
+/* Tablets & Mobile (max-width: 1024px): Hide arrows and rely on smooth finger touch swipe */
+@media (max-width: 1024px) {
+  .lightbox-arrow-btn {
+    display: none !important;
+  }
+
+  .projects-body,
+  .projects-content-area,
+  .pinterest-gallery-masonry {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media (max-width: 900px) {
   .pinterest-gallery-masonry {
     column-count: 2;
     column-gap: 16px;
-  }
-  .lightbox-prev-btn {
-    left: 10px;
-  }
-  .lightbox-next-btn {
-    right: 10px;
   }
 }
 
