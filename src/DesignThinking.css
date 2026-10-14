@@ -730,29 +730,38 @@
   }
 }
 
+/* Mobile & Tablet 40% Compact Scaling (Reduces overall size by 40%) */
+@media (max-width: 1024px) {
+  .dt-main-wrapper {
+    zoom: 0.60;
+    padding: 48px 12px 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .dt-main-wrapper {
-    padding: 60px 12px 16px;
+    zoom: 0.60;
+    padding: 38px 10px 14px;
   }
 
   .dt-board-card {
-    padding: 28px 20px 24px;
-    border-radius: 20px;
+    padding: 24px 16px 20px;
+    border-radius: 18px;
   }
 
   .dt-board-heading,
   .dt-strat-heading {
-    font-size: 34px;
+    font-size: 26px;
   }
 
   .dt-board-title-row {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   .dt-showcase-stage {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .dt-before-points-col {
