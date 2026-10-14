@@ -511,7 +511,7 @@
 @media (min-width: 601px) and (max-width: 1024px) {
   .home-container {
     justify-content: flex-start;
-    padding-top: 44px;
+    padding-top: 48px;
     padding-bottom: 40px;
     min-height: 100vh;
     min-height: 100dvh;
@@ -525,9 +525,9 @@
   }
 
   .home-heading-wrapper {
-    min-height: 48px;
-    margin-top: 6px;
-    margin-bottom: 30px;
+    min-height: 46px;
+    margin-top: 4px;
+    margin-bottom: 34px;
   }
 
   .home-heading {
@@ -562,7 +562,7 @@
   .ai-nav-bar {
     width: 100%;
     max-width: 640px;
-    margin-bottom: 30px;
+    margin-bottom: 38px;
     padding: 6px 8px;
     gap: 6px;
     display: flex;
@@ -593,7 +593,7 @@
 
   .projects-header-bar {
     width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 0 2px;
     display: flex;
     align-items: center;
@@ -601,7 +601,7 @@
   }
 
   .explore-text-btn {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
   }
 
@@ -619,16 +619,18 @@
   }
 
   .home-card-visual {
-    height: 180px;
-    border-radius: 14px;
+    height: 195px;
+    border-radius: 16px;
   }
 
   .home-card-title {
-    font-size: 14.5px;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: #d1d5db;
   }
 
   .home-card-author {
-    font-size: 12px;
+    display: none !important;
   }
 
   /* Tablet Quick Stats Bar to balance vertical screen height */
@@ -638,7 +640,7 @@
     justify-content: space-around;
     width: 100%;
     max-width: 520px;
-    margin-top: 26px;
+    margin-top: 34px;
     padding: 14px 22px;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(18px);
@@ -652,31 +654,32 @@
 @media (max-width: 600px) {
   .home-container {
     justify-content: flex-start;
-    padding-top: 30px;
-    padding-bottom: 28px;
+    padding-top: 48px;
+    padding-bottom: 36px;
     min-height: 100vh;
     min-height: 100dvh;
   }
 
   .home-content {
-    padding: 0 14px;
+    padding: 0 16px;
     width: 100%;
   }
 
   .home-heading-wrapper {
-    min-height: 40px;
+    min-height: 42px;
     margin-top: 2px;
-    margin-bottom: 26px;
+    margin-bottom: 34px;
   }
 
   .home-heading {
-    font-size: 22px;
+    font-size: 25px;
+    font-weight: 700;
     letter-spacing: -0.3px;
     text-align: center;
   }
 
   .typewriter-cursor {
-    height: 22px;
+    height: 24px;
     width: 2.5px;
   }
 
@@ -702,21 +705,21 @@
     opacity: 0.2;
   }
 
-  /* Compact All-5-Visible Nav Bar on Mobile (Fits all 5 buttons in 1 clean row without scrolling) */
+  /* Compact All-5-Visible Nav Bar on Mobile (Exact match with user mock) */
   .ai-nav-bar {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 26px;
-    padding: 3px;
-    gap: 2.5px;
+    margin-bottom: 38px;
+    padding: 4px;
+    gap: 3px;
     display: flex;
     overflow: hidden;
-    border-radius: 9px;
+    border-radius: 11px;
     justify-content: space-between;
     align-items: center;
-    background: rgba(26, 26, 34, 0.94);
+    background: rgba(24, 24, 32, 0.94);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
   }
 
@@ -728,34 +731,41 @@
     flex: 1 1 auto;
     width: auto;
     min-width: 0;
-    height: 30px;
+    height: 33px;
     padding: 0 4px;
-    border-radius: 6px;
+    border-radius: 7px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #232330;
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .ai-nav-pill span {
-    font-size: clamp(8.5px, 2.45vw, 10.5px);
+    font-size: clamp(8.5px, 2.5vw, 10.5px);
     font-weight: 500;
     white-space: nowrap;
-    letter-spacing: -0.35px;
-    color: #e2e8f0;
+    letter-spacing: -0.3px;
+    color: #e5e7eb;
     text-align: center;
   }
 
-  /* Projects Header - Clean & Spacious (Arrows and counter hidden on mobile) */
+  /* Projects Header - Clean & Spacious (No counter badge, no arrows) */
   .projects-header-bar {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 0 2px;
   }
 
   .explore-text-btn {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
+    color: #ffffff;
+  }
+
+  .see-more-link-btn {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9d9bb8;
   }
 
   .carousel-counter-badge {
@@ -767,6 +777,10 @@
   }
 
   /* Carousel Track & Card */
+  .home-carousel-viewport {
+    margin-bottom: 10px;
+  }
+
   .home-carousel-track {
     gap: 16px;
   }
@@ -780,38 +794,38 @@
   }
 
   .home-card-visual {
-    height: 195px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    height: 218px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
   }
 
   .home-card-meta {
-    padding: 6px 2px;
+    padding: 10px 2px 0 2px;
   }
 
   .home-card-title {
-    font-size: 14.5px;
-    font-weight: 600;
-    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    color: #d1d5db;
   }
 
   .home-card-author {
     display: none !important;
   }
 
-  /* Mobile Quick Stats Card (Fills empty bottom screen void) */
+  /* Mobile Quick Stats Card (Exact match with user mock) */
   .home-mobile-stats-card {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    margin-top: 20px;
-    padding: 13px 18px;
-    background: rgba(255, 255, 255, 0.035);
-    backdrop-filter: blur(18px);
+    margin-top: 36px;
+    padding: 14px 18px;
+    background: rgba(30, 30, 42, 0.7);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   }
 
