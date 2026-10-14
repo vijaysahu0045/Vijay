@@ -293,9 +293,9 @@ function App() {
           </h1>
         </div>
 
-        {/* AI Navigation Bar: Case Study | Design Thinking | Projects | About Me | Contact */}
+        {/* AI Navigation Bar: Case Study | Design Thinking | Projects */}
         <div className="ai-nav-bar">
-          {['Case Study', 'Design Thinking', 'Projects', 'About Me', 'Contact'].map((item) => (
+          {['Case Study', 'Design Thinking', 'Projects'].map((item) => (
             <div
               className="ai-nav-pill"
               key={item}
@@ -396,7 +396,7 @@ function App() {
           </div>
         </div>
 
-        {/* Mobile Quick Stats / Bottom Polish (Only on Mobile to fill empty void) */}
+        {/* Mobile Quick Stats / Bottom Polish */}
         <div className="home-mobile-stats-card">
           <div className="mobile-stat-col" onClick={() => handleNavClick('Projects')}>
             <span className="mobile-stat-num">30+</span>
@@ -412,6 +412,16 @@ function App() {
             <span className="mobile-stat-num">🟢</span>
             <span className="mobile-stat-lbl">Available</span>
           </div>
+        </div>
+
+        {/* Clean simple About Me text below stats box */}
+        <div className="home-about-simple-wrap">
+          <span
+            className="home-about-simple-text"
+            onClick={() => setCurrentPage('about')}
+          >
+            About Me
+          </span>
         </div>
       </div>
     </div>

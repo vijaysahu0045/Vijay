@@ -219,12 +219,12 @@
 /* AI Input / Nav Pills Bar */
 .ai-nav-bar {
   width: 100%;
-  max-width: 680px;
+  max-width: 520px;
   background: #1f1f26;
   box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.55), 0px 1px 2px rgba(255, 255, 255, 0.08) inset;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  padding: 10px 12px;
+  padding: 8px 10px;
   margin-bottom: 34px;
   display: flex;
   align-items: center;
@@ -503,6 +503,32 @@
   display: none;
 }
 
+.home-about-simple-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.home-about-simple-text {
+  font-size: 13.5px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  color: #94a3b8;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  padding: 6px 14px;
+  display: inline-block;
+}
+
+.home-about-simple-text:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 /* ==========================================================================
    RESPONSIVE MEDIA QUERIES (Mobile, Tablet, Laptop, Large Screen)
    ========================================================================== */
@@ -558,13 +584,13 @@
     opacity: 0.16;
   }
 
-  /* All 5 Navigation Pills visible cleanly in a single row */
+  /* 3 Navigation Pills visible cleanly in a single row */
   .ai-nav-bar {
     width: 100%;
-    max-width: 640px;
+    max-width: 480px;
     margin-bottom: 38px;
     padding: 6px 8px;
-    gap: 6px;
+    gap: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -576,16 +602,16 @@
   .ai-nav-pill {
     flex: 1 1 auto;
     min-width: 0;
-    height: 34px;
-    padding: 0 6px;
+    height: 36px;
+    padding: 0 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 7px;
+    border-radius: 8px;
   }
 
   .ai-nav-pill span {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
     letter-spacing: -0.2px;
@@ -705,16 +731,16 @@
     opacity: 0.2;
   }
 
-  /* Compact All-5-Visible Nav Bar on Mobile (Exact match with user mock) */
+  /* 3 Tabs Nav Bar on Mobile (Case Study | Design Thinking | Projects) */
   .ai-nav-bar {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 38px;
-    padding: 4px;
-    gap: 3px;
+    margin-bottom: 34px;
+    padding: 5px;
+    gap: 6px;
     display: flex;
     overflow: hidden;
-    border-radius: 11px;
+    border-radius: 12px;
     justify-content: space-between;
     align-items: center;
     background: rgba(24, 24, 32, 0.94);
@@ -728,24 +754,25 @@
   }
 
   .ai-nav-pill {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     width: auto;
     min-width: 0;
-    height: 33px;
-    padding: 0 4px;
-    border-radius: 7px;
+    height: 38px;
+    padding: 0 6px;
+    border-radius: 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: #232330;
     border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.2s ease;
   }
 
   .ai-nav-pill span {
-    font-size: clamp(8.5px, 2.5vw, 10.5px);
+    font-size: 12px;
     font-weight: 500;
     white-space: nowrap;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
     color: #e5e7eb;
     text-align: center;
   }
@@ -856,5 +883,32 @@
     width: 1px;
     height: 26px;
     background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Simple About Me text right below stats box */
+  .home-about-simple-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .home-about-simple-text {
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    color: #94a3b8;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease;
+    user-select: none;
+    padding: 6px 14px;
+    display: inline-block;
+  }
+
+  .home-about-simple-text:hover {
+    color: #f1f5f9;
   }
 }
