@@ -1,7 +1,8 @@
 /* Project Detail Page Styles - Fymble Case Study Design */
 .detail-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   height: 100vh;
   min-height: 100vh;
   background: #121216;
@@ -9,6 +10,7 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   color: #FFFFFF;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-overflow-scrolling: touch;

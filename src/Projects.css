@@ -1,12 +1,15 @@
 /* Projects Screen - Full Viewport & Fully Responsive */
 .projects-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   height: 100vh;
   background: #18181d;
   overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* Background Image Layer & Glow */
@@ -82,6 +85,7 @@
   flex: 1;
   display: flex;
   overflow: hidden;
+  min-width: 0;
 }
 
 /* Sidebar */
@@ -165,6 +169,8 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .projects-category-heading {
@@ -193,12 +199,17 @@
   gap: 20px;
   width: 100%;
   max-width: 960px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .project-card-wrapper {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .project-grid-card {
@@ -211,6 +222,7 @@
   transition: all 0.25s ease;
   background: #1f1f27;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
 }
 
 .project-grid-card:hover {
@@ -250,6 +262,8 @@
   justify-content: space-between;
   gap: 8px;
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .project-card-title {
@@ -258,7 +272,8 @@
   font-family: Inter, sans-serif;
   font-weight: 400;
   padding-left: 2px;
-  flex: 1;
+  flex: 1 1 0%;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -291,19 +306,27 @@
 
 /* Mobile Devices (max-width: 680px): Category bar stays on the left SIDE matching tablet layout */
 @media (max-width: 680px) {
+  .projects-topbar {
+    height: 48px;
+    padding: 0 12px;
+  }
+
   .projects-body {
     flex-direction: row;
     overflow: hidden;
+    width: 100%;
+    min-width: 0;
   }
 
   .projects-sidebar {
     width: 72px;
     min-width: 72px;
+    max-width: 72px;
     height: 100%;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: none;
     flex-direction: column;
-    padding: 12px 4px;
+    padding: 10px 4px;
     gap: 6px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -318,7 +341,7 @@
 
   .sidebar-item {
     width: 100%;
-    min-height: 52px;
+    min-height: 50px;
     padding: 6px 2px;
     flex-direction: column;
     align-items: center;
@@ -330,13 +353,13 @@
   }
 
   .sidebar-item-icon {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
   .sidebar-item-icon svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
   }
 
   .sidebar-item-label {
@@ -349,21 +372,92 @@
   }
 
   .projects-content-area {
-    padding: 14px 12px;
-    flex: 1;
+    padding: 12px 10px;
+    flex: 1 1 auto;
+    width: calc(100% - 72px);
+    max-width: calc(100% - 72px);
     min-width: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
+  }
+
+  .projects-category-heading {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .projects-count-badge {
+    font-size: 10px;
+    padding: 2px 7px;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .project-card-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 6px;
+    box-sizing: border-box;
   }
 
   .project-grid-card {
-    height: 140px;
+    height: 118px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .card-placeholder-text {
+    font-size: 11.5px;
+  }
+
+  .project-card-title-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 6px;
+    box-sizing: border-box;
+  }
+
+  .project-card-title {
+    font-size: 11.5px;
+    min-width: 0;
+    line-height: 1.3;
+  }
+
+  .project-live-indicator {
+    font-size: 9px;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .pinterest-gallery-masonry {
+    column-count: 1;
+    column-gap: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+  }
+
+  .pinterest-pin-card {
+    margin-bottom: 12px;
     border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
