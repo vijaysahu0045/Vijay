@@ -471,10 +471,6 @@
   font-weight: 400;
 }
 
-.mobile-badge-pill {
-  display: none;
-}
-
 .carousel-counter-badge {
   font-size: 11px;
   color: #94a3b8;
@@ -521,32 +517,6 @@
   .home-content {
     padding: 10px 18px;
     width: 100%;
-  }
-
-  /* Profile & Status Pill at top */
-  .mobile-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    padding: 6px 14px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #e2e8f0;
-    margin-bottom: 14px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  .live-status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #10b981;
-    box-shadow: 0 0 8px #10b981;
-    display: inline-block;
   }
 
   .home-heading-wrapper {

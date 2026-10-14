@@ -275,12 +275,6 @@ function App() {
 
       {/* Main Content Area */}
       <div className="home-content">
-        {/* Mobile Profile & Status Pill (Only on Mobile) */}
-        <div className="mobile-badge-pill">
-          <span className="live-status-dot" />
-          <span>Vijay Sahu • Product &amp; AI UX</span>
-        </div>
-
         {/* Animated Rotating Headline with Typewriter Cursor */}
         <div className="home-heading-wrapper">
           <h1 className="home-heading">
