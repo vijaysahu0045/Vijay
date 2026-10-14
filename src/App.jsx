@@ -56,17 +56,59 @@ function App() {
     return () => clearTimeout(timeout)
   }, [displayedPhrase, isDeleting, phraseIndex])
 
-  // Max slide index (show 3 cards per frame)
-  const maxSlideIndex = Math.max(0, projectsList.length - 3)
+  // Responsive screen width detection for perfect mobile/tablet/desktop sliding
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  )
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const isMobile = windowWidth <= 600
+  const isTablet = windowWidth > 600 && windowWidth <= 860
+  const cardsPerView = isMobile ? 1 : isTablet ? 2 : 3
+
+  // Max slide index (adapts to mobile, tablet & desktop)
+  const maxSlideIndex = Math.max(0, projectsList.length - cardsPerView)
 
   const handlePrevSlide = (e) => {
-    e.stopPropagation()
+    if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
   }
 
   const handleNextSlide = (e) => {
-    e.stopPropagation()
+    if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+  }
+
+  // Touch Swipe Gesture Handlers for Mobile Thumb Navigation
+  const [touchStartX, setTouchStartX] = useState(null)
+  const [touchEndX, setTouchEndX] = useState(null)
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX)
+    setTouchEndX(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return
+    const diff = touchStartX - touchEndX
+    if (diff > 35) {
+      // Swiped Left -> Next Project
+      setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+    } else if (diff < -35) {
+      // Swiped Right -> Previous Project
+      setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
+    }
+    setTouchStartX(null)
+    setTouchEndX(null)
   }
 
   // Route 1: Project Detail page
@@ -233,6 +275,12 @@ function App() {
 
       {/* Main Content Area */}
       <div className="home-content">
+        {/* Mobile Profile & Status Pill (Only on Mobile) */}
+        <div className="mobile-badge-pill">
+          <span className="live-status-dot" />
+          <span>Vijay Sahu • Product &amp; AI UX</span>
+        </div>
+
         {/* Animated Rotating Headline with Typewriter Cursor */}
         <div className="home-heading-wrapper">
           <h1 className="home-heading">
@@ -264,6 +312,11 @@ function App() {
           </div>
 
           <div className="see-more-action-wrap">
+            {/* Slide Index Counter */}
+            <span className="carousel-counter-badge">
+              {carouselIndex + 1}/{projectsList.length}
+            </span>
+
             {/* See More Link (Navigates to full Projects page) */}
             <span
               className="see-more-link-btn"
@@ -297,12 +350,21 @@ function App() {
           </div>
         </div>
 
-        {/* Interactive Carousel Cards Slider with all 36 randomized projects */}
-        <div className="home-carousel-viewport">
+        {/* Interactive Carousel Cards Slider with Mobile Touch Swipe */}
+        <div
+          className="home-carousel-viewport"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="home-carousel-track"
             style={{
-              transform: `translateX(calc(-${carouselIndex} * ((100% - 36px) / 3 + 18px)))`
+              transform: isMobile
+                ? `translateX(calc(-${carouselIndex} * (100% + 16px)))`
+                : isTablet
+                ? `translateX(calc(-${carouselIndex} * ((100% - 18px) / 2 + 18px)))`
+                : `translateX(calc(-${carouselIndex} * ((100% - 36px) / 3 + 18px)))`
             }}
           >
             {projectsList.map((proj) => (
@@ -328,6 +390,24 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Mobile Quick Stats / Bottom Polish (Only on Mobile to fill empty void) */}
+        <div className="home-mobile-stats-card">
+          <div className="mobile-stat-col" onClick={() => handleNavClick('Projects')}>
+            <span className="mobile-stat-num">30+</span>
+            <span className="mobile-stat-lbl">Projects</span>
+          </div>
+          <div className="mobile-stat-divider" />
+          <div className="mobile-stat-col" onClick={() => handleNavClick('Case Study')}>
+            <span className="mobile-stat-num">2+</span>
+            <span className="mobile-stat-lbl">Years Exp</span>
+          </div>
+          <div className="mobile-stat-divider" />
+          <div className="mobile-stat-col" onClick={() => handleNavClick('Contact')}>
+            <span className="mobile-stat-num">🟢</span>
+            <span className="mobile-stat-lbl">Available</span>
           </div>
         </div>
       </div>
