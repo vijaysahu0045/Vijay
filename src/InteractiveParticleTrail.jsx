@@ -20,11 +20,10 @@ export default function InteractiveParticleTrail() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
-    // Accessibility & touch device detection
+    // Accessibility check: respects system reduced-motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches
 
-    if (prefersReducedMotion || isTouchDevice) {
+    if (prefersReducedMotion) {
       return
     }
 
@@ -296,24 +295,23 @@ export default function InteractiveParticleTrail() {
       }
     }
 
-    // Mouse movement listener (ONLY activates on actual coordinate delta)
-    const handleMouseMove = (e) => {
-      const now = performance.now()
-      const currentX = e.clientX
-      const currentY = e.clientY
+    let lastTouchTime = 0
 
-      cursor.x = currentX
-      cursor.y = currentY
+    // Coordinate movement processor (shared by mouse & touch)
+    const handleMoveCoords = (clientX, clientY) => {
+      const now = performance.now()
+      cursor.x = clientX
+      cursor.y = clientY
       cursor.active = true
       emitterTargetAlpha = 0.95
 
       if (lastMousePos.x === null) {
-        lastMousePos = { x: currentX, y: currentY, time: now }
+        lastMousePos = { x: clientX, y: clientY, time: now }
         return
       }
 
-      const dx = currentX - lastMousePos.x
-      const dy = currentY - lastMousePos.y
+      const dx = clientX - lastMousePos.x
+      const dy = clientY - lastMousePos.y
       const dist = Math.hypot(dx, dy)
 
       // Strict delta check: ignore stationary hover
@@ -322,15 +320,56 @@ export default function InteractiveParticleTrail() {
       const dt = Math.max(now - lastMousePos.time, 1)
       const speed = (dist / dt) * 16
 
-      // Spawn dense comet dust stream
-      spawnCometDust(lastMousePos.x, lastMousePos.y, currentX, currentY, speed)
+      // Spawn dense comet dust stream along movement trajectory
+      spawnCometDust(lastMousePos.x, lastMousePos.y, clientX, clientY, speed)
 
-      lastMousePos = { x: currentX, y: currentY, time: now }
+      lastMousePos = { x: clientX, y: clientY, time: now }
 
       if (!isRunning) {
         isRunning = true
         animationFrameId = requestAnimationFrame(render)
       }
+    }
+
+    // Touch event handlers for mobile & tablet
+    const handleTouchStart = (e) => {
+      if (!e.touches || e.touches.length === 0) return
+      lastTouchTime = performance.now()
+      const touch = e.touches[0]
+      const now = performance.now()
+      lastMousePos = { x: touch.clientX, y: touch.clientY, time: now }
+      cursor.x = touch.clientX
+      cursor.y = touch.clientY
+      cursor.active = true
+      emitterTargetAlpha = 0.95
+
+      // Instant sparkling stardust burst at finger touch point
+      spawnCometDust(touch.clientX - 1, touch.clientY - 1, touch.clientX + 1, touch.clientY + 1, 8)
+
+      if (!isRunning) {
+        isRunning = true
+        animationFrameId = requestAnimationFrame(render)
+      }
+      handleIdleCheck()
+    }
+
+    const handleTouchMove = (e) => {
+      if (!e.touches || e.touches.length === 0) return
+      lastTouchTime = performance.now()
+      const touch = e.touches[0]
+      handleMoveCoords(touch.clientX, touch.clientY)
+      handleIdleCheck()
+    }
+
+    const handleTouchEnd = () => {
+      handleMouseLeave()
+    }
+
+    // Mouse movement listener (ignores synthetic mouse events on touch devices)
+    const handleMouseMove = (e) => {
+      if (performance.now() - lastTouchTime < 600) return
+      handleMoveCoords(e.clientX, e.clientY)
+      handleIdleCheck()
     }
 
     const handleMouseLeave = () => {
@@ -339,28 +378,32 @@ export default function InteractiveParticleTrail() {
       lastMousePos = { x: null, y: null, time: 0 }
     }
 
-    // When mouse stops moving: dim the emitter flare immediately
+    // When movement stops: dim the emitter flare smoothly
     let idleTimer = null
     const handleIdleCheck = () => {
       if (idleTimer) clearTimeout(idleTimer)
       idleTimer = setTimeout(() => {
         emitterTargetAlpha = 0
-      }, 65)
+      }, 70)
     }
 
-    const onPointerMove = (e) => {
-      handleMouseMove(e)
-      handleIdleCheck()
-    }
-
-    window.addEventListener('mousemove', onPointerMove, { passive: true })
+    // Passive event listeners for butter-smooth 60fps/120fps tracking
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('mouseleave', handleMouseLeave, { passive: true })
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchmove', handleTouchMove, { passive: true })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
+    window.addEventListener('touchcancel', handleTouchEnd, { passive: true })
 
     return () => {
       if (idleTimer) clearTimeout(idleTimer)
       window.removeEventListener('resize', handleResize)
-      window.removeEventListener('mousemove', onPointerMove)
+      window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseleave', handleMouseLeave)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchmove', handleTouchMove)
+      window.removeEventListener('touchend', handleTouchEnd)
+      window.removeEventListener('touchcancel', handleTouchEnd)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
       }
