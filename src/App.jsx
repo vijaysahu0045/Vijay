@@ -326,7 +326,7 @@ function App() {
               className="see-more-link-btn"
               onClick={() => setCurrentPage('projects')}
             >
-              See more
+              See more ›
             </span>
 
             {/* Left & Right Arrow Buttons for Carousel Slider */}
@@ -409,7 +409,9 @@ function App() {
           </div>
           <div className="mobile-stat-divider" />
           <div className="mobile-stat-col" onClick={() => handleNavClick('Contact')}>
-            <span className="mobile-stat-num">🟢</span>
+            <span className="mobile-stat-num mobile-stat-available">
+              <span className="mobile-available-dot" />
+            </span>
             <span className="mobile-stat-lbl">Available</span>
           </div>
         </div>
