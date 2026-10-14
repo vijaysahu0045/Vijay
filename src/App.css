@@ -654,27 +654,25 @@
 @media (max-width: 600px) {
   .home-container {
     justify-content: flex-start;
-    padding-top: 32px;
-    padding-bottom: 28px;
+    padding-top: 48px;
+    padding-bottom: 36px;
     min-height: 100vh;
     min-height: 100dvh;
-    box-sizing: border-box;
   }
 
   .home-content {
     padding: 0 16px;
     width: 100%;
-    box-sizing: border-box;
   }
 
   .home-heading-wrapper {
-    min-height: 38px;
-    margin-top: 4px;
-    margin-bottom: 24px;
+    min-height: 42px;
+    margin-top: 2px;
+    margin-bottom: 34px;
   }
 
   .home-heading {
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 700;
     letter-spacing: -0.3px;
     text-align: center;
@@ -707,21 +705,22 @@
     opacity: 0.2;
   }
 
-  /* Transparent Nav Bar Container with 5 Standalone Pill Buttons */
+  /* Compact All-5-Visible Nav Bar on Mobile (Exact match with user mock) */
   .ai-nav-bar {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 30px;
-    padding: 0;
-    gap: 6px;
+    margin-bottom: 38px;
+    padding: 4px;
+    gap: 3px;
     display: flex;
     overflow: hidden;
+    border-radius: 11px;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
+    background: rgba(24, 24, 32, 0.94);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
   }
 
   .ai-nav-bar::-webkit-scrollbar {
@@ -729,73 +728,44 @@
   }
 
   .ai-nav-pill {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     width: auto;
     min-width: 0;
-    height: 35px;
+    height: 33px;
     padding: 0 4px;
-    border-radius: 9px;
+    border-radius: 7px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(22, 22, 32, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    transition: all 0.2s ease;
+    background: #232330;
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .ai-nav-pill span {
-    font-size: clamp(8px, 2.4vw, 10px);
+    font-size: clamp(8.5px, 2.5vw, 10.5px);
     font-weight: 500;
     white-space: nowrap;
-    letter-spacing: -0.2px;
-    color: #f1f5f9;
+    letter-spacing: -0.3px;
+    color: #e5e7eb;
     text-align: center;
   }
 
-  /* Active First Pill ("Case Study") with purple glow matching reference */
-  .ai-nav-pill:first-child,
-  .ai-nav-pill.active {
-    border: 1.5px solid rgba(139, 92, 246, 0.85) !important;
-    background: rgba(32, 24, 56, 0.9) !important;
-    box-shadow: 0 0 14px rgba(139, 92, 246, 0.45) !important;
-  }
-
-  .ai-nav-pill:first-child span,
-  .ai-nav-pill.active span {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-  }
-
-  /* Projects Header - Explore My Projects on left, See more › on right */
+  /* Projects Header - Clean & Spacious (No counter badge, no arrows) */
   .projects-header-bar {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 0 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .explore-text-btn {
-    font-size: 18.5px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: #ffffff;
-    letter-spacing: -0.3px;
   }
 
   .see-more-link-btn {
-    font-size: 14.5px;
-    font-weight: 500;
-    color: #a78bfa;
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-
-  .see-more-link-btn:hover {
-    color: #c4b5fd;
+    font-size: 14px;
+    font-weight: 400;
+    color: #9d9bb8;
   }
 
   .carousel-counter-badge {
@@ -808,7 +778,7 @@
 
   /* Carousel Track & Card */
   .home-carousel-viewport {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
 
   .home-carousel-track {
@@ -824,10 +794,10 @@
   }
 
   .home-card-visual {
-    height: 200px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+    height: 175px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
   }
 
   .home-card-meta {
@@ -835,81 +805,56 @@
   }
 
   .home-card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #f8fafc;
-    letter-spacing: -0.2px;
-    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #d1d5db;
   }
 
   .home-card-author {
     display: none !important;
   }
 
-  /* Mobile Quick Stats Card (Glowing purple border, exact match with reference) */
+  /* Mobile Quick Stats Card (Exact match with user mock) */
   .home-mobile-stats-card {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    margin-top: 28px;
-    padding: 13px 18px;
-    background: rgba(20, 18, 36, 0.75);
+    margin-top: 36px;
+    padding: 14px 18px;
+    background: rgba(30, 30, 42, 0.7);
     backdrop-filter: blur(20px);
-    border: 1.5px solid rgba(139, 92, 246, 0.65);
-    border-radius: 20px;
-    box-shadow: 0 0 24px rgba(139, 92, 246, 0.22), 0 8px 30px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   }
 
   .mobile-stat-col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+    gap: 2px;
     cursor: pointer;
-    flex: 1;
   }
 
   .mobile-stat-num {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    color: #ffffff;
+    color: #f8fafc;
     font-family: Inter, sans-serif;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-stat-available {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 22px;
-  }
-
-  .mobile-available-dot {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #86efac 0%, #22c55e 60%, #15803d 100%);
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.8), 0 0 4px rgba(34, 197, 94, 1);
   }
 
   .mobile-stat-lbl {
-    font-size: 10.5px;
-    color: #a5b4fc;
+    font-size: 11px;
+    color: #94a3b8;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-weight: 500;
   }
 
   .mobile-stat-divider {
     width: 1px;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.12);
+    height: 26px;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
