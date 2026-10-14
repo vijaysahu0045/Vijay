@@ -56,19 +56,29 @@ function App() {
     return () => clearTimeout(timeout)
   }, [displayedPhrase, isDeleting, phraseIndex])
 
-  // Responsive screen width detection for perfect mobile/tablet/desktop sliding
+  // Responsive screen detection for perfect mobile/tablet/desktop sliding & orientation
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : 1200
   )
+  const [windowHeight, setWindowHeight] = useState(
+    typeof window !== 'undefined' ? window.innerHeight : 800
+  )
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth)
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+      setWindowHeight(window.innerHeight)
+    }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const isLandscape = windowWidth > windowHeight
+  // Mobile: phones (typically <= 600px)
   const isMobile = windowWidth <= 600
-  const isTablet = windowWidth > 600 && windowWidth <= 1024
+  // Tablet Portrait: vertical orientation on tablets (601px to 1024px, vertical only)
+  // When tablet is horizontal/landscape, it automatically uses laptop view (3 cards)
+  const isTablet = windowWidth > 600 && windowWidth <= 1024 && !isLandscape
   const cardsPerView = isMobile ? 1 : isTablet ? 2 : 3
 
   // Max slide index (adapts to mobile, tablet & desktop)

@@ -507,8 +507,8 @@
    RESPONSIVE MEDIA QUERIES (Mobile, Tablet, Laptop, Large Screen)
    ========================================================================== */
 
-/* Tablets & Medium Screens (601px to 1024px: iPads, Android Tablets, Foldables) */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Tablets in Vertical / Portrait Orientation: 601px to 1024px (Horizontal tablets automatically use Laptop layout) */
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait), (min-width: 601px) and (max-width: 1024px) and (max-aspect-ratio: 1/1) {
   .home-container {
     justify-content: flex-start;
     padding-top: 48px;
@@ -536,26 +536,26 @@
     text-align: center;
   }
 
-  /* Moving Purple Orb on Tablet (Vibrant, Smooth & Dynamic) */
+  /* Moving Purple Orb on Tablet (Slow, majestic, smooth float exactly matching Laptop) */
   .home-moving-purple-orb {
-    width: 380px;
-    height: 380px;
-    margin-left: -190px;
-    margin-top: -190px;
-    filter: blur(55px);
-    animation: smoothFloatOrbMobile 16s ease-in-out infinite alternate;
+    width: 420px;
+    height: 420px;
+    margin-left: -210px;
+    margin-top: -210px;
+    filter: blur(65px);
+    animation: smoothFloatOrb 24s ease-in-out infinite;
     will-change: transform;
-    opacity: 0.85;
+    opacity: 0.8;
   }
 
   .home-moving-grid-spotlight {
-    width: 380px;
-    height: 380px;
-    margin-left: -190px;
-    margin-top: -190px;
-    animation: smoothFloatOrbMobile 16s ease-in-out infinite alternate;
+    width: 420px;
+    height: 420px;
+    margin-left: -210px;
+    margin-top: -210px;
+    animation: smoothFloatOrb 24s ease-in-out infinite;
     will-change: transform;
-    opacity: 0.18;
+    opacity: 0.16;
   }
 
   /* All 5 Navigation Pills visible cleanly in a single row */
