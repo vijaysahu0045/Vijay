@@ -380,7 +380,6 @@ function App() {
 
                 <div className="home-card-meta">
                   <span className="home-card-title">{proj.title}</span>
-                  <span className="home-card-author">{proj.author || 'by Vijay'}</span>
                 </div>
               </div>
             ))}

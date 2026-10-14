@@ -657,7 +657,7 @@
   }
 
   .home-content {
-    padding: 10px 18px;
+    padding: 10px 12px;
     width: 100%;
   }
 
@@ -699,19 +699,19 @@
     opacity: 0.2;
   }
 
-  /* Compact All-5-Visible Nav Bar on Mobile */
+  /* Compact All-5-Visible Nav Bar on Mobile (Fits all 5 buttons in 1 clean row without scrolling) */
   .ai-nav-bar {
     max-width: 100%;
     width: 100%;
     margin-bottom: 20px;
-    padding: 3px 4px;
-    gap: 3px;
+    padding: 3px;
+    gap: 2.5px;
     display: flex;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 9px;
     justify-content: space-between;
     align-items: center;
-    background: rgba(26, 26, 34, 0.88);
+    background: rgba(26, 26, 34, 0.94);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
@@ -725,25 +725,26 @@
     flex: 1 1 auto;
     width: auto;
     min-width: 0;
-    height: 31px;
+    height: 30px;
     padding: 0 4px;
-    border-radius: 7px;
+    border-radius: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.055);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .ai-nav-pill span {
-    font-size: 10.5px;
+    font-size: clamp(8.5px, 2.45vw, 10.5px);
     font-weight: 500;
     white-space: nowrap;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.35px;
     color: #e2e8f0;
+    text-align: center;
   }
 
-  /* Projects Header */
+  /* Projects Header - Clean & Spacious (Arrows and counter hidden on mobile) */
   .projects-header-bar {
     margin-bottom: 12px;
     padding: 0 2px;
@@ -752,6 +753,14 @@
   .explore-text-btn {
     font-size: 15px;
     font-weight: 600;
+  }
+
+  .carousel-counter-badge {
+    display: none !important;
+  }
+
+  .arrow-buttons-group {
+    display: none !important;
   }
 
   /* Carousel Track & Card */
@@ -785,8 +794,7 @@
   }
 
   .home-card-author {
-    font-size: 12px;
-    color: #94a3b8;
+    display: none !important;
   }
 
   /* Mobile Quick Stats Card (Fills empty bottom screen void) */
