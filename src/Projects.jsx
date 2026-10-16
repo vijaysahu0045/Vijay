@@ -60,6 +60,28 @@ export default function Projects({
 
   const currentCategoryObj = CATEGORIES.find(c => c.id === activeCategory) || CATEGORIES[0]
 
+  const closeLightbox = () => {
+    if (window.history.state && window.history.state.modal === 'lightbox') {
+      window.history.back()
+    } else {
+      setLightboxIndex(null)
+    }
+  }
+
+  // Handle mobile hardware back button when Lightbox is open
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      window.history.pushState({ ...window.history.state, modal: 'lightbox' }, '', '#artwork')
+      const handleModalPop = () => {
+        setLightboxIndex(null)
+      }
+      window.addEventListener('popstate', handleModalPop, { once: true })
+      return () => {
+        window.removeEventListener('popstate', handleModalPop)
+      }
+    }
+  }, [lightboxIndex !== null])
+
   // Reset lightbox whenever category changes
   useEffect(() => {
     setLightboxIndex(null)
@@ -256,7 +278,7 @@ export default function Projects({
       {lightboxIndex !== null && currentCategoryObj.projects[lightboxIndex] && (
         <div
           className="pinterest-lightbox-overlay"
-          onClick={() => setLightboxIndex(null)}
+          onClick={closeLightbox}
           onTouchStart={handleLightboxTouchStart}
           onTouchMove={handleLightboxTouchMove}
           onTouchEnd={handleLightboxTouchEnd}
@@ -281,7 +303,7 @@ export default function Projects({
               </div>
               <button
                 className="lightbox-close-icon-btn"
-                onClick={() => setLightboxIndex(null)}
+                onClick={closeLightbox}
                 title="Close (Esc)"
                 aria-label="Close"
               >
