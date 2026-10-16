@@ -293,11 +293,11 @@ function App() {
           </h1>
         </div>
 
-        {/* AI Navigation Bar: Case Study | Design Thinking | Projects */}
+        {/* AI Navigation Bar: Case Study | Design Thinking | Projects | About Me | Contact */}
         <div className="ai-nav-bar">
-          {['Case Study', 'Design Thinking', 'Projects'].map((item) => (
+          {['Case Study', 'Design Thinking', 'Projects', 'About Me', 'Contact'].map((item) => (
             <div
-              className="ai-nav-pill"
+              className={`ai-nav-pill ${item === 'About Me' || item === 'Contact' ? 'desktop-only-nav-pill' : ''}`}
               key={item}
               onClick={() => handleNavClick(item)}
             >

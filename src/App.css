@@ -219,12 +219,12 @@
 /* AI Input / Nav Pills Bar */
 .ai-nav-bar {
   width: 100%;
-  max-width: 520px;
+  max-width: 680px;
   background: #1f1f26;
   box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.55), 0px 1px 2px rgba(255, 255, 255, 0.08) inset;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.09);
-  padding: 8px 10px;
+  padding: 10px 12px;
   margin-bottom: 34px;
   display: flex;
   align-items: center;
@@ -504,29 +504,7 @@
 }
 
 .home-about-simple-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 16px;
-}
-
-.home-about-simple-text {
-  font-size: 13.5px;
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  color: #94a3b8;
-  cursor: pointer;
-  letter-spacing: 0.2px;
-  transition: color 0.2s ease, transform 0.2s ease;
-  user-select: none;
-  padding: 6px 14px;
-  display: inline-block;
-}
-
-.home-about-simple-text:hover {
-  color: #ffffff;
-  transform: translateY(-1px);
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -584,13 +562,13 @@
     opacity: 0.16;
   }
 
-  /* 3 Navigation Pills visible cleanly in a single row */
+  /* All 5 Navigation Pills visible cleanly in a single row */
   .ai-nav-bar {
     width: 100%;
-    max-width: 480px;
+    max-width: 640px;
     margin-bottom: 38px;
     padding: 6px 8px;
-    gap: 8px;
+    gap: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -602,16 +580,16 @@
   .ai-nav-pill {
     flex: 1 1 auto;
     min-width: 0;
-    height: 36px;
-    padding: 0 8px;
+    height: 34px;
+    padding: 0 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 7px;
   }
 
   .ai-nav-pill span {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     white-space: nowrap;
     letter-spacing: -0.2px;
@@ -751,6 +729,10 @@
 
   .ai-nav-bar::-webkit-scrollbar {
     display: none;
+  }
+
+  .desktop-only-nav-pill {
+    display: none !important;
   }
 
   .ai-nav-pill {
