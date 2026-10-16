@@ -323,7 +323,9 @@
 }
 
 .arrow-buttons-group {
-  display: none !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .nav-arrow-btn {
@@ -773,7 +775,14 @@
   }
 
   .arrow-buttons-group {
-    display: none !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-arrow-btn {
+    width: 25px;
+    height: 25px;
   }
 
   /* Carousel Track & Card */

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 import bgImage from './assets/bg-image.png'
 import InteractiveParticleTrail from './InteractiveParticleTrail'
@@ -84,14 +84,40 @@ function App() {
   // Max slide index (adapts to mobile, tablet & desktop)
   const maxSlideIndex = Math.max(0, projectsList.length - cardsPerView)
 
+  const [isCarouselHovered, setIsCarouselHovered] = useState(false)
+  const autoScrollTimerRef = useRef(null)
+
+  const resetAutoScroll = () => {
+    if (autoScrollTimerRef.current) {
+      clearInterval(autoScrollTimerRef.current)
+    }
+    if (currentPage === 'home' && !isCarouselHovered && maxSlideIndex > 0) {
+      autoScrollTimerRef.current = setInterval(() => {
+        setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+      }, 3500)
+    }
+  }
+
+  // Auto-scroll Carousel every 3.5s on Home Page
+  useEffect(() => {
+    resetAutoScroll()
+    return () => {
+      if (autoScrollTimerRef.current) {
+        clearInterval(autoScrollTimerRef.current)
+      }
+    }
+  }, [currentPage, isCarouselHovered, maxSlideIndex])
+
   const handlePrevSlide = (e) => {
     if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
+    resetAutoScroll()
   }
 
   const handleNextSlide = (e) => {
     if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+    resetAutoScroll()
   }
 
   // Touch Swipe Gesture Handlers for Mobile Thumb Navigation
@@ -99,6 +125,7 @@ function App() {
   const [touchEndX, setTouchEndX] = useState(null)
 
   const handleTouchStart = (e) => {
+    setIsCarouselHovered(true)
     setTouchStartX(e.targetTouches[0].clientX)
     setTouchEndX(e.targetTouches[0].clientX)
   }
@@ -108,17 +135,21 @@ function App() {
   }
 
   const handleTouchEnd = () => {
-    if (touchStartX === null || touchEndX === null) return
-    const diff = touchStartX - touchEndX
-    if (diff > 35) {
-      // Swiped Left -> Next Project
-      setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
-    } else if (diff < -35) {
-      // Swiped Right -> Previous Project
-      setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
+    if (touchStartX !== null && touchEndX !== null) {
+      const diff = touchStartX - touchEndX
+      if (diff > 35) {
+        // Swiped Left -> Next Project
+        setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+      } else if (diff < -35) {
+        // Swiped Right -> Previous Project
+        setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
+      }
     }
     setTouchStartX(null)
     setTouchEndX(null)
+    setTimeout(() => {
+      setIsCarouselHovered(false)
+    }, 1500)
   }
 
   // Central Navigation & Browser History handler (Supports mobile hardware & browser back buttons)
@@ -435,9 +466,11 @@ function App() {
           </div>
         </div>
 
-        {/* Interactive Carousel Cards Slider with Mobile Touch Swipe */}
+        {/* Interactive Carousel Cards Slider with Auto-Scroll & Mobile Touch Swipe */}
         <div
           className="home-carousel-viewport"
+          onMouseEnter={() => setIsCarouselHovered(true)}
+          onMouseLeave={() => setIsCarouselHovered(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
