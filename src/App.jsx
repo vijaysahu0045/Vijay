@@ -109,6 +109,88 @@ function App() {
     setTouchEndX(null)
   }
 
+  // Central Navigation & Browser History handler (Supports mobile hardware & browser back buttons)
+  const navigateTo = (page, options = {}) => {
+    const { project = null, detailSource: source = null, category = null, replace = false } = options
+
+    if (category) setActiveCategory(category)
+    if (source) setDetailSource(source)
+    if (project) {
+      setSelectedProject(project)
+    } else if (page !== 'detail') {
+      setSelectedProject(null)
+    }
+
+    setCurrentPage(page)
+
+    // Push/Replace Browser History so mobile system back button returns to previous page rather than exiting website
+    const hash = page === 'home' ? '' : `#${page}`
+    const stateObj = {
+      page,
+      projectId: project ? project.id : null,
+      detailSource: source || detailSource,
+      activeCategory: category || activeCategory
+    }
+
+    if (replace) {
+      window.history.replaceState(stateObj, '', hash || window.location.pathname)
+    } else {
+      window.history.pushState(stateObj, '', hash || window.location.pathname)
+    }
+  }
+
+  const goBack = (fallbackPage = 'home') => {
+    if (window.history.state && window.history.state.page && window.history.state.page !== 'home') {
+      window.history.back()
+    } else {
+      navigateTo(fallbackPage, { replace: true })
+    }
+  }
+
+  // Handle browser back / forward buttons (especially mobile hardware back button)
+  useEffect(() => {
+    const validPages = ['projects', 'case-study', 'design-thinking', 'about', 'skills', 'resume', 'contact', 'detail']
+    const hash = window.location.hash.replace('#', '')
+    const initialPage = validPages.includes(hash) ? hash : 'home'
+
+    const initialState = {
+      page: initialPage,
+      projectId: null,
+      detailSource: 'projects',
+      activeCategory
+    }
+    window.history.replaceState(initialState, '', initialPage === 'home' ? window.location.pathname : `#${initialPage}`)
+    if (initialPage !== 'home' && initialPage !== 'detail') {
+      setCurrentPage(initialPage)
+    }
+
+    const handlePopState = (e) => {
+      const state = e.state
+      if (state && state.page) {
+        setCurrentPage(state.page)
+        if (state.activeCategory) setActiveCategory(state.activeCategory)
+        if (state.detailSource) setDetailSource(state.detailSource)
+        if (state.page === 'detail' && state.projectId) {
+          const found = projectsList.find((p) => p.id === state.projectId)
+          if (found) setSelectedProject(found)
+        } else if (state.page !== 'detail') {
+          setSelectedProject(null)
+        }
+      } else {
+        const currentHash = window.location.hash.replace('#', '')
+        if (validPages.includes(currentHash) && currentHash !== 'detail') {
+          setCurrentPage(currentHash)
+        } else {
+          setCurrentPage('home')
+          setSelectedProject(null)
+        }
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [projectsList])
+
   // Route 1: Project Detail page
   if (currentPage === 'detail' && selectedProject) {
     const handleNextProject = () => {
@@ -124,7 +206,7 @@ function App() {
         <ProjectDetail
           project={selectedProject}
           categoryLabel={selectedProject.category || 'UX / UI Design'}
-          onBack={() => setCurrentPage(detailSource || 'projects')}
+          onBack={() => goBack(detailSource || 'projects')}
           onNavigateProject={handleNextProject}
         />
       </>
@@ -137,12 +219,10 @@ function App() {
       <>
         <InteractiveParticleTrail />
         <FymbleCaseStudy12
-          onBack={() => setCurrentPage('home')}
+          onBack={() => goBack('home')}
           onNavigateProject={() => {
             const nextProj = projectsList.find(p => p.id === 2) || projectsList[1]
-            setSelectedProject(nextProj)
-            setDetailSource('case-study')
-            setCurrentPage('detail')
+            navigateTo('detail', { project: nextProj, detailSource: 'case-study' })
           }}
         />
       </>
@@ -154,7 +234,7 @@ function App() {
     return (
       <>
         <InteractiveParticleTrail />
-        <DesignThinking onBack={() => setCurrentPage('home')} />
+        <DesignThinking onBack={() => goBack('home')} />
       </>
     )
   }
@@ -167,54 +247,58 @@ function App() {
         <Projects
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
-          onBack={() => setCurrentPage('home')}
+          onBack={() => goBack('home')}
           onOpenProject={(proj, catLabel, catId) => {
+            const chosenCategory = catId || activeCategory
             if (catId) setActiveCategory(catId)
-            setSelectedProject({ ...proj, category: catLabel, categoryId: catId || activeCategory })
-            setDetailSource('projects')
-            setCurrentPage('detail')
+            const fullProj = { ...proj, category: catLabel, categoryId: chosenCategory }
+            navigateTo('detail', {
+              project: fullProj,
+              detailSource: 'projects',
+              category: chosenCategory
+            })
           }}
         />
       </>
     )
   }
 
-  // Route 4: About Me page (with integrated Skills)
+  // Route 5: About Me page (with integrated Skills)
   if (currentPage === 'about') {
     return (
       <>
         <InteractiveParticleTrail />
-        <AboutMe onBack={() => setCurrentPage('home')} />
+        <AboutMe onBack={() => goBack('home')} />
       </>
     )
   }
 
-  // Route 5: Skills page (fallback)
+  // Route 6: Skills page (fallback)
   if (currentPage === 'skills') {
     return (
       <>
         <InteractiveParticleTrail />
-        <AboutMe onBack={() => setCurrentPage('home')} />
+        <AboutMe onBack={() => goBack('home')} />
       </>
     )
   }
 
-  // Route 6: Resume page (fallback)
+  // Route 7: Resume page (fallback)
   if (currentPage === 'resume') {
     return (
       <>
         <InteractiveParticleTrail />
-        <Resume onBack={() => setCurrentPage('home')} />
+        <Resume onBack={() => goBack('home')} />
       </>
     )
   }
 
-  // Route 7: Contact page (with top Resume download banner)
+  // Route 8: Contact page (with top Resume download banner)
   if (currentPage === 'contact') {
     return (
       <>
         <InteractiveParticleTrail />
-        <Contact onBack={() => setCurrentPage('home')} />
+        <Contact onBack={() => goBack('home')} />
       </>
     )
   }
@@ -222,20 +306,19 @@ function App() {
   const handleNavClick = (item) => {
     switch (item) {
       case 'Case Study':
-        setActiveCategory('ux-ui')
-        setCurrentPage('case-study')
+        navigateTo('case-study', { category: 'ux-ui' })
         break
       case 'Design Thinking':
-        setCurrentPage('design-thinking')
+        navigateTo('design-thinking')
         break
       case 'Projects':
-        setCurrentPage('projects')
+        navigateTo('projects')
         break
       case 'About Me':
-        setCurrentPage('about')
+        navigateTo('about')
         break
       case 'Contact':
-        setCurrentPage('contact')
+        navigateTo('contact')
         break
       default:
         break
@@ -243,16 +326,20 @@ function App() {
   }
 
   const openHomeProject = (proj) => {
+    const chosenCategory = proj.categoryId || activeCategory
     if (proj.categoryId) {
       setActiveCategory(proj.categoryId)
     }
-    setSelectedProject({
+    const fullProj = {
       ...proj,
       category: proj.category || 'UX / UI Design',
-      categoryId: proj.categoryId || activeCategory
+      categoryId: chosenCategory
+    }
+    navigateTo('detail', {
+      project: fullProj,
+      detailSource: 'home',
+      category: chosenCategory
     })
-    setDetailSource('home')
-    setCurrentPage('detail')
   }
 
   return (
@@ -298,7 +385,7 @@ function App() {
         <div className="projects-header-bar">
           <div
             className="explore-text-btn"
-            onClick={() => setCurrentPage('projects')}
+            onClick={() => navigateTo('projects')}
           >
             Explore My Projects
           </div>
@@ -307,7 +394,7 @@ function App() {
             {/* See More Link (Navigates to full Projects page) */}
             <span
               className="see-more-link-btn"
-              onClick={() => setCurrentPage('projects')}
+              onClick={() => navigateTo('projects')}
             >
               See more
             </span>
@@ -382,17 +469,17 @@ function App() {
 
         {/* Mobile Quick Stats Card (Hidden on Desktop) */}
         <div className="home-mobile-stats-card">
-          <div className="mobile-stat-col" onClick={() => setCurrentPage('projects')}>
+          <div className="mobile-stat-col" onClick={() => navigateTo('projects')}>
             <span className="mobile-stat-num">20+</span>
             <span className="mobile-stat-lbl">Projects</span>
           </div>
           <div className="mobile-stat-divider" />
-          <div className="mobile-stat-col" onClick={() => setCurrentPage('about')}>
+          <div className="mobile-stat-col" onClick={() => navigateTo('about')}>
             <span className="mobile-stat-num">2+</span>
             <span className="mobile-stat-lbl">Years Exp</span>
           </div>
           <div className="mobile-stat-divider" />
-          <div className="mobile-stat-col" onClick={() => setCurrentPage('case-study')}>
+          <div className="mobile-stat-col" onClick={() => navigateTo('case-study')}>
             <span className="mobile-stat-num">1</span>
             <span className="mobile-stat-lbl">Flagship UX</span>
           </div>
@@ -402,7 +489,7 @@ function App() {
         <div className="home-about-simple-wrap">
           <span
             className="home-about-simple-text"
-            onClick={() => setCurrentPage('about')}
+            onClick={() => navigateTo('about')}
           >
             About Me
           </span>

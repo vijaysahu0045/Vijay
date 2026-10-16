@@ -527,6 +527,11 @@
     margin-bottom: 10px;
   }
 
+  /* Hide arrow buttons on mobile as requested */
+  .arrow-buttons-group {
+    display: none !important;
+  }
+
   /* Mobile Quick Stats Card */
   .home-mobile-stats-card {
     display: flex;
