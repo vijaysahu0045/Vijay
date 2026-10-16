@@ -567,8 +567,8 @@ export const CATEGORIES = [
     label: 'UI Motion Design',
     iconName: 'motion',
     projects: [
-      { id: 19, title: 'UI Motion 1 — Interactive Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
-      { id: 20, title: 'UI Motion 2 — Kinetic Component Transitions', image: uiMotion2, tag: 'UI MOTION', theme: 'theme-blue', icon: '✨', description: 'Fluid interaction choreography and kinetic UI animation designed for delightful UX.' },
+      { id: 19, title: 'UI Motion 1 — Micro-interactions', image: uiMotion1, tag: 'UI MOTION', theme: 'theme-purple', icon: '⚡', description: 'Smooth UI motion animation and micro-interactions designed for seamless digital experiences.' },
+      { id: 20, title: 'UI Motion 2 — Kinetic Transitions', image: uiMotion2, tag: 'UI MOTION', theme: 'theme-blue', icon: '✨', description: 'Fluid interaction choreography and kinetic UI animation designed for delightful UX.' },
     ]
   },
   {

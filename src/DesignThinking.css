@@ -730,9 +730,18 @@
   }
 }
 
+/* Mobile & Tablet 40% Compact Scaling (Reduces overall size by 40%) */
+@media (max-width: 1024px) {
+  .dt-main-wrapper {
+    zoom: 0.60;
+    padding: 48px 12px 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .dt-main-wrapper {
-    padding: 60px 12px 16px;
+    zoom: 0.60;
+    padding: 38px 10px 14px;
   }
 
   .dt-board-card {

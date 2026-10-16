@@ -56,17 +56,57 @@ function App() {
     return () => clearTimeout(timeout)
   }, [displayedPhrase, isDeleting, phraseIndex])
 
-  // Max slide index (show 3 cards per frame)
-  const maxSlideIndex = Math.max(0, projectsList.length - 3)
+  // Responsive cards per view (1 on mobile <= 600px, 3 on desktop)
+  const [cardsPerView, setCardsPerView] = useState(() => (typeof window !== 'undefined' && window.innerWidth <= 600 ? 1 : 3))
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCardsPerView(window.innerWidth <= 600 ? 1 : 3)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Max slide index (adapts to mobile and desktop)
+  const maxSlideIndex = Math.max(0, projectsList.length - cardsPerView)
 
   const handlePrevSlide = (e) => {
-    e.stopPropagation()
+    if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
   }
 
   const handleNextSlide = (e) => {
-    e.stopPropagation()
+    if (e && e.stopPropagation) e.stopPropagation()
     setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+  }
+
+  // Touch Swipe Gesture Handlers for Mobile Thumb Navigation
+  const [touchStartX, setTouchStartX] = useState(null)
+  const [touchEndX, setTouchEndX] = useState(null)
+
+  const handleTouchStart = (e) => {
+    if (!e.targetTouches || e.targetTouches.length === 0) return
+    setTouchStartX(e.targetTouches[0].clientX)
+    setTouchEndX(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    if (!e.targetTouches || e.targetTouches.length === 0) return
+    setTouchEndX(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX === null || touchEndX === null) return
+    const diff = touchStartX - touchEndX
+    if (diff > 35) {
+      // Swiped Left -> Next Project
+      setCarouselIndex((prev) => (prev < maxSlideIndex ? prev + 1 : 0))
+    } else if (diff < -35) {
+      // Swiped Right -> Previous Project
+      setCarouselIndex((prev) => (prev > 0 ? prev - 1 : maxSlideIndex))
+    }
+    setTouchStartX(null)
+    setTouchEndX(null)
   }
 
   // Route 1: Project Detail page
@@ -241,11 +281,11 @@ function App() {
           </h1>
         </div>
 
-        {/* AI Navigation Bar: Case Study | Design Thinking | Projects | About Me | Contact */}
+        {/* AI Navigation Bar: 5 Tabs on Desktop | 3 Tabs on Mobile */}
         <div className="ai-nav-bar">
           {['Case Study', 'Design Thinking', 'Projects', 'About Me', 'Contact'].map((item) => (
             <div
-              className="ai-nav-pill"
+              className={`ai-nav-pill ${item === 'About Me' || item === 'Contact' ? 'desktop-only-nav-pill' : ''}`}
               key={item}
               onClick={() => handleNavClick(item)}
             >
@@ -297,12 +337,17 @@ function App() {
           </div>
         </div>
 
-        {/* Interactive Carousel Cards Slider with all 36 randomized projects */}
-        <div className="home-carousel-viewport">
+        {/* Interactive Carousel Cards Slider with Mobile Touch Swipe */}
+        <div
+          className="home-carousel-viewport"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="home-carousel-track"
             style={{
-              transform: `translateX(calc(-${carouselIndex} * ((100% - 36px) / 3 + 18px)))`
+              transform: `translateX(calc(-${carouselIndex} * (${cardsPerView === 1 ? '100% + 16px' : '(100% - 36px) / 3 + 18px'})))`
             }}
           >
             {projectsList.map((proj) => (
@@ -313,7 +358,11 @@ function App() {
               >
                 <div className="home-card-visual">
                   {proj.thumbnail || proj.image ? (
-                    <img src={proj.thumbnail || proj.image} alt={proj.title} />
+                    <img
+                      src={proj.thumbnail || proj.image}
+                      alt={proj.title}
+                      className={proj.categoryId === 'motion' ? 'home-card-img-motion' : ''}
+                    />
                   ) : (
                     <div className={`home-card-gradient-mock ${proj.theme || 'theme-dark'}`}>
                       <span className="mock-mini-icon">{proj.icon || '✨'}</span>
@@ -323,12 +372,40 @@ function App() {
                 </div>
 
                 <div className="home-card-meta">
-                  <span className="home-card-title">{proj.title}</span>
+                  <span className="home-card-title" title={proj.title}>{proj.title}</span>
                   <span className="home-card-author">{proj.author || 'by Vijay'}</span>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile Quick Stats Card (Hidden on Desktop) */}
+        <div className="home-mobile-stats-card">
+          <div className="mobile-stat-col" onClick={() => setCurrentPage('projects')}>
+            <span className="mobile-stat-num">20+</span>
+            <span className="mobile-stat-lbl">Projects</span>
+          </div>
+          <div className="mobile-stat-divider" />
+          <div className="mobile-stat-col" onClick={() => setCurrentPage('about')}>
+            <span className="mobile-stat-num">2+</span>
+            <span className="mobile-stat-lbl">Years Exp</span>
+          </div>
+          <div className="mobile-stat-divider" />
+          <div className="mobile-stat-col" onClick={() => setCurrentPage('case-study')}>
+            <span className="mobile-stat-num">1</span>
+            <span className="mobile-stat-lbl">Flagship UX</span>
+          </div>
+        </div>
+
+        {/* Simple About Me text right below stats box (Hidden on Desktop) */}
+        <div className="home-about-simple-wrap">
+          <span
+            className="home-about-simple-text"
+            onClick={() => setCurrentPage('about')}
+          >
+            About Me
+          </span>
         </div>
       </div>
     </div>

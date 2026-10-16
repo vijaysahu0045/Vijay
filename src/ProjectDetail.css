@@ -3004,5 +3004,18 @@
   }
 }
 
+/* Hide heavy Figma workbench iframe on mobile and tablet to fix performance and lag */
+@media (max-width: 1024px) {
+  .figma-workbench-section {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .iphone-slider-nav-btn {
+    display: none !important;
+  }
+}
+
 
 

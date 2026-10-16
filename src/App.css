@@ -371,6 +371,19 @@
   display: block;
 }
 
+.home-card-visual img.home-card-img-motion {
+  object-fit: contain !important;
+  background: #0d0d12;
+}
+
+.home-mobile-stats-card {
+  display: none;
+}
+
+.home-about-simple-wrap {
+  display: none;
+}
+
 .home-card-gradient-mock {
   width: 100%;
   height: 100%;
@@ -488,6 +501,10 @@
     gap: 6px;
   }
 
+  .desktop-only-nav-pill {
+    display: none !important;
+  }
+
   .ai-nav-pill {
     min-width: 70px;
     height: 32px;
@@ -508,5 +525,77 @@
 
   .projects-header-bar {
     margin-bottom: 10px;
+  }
+
+  /* Mobile Quick Stats Card */
+  .home-mobile-stats-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 26px;
+    padding: 14px 18px;
+    background: rgba(30, 30, 42, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .mobile-stat-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+  }
+
+  .mobile-stat-num {
+    font-size: 17px;
+    font-weight: 700;
+    color: #f8fafc;
+    font-family: Inter, sans-serif;
+  }
+
+  .mobile-stat-lbl {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  .mobile-stat-divider {
+    width: 1px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Simple About Me text right below stats box */
+  .home-about-simple-wrap {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .home-about-simple-text {
+    font-size: 13.5px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    color: #94a3b8;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    padding: 6px 16px;
+    display: inline-block;
+  }
+
+  .home-about-simple-text:hover {
+    color: #ffffff;
+    transform: translateY(-1px);
   }
 }
