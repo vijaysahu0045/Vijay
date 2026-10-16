@@ -255,48 +255,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
   const [isTopbarVisible, setIsTopbarVisible] = useState(true)
   const containerRef = React.useRef(null)
 
-  // Mobile / Tablet detection (<= 1024px) to completely disable heavy Figma iframes and prevent lag
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 1200
-  )
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const isMobileOrTablet = windowWidth <= 1024
-
-  // Touch Swipe Gesture Handlers for iPhone Screen Showcase on Mobile & Tablet
-  const [phoneTouchStartX, setPhoneTouchStartX] = useState(null)
-  const [phoneTouchEndX, setPhoneTouchEndX] = useState(null)
-
-  const handlePhoneTouchStart = (e) => {
-    if (!e.targetTouches || e.targetTouches.length === 0) return
-    setPhoneTouchStartX(e.targetTouches[0].clientX)
-    setPhoneTouchEndX(e.targetTouches[0].clientX)
-  }
-
-  const handlePhoneTouchMove = (e) => {
-    if (!e.targetTouches || e.targetTouches.length === 0) return
-    setPhoneTouchEndX(e.targetTouches[0].clientX)
-  }
-
-  const handlePhoneTouchEnd = () => {
-    if (phoneTouchStartX === null || phoneTouchEndX === null) return
-    const diff = phoneTouchStartX - phoneTouchEndX
-    if (diff > 35) {
-      // Swiped Left -> Next Screen
-      setCurrentScreenIdx((prev) => (prev < activeScreens.length - 1 ? prev + 1 : 0))
-    } else if (diff < -35) {
-      // Swiped Right -> Prev Screen
-      setCurrentScreenIdx((prev) => (prev > 0 ? prev - 1 : activeScreens.length - 1))
-    }
-    setPhoneTouchStartX(null)
-    setPhoneTouchEndX(null)
-  }
-
   // Topbar show/hide on scroll detection (hides on scroll down, shows on scroll up)
   useEffect(() => {
     let lastY = 0
@@ -490,11 +448,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               if (el) {
                 el.scrollIntoView({ behavior: 'smooth' })
               }
-            } else if (isMobileOrTablet) {
-              const el = document.getElementById('mobile-screens-section')
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth' })
-              }
             } else {
               const el = document.getElementById('figma-workbench-section')
               if (el) {
@@ -510,8 +463,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
               ? 'Inspect Artwork'
               : isWebProject
               ? 'Explore Architecture'
-              : isMobileOrTablet
-              ? 'View Screens'
               : 'View Prototype'}
           </span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -883,7 +834,6 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             SECTION 2: INTERACTIVE IPHONE MOBILE SCREENS SHOWCASE SLIDER
             ========================================================================= */}
         <section
-          id="mobile-screens-section"
           className="case-section-container iphone-showcase-container"
           onMouseEnter={() => setIsAutoplayPaused(true)}
           onMouseLeave={() => setIsAutoplayPaused(false)}
@@ -901,12 +851,7 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
             </p>
           </div>
 
-          <div
-            className="iphone-slider-stage"
-            onTouchStart={handlePhoneTouchStart}
-            onTouchMove={handlePhoneTouchMove}
-            onTouchEnd={handlePhoneTouchEnd}
-          >
+          <div className="iphone-slider-stage">
             <div className="iphone-ambient-glow" />
 
             {/* Left Prev Arrow Button */}
@@ -1019,94 +964,92 @@ export default function ProjectDetail({ project, categoryLabel, onBack, onNaviga
         </section>
 
         {/* =========================================================================
-            SECTION 3: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH (Desktop Only - Disabled on Mobile & Tablet to prevent severe lag)
+            SECTION 3: LIVE INTERACTIVE FIGMA CANVAS WORKBENCH
             ========================================================================= */}
-        {!isMobileOrTablet && (
-          <section id="figma-workbench-section" className="case-section-container figma-workbench-section">
-            <div className="case-section-head">
-              <div className="showcase-header-badge-row">
-                <span className="section-eyebrow eyebrow-purple">FIGMA WORKBENCH</span>
-                <span className="figma-live-badge">
-                  <svg width="12" height="12" viewBox="0 0 38 57" fill="none">
-                    <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
-                    <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
-                    <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
-                    <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
-                    <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
-                  </svg>
-                  <span>Live Canvas</span>
-                </span>
+        <section id="figma-workbench-section" className="case-section-container figma-workbench-section">
+          <div className="case-section-head">
+            <div className="showcase-header-badge-row">
+              <span className="section-eyebrow eyebrow-purple">FIGMA WORKBENCH</span>
+              <span className="figma-live-badge">
+                <svg width="12" height="12" viewBox="0 0 38 57" fill="none">
+                  <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                  <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                  <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                  <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                  <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                </svg>
+                <span>Live Canvas</span>
+              </span>
+            </div>
+            <h2 className="case-section-h2">Explore Complete Design in Figma.</h2>
+            <p className="case-section-sub">
+              Directly pan, zoom in/out, and inspect user flows, components, and wireframes inside the canvas below.
+            </p>
+          </div>
+
+          {/* Figma Browser Frame */}
+          <div className="figma-embed-frame">
+            <div className="figma-frame-topbar">
+              <div className="figma-window-dots">
+                <span className="dot dot-red" />
+                <span className="dot dot-yellow" />
+                <span className="dot dot-green" />
               </div>
-              <h2 className="case-section-h2">Explore Complete Design in Figma.</h2>
-              <p className="case-section-sub">
-                Directly pan, zoom in/out, and inspect user flows, components, and wireframes inside the canvas below.
-              </p>
+
+              <div className="figma-file-title-pill">
+                <span className="figma-file-icon">🎨</span>
+                <span className="figma-file-name">{activeCaseStudy.figmaTitle}</span>
+              </div>
+
+              <div className="figma-hint-pill">
+                <span>🔍 Pinch / Scroll to Zoom • Drag to Pan</span>
+              </div>
             </div>
 
-            {/* Figma Browser Frame */}
-            <div className="figma-embed-frame">
-              <div className="figma-frame-topbar">
-                <div className="figma-window-dots">
-                  <span className="dot dot-red" />
-                  <span className="dot dot-yellow" />
-                  <span className="dot dot-green" />
-                </div>
-
-                <div className="figma-file-title-pill">
-                  <span className="figma-file-icon">🎨</span>
-                  <span className="figma-file-name">{activeCaseStudy.figmaTitle}</span>
-                </div>
-
-                <div className="figma-hint-pill">
-                  <span>🔍 Pinch / Scroll to Zoom • Drag to Pan</span>
-                </div>
-              </div>
-
-              {/* Embedded Live Figma Viewer */}
-              <div className="figma-iframe-container">
-                {/* Dark Theme Figma Loading State Overlay */}
-                {isFigmaLoading && (
-                  <div className="figma-loading-overlay">
-                    <div className="figma-loader-spinner-wrap">
-                      <div className="figma-loader-spinner" />
-                      <div className="figma-loader-icon-center">
-                        <svg width="28" height="28" viewBox="0 0 38 57" fill="none">
-                          <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
-                          <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
-                          <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
-                          <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
-                          <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="figma-loading-text-group">
-                      <h4 className="figma-loading-title">Loading Figma Canvas</h4>
-                      <p className="figma-loading-subtitle">
-                        Explore full design system and components live.
-                      </p>
-                      <button
-                        className="figma-force-enter-btn"
-                        onClick={() => setIsFigmaLoading(false)}
-                      >
-                        <span>Launch Interactive Canvas ↗</span>
-                      </button>
+            {/* Embedded Live Figma Viewer */}
+            <div className="figma-iframe-container">
+              {/* Dark Theme Figma Loading State Overlay */}
+              {isFigmaLoading && (
+                <div className="figma-loading-overlay">
+                  <div className="figma-loader-spinner-wrap">
+                    <div className="figma-loader-spinner" />
+                    <div className="figma-loader-icon-center">
+                      <svg width="28" height="28" viewBox="0 0 38 57" fill="none">
+                        <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                        <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                        <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                        <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                        <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                      </svg>
                     </div>
                   </div>
-                )}
+                  <div className="figma-loading-text-group">
+                    <h4 className="figma-loading-title">Loading Figma Canvas</h4>
+                    <p className="figma-loading-subtitle">
+                      Explore full design system and components live.
+                    </p>
+                    <button
+                      className="figma-force-enter-btn"
+                      onClick={() => setIsFigmaLoading(false)}
+                    >
+                      <span>Launch Interactive Canvas ↗</span>
+                    </button>
+                  </div>
+                </div>
+              )}
 
-                <iframe
-                  title="Figma Live Canvas Embed"
-                  src={activeCaseStudy.figmaUrl}
-                  allowFullScreen
-                  className={`figma-iframe ${isFigmaLoading ? 'loading' : 'ready'}`}
-                  onLoad={() => {
-                    setTimeout(() => setIsFigmaLoading(false), 7000)
-                  }}
-                />
-              </div>
+              <iframe
+                title="Figma Live Canvas Embed"
+                src={activeCaseStudy.figmaUrl}
+                allowFullScreen
+                className={`figma-iframe ${isFigmaLoading ? 'loading' : 'ready'}`}
+                onLoad={() => {
+                  setTimeout(() => setIsFigmaLoading(false), 7000)
+                }}
+              />
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
           {/* Footer Navigation */}
           <footer className="case-footer-nav">

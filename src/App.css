@@ -1,11 +1,8 @@
 /* Home Screen Styles - Full Viewport & Fully Responsive */
 .home-container {
   position: relative;
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
-  min-height: 100dvh;
-  box-sizing: border-box;
   background: #121216;
   overflow-x: hidden;
   overflow-y: auto;
@@ -76,30 +73,6 @@
   }
 }
 
-/* Mobile Fast & Smooth Floating Purple Ball Animation (14s) */
-@keyframes smoothFloatOrbMobile {
-  0% {
-    transform: translate(-30vw, -22vh) scale(0.9);
-    opacity: 0.7;
-  }
-  25% {
-    transform: translate(25vw, -8vh) scale(1.1);
-    opacity: 0.95;
-  }
-  50% {
-    transform: translate(-22vw, 18vh) scale(1.0);
-    opacity: 0.75;
-  }
-  75% {
-    transform: translate(28vw, 12vh) scale(1.15);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(-8vw, -18vh) scale(0.95);
-    opacity: 0.7;
-  }
-}
-
 .home-glow-layer {
   position: fixed;
   inset: 0;
@@ -119,8 +92,7 @@
   background: radial-gradient(circle, rgba(129, 100, 255, 0.8) 0%, rgba(98, 76, 255, 0.45) 45%, rgba(88, 76, 255, 0.12) 70%, transparent 85%);
   border-radius: 9999px;
   filter: blur(70px);
-  animation: smoothFloatOrb 24s ease-in-out infinite;
-  will-change: transform;
+  animation: smoothFloatOrb 110s ease-in-out infinite;
 }
 
 /* Dynamic Grid Box Spotlight - 89% Reduced, Ultra-Subtle Minimalist Texture */
@@ -142,18 +114,17 @@
   pointer-events: none;
   opacity: 0.12;
   mix-blend-mode: overlay;
-  animation: smoothFloatOrb 24s ease-in-out infinite;
-  will-change: transform;
+  animation: smoothFloatOrb 110s ease-in-out infinite;
 }
 
-/* Motion-Activated Dynamic Particle Stardust Trail Canvas (Mobile, Tab & Desktop) */
+/* Motion-Activated Dynamic Particle Stardust Trail Canvas */
 .interactive-particle-trail-canvas {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -163,8 +134,6 @@
   z-index: 10;
   width: 100%;
   max-width: 860px;
-  min-width: 0;
-  box-sizing: border-box;
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -278,9 +247,6 @@
 /* Projects Header Bar */
 .projects-header-bar {
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,9 +323,6 @@
 /* Carousel Slider Container */
 .home-carousel-viewport {
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
   overflow: hidden;
   position: relative;
   padding: 6px 0;
@@ -369,8 +332,6 @@
 
 .home-carousel-track {
   display: flex;
-  width: 100%;
-  box-sizing: border-box;
   gap: 18px;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
@@ -379,10 +340,6 @@
 /* Default Desktop: 3 Cards per view */
 .home-carousel-card-item {
   flex: 0 0 calc((100% - 36px) / 3);
-  width: calc((100% - 36px) / 3);
-  max-width: calc((100% - 36px) / 3);
-  min-width: 0;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -488,162 +445,22 @@
   font-weight: 400;
 }
 
-.carousel-counter-badge {
-  display: none !important;
-}
-
-.home-mobile-stats-card {
-  display: none;
-}
-
-.home-about-simple-wrap {
-  display: none;
-}
-
 /* ==========================================================================
    RESPONSIVE MEDIA QUERIES (Mobile, Tablet, Laptop, Large Screen)
    ========================================================================== */
 
-/* Tablets in Vertical / Portrait Orientation: 601px to 1024px (Horizontal tablets automatically use Laptop layout) */
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait), (min-width: 601px) and (max-width: 1024px) and (max-aspect-ratio: 1/1) {
-  .home-container {
-    justify-content: flex-start;
-    padding-top: 48px;
-    padding-bottom: 40px;
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-
-  .home-content {
-    width: 100%;
-    max-width: 720px;
-    padding: 0 18px;
-    box-sizing: border-box;
-  }
-
-  .home-heading-wrapper {
-    min-height: 46px;
-    margin-top: 4px;
-    margin-bottom: 34px;
-  }
-
+/* Tablets / Medium Screens (max-width: 860px) */
+@media (max-width: 860px) {
   .home-heading {
-    font-size: 27px;
-    letter-spacing: -0.4px;
-    text-align: center;
-  }
-
-  /* Moving Purple Orb on Tablet (Slow, majestic, smooth float exactly matching Laptop) */
-  .home-moving-purple-orb {
-    width: 420px;
-    height: 420px;
-    margin-left: -210px;
-    margin-top: -210px;
-    filter: blur(65px);
-    animation: smoothFloatOrb 24s ease-in-out infinite;
-    will-change: transform;
-    opacity: 0.8;
-  }
-
-  .home-moving-grid-spotlight {
-    width: 420px;
-    height: 420px;
-    margin-left: -210px;
-    margin-top: -210px;
-    animation: smoothFloatOrb 24s ease-in-out infinite;
-    will-change: transform;
-    opacity: 0.16;
-  }
-
-  /* All 5 Navigation Pills visible cleanly in a single row */
-  .ai-nav-bar {
-    width: 100%;
-    max-width: 640px;
-    margin-bottom: 38px;
-    padding: 6px 8px;
-    gap: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-    background: rgba(31, 31, 38, 0.95);
-    backdrop-filter: blur(16px);
-  }
-
-  .ai-nav-pill {
-    flex: 1 1 auto;
-    min-width: 0;
-    height: 34px;
-    padding: 0 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-  }
-
-  .ai-nav-pill span {
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-    letter-spacing: -0.2px;
-  }
-
-  .projects-header-bar {
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 0 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .explore-text-btn {
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  /* 2 Cards Per View on Tablet */
-  .home-carousel-track {
-    gap: 16px;
+    font-size: 22px;
   }
 
   .home-carousel-card-item {
-    flex: 0 0 calc((100% - 16px) / 2);
-    width: calc((100% - 16px) / 2);
-    max-width: calc((100% - 16px) / 2);
-    min-width: 0;
-    box-sizing: border-box;
+    flex: 0 0 calc((100% - 18px) / 2);
   }
 
   .home-card-visual {
-    height: 156px;
-    border-radius: 14px;
-  }
-
-  .home-card-title {
-    font-size: 15.5px;
-    font-weight: 500;
-    color: #d1d5db;
-  }
-
-  .home-card-author {
-    display: none !important;
-  }
-
-  /* Tablet Quick Stats Bar to balance vertical screen height */
-  .home-mobile-stats-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 520px;
-    margin-top: 34px;
-    padding: 14px 22px;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    height: 130px;
   }
 }
 
@@ -651,247 +468,45 @@
 @media (max-width: 600px) {
   .home-container {
     justify-content: flex-start;
-    padding-top: 48px;
-    padding-bottom: 36px;
-    min-height: 100vh;
-    min-height: 100dvh;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .home-content {
-    padding: 0 16px;
-    width: 100%;
-  }
-
-  .home-heading-wrapper {
-    min-height: 42px;
-    margin-top: 2px;
-    margin-bottom: 34px;
+    padding: 10px 16px;
   }
 
   .home-heading {
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    text-align: center;
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 
-  .typewriter-cursor {
-    height: 24px;
-    width: 2.5px;
-  }
-
-  /* Mobile Moving Purple Glow Ball & Spotlight (Dynamic, constantly moving) */
-  .home-moving-purple-orb {
-    width: 330px;
-    height: 330px;
-    margin-left: -165px;
-    margin-top: -165px;
-    filter: blur(48px);
-    animation: smoothFloatOrbMobile 14s ease-in-out infinite alternate;
-    will-change: transform;
-    opacity: 0.9;
-  }
-
-  .home-moving-grid-spotlight {
-    width: 330px;
-    height: 330px;
-    margin-left: -165px;
-    margin-top: -165px;
-    animation: smoothFloatOrbMobile 14s ease-in-out infinite alternate;
-    will-change: transform;
-    opacity: 0.2;
-  }
-
-  /* 3 Tabs Nav Bar on Mobile (Case Study | Design Thinking | Projects) */
   .ai-nav-bar {
     max-width: 100%;
-    width: 100%;
-    margin-bottom: 34px;
-    padding: 5px;
+    margin-bottom: 24px;
+    padding: 8px 10px;
     gap: 6px;
-    display: flex;
-    overflow: hidden;
-    border-radius: 12px;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(24, 24, 32, 0.94);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
-  }
-
-  .ai-nav-bar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .desktop-only-nav-pill {
-    display: none !important;
   }
 
   .ai-nav-pill {
-    flex: 1 1 0;
-    width: auto;
-    min-width: 0;
-    height: 38px;
+    min-width: 70px;
+    height: 32px;
     padding: 0 6px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #232330;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    transition: all 0.2s ease;
   }
 
   .ai-nav-pill span {
     font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-    letter-spacing: -0.2px;
-    color: #e5e7eb;
-    text-align: center;
-  }
-
-  /* Projects Header - Clean & Spacious (No counter badge, no arrows) */
-  .projects-header-bar {
-    margin-bottom: 16px;
-    padding: 0 2px;
-  }
-
-  .explore-text-btn {
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-  }
-
-  .see-more-link-btn {
-    font-size: 14px;
-    font-weight: 400;
-    color: #9d9bb8;
-  }
-
-  .carousel-counter-badge {
-    display: none !important;
-  }
-
-  .arrow-buttons-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .nav-arrow-btn {
-    width: 25px;
-    height: 25px;
-  }
-
-  /* Carousel Track & Card */
-  .home-carousel-viewport {
-    margin-bottom: 10px;
-  }
-
-  .home-carousel-track {
-    gap: 16px;
   }
 
   .home-carousel-card-item {
     flex: 0 0 100%;
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    box-sizing: border-box;
   }
 
   .home-card-visual {
-    height: 175px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    height: 155px;
   }
 
-  .home-card-meta {
-    padding: 10px 2px 0 2px;
-  }
-
-  .home-card-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #d1d5db;
-  }
-
-  .home-card-author {
-    display: none !important;
-  }
-
-  /* Mobile Quick Stats Card (Exact match with user mock) */
-  .home-mobile-stats-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 36px;
-    padding: 14px 18px;
-    background: rgba(30, 30, 42, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  }
-
-  .mobile-stat-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    cursor: pointer;
-  }
-
-  .mobile-stat-num {
-    font-size: 17px;
-    font-weight: 700;
-    color: #f8fafc;
-    font-family: Inter, sans-serif;
-  }
-
-  .mobile-stat-lbl {
-    font-size: 11px;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 500;
-  }
-
-  .mobile-stat-divider {
-    width: 1px;
-    height: 26px;
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Simple About Me text right below stats box */
-  .home-about-simple-wrap {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 14px;
-    margin-bottom: 12px;
-  }
-
-  .home-about-simple-text {
-    font-size: 13.5px;
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    color: #94a3b8;
-    cursor: pointer;
-    letter-spacing: 0.2px;
-    transition: color 0.2s ease, transform 0.2s ease;
-    user-select: none;
-    padding: 6px 16px;
-    display: inline-block;
-  }
-
-  .home-about-simple-text:hover {
-    color: #ffffff;
-    transform: translateY(-1px);
+  .projects-header-bar {
+    margin-bottom: 10px;
   }
 }

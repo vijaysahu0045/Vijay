@@ -4263,31 +4263,3 @@
     padding: 24px 14px 40px;
   }
 }
-
-/* ==========================================================================
-   MOBILE & TABLET 40% COMPACT SCALING (Reduces overall size by 40%)
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .cs12-main-content {
-    zoom: 0.60;
-    padding: 24px 12px 0;
-    gap: 36px;
-  }
-
-  .cs12-section-intro {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  .cs12-section-heading {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  .cs12-main-content {
-    zoom: 0.60;
-    padding: 18px 8px 0;
-    gap: 28px;
-  }
-}

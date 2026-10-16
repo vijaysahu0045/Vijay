@@ -60,28 +60,6 @@ export default function Projects({
 
   const currentCategoryObj = CATEGORIES.find(c => c.id === activeCategory) || CATEGORIES[0]
 
-  const closeLightbox = () => {
-    if (window.history.state && window.history.state.modal === 'lightbox') {
-      window.history.back()
-    } else {
-      setLightboxIndex(null)
-    }
-  }
-
-  // Handle mobile hardware back button when Lightbox is open
-  useEffect(() => {
-    if (lightboxIndex !== null) {
-      window.history.pushState({ ...window.history.state, modal: 'lightbox' }, '', '#artwork')
-      const handleModalPop = () => {
-        setLightboxIndex(null)
-      }
-      window.addEventListener('popstate', handleModalPop, { once: true })
-      return () => {
-        window.removeEventListener('popstate', handleModalPop)
-      }
-    }
-  }, [lightboxIndex !== null])
-
   // Reset lightbox whenever category changes
   useEffect(() => {
     setLightboxIndex(null)
@@ -102,35 +80,6 @@ export default function Projects({
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [lightboxIndex, currentCategoryObj.projects.length])
-
-  // Touch Swipe Gesture Handlers for Mobile & Tablet Lightbox
-  const [lightboxTouchStartX, setLightboxTouchStartX] = useState(null)
-  const [lightboxTouchEndX, setLightboxTouchEndX] = useState(null)
-
-  const handleLightboxTouchStart = (e) => {
-    if (!e.targetTouches || e.targetTouches.length === 0) return
-    setLightboxTouchStartX(e.targetTouches[0].clientX)
-    setLightboxTouchEndX(e.targetTouches[0].clientX)
-  }
-
-  const handleLightboxTouchMove = (e) => {
-    if (!e.targetTouches || e.targetTouches.length === 0) return
-    setLightboxTouchEndX(e.targetTouches[0].clientX)
-  }
-
-  const handleLightboxTouchEnd = () => {
-    if (lightboxTouchStartX === null || lightboxTouchEndX === null) return
-    const diff = lightboxTouchStartX - lightboxTouchEndX
-    if (diff > 35) {
-      // Swiped Left -> Next Artwork
-      setLightboxIndex((prev) => (prev < currentCategoryObj.projects.length - 1 ? prev + 1 : 0))
-    } else if (diff < -35) {
-      // Swiped Right -> Previous Artwork
-      setLightboxIndex((prev) => (prev > 0 ? prev - 1 : currentCategoryObj.projects.length - 1))
-    }
-    setLightboxTouchStartX(null)
-    setLightboxTouchEndX(null)
-  }
 
   if (selectedProject) {
     const handleNext = () => {
@@ -276,20 +225,8 @@ export default function Projects({
 
       {/* PINTEREST FULLSCREEN AUTO-ADJUST LIGHTBOX MODAL */}
       {lightboxIndex !== null && currentCategoryObj.projects[lightboxIndex] && (
-        <div
-          className="pinterest-lightbox-overlay"
-          onClick={closeLightbox}
-          onTouchStart={handleLightboxTouchStart}
-          onTouchMove={handleLightboxTouchMove}
-          onTouchEnd={handleLightboxTouchEnd}
-        >
-          <div
-            className="pinterest-lightbox-container"
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={handleLightboxTouchStart}
-            onTouchMove={handleLightboxTouchMove}
-            onTouchEnd={handleLightboxTouchEnd}
-          >
+        <div className="pinterest-lightbox-overlay" onClick={() => setLightboxIndex(null)}>
+          <div className="pinterest-lightbox-container" onClick={(e) => e.stopPropagation()}>
             {/* Top Controls Bar */}
             <div className="pinterest-lightbox-topbar">
               <div className="lightbox-info-badge">
@@ -303,7 +240,7 @@ export default function Projects({
               </div>
               <button
                 className="lightbox-close-icon-btn"
-                onClick={closeLightbox}
+                onClick={() => setLightboxIndex(null)}
                 title="Close (Esc)"
                 aria-label="Close"
               >

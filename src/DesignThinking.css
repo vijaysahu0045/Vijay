@@ -730,38 +730,29 @@
   }
 }
 
-/* Mobile & Tablet 40% Compact Scaling (Reduces overall size by 40%) */
-@media (max-width: 1024px) {
-  .dt-main-wrapper {
-    zoom: 0.60;
-    padding: 48px 12px 16px;
-  }
-}
-
 @media (max-width: 768px) {
   .dt-main-wrapper {
-    zoom: 0.60;
-    padding: 38px 10px 14px;
+    padding: 60px 12px 16px;
   }
 
   .dt-board-card {
-    padding: 24px 16px 20px;
-    border-radius: 18px;
+    padding: 28px 20px 24px;
+    border-radius: 20px;
   }
 
   .dt-board-heading,
   .dt-strat-heading {
-    font-size: 26px;
+    font-size: 34px;
   }
 
   .dt-board-title-row {
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
   }
 
   .dt-showcase-stage {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
   }
 
   .dt-before-points-col {

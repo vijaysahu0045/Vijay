@@ -1,8 +1,7 @@
 /* Project Detail Page Styles - Fymble Case Study Design */
 .detail-container {
   position: relative;
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
   height: 100vh;
   min-height: 100vh;
   background: #121216;
@@ -10,7 +9,6 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   color: #FFFFFF;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-overflow-scrolling: touch;
@@ -2985,12 +2983,6 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
-  .figma-workbench-section {
-    display: none !important;
-  }
-}
-
 @media (max-width: 900px) {
   .web-hero-title {
     font-size: 30px;
@@ -3009,12 +3001,6 @@
   }
   .macbook-base {
     width: calc(100% + 24px);
-  }
-}
-
-@media (max-width: 600px) {
-  .iphone-slider-nav-btn {
-    display: none !important;
   }
 }
 
